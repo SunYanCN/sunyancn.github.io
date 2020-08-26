@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.1.1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Noto Serif SC:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"sunyancn.github.io","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"valine","storage":true,"lazyload":false,"nav":null,"activeClass":"valine"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="Dureader 数据集数据示例1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465666768697071727374{&quot;documents&quot;: [{		&quot;is_selected&quot;: true,		&quot;titl">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Dureader 数据集">
+<meta property="og:url" content="http://sunyancn.github.io/2019/11/02/Dureader%E6%95%B0%E6%8D%AE%E9%9B%86/index.html">
+<meta property="og:site_name" content="故事尾音">
+<meta property="og:description" content="Dureader 数据集数据示例1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465666768697071727374{&quot;documents&quot;: [{		&quot;is_selected&quot;: true,		&quot;titl">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://s2.ax1x.com/2019/11/01/K7PCND.png">
+<meta property="article:published_time" content="2019-11-02T06:14:58.000Z">
+<meta property="article:modified_time" content="2020-08-26T17:27:02.304Z">
+<meta property="article:author" content="Sun Yan">
+<meta property="article:tag" content="Dureader">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://s2.ax1x.com/2019/11/01/K7PCND.png">
+
+<link rel="canonical" href="http://sunyancn.github.io/2019/11/02/Dureader%E6%95%B0%E6%8D%AE%E9%9B%86/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+<link rel="stylesheet" href="//cdn.jsdelivr.net/gh/theme-next/theme-next-needmoreshare2@1/needsharebutton.min.css"><style>
+#needsharebutton-float {
+  bottom: 88px;
+  cursor: pointer;
+  left: -8px;
+  position: fixed;
+  z-index: 9999;
+}
+#needsharebutton-float .btn {
+  border: 1px solid $btn-default-border-color;
+  border-radius: 4px;
+  padding: 0 10px 0 14px;
+}
+</style><script src="/lib/fireworks.js"></script>
+  <title>Dureader 数据集 | 故事尾音</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="故事尾音" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">故事尾音</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">喜欢推导也喜欢被推倒</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+        <li class="menu-item menu-item-music">
+
+    <a href="/music/" rel="section"><i class="fa fa-music fa-fw"></i>music</a>
+
+  </li>
+        <li class="menu-item menu-item-shuoshuo">
+
+    <a href="/shuoshuo/" rel="section"><i class="fa fa-heartbeat fa-fw"></i>shuoshuo</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://sunyancn.github.io/2019/11/02/Dureader%E6%95%B0%E6%8D%AE%E9%9B%86/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://i.loli.net/2020/08/25/NrIpckD9qPLY38C.jpg">
+      <meta itemprop="name" content="Sun Yan">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="故事尾音">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Dureader 数据集
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2019-11-02 14:14:58" itemprop="dateCreated datePublished" datetime="2019-11-02T14:14:58+08:00">2019-11-02</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-08-27 01:27:02" itemprop="dateModified" datetime="2020-08-27T01:27:02+08:00">2020-08-27</time>
+              </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine: </span>
+    
+    <a title="valine" href="/2019/11/02/Dureader%E6%95%B0%E6%8D%AE%E9%9B%86/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2019/11/02/Dureader%E6%95%B0%E6%8D%AE%E9%9B%86/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <html><head></head><body><h2 id="Dureader数据集" class="heading-control"><a href="#Dureader数据集" class="headerlink" title="Dureader数据集"></a>Dureader 数据集<a class="heading-anchor" href="#Dureader数据集" aria-hidden="true"></a></h2><h3 id="数据示例" class="heading-control"><a href="#数据示例" class="headerlink" title="数据示例"></a>数据示例<a class="heading-anchor" href="#数据示例" aria-hidden="true"></a></h3><figure class="highlight json"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br></pre></td><td class="code"><pre><span class="line">{<span class="attr">"documents"</span>: [{</span><br><span class="line">		<span class="attr">"is_selected"</span>: <span class="literal">true</span>,</span><br><span class="line">		<span class="attr">"title"</span>: <span class="string">"iOS里,把一个页面链接分享给好友,好友在微信里打开这个链接,怎么跳"</span>,</span><br><span class="line">		<span class="attr">"most_related_para"</span>: <span class="number">0</span>,</span><br><span class="line">		<span class="attr">"segmented_title"</span>: [<span class="string">"iOS"</span>, <span class="string">"里"</span>, <span class="string">","</span>, <span class="string">"把"</span>, <span class="string">"一"</span>, <span class="string">"个"</span>, <span class="string">"页面"</span>, <span class="string">"链接"</span>, <span class="string">"分享"</span>, <span class="string">"给"</span>, <span class="string">"好友"</span>, <span class="string">","</span>, <span class="string">"好友"</span>, <span class="string">"在"</span>, <span class="string">"微信"</span>, <span class="string">"里"</span>, <span class="string">"打开"</span>, <span class="string">"这个"</span>, <span class="string">"链接"</span>, <span class="string">","</span>, <span class="string">"怎么"</span>, <span class="string">"跳"</span>],</span><br><span class="line">		<span class="attr">"segmented_paragraphs"</span>: [</span><br><span class="line">			[<span class="string">"iOS"</span>, <span class="string">"里"</span>, <span class="string">","</span>, <span class="string">"把"</span>, <span class="string">"一"</span>, <span class="string">"个"</span>, <span class="string">"页面"</span>, <span class="string">"链接"</span>, <span class="string">"分享"</span>, <span class="string">"给"</span>, <span class="string">"好友"</span>, <span class="string">","</span>, <span class="string">"好友"</span>, <span class="string">"在"</span>, <span class="string">"微信"</span>, <span class="string">"里"</span>, <span class="string">"打开"</span>, <span class="string">"这个"</span>, <span class="string">"链接"</span>, <span class="string">","</span>, <span class="string">"怎么"</span>, <span class="string">"跳"</span>, <span class="string">"<splitter>"</span>, <span class="string">"iOS"</span>, <span class="string">"里"</span>, <span class="string">","</span>, <span class="string">"把"</span>, <span class="string">"一"</span>, <span class="string">"个"</span>, <span class="string">"页面"</span>, <span class="string">"链接"</span>, <span class="string">"分享"</span>, <span class="string">"给"</span>, <span class="string">"微信"</span>, <span class="string">"好友"</span>, <span class="string">"("</span>, <span class="string">"会话"</span>, <span class="string">")"</span>, <span class="string">","</span>, <span class="string">"好友"</span>, <span class="string">"在"</span>, <span class="string">"微信"</span>, <span class="string">"里"</span>, <span class="string">"打开"</span>, <span class="string">"这个"</span>, <span class="string">"链接"</span>, <span class="string">","</span>, <span class="string">"也"</span>, <span class="string">"就是"</span>, <span class="string">"打开"</span>, <span class="string">"了"</span>, <span class="string">"一"</span>, <span class="string">"个"</span>, <span class="string">"网页"</span>, <span class="string">","</span>, <span class="string">"点击"</span>, <span class="string">"网页"</span>, <span class="string">"里"</span>, <span class="string">"的"</span>, <span class="string">"某"</span>, <span class="string">"个"</span>, <span class="string">"地方"</span>, <span class="string">"后"</span>, <span class="string">"("</span>, <span class="string">"比如"</span>, <span class="string">"网页"</span>, <span class="string">"中"</span>, <span class="string">"“"</span>, <span class="string">"打开"</span>, <span class="string">"xx"</span>, <span class="string">"应用程序"</span>, <span class="string">"”"</span>, <span class="string">"的"</span>, <span class="string">"按钮"</span>, <span class="string">")"</span>, <span class="string">","</span>, <span class="string">"代码"</span>, <span class="string">"里"</span>, <span class="string">"怎么"</span>, <span class="string">"设置"</span>, <span class="string">"可以"</span>, <span class="string">"跳"</span>, <span class="string">"回到"</span>, <span class="string">"第三方"</span>, <span class="string">"app"</span>, <span class="string">"?"</span>, <span class="string">"知乎"</span>, <span class="string">"的"</span>, <span class="string">"ios"</span>, <span class="string">"客户端"</span>, <span class="string">"就"</span>, <span class="string">"有"</span>, <span class="string">"这种"</span>, <span class="string">"功能"</span>, <span class="string">","</span>, <span class="string">"在"</span>, <span class="string">"微信"</span>, <span class="string">"里"</span>, <span class="string">"分享"</span>, <span class="string">"链接"</span>, <span class="string">"后"</span>, <span class="string">","</span>, <span class="string">"点"</span>, <span class="string">"开"</span>, <span class="string">"链接"</span>, <span class="string">","</span>, <span class="string">"再"</span>, <span class="string">"点"</span>, <span class="string">"网页"</span>, <span class="string">"中"</span>, <span class="string">"的"</span>, <span class="string">"某处"</span>, <span class="string">","</span>, <span class="string">"就"</span>, <span class="string">"可以"</span>, <span class="string">"打开"</span>, <span class="string">"知乎"</span>, <span class="string">"客户端"</span>, <span class="string">"显示全部"</span>, <span class="string">"<splitter>"</span>, <span class="string">"微信"</span>, <span class="string">"中"</span>, <span class="string">"不能"</span>, <span class="string">"用"</span>, <span class="string">"自定义"</span>, <span class="string">"url"</span>, <span class="string">"的"</span>, <span class="string">"方式"</span>, <span class="string">","</span>, <span class="string">"微信"</span>, <span class="string">"提供"</span>, <span class="string">"了"</span>, <span class="string">"打开"</span>, <span class="string">"第三方"</span>, <span class="string">"应用"</span>, <span class="string">"的"</span>, <span class="string">"接口"</span>, <span class="string">":"</span>, <span class="string">"launch"</span>, <span class="string">"3rd"</span>, <span class="string">"App"</span>, <span class="string">"<splitter>"</span>, <span class="string">"谢"</span>, <span class="string">"。"</span>, <span class="string">"一般"</span>, <span class="string">"用"</span>, <span class="string">"自带"</span>, <span class="string">"浏览器"</span>, <span class="string">"可以"</span>, <span class="string">"调用"</span>, <span class="string">"起"</span>, <span class="string">"app"</span>, <span class="string">"没问题"</span>, <span class="string">"。"</span>, <span class="string">"微信"</span>, <span class="string">"里面"</span>, <span class="string">"能"</span>, <span class="string">"调出"</span>, <span class="string">"app"</span>, <span class="string">"的"</span>, <span class="string">","</span>, <span class="string">"是"</span>, <span class="string">"和"</span>, <span class="string">"腾讯"</span>, <span class="string">"有"</span>, <span class="string">"合作"</span>, <span class="string">"的"</span>, <span class="string">"应用"</span>, <span class="string">","</span>, <span class="string">"其他"</span>, <span class="string">"会"</span>, <span class="string">"被"</span>, <span class="string">"过滤"</span>, <span class="string">"掉"</span>, <span class="string">"。"</span>, <span class="string">"<splitter>"</span>, <span class="string">"有"</span>, <span class="string">"一"</span>, <span class="string">"个"</span>, <span class="string">"公司"</span>, <span class="string">"的"</span>, <span class="string">"产品"</span>, <span class="string">","</span>, <span class="string">"叫"</span>, <span class="string">"魔"</span>, <span class="string">"窗"</span>, <span class="string">","</span>, <span class="string">"免费"</span>, <span class="string">"可以"</span>, <span class="string">"接入"</span>, <span class="string">"的"</span>, <span class="string">"<splitter>"</span>, <span class="string">"分享"</span>, <span class="string">"出去"</span>, <span class="string">"的"</span>, <span class="string">"是"</span>, <span class="string">"一"</span>, <span class="string">"个"</span>, <span class="string">"网页"</span>, <span class="string">","</span>, <span class="string">"前端"</span>, <span class="string">"人员"</span>, <span class="string">"与"</span>, <span class="string">"app"</span>, <span class="string">"客户端"</span>, <span class="string">"人员"</span>, <span class="string">"约定"</span>, <span class="string">"好"</span>, <span class="string">"一"</span>, <span class="string">"个"</span>, <span class="string">"头部"</span>, <span class="string">"协议"</span>, <span class="string">"。"</span>, <span class="string">"当"</span>, <span class="string">"用户"</span>, <span class="string">"在"</span>, <span class="string">"网页"</span>, <span class="string">"的"</span>, <span class="string">"点击"</span>, <span class="string">"某"</span>, <span class="string">"个"</span>, <span class="string">"按钮"</span>, <span class="string">","</span>, <span class="string">"调用"</span>, <span class="string">"注册"</span>, <span class="string">"的"</span>, <span class="string">"协议"</span>, <span class="string">"头"</span>, <span class="string">","</span>, <span class="string">"就"</span>, <span class="string">"可以"</span>, <span class="string">"呼"</span>, <span class="string">"起"</span>, <span class="string">"安装"</span>, <span class="string">"的"</span>, <span class="string">"app"</span>, <span class="string">"。"</span>, <span class="string">"比如"</span>, <span class="string">"知乎"</span>, <span class="string">"app"</span>, <span class="string">"可能"</span>, <span class="string">"注册"</span>, <span class="string">"了"</span>, <span class="string">"zhifu"</span>, <span class="string">":"</span>, <span class="string">"/"</span>, <span class="string">"/"</span>, <span class="string">"xxx"</span>, <span class="string">"zhifu"</span>, <span class="string">":"</span>, <span class="string">"/"</span>, <span class="string">"/"</span>, <span class="string">"就是"</span>, <span class="string">"约定"</span>, <span class="string">"好"</span>, <span class="string">"的"</span>, <span class="string">"xxx"</span>, <span class="string">"是"</span>, <span class="string">"指"</span>, <span class="string">"参数"</span>, <span class="string">"可以"</span>, <span class="string">"任意"</span>, <span class="string">"带"</span>, <span class="string">"这样"</span>, <span class="string">"访问"</span>, <span class="string">"后"</span>, <span class="string">"就"</span>, <span class="string">"可以"</span>, <span class="string">"呼"</span>, <span class="string">"起"</span>, <span class="string">"app"</span>, <span class="string">"了"</span>, <span class="string">"。"</span>, <span class="string">"<splitter>"</span>, <span class="string">"目前"</span>, <span class="string">"已经"</span>, <span class="string">"解决"</span>, <span class="string">"直接"</span>, <span class="string">"从"</span>, <span class="string">"微信"</span>, <span class="string">"打开"</span>, <span class="string">"的"</span>, <span class="string">"链接"</span>, <span class="string">"可以直接"</span>, <span class="string">"点击"</span>, <span class="string">"下载"</span>, <span class="string">"APP"</span>, <span class="string">"的"</span>, <span class="string">"跳转"</span>, <span class="string">","</span>, <span class="string">"无需"</span>, <span class="string">"再"</span>, <span class="string">"通过"</span>, <span class="string">"另外"</span>, <span class="string">"浏览"</span>, <span class="string">"中"</span>, <span class="string">"打开"</span>, <span class="string">"才能"</span>, <span class="string">"点击"</span>, <span class="string">"下载"</span>, <span class="string">","</span>, <span class="string">"在"</span>, <span class="string">"微信"</span>, <span class="string">"中"</span>, <span class="string">"即可"</span>, <span class="string">"直接"</span>, <span class="string">"点击"</span>, <span class="string">"下载"</span>, <span class="string">","</span>, <span class="string">"需要"</span>, <span class="string">"的"</span>, <span class="string">"联系"</span>, <span class="string">"QQ"</span>, <span class="string">"77408026"</span>, <span class="string">"<splitter>"</span>, <span class="string">"你可以"</span>, <span class="string">"去"</span>, <span class="string">"看看"</span>, <span class="string">"openinstall"</span>, <span class="string">","</span>, <span class="string">"它"</span>, <span class="string">"可以"</span>, <span class="string">"实现"</span>, <span class="string">"让"</span>, <span class="string">"用户"</span>, <span class="string">"分享"</span>, <span class="string">"链接"</span>, <span class="string">"让"</span>, <span class="string">"别"</span>, <span class="string">"的"</span>, <span class="string">"用户"</span>, <span class="string">"可以打开"</span>, <span class="string">"下载"</span>, <span class="string">"或者"</span>, <span class="string">"跳转"</span>, <span class="string">"APP"</span>, <span class="string">"。"</span>, <span class="string">"而且"</span>, <span class="string">"打开"</span>, <span class="string">"或者"</span>, <span class="string">"下载"</span>, <span class="string">"后"</span>, <span class="string">"还能"</span>, <span class="string">"获取"</span>, <span class="string">"到"</span>, <span class="string">"自己"</span>, <span class="string">"想"</span>, <span class="string">"传"</span>, <span class="string">"过去"</span>, <span class="string">"的"</span>, <span class="string">"参数"</span>, <span class="string">"。"</span>, <span class="string">"<splitter>"</span>, <span class="string">"方法"</span>, <span class="string">"一"</span>, <span class="string">":"</span>, <span class="string">"微信"</span>, <span class="string">"API"</span>, <span class="string">"-"</span>, <span class="string">"-"</span>, <span class="string">"WXApp"</span>, <span class="string">"Extend"</span>, <span class="string">"Object"</span>, <span class="string">"."</span>, <span class="string">"("</span>, <span class="string">"参考"</span>, <span class="string">"app"</span>, <span class="string">"-"</span>, <span class="string">"微博"</span>, <span class="string">")"</span>, <span class="string">"方法"</span>, <span class="string">"二"</span>, <span class="string">":"</span>, <span class="string">"iOS"</span>, <span class="string">"9"</span>, <span class="string">"Universal"</span>, <span class="string">"Link"</span>, <span class="string">"."</span>, <span class="string">"("</span>, <span class="string">"参考"</span>, <span class="string">"app"</span>, <span class="string">"-"</span>, <span class="string">"蘑菇街"</span>, <span class="string">")"</span>, <span class="string">"<splitter>"</span>, <span class="string">"目前"</span>, <span class="string">"要"</span>, <span class="string">"先"</span>, <span class="string">"用"</span>, <span class="string">"浏览器"</span>, <span class="string">"打开"</span>, <span class="string">","</span>, <span class="string">"然后"</span>, <span class="string">"才能"</span>, <span class="string">"跳"</span>, <span class="string">"。"</span>, <span class="string">"有"</span>, <span class="string">"解决办法"</span>, <span class="string">"么"</span>, <span class="string">"<splitter>"</span>, <span class="string">"下载"</span>, <span class="string">"知乎"</span>, <span class="string">"客户端"</span>, <span class="string">"与"</span>, <span class="string">"世界"</span>, <span class="string">"分享"</span>, <span class="string">"知识"</span>, <span class="string">"、"</span>, <span class="string">"经验"</span>, <span class="string">"和"</span>, <span class="string">"见解"</span>, <span class="string">"<splitter>"</span>, <span class="string">"相关"</span>, <span class="string">"Live"</span>, <span class="string">"推荐"</span>]</span><br><span class="line">		],</span><br><span class="line">		<span class="attr">"paragraphs"</span>: [<span class="string">"iOS里,把一个页面链接分享给好友,好友在微信里打开这个链接,怎么跳<splitter>iOS里,把一个页面链接分享给微信好友(会话),好友在微信里打开这个链接,也就是打开了一个网页,点击网页里的某个地方后(比如网页中“打开xx应用程序”的按钮),代码里怎么设置可以跳回到第三方app?知乎的ios客户端就有这种功能,在微信里分享链接后,点开链接,再点网页中的某处,就可以打开知乎客户端显示全部<splitter>微信中不能用自定义url的方式,微信提供了打开第三方应用的接口:launch3rdApp<splitter>谢。一般用自带浏览器可以调用起app没问题。微信里面能调出app的,是和腾讯有合作的应用,其他会被过滤掉。<splitter>有一个公司的产品,叫魔窗,免费可以接入的<splitter>分享出去的是一个网页,前端人员与app客户端人员约定好一个头部协议。当用户在网页的点击某个按钮,调用注册的协议头,就可以呼起安装的app。比如知乎app可能注册了zhifu://xxxzhifu://就是约定好的xxx是指参数可以任意带这样访问后就可以呼起app了。<splitter>目前已经解决直接从微信打开的链接可以直接点击下载APP的跳转,无需再通过另外浏览中打开才能点击下载,在微信中即可直接点击下载,需要的联系QQ77408026<splitter>你可以去看看openinstall,它可以实现让用户分享链接让别的用户可以打开下载或者跳转APP。而且打开或者下载后还能获取到自己想传过去的参数。<splitter>方法一:微信API--WXAppExtendObject.(参考app-微博)方法二:iOS9UniversalLink.(参考app-蘑菇街)<splitter>目前要先用浏览器打开,然后才能跳。有解决办法么<splitter>下载知乎客户端与世界分享知识、经验和见解<splitter>相关Live推荐"</span>],</span><br><span class="line">		<span class="attr">"segmented_paragraphs_scores"</span>: [<span class="number">1.0</span>],</span><br><span class="line">		<span class="attr">"paragraphs_length"</span>: [<span class="number">415</span>]</span><br><span class="line">	}, {</span><br><span class="line">		<span class="attr">"is_selected"</span>: <span class="literal">true</span>,</span><br><span class="line">		<span class="attr">"title"</span>: <span class="string">"怎么可以在微信里面打开APP下载链接地址_百度经验"</span>,</span><br><span class="line">		<span class="attr">"most_related_para"</span>: <span class="number">0</span>,</span><br><span class="line">		<span class="attr">"segmented_title"</span>: [<span class="string">"怎么"</span>, <span class="string">"可以"</span>, <span class="string">"在"</span>, <span class="string">"微信"</span>, <span class="string">"里面"</span>, <span class="string">"打开"</span>, <span class="string">"APP"</span>, <span class="string">"下载"</span>, <span class="string">"链接地址"</span>, <span class="string">"_"</span>, <span class="string">"百度"</span>, <span class="string">"经验"</span>],</span><br><span class="line">		<span class="attr">"segmented_paragraphs"</span>: [</span><br><span class="line">			[<span class="string">"怎么"</span>, <span class="string">"可以"</span>, <span class="string">"在"</span>, <span class="string">"微信"</span>, <span class="string">"里面"</span>, <span class="string">"打开"</span>, <span class="string">"APP"</span>, <span class="string">"下载"</span>, <span class="string">"链接地址"</span>, <span class="string">"_"</span>, <span class="string">"百度"</span>, <span class="string">"经验"</span>, <span class="string">"<splitter>"</span>, <span class="string">"百度"</span>, <span class="string">"经验"</span>, <span class="string">":"</span>, <span class="string">"jingyan"</span>, <span class="string">"."</span>, <span class="string">"baidu"</span>, <span class="string">"."</span>, <span class="string">"com"</span>, <span class="string">"<splitter>"</span>, <span class="string">"我们"</span>, <span class="string">"都"</span>, <span class="string">"知道"</span>, <span class="string">"手游"</span>, <span class="string">"、"</span>, <span class="string">"APP"</span>, <span class="string">"想"</span>, <span class="string">"在"</span>, <span class="string">"微信"</span>, <span class="string">"分享"</span>, <span class="string">"时"</span>, <span class="string">","</span>, <span class="string">"下载"</span>, <span class="string">"的"</span>, <span class="string">"链接"</span>, <span class="string">"会"</span>, <span class="string">"被"</span>, <span class="string">"微信"</span>, <span class="string">"屏蔽"</span>, <span class="string">","</span>, <span class="string">"不能"</span>, <span class="string">"直接"</span>, <span class="string">"点击"</span>, <span class="string">","</span>, <span class="string">"那"</span>, <span class="string">"怎样"</span>, <span class="string">"才能"</span>, <span class="string">"得到"</span>, <span class="string">"微信"</span>, <span class="string">"认可"</span>, <span class="string">"的"</span>, <span class="string">"下载"</span>, <span class="string">"页面"</span>, <span class="string">"呢"</span>, <span class="string">","</span>, <span class="string">"这里"</span>, <span class="string">"就"</span>, <span class="string">"需要"</span>, <span class="string">"用"</span>, <span class="string">"到"</span>, <span class="string">"腾讯"</span>, <span class="string">"的"</span>, <span class="string">"开放"</span>, <span class="string">"平台"</span>, <span class="string">","</span>, <span class="string">"而"</span>, <span class="string">"你"</span>, <span class="string">"的"</span>, <span class="string">"应用"</span>, <span class="string">"也"</span>, <span class="string">"需要提交"</span>, <span class="string">"到"</span>, <span class="string">"这个平台"</span>, <span class="string">"。"</span>, <span class="string">"在"</span>, <span class="string">"这里"</span>, <span class="string">"可以"</span>, <span class="string">"得到"</span>, <span class="string">"微信"</span>, <span class="string">"认可"</span>, <span class="string">"的"</span>, <span class="string">"链接地址"</span>, <span class="string">"。"</span>, <span class="string">"接下来"</span>, <span class="string">"介绍"</span>, <span class="string">"相关"</span>, <span class="string">"方法"</span>, <span class="string">"。"</span>, <span class="string">"<splitter>"</span>, <span class="string">"1"</span>, <span class="string">"首先"</span>, <span class="string">"打开"</span>, <span class="string">"腾讯"</span>, <span class="string">"开放"</span>, <span class="string">"平台"</span>, <span class="string">","</span>, <span class="string">"注册"</span>, <span class="string">"开放"</span>, <span class="string">"平台"</span>, <span class="string">"的"</span>, <span class="string">"一"</span>, <span class="string">"个"</span>, <span class="string">"账号"</span>, <span class="string">","</span>, <span class="string">"如"</span>, <span class="string">"下"</span>, <span class="string">"图"</span>, <span class="string">"所示"</span>, <span class="string">"。"</span>, <span class="string">"步骤"</span>, <span class="string">"阅读"</span>, <span class="string">"2"</span>, <span class="string">"登录"</span>, <span class="string">"后"</span>, <span class="string">"在"</span>, <span class="string">"”"</span>, <span class="string">"管理"</span>, <span class="string">"中心"</span>, <span class="string">"“"</span>, <span class="string">"中"</span>, <span class="string">"创建"</span>, <span class="string">"应用"</span>, <span class="string">","</span>, <span class="string">"如"</span>, <span class="string">"下"</span>, <span class="string">"图"</span>, <span class="string">"所示"</span>, <span class="string">"点击"</span>, <span class="string">"红线"</span>, <span class="string">"框"</span>, <span class="string">"选"</span>, <span class="string">"按钮"</span>, <span class="string">"。"</span>, <span class="string">"步骤"</span>, <span class="string">"阅读"</span>, <span class="string">"3"</span>, <span class="string">"选择"</span>, <span class="string">"创建"</span>, <span class="string">"应用"</span>, <span class="string">"的"</span>, <span class="string">"类型"</span>, <span class="string">"如"</span>, <span class="string">"下"</span>, <span class="string">"图"</span>, <span class="string">"所示"</span>, <span class="string">","</span>, <span class="string">"然后"</span>, <span class="string">"按钮"</span>, <span class="string">"提示"</span>, <span class="string">"填写"</span>, <span class="string">"应用"</span>, <span class="string">"的"</span>, <span class="string">"相关"</span>, <span class="string">"信息"</span>, <span class="string">","</span>, <span class="string">"提交"</span>, <span class="string">"进入"</span>, <span class="string">"审核"</span>, <span class="string">"。"</span>, <span class="string">"步骤"</span>, <span class="string">"阅读"</span>, <span class="string">"步骤"</span>, <span class="string">"阅读"</span>, <span class="string">"4"</span>, <span class="string">"应用"</span>, <span class="string">"审核"</span>, <span class="string">"通过"</span>, <span class="string">"后"</span>, <span class="string">"会"</span>, <span class="string">"在"</span>, <span class="string">"管理"</span>, <span class="string">"中心"</span>, <span class="string">"中"</span>, <span class="string">"显示"</span>, <span class="string">"”"</span>, <span class="string">"已"</span>, <span class="string">"上线"</span>, <span class="string">"“"</span>, <span class="string">","</span>, <span class="string">"然后"</span>, <span class="string">"点击"</span>, <span class="string">"应用"</span>, <span class="string">"的"</span>, <span class="string">"图标"</span>, <span class="string">"。"</span>, <span class="string">"步骤"</span>, <span class="string">"阅读"</span>, <span class="string">"5"</span>, <span class="string">"在"</span>, <span class="string">"应用"</span>, <span class="string">"详情"</span>, <span class="string">"中"</span>, <span class="string">"找到"</span>, <span class="string">"运营"</span>, <span class="string">"服务"</span>, <span class="string">"中"</span>, <span class="string">"的"</span>, <span class="string">"”"</span>, <span class="string">"微"</span>, <span class="string">"下载"</span>, <span class="string">"“"</span>, <span class="string">","</span>, <span class="string">"点击进入"</span>, <span class="string">"详情"</span>, <span class="string">"页面"</span>, <span class="string">"。"</span>, <span class="string">"步骤"</span>, <span class="string">"阅读"</span>, <span class="string">"6"</span>, <span class="string">"在"</span>, <span class="string">"详情"</span>, <span class="string">"页面"</span>, <span class="string">"中"</span>, <span class="string">"就"</span>, <span class="string">"可以"</span>, <span class="string">"看到"</span>, <span class="string">"系统"</span>, <span class="string">"生成"</span>, <span class="string">"的"</span>, <span class="string">"推广"</span>, <span class="string">"链接地址"</span>, <span class="string">"了"</span>, <span class="string">","</span>, <span class="string">"复制"</span>, <span class="string">"此"</span>, <span class="string">"地址"</span>, <span class="string">"就"</span>, <span class="string">"可以"</span>, <span class="string">"微信"</span>, <span class="string">"中"</span>, <span class="string">"转发"</span>, <span class="string">"了"</span>, <span class="string">"。"</span>, <span class="string">"步骤"</span>, <span class="string">"阅读"</span>, <span class="string">"END"</span>, <span class="string">"<splitter>"</span>, <span class="string">"经验"</span>, <span class="string">"内容"</span>, <span class="string">"仅供参考"</span>, <span class="string">","</span>, <span class="string">"如果"</span>, <span class="string">"您"</span>, <span class="string">"需"</span>, <span class="string">"解决"</span>, <span class="string">"具体"</span>, <span class="string">"问题"</span>, <span class="string">"("</span>, <span class="string">"尤其"</span>, <span class="string">"法律"</span>, <span class="string">"、"</span>, <span class="string">"医学"</span>, <span class="string">"等"</span>, <span class="string">"领域"</span>, <span class="string">")"</span>, <span class="string">","</span>, <span class="string">"建议"</span>, <span class="string">"您"</span>, <span class="string">"详细"</span>, <span class="string">"咨询"</span>, <span class="string">"相关"</span>, <span class="string">"领域"</span>, <span class="string">"专业人士"</span>, <span class="string">"。"</span>]</span><br><span class="line">		],</span><br><span class="line">		<span class="attr">"paragraphs"</span>: [<span class="string">"怎么可以在微信里面打开APP下载链接地址_百度经验<splitter>百度经验:jingyan.baidu.com<splitter>我们都知道手游、APP想在微信分享时,下载的链接会被微信屏蔽,不能直接点击,那怎样才能得到微信认可的下载页面呢,这里就需要用到腾讯的开放平台,而你的应用也需要提交到这个平台。在这里可以得到微信认可的链接地址。接下来介绍相关方法。<splitter>1首先打开腾讯开放平台,注册开放平台的一个账号,如下图所示。步骤阅读2登录后在”管理中心“中创建应用,如下图所示点击红线框选按钮。步骤阅读3选择创建应用的类型如下图所示,然后按钮提示填写应用的相关信息,提交进入审核。步骤阅读步骤阅读4应用审核通过后会在管理中心中显示”已上线“,然后点击应用的图标。步骤阅读5在应用详情中找到运营服务中的”微下载“,点击进入详情页面。步骤阅读6在详情页面中就可以看到系统生成的推广链接地址了,复制此地址就可以微信中转发了。步骤阅读END<splitter>经验内容仅供参考,如果您需解决具体问题(尤其法律、医学等领域),建议您详细咨询相关领域专业人士。"</span>],</span><br><span class="line">		<span class="attr">"segmented_paragraphs_scores"</span>: [<span class="number">1.0</span>],</span><br><span class="line">		<span class="attr">"paragraphs_length"</span>: [<span class="number">266</span>]</span><br><span class="line">	}, {</span><br><span class="line">		<span class="attr">"is_selected"</span>: <span class="literal">false</span>,</span><br><span class="line">		<span class="attr">"title"</span>: <span class="string">"android微信分享的链接怎么启动app-CSDN论坛"</span>,</span><br><span class="line">		<span class="attr">"most_related_para"</span>: <span class="number">0</span>,</span><br><span class="line">		<span class="attr">"segmented_title"</span>: [<span class="string">"android"</span>, <span class="string">"微信"</span>, <span class="string">"分享"</span>, <span class="string">"的"</span>, <span class="string">"链接"</span>, <span class="string">"怎么"</span>, <span class="string">"启动"</span>, <span class="string">"app"</span>, <span class="string">"-"</span>, <span class="string">"CSDN"</span>, <span class="string">"论坛"</span>],</span><br><span class="line">		<span class="attr">"segmented_paragraphs"</span>: [</span><br><span class="line">			[<span class="string">"android"</span>, <span class="string">"微信"</span>, <span class="string">"分享"</span>, <span class="string">"的"</span>, <span class="string">"链接"</span>, <span class="string">"怎么"</span>, <span class="string">"启动"</span>, <span class="string">"app"</span>, <span class="string">"-"</span>, <span class="string">"CSDN"</span>, <span class="string">"论坛"</span>, <span class="string">"<splitter>"</span>, <span class="string">"app"</span>, <span class="string">"中"</span>, <span class="string">"分享"</span>, <span class="string">"到"</span>, <span class="string">"微信"</span>, <span class="string">"已经"</span>, <span class="string">"成功"</span>, <span class="string">","</span>, <span class="string">"但是"</span>, <span class="string">"通过"</span>, <span class="string">"分享"</span>, <span class="string">"的"</span>, <span class="string">"连接"</span>, <span class="string">"无法"</span>, <span class="string">"启动"</span>, <span class="string">"app"</span>, <span class="string">"。"</span>, <span class="string">"<splitter>"</span>, <span class="string">"分享"</span>, <span class="string">"的"</span>, <span class="string">"链接"</span>, <span class="string">"就是"</span>, <span class="string">"普通"</span>, <span class="string">"的"</span>, <span class="string">"自定义"</span>, <span class="string">"url"</span>, <span class="string">":"</span>, <span class="string">"myapp"</span>, <span class="string">":"</span>, <span class="string">"/"</span>, <span class="string">"/"</span>, <span class="string">"www"</span>, <span class="string">"."</span>, <span class="string">"myapp"</span>, <span class="string">"."</span>, <span class="string">"com"</span>, <span class="string">"."</span>, <span class="string">"<splitter>"</span>, <span class="string">"博客"</span>, <span class="string">"专家"</span>, <span class="string">"带"</span>, <span class="string">"你"</span>, <span class="string">"学"</span>, <span class="string">"swift"</span>, <span class="string">"晒"</span>, <span class="string">"图谱"</span>, <span class="string">","</span>, <span class="string">"涨"</span>, <span class="string">"知识"</span>, <span class="string">","</span>, <span class="string">"得"</span>, <span class="string">"好"</span>, <span class="string">"礼"</span>, <span class="string">"Swift"</span>, <span class="string">"问题"</span>, <span class="string">"与"</span>, <span class="string">"解答"</span>, <span class="string">"视频直播"</span>, <span class="string">"技术"</span>, <span class="string">"免费"</span>, <span class="string">"课"</span>]</span><br><span class="line">		],</span><br><span class="line">		<span class="attr">"paragraphs"</span>: [<span class="string">"android微信分享的链接怎么启动app-CSDN论坛<splitter>app中分享到微信已经成功,但是通过分享的连接无法启动app。<splitter>分享的链接就是普通的自定义url:myapp://www.myapp.com.<splitter>博客专家带你学swift晒图谱,涨知识,得好礼Swift问题与解答视频直播技术免费课"</span>],</span><br><span class="line">		<span class="attr">"segmented_paragraphs_scores"</span>: [<span class="number">1.0</span>],</span><br><span class="line">		<span class="attr">"paragraphs_length"</span>: [<span class="number">73</span>]</span><br><span class="line">	}, {</span><br><span class="line">		<span class="attr">"is_selected"</span>: <span class="literal">false</span>,</span><br><span class="line">		<span class="attr">"title"</span>: <span class="string">"android 从微信分享的网页中启动APP - mattdong1024的专栏 - CSDN"</span>,</span><br><span class="line">		<span class="attr">"most_related_para"</span>: <span class="number">0</span>,</span><br><span class="line">		<span class="attr">"segmented_title"</span>: [<span class="string">"android"</span>, <span class="string">"从"</span>, <span class="string">"微信"</span>, <span class="string">"分享"</span>, <span class="string">"的"</span>, <span class="string">"网页"</span>, <span class="string">"中"</span>, <span class="string">"启动"</span>, <span class="string">"APP"</span>, <span class="string">"-"</span>, <span class="string">"matt"</span>, <span class="string">"dong"</span>, <span class="string">"1024"</span>, <span class="string">"的"</span>, <span class="string">"专栏"</span>, <span class="string">"-"</span>, <span class="string">"CSDN"</span>],</span><br><span class="line">		<span class="attr">"segmented_paragraphs"</span>: [</span><br><span class="line">			[<span class="string">"android"</span>, <span class="string">"从"</span>, <span class="string">"微信"</span>, <span class="string">"分享"</span>, <span class="string">"的"</span>, <span class="string">"网页"</span>, <span class="string">"中"</span>, <span class="string">"启动"</span>, <span class="string">"APP"</span>, <span class="string">"-"</span>, <span class="string">"matt"</span>, <span class="string">"dong"</span>, <span class="string">"1024"</span>, <span class="string">"的"</span>, <span class="string">"专栏"</span>, <span class="string">"-"</span>, <span class="string">"CSDN"</span>, <span class="string">"<splitter>"</span>, <span class="string">"项目"</span>, <span class="string">"中"</span>, <span class="string">"有"</span>, <span class="string">"个"</span>, <span class="string">"需求"</span>, <span class="string">","</span>, <span class="string">"让"</span>, <span class="string">"用户"</span>, <span class="string">"可以"</span>, <span class="string">"从"</span>, <span class="string">"分享"</span>, <span class="string">"到"</span>, <span class="string">"微信"</span>, <span class="string">"的"</span>, <span class="string">"网页"</span>, <span class="string">"中"</span>, <span class="string">"启动"</span>, <span class="string">"自己"</span>, <span class="string">"的"</span>, <span class="string">"APP"</span>, <span class="string">","</span>, <span class="string">"如果"</span>, <span class="string">"本"</span>, <span class="string">"机"</span>, <span class="string">"没有"</span>, <span class="string">"安装"</span>, <span class="string">"该"</span>, <span class="string">"应用程序"</span>, <span class="string">"则"</span>, <span class="string">"打开"</span>, <span class="string">"应用"</span>, <span class="string">"商店"</span>, <span class="string">"并"</span>, <span class="string">"打开"</span>, <span class="string">"该"</span>, <span class="string">"程序"</span>, <span class="string">"在"</span>, <span class="string">"商店"</span>, <span class="string">"中"</span>, <span class="string">"的"</span>, <span class="string">"搜索"</span>, <span class="string">"结果"</span>, <span class="string">"页面"</span>, <span class="string">"。"</span>, <span class="string">"在这里"</span>, <span class="string">"跟"</span>, <span class="string">"大家"</span>, <span class="string">"分享"</span>, <span class="string">"一"</span>, <span class="string">"下"</span>, <span class="string">":"</span>, <span class="string">"<splitter>"</span>, <span class="string">"实践"</span>, <span class="string">":"</span>, <span class="string">"从"</span>, <span class="string">"微信"</span>, <span class="string">"分享"</span>, <span class="string">"的"</span>, <span class="string">"网页"</span>, <span class="string">"中"</span>, <span class="string">"启动"</span>, <span class="string">"app"</span>, <span class="string">","</span>, <span class="string">"如果"</span>, <span class="string">"本"</span>, <span class="string">"机"</span>, <span class="string">"安装"</span>, <span class="string">"了"</span>, <span class="string">"该"</span>, <span class="string">"应用"</span>, <span class="string">"可以"</span>, <span class="string">"正常"</span>, <span class="string">"启动"</span>, <span class="string">","</span>, <span class="string">"如果没有"</span>, <span class="string">"安装"</span>, <span class="string">"该"</span>, <span class="string">"应用"</span>, <span class="string">","</span>, <span class="string">"会"</span>, <span class="string">"跳转"</span>, <span class="string">"到"</span>, <span class="string">"应用宝"</span>, <span class="string">"的"</span>, <span class="string">"网页"</span>, <span class="string">","</span>, <span class="string">"提示"</span>, <span class="string">"你"</span>, <span class="string">"下载"</span>, <span class="string">"应用"</span>, <span class="string">"<splitter>"</span>, <span class="string">"如果"</span>, <span class="string">"是"</span>, <span class="string">"从"</span>, <span class="string">"其他"</span>, <span class="string">"浏览器"</span>, <span class="string">"启动"</span>, <span class="string">"app"</span>, <span class="string">"的"</span>, <span class="string">"话"</span>, <span class="string">","</span>, <span class="string">"除了"</span>, <span class="string">"自带"</span>, <span class="string">"浏览器"</span>, <span class="string">"和"</span>, <span class="string">"谷歌"</span>, <span class="string">"浏览器"</span>, <span class="string">"外"</span>, <span class="string">","</span>, <span class="string">"其他"</span>, <span class="string">"第三方"</span>, <span class="string">"浏览器"</span>, <span class="string">"可能会"</span>, <span class="string">"有"</span>, <span class="string">"兼容性"</span>, <span class="string">"问题"</span>, <span class="string">","</span>, <span class="string">"也就是说"</span>, <span class="string">","</span>, <span class="string">"有"</span>, <span class="string">"可能"</span>, <span class="string">"无法"</span>, <span class="string">"从"</span>, <span class="string">"第三方"</span>, <span class="string">"浏览器"</span>, <span class="string">"启动"</span>, <span class="string">"app"</span>, <span class="string">"。"</span>]</span><br><span class="line">		],</span><br><span class="line">		<span class="attr">"paragraphs"</span>: [<span class="string">"android从微信分享的网页中启动APP-mattdong1024的专栏-CSDN<splitter>项目中有个需求,让用户可以从分享到微信的网页中启动自己的APP,如果本机没有安装该应用程序则打开应用商店并打开该程序在商店中的搜索结果页面。在这里跟大家分享一下:<splitter>实践:从微信分享的网页中启动app,如果本机安装了该应用可以正常启动,如果没有安装该应用,会跳转到应用宝的网页,提示你下载应用<splitter>如果是从其他浏览器启动app的话,除了自带浏览器和谷歌浏览器外,其他第三方浏览器可能会有兼容性问题,也就是说,有可能无法从第三方浏览器启动app。"</span>],</span><br><span class="line">		<span class="attr">"segmented_paragraphs_scores"</span>: [<span class="number">1.0</span>],</span><br><span class="line">		<span class="attr">"paragraphs_length"</span>: [<span class="number">146</span>]</span><br><span class="line">	}, {</span><br><span class="line">		<span class="attr">"is_selected"</span>: <span class="literal">true</span>,</span><br><span class="line">		<span class="attr">"title"</span>: <span class="string">"微信浏览器中点击链接怎么打开本地app_百度经验"</span>,</span><br><span class="line">		<span class="attr">"most_related_para"</span>: <span class="number">0</span>,</span><br><span class="line">		<span class="attr">"segmented_title"</span>: [<span class="string">"微信"</span>, <span class="string">"浏览器"</span>, <span class="string">"中"</span>, <span class="string">"点击"</span>, <span class="string">"链接"</span>, <span class="string">"怎么"</span>, <span class="string">"打开"</span>, <span class="string">"本地"</span>, <span class="string">"app"</span>, <span class="string">"_"</span>, <span class="string">"百度"</span>, <span class="string">"经验"</span>],</span><br><span class="line">		<span class="attr">"segmented_paragraphs"</span>: [</span><br><span class="line">			[<span class="string">"微信"</span>, <span class="string">"浏览器"</span>, <span class="string">"中"</span>, <span class="string">"点击"</span>, <span class="string">"链接"</span>, <span class="string">"怎么"</span>, <span class="string">"打开"</span>, <span class="string">"本地"</span>, <span class="string">"app"</span>, <span class="string">"_"</span>, <span class="string">"百度"</span>, <span class="string">"经验"</span>, <span class="string">"<splitter>"</span>, <span class="string">"百度"</span>, <span class="string">"经验"</span>, <span class="string">":"</span>, <span class="string">"jingyan"</span>, <span class="string">"."</span>, <span class="string">"baidu"</span>, <span class="string">"."</span>, <span class="string">"com"</span>, <span class="string">"<splitter>"</span>, <span class="string">"微信"</span>, <span class="string">"已经成为"</span>, <span class="string">"现代人"</span>, <span class="string">"生活"</span>, <span class="string">"中"</span>, <span class="string">"必不可少"</span>, <span class="string">"的"</span>, <span class="string">"一部分"</span>, <span class="string">","</span>, <span class="string">"下面"</span>, <span class="string">"我"</span>, <span class="string">"就"</span>, <span class="string">"教"</span>, <span class="string">"大家"</span>, <span class="string">"如何"</span>, <span class="string">"在"</span>, <span class="string">"微信"</span>, <span class="string">"浏览器"</span>, <span class="string">"中"</span>, <span class="string">"打开"</span>, <span class="string">"本地"</span>, <span class="string">"APP"</span>, <span class="string">"吧"</span>, <span class="string">"!"</span>, <span class="string">"<splitter>"</span>, <span class="string">"1"</span>, <span class="string">"将"</span>, <span class="string">"手机"</span>, <span class="string">"微信"</span>, <span class="string">"打开"</span>, <span class="string">"。"</span>, <span class="string">"步骤"</span>, <span class="string">"阅读"</span>, <span class="string">"2"</span>, <span class="string">"打开"</span>, <span class="string">"微信"</span>, <span class="string">"中"</span>, <span class="string">"的"</span>, <span class="string">"链接"</span>, <span class="string">"。"</span>, <span class="string">"步骤"</span>, <span class="string">"阅读"</span>, <span class="string">"3"</span>, <span class="string">"如图"</span>, <span class="string">"我们"</span>, <span class="string">"打开"</span>, <span class="string">"百度"</span>, <span class="string">"经验"</span>, <span class="string">"的"</span>, <span class="string">"链接"</span>, <span class="string">","</span>, <span class="string">"用"</span>, <span class="string">"微信"</span>, <span class="string">"浏览器"</span>, <span class="string">"进入"</span>, <span class="string">"网页"</span>, <span class="string">"以后"</span>, <span class="string">","</span>, <span class="string">"点击"</span>, <span class="string">"右"</span>, <span class="string">"上方"</span>, <span class="string">"如图"</span>, <span class="string">"符号"</span>, <span class="string">"。"</span>, <span class="string">"步骤"</span>, <span class="string">"阅读"</span>, <span class="string">"4"</span>, <span class="string">"进入"</span>, <span class="string">"选择"</span>, <span class="string">"页面"</span>, <span class="string">","</span>, <span class="string">"点击"</span>, <span class="string">"“"</span>, <span class="string">"在"</span>, <span class="string">"浏览器"</span>, <span class="string">"”"</span>, <span class="string">"打开"</span>, <span class="string">"。"</span>, <span class="string">"步骤"</span>, <span class="string">"阅读"</span>, <span class="string">"5"</span>, <span class="string">"如图"</span>, <span class="string">"会出现"</span>, <span class="string">"手机"</span>, <span class="string">"已"</span>, <span class="string">"安装"</span>, <span class="string">"的"</span>, <span class="string">"本地"</span>, <span class="string">"APP"</span>, <span class="string">"浏览器"</span>, <span class="string">","</span>, <span class="string">"我们"</span>, <span class="string">"选择"</span>, <span class="string">"一"</span>, <span class="string">"个"</span>, <span class="string">"自己"</span>, <span class="string">"想"</span>, <span class="string">"用"</span>, <span class="string">"的"</span>, <span class="string">"本地"</span>, <span class="string">"浏览器"</span>, <span class="string">"点击"</span>, <span class="string">"下方"</span>, <span class="string">"“"</span>, <span class="string">"仅"</span>, <span class="string">"一次"</span>, <span class="string">"”"</span>, <span class="string">"或"</span>, <span class="string">"“"</span>, <span class="string">"总是"</span>, <span class="string">"”"</span>, <span class="string">"都"</span>, <span class="string">"可以"</span>, <span class="string">"打开"</span>, <span class="string">"打开"</span>, <span class="string">"本地"</span>, <span class="string">"APP"</span>, <span class="string">"浏览器"</span>, <span class="string">"。"</span>, <span class="string">"步骤"</span>, <span class="string">"阅读"</span>, <span class="string">"6"</span>, <span class="string">"此时"</span>, <span class="string">","</span>, <span class="string">"我们"</span>, <span class="string">"就"</span>, <span class="string">"已经"</span>, <span class="string">"在"</span>, <span class="string">"微信"</span>, <span class="string">"浏览器"</span>, <span class="string">"中将"</span>, <span class="string">"本地"</span>, <span class="string">"APP"</span>, <span class="string">"浏览器"</span>, <span class="string">"打开"</span>, <span class="string">"了"</span>, <span class="string">"步骤"</span>, <span class="string">"阅读"</span>, <span class="string">"END"</span>, <span class="string">"<splitter>"</span>, <span class="string">"经验"</span>, <span class="string">"内容"</span>, <span class="string">"仅供参考"</span>, <span class="string">","</span>, <span class="string">"如果"</span>, <span class="string">"您"</span>, <span class="string">"需"</span>, <span class="string">"解决"</span>, <span class="string">"具体"</span>, <span class="string">"问题"</span>, <span class="string">"("</span>, <span class="string">"尤其"</span>, <span class="string">"法律"</span>, <span class="string">"、"</span>, <span class="string">"医学"</span>, <span class="string">"等"</span>, <span class="string">"领域"</span>, <span class="string">")"</span>, <span class="string">","</span>, <span class="string">"建议"</span>, <span class="string">"您"</span>, <span class="string">"详细"</span>, <span class="string">"咨询"</span>, <span class="string">"相关"</span>, <span class="string">"领域"</span>, <span class="string">"专业人士"</span>, <span class="string">"。"</span>]</span><br><span class="line">		],</span><br><span class="line">		<span class="attr">"paragraphs"</span>: [<span class="string">"微信浏览器中点击链接怎么打开本地app_百度经验<splitter>百度经验:jingyan.baidu.com<splitter>微信已经成为现代人生活中必不可少的一部分,下面我就教大家如何在微信浏览器中打开本地APP吧!<splitter>1将手机微信打开。步骤阅读2打开微信中的链接。步骤阅读3如图我们打开百度经验的链接,用微信浏览器进入网页以后,点击右上方如图符号。步骤阅读4进入选择页面,点击“在浏览器”打开。步骤阅读5如图会出现手机已安装的本地APP浏览器,我们选择一个自己想用的本地浏览器点击下方“仅一次”或“总是”都可以打开打开本地APP浏览器。步骤阅读6此时,我们就已经在微信浏览器中将本地APP浏览器打开了步骤阅读END<splitter>经验内容仅供参考,如果您需解决具体问题(尤其法律、医学等领域),建议您详细咨询相关领域专业人士。"</span>],</span><br><span class="line">		<span class="attr">"segmented_paragraphs_scores"</span>: [<span class="number">1.0</span>],</span><br><span class="line">		<span class="attr">"paragraphs_length"</span>: [<span class="number">189</span>]</span><br><span class="line">	}],</span><br><span class="line">	<span class="attr">"answer_spans"</span>: [</span><br><span class="line">		[<span class="number">47</span>, <span class="number">157</span>]</span><br><span class="line">	],</span><br><span class="line">	<span class="attr">"fake_answers"</span>: [<span class="string">"1将手机微信打开。步骤阅读2打开微信中的链接。步骤阅读3如图我们打开百度经验的链接,用微信浏览器进入网页以后,点击右上方如图符号。步骤阅读4进入选择页面,点击“在浏览器”打开。步骤阅读5如图会出现手机已安装的本地APP浏览器,我们选择一个自己想用的本地浏览器点击下方“仅一次”或“总是”都可以打开打开本地APP浏览器。步骤阅读6此时,我们就已经在微信浏览器中将本地APP浏览器打开了"</span>],</span><br><span class="line">	<span class="attr">"question"</span>: <span class="string">"微信分享链接打开app"</span>,</span><br><span class="line">	<span class="attr">"segmented_answers"</span>: [</span><br><span class="line">		[<span class="string">"iOS"</span>, <span class="string">"里"</span>, <span class="string">"，"</span>, <span class="string">"把"</span>, <span class="string">"一"</span>, <span class="string">"个"</span>, <span class="string">"页面"</span>, <span class="string">"链接"</span>, <span class="string">"分享"</span>, <span class="string">"给"</span>, <span class="string">"微信"</span>, <span class="string">"好友"</span>, <span class="string">"（"</span>, <span class="string">"会话"</span>, <span class="string">"）"</span>, <span class="string">"，"</span>, <span class="string">"好友"</span>, <span class="string">"在"</span>, <span class="string">"微信"</span>, <span class="string">"里"</span>, <span class="string">"打开"</span>, <span class="string">"这个"</span>, <span class="string">"链接"</span>, <span class="string">","</span>, <span class="string">"也"</span>, <span class="string">"就是"</span>, <span class="string">"打开"</span>, <span class="string">"了"</span>, <span class="string">"一"</span>, <span class="string">"个"</span>, <span class="string">"网页"</span>, <span class="string">"，"</span>, <span class="string">"点击"</span>, <span class="string">"网页"</span>, <span class="string">"里"</span>, <span class="string">"的"</span>, <span class="string">"某"</span>, <span class="string">"个"</span>, <span class="string">"地方"</span>, <span class="string">"后"</span>, <span class="string">"（"</span>, <span class="string">"比如"</span>, <span class="string">"网页"</span>, <span class="string">"中"</span>, <span class="string">"“"</span>, <span class="string">"打开"</span>, <span class="string">"xx"</span>, <span class="string">"应用程序"</span>, <span class="string">"”"</span>, <span class="string">"的"</span>, <span class="string">"按钮"</span>, <span class="string">"）"</span>, <span class="string">"，"</span>, <span class="string">"代码"</span>, <span class="string">"里"</span>, <span class="string">"怎么"</span>, <span class="string">"设置"</span>, <span class="string">"可以"</span>, <span class="string">"跳"</span>, <span class="string">"回到"</span>, <span class="string">"第三方"</span>, <span class="string">"app"</span>, <span class="string">"？"</span>, <span class="string">"知乎"</span>, <span class="string">"的"</span>, <span class="string">"ios"</span>, <span class="string">"客户端"</span>, <span class="string">"就"</span>, <span class="string">"有"</span>, <span class="string">"这种"</span>, <span class="string">"功能"</span>, <span class="string">"，"</span>, <span class="string">"在"</span>, <span class="string">"微信"</span>, <span class="string">"里"</span>, <span class="string">"分享"</span>, <span class="string">"链接"</span>, <span class="string">"后"</span>, <span class="string">"，"</span>, <span class="string">"点"</span>, <span class="string">"开"</span>, <span class="string">"链接"</span>, <span class="string">"，"</span>, <span class="string">"再"</span>, <span class="string">"点"</span>, <span class="string">"网页"</span>, <span class="string">"中"</span>, <span class="string">"的"</span>, <span class="string">"某处"</span>, <span class="string">"，"</span>, <span class="string">"就"</span>, <span class="string">"可以"</span>, <span class="string">"打开"</span>, <span class="string">"知乎"</span>, <span class="string">"客户端"</span>, <span class="string">"。"</span>],</span><br><span class="line">		[<span class="string">"1"</span>, <span class="string">"、"</span>, <span class="string">"首先"</span>, <span class="string">"打开"</span>, <span class="string">"腾讯"</span>, <span class="string">"开放"</span>, <span class="string">"平台"</span>, <span class="string">"，"</span>, <span class="string">"注册"</span>, <span class="string">"开放"</span>, <span class="string">"平台"</span>, <span class="string">"的"</span>, <span class="string">"一"</span>, <span class="string">"个"</span>, <span class="string">"账号"</span>, <span class="string">"。"</span>, <span class="string">"2"</span>, <span class="string">"、"</span>, <span class="string">"登录"</span>, <span class="string">"后"</span>, <span class="string">"在"</span>, <span class="string">"”"</span>, <span class="string">"管理"</span>, <span class="string">"中心"</span>, <span class="string">"“"</span>, <span class="string">"中"</span>, <span class="string">"创建"</span>, <span class="string">"应用"</span>, <span class="string">"。"</span>, <span class="string">"3"</span>, <span class="string">"、"</span>, <span class="string">"选择"</span>, <span class="string">"创建"</span>, <span class="string">"应用"</span>, <span class="string">"的"</span>, <span class="string">"类型"</span>, <span class="string">"如"</span>, <span class="string">"下"</span>, <span class="string">"图"</span>, <span class="string">"所示"</span>, <span class="string">"，"</span>, <span class="string">"然后"</span>, <span class="string">"按钮"</span>, <span class="string">"提示"</span>, <span class="string">"填写"</span>, <span class="string">"应用"</span>, <span class="string">"的"</span>, <span class="string">"相关"</span>, <span class="string">"信息"</span>, <span class="string">"，"</span>, <span class="string">"提交"</span>, <span class="string">"进入"</span>, <span class="string">"审核"</span>, <span class="string">"。"</span>, <span class="string">"4"</span>, <span class="string">"、"</span>, <span class="string">"应用"</span>, <span class="string">"审核"</span>, <span class="string">"通过"</span>, <span class="string">"后"</span>, <span class="string">"会"</span>, <span class="string">"在"</span>, <span class="string">"管理"</span>, <span class="string">"中心"</span>, <span class="string">"中"</span>, <span class="string">"显示"</span>, <span class="string">"”"</span>, <span class="string">"已"</span>, <span class="string">"上线"</span>, <span class="string">"“"</span>, <span class="string">"，"</span>, <span class="string">"然后"</span>, <span class="string">"点击"</span>, <span class="string">"应用"</span>, <span class="string">"的"</span>, <span class="string">"图标"</span>, <span class="string">"。"</span>, <span class="string">"5"</span>, <span class="string">"、"</span>, <span class="string">"在"</span>, <span class="string">"应用"</span>, <span class="string">"详情"</span>, <span class="string">"中"</span>, <span class="string">"找到"</span>, <span class="string">"运营"</span>, <span class="string">"服务"</span>, <span class="string">"中"</span>, <span class="string">"的"</span>, <span class="string">"”"</span>, <span class="string">"微"</span>, <span class="string">"下载"</span>, <span class="string">"“"</span>, <span class="string">"。"</span>, <span class="string">"6"</span>, <span class="string">"、"</span>, <span class="string">"在"</span>, <span class="string">"详情"</span>, <span class="string">"页面"</span>, <span class="string">"中"</span>, <span class="string">"就"</span>, <span class="string">"可以"</span>, <span class="string">"看到"</span>, <span class="string">"系统"</span>, <span class="string">"生成"</span>, <span class="string">"的"</span>, <span class="string">"推广"</span>, <span class="string">"链接地址"</span>, <span class="string">"了"</span>, <span class="string">"，"</span>, <span class="string">"复制"</span>, <span class="string">"此"</span>, <span class="string">"地址"</span>, <span class="string">"就"</span>, <span class="string">"可以"</span>, <span class="string">"微信"</span>, <span class="string">"中"</span>, <span class="string">"转发"</span>, <span class="string">"了"</span>, <span class="string">"。"</span>],</span><br><span class="line">		[<span class="string">"1"</span>, <span class="string">"将"</span>, <span class="string">"手机"</span>, <span class="string">"微信"</span>, <span class="string">"打开"</span>, <span class="string">"。"</span>, <span class="string">"2"</span>, <span class="string">"打开"</span>, <span class="string">"微信"</span>, <span class="string">"中"</span>, <span class="string">"的"</span>, <span class="string">"链接"</span>, <span class="string">"。"</span>, <span class="string">"3"</span>, <span class="string">"我们"</span>, <span class="string">"打开"</span>, <span class="string">"百度"</span>, <span class="string">"经验"</span>, <span class="string">"的"</span>, <span class="string">"链接"</span>, <span class="string">"，"</span>, <span class="string">"用"</span>, <span class="string">"微信"</span>, <span class="string">"浏览器"</span>, <span class="string">"进入"</span>, <span class="string">"网页"</span>, <span class="string">"以后"</span>, <span class="string">"，"</span>, <span class="string">"点击"</span>, <span class="string">"右"</span>, <span class="string">"上方"</span>, <span class="string">"如图"</span>, <span class="string">"符号"</span>, <span class="string">"。"</span>, <span class="string">"4"</span>, <span class="string">"进入"</span>, <span class="string">"选择"</span>, <span class="string">"页面"</span>, <span class="string">"，"</span>, <span class="string">"点击"</span>, <span class="string">"“"</span>, <span class="string">"在"</span>, <span class="string">"浏览器"</span>, <span class="string">"”"</span>, <span class="string">"打开"</span>, <span class="string">"。"</span>, <span class="string">"5"</span>, <span class="string">"出现"</span>, <span class="string">"手机"</span>, <span class="string">"已"</span>, <span class="string">"安装"</span>, <span class="string">"的"</span>, <span class="string">"本地"</span>, <span class="string">"APP"</span>, <span class="string">"浏览器"</span>, <span class="string">"，"</span>, <span class="string">"我们"</span>, <span class="string">"选择"</span>, <span class="string">"一"</span>, <span class="string">"个"</span>, <span class="string">"自己"</span>, <span class="string">"想"</span>, <span class="string">"用"</span>, <span class="string">"的"</span>, <span class="string">"本地"</span>, <span class="string">"浏览器"</span>, <span class="string">"点击"</span>, <span class="string">"下方"</span>, <span class="string">"“"</span>, <span class="string">"仅"</span>, <span class="string">"一次"</span>, <span class="string">"”"</span>, <span class="string">"或"</span>, <span class="string">"“"</span>, <span class="string">"总是"</span>, <span class="string">"”"</span>, <span class="string">"都"</span>, <span class="string">"可以"</span>, <span class="string">"打开"</span>, <span class="string">"打开"</span>, <span class="string">"本地"</span>, <span class="string">"APP"</span>, <span class="string">"浏览器"</span>, <span class="string">"。"</span>, <span class="string">"6"</span>, <span class="string">"此时"</span>, <span class="string">"，"</span>, <span class="string">"我们"</span>, <span class="string">"就"</span>, <span class="string">"已经"</span>, <span class="string">"在"</span>, <span class="string">"微信"</span>, <span class="string">"浏览器"</span>, <span class="string">"中将"</span>, <span class="string">"本地"</span>, <span class="string">"APP"</span>, <span class="string">"浏览器"</span>, <span class="string">"打开"</span>, <span class="string">"了"</span>, <span class="string">"。"</span>]</span><br><span class="line">	],</span><br><span class="line">	<span class="attr">"answers"</span>: [<span class="string">"iOS里，把一个页面链接分享给微信好友（会话），好友在微信里打开这个链接,也就是打开了一个网页，点击网页里的某个地方后（比如网页中“打开xx应用程序”的按钮），代码里怎么设置可以跳回到第三方app？知乎的ios客户端就有这种功能，在微信里分享链接后，点开链接，再点网页中的某处，就可以打开知乎客户端 。"</span>, <span class="string">"1、首先打开腾讯开放平台，注册开放平台的一个账号。2、登录后在”管理中心“中创建应用。3、选择创建应用的类型如下图所示，然后按钮提示填写应用的相关信息，提交进入审核。4、应用审核通过后会在管理中心中显示”已上线“，然后点击应用的图标。5、在应用详情中找到运营服务中的”微下载“。6、在详情页面中就可以看到系统生成的推广链接地址了，复制此地址就可以微信中转发了。"</span>, <span class="string">"1将手机微信打开。2打开微信中的链接。3我们打开百度经验的链接，用微信浏览器进入网页以后，点击右上方如图符号。4进入选择页面，点击“在浏览器”打开。5出现手机已安装的本地APP浏览器，我们选择一个自己想用的本地浏览器点击下方“仅一次”或“总是”都可以打开打开本地APP浏览器。6此时，我们就已经在微信浏览器中将本地APP浏览器打开了。"</span>],</span><br><span class="line">	<span class="attr">"answer_docs"</span>: [<span class="number">4</span>],</span><br><span class="line">	<span class="attr">"segmented_question"</span>: [<span class="string">"微信"</span>, <span class="string">"分享"</span>, <span class="string">"链接"</span>, <span class="string">"打开"</span>, <span class="string">"app"</span>],</span><br><span class="line">	<span class="attr">"question_type"</span>: <span class="string">"DESCRIPTION"</span>,</span><br><span class="line">	<span class="attr">"match_scores"</span>: [<span class="number">0.8815165876777251</span>],</span><br><span class="line">	<span class="attr">"fact_or_opinion"</span>: <span class="string">"FACT"</span>,</span><br><span class="line">    <span class="attr">"question_id"</span>: <span class="number">91159</span></span><br><span class="line">    }</span><br></pre></td></tr></tbody></table></figure>
+<a id="more"></a>
+<h3 id="官方介绍" class="heading-control"><a href="#官方介绍" class="headerlink" title="官方介绍"></a>官方介绍<a class="heading-anchor" href="#官方介绍" aria-hidden="true"></a></h3><p>一些官方的介绍：<a target="_blank" rel="noopener" href="http://ai.baidu.com/broad/download?dataset=dureader">http://ai.baidu.com/broad/download?dataset=dureader</a></p>
+<p>DuReader version 2.0 contains more than 300K question, 1.4M evidence documents and 660K human generated answers.</p>
+<p>There are 3 question types in the dataset. Below is data statistics of each question type:<br><img src="https://s2.ax1x.com/2019/11/01/K7PCND.png" alt="K7PCND.png"></p>
+<p>We here provide 2 packages to download, each of them contains train set, development set and test set.  DuReader_v2.0_raw.zip is the original DuReader Dataset, DuReader_v2.0_preprocess.zip is the preprocessed version of  DuReader_v2.0_raw.zip, the preprocessing includes word segmentation, best match paragraph targeting, answer span locating.<br>See readme included with this package for more details</p>
+<p>To get started, please refer to:</p>
+<ul>
+<li>Paper :DuReader: a Chinese Machine Reading Comprehension Dataset Built upon Real-world Applications.</li>
+<li>Open source baseline system:<a target="_blank" rel="noopener" href="https://github.com/baidu/DuReader">https://github.com/baidu/DuReader</a>.</li>
+</ul>
+<h3 id="论文介绍" class="heading-control"><a href="#论文介绍" class="headerlink" title="论文介绍"></a>论文介绍<a class="heading-anchor" href="#论文介绍" aria-hidden="true"></a></h3><p>百度在 2017 年发布了大规模的中文 MRC 数据集：DuReader。相比以前的 MRC 数据集，DuReader 有以下特点：</p>
+<ul>
+<li>所有的问题、原文都来源于实际数据（百度搜索引擎数据和百度知道问答社区），答案是由人类回答的。</li>
+<li>数据集中包含大量的之前很少研究的是非和观点类的样本。</li>
+<li>每个问题都对应多个答案，数据集包含 200k 问题、1000k 原文和 420k 答案，是目前最大的中文 MRC 数据集。</li>
+</ul>
+<p>根据答案类型，DuReader 将问题分为：Entity（实体）、Description（描述）和 YesNo（是非）。</p>
+<p>对于实体类问题，其答案一般是单一确定的回答，比如：iPhone 是哪天发布？</p>
+<p>对于描述类问题，其答案一般较长，是多个句子的总结，典型的 how/why 类型的问题，比如：消防车为什么是红的？</p>
+<p>对于是非类问题，其答案往往较简单，是或者否，比如：39.5 度算高烧吗？</p>
+<p>同时，无论将问题分类以上哪种类型都可以进一步细分为是事实（Fact）类还是观点（Opinion）类。</p>
+</body></html>
+    </div>
+
+    
+    
+    
+      
+
+        <div class="reward-container">
+  <div>支持一根棒棒糖！</div>
+  <button onclick="var qr = document.getElementById('qr'); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+    Donate
+  </button>
+  <div id="qr" style="display: none;">
+      
+      <div style="display: inline-block;">
+        <img src="/images/wechatpay.png" alt="Sun Yan WeChat Pay">
+        <p>WeChat Pay</p>
+      </div>
+      
+      <div style="display: inline-block;">
+        <img src="/images/alipay.png" alt="Sun Yan Alipay">
+        <p>Alipay</p>
+      </div>
+
+  </div>
+</div>
+
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>Post author:  </strong>Sun Yan
+  </li>
+  <li class="post-copyright-link">
+    <strong>Post link: </strong>
+    <a href="http://sunyancn.github.io/2019/11/02/Dureader%E6%95%B0%E6%8D%AE%E9%9B%86/" title="Dureader 数据集">http://sunyancn.github.io/2019/11/02/Dureader数据集/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> unless stating additionally.
+  </li>
+</ul>
+</div>
+
+
+      <footer class="post-footer">
+          
+          <div class="post-tags">
+              <a href="/tags/Dureader/" rel="tag"><i class="fa fa-tag"></i> Dureader</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2019/11/02/nohup%E8%AF%A6%E8%A7%A3/" rel="prev" title="nohup 详解">
+      <i class="fa fa-chevron-left"></i> nohup 详解
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2019/11/02/HEXO%E5%8D%9A%E5%AE%A2%E8%BF%81%E7%A7%BB%E7%9A%84%E6%AD%A5%E9%AA%A4/" rel="next" title="HEXO 博客迁移的步骤">
+      HEXO 博客迁移的步骤 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+    <script type="text/javascript" src="/js/linkcard.js"></script>
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    <div class="comments" id="valine-comments"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Dureader%E6%95%B0%E6%8D%AE%E9%9B%86"><span class="nav-number">1.</span> <span class="nav-text">Dureader 数据集</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E7%A4%BA%E4%BE%8B"><span class="nav-number">1.1.</span> <span class="nav-text">数据示例</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%98%E6%96%B9%E4%BB%8B%E7%BB%8D"><span class="nav-number">1.2.</span> <span class="nav-text">官方介绍</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AE%BA%E6%96%87%E4%BB%8B%E7%BB%8D"><span class="nav-number">1.3.</span> <span class="nav-text">论文介绍</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Sun Yan"
+      src="https://i.loli.net/2020/08/25/NrIpckD9qPLY38C.jpg">
+  <p class="site-author-name" itemprop="name">Sun Yan</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">102</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">12</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">69</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/sunyancn" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;sunyancn" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:sunyanhust@163.com" title="E-Mail → mailto:sunyanhust@163.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/atom.xml" title="RSS → &#x2F;atom.xml"><i class="fas fa-rss fa-fw"></i>RSS</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://weibo.com/u/5270232660" title="Weibo → https:&#x2F;&#x2F;weibo.com&#x2F;u&#x2F;5270232660" rel="noopener" target="_blank"><i class="fab fa-weibo fa-fw"></i>Weibo</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 2015 – 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Sun Yan</span>
+</div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script size="300" alpha="0.6" zIndex="-1" src="//cdn.jsdelivr.net/gh/theme-next/theme-next-canvas-ribbon@1/canvas-ribbon.js"></script>
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+<script src="/js/bookmark.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+<div id="needsharebutton-float">
+      <span class="btn">
+        <i class="fa fa-share-alt" aria-hidden="true"></i>
+      </span>
+    </div>
+  <script src="//cdn.jsdelivr.net/gh/theme-next/theme-next-needmoreshare2@1/needsharebutton.min.js"></script>
+  <script>
+      flOptions = {};
+        flOptions.iconStyle = "box";
+        flOptions.boxForm = "horizontal";
+        flOptions.position = "middleRight";
+        flOptions.networks = "Weibo,Wechat,Douban,QQZone,Twitter,Facebook";
+      new needShareButton('#needsharebutton-float', flOptions);
+  </script>
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/valine@1/dist/Valine.min.js', () => {
+    var GUEST = ['nick', 'mail', 'link'];
+    var guest = 'nick,mail';
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
+    });
+    new Valine({
+      el         : '#valine-comments',
+      verify     : false,
+      notify     : false,
+      appId      : 'IAIsNxUL4BLqJ2c4nTn8HlLv-gzGzoHsz',
+      appKey     : '73p5IVTPonVrJhOylbVtJffi',
+      placeholder: "(๑•́ ₃ •̀๑) 留言时填写您的邮箱可以邮件收到博主的回复噢~",
+      avatar     : 'wavatar',
+      meta       : guest,
+      pageSize   : '10' || 10,
+      visitor    : false,
+      lang       : '' || 'zh-cn',
+      path       : location.pathname,
+      recordIP   : true,
+      serverURLs : ''
+    });
+  }, window.Valine);
+});
+</script>
+
+</body>
+</html>

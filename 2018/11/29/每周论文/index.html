@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.1.1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Noto Serif SC:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"sunyancn.github.io","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"valine","storage":true,"lazyload":false,"nav":null,"activeClass":"valine"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta property="og:type" content="article">
+<meta property="og:title" content="每周论文">
+<meta property="og:url" content="http://sunyancn.github.io/2018/11/29/%E6%AF%8F%E5%91%A8%E8%AE%BA%E6%96%87/index.html">
+<meta property="og:site_name" content="故事尾音">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://i.loli.net/2018/11/29/5bffec15c0d38.jpeg">
+<meta property="article:published_time" content="2018-11-29T12:13:21.000Z">
+<meta property="article:modified_time" content="2020-08-26T17:27:02.231Z">
+<meta property="article:author" content="Sun Yan">
+<meta property="article:tag" content="论文">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.loli.net/2018/11/29/5bffec15c0d38.jpeg">
+
+<link rel="canonical" href="http://sunyancn.github.io/2018/11/29/%E6%AF%8F%E5%91%A8%E8%AE%BA%E6%96%87/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+<link rel="stylesheet" href="//cdn.jsdelivr.net/gh/theme-next/theme-next-needmoreshare2@1/needsharebutton.min.css"><style>
+#needsharebutton-float {
+  bottom: 88px;
+  cursor: pointer;
+  left: -8px;
+  position: fixed;
+  z-index: 9999;
+}
+#needsharebutton-float .btn {
+  border: 1px solid $btn-default-border-color;
+  border-radius: 4px;
+  padding: 0 10px 0 14px;
+}
+</style><script src="/lib/fireworks.js"></script>
+  <title>每周论文 | 故事尾音</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="故事尾音" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">故事尾音</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">喜欢推导也喜欢被推倒</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+        <li class="menu-item menu-item-music">
+
+    <a href="/music/" rel="section"><i class="fa fa-music fa-fw"></i>music</a>
+
+  </li>
+        <li class="menu-item menu-item-shuoshuo">
+
+    <a href="/shuoshuo/" rel="section"><i class="fa fa-heartbeat fa-fw"></i>shuoshuo</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://sunyancn.github.io/2018/11/29/%E6%AF%8F%E5%91%A8%E8%AE%BA%E6%96%87/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://i.loli.net/2020/08/25/NrIpckD9qPLY38C.jpg">
+      <meta itemprop="name" content="Sun Yan">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="故事尾音">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          每周论文
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2018-11-29 20:13:21" itemprop="dateCreated datePublished" datetime="2018-11-29T20:13:21+08:00">2018-11-29</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-08-27 01:27:02" itemprop="dateModified" datetime="2020-08-27T01:27:02+08:00">2020-08-27</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E8%AE%BA%E6%96%87/" itemprop="url" rel="index"><span itemprop="name">论文</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine: </span>
+    
+    <a title="valine" href="/2018/11/29/%E6%AF%8F%E5%91%A8%E8%AE%BA%E6%96%87/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2018/11/29/%E6%AF%8F%E5%91%A8%E8%AE%BA%E6%96%87/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <html><head></head><body><p><img src="https://i.loli.net/2018/11/29/5bffec15c0d38.jpeg" alt="pexels-photo-933964.jpeg"><br><a id="more"></a></p>
+<h2 id="第一周" class="heading-control"><a href="#第一周" class="headerlink" title="第一周"></a>第一周<a class="heading-anchor" href="#第一周" aria-hidden="true"></a></h2><ol>
+<li><p><a target="_blank" rel="noopener" href="https://www.paperweekly.site/papers/2520">An Introductory Survey on Attention Mechanisms in NLP Problems</a><br><strong>标签</strong>：Attention 综述<br>本文来自佐治亚理工学院，这是一篇 Attention 机制在自然语言处理方面的综述文章，包括基本概念和 Attention 在不同 NLP 任务上的模型变种。</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://www.paperweekly.site/papers/2524">LiveBot: Generating Live Video Comments Based on Visual and Textual Contexts</a><br><strong>标签</strong>：弹幕生成<br>本文是北京大学孙栩老师组和微软亚洲研究院发表在 AAAI 2019 上的工作。文章介绍了 “弹幕生成” 任务，根据一定时间范围内的视频帧和评论文本进行弹幕评论的生成，并且构建了基于 B 站的数据集。<br>通过对数据集的分析发现：弹幕评论长度较短；相邻时间间隔的评论具有较高的关联度。基于此，文章先是利用传统的 Seq2Seq 架构，设计了 Video Encoder 和 Text Encoder 进行图像和文字信息的融合，再交由 Comment Decoder 进行生成；进一步地，利用 Transformer 替代 RNN Encoder，提出了一个 Unified Transformer Model。<br>并且，为了更好的评估模型的性能，文章提出了一个基于生成概率对候选评论进行排序的指标，对比之前的 Seq2Seq 模型，文章提出的两个模型能够取得更好的效果。</p>
+</li>
+<li><a target="_blank" rel="noopener" href="https://www.paperweekly.site/papers/2519">Contextual String Embeddings for Sequence Labeling</a><br><strong>标签</strong>：Word Embeddings<br><strong>源码</strong>:<a target="_blank" rel="noopener" href="https://github.com/zalandoresearch/flair">https://github.com/zalandoresearch/flair</a><br>本文是 Zalando Research 发表于 COLING 2018 的工作，论文提出了一种全新产生 embedding 的 BiLSTM 模型结构，模型特点：<br>模型以 character 为原子单位，在网络中，每个 character 都有一个对应的 hidden state。这个特点对需要多一步分词的中文来说可能有避免因为分词错误导致下游 function 继续错误的弊端；<br>输出以 word 为单位的 embedding，这个 embedding 由前向 LSTM 中，该词最后一个字母的 hidden state 和反向 LSTM 中该词第一个字母的 hidden state 拼接组成，这样就能够兼顾上下文信息。<br>这种动态 embedding 的方法在序列标注上取得了良好效果，特别值得一提的是，在 NER 上的表现甚至超越了 BERT，但训练成本只是一个 GPU 一周，训练数据在十亿个词量，与 BERT 相比对硬件的要求极大降低，训练成本的大幅减少却仍有性能上的提升，动态 embedding 的思路值得借鉴和尝试。</li>
+<li><a target="_blank" rel="noopener" href="https://www.paperweekly.site/papers/2545">Discriminative Deep Dyna-Q: Robust Planning for Dialogue Policy Learning</a><br><strong>标签</strong>：Dialog Systems<br><strong>源码</strong>：<a target="_blank" rel="noopener" href="https://github.com/MiuLab/DDQ">https://github.com/MiuLab/DDQ</a><br>本文是微软和台湾大学发表于 ACL 2018 的工作，论文提出了一种针对任务型对话系统的学习方式 ——Deep Dyna-Q，在仅使用少量真实用户交互数据的前提下，基于集成规划的方法进行对话策略学习。作者将 world model 引入对话 agent，模仿真实的用户响应并不断学习生成模拟的用户对话，利用真实和模拟的对话经验对 agent 进行优化。</li>
+<li><a target="_blank" rel="noopener" href="https://www.paperweekly.site/papers/2522">Learning Personalized End-to-End Goal-Oriented Dialog</a><br><strong>标签</strong>：Goal-Oriented Dialog<br>本文是微软亚洲研究院和北京大学孙栩组共同完成即将发表在 AAAI 2019 的工作。为对话系统引入个性化是今年对话领域最为火热的研究方向之一。此前有一些工作研究在开放式对话（chitchat）中引入个性化，使得对话生成中可以包含一定的对话者身份的信息，使对话质量更高。而本文关注在鲜有人研究且更加困难的任务型对话领域，探索如何能针对用户的不同身份采取不同的对话策略，提高任务完成率和用户满意度。<br>本文提出了 Personalized MemN2N 模型，引入 profile embedding，并在对话模型和 KB 之间建立联系，有效地提升了对话系统质量，达到任务型对话个性化数据集上新的 state-of-the-art。在针对任务型研究较少的环境下，这一工作具有非常高的参考价值。</li>
+</ol>
+</body></html>
+    </div>
+
+    
+    
+    
+      
+  <div class="popular-posts-header">相关文章推荐</div>
+  <ul class="popular-posts">
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\2019\11\04\ACL2020-paper相关论文\" rel="bookmark">ACL2020 paper 相关论文</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\2019\11\15\Machine-Reading-Comprehension文章阅读\" rel="bookmark">Machine Reading Comprehension 文章阅读</a></div>
+    </li>
+  </ul>
+
+        <div class="reward-container">
+  <div>支持一根棒棒糖！</div>
+  <button onclick="var qr = document.getElementById('qr'); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+    Donate
+  </button>
+  <div id="qr" style="display: none;">
+      
+      <div style="display: inline-block;">
+        <img src="/images/wechatpay.png" alt="Sun Yan WeChat Pay">
+        <p>WeChat Pay</p>
+      </div>
+      
+      <div style="display: inline-block;">
+        <img src="/images/alipay.png" alt="Sun Yan Alipay">
+        <p>Alipay</p>
+      </div>
+
+  </div>
+</div>
+
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>Post author:  </strong>Sun Yan
+  </li>
+  <li class="post-copyright-link">
+    <strong>Post link: </strong>
+    <a href="http://sunyancn.github.io/2018/11/29/%E6%AF%8F%E5%91%A8%E8%AE%BA%E6%96%87/" title="每周论文">http://sunyancn.github.io/2018/11/29/每周论文/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> unless stating additionally.
+  </li>
+</ul>
+</div>
+
+
+      <footer class="post-footer">
+          
+          <div class="post-tags">
+              <a href="/tags/%E8%AE%BA%E6%96%87/" rel="tag"><i class="fa fa-tag"></i> 论文</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2018/11/28/%E5%9C%A8Pypi%E4%B8%8A%E5%8F%91%E8%A1%A8%E8%87%AA%E5%B7%B1%E7%9A%84Python%E5%BA%93/" rel="prev" title="在 Pypi 上发表自己的 Python 库">
+      <i class="fa fa-chevron-left"></i> 在 Pypi 上发表自己的 Python 库
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2018/11/29/%E8%AF%8D%E5%90%91%E9%87%8F%E7%9A%84%E6%96%B0%E8%BF%9B%E5%B1%95/" rel="next" title="词向量的新进展">
+      词向量的新进展 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+    <script type="text/javascript" src="/js/linkcard.js"></script>
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    <div class="comments" id="valine-comments"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC%E4%B8%80%E5%91%A8"><span class="nav-number">1.</span> <span class="nav-text">第一周</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Sun Yan"
+      src="https://i.loli.net/2020/08/25/NrIpckD9qPLY38C.jpg">
+  <p class="site-author-name" itemprop="name">Sun Yan</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">102</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">12</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">69</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/sunyancn" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;sunyancn" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:sunyanhust@163.com" title="E-Mail → mailto:sunyanhust@163.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/atom.xml" title="RSS → &#x2F;atom.xml"><i class="fas fa-rss fa-fw"></i>RSS</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://weibo.com/u/5270232660" title="Weibo → https:&#x2F;&#x2F;weibo.com&#x2F;u&#x2F;5270232660" rel="noopener" target="_blank"><i class="fab fa-weibo fa-fw"></i>Weibo</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 2015 – 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Sun Yan</span>
+</div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script size="300" alpha="0.6" zIndex="-1" src="//cdn.jsdelivr.net/gh/theme-next/theme-next-canvas-ribbon@1/canvas-ribbon.js"></script>
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+<script src="/js/bookmark.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+<div id="needsharebutton-float">
+      <span class="btn">
+        <i class="fa fa-share-alt" aria-hidden="true"></i>
+      </span>
+    </div>
+  <script src="//cdn.jsdelivr.net/gh/theme-next/theme-next-needmoreshare2@1/needsharebutton.min.js"></script>
+  <script>
+      flOptions = {};
+        flOptions.iconStyle = "box";
+        flOptions.boxForm = "horizontal";
+        flOptions.position = "middleRight";
+        flOptions.networks = "Weibo,Wechat,Douban,QQZone,Twitter,Facebook";
+      new needShareButton('#needsharebutton-float', flOptions);
+  </script>
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/valine@1/dist/Valine.min.js', () => {
+    var GUEST = ['nick', 'mail', 'link'];
+    var guest = 'nick,mail';
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
+    });
+    new Valine({
+      el         : '#valine-comments',
+      verify     : false,
+      notify     : false,
+      appId      : 'IAIsNxUL4BLqJ2c4nTn8HlLv-gzGzoHsz',
+      appKey     : '73p5IVTPonVrJhOylbVtJffi',
+      placeholder: "(๑•́ ₃ •̀๑) 留言时填写您的邮箱可以邮件收到博主的回复噢~",
+      avatar     : 'wavatar',
+      meta       : guest,
+      pageSize   : '10' || 10,
+      visitor    : false,
+      lang       : '' || 'zh-cn',
+      path       : location.pathname,
+      recordIP   : true,
+      serverURLs : ''
+    });
+  }, window.Valine);
+});
+</script>
+
+</body>
+</html>
