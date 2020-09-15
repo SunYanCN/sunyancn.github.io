@@ -964,13 +964,6 @@ pre .javascript .function {
   min-height: 100%;
   position: relative;
 }
-body {
-  background: url("https://s2.ax1x.com/2019/09/12/nBFb28.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-position: 50% 50%;
-}
 .main-inner {
   margin: 0 auto;
   width: calc(100% - 20px);
@@ -1252,7 +1245,7 @@ body {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #b3982f;
+  background: #fff0ff;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
