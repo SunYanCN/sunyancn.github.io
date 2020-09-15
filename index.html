@@ -242,16 +242,10 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
+              
 
-              <time title="Created: 2020-09-15 14:13:35" itemprop="dateCreated datePublished" datetime="2020-09-15T14:13:35+08:00">2020-09-15</time>
+              <time title="Created: 2020-09-15 14:13:35 / Modified: 21:33:03" itemprop="dateCreated datePublished" datetime="2020-09-15T14:13:35+08:00">2020-09-15</time>
             </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-09-14 15:13:26" itemprop="dateModified" datetime="2020-09-14T15:13:26+08:00">2020-09-14</time>
-              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -275,38 +269,17 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <html><head></head><body><p>本文基于的 Hexo 版本：5.1.1，Next 主题版本：7.8.0，较低版本可能不适用，操作系统为 Windows。本文参考了很多博主的文章，在每一节结尾都有注明。</p>
-<h2 id="环境准备" class="heading-control"><a href="#环境准备" class="headerlink" title="环境准备"></a>环境准备<a class="heading-anchor" href="#环境准备" aria-hidden="true"></a></h2><h3 id="Git安装" class="heading-control"><a href="#Git安装" class="headerlink" title="Git安装"></a>Git 安装<a class="heading-anchor" href="#Git安装" aria-hidden="true"></a></h3><p>我这里是直接下载的 cmder full 版本，已经包含 git 了。</p>
+          <p>本文基于的 Hexo 版本：5.1.1，Next 主题版本：7.8.0，较低版本可能不适用，操作系统为 Windows。本文参考了很多博主的文章，在每一节结尾都有注明。</p>
+<h2 id="环境准备"><a href="#环境准备" class="headerlink" title="环境准备"></a>环境准备</h2><h3 id="Git安装"><a href="#Git安装" class="headerlink" title="Git安装"></a>Git 安装</h3><p>我这里是直接下载的 cmder full 版本，已经包含 git 了。</p>
 <p><img src="https://i.loli.net/2020/09/13/R2Sg5ImVv87TLEK.png" alt="Mmmm Monokai." style="zoom:50%;"></p>
-<p>下载解压后，打开 cmder.exe，输入 <code>git --version</code> 检查 git 是否安装好了。</p>
-<p><img src="https://i.loli.net/2020/09/13/ef4wys1ioUBnHc3.png" alt="image-20200913174328818"></p>
-<h3 id="Node-js安装" class="heading-control"><a href="#Node-js安装" class="headerlink" title="Node.js安装"></a>Node.js 安装<a class="heading-anchor" href="#Node-js安装" aria-hidden="true"></a></h3><p>Windows 下载并安装。</p>
-<p><a target="_blank" rel="noopener" href="https://nodejs.org/en/" name="https://blog.butanediol.me/media/avatar.png" class="LinkCard">Node.js 下载</a></p>
-<h2 id="Hexo安装" class="heading-control"><a href="#Hexo安装" class="headerlink" title="Hexo安装"></a>Hexo 安装<a class="heading-anchor" href="#Hexo安装" aria-hidden="true"></a></h2><h2 id="Hexo进阶语法" class="heading-control"><a href="#Hexo进阶语法" class="headerlink" title="Hexo进阶语法"></a>Hexo 进阶语法<a class="heading-anchor" href="#Hexo进阶语法" aria-hidden="true"></a></h2><h2 id="MathJax" class="heading-control"><a href="#MathJax" class="headerlink" title="MathJax"></a>MathJax<a class="heading-anchor" href="#MathJax" aria-hidden="true"></a></h2><script type="math/tex; mode=display">
-\frac{1}{m}\lg C=\frac{1}{n}\left(\sum_{i=1}^n{Y_i+\frac{1}{m}\sum_{i=1}^n{X_i}}\right)</script><h2 id="abbrlink永久链接" class="heading-control"><a href="#abbrlink永久链接" class="headerlink" title="abbrlink永久链接"></a>abbrlink 永久链接<a class="heading-anchor" href="#abbrlink永久链接" aria-hidden="true"></a></h2><p>安装 hexo-abbrlink 插件</p>
-<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-abbrlink --save</span><br></pre></td></tr></tbody></table></figure>
-<p>修改站点配置文件里的 <code>permalink: :year/:month/:day/:title/</code> 为:</p>
-<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">permalink: post/:abbrlink.html</span><br><span class="line">abbrlink:</span><br><span class="line">  alg: crc32  # 算法：crc16(default) and crc32</span><br><span class="line">  rep: hex    # 进制：dec(default) and hex</span><br></pre></td></tr></tbody></table></figure>
-<p>生成完后，原 <code>md</code> 文件的 Front-matter 内会增加 <code>abbrlink</code> 字段，值为生成的 ID 。这个字段确保了在我们修改了 Front-matter 内的博客标题 title 或创建日期 date 字段之后而不会改变链接地址。</p>
-<p>参考文章</p>
-<ol>
-<li><a target="_blank" rel="noopener" href="http://www.adanblog.com/hexo/6962f19.html">hexo 的永久链接之 abbrlink</a></li>
-<li><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/c7de2ae59975">Hexo-abbrlink 生成唯一永久文章链接</a></li>
-</ol>
-<h2 id="链接" class="heading-control"><a href="#链接" class="headerlink" title="链接"></a>链接<a class="heading-anchor" href="#链接" aria-hidden="true"></a></h2><p><a target="_blank" rel="noopener" href="https://blog.butanediol.me" name="https://blog.butanediol.me/media/avatar.png" class="LinkCard">一个测试链接</a></p>
-<h2 id="背景图片" class="heading-control"><a href="#背景图片" class="headerlink" title="背景图片"></a>背景图片<a class="heading-anchor" href="#背景图片" aria-hidden="true"></a></h2><p>在 <code>blog\themes\next\source\css\_common\outline\outline.styl</code> 中添加代码。</p>
-<figure class="highlight css"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">body</span> {</span><br><span class="line">  <span class="attribute">background</span>: <span class="built_in">url</span>(<span class="string">"https://s2.ax1x.com/2019/09/12/nBFb28.jpg"</span>);</span><br><span class="line">  <span class="attribute">background-size</span>: cover;</span><br><span class="line">  <span class="attribute">background-repeat</span>: no-repeat;</span><br><span class="line">  <span class="attribute">background-attachment</span>: fixed;</span><br><span class="line">  <span class="attribute">background-position</span>: <span class="number">50%</span> <span class="number">50%</span>;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
-<h2 id="DaoVoice-在线联系" class="heading-control"><a href="#DaoVoice-在线联系" class="headerlink" title="DaoVoice 在线联系"></a>DaoVoice 在线联系<a class="heading-anchor" href="#DaoVoice-在线联系" aria-hidden="true"></a></h2><p>参考：</p>
-<ol>
-<li><a target="_blank" rel="noopener" href="http://shenzekun.cn/hexo%E7%9A%84next%E4%B8%BB%E9%A2%98%E4%B8%AA%E6%80%A7%E5%8C%96%E9%85%8D%E7%BD%AE%E6%95%99%E7%A8%8B.html">hexo 的 next 主题个性化配置教程.html</a></li>
-<li><a target="_blank" rel="noopener" href="http://www.guaini.blog/archives/2426.html">hexo 博客美化之安装 DaoVoice 实现在线聊天功能</a></li>
-</ol>
-<h2 id="自定义友链页面" class="heading-control"><a href="#自定义友链页面" class="headerlink" title="自定义友链页面"></a>自定义友链页面<a class="heading-anchor" href="#自定义友链页面" aria-hidden="true"></a></h2><p>参考：</p>
-<ol>
-<li><a target="_blank" rel="noopener" href="http://www.guaini.blog/archives/13407.html">hexo 博客美化之自定义友链页面</a></li>
-<li></li>
-</ol>
-</body></html>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/post/16107.html#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 

@@ -6,7 +6,7 @@
   <link href="http://sunyancn.github.io/atom.xml" rel="self"/>
   
   <link href="http://sunyancn.github.io/"/>
-  <updated>2020-09-14T07:13:26.442Z</updated>
+  <updated>2020-09-15T13:33:03.737Z</updated>
   <id>http://sunyancn.github.io/</id>
   
   <author>
@@ -21,16 +21,12 @@
     <link href="http://sunyancn.github.io/post/16107.html"/>
     <id>http://sunyancn.github.io/post/16107.html</id>
     <published>2020-09-15T06:13:35.315Z</published>
-    <updated>2020-09-14T07:13:26.442Z</updated>
+    <updated>2020-09-15T13:33:03.737Z</updated>
     
     
-      
-      
-        
-        
-    <summary type="html">&lt;html&gt;&lt;head&gt;&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script</summary>
-        
-      
+    <summary type="html">&lt;p&gt;本文基于的 Hexo 版本：5.1.1，Next 主题版本：7.8.0，较低版本可能不适用，操作系统为 Windows。本文参考了很多博主的文章，在每一节结尾都有注明。&lt;/p&gt;
+&lt;h2 id=&quot;环境准备&quot;&gt;&lt;a href=&quot;#环境准备&quot; class=&quot;headerlink&quot; title=&quot;环境准备&quot;&gt;&lt;/a&gt;环境准备&lt;/h2&gt;&lt;h3 id=&quot;Git安装&quot;&gt;&lt;a href=&quot;#Git安装&quot; class=&quot;headerlink&quot; title=&quot;Git安装&quot;&gt;&lt;/a&gt;Git 安装&lt;/h3&gt;&lt;p&gt;我这里是直接下载的 cmder full 版本，已经包含 git 了。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://i.loli.net/2020/09/13/R2Sg5ImVv87TLEK.png&quot; alt=&quot;Mmmm Monokai.&quot; style=&quot;zoom:50%;&quot;&gt;&lt;/p&gt;</summary>
     
     
     
