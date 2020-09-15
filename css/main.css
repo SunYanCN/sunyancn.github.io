@@ -178,7 +178,7 @@ body {
   background: var(--body-bg-color);
   color: var(--text-color);
   font-family: 'Noto Serif SC', "PingFang SC", "Microsoft YaHei", sans-serif;
-  font-size: 1em;
+  font-size: 0.875em;
   line-height: 2;
 }
 @media (max-width: 991px) {
@@ -964,6 +964,13 @@ pre .javascript .function {
   min-height: 100%;
   position: relative;
 }
+body {
+  background: url("https://s2.ax1x.com/2019/09/12/nBFb28.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: 50% 50%;
+}
 .main-inner {
   margin: 0 auto;
   width: calc(100% - 20px);
@@ -1108,7 +1115,7 @@ pre .javascript .function {
 .menu-item span.exturl {
   border-bottom: 0;
   display: block;
-  font-size: 0.8125em;
+  font-size: 0.875em;
   transition-property: border-color;
   transition-delay: 0s;
   transition-duration: 0.2s;
@@ -1245,7 +1252,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #ed8bff;
+  background: #d0b89d;
   border-radius: 50%;
   content: ' ';
   display: inline-block;

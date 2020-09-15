@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.1.1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Noto Serif SC:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"sunyancn.github.io","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"valine","storage":true,"lazyload":false,"nav":null,"activeClass":"valine"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta property="og:type" content="article">
+<meta property="og:title" content="多标签文本分类 kaggle kernel">
+<meta property="og:url" content="http://sunyancn.github.io/post/60709.html">
+<meta property="og:site_name" content="故事尾音">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://i.loli.net/2020/09/02/M3KakXbvHirSAE5.jpg">
+<meta property="article:published_time" content="2020-04-16T03:02:25.000Z">
+<meta property="article:modified_time" content="2020-09-02T08:31:04.234Z">
+<meta property="article:author" content="Sun Yan">
+<meta property="article:tag" content="多标签">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.loli.net/2020/09/02/M3KakXbvHirSAE5.jpg">
+
+<link rel="canonical" href="http://sunyancn.github.io/post/60709.html">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+<script src="/lib/fireworks.js"></script><link rel="stylesheet" href="//cdn.jsdelivr.net/gh/theme-next/theme-next-needmoreshare2@1/needsharebutton.min.css"><style>
+#needsharebutton-float {
+  bottom: 88px;
+  cursor: pointer;
+  left: -8px;
+  position: fixed;
+  z-index: 9999;
+}
+#needsharebutton-float .btn {
+  border: 1px solid $btn-default-border-color;
+  border-radius: 4px;
+  padding: 0 10px 0 14px;
+}
+</style>
+  <title>多标签文本分类 kaggle kernel | 故事尾音</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="故事尾音" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">故事尾音</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">喜欢推导也喜欢被推倒</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+        <li class="menu-item menu-item-image">
+
+    <a href="/image/" rel="section"><i class="fa fa-image fa-fw"></i>image</a>
+
+  </li>
+        <li class="menu-item menu-item-music">
+
+    <a href="/music/" rel="section"><i class="fa fa-music fa-fw"></i>music</a>
+
+  </li>
+        <li class="menu-item menu-item-shuoshuo">
+
+    <a href="/shuoshuo/" rel="section"><i class="fa fa-heartbeat fa-fw"></i>shuoshuo</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://sunyancn.github.io/post/60709.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://i.loli.net/2020/08/25/NrIpckD9qPLY38C.jpg">
+      <meta itemprop="name" content="Sun Yan">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="故事尾音">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          多标签文本分类 kaggle kernel
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2020-04-16 11:02:25" itemprop="dateCreated datePublished" datetime="2020-04-16T11:02:25+08:00">2020-04-16</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-09-02 16:31:04" itemprop="dateModified" datetime="2020-09-02T16:31:04+08:00">2020-09-02</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%96%87%E6%9C%AC%E5%88%86%E7%B1%BB/" itemprop="url" rel="index"><span itemprop="name">文本分类</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine: </span>
+    
+    <a title="valine" href="/post/60709.html#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/post/60709.html" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <html><head></head><body><p><img src="https://i.loli.net/2020/09/02/M3KakXbvHirSAE5.jpg" alt="shipshape_full_4k.jpg"><br><a id="more"></a></p>
+<h2 id="基于LSTM的多标签文本分类" class="heading-control"><a href="#基于LSTM的多标签文本分类" class="headerlink" title="基于LSTM的多标签文本分类"></a>基于 LSTM 的多标签文本分类<a class="heading-anchor" href="#基于LSTM的多标签文本分类" aria-hidden="true"></a></h2><p>kaggle kernel 链接： <a target="_blank" rel="noopener" href="https://www.kaggle.com/rftexas/gru-lstm-rnn-101">https://www.kaggle.com/rftexas/gru-lstm-rnn-101</a></p>
+<p><strong>主要亮点</strong>：</p>
+<ol>
+<li>使用了 tf.keras 进行构建，很多代码可以复用为 baseline</li>
+<li> 读取和加载 Glove 词向量</li>
+<li> AUC 作为评价标准</li>
+<li>数据集处理为 tf_dataset 输入 keras 模型</li>
+<li>在训练集训练后，在验证集继续训练两个 epochs（小技巧，可能很有用）</li>
+</ol>
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br><span class="line">225</span><br><span class="line">226</span><br><span class="line">227</span><br><span class="line">228</span><br><span class="line">229</span><br><span class="line">230</span><br><span class="line">231</span><br><span class="line">232</span><br><span class="line">233</span><br><span class="line">234</span><br><span class="line">235</span><br><span class="line">236</span><br><span class="line">237</span><br><span class="line">238</span><br><span class="line">239</span><br><span class="line">240</span><br><span class="line">241</span><br><span class="line">242</span><br><span class="line">243</span><br><span class="line">244</span><br><span class="line">245</span><br><span class="line">246</span><br><span class="line">247</span><br><span class="line">248</span><br><span class="line">249</span><br><span class="line">250</span><br><span class="line">251</span><br><span class="line">252</span><br><span class="line">253</span><br><span class="line">254</span><br><span class="line">255</span><br><span class="line">256</span><br><span class="line">257</span><br><span class="line">258</span><br><span class="line">259</span><br><span class="line">260</span><br><span class="line">261</span><br><span class="line">262</span><br><span class="line">263</span><br><span class="line">264</span><br><span class="line">265</span><br><span class="line">266</span><br><span class="line">267</span><br><span class="line">268</span><br><span class="line">269</span><br><span class="line">270</span><br><span class="line">271</span><br><span class="line">272</span><br><span class="line">273</span><br><span class="line">274</span><br><span class="line">275</span><br><span class="line">276</span><br><span class="line">277</span><br><span class="line">278</span><br><span class="line">279</span><br><span class="line">280</span><br><span class="line">281</span><br><span class="line">282</span><br><span class="line">283</span><br><span class="line">284</span><br><span class="line">285</span><br><span class="line">286</span><br><span class="line">287</span><br><span class="line">288</span><br><span class="line">289</span><br><span class="line">290</span><br><span class="line">291</span><br><span class="line">292</span><br><span class="line">293</span><br><span class="line">294</span><br><span class="line">295</span><br><span class="line">296</span><br><span class="line">297</span><br><span class="line">298</span><br><span class="line">299</span><br><span class="line">300</span><br><span class="line">301</span><br><span class="line">302</span><br><span class="line">303</span><br><span class="line">304</span><br><span class="line">305</span><br><span class="line">306</span><br><span class="line">307</span><br><span class="line">308</span><br><span class="line">309</span><br><span class="line">310</span><br><span class="line">311</span><br><span class="line">312</span><br><span class="line">313</span><br><span class="line">314</span><br><span class="line">315</span><br><span class="line">316</span><br><span class="line">317</span><br><span class="line">318</span><br><span class="line">319</span><br><span class="line">320</span><br><span class="line">321</span><br><span class="line">322</span><br><span class="line">323</span><br><span class="line">324</span><br><span class="line">325</span><br><span class="line">326</span><br><span class="line">327</span><br><span class="line">328</span><br><span class="line">329</span><br><span class="line">330</span><br><span class="line">331</span><br><span class="line">332</span><br><span class="line">333</span><br><span class="line">334</span><br><span class="line">335</span><br><span class="line">336</span><br><span class="line">337</span><br><span class="line">338</span><br><span class="line">339</span><br><span class="line">340</span><br><span class="line">341</span><br><span class="line">342</span><br><span class="line">343</span><br><span class="line">344</span><br><span class="line">345</span><br><span class="line">346</span><br><span class="line">347</span><br><span class="line">348</span><br><span class="line">349</span><br><span class="line">350</span><br><span class="line">351</span><br><span class="line">352</span><br><span class="line">353</span><br><span class="line">354</span><br><span class="line">355</span><br><span class="line">356</span><br><span class="line">357</span><br><span class="line">358</span><br><span class="line">359</span><br><span class="line">360</span><br><span class="line">361</span><br><span class="line">362</span><br><span class="line">363</span><br><span class="line">364</span><br><span class="line">365</span><br><span class="line">366</span><br><span class="line">367</span><br><span class="line">368</span><br><span class="line">369</span><br><span class="line">370</span><br><span class="line">371</span><br><span class="line">372</span><br><span class="line">373</span><br><span class="line">374</span><br><span class="line">375</span><br><span class="line">376</span><br><span class="line">377</span><br><span class="line">378</span><br><span class="line">379</span><br><span class="line">380</span><br><span class="line">381</span><br><span class="line">382</span><br><span class="line">383</span><br><span class="line">384</span><br><span class="line">385</span><br><span class="line">386</span><br><span class="line">387</span><br><span class="line">388</span><br><span class="line">389</span><br><span class="line">390</span><br><span class="line">391</span><br><span class="line">392</span><br><span class="line">393</span><br><span class="line">394</span><br><span class="line">395</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> gc</span><br><span class="line"><span class="keyword">import</span> pickle</span><br><span class="line"><span class="keyword">import</span> re</span><br><span class="line"><span class="keyword">import</span> string</span><br><span class="line"><span class="keyword">import</span> warnings</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"><span class="keyword">import</span> tensorflow <span class="keyword">as</span> tf</span><br><span class="line"><span class="keyword">from</span> keras.preprocessing.sequence <span class="keyword">import</span> pad_sequences</span><br><span class="line"><span class="keyword">from</span> keras.preprocessing.text <span class="keyword">import</span> Tokenizer</span><br><span class="line"><span class="keyword">from</span> tensorflow.keras <span class="keyword">import</span> backend <span class="keyword">as</span> K</span><br><span class="line"><span class="keyword">from</span> tensorflow.keras.losses <span class="keyword">import</span> binary_crossentropy</span><br><span class="line"><span class="keyword">from</span> tensorflow.keras <span class="keyword">import</span> initializers, regularizers, constraints</span><br><span class="line"><span class="keyword">from</span> tensorflow.keras.callbacks <span class="keyword">import</span> ReduceLROnPlateau, LearningRateScheduler, EarlyStopping</span><br><span class="line"><span class="keyword">from</span> tensorflow.keras.layers <span class="keyword">import</span> Layer, Dense, Input, Embedding, SpatialDropout1D, Bidirectional, LSTM, \</span><br><span class="line">    GlobalMaxPooling1D, GlobalAveragePooling1D</span><br><span class="line"><span class="keyword">from</span> tensorflow.keras.layers <span class="keyword">import</span> concatenate</span><br><span class="line"><span class="keyword">from</span> tensorflow.keras.models <span class="keyword">import</span> Model</span><br><span class="line"><span class="keyword">from</span> tqdm.notebook <span class="keyword">import</span> tqdm</span><br><span class="line"></span><br><span class="line">tqdm.pandas()</span><br><span class="line"></span><br><span class="line">warnings.simplefilter(<span class="string">'ignore'</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># HYPERPARAMETERS</span></span><br><span class="line">MAX_LEN = <span class="number">220</span></span><br><span class="line">MAX_FEATURES = <span class="number">100000</span></span><br><span class="line">EMBED_SIZE = <span class="number">600</span></span><br><span class="line">BATCH_SIZE = <span class="number">128</span></span><br><span class="line">N_EPOCHS = <span class="number">5</span></span><br><span class="line">LEARNING_RATE = <span class="number">8e-4</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># We will concatenate Crawl and GloVe embeddings</span></span><br><span class="line">CRAWL_EMB_PATH = <span class="string">'../input/pickled-glove840b300d-for-10sec-loading/glove.840B.300d.pkl'</span></span><br><span class="line">GLOVE_EMB_PATH = <span class="string">'../input/pickled-crawl300d2m-for-kernel-competitions/crawl-300d-2M.pkl'</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">display_training_curves</span>(<span class="params">training, validation, title, subplot</span>):</span></span><br><span class="line">    <span class="string">"""</span></span><br><span class="line"><span class="string">    Quickly display training curves</span></span><br><span class="line"><span class="string">    """</span></span><br><span class="line">    <span class="keyword">if</span> subplot % <span class="number">10</span> == <span class="number">1</span>:</span><br><span class="line">        plt.subplots(figsize=(<span class="number">10</span>, <span class="number">10</span>), facecolor=<span class="string">'#F0F0F0'</span>)</span><br><span class="line">        plt.tight_layout()</span><br><span class="line"></span><br><span class="line">    ax = plt.subplot(subplot)</span><br><span class="line">    ax.set_facecolor(<span class="string">'#F8F8F8'</span>)</span><br><span class="line">    ax.plot(training)</span><br><span class="line">    ax.plot(validation)</span><br><span class="line">    ax.set_title(<span class="string">'model'</span> + title)</span><br><span class="line">    ax.set_ylabel(title)</span><br><span class="line">    ax.set_xlabel(<span class="string">'epoch'</span>)</span><br><span class="line">    ax.legend([<span class="string">'train'</span>, <span class="string">'valid'</span>])</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_coeffs</span>(<span class="params">word, *arr</span>):</span></span><br><span class="line">    <span class="keyword">return</span> word, np.asarray(arr, dtype=<span class="string">'float32'</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">load_embeddings</span>(<span class="params">embed_dir</span>):</span></span><br><span class="line">    <span class="keyword">with</span> open(embed_dir, <span class="string">'rb'</span>) <span class="keyword">as</span>  infile:</span><br><span class="line">        embeddings = pickle.load(infile)</span><br><span class="line">        <span class="keyword">return</span> embeddings</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">build_embedding_matrix</span>(<span class="params">word_index, embeddings_index, max_features, lower=True, verbose=True</span>):</span></span><br><span class="line">    embedding_matrix = np.zeros((max_features, <span class="number">300</span>))</span><br><span class="line">    <span class="keyword">for</span> word, i <span class="keyword">in</span> tqdm(word_index.items(), len=(word_index.items())):</span><br><span class="line">        <span class="keyword">if</span> lower:</span><br><span class="line">            word = word.lower()</span><br><span class="line">        <span class="keyword">if</span> i >= max_features: <span class="keyword">continue</span></span><br><span class="line">        <span class="keyword">try</span>:</span><br><span class="line">            embedding_vector = embeddings_index[word]</span><br><span class="line">        <span class="keyword">except</span>:</span><br><span class="line">            embedding_vector = embeddings_index[<span class="string">"unknown"</span>]</span><br><span class="line">        <span class="keyword">if</span> embedding_vector <span class="keyword">is</span> <span class="keyword">not</span> <span class="literal">None</span>:</span><br><span class="line">            <span class="comment"># words not found in embedding index will be all-zeros.</span></span><br><span class="line">            embedding_matrix[i] = embedding_vector</span><br><span class="line">    <span class="keyword">return</span> embedding_matrix</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">build_matrix</span>(<span class="params">word_index, embeddings_index</span>):</span></span><br><span class="line">    embedding_matrix = np.zeros((len(word_index) + <span class="number">1</span>, <span class="number">300</span>))</span><br><span class="line">    <span class="keyword">for</span> word, i <span class="keyword">in</span> word_index.items():</span><br><span class="line">        <span class="keyword">try</span>:</span><br><span class="line">            embedding_matrix[i] = embeddings_index[word]</span><br><span class="line">        <span class="keyword">except</span>:</span><br><span class="line">            embedding_matrix[i] = embeddings_index[<span class="string">"unknown"</span>]</span><br><span class="line">    <span class="keyword">return</span> embedding_matrix</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Attention</span>(<span class="params">Layer</span>):</span></span><br><span class="line">    <span class="string">"""</span></span><br><span class="line"><span class="string">    Custom Keras attention layer</span></span><br><span class="line"><span class="string">    Reference: https://www.kaggle.com/qqgeogor/keras-lstm-attention-glove840b-lb-0-043</span></span><br><span class="line"><span class="string">    """</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self, step_dim, W_regularizer=None, b_regularizer=None,</span></span></span><br><span class="line"><span class="function"><span class="params">                 W_constraint=None, b_constraint=None, bias=True, **kwargs</span>):</span></span><br><span class="line"></span><br><span class="line">        self.supports_masking = <span class="literal">True</span></span><br><span class="line"></span><br><span class="line">        self.bias = bias</span><br><span class="line">        self.step_dim = step_dim</span><br><span class="line">        self.features_dim = <span class="literal">None</span></span><br><span class="line">        super(Attention, self).__init__(**kwargs)</span><br><span class="line"></span><br><span class="line">        self.param_W = {</span><br><span class="line">            <span class="string">'initializer'</span>: initializers.get(<span class="string">'glorot_uniform'</span>),</span><br><span class="line">            <span class="string">'name'</span>: <span class="string">'{}_W'</span>.format(self.name),</span><br><span class="line">            <span class="string">'regularizer'</span>: regularizers.get(W_regularizer),</span><br><span class="line">            <span class="string">'constraint'</span>: constraints.get(W_constraint)</span><br><span class="line">        }</span><br><span class="line">        self.W = <span class="literal">None</span></span><br><span class="line"></span><br><span class="line">        self.param_b = {</span><br><span class="line">            <span class="string">'initializer'</span>: <span class="string">'zero'</span>,</span><br><span class="line">            <span class="string">'name'</span>: <span class="string">'{}_b'</span>.format(self.name),</span><br><span class="line">            <span class="string">'regularizer'</span>: regularizers.get(b_regularizer),</span><br><span class="line">            <span class="string">'constraint'</span>: constraints.get(b_constraint)</span><br><span class="line">        }</span><br><span class="line">        self.b = <span class="literal">None</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">build</span>(<span class="params">self, input_shape</span>):</span></span><br><span class="line">        <span class="keyword">assert</span> len(input_shape) == <span class="number">3</span></span><br><span class="line"></span><br><span class="line">        self.features_dim = input_shape[<span class="number">-1</span>]</span><br><span class="line">        self.W = self.add_weight(shape=(input_shape[<span class="number">-1</span>],),</span><br><span class="line">                                 **self.param_W)</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> self.bias:</span><br><span class="line">            self.b = self.add_weight(shape=(input_shape[<span class="number">1</span>],),</span><br><span class="line">                                     **self.param_b)</span><br><span class="line"></span><br><span class="line">        self.built = <span class="literal">True</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">compute_mask</span>(<span class="params">self, input, input_mask=None</span>):</span></span><br><span class="line">        <span class="keyword">return</span> <span class="literal">None</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">call</span>(<span class="params">self, x, mask=None</span>):</span></span><br><span class="line">        step_dim = self.step_dim</span><br><span class="line">        features_dim = self.features_dim</span><br><span class="line"></span><br><span class="line">        eij = K.reshape(</span><br><span class="line">            K.dot(K.reshape(x, (<span class="number">-1</span>, features_dim)), K.reshape(self.W, (features_dim, <span class="number">1</span>))),</span><br><span class="line">            (<span class="number">-1</span>, step_dim))</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> self.bias:</span><br><span class="line">            eij += self.b</span><br><span class="line">        eij = K.tanh(eij)</span><br><span class="line">        a = K.exp(eij)</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> mask <span class="keyword">is</span> <span class="keyword">not</span> <span class="literal">None</span>:</span><br><span class="line">            a *= K.cast(mask, K.floatx())</span><br><span class="line"></span><br><span class="line">        a /= K.cast(K.sum(a, axis=<span class="number">1</span>, keepdims=<span class="literal">True</span>) + K.epsilon(), K.floatx())</span><br><span class="line">        a = K.expand_dims(a)</span><br><span class="line">        weighted_input = x * a</span><br><span class="line">        <span class="keyword">return</span> K.sum(weighted_input, axis=<span class="number">1</span>)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">compute_output_shape</span>(<span class="params">self, input_shape</span>):</span></span><br><span class="line">        <span class="keyword">return</span> input_shape[<span class="number">0</span>], self.features_dim</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># We create a balanced</span></span><br><span class="line"></span><br><span class="line">print(<span class="string">'Loading train sets...'</span>)</span><br><span class="line">train1 = pd.read_csv(<span class="string">"/kaggle/input/jigsaw-multilingual-toxic-comment-classification/jigsaw-toxic-comment-train.csv"</span>)</span><br><span class="line">train2 = pd.read_csv(<span class="string">"/kaggle/input/jigsaw-multilingual-toxic-comment-classification/jigsaw-unintended-bias-train.csv"</span>)</span><br><span class="line"></span><br><span class="line">train = pd.concat([</span><br><span class="line">    train1[[<span class="string">'comment_text'</span>, <span class="string">'toxic'</span>]],</span><br><span class="line">    train2[[<span class="string">'comment_text'</span>, <span class="string">'toxic'</span>]].query(<span class="string">'toxic==1'</span>),</span><br><span class="line">    train2[[<span class="string">'comment_text'</span>, <span class="string">'toxic'</span>]].query(<span class="string">'toxic==0'</span>).sample(n=<span class="number">100000</span>, random_state=<span class="number">0</span>)</span><br><span class="line">])</span><br><span class="line"></span><br><span class="line"><span class="keyword">del</span> train1, train2</span><br><span class="line"></span><br><span class="line">print(<span class="string">'Loading validation sets...'</span>)</span><br><span class="line">valid = pd.read_csv(<span class="string">'/kaggle/input/val-en-df/validation_en.csv'</span>)</span><br><span class="line"></span><br><span class="line">print(<span class="string">'Loading test sets...'</span>)</span><br><span class="line">test = pd.read_csv(<span class="string">'/kaggle/input/test-en-df/test_en.csv'</span>)</span><br><span class="line">sub = pd.read_csv(<span class="string">'/kaggle/input/jigsaw-multilingual-toxic-comment-classification/sample_submission.csv'</span>)</span><br><span class="line"></span><br><span class="line">misspell_dict = {<span class="string">"aren't"</span>: <span class="string">"are not"</span>, <span class="string">"can't"</span>: <span class="string">"cannot"</span>, <span class="string">"couldn't"</span>: <span class="string">"could not"</span>,</span><br><span class="line">                 <span class="string">"didn't"</span>: <span class="string">"did not"</span>, <span class="string">"doesn't"</span>: <span class="string">"does not"</span>, <span class="string">"don't"</span>: <span class="string">"do not"</span>,</span><br><span class="line">                 <span class="string">"hadn't"</span>: <span class="string">"had not"</span>, <span class="string">"hasn't"</span>: <span class="string">"has not"</span>, <span class="string">"haven't"</span>: <span class="string">"have not"</span>,</span><br><span class="line">                 <span class="string">"he'd"</span>: <span class="string">"he would"</span>, <span class="string">"he'll"</span>: <span class="string">"he will"</span>, <span class="string">"he's"</span>: <span class="string">"he is"</span>,</span><br><span class="line">                 <span class="string">"i'd"</span>: <span class="string">"I had"</span>, <span class="string">"i'll"</span>: <span class="string">"I will"</span>, <span class="string">"i'm"</span>: <span class="string">"I am"</span>, <span class="string">"isn't"</span>: <span class="string">"is not"</span>,</span><br><span class="line">                 <span class="string">"it's"</span>: <span class="string">"it is"</span>, <span class="string">"it'll"</span>: <span class="string">"it will"</span>, <span class="string">"i've"</span>: <span class="string">"I have"</span>, <span class="string">"let's"</span>: <span class="string">"let us"</span>,</span><br><span class="line">                 <span class="string">"mightn't"</span>: <span class="string">"might not"</span>, <span class="string">"mustn't"</span>: <span class="string">"must not"</span>, <span class="string">"shan't"</span>: <span class="string">"shall not"</span>,</span><br><span class="line">                 <span class="string">"she'd"</span>: <span class="string">"she would"</span>, <span class="string">"she'll"</span>: <span class="string">"she will"</span>, <span class="string">"she's"</span>: <span class="string">"she is"</span>,</span><br><span class="line">                 <span class="string">"shouldn't"</span>: <span class="string">"should not"</span>, <span class="string">"that's"</span>: <span class="string">"that is"</span>, <span class="string">"there's"</span>: <span class="string">"there is"</span>,</span><br><span class="line">                 <span class="string">"they'd"</span>: <span class="string">"they would"</span>, <span class="string">"they'll"</span>: <span class="string">"they will"</span>, <span class="string">"they're"</span>: <span class="string">"they are"</span>,</span><br><span class="line">                 <span class="string">"they've"</span>: <span class="string">"they have"</span>, <span class="string">"we'd"</span>: <span class="string">"we would"</span>, <span class="string">"we're"</span>: <span class="string">"we are"</span>,</span><br><span class="line">                 <span class="string">"weren't"</span>: <span class="string">"were not"</span>, <span class="string">"we've"</span>: <span class="string">"we have"</span>, <span class="string">"what'll"</span>: <span class="string">"what will"</span>,</span><br><span class="line">                 <span class="string">"what're"</span>: <span class="string">"what are"</span>, <span class="string">"what's"</span>: <span class="string">"what is"</span>, <span class="string">"what've"</span>: <span class="string">"what have"</span>,</span><br><span class="line">                 <span class="string">"where's"</span>: <span class="string">"where is"</span>, <span class="string">"who'd"</span>: <span class="string">"who would"</span>, <span class="string">"who'll"</span>: <span class="string">"who will"</span>,</span><br><span class="line">                 <span class="string">"who're"</span>: <span class="string">"who are"</span>, <span class="string">"who's"</span>: <span class="string">"who is"</span>, <span class="string">"who've"</span>: <span class="string">"who have"</span>,</span><br><span class="line">                 <span class="string">"won't"</span>: <span class="string">"will not"</span>, <span class="string">"wouldn't"</span>: <span class="string">"would not"</span>, <span class="string">"you'd"</span>: <span class="string">"you would"</span>,</span><br><span class="line">                 <span class="string">"you'll"</span>: <span class="string">"you will"</span>, <span class="string">"you're"</span>: <span class="string">"you are"</span>, <span class="string">"you've"</span>: <span class="string">"you have"</span>,</span><br><span class="line">                 <span class="string">"'re"</span>: <span class="string">" are"</span>, <span class="string">"wasn't"</span>: <span class="string">"was not"</span>, <span class="string">"we'll"</span>: <span class="string">" will"</span>, <span class="string">"tryin'"</span>: <span class="string">"trying"</span>}</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">_get_misspell</span>(<span class="params">misspell_dict</span>):</span></span><br><span class="line">    misspell_re = re.compile(<span class="string">'(%s)'</span> % <span class="string">'|'</span>.join(misspell_dict.keys()))</span><br><span class="line">    <span class="keyword">return</span> misspell_dict, misspell_re</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">replace_typical_misspell</span>(<span class="params">text</span>):</span></span><br><span class="line">    misspellings, misspellings_re = _get_misspell(misspell_dict)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">replace</span>(<span class="params">match</span>):</span></span><br><span class="line">        <span class="keyword">return</span> misspellings[match.group(<span class="number">0</span>)]</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> misspellings_re.sub(replace, text)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">puncts = [<span class="string">','</span>, <span class="string">'.'</span>, <span class="string">'"'</span>, <span class="string">':'</span>, <span class="string">')'</span>, <span class="string">'('</span>, <span class="string">'-'</span>, <span class="string">'!'</span>, <span class="string">'?'</span>, <span class="string">'|'</span>, <span class="string">';'</span>, <span class="string">"'"</span>, <span class="string">'$'</span>, <span class="string">'&'</span>, <span class="string">'/'</span>, <span class="string">'['</span>, <span class="string">']'</span>,</span><br><span class="line">          <span class="string">'>'</span>, <span class="string">'%'</span>, <span class="string">'='</span>, <span class="string">'#'</span>, <span class="string">'*'</span>, <span class="string">'+'</span>, <span class="string">'\\'</span>, <span class="string">'•'</span>, <span class="string">'~'</span>, <span class="string">'@'</span>, <span class="string">'£'</span>, <span class="string">'·'</span>, <span class="string">'_'</span>, <span class="string">'{'</span>, <span class="string">'}'</span>, <span class="string">'©'</span>, <span class="string">'^'</span>,</span><br><span class="line">          <span class="string">'®'</span>, <span class="string">'`'</span>, <span class="string">'<'</span>, <span class="string">'→'</span>, <span class="string">'°'</span>, <span class="string">'€'</span>, <span class="string">'™'</span>, <span class="string">'›'</span>, <span class="string">'♥'</span>, <span class="string">'←'</span>, <span class="string">'×'</span>, <span class="string">'§'</span>, <span class="string">'″'</span>, <span class="string">'′'</span>, <span class="string">'Â'</span>, <span class="string">'█'</span>,</span><br><span class="line">          <span class="string">'½'</span>, <span class="string">'à'</span>, <span class="string">'…'</span>, <span class="string">'“'</span>, <span class="string">'★'</span>, <span class="string">'”'</span>, <span class="string">'–'</span>, <span class="string">'●'</span>, <span class="string">'â'</span>, <span class="string">'►'</span>, <span class="string">'−'</span>, <span class="string">'¢'</span>, <span class="string">'²'</span>, <span class="string">'¬'</span>, <span class="string">'░'</span>, <span class="string">'¶'</span>,</span><br><span class="line">          <span class="string">'↑'</span>, <span class="string">'±'</span>, <span class="string">'¿'</span>, <span class="string">'▾'</span>, <span class="string">'═'</span>, <span class="string">'¦'</span>, <span class="string">'║'</span>, <span class="string">'―'</span>, <span class="string">'¥'</span>, <span class="string">'▓'</span>, <span class="string">'—'</span>, <span class="string">'‹'</span>, <span class="string">'─'</span>, <span class="string">'▒'</span>, <span class="string">'：'</span>, <span class="string">'¼'</span>,</span><br><span class="line">          <span class="string">'⊕'</span>, <span class="string">'▼'</span>, <span class="string">'▪'</span>, <span class="string">'†'</span>, <span class="string">'■'</span>, <span class="string">'’'</span>, <span class="string">'▀'</span>, <span class="string">'¨'</span>, <span class="string">'▄'</span>, <span class="string">'♫'</span>, <span class="string">'☆'</span>, <span class="string">'é'</span>, <span class="string">'¯'</span>, <span class="string">'♦'</span>, <span class="string">'¤'</span>, <span class="string">'▲'</span>,</span><br><span class="line">          <span class="string">'è'</span>, <span class="string">'¸'</span>, <span class="string">'¾'</span>, <span class="string">'Ã'</span>, <span class="string">'⋅'</span>, <span class="string">'‘'</span>, <span class="string">'∞'</span>, <span class="string">'∙'</span>, <span class="string">'）'</span>, <span class="string">'↓'</span>, <span class="string">'、'</span>, <span class="string">'│'</span>, <span class="string">'（'</span>, <span class="string">'»'</span>, <span class="string">'，'</span>, <span class="string">'♪'</span>,</span><br><span class="line">          <span class="string">'╩'</span>, <span class="string">'╚'</span>, <span class="string">'³'</span>, <span class="string">'・'</span>, <span class="string">'╦'</span>, <span class="string">'╣'</span>, <span class="string">'╔'</span>, <span class="string">'╗'</span>, <span class="string">'▬'</span>, <span class="string">'❤'</span>, <span class="string">'ï'</span>, <span class="string">'Ø'</span>, <span class="string">'¹'</span>, <span class="string">'≤'</span>, <span class="string">'‡'</span>, <span class="string">'√'</span>]</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">clean_text</span>(<span class="params">x</span>):</span></span><br><span class="line">    x = str(x)</span><br><span class="line">    <span class="keyword">for</span> punct <span class="keyword">in</span> puncts + list(string.punctuation):</span><br><span class="line">        <span class="keyword">if</span> punct <span class="keyword">in</span> x:</span><br><span class="line">            x = x.replace(punct, <span class="string">f' <span class="subst">{punct}</span> '</span>)</span><br><span class="line">    <span class="keyword">return</span> x</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">clean_numbers</span>(<span class="params">x</span>):</span></span><br><span class="line">    <span class="keyword">return</span> re.sub(<span class="string">r'\d+'</span>, <span class="string">' '</span>, x)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">preprocess</span>(<span class="params">train, valid, test, tfms</span>):</span></span><br><span class="line">    <span class="keyword">for</span> tfm <span class="keyword">in</span> tfms:</span><br><span class="line">        print(tfm.__name__)</span><br><span class="line">        train[<span class="string">'comment_text'</span>] = train[<span class="string">'comment_text'</span>].progress_apply(tfm)</span><br><span class="line">        valid[<span class="string">'comment_text_en'</span>] = valid[<span class="string">'comment_text_en'</span>].progress_apply(tfm)</span><br><span class="line">        test[<span class="string">'content'</span>] = test[<span class="string">'content'</span>].progress_apply(tfm)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> train, valid, test</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">tfms = [replace_typical_misspell, clean_text, clean_numbers]</span><br><span class="line">train, valid, test = preprocess(train, valid, test, tfms)</span><br><span class="line"></span><br><span class="line">tokenizer = Tokenizer(num_words=MAX_FEATURES, filters=<span class="string">''</span>, lower=<span class="literal">False</span>)</span><br><span class="line"></span><br><span class="line">print(<span class="string">'Fitting tokenizer...'</span>)</span><br><span class="line">tokenizer.fit_on_texts(list(train[<span class="string">'comment_text'</span>]) + list(valid[<span class="string">'comment_text_en'</span>]) + list(test[<span class="string">'content_en'</span>]))</span><br><span class="line">word_index = tokenizer.word_index</span><br><span class="line"></span><br><span class="line">print(<span class="string">'Building training set...'</span>)</span><br><span class="line">X_train = tokenizer.texts_to_sequences(list(train[<span class="string">'comment_text'</span>]))</span><br><span class="line">y_train = train[<span class="string">'toxic'</span>].values</span><br><span class="line"></span><br><span class="line">print(<span class="string">'Building validation set...'</span>)</span><br><span class="line">X_valid = tokenizer.texts_to_sequences(list(valid[<span class="string">'comment_text_en'</span>]))</span><br><span class="line">y_valid = valid[<span class="string">'toxic'</span>].values</span><br><span class="line"></span><br><span class="line">print(<span class="string">'Building test set ...'</span>)</span><br><span class="line">X_test = tokenizer.texts_to_sequences(list(test[<span class="string">'content_en'</span>]))</span><br><span class="line"></span><br><span class="line">print(<span class="string">'Padding sequences...'</span>)</span><br><span class="line">X_train = pad_sequences(X_train, maxlen=MAX_LEN)</span><br><span class="line">X_valid = pad_sequences(X_valid, maxlen=MAX_LEN)</span><br><span class="line">X_test = pad_sequences(X_test, maxlen=MAX_LEN)</span><br><span class="line"></span><br><span class="line">y_train = train.toxic.values</span><br><span class="line">y_valid = valid.toxic.values</span><br><span class="line"></span><br><span class="line"><span class="keyword">del</span> tokenizer</span><br><span class="line"></span><br><span class="line">print(<span class="string">'Loading Crawl embeddings...'</span>)</span><br><span class="line">crawl_embeddings = load_embeddings(CRAWL_EMB_PATH)</span><br><span class="line"></span><br><span class="line">print(<span class="string">'Loading GloVe embeddings...'</span>)</span><br><span class="line">glove_embeddings = load_embeddings(GLOVE_EMB_PATH)</span><br><span class="line"></span><br><span class="line">print(<span class="string">'Building matrices...'</span>)</span><br><span class="line">embedding_matrix_1 = build_matrix(word_index, crawl_embeddings)</span><br><span class="line">embedding_matrix_2 = build_matrix(word_index, glove_embeddings)</span><br><span class="line"></span><br><span class="line">print(<span class="string">'Concatenating embedding matrices...'</span>)</span><br><span class="line">embedding_matrix = np.concatenate([embedding_matrix_1, embedding_matrix_2], axis=<span class="number">1</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">del</span> embedding_matrix_1, embedding_matrix_2</span><br><span class="line"><span class="keyword">del</span> crawl_embeddings, glove_embeddings</span><br><span class="line"></span><br><span class="line">gc.collect()</span><br><span class="line"></span><br><span class="line">train_dataset = (</span><br><span class="line">    tf.data.Dataset</span><br><span class="line">        .from_tensor_slices((X_train, y_train))</span><br><span class="line">        .repeat()</span><br><span class="line">        .shuffle(<span class="number">2048</span>)</span><br><span class="line">        .batch(BATCH_SIZE)</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">valid_dataset = (</span><br><span class="line">    tf.data.Dataset</span><br><span class="line">        .from_tensor_slices((X_valid, y_valid))</span><br><span class="line">        .batch(BATCH_SIZE)</span><br><span class="line">        .cache()</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">test_dataset = (</span><br><span class="line">    tf.data.Dataset</span><br><span class="line">        .from_tensor_slices(X_test)</span><br><span class="line">        .batch(BATCH_SIZE)</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">build_model</span>(<span class="params">word_index, embedding_matrix, verbose=True</span>):</span></span><br><span class="line">    <span class="string">"""</span></span><br><span class="line"><span class="string">    credits go to: https://www.kaggle.com/thousandvoices/simple-lstm/</span></span><br><span class="line"><span class="string">    """</span></span><br><span class="line">    sequence_input = Input(shape=(MAX_LEN,), dtype=tf.int32)</span><br><span class="line"></span><br><span class="line">    embedding_layer = Embedding(*embedding_matrix.shape,</span><br><span class="line">                                weights=[embedding_matrix],</span><br><span class="line">                                trainable=<span class="literal">False</span>)</span><br><span class="line"></span><br><span class="line">    x = embedding_layer(sequence_input)</span><br><span class="line">    x = SpatialDropout1D(<span class="number">0.3</span>)(x)</span><br><span class="line">    x = Bidirectional(LSTM(<span class="number">256</span>, return_sequences=<span class="literal">True</span>))(x)</span><br><span class="line">    x = Bidirectional(LSTM(<span class="number">128</span>, return_sequences=<span class="literal">True</span>))(x)</span><br><span class="line"></span><br><span class="line">    att = Attention(MAX_LEN)(x)</span><br><span class="line">    avg_pool1 = GlobalAveragePooling1D()(x)</span><br><span class="line">    max_pool1 = GlobalMaxPooling1D()(x)</span><br><span class="line">    hidden = concatenate([att, avg_pool1, max_pool1])</span><br><span class="line"></span><br><span class="line">    hidden = Dense(<span class="number">512</span>, activation=<span class="string">'relu'</span>)(hidden)</span><br><span class="line">    hidden = Dense(<span class="number">128</span>, activation=<span class="string">'relu'</span>)(hidden)</span><br><span class="line">    out = Dense(<span class="number">1</span>, activation=<span class="string">'sigmoid'</span>)(hidden)</span><br><span class="line">    model = Model(sequence_input, out)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> model</span><br><span class="line"></span><br><span class="line">model = build_model(word_index, embedding_matrix)</span><br><span class="line">model.compile(optimizer=<span class="string">'adam'</span>, loss=<span class="string">'binary_crossentropy'</span>, metrics=[tf.keras.metrics.AUC()])</span><br><span class="line">model.summary()</span><br><span class="line"></span><br><span class="line">file_weights = <span class="string">'best_model.h5'</span></span><br><span class="line"><span class="comment"># cb1 = ModelCheckpoint(file_weights, save_best_only=True)</span></span><br><span class="line"></span><br><span class="line">cb2 = EarlyStopping(monitor=<span class="string">'val_loss'</span>, mode=<span class="string">'min'</span>, verbose=<span class="number">1</span>, patience=<span class="number">3</span>)</span><br><span class="line">cb3 = ReduceLROnPlateau(monitor=<span class="string">'val_loss'</span>, factor=<span class="number">0.5</span>, patience=<span class="number">2</span>, verbose=<span class="number">1</span>, cooldown=<span class="number">0</span>, min_lr=<span class="number">0.0001</span>)</span><br><span class="line">cb4 = LearningRateScheduler(<span class="keyword">lambda</span> epoch: LEARNING_RATE * (<span class="number">0.6</span> ** epoch))</span><br><span class="line"></span><br><span class="line">n_steps = X_train.shape[<span class="number">0</span>] // BATCH_SIZE</span><br><span class="line"></span><br><span class="line">train_history = model.fit(</span><br><span class="line">    train_dataset,</span><br><span class="line">    steps_per_epoch=n_steps,</span><br><span class="line">    validation_data=valid_dataset,</span><br><span class="line">    callbacks=[cb4],</span><br><span class="line">    epochs=N_EPOCHS</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">display_training_curves(</span><br><span class="line">    train_history.history[<span class="string">'loss'</span>],</span><br><span class="line">    train_history.history[<span class="string">'val_loss'</span>],</span><br><span class="line">    <span class="string">'loss'</span>,</span><br><span class="line">    <span class="number">211</span>)</span><br><span class="line"></span><br><span class="line">display_training_curves(</span><br><span class="line">    train_history.history[<span class="string">'auc'</span>],</span><br><span class="line">    train_history.history[<span class="string">'val_auc'</span>],</span><br><span class="line">    <span class="string">'AUC'</span>,</span><br><span class="line">    <span class="number">212</span>)</span><br><span class="line"></span><br><span class="line">n_steps = X_valid.shape[<span class="number">0</span>] // BATCH_SIZE</span><br><span class="line"></span><br><span class="line">train_history = model.fit(</span><br><span class="line">    valid_dataset.repeat(),</span><br><span class="line">    steps_per_epoch=n_steps,</span><br><span class="line">    callbacks=[cb4],</span><br><span class="line">    epochs=N_EPOCHS</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">preds = model.predict(test_dataset, verbose=<span class="number">1</span>)</span><br><span class="line">sub[<span class="string">'toxic'</span>] = preds</span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
+<h2 id="基于BERT的多标签文本分类-使用TPU" class="heading-control"><a href="#基于BERT的多标签文本分类-使用TPU" class="headerlink" title="基于BERT的多标签文本分类(使用TPU)"></a>基于 BERT 的多标签文本分类 (使用 TPU)<a class="heading-anchor" href="#基于BERT的多标签文本分类-使用TPU" aria-hidden="true"></a></h2><p>kaggle kernel 链接： <a target="_blank" rel="noopener" href="https://www.kaggle.com/sunyancn/jigsaw-tpu-bert-with-huggingface-and-keras">https://www.kaggle.com/sunyancn/jigsaw-tpu-bert-with-huggingface-and-keras</a></p>
+<p><strong>主要亮点</strong>：</p>
+<ol>
+<li>使用了 transformers 的分词器进行快速分词</li>
+<li>文本长度的可视化</li>
+<li> TF Hub BERT 模型的加载</li>
+<li> TPU 策略 </li>
+</ol>
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br><span class="line">225</span><br><span class="line">226</span><br><span class="line">227</span><br><span class="line">228</span><br><span class="line">229</span><br><span class="line">230</span><br><span class="line">231</span><br><span class="line">232</span><br><span class="line">233</span><br><span class="line">234</span><br><span class="line">235</span><br><span class="line">236</span><br><span class="line">237</span><br><span class="line">238</span><br><span class="line">239</span><br><span class="line">240</span><br><span class="line">241</span><br><span class="line">242</span><br><span class="line">243</span><br><span class="line">244</span><br><span class="line">245</span><br><span class="line">246</span><br><span class="line">247</span><br><span class="line">248</span><br><span class="line">249</span><br><span class="line">250</span><br><span class="line">251</span><br><span class="line">252</span><br><span class="line">253</span><br><span class="line">254</span><br><span class="line">255</span><br><span class="line">256</span><br><span class="line">257</span><br><span class="line">258</span><br><span class="line">259</span><br><span class="line">260</span><br><span class="line">261</span><br><span class="line">262</span><br><span class="line">263</span><br><span class="line">264</span><br><span class="line">265</span><br><span class="line">266</span><br><span class="line">267</span><br><span class="line">268</span><br><span class="line">269</span><br><span class="line">270</span><br><span class="line">271</span><br><span class="line">272</span><br><span class="line">273</span><br><span class="line">274</span><br><span class="line">275</span><br><span class="line">276</span><br><span class="line">277</span><br><span class="line">278</span><br><span class="line">279</span><br><span class="line">280</span><br><span class="line">281</span><br><span class="line">282</span><br><span class="line">283</span><br><span class="line">284</span><br><span class="line">285</span><br><span class="line">286</span><br><span class="line">287</span><br><span class="line">288</span><br><span class="line">289</span><br><span class="line">290</span><br><span class="line">291</span><br><span class="line">292</span><br><span class="line">293</span><br><span class="line">294</span><br><span class="line">295</span><br><span class="line">296</span><br><span class="line">297</span><br><span class="line">298</span><br><span class="line">299</span><br><span class="line">300</span><br><span class="line">301</span><br><span class="line">302</span><br><span class="line">303</span><br><span class="line">304</span><br><span class="line">305</span><br><span class="line">306</span><br><span class="line">307</span><br><span class="line">308</span><br><span class="line">309</span><br><span class="line">310</span><br><span class="line">311</span><br><span class="line">312</span><br><span class="line">313</span><br><span class="line">314</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># %% [markdown]</span></span><br><span class="line"><span class="comment"># ## About this notebook</span></span><br><span class="line"><span class="comment"># </span></span><br><span class="line"><span class="comment"># *[Jigsaw Multilingual Toxic Comment Classification](https://www.kaggle.com/c/jigsaw-multilingual-toxic-comment-classification)* is the 3rd annual competition organized by the Jigsaw team. It follows *[Toxic Comment Classification Challenge](https://www.kaggle.com/c/jigsaw-toxic-comment-classification-challenge)*, the original 2018 competition, and *[Jigsaw Unintended Bias in Toxicity Classification](https://www.kaggle.com/c/jigsaw-unintended-bias-in-toxicity-classification)*, which required the competitors to consider biased ML predictions in their new models. This year, the goal is to use english only training data to run toxicity predictions on many different languages, which can be done using multilingual models, and speed up using TPUs.</span></span><br><span class="line"><span class="comment"># </span></span><br><span class="line"><span class="comment"># Many awesome notebooks has already been made so far. Many of them used really cool technologies like [Pytorch XLA](https://www.kaggle.com/theoviel/bert-pytorch-huggingface-starter). This notebook instead aims at constructing a **fast, concise, reusable, and beginner-friendly model scaffold**. It will focus on the following points:</span></span><br><span class="line"><span class="comment"># * **Using Tensorflow and Keras**: Tensorflow is a powerful framework, and Keras makes the training process extremely easy to understand. This is especially good for beginners to learn how to use TPUs, and for experts to focus on the modelling aspect.</span></span><br><span class="line"><span class="comment"># * **Using Huggingface's `transformers` library**: [This library](https://huggingface.co/transformers/) is extremely popular, so using this let you easily integrate the end result into your ML pipelines, and can be easily reused for your other projects.</span></span><br><span class="line"><span class="comment"># * **Native TPU usage**: The TPU usage is abstracted using the native `strategy` that was created using Tensorflow's `tf.distribute.experimental.TPUStrategy`. This avoids getting too much into the lower-level aspect of TPU management.</span></span><br><span class="line"><span class="comment"># * **Use a subset of the data**: Instead of using the entire dataset, we will only use the 2018 subset of the data available, which makes this much faster, all while achieving a respectable accuracy.</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># %% [code]</span></span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">import</span> warnings</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"><span class="keyword">import</span> tensorflow <span class="keyword">as</span> tf</span><br><span class="line"><span class="keyword">from</span> tensorflow.keras.layers <span class="keyword">import</span> Dense, Input</span><br><span class="line"><span class="keyword">from</span> tensorflow.keras.optimizers <span class="keyword">import</span> Adam</span><br><span class="line"><span class="keyword">from</span> tensorflow.keras.models <span class="keyword">import</span> Model</span><br><span class="line"><span class="keyword">from</span> tensorflow.keras.callbacks <span class="keyword">import</span> ModelCheckpoint</span><br><span class="line"><span class="keyword">from</span> kaggle_datasets <span class="keyword">import</span> KaggleDatasets</span><br><span class="line"><span class="keyword">import</span> transformers</span><br><span class="line"><span class="keyword">import</span> traitlets</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="keyword">import</span> seaborn <span class="keyword">as</span> sns</span><br><span class="line"><span class="keyword">from</span> tqdm.notebook <span class="keyword">import</span> tqdm</span><br><span class="line"><span class="keyword">from</span> tokenizers <span class="keyword">import</span> BertWordPieceTokenizer</span><br><span class="line"><span class="keyword">from</span> sklearn.metrics <span class="keyword">import</span> roc_auc_score</span><br><span class="line"></span><br><span class="line">warnings.simplefilter(<span class="string">"ignore"</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># %% [markdown]</span></span><br><span class="line"><span class="comment"># ## Helper Functions</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># %% [code]</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">fast_encode</span>(<span class="params">texts, tokenizer, chunk_size=<span class="number">256</span>, maxlen=<span class="number">512</span></span>):</span></span><br><span class="line">    tokenizer.enable_truncation(max_length=maxlen)</span><br><span class="line">    tokenizer.enable_padding(max_length=maxlen)</span><br><span class="line">    all_ids = []</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> tqdm(range(<span class="number">0</span>, len(texts), chunk_size)):</span><br><span class="line">        text_chunk = texts[i:i+chunk_size].tolist()</span><br><span class="line">        encs = tokenizer.encode_batch(text_chunk)</span><br><span class="line">        all_ids.extend([enc.ids <span class="keyword">for</span> enc <span class="keyword">in</span> encs])</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> np.array(all_ids)</span><br><span class="line"></span><br><span class="line"><span class="comment"># %% [code]</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">build_model</span>(<span class="params">transformer, loss=<span class="string">'binary_crossentropy'</span>, max_len=<span class="number">512</span></span>):</span></span><br><span class="line">    input_word_ids = Input(shape=(max_len,), dtype=tf.int32, name=<span class="string">"input_word_ids"</span>)</span><br><span class="line">    sequence_output = transformer(input_word_ids)[<span class="number">0</span>]</span><br><span class="line">    cls_token = sequence_output[:, <span class="number">0</span>, :]</span><br><span class="line">    x = tf.keras.layers.Dropout(<span class="number">0.35</span>)(cls_token)</span><br><span class="line">    out = Dense(<span class="number">1</span>, activation=<span class="string">'sigmoid'</span>)(x)</span><br><span class="line">    </span><br><span class="line">    model = Model(inputs=input_word_ids, outputs=out)</span><br><span class="line">    model.compile(Adam(lr=<span class="number">3e-5</span>), loss=loss, metrics=[tf.keras.metrics.AUC()])</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> model</span><br><span class="line"></span><br><span class="line"><span class="comment"># %% [markdown]</span></span><br><span class="line"><span class="comment"># Cosine similarity calculates similarity by measuring the cosine of angle between two vectors. This is calculated as:</span></span><br><span class="line"><span class="comment"># ![](https://miro.medium.com/max/426/1*hub04IikybZIBkSEcEOtGA.png)</span></span><br><span class="line"><span class="comment"># </span></span><br><span class="line"><span class="comment"># Cosine Similarity calculation for two vectors A and B [source]</span></span><br><span class="line"><span class="comment"># With cosine similarity, we need to convert sentences into vectors. One way to do that is to use bag of words with either TF (term frequency) or TF-IDF (term frequency- inverse document frequency). The choice of TF or TF-IDF depends on application and is immaterial to how cosine similarity is actually performed — which just needs vectors. TF is good for text similarity in general, but TF-IDF is good for search query relevance.</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># %% [code]</span></span><br><span class="line"><span class="comment"># https://stackoverflow.com/questions/8897593/how-to-compute-the-similarity-between-two-text-documents</span></span><br><span class="line"><span class="keyword">import</span> nltk, string</span><br><span class="line"><span class="keyword">from</span> sklearn.feature_extraction.text <span class="keyword">import</span> TfidfVectorizer</span><br><span class="line"></span><br><span class="line">nltk.download(<span class="string">'punkt'</span>) <span class="comment"># if necessary...</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">stemmer = nltk.stem.porter.PorterStemmer()</span><br><span class="line">remove_punctuation_map = dict((ord(char), <span class="literal">None</span>) <span class="keyword">for</span> char <span class="keyword">in</span> string.punctuation)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">stem_tokens</span>(<span class="params">tokens</span>):</span></span><br><span class="line">    <span class="keyword">return</span> [stemmer.stem(item) <span class="keyword">for</span> item <span class="keyword">in</span> tokens]</span><br><span class="line"></span><br><span class="line"><span class="string">'''remove punctuation, lowercase, stem'''</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">normalize</span>(<span class="params">text</span>):</span></span><br><span class="line">    <span class="keyword">return</span> stem_tokens(nltk.word_tokenize(text.lower().translate(remove_punctuation_map)))</span><br><span class="line"></span><br><span class="line">vectorizer = TfidfVectorizer(tokenizer=normalize, stop_words=<span class="string">'english'</span>)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">cosine_sim</span>(<span class="params">text1, text2</span>):</span></span><br><span class="line">    tfidf = vectorizer.fit_transform([text1, text2])</span><br><span class="line">    <span class="keyword">return</span> ((tfidf * tfidf.T).A)[<span class="number">0</span>,<span class="number">1</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment"># %% [markdown]</span></span><br><span class="line"><span class="comment"># ## TPU Configs</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># %% [code]</span></span><br><span class="line">AUTO = tf.data.experimental.AUTOTUNE</span><br><span class="line"></span><br><span class="line"><span class="comment"># Create strategy from tpu</span></span><br><span class="line">tpu = tf.distribute.cluster_resolver.TPUClusterResolver()</span><br><span class="line">tf.config.experimental_connect_to_cluster(tpu)</span><br><span class="line">tf.tpu.experimental.initialize_tpu_system(tpu)</span><br><span class="line">strategy = tf.distribute.experimental.TPUStrategy(tpu)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Data access</span></span><br><span class="line"><span class="comment">#GCS_DS_PATH = KaggleDatasets().get_gcs_path('kaggle/input/') </span></span><br><span class="line"></span><br><span class="line"><span class="comment"># %% [markdown]</span></span><br><span class="line"><span class="comment"># ## Create fast tokenizer</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># %% [code]</span></span><br><span class="line"><span class="comment"># First load the real tokenizer</span></span><br><span class="line">tokenizer = transformers.BertTokenizer.from_pretrained(<span class="string">'bert-base-uncased'</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Save the loaded tokenizer locally</span></span><br><span class="line">save_path = <span class="string">'/kaggle/working/distilbert_base_uncased/'</span></span><br><span class="line"><span class="keyword">if</span> <span class="keyword">not</span> os.path.exists(save_path):</span><br><span class="line">    os.makedirs(save_path)</span><br><span class="line">tokenizer.save_pretrained(save_path)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Reload it with the huggingface tokenizers library</span></span><br><span class="line">fast_tokenizer = BertWordPieceTokenizer(<span class="string">'distilbert_base_uncased/vocab.txt'</span>, lowercase=<span class="literal">True</span>)</span><br><span class="line">fast_tokenizer</span><br><span class="line"></span><br><span class="line"><span class="comment"># %% [markdown]</span></span><br><span class="line"><span class="comment"># ## Load text data into memory</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># %% [code]</span></span><br><span class="line">train1 = pd.read_csv(<span class="string">"/kaggle/input/jigsaw-multilingual-toxic-comment-classification/jigsaw-toxic-comment-train.csv"</span>)</span><br><span class="line">train2 = pd.read_csv(<span class="string">"/kaggle/input/jigsaw-multilingual-toxic-comment-classification/jigsaw-unintended-bias-train.csv"</span>)</span><br><span class="line"></span><br><span class="line">valid = pd.read_csv(<span class="string">'/kaggle/input/val-en-df/validation_en.csv'</span>)</span><br><span class="line">test1 = pd.read_csv(<span class="string">'/kaggle/input/test-en-df/test_en.csv'</span>)</span><br><span class="line">test2 = pd.read_csv(<span class="string">'/kaggle/input/jigsaw-multilingual-toxic-test-translated/jigsaw_miltilingual_test_translated.csv'</span>)</span><br><span class="line">sub = pd.read_csv(<span class="string">'/kaggle/input/jigsaw-multilingual-toxic-comment-classification/sample_submission.csv'</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># %% [code]</span></span><br><span class="line">test2.head()</span><br><span class="line"></span><br><span class="line"><span class="comment"># %% [markdown]</span></span><br><span class="line"><span class="comment"># ## Test dataset comparision</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># %% [code]</span></span><br><span class="line">plt.figure(figsize=(<span class="number">12</span>, <span class="number">8</span>))</span><br><span class="line"></span><br><span class="line">sns.distplot(train1.comment_text.str.len(), label=<span class="string">'train'</span>)</span><br><span class="line">sns.distplot(test1.content_en.str.len(), label=<span class="string">'test1'</span>)</span><br><span class="line">sns.distplot(test2.translated.str.len(), label=<span class="string">'test2'</span>)</span><br><span class="line">plt.legend();</span><br><span class="line"></span><br><span class="line"><span class="comment"># %% [code]</span></span><br><span class="line">plt.figure(figsize=(<span class="number">12</span>, <span class="number">8</span>))</span><br><span class="line"></span><br><span class="line">sns.distplot(train1.comment_text.str.len(), label=<span class="string">'train'</span>)</span><br><span class="line">sns.distplot(test1.content_en.str.len(), label=<span class="string">'test1'</span>)</span><br><span class="line">sns.distplot(test2.translated.str.len(), label=<span class="string">'test2'</span>)</span><br><span class="line">plt.xlim([<span class="number">0</span>, <span class="number">512</span>])</span><br><span class="line">plt.legend();</span><br><span class="line"></span><br><span class="line"><span class="comment"># %% [markdown]</span></span><br><span class="line"><span class="comment"># Lets calculate cosine similarity two translated test datasets.</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># %% [code]</span></span><br><span class="line">test_set_similarity = [cosine_sim(t1, t2) <span class="keyword">for</span> t1, t2 <span class="keyword">in</span> tqdm(zip(test1.content_en, test2.translated))]</span><br><span class="line"></span><br><span class="line">plt.figure(figsize=(<span class="number">12</span>, <span class="number">8</span>))</span><br><span class="line"></span><br><span class="line">sns.distplot(test_set_similarity);</span><br><span class="line"></span><br><span class="line"><span class="comment"># %% [markdown]</span></span><br><span class="line"><span class="comment"># ## Fast encode</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># %% [code]</span></span><br><span class="line">x_train = fast_encode(train1.comment_text.astype(str), fast_tokenizer, maxlen=<span class="number">512</span>)</span><br><span class="line">x_valid = fast_encode(valid.comment_text_en.astype(str), fast_tokenizer, maxlen=<span class="number">512</span>)</span><br><span class="line">x_test1 = fast_encode(test1.content_en.astype(str), fast_tokenizer, maxlen=<span class="number">512</span>)</span><br><span class="line">x_test2 = fast_encode(test2.translated.astype(str), fast_tokenizer, maxlen=<span class="number">512</span>)</span><br><span class="line"></span><br><span class="line">y_train = train1.toxic.values</span><br><span class="line">y_valid = valid.toxic.values</span><br><span class="line"></span><br><span class="line"><span class="comment"># %% [markdown]</span></span><br><span class="line"><span class="comment"># ## Build datasets objects</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># %% [code]</span></span><br><span class="line">train_dataset = (</span><br><span class="line">    tf.data.Dataset</span><br><span class="line">    .from_tensor_slices((x_train, y_train))</span><br><span class="line">    .repeat()</span><br><span class="line">    .shuffle(<span class="number">2048</span>)</span><br><span class="line">    .batch(<span class="number">64</span>)</span><br><span class="line">    .prefetch(AUTO)</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">valid_dataset = (</span><br><span class="line">    tf.data.Dataset</span><br><span class="line">    .from_tensor_slices((x_valid, y_valid))</span><br><span class="line">    .batch(<span class="number">64</span>)</span><br><span class="line">    .cache()</span><br><span class="line">    .prefetch(AUTO)</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">test_dataset = [(</span><br><span class="line">    tf.data.Dataset</span><br><span class="line">    .from_tensor_slices(x_test1)</span><br><span class="line">    .batch(<span class="number">64</span>)</span><br><span class="line">),</span><br><span class="line">    (</span><br><span class="line">    tf.data.Dataset</span><br><span class="line">    .from_tensor_slices(x_test2)</span><br><span class="line">    .batch(<span class="number">64</span>)</span><br><span class="line">)]</span><br><span class="line"></span><br><span class="line"><span class="comment"># %% [markdown]</span></span><br><span class="line"><span class="comment"># # Focal Loss</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># %% [code]</span></span><br><span class="line"><span class="keyword">from</span> tensorflow.keras <span class="keyword">import</span> backend <span class="keyword">as</span> K</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">focal_loss</span>(<span class="params">gamma=<span class="number">2.</span>, alpha=<span class="number">.2</span></span>):</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">focal_loss_fixed</span>(<span class="params">y_true, y_pred</span>):</span></span><br><span class="line">        pt_1 = tf.where(tf.equal(y_true, <span class="number">1</span>), y_pred, tf.ones_like(y_pred))</span><br><span class="line">        pt_0 = tf.where(tf.equal(y_true, <span class="number">0</span>), y_pred, tf.zeros_like(y_pred))</span><br><span class="line">        <span class="keyword">return</span> -K.mean(alpha * K.pow(<span class="number">1.</span> - pt_1, gamma) * K.log(pt_1)) - K.mean((<span class="number">1</span> - alpha) * K.pow(pt_0, gamma) * K.log(<span class="number">1.</span> - pt_0))</span><br><span class="line">    <span class="keyword">return</span> focal_loss_fixed</span><br><span class="line"></span><br><span class="line"><span class="comment"># %% [markdown]</span></span><br><span class="line"><span class="comment"># ## Load model into the TPU</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># %% [code]</span></span><br><span class="line">%%time</span><br><span class="line"><span class="keyword">with</span> strategy.scope():</span><br><span class="line">    transformer_layer = transformers.TFBertModel.from_pretrained(<span class="string">'bert-base-uncased'</span>)</span><br><span class="line">    model = build_model(transformer_layer, loss=focal_loss(gamma=<span class="number">1.5</span>), max_len=<span class="number">512</span>)</span><br><span class="line">model.summary()</span><br><span class="line"></span><br><span class="line"><span class="comment"># %% [markdown]</span></span><br><span class="line"><span class="comment"># ## RocAuc Callback</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># %% [code]</span></span><br><span class="line"><span class="keyword">from</span> tensorflow.keras.callbacks <span class="keyword">import</span> Callback </span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">RocAucCallback</span>(<span class="params">Callback</span>):</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self, test_data, score_thr</span>):</span></span><br><span class="line">        self.test_data = test_data</span><br><span class="line">        self.score_thr = score_thr</span><br><span class="line">        self.test_pred = []</span><br><span class="line">        </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">on_epoch_end</span>(<span class="params">self, epoch, logs=None</span>):</span></span><br><span class="line">        <span class="keyword">if</span> logs[<span class="string">'val_auc'</span>] > self.score_thr:</span><br><span class="line">            print(<span class="string">'\nRun TTA...'</span>)</span><br><span class="line">            <span class="keyword">for</span> td <span class="keyword">in</span> self.test_data:</span><br><span class="line">                self.test_pred.append(self.model.predict(td))</span><br><span class="line"></span><br><span class="line"><span class="comment"># %% [markdown]</span></span><br><span class="line"><span class="comment"># # LrScheduler</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># %% [code]</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">build_lrfn</span>(<span class="params">lr_start=<span class="number">0.000001</span>, lr_max=<span class="number">0.000002</span>, </span></span></span><br><span class="line"><span class="function"><span class="params">               lr_min=<span class="number">0.0000001</span>, lr_rampup_epochs=<span class="number">7</span>, </span></span></span><br><span class="line"><span class="function"><span class="params">               lr_sustain_epochs=<span class="number">0</span>, lr_exp_decay=<span class="number">.87</span></span>):</span></span><br><span class="line">    lr_max = lr_max * strategy.num_replicas_in_sync</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">lrfn</span>(<span class="params">epoch</span>):</span></span><br><span class="line">        <span class="keyword">if</span> epoch < lr_rampup_epochs:</span><br><span class="line">            lr = (lr_max - lr_start) / lr_rampup_epochs * epoch + lr_start</span><br><span class="line">        <span class="keyword">elif</span> epoch < lr_rampup_epochs + lr_sustain_epochs:</span><br><span class="line">            lr = lr_max</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            lr = (lr_max - lr_min) * lr_exp_decay**(epoch - lr_rampup_epochs - lr_sustain_epochs) + lr_min</span><br><span class="line">        <span class="keyword">return</span> lr</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> lrfn</span><br><span class="line"></span><br><span class="line"><span class="comment"># %% [code]</span></span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"></span><br><span class="line">plt.figure(figsize=(<span class="number">10</span>, <span class="number">7</span>))</span><br><span class="line"></span><br><span class="line">_lrfn = build_lrfn()</span><br><span class="line">plt.plot([i <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">35</span>)], [_lrfn(i) <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">35</span>)]);</span><br><span class="line"></span><br><span class="line"><span class="comment"># %% [markdown]</span></span><br><span class="line"><span class="comment"># ## Train Model</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># %% [code]</span></span><br><span class="line">roc_auc = RocAucCallback(test_dataset, <span class="number">0.9195</span>)</span><br><span class="line">lrfn = build_lrfn()</span><br><span class="line">lr_schedule = tf.keras.callbacks.LearningRateScheduler(lrfn, verbose=<span class="number">1</span>)</span><br><span class="line"></span><br><span class="line">train_history = model.fit(</span><br><span class="line">    train_dataset,</span><br><span class="line">    steps_per_epoch=<span class="number">150</span>,</span><br><span class="line">    validation_data=valid_dataset,</span><br><span class="line">    callbacks=[lr_schedule, roc_auc],</span><br><span class="line">    epochs=<span class="number">35</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="comment"># %% [markdown]</span></span><br><span class="line"><span class="comment"># ## Submission</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># %% [code]</span></span><br><span class="line">sub[<span class="string">'toxic'</span>] = np.mean(roc_auc.test_pred, axis=<span class="number">0</span>)</span><br><span class="line">sub.to_csv(<span class="string">'submission.csv'</span>, index=<span class="literal">False</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># %% [markdown]</span></span><br><span class="line"><span class="comment"># # Reference</span></span><br><span class="line"><span class="comment"># * [Jigsaw TPU: DistilBERT with Huggingface and Keras](https://www.kaggle.com/xhlulu/jigsaw-tpu-distilbert-with-huggingface-and-keras)</span></span><br><span class="line"><span class="comment"># * [inference of bert tpu model ml w/ validation](https://www.kaggle.com/abhishek/inference-of-bert-tpu-model-ml-w-validation)</span></span><br><span class="line"><span class="comment"># * [Overview of Text Similarity Metrics in Python](https://towardsdatascience.com/overview-of-text-similarity-metrics-3397c4601f50)</span></span><br><span class="line"><span class="comment"># * [test-en-df](https://www.kaggle.com/bamps53/test-en-df)</span></span><br><span class="line"><span class="comment"># * [val_en_df](https://www.kaggle.com/bamps53/val-en-df)</span></span><br><span class="line"><span class="comment"># * [Jigsaw multilingual toxic - test translated](https://www.kaggle.com/kashnitsky/jigsaw-multilingual-toxic-test-translated)</span></span><br></pre></td></tr></tbody></table></figure>
+</body></html>
+    </div>
+
+    
+    
+    
+      
+
+        <div class="reward-container">
+  <div>支持一根棒棒糖！</div>
+  <button onclick="var qr = document.getElementById('qr'); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+    Donate
+  </button>
+  <div id="qr" style="display: none;">
+      
+      <div style="display: inline-block;">
+        <img src="https://i.loli.net/2020/08/27/Z63uzPfeimEYrD2.png" alt="Sun Yan WeChat Pay">
+        <p>WeChat Pay</p>
+      </div>
+      
+      <div style="display: inline-block;">
+        <img src="https://i.loli.net/2020/08/27/Zz62YJyVH1SRgGj.jpg" alt="Sun Yan Alipay">
+        <p>Alipay</p>
+      </div>
+
+  </div>
+</div>
+
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>Post author:  </strong>Sun Yan
+  </li>
+  <li class="post-copyright-link">
+    <strong>Post link: </strong>
+    <a href="http://sunyancn.github.io/post/60709.html" title="多标签文本分类 kaggle kernel">http://sunyancn.github.io/post/60709.html</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> unless stating additionally.
+  </li>
+</ul>
+</div>
+
+
+      <footer class="post-footer">
+          
+          <div class="post-tags">
+              <a href="/tags/%E5%A4%9A%E6%A0%87%E7%AD%BE/" rel="tag"><i class="fa fa-tag"></i> 多标签</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/post/35391.html" rel="prev" title="有趣的网站">
+      <i class="fa fa-chevron-left"></i> 有趣的网站
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/post/48955.html" rel="next" title="如何入门深度学习">
+      如何入门深度学习 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+    <script type="text/javascript" src="/js/linkcard.js"></script>
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    <div class="comments" id="valine-comments"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9F%BA%E4%BA%8ELSTM%E7%9A%84%E5%A4%9A%E6%A0%87%E7%AD%BE%E6%96%87%E6%9C%AC%E5%88%86%E7%B1%BB"><span class="nav-number">1.</span> <span class="nav-text">基于 LSTM 的多标签文本分类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9F%BA%E4%BA%8EBERT%E7%9A%84%E5%A4%9A%E6%A0%87%E7%AD%BE%E6%96%87%E6%9C%AC%E5%88%86%E7%B1%BB-%E4%BD%BF%E7%94%A8TPU"><span class="nav-number">2.</span> <span class="nav-text">基于 BERT 的多标签文本分类 (使用 TPU)</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Sun Yan"
+      src="https://i.loli.net/2020/08/25/NrIpckD9qPLY38C.jpg">
+  <p class="site-author-name" itemprop="name">Sun Yan</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">115</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">17</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">79</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/sunyancn" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;sunyancn" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:sunyanhust@163.com" title="E-Mail → mailto:sunyanhust@163.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/atom.xml" title="RSS → &#x2F;atom.xml"><i class="fas fa-rss fa-fw"></i>RSS</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://weibo.com/u/5270232660" title="Weibo → https:&#x2F;&#x2F;weibo.com&#x2F;u&#x2F;5270232660" rel="noopener" target="_blank"><i class="fab fa-weibo fa-fw"></i>Weibo</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 2015 – 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Sun Yan</span>
+</div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script size="300" alpha="0.6" zIndex="-1" src="//cdn.jsdelivr.net/gh/theme-next/theme-next-canvas-ribbon@1/canvas-ribbon.js"></script>
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+<script src="/js/bookmark.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
+
+  
+<div id="needsharebutton-float">
+      <span class="btn">
+        <i class="fa fa-share-alt" aria-hidden="true"></i>
+      </span>
+    </div>
+  <script src="//cdn.jsdelivr.net/gh/theme-next/theme-next-needmoreshare2@1/needsharebutton.min.js"></script>
+  <script>
+      flOptions = {};
+        flOptions.iconStyle = "box";
+        flOptions.boxForm = "horizontal";
+        flOptions.position = "middleRight";
+        flOptions.networks = "Weibo,Wechat,Douban,QQZone,Twitter,Facebook";
+      new needShareButton('#needsharebutton-float', flOptions);
+  </script>
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('https://cdn.jsdelivr.net/gh//AshinWang/SimpleValine/SimpleValine.min.js', () => {
+    var GUEST = ['nick', 'mail', 'link'];
+    var guest = 'nick,mail';
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
+    });
+    new Valine({
+      el         : '#valine-comments',
+      verify     : false,
+      notify     : false,
+      appId      : 'IAIsNxUL4BLqJ2c4nTn8HlLv-gzGzoHsz',
+      appKey     : '73p5IVTPonVrJhOylbVtJffi',
+      placeholder: "(๑•́ ₃ •̀๑) 留言时填写您的邮箱可以邮件收到博主的回复噢~",
+      avatar     : 'wavatar',
+      meta       : guest,
+      pageSize   : '10' || 10,
+      visitor    : false,
+      lang       : '' || 'zh-cn',
+      path       : location.pathname,
+      recordIP   : true,
+      serverURLs : ''
+    });
+  }, window.Valine);
+});
+</script>
+
+</body>
+</html>

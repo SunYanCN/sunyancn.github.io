@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.1.1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Noto Serif SC:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"sunyancn.github.io","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"valine","storage":true,"lazyload":false,"nav":null,"activeClass":"valine"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="CS231N 课程描述和资源CS231n 的全称是 CS231n: Convolutional Neural Networks for Visual Recognition，即面向视觉识别的卷积神经网络。该课程是斯坦福大学计算机视觉实验室推出的课程。课程官网：http:&#x2F;&#x2F;cs231n.stanford.edu&#x2F;官方笔记：http:&#x2F;&#x2F;cs231n.github.io&#x2F;B 站视频：https:&#x2F;&#x2F;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CS231N 学习笔记">
+<meta property="og:url" content="http://sunyancn.github.io/post/24704.html">
+<meta property="og:site_name" content="故事尾音">
+<meta property="og:description" content="CS231N 课程描述和资源CS231n 的全称是 CS231n: Convolutional Neural Networks for Visual Recognition，即面向视觉识别的卷积神经网络。该课程是斯坦福大学计算机视觉实验室推出的课程。课程官网：http:&#x2F;&#x2F;cs231n.stanford.edu&#x2F;官方笔记：http:&#x2F;&#x2F;cs231n.github.io&#x2F;B 站视频：https:&#x2F;&#x2F;">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://i.loli.net/2019/09/24/Mv4KWftwbTCBlgu.png">
+<meta property="og:image" content="https://i.loli.net/2019/09/24/nm9aGqfFD3Q4KgV.png">
+<meta property="og:image" content="https://i.loli.net/2019/09/24/nybgcoX8Vsi3fUE.png">
+<meta property="og:image" content="https://i.loli.net/2019/09/24/zZ7PIpEK8xCwS9k.png">
+<meta property="article:published_time" content="2019-09-24T02:39:11.000Z">
+<meta property="article:modified_time" content="2020-08-26T17:27:01.995Z">
+<meta property="article:author" content="Sun Yan">
+<meta property="article:tag" content="CS231N">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.loli.net/2019/09/24/Mv4KWftwbTCBlgu.png">
+
+<link rel="canonical" href="http://sunyancn.github.io/post/24704.html">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+<script src="/lib/fireworks.js"></script><link rel="stylesheet" href="//cdn.jsdelivr.net/gh/theme-next/theme-next-needmoreshare2@1/needsharebutton.min.css"><style>
+#needsharebutton-float {
+  bottom: 88px;
+  cursor: pointer;
+  left: -8px;
+  position: fixed;
+  z-index: 9999;
+}
+#needsharebutton-float .btn {
+  border: 1px solid $btn-default-border-color;
+  border-radius: 4px;
+  padding: 0 10px 0 14px;
+}
+</style>
+  <title>CS231N 学习笔记 | 故事尾音</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="故事尾音" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">故事尾音</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">喜欢推导也喜欢被推倒</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+        <li class="menu-item menu-item-image">
+
+    <a href="/image/" rel="section"><i class="fa fa-image fa-fw"></i>image</a>
+
+  </li>
+        <li class="menu-item menu-item-music">
+
+    <a href="/music/" rel="section"><i class="fa fa-music fa-fw"></i>music</a>
+
+  </li>
+        <li class="menu-item menu-item-shuoshuo">
+
+    <a href="/shuoshuo/" rel="section"><i class="fa fa-heartbeat fa-fw"></i>shuoshuo</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://sunyancn.github.io/post/24704.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://i.loli.net/2020/08/25/NrIpckD9qPLY38C.jpg">
+      <meta itemprop="name" content="Sun Yan">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="故事尾音">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          CS231N 学习笔记
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2019-09-24 10:39:11" itemprop="dateCreated datePublished" datetime="2019-09-24T10:39:11+08:00">2019-09-24</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-08-27 01:27:01" itemprop="dateModified" datetime="2020-08-27T01:27:01+08:00">2020-08-27</time>
+              </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine: </span>
+    
+    <a title="valine" href="/post/24704.html#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/post/24704.html" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <html><head></head><body><h2 id="CS231N课程描述和资源" class="heading-control"><a href="#CS231N课程描述和资源" class="headerlink" title="CS231N课程描述和资源"></a>CS231N 课程描述和资源<a class="heading-anchor" href="#CS231N课程描述和资源" aria-hidden="true"></a></h2><p>CS231n 的全称是 CS231n: Convolutional Neural Networks for Visual Recognition，即面向视觉识别的卷积神经网络。该课程是斯坦福大学计算机视觉实验室推出的课程。<br>课程官网：<a target="_blank" rel="noopener" href="http://cs231n.stanford.edu/">http://cs231n.stanford.edu/</a><br>官方笔记：<a target="_blank" rel="noopener" href="http://cs231n.github.io/">http://cs231n.github.io/</a><br>B 站视频：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/av58778425">https://www.bilibili.com/video/av58778425</a><br>课程作业：<a target="_blank" rel="noopener" href="https://github.com/Burton2000/CS231n-2017">https://github.com/Burton2000/CS231n-2017</a></p>
+<a id="more"></a>
+<h2 id="Lecture-1：引言" class="heading-control"><a href="#Lecture-1：引言" class="headerlink" title="Lecture 1：引言"></a>Lecture 1：引言<a class="heading-anchor" href="#Lecture-1：引言" aria-hidden="true"></a></h2><p>主要是计算机视觉概述和背景。</p>
+<ul>
+<li>从 1960 年代末到 2017 年的计算机视觉简史。</li>
+<li>计算机视觉问题包括图像分类，目标定位，目标检测和场景理解。</li>
+<li>Imagenet 是目前可用的图像分类中最大的数据集之一。</li>
+<li>从 2012 年在 Imagenet 竞赛中开始，CNN（卷积神经网络）一直是赢家。</li>
+<li>CNN 实际上是由 Yann Lecun 于 1997 年发明的。</li>
+<li>近年来深度学习的成功主要来源于数据和算力的增长</li>
+</ul>
+<h2 id="Lecture-2：图像分类" class="heading-control"><a href="#Lecture-2：图像分类" class="headerlink" title="Lecture 2：图像分类"></a>Lecture 2：图像分类<a class="heading-anchor" href="#Lecture-2：图像分类" aria-hidden="true"></a></h2><h3 id="数据驱动" class="heading-control"><a href="#数据驱动" class="headerlink" title="数据驱动"></a>数据驱动<a class="heading-anchor" href="#数据驱动" aria-hidden="true"></a></h3><p>数据驱动的分类方法是指:</p>
+<ul>
+<li>收集具有标注的图片数据集 (CIFAR10).</li>
+<li> 使用机器学习来训练分类器.</li>
+<li> 使用模型来预测新的图片.</li>
+</ul>
+<h3 id="KNN" class="heading-control"><a href="#KNN" class="headerlink" title="KNN"></a>KNN<a class="heading-anchor" href="#KNN" aria-hidden="true"></a></h3><p>KNN 用于图片分类：将两张图片先转化为两个向量（向量的维度为像素数量）$I_1$ 和 $I_2$，再计算两者的距离 $L_1$ 或者 $L_2$（距离的选择是一个超参数），找距离最近的 k 个图片的标签，让他们针对测试图片进行投票，把票数最高的标签作为对测试图片的预测。</p>
+<h4 id="距离函数" class="heading-control"><a href="#距离函数" class="headerlink" title="距离函数"></a>距离函数<a class="heading-anchor" href="#距离函数" aria-hidden="true"></a></h4><p>距离函数是 K 近邻算法的关键。常用的有 L1 距离，L2 距离等。通过不同的距离函数还可以将 K 近邻算法泛化到任何类型的数据上.<br><img src="https://i.loli.net/2019/09/24/Mv4KWftwbTCBlgu.png" alt></p>
+<h4 id="K值" class="heading-control"><a href="#K值" class="headerlink" title="K值"></a>K 值<a class="heading-anchor" href="#K值" aria-hidden="true"></a></h4><p>K 指的是邻居的个数，可以使用交叉验证调优。</p>
+<h4 id="超参数选择" class="heading-control"><a href="#超参数选择" class="headerlink" title="超参数选择"></a>超参数选择<a class="heading-anchor" href="#超参数选择" aria-hidden="true"></a></h4><p>K 近邻算法中的 K 值和距离函数就是典型的超参数：需要人为设置，而不能由算法学习得到。选择超参数的常见作法就是将数据集分为训练集，验证集，测试集。使用验证集来选择超参数，并在测试集得到结果。如果数据集较小，还可以采用交叉验证的方法进行选择.<br><strong>划分数据集</strong><br><img src="https://i.loli.net/2019/09/24/nm9aGqfFD3Q4KgV.png" alt><br><strong>交叉验证</strong><br><img src="https://i.loli.net/2019/09/24/nybgcoX8Vsi3fUE.png" alt><br><strong>交叉验证选择 K 值</strong><br><img src="https://i.loli.net/2019/09/24/zZ7PIpEK8xCwS9k.png" alt></p>
+<h4 id="缺点" class="heading-control"><a href="#缺点" class="headerlink" title="缺点"></a>缺点<a class="heading-anchor" href="#缺点" aria-hidden="true"></a></h4><ul>
+<li>测试要花费大量时间计算，因为每个测试图像需要和所有存储的训练图像进行比较（Train <script type="math/tex">O(1)</script> , Test <script type="math/tex">O(n)</script>）</li>
+<li>图像的分类是基于背景的，而不是图片的语义主体。</li>
+</ul>
+<h2 id="Lecture-3：损失函数和优化" class="heading-control"><a href="#Lecture-3：损失函数和优化" class="headerlink" title="Lecture 3：损失函数和优化"></a>Lecture 3：损失函数和优化<a class="heading-anchor" href="#Lecture-3：损失函数和优化" aria-hidden="true"></a></h2><h2 id="Lecture-4：反向传播与神经网络" class="heading-control"><a href="#Lecture-4：反向传播与神经网络" class="headerlink" title="Lecture 4：反向传播与神经网络"></a>Lecture 4：反向传播与神经网络<a class="heading-anchor" href="#Lecture-4：反向传播与神经网络" aria-hidden="true"></a></h2><h2 id="Lecture-5：卷积神经网络" class="heading-control"><a href="#Lecture-5：卷积神经网络" class="headerlink" title="Lecture 5：卷积神经网络"></a>Lecture 5：卷积神经网络<a class="heading-anchor" href="#Lecture-5：卷积神经网络" aria-hidden="true"></a></h2><h2 id="Lecture-6：如何训练神经网络-I" class="heading-control"><a href="#Lecture-6：如何训练神经网络-I" class="headerlink" title="Lecture 6：如何训练神经网络 I"></a>Lecture 6：如何训练神经网络 I<a class="heading-anchor" href="#Lecture-6：如何训练神经网络-I" aria-hidden="true"></a></h2><h2 id="Lecture-7：如何训练神经网络-II" class="heading-control"><a href="#Lecture-7：如何训练神经网络-II" class="headerlink" title="Lecture 7：如何训练神经网络 II"></a>Lecture 7：如何训练神经网络 II<a class="heading-anchor" href="#Lecture-7：如何训练神经网络-II" aria-hidden="true"></a></h2><h2 id="Lecture-8-深度学习软件" class="heading-control"><a href="#Lecture-8-深度学习软件" class="headerlink" title="Lecture 8: 深度学习软件"></a>Lecture 8: 深度学习软件<a class="heading-anchor" href="#Lecture-8-深度学习软件" aria-hidden="true"></a></h2><h2 id="Lecture-9：卷积神经网络架构" class="heading-control"><a href="#Lecture-9：卷积神经网络架构" class="headerlink" title="Lecture 9：卷积神经网络架构"></a>Lecture 9：卷积神经网络架构<a class="heading-anchor" href="#Lecture-9：卷积神经网络架构" aria-hidden="true"></a></h2><h2 id="Lecture-10：循环神经网络" class="heading-control"><a href="#Lecture-10：循环神经网络" class="headerlink" title="Lecture 10：循环神经网络"></a>Lecture 10：循环神经网络<a class="heading-anchor" href="#Lecture-10：循环神经网络" aria-hidden="true"></a></h2><h2 id="Lecture-11：检测与分割" class="heading-control"><a href="#Lecture-11：检测与分割" class="headerlink" title="Lecture 11：检测与分割"></a>Lecture 11：检测与分割<a class="heading-anchor" href="#Lecture-11：检测与分割" aria-hidden="true"></a></h2><h2 id="Lecture-12：可视化和理解" class="heading-control"><a href="#Lecture-12：可视化和理解" class="headerlink" title="Lecture 12：可视化和理解"></a>Lecture 12：可视化和理解<a class="heading-anchor" href="#Lecture-12：可视化和理解" aria-hidden="true"></a></h2><h2 id="Lecture-13：生成模型" class="heading-control"><a href="#Lecture-13：生成模型" class="headerlink" title="Lecture 13：生成模型"></a>Lecture 13：生成模型<a class="heading-anchor" href="#Lecture-13：生成模型" aria-hidden="true"></a></h2><h2 id="Lecture-14：强化学习" class="heading-control"><a href="#Lecture-14：强化学习" class="headerlink" title="Lecture 14：强化学习"></a>Lecture 14：强化学习<a class="heading-anchor" href="#Lecture-14：强化学习" aria-hidden="true"></a></h2><h2 id="Lecture-15：深度学习高效的方法和硬件" class="heading-control"><a href="#Lecture-15：深度学习高效的方法和硬件" class="headerlink" title="Lecture 15：深度学习高效的方法和硬件"></a>Lecture 15：深度学习高效的方法和硬件<a class="heading-anchor" href="#Lecture-15：深度学习高效的方法和硬件" aria-hidden="true"></a></h2><h2 id="Lecture-16：对抗性样本和对抗性训练" class="heading-control"><a href="#Lecture-16：对抗性样本和对抗性训练" class="headerlink" title="Lecture 16：对抗性样本和对抗性训练"></a>Lecture 16：对抗性样本和对抗性训练<a class="heading-anchor" href="#Lecture-16：对抗性样本和对抗性训练" aria-hidden="true"></a></h2></body></html>
+    </div>
+
+    
+    
+    
+      
+
+        <div class="reward-container">
+  <div>支持一根棒棒糖！</div>
+  <button onclick="var qr = document.getElementById('qr'); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+    Donate
+  </button>
+  <div id="qr" style="display: none;">
+      
+      <div style="display: inline-block;">
+        <img src="https://i.loli.net/2020/08/27/Z63uzPfeimEYrD2.png" alt="Sun Yan WeChat Pay">
+        <p>WeChat Pay</p>
+      </div>
+      
+      <div style="display: inline-block;">
+        <img src="https://i.loli.net/2020/08/27/Zz62YJyVH1SRgGj.jpg" alt="Sun Yan Alipay">
+        <p>Alipay</p>
+      </div>
+
+  </div>
+</div>
+
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>Post author:  </strong>Sun Yan
+  </li>
+  <li class="post-copyright-link">
+    <strong>Post link: </strong>
+    <a href="http://sunyancn.github.io/post/24704.html" title="CS231N 学习笔记">http://sunyancn.github.io/post/24704.html</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> unless stating additionally.
+  </li>
+</ul>
+</div>
+
+
+      <footer class="post-footer">
+          
+          <div class="post-tags">
+              <a href="/tags/CS231N/" rel="tag"><i class="fa fa-tag"></i> CS231N</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/post/13085.html" rel="prev" title="中秋">
+      <i class="fa fa-chevron-left"></i> 中秋
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/post/64988.html" rel="next" title="THU 深圳研究院：大数据机器学习">
+      THU 深圳研究院：大数据机器学习 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+    <script type="text/javascript" src="/js/linkcard.js"></script>
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    <div class="comments" id="valine-comments"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#CS231N%E8%AF%BE%E7%A8%8B%E6%8F%8F%E8%BF%B0%E5%92%8C%E8%B5%84%E6%BA%90"><span class="nav-number">1.</span> <span class="nav-text">CS231N 课程描述和资源</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lecture-1%EF%BC%9A%E5%BC%95%E8%A8%80"><span class="nav-number">2.</span> <span class="nav-text">Lecture 1：引言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lecture-2%EF%BC%9A%E5%9B%BE%E5%83%8F%E5%88%86%E7%B1%BB"><span class="nav-number">3.</span> <span class="nav-text">Lecture 2：图像分类</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E9%A9%B1%E5%8A%A8"><span class="nav-number">3.1.</span> <span class="nav-text">数据驱动</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#KNN"><span class="nav-number">3.2.</span> <span class="nav-text">KNN</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%B7%9D%E7%A6%BB%E5%87%BD%E6%95%B0"><span class="nav-number">3.2.1.</span> <span class="nav-text">距离函数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#K%E5%80%BC"><span class="nav-number">3.2.2.</span> <span class="nav-text">K 值</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%B6%85%E5%8F%82%E6%95%B0%E9%80%89%E6%8B%A9"><span class="nav-number">3.2.3.</span> <span class="nav-text">超参数选择</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%BC%BA%E7%82%B9"><span class="nav-number">3.2.4.</span> <span class="nav-text">缺点</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lecture-3%EF%BC%9A%E6%8D%9F%E5%A4%B1%E5%87%BD%E6%95%B0%E5%92%8C%E4%BC%98%E5%8C%96"><span class="nav-number">4.</span> <span class="nav-text">Lecture 3：损失函数和优化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lecture-4%EF%BC%9A%E5%8F%8D%E5%90%91%E4%BC%A0%E6%92%AD%E4%B8%8E%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C"><span class="nav-number">5.</span> <span class="nav-text">Lecture 4：反向传播与神经网络</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lecture-5%EF%BC%9A%E5%8D%B7%E7%A7%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C"><span class="nav-number">6.</span> <span class="nav-text">Lecture 5：卷积神经网络</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lecture-6%EF%BC%9A%E5%A6%82%E4%BD%95%E8%AE%AD%E7%BB%83%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C-I"><span class="nav-number">7.</span> <span class="nav-text">Lecture 6：如何训练神经网络 I</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lecture-7%EF%BC%9A%E5%A6%82%E4%BD%95%E8%AE%AD%E7%BB%83%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C-II"><span class="nav-number">8.</span> <span class="nav-text">Lecture 7：如何训练神经网络 II</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lecture-8-%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E8%BD%AF%E4%BB%B6"><span class="nav-number">9.</span> <span class="nav-text">Lecture 8: 深度学习软件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lecture-9%EF%BC%9A%E5%8D%B7%E7%A7%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E6%9E%B6%E6%9E%84"><span class="nav-number">10.</span> <span class="nav-text">Lecture 9：卷积神经网络架构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lecture-10%EF%BC%9A%E5%BE%AA%E7%8E%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C"><span class="nav-number">11.</span> <span class="nav-text">Lecture 10：循环神经网络</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lecture-11%EF%BC%9A%E6%A3%80%E6%B5%8B%E4%B8%8E%E5%88%86%E5%89%B2"><span class="nav-number">12.</span> <span class="nav-text">Lecture 11：检测与分割</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lecture-12%EF%BC%9A%E5%8F%AF%E8%A7%86%E5%8C%96%E5%92%8C%E7%90%86%E8%A7%A3"><span class="nav-number">13.</span> <span class="nav-text">Lecture 12：可视化和理解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lecture-13%EF%BC%9A%E7%94%9F%E6%88%90%E6%A8%A1%E5%9E%8B"><span class="nav-number">14.</span> <span class="nav-text">Lecture 13：生成模型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lecture-14%EF%BC%9A%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0"><span class="nav-number">15.</span> <span class="nav-text">Lecture 14：强化学习</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lecture-15%EF%BC%9A%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E9%AB%98%E6%95%88%E7%9A%84%E6%96%B9%E6%B3%95%E5%92%8C%E7%A1%AC%E4%BB%B6"><span class="nav-number">16.</span> <span class="nav-text">Lecture 15：深度学习高效的方法和硬件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lecture-16%EF%BC%9A%E5%AF%B9%E6%8A%97%E6%80%A7%E6%A0%B7%E6%9C%AC%E5%92%8C%E5%AF%B9%E6%8A%97%E6%80%A7%E8%AE%AD%E7%BB%83"><span class="nav-number">17.</span> <span class="nav-text">Lecture 16：对抗性样本和对抗性训练</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Sun Yan"
+      src="https://i.loli.net/2020/08/25/NrIpckD9qPLY38C.jpg">
+  <p class="site-author-name" itemprop="name">Sun Yan</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">115</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">17</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">79</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/sunyancn" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;sunyancn" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:sunyanhust@163.com" title="E-Mail → mailto:sunyanhust@163.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/atom.xml" title="RSS → &#x2F;atom.xml"><i class="fas fa-rss fa-fw"></i>RSS</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://weibo.com/u/5270232660" title="Weibo → https:&#x2F;&#x2F;weibo.com&#x2F;u&#x2F;5270232660" rel="noopener" target="_blank"><i class="fab fa-weibo fa-fw"></i>Weibo</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 2015 – 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Sun Yan</span>
+</div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script size="300" alpha="0.6" zIndex="-1" src="//cdn.jsdelivr.net/gh/theme-next/theme-next-canvas-ribbon@1/canvas-ribbon.js"></script>
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+<script src="/js/bookmark.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
+
+  
+<div id="needsharebutton-float">
+      <span class="btn">
+        <i class="fa fa-share-alt" aria-hidden="true"></i>
+      </span>
+    </div>
+  <script src="//cdn.jsdelivr.net/gh/theme-next/theme-next-needmoreshare2@1/needsharebutton.min.js"></script>
+  <script>
+      flOptions = {};
+        flOptions.iconStyle = "box";
+        flOptions.boxForm = "horizontal";
+        flOptions.position = "middleRight";
+        flOptions.networks = "Weibo,Wechat,Douban,QQZone,Twitter,Facebook";
+      new needShareButton('#needsharebutton-float', flOptions);
+  </script>
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('https://cdn.jsdelivr.net/gh//AshinWang/SimpleValine/SimpleValine.min.js', () => {
+    var GUEST = ['nick', 'mail', 'link'];
+    var guest = 'nick,mail';
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
+    });
+    new Valine({
+      el         : '#valine-comments',
+      verify     : false,
+      notify     : false,
+      appId      : 'IAIsNxUL4BLqJ2c4nTn8HlLv-gzGzoHsz',
+      appKey     : '73p5IVTPonVrJhOylbVtJffi',
+      placeholder: "(๑•́ ₃ •̀๑) 留言时填写您的邮箱可以邮件收到博主的回复噢~",
+      avatar     : 'wavatar',
+      meta       : guest,
+      pageSize   : '10' || 10,
+      visitor    : false,
+      lang       : '' || 'zh-cn',
+      path       : location.pathname,
+      recordIP   : true,
+      serverURLs : ''
+    });
+  }, window.Valine);
+});
+</script>
+
+</body>
+</html>

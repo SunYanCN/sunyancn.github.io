@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.1.1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Noto Serif SC:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"sunyancn.github.io","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"valine","storage":true,"lazyload":false,"nav":null,"activeClass":"valine"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="论文 1《 3R: Reading - Ranking - Recognizing for Multi-Passage Reading Comprehension》 简介ITAIC 2019 的一篇文章。本文主要用来解决的是 Multi-passage reading comprehension 问题。 模型结构文章提出了阅读 - 排序 - 识别三段式模型，分别为：  段落提取模块：提取所有与问题">
+<meta property="og:type" content="article">
+<meta property="og:title" content="论文阅读 - 20190928">
+<meta property="og:url" content="http://sunyancn.github.io/post/49484.html">
+<meta property="og:site_name" content="故事尾音">
+<meta property="og:description" content="论文 1《 3R: Reading - Ranking - Recognizing for Multi-Passage Reading Comprehension》 简介ITAIC 2019 的一篇文章。本文主要用来解决的是 Multi-passage reading comprehension 问题。 模型结构文章提出了阅读 - 排序 - 识别三段式模型，分别为：  段落提取模块：提取所有与问题">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://i.loli.net/2019/09/29/Y94pMrHwCWDZyue.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/10/11/uH8TRU.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/10/11/uHGHtP.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/10/11/uHJ3cD.png">
+<meta property="og:image" content="https://i.loli.net/2019/09/29/rWBNx4qQamAM3IY.png">
+<meta property="og:image" content="https://i.loli.net/2019/09/29/XT7dr3Qz8kwGlYO.png">
+<meta property="og:image" content="http://sunyancn.github.io/tmp/1570762041589.png">
+<meta property="og:image" content="http://sunyancn.github.io/tmp/1570762546081.png">
+<meta property="og:image" content="http://sunyancn.github.io/tmp/1570763338546.png">
+<meta property="og:image" content="http://sunyancn.github.io/tmp/1570763840060.png">
+<meta property="article:published_time" content="2019-09-28T13:28:48.000Z">
+<meta property="article:modified_time" content="2020-08-26T17:27:02.272Z">
+<meta property="article:author" content="Sun Yan">
+<meta property="article:tag" content="论文">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.loli.net/2019/09/29/Y94pMrHwCWDZyue.png">
+
+<link rel="canonical" href="http://sunyancn.github.io/post/49484.html">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+<script src="/lib/fireworks.js"></script><link rel="stylesheet" href="//cdn.jsdelivr.net/gh/theme-next/theme-next-needmoreshare2@1/needsharebutton.min.css"><style>
+#needsharebutton-float {
+  bottom: 88px;
+  cursor: pointer;
+  left: -8px;
+  position: fixed;
+  z-index: 9999;
+}
+#needsharebutton-float .btn {
+  border: 1px solid $btn-default-border-color;
+  border-radius: 4px;
+  padding: 0 10px 0 14px;
+}
+</style>
+  <title>论文阅读 - 20190928 | 故事尾音</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="故事尾音" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">故事尾音</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">喜欢推导也喜欢被推倒</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+        <li class="menu-item menu-item-image">
+
+    <a href="/image/" rel="section"><i class="fa fa-image fa-fw"></i>image</a>
+
+  </li>
+        <li class="menu-item menu-item-music">
+
+    <a href="/music/" rel="section"><i class="fa fa-music fa-fw"></i>music</a>
+
+  </li>
+        <li class="menu-item menu-item-shuoshuo">
+
+    <a href="/shuoshuo/" rel="section"><i class="fa fa-heartbeat fa-fw"></i>shuoshuo</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://sunyancn.github.io/post/49484.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://i.loli.net/2020/08/25/NrIpckD9qPLY38C.jpg">
+      <meta itemprop="name" content="Sun Yan">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="故事尾音">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          论文阅读 - 20190928
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2019-09-28 21:28:48" itemprop="dateCreated datePublished" datetime="2019-09-28T21:28:48+08:00">2019-09-28</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-08-27 01:27:02" itemprop="dateModified" datetime="2020-08-27T01:27:02+08:00">2020-08-27</time>
+              </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine: </span>
+    
+    <a title="valine" href="/post/49484.html#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/post/49484.html" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <html><head></head><body><h2 id="论文1" class="heading-control"><a href="#论文1" class="headerlink" title="论文1"></a>论文 1<a class="heading-anchor" href="#论文1" aria-hidden="true"></a></h2><p><strong>《 3R: Reading - Ranking - Recognizing for Multi-Passage Reading Comprehension》</strong></p>
+<h3 id="简介" class="heading-control"><a href="#简介" class="headerlink" title="简介"></a>简介<a class="heading-anchor" href="#简介" aria-hidden="true"></a></h3><p>ITAIC 2019 的一篇文章。本文主要用来解决的是 Multi-passage reading comprehension 问题。</p>
+<h3 id="模型结构" class="heading-control"><a href="#模型结构" class="headerlink" title="模型结构"></a>模型结构<a class="heading-anchor" href="#模型结构" aria-hidden="true"></a></h3><p>文章提出了阅读 - 排序 - 识别三段式模型，分别为：</p>
+<ul>
+<li><strong>段落提取模块</strong>：提取所有与问题相关的段落</li>
+<li><strong>阅读理解模块</strong>：阅读每个提取出来的相关段落，抽取出候选答案。其中阅读理解模块基于 BERT。</li>
+<li><strong>答案排序模块</strong>：提出两种答案排序策略，分别是 question-to-answer verify 和 answer-to-answer verify</li>
+</ul>
+<p>这三个模块完成后，还增加了 no answer recognition section，来判断是否有问题的答案。</p>
+<p><img src="https://i.loli.net/2019/09/29/Y94pMrHwCWDZyue.png" alt></p>
+<a id="more"></a>
+<h4 id="段落提取模块" class="heading-control"><a href="#段落提取模块" class="headerlink" title="段落提取模块"></a>段落提取模块<a class="heading-anchor" href="#段落提取模块" aria-hidden="true"></a></h4><h2 id="论文2" class="heading-control"><a href="#论文2" class="headerlink" title="论文2"></a>论文 2<a class="heading-anchor" href="#论文2" aria-hidden="true"></a></h2><p><strong>《Joint Training of Candidate Extraction and Answer Selection for Reading Comprehension》</strong></p>
+<h3 id="简介-1" class="heading-control"><a href="#简介-1" class="headerlink" title="简介"></a>简介<a class="heading-anchor" href="#简介-1" aria-hidden="true"></a></h3><p> 百度的一篇文章，Accepted by ACL 2018。论文把 RC 分为两个阶段，第一阶段产生候选答案集合，第二阶段进行答案选择即答案评分。整体模型结构如下：</p>
+<p><img src="https://s2.ax1x.com/2019/10/11/uH8TRU.png" alt="uH8TRU.png"></p>
+<p>产生候选答案的模型</p>
+<p><img src="https://s2.ax1x.com/2019/10/11/uHGHtP.png" alt="uHGHtP.png"></p>
+<p>进行答案选择的模型</p>
+<p><img src="https://s2.ax1x.com/2019/10/11/uHJ3cD.png" alt="uHJ3cD.png"></p>
+<h2 id="论文3" class="heading-control"><a href="#论文3" class="headerlink" title="论文3"></a>论文 3<a class="heading-anchor" href="#论文3" aria-hidden="true"></a></h2><p><strong>《Retrieve-and-Read: Multi-task Learning of Information Retrieval and Reading Comprehension》</strong></p>
+<h3 id="简介-2" class="heading-control"><a href="#简介-2" class="headerlink" title="简介"></a>简介<a class="heading-anchor" href="#简介-2" aria-hidden="true"></a></h3><p>百度的一篇文章， Accepted as a full paper at CIKM 2018。本文把基于文档的阅读理解系统称之为 machine reading at scale (MRS) Task（但是不知道是不是这篇文章首先提出的这个概念）。任务的具体描述如下：</p>
+<blockquote>
+<p>given a question, a system retrieves passages relevant to the question from a corpus and then extracts the answer span from the retrieved passages.</p>
+</blockquote>
+<p>其实是 IR 和 RC 结合的任务，这种类型任务的数据集有 DrQA 等，来自下面这篇陈丹奇的论文：</p>
+<blockquote>
+<p>Danqi Chen, Adam Fisch, Jason Weston, and Antoine Bordes. 2017. Reading Wikipedia to Answer Open-Domain Questions. In ACL. 1870–1879.</p>
+</blockquote>
+<p>但是这篇论文有个缺点就是第一步检索或者叫召回文档的时候精确率不高（500 万文档中召回 Top5），一般召回的文档是包含问题里面的词语的，但是由于召回的文档不全是和问题相关的。<br>这篇文章主要关注 IR 和 MC 的关系。论文指出 RC 找出答案范围的能力会提升 IR 区分段落和问题是否相关的能力。</p>
+<ul>
+<li>是否可以通过训练好的 RC 模型提升 IR 的能力？<br>不行，因为训练的 RC 模型使用和问题强相关的段落训练的，并不能预测与问题无关的段落上没有答案。（这个地方的理解有点问题，是在说模型的泛化能力有问题？我倾向于是说 SQUAD1.1 的任务上面都是有答案的，所有模型架构不支持无答案的回答）<br>本论文谈到了 3R 那篇论文提出了联合训练 IR 和 MC 任务。</li>
+</ul>
+<h3 id="具体实现" class="heading-control"><a href="#具体实现" class="headerlink" title="具体实现"></a>具体实现<a class="heading-anchor" href="#具体实现" aria-hidden="true"></a></h3><p>本文提出了一种监督的多任务学习方法，即共享模型隐藏层参数，然后最小化 RC 和 IR 的 Joint Loss。<strong>模型总体结构</strong>如下：<br><img src="https://i.loli.net/2019/09/29/rWBNx4qQamAM3IY.png" alt><br>从模型架构上看，如果是单任务的 RC，那么模型和 BiDAF 一样。<br>接着论文介绍了模型的各个层的设计，我们重点关注一下 <strong>Retrieval layer</strong>，其实就是 BIDAF 的输出接单层 LSTM，然后做 Attention Pooling, 最后 Sigmoid 输出，输出代表问题和文档的相关程度。<br>接着介绍了如何多任务学习的另一个重要内容就是<strong>多任务学习的损失函数</strong>设计:</p>
+<script type="math/tex; mode=display">L(\theta) = L_{RC} + \lambda L_{IR}</script><p>然后介绍模型的实际工作原理。来了一个 Q，和文档拼接输入到这个模型中，由模型给出答案和 IR 评分，根据 IR 评分给出最后的答案排序。但是这里有个大问题就是当海量文档的时候不适用，论文提出了改进的方案，参考的这一篇论文：<strong>《High accuracy retrieval with multiple nested ranker》</strong>，稍后读一下。</p>
+<h3 id="结果" class="heading-control"><a href="#结果" class="headerlink" title="结果"></a>结果<a class="heading-anchor" href="#结果" aria-hidden="true"></a></h3><p>主要在 SQuAD 上测试的。作者回复了几个问题。</p>
+<ul>
+<li>消融实验，分别比较了 IR 和 MC 的效果<br><img src="https://i.loli.net/2019/09/29/XT7dr3Qz8kwGlYO.png" alt></li>
+</ul>
+<h2 id="论文4" class="heading-control"><a href="#论文4" class="headerlink" title="论文4"></a>论文 4<a class="heading-anchor" href="#论文4" aria-hidden="true"></a></h2><p><strong>《Denoising Distantly Supervised Open-Domain Question Answering》</strong></p>
+<h3 id="简介-3" class="heading-control"><a href="#简介-3" class="headerlink" title="简介"></a>简介<a class="heading-anchor" href="#简介-3" aria-hidden="true"></a></h3><p>清华大学 ACL2018 的论文。分为两个部分：Paragraph Selector 和 Paragraph Reader。</p>
+<p>监督的开放域问答（DS-QA）的目的是在未标记文本的集合中找到答案。 现有的 DS-QA 模型通常从大型语料库中检索相关段落并运用阅读理解技术从最相关的段落中提取答案。 他们忽略了其他段落中包含的丰富信息。<br>此外，远程监管数据不可避免地会伴随着错误的标签问题，而这些嘈杂的数据将大大降低 DS-QA 的性能。 为了解决这些问题，我们提出了一种新颖的 DS-QA 模型，该模型采用段落选择器过滤掉那些嘈杂的段落，并使用段落阅读器从那些去噪的段落中提取正确答案。 实际数据集上的实验结果表明，与所有基线相比，我们的模型可以从嘈杂的数据中捕获有用的信息，并在 DS-QA 上取得重大改进。 论文代码：<a target="_blank" rel="noopener" href="https://github.com/thunlp/OpenQA">https://github.com/thunlp/OpenQA</a></p>
+<p><img src="/tmp/1570762041589.png" alt="1570762041589"></p>
+<h2 id="论文5" class="heading-control"><a href="#论文5" class="headerlink" title="论文5"></a>论文 5<a class="heading-anchor" href="#论文5" aria-hidden="true"></a></h2><p><strong>《Evidence Aggregation for Answer Re-Ranking in Open-Domain Question Answering》</strong></p>
+<h3 id="简介-4" class="heading-control"><a href="#简介-4" class="headerlink" title="简介"></a>简介<a class="heading-anchor" href="#简介-4" aria-hidden="true"></a></h3><p>Published as a conference paper at ICLR 2018。回答开放域问题的最新流行方法是首先搜索与问题相关的段落，然后应用阅读理解模型来提取答案。 现有方法通常从单个段落中独立提取答案。 但是，有些问题需要来自不同来源的综合证据才能正确回答。 在本文中，我们提出了两个模型，它们利用多个段落来产生答案。 两者都使用答案排序方法，该方法对由现有的最新质量检查模型生成的答案候选者进行重新排序。 我们提出两种方法，即基于强度的重新排名和基于覆盖率的重新排名，以利用来自不同段落的汇总证据来更好地确定答案。 我们的模型在三个公共开放域 QA 数据集：Quasar-T，SearchQA 和 TriviaQA 的开放域版本上取得了最新的成果，与前两个数据集相比，改进了大约 8 个百分点。</p>
+<p><img src="/tmp/1570762546081.png" alt="1570762546081"></p>
+<h2 id="论文6" class="heading-control"><a href="#论文6" class="headerlink" title="论文6"></a>论文 6<a class="heading-anchor" href="#论文6" aria-hidden="true"></a></h2><p><strong>《Quasar: Datasets for Question Answering by Search and Reading》</strong></p>
+<h3 id="简介-5" class="heading-control"><a href="#简介-5" class="headerlink" title="简介"></a>简介<a class="heading-anchor" href="#简介-5" aria-hidden="true"></a></h3><p>这篇文章是一个数据集。我们提出了两个新的大规模数据集，旨在评估旨在理解自然语言查询并从大型文本语料库中提取其答案的系统。 Quasar-S 数据集由 37000 个完形填空组成，这些 queries 是根据流行网站 Stack Overflow 上的软件实体标签的定义构造的。网站上的帖子和评论用作回答完形填空问题的背景语料库。 Quasar-T 数据集包含 43000 个开放域琐事问题以及从各种 Internet 来源获得的答案。 ClueWeb09 用作提取这些答案的背景语料库。我们将这些数据集摆在对事实相关问题的两个相关子任务的挑战上：（1）搜索包含查询正确答案的相关文本，以及（2）读取检索到的文本以回答查询。我们还描述了一种检索系统，用于从给出查询的语料库中提取相关的句子和文档，并将其包含在发布版本中，以供研究人员仅关注（3）我们评估了这两个数据集上的几个基线，从简单的启发式方法到强大的神经模型，都表明，对于 Quasar-S 和 Quasar-T，这些基线分别落后于人类性能 16.4％和 32.1％。数据集地址 <a target="_blank" rel="noopener" href="https://github.com/bdhingra/quasar。">https://github.com/bdhingra/quasar。</a></p>
+<h2 id="论文7" class="heading-control"><a href="#论文7" class="headerlink" title="论文7"></a>论文 7<a class="heading-anchor" href="#论文7" aria-hidden="true"></a></h2><p><strong>《S-Net: From Answer Extraction to Answer Generation for Machine Reading Comprehension》</strong></p>
+<h3 id="简介-6" class="heading-control"><a href="#简介-6" class="headerlink" title="简介"></a>简介<a class="heading-anchor" href="#简介-6" aria-hidden="true"></a></h3><p><img src="/tmp/1570763338546.png" alt="1570763338546"></p>
+<h2 id="论文8" class="heading-control"><a href="#论文8" class="headerlink" title="论文8"></a>论文 8<a class="heading-anchor" href="#论文8" aria-hidden="true"></a></h2><p><strong>《Selecting Paragraphs to Answer Questions for Multi-passage Machine Reading Comprehension》</strong></p>
+<h3 id="简介-7" class="heading-control"><a href="#简介-7" class="headerlink" title="简介"></a>简介<a class="heading-anchor" href="#简介-7" aria-hidden="true"></a></h3><p>focus on 单问题多段落的段落排序</p>
+<p><img src="/tmp/1570763840060.png" alt="1570763840060"></p>
+</body></html>
+    </div>
+
+    
+    
+    
+      
+  <div class="popular-posts-header">相关文章推荐</div>
+  <ul class="popular-posts">
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\post\58505.html" rel="bookmark">ACL2020 paper 相关论文</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\post\21734.html" rel="bookmark">Machine Reading Comprehension 文章阅读</a></div>
+    </li>
+  </ul>
+
+        <div class="reward-container">
+  <div>支持一根棒棒糖！</div>
+  <button onclick="var qr = document.getElementById('qr'); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+    Donate
+  </button>
+  <div id="qr" style="display: none;">
+      
+      <div style="display: inline-block;">
+        <img src="https://i.loli.net/2020/08/27/Z63uzPfeimEYrD2.png" alt="Sun Yan WeChat Pay">
+        <p>WeChat Pay</p>
+      </div>
+      
+      <div style="display: inline-block;">
+        <img src="https://i.loli.net/2020/08/27/Zz62YJyVH1SRgGj.jpg" alt="Sun Yan Alipay">
+        <p>Alipay</p>
+      </div>
+
+  </div>
+</div>
+
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>Post author:  </strong>Sun Yan
+  </li>
+  <li class="post-copyright-link">
+    <strong>Post link: </strong>
+    <a href="http://sunyancn.github.io/post/49484.html" title="论文阅读 - 20190928">http://sunyancn.github.io/post/49484.html</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> unless stating additionally.
+  </li>
+</ul>
+</div>
+
+
+      <footer class="post-footer">
+          
+          <div class="post-tags">
+              <a href="/tags/%E8%AE%BA%E6%96%87/" rel="tag"><i class="fa fa-tag"></i> 论文</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/post/1488.html" rel="prev" title="Docker 部署深度学习模型">
+      <i class="fa fa-chevron-left"></i> Docker 部署深度学习模型
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/post/55675.html" rel="next" title="2019 面试">
+      2019 面试 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+    <script type="text/javascript" src="/js/linkcard.js"></script>
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    <div class="comments" id="valine-comments"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%BA%E6%96%871"><span class="nav-number">1.</span> <span class="nav-text">论文 1</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AE%80%E4%BB%8B"><span class="nav-number">1.1.</span> <span class="nav-text">简介</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A8%A1%E5%9E%8B%E7%BB%93%E6%9E%84"><span class="nav-number">1.2.</span> <span class="nav-text">模型结构</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%AE%B5%E8%90%BD%E6%8F%90%E5%8F%96%E6%A8%A1%E5%9D%97"><span class="nav-number">1.2.1.</span> <span class="nav-text">段落提取模块</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%BA%E6%96%872"><span class="nav-number">2.</span> <span class="nav-text">论文 2</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AE%80%E4%BB%8B-1"><span class="nav-number">2.1.</span> <span class="nav-text">简介</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%BA%E6%96%873"><span class="nav-number">3.</span> <span class="nav-text">论文 3</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AE%80%E4%BB%8B-2"><span class="nav-number">3.1.</span> <span class="nav-text">简介</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%B7%E4%BD%93%E5%AE%9E%E7%8E%B0"><span class="nav-number">3.2.</span> <span class="nav-text">具体实现</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BB%93%E6%9E%9C"><span class="nav-number">3.3.</span> <span class="nav-text">结果</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%BA%E6%96%874"><span class="nav-number">4.</span> <span class="nav-text">论文 4</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AE%80%E4%BB%8B-3"><span class="nav-number">4.1.</span> <span class="nav-text">简介</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%BA%E6%96%875"><span class="nav-number">5.</span> <span class="nav-text">论文 5</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AE%80%E4%BB%8B-4"><span class="nav-number">5.1.</span> <span class="nav-text">简介</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%BA%E6%96%876"><span class="nav-number">6.</span> <span class="nav-text">论文 6</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AE%80%E4%BB%8B-5"><span class="nav-number">6.1.</span> <span class="nav-text">简介</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%BA%E6%96%877"><span class="nav-number">7.</span> <span class="nav-text">论文 7</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AE%80%E4%BB%8B-6"><span class="nav-number">7.1.</span> <span class="nav-text">简介</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%BA%E6%96%878"><span class="nav-number">8.</span> <span class="nav-text">论文 8</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AE%80%E4%BB%8B-7"><span class="nav-number">8.1.</span> <span class="nav-text">简介</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Sun Yan"
+      src="https://i.loli.net/2020/08/25/NrIpckD9qPLY38C.jpg">
+  <p class="site-author-name" itemprop="name">Sun Yan</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">115</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">17</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">79</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/sunyancn" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;sunyancn" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:sunyanhust@163.com" title="E-Mail → mailto:sunyanhust@163.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/atom.xml" title="RSS → &#x2F;atom.xml"><i class="fas fa-rss fa-fw"></i>RSS</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://weibo.com/u/5270232660" title="Weibo → https:&#x2F;&#x2F;weibo.com&#x2F;u&#x2F;5270232660" rel="noopener" target="_blank"><i class="fab fa-weibo fa-fw"></i>Weibo</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 2015 – 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Sun Yan</span>
+</div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script size="300" alpha="0.6" zIndex="-1" src="//cdn.jsdelivr.net/gh/theme-next/theme-next-canvas-ribbon@1/canvas-ribbon.js"></script>
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+<script src="/js/bookmark.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
+
+  
+<div id="needsharebutton-float">
+      <span class="btn">
+        <i class="fa fa-share-alt" aria-hidden="true"></i>
+      </span>
+    </div>
+  <script src="//cdn.jsdelivr.net/gh/theme-next/theme-next-needmoreshare2@1/needsharebutton.min.js"></script>
+  <script>
+      flOptions = {};
+        flOptions.iconStyle = "box";
+        flOptions.boxForm = "horizontal";
+        flOptions.position = "middleRight";
+        flOptions.networks = "Weibo,Wechat,Douban,QQZone,Twitter,Facebook";
+      new needShareButton('#needsharebutton-float', flOptions);
+  </script>
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('https://cdn.jsdelivr.net/gh//AshinWang/SimpleValine/SimpleValine.min.js', () => {
+    var GUEST = ['nick', 'mail', 'link'];
+    var guest = 'nick,mail';
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
+    });
+    new Valine({
+      el         : '#valine-comments',
+      verify     : false,
+      notify     : false,
+      appId      : 'IAIsNxUL4BLqJ2c4nTn8HlLv-gzGzoHsz',
+      appKey     : '73p5IVTPonVrJhOylbVtJffi',
+      placeholder: "(๑•́ ₃ •̀๑) 留言时填写您的邮箱可以邮件收到博主的回复噢~",
+      avatar     : 'wavatar',
+      meta       : guest,
+      pageSize   : '10' || 10,
+      visitor    : false,
+      lang       : '' || 'zh-cn',
+      path       : location.pathname,
+      recordIP   : true,
+      serverURLs : ''
+    });
+  }, window.Valine);
+});
+</script>
+
+</body>
+</html>

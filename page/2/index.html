@@ -40,7 +40,7 @@
     lang   : 'en'
   };
 </script>
-<link rel="stylesheet" href="//cdn.jsdelivr.net/gh/theme-next/theme-next-needmoreshare2@1/needsharebutton.min.css"><style>
+<script src="/lib/fireworks.js"></script><link rel="stylesheet" href="//cdn.jsdelivr.net/gh/theme-next/theme-next-needmoreshare2@1/needsharebutton.min.css"><style>
 #needsharebutton-float {
   bottom: 88px;
   cursor: pointer;
@@ -53,7 +53,7 @@
   border-radius: 4px;
   padding: 0 10px 0 14px;
 }
-</style><script src="/lib/fireworks.js"></script>
+</style>
   <title>故事尾音</title>
   
 
@@ -129,11 +129,6 @@
     <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
 
   </li>
-        <li class="menu-item menu-item-about">
-
-    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a>
-
-  </li>
         <li class="menu-item menu-item-tags">
 
     <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a>
@@ -149,6 +144,11 @@
     <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
 
   </li>
+        <li class="menu-item menu-item-image">
+
+    <a href="/image/" rel="section"><i class="fa fa-image fa-fw"></i>image</a>
+
+  </li>
         <li class="menu-item menu-item-music">
 
     <a href="/music/" rel="section"><i class="fa fa-music fa-fw"></i>music</a>
@@ -157,6 +157,11 @@
         <li class="menu-item menu-item-shuoshuo">
 
     <a href="/shuoshuo/" rel="section"><i class="fa fa-heartbeat fa-fw"></i>shuoshuo</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a>
 
   </li>
       <li class="menu-item menu-item-search">
@@ -214,7 +219,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://sunyancn.github.io/2019/11/15/Machine-Reading-Comprehension%E6%96%87%E7%AB%A0%E9%98%85%E8%AF%BB/">
+    <link itemprop="mainEntityOfPage" href="http://sunyancn.github.io/post/60709.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="https://i.loli.net/2020/08/25/NrIpckD9qPLY38C.jpg">
@@ -228,7 +233,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2019/11/15/Machine-Reading-Comprehension%E6%96%87%E7%AB%A0%E9%98%85%E8%AF%BB/" class="post-title-link" itemprop="url">Machine Reading Comprehension 文章阅读</a>
+            <a href="/post/60709.html" class="post-title-link" itemprop="url">多标签文本分类 kaggle kernel</a>
         </h2>
 
         <div class="post-meta">
@@ -238,15 +243,24 @@
               </span>
               <span class="post-meta-item-text">Posted on</span>
 
-              <time title="Created: 2019-11-15 21:23:16" itemprop="dateCreated datePublished" datetime="2019-11-15T21:23:16+08:00">2019-11-15</time>
+              <time title="Created: 2020-04-16 11:02:25" itemprop="dateCreated datePublished" datetime="2020-04-16T11:02:25+08:00">2020-04-16</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-08-27 01:27:02" itemprop="dateModified" datetime="2020-08-27T01:27:02+08:00">2020-08-27</time>
+                <time title="Modified: 2020-09-02 16:31:04" itemprop="dateModified" datetime="2020-09-02T16:31:04+08:00">2020-09-02</time>
               </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%96%87%E6%9C%AC%E5%88%86%E7%B1%BB/" itemprop="url" rel="index"><span itemprop="name">文本分类</span></a>
+                </span>
+            </span>
 
           
   
@@ -261,11 +275,15 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <html><head></head><body><h3 id="《Relation-Module-for-Non-Answerable-Predictions-on-Reading-Comprehension》" class="heading-control"><a href="#《Relation-Module-for-Non-Answerable-Predictions-on-Reading-Comprehension》" class="headerlink" title="《Relation Module for Non-Answerable Predictions on Reading Comprehension》"></a>《Relation Module for Non-Answerable Predictions on Reading Comprehension》<a class="heading-anchor" href="#《Relation-Module-for-Non-Answerable-Predictions-on-Reading-Comprehension》" aria-hidden="true"></a></h3><blockquote>
-<p>ACL 2019 paper, <a target="_blank" rel="noopener" href="https://www.aclweb.org/anthology/K19-1070/">论文地址</a></p>
-</blockquote>
-<h4 id="摘要" class="heading-control"><a href="#摘要" class="headerlink" title="摘要"></a>摘要<a class="heading-anchor" href="#摘要" aria-hidden="true"></a></h4><p>由于具有挑战性的阅读理解数据集的增加，机器阅读理解（MRC）近来引起了大量研究关注。在本文中，我们旨在提高 MRC 模型确定问题在给定上下文中是否具有答案的能力（例如，最近提出的 SQuAD 2.0 任务）。关系模块包括语义提取和关系信息。我们首先使用多头自我关注池从问题和上下文中提取高级语义作为对象。然后将这些语义对象传递到关系网络，该关系网络为句子中每个对象对生成关系得分。这些分数用于确定问题是否无法回答。我们使用 BiDAF 和 BERT 模型作为基线读取器，在 SQuAD 2.0 数据集上测试关系模块。在 BiDAF 阅读器上，我们获得 F1 精度的 1.8％增益，在 BERT 基本模型上，获得 1.0％的 F1 精度。这些结果表明我们的关系模块在 MRC 上的有效性。</p>
-<h3 id class="heading-control"><a href="#" class="headerlink" title=" "></a> <a class="heading-anchor" href="#" aria-hidden="true"></a></h3></body></html>
+          <p><img src="https://i.loli.net/2020/09/02/M3KakXbvHirSAE5.jpg" alt="shipshape_full_4k.jpg"><br>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/post/60709.html#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -285,7 +303,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://sunyancn.github.io/2019/11/14/%E6%97%A5%E5%B8%B8bug/">
+    <link itemprop="mainEntityOfPage" href="http://sunyancn.github.io/post/35391.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="https://i.loli.net/2020/08/25/NrIpckD9qPLY38C.jpg">
@@ -299,7 +317,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2019/11/14/%E6%97%A5%E5%B8%B8bug/" class="post-title-link" itemprop="url">日常 bug</a>
+            <a href="/post/35391.html" class="post-title-link" itemprop="url">有趣的网站</a>
         </h2>
 
         <div class="post-meta">
@@ -309,14 +327,275 @@
               </span>
               <span class="post-meta-item-text">Posted on</span>
 
-              <time title="Created: 2019-11-14 20:32:08" itemprop="dateCreated datePublished" datetime="2019-11-14T20:32:08+08:00">2019-11-14</time>
+              <time title="Created: 2020-04-05 22:42:54" itemprop="dateCreated datePublished" datetime="2020-04-05T22:42:54+08:00">2020-04-05</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-08-27 01:27:02" itemprop="dateModified" datetime="2020-08-27T01:27:02+08:00">2020-08-27</time>
+                <time title="Modified: 2020-09-02 17:21:15" itemprop="dateModified" datetime="2020-09-02T17:21:15+08:00">2020-09-02</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%BD%91%E7%AB%99/" itemprop="url" rel="index"><span itemprop="name">网站</span></a>
+                </span>
+            </span>
+
+          
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="📻音乐"><a href="#📻音乐" class="headerlink" title="📻音乐"></a>📻音乐</h2><ul>
+<li><a target="_blank" rel="noopener" href="http://music.qkhhyiu.cn/">音乐搜索器</a>: 多站合一音乐搜索解决方案</li>
+<li><a target="_blank" rel="noopener" href="http://guozhivip.com/yinyue/">果汁音乐</a></li>
+</ul>
+<h2 id="🔮搜索"><a href="#🔮搜索" class="headerlink" title="🔮搜索"></a>🔮搜索</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://scholar.chongbuluo.com/">虫部落</a></li>
+<li><a target="_blank" rel="noopener" href="http://guozhivip.com/so/">果汁搜索</a></li>
+<li><a target="_blank" rel="noopener" href="https://jikipedia.com/">小鸡词典</a>：网络流行语 </li>
+<li><a target="_blank" rel="noopener" href="https://zh.wikihow.com/%E9%A6%96%E9%A1%B5">wikihow</a>：生活维基百科</li>
+</ul>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/post/35391.html#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+    <script type="text/javascript" src="/js/linkcard.js"></script>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://sunyancn.github.io/post/15245.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://i.loli.net/2020/08/25/NrIpckD9qPLY38C.jpg">
+      <meta itemprop="name" content="Sun Yan">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="故事尾音">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/post/15245.html" class="post-title-link" itemprop="url">新看的一些文章</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2020-04-04 22:48:05" itemprop="dateCreated datePublished" datetime="2020-04-04T22:48:05+08:00">2020-04-04</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-09-02 21:44:33" itemprop="dateModified" datetime="2020-09-02T21:44:33+08:00">2020-09-02</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">笔记</span></a>
+                </span>
+            </span>
+
+          
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="📚融合BN加速推理"><a href="#📚融合BN加速推理" class="headerlink" title="📚融合BN加速推理"></a>📚融合 BN 加速推理</h2><p>批归一化（Batch Normalization）因其可以加速神经网络训练、使网络训练更稳定，而且还有一定的正则化效果，所以得到了非常广泛的应用。但是，在推理阶段，BN 层一般是可以完全融合到前面的卷积层的，而且丝毫不影响性能。<br><strong>参考文章</strong>：<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/120265831">深度学习推理时融合 BN, 轻松获得约 5% 的提速</a><br><strong>代码</strong>：keras 的暂时没有找到，有空可以写写<br>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/post/15245.html#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+    <script type="text/javascript" src="/js/linkcard.js"></script>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://sunyancn.github.io/post/63671.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://i.loli.net/2020/08/25/NrIpckD9qPLY38C.jpg">
+      <meta itemprop="name" content="Sun Yan">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="故事尾音">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/post/63671.html" class="post-title-link" itemprop="url">新冠病毒全球大流行，我们缺乏的只是疫苗？</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2020-04-04 22:18:07" itemprop="dateCreated datePublished" datetime="2020-04-04T22:18:07+08:00">2020-04-04</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-09-02 17:21:15" itemprop="dateModified" datetime="2020-09-02T17:21:15+08:00">2020-09-02</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%94%9F%E6%B4%BB/" itemprop="url" rel="index"><span itemprop="name">生活</span></a>
+                </span>
+            </span>
+
+          
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p><img src="https://i.loli.net/2020/09/02/k9ozZSuIshlQ3Ud.jpg" alt="全面消毒 北京疫情突然升溫，防控進入「戰時狀態」。防疫人員連日來在北京豐台區的農貿市場、居民小區等，進行全面消毒。 新華社"><br>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/post/63671.html#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+    <script type="text/javascript" src="/js/linkcard.js"></script>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://sunyancn.github.io/post/51747.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://i.loli.net/2020/08/25/NrIpckD9qPLY38C.jpg">
+      <meta itemprop="name" content="Sun Yan">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="故事尾音">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/post/51747.html" class="post-title-link" itemprop="url">leetcode top100 - 整数反转</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2020-02-24 22:41:00" itemprop="dateCreated datePublished" datetime="2020-02-24T22:41:00+08:00">2020-02-24</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-08-27 01:28:43" itemprop="dateModified" datetime="2020-08-27T01:28:43+08:00">2020-08-27</time>
               </span>
 
           
@@ -332,20 +611,15 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <ol>
-<li><code>TensorFlow报错FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated</code>, 解决方案：<code>pip install numpy==1.16.0</code></li>
-<li>国内镜像 ustc 稳定性大于 tuna, 配置<code>.bashrc</code> 如下:<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">channels:</span><br><span class="line">  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main/</span><br><span class="line">  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/</span><br><span class="line">  - https://mirrors.ustc.edu.cn/anaconda/cloud/menpo/</span><br><span class="line">  - https://mirrors.ustc.edu.cn/anaconda/cloud/bioconda/</span><br><span class="line">  - https://mirrors.ustc.edu.cn/anaconda/cloud/msys2/</span><br><span class="line">  - https://mirrors.ustc.edu.cn/anaconda/cloud/conda-forge/</span><br><span class="line">  - https://mirrors.ustc.edu.cn/anaconda/pkgs/free/</span><br><span class="line">  - https://mirrors.ustc.edu.cn/anaconda/pkgs/main/</span><br><span class="line">  - defaults</span><br><span class="line">show_channel_urls: <span class="literal">true</span></span><br></pre></td></tr></tbody></table></figure></li>
-<li>删除虚拟环境：<code>conda remove -n your_env_name --all</code></li>
-<li>nohup 查看运行的后台进程 <code>jobs -l</code></li>
-<li>Anaconda 导出环境 / 从外部安装环境，导出已有环境：<code>conda env export &gt; environment.yaml</code>, 当我们想再次创建该环境，或根据别人提供的.yaml 文件复现环境时，可以：<code>conda env create -f environment.yaml</code></li>
-<li>.tar.bz2 文件解压命令，从网络上下载到的源码包，最常见的是.tar.gz 包，还有一部分是.tar.bz2 包<br>.tar.gz 格式解压为 <code>tar   -zxvf   xx.tar.gz</code><br>.tar.bz2 格式解压为 <code>tar   -jxvf    xx.tar.bz2</code></li>
-<li>Python 忽略警告信息:<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> warnings</span><br><span class="line">warnings.filterwarnings(<span class="string">"ignore"</span>)</span><br></pre></td></tr></tbody></table></figure></li>
-<li><p>python 命令生成 requestment.txt 文件，<code>pip freeze &gt; requirements.txt</code>, 安装：<code>pip install -r requirements.txt</code></p>
-</li>
-<li><p>run <code>nvidia-smi</code> ，遇见 <code>Failed to initialize NVML: Driver/library version mismatch</code> 的错误。参考下面的解决方案：</p>
-<figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">I had reinstalled nvidia driver: run these commands <span class="keyword">in</span> root mode:</span><br><span class="line">1. systemctl isolate multi-user.target</span><br><span class="line">2. modprobe -r nvidia-drm</span><br><span class="line">3. Reinstall Nvidia driver: chmod +x NVIDIA-Linux-x86_64–410.57.run</span><br><span class="line">4. systemctl start graphical.target</span><br><span class="line">and finally check nvidia-smi</span><br></pre></td></tr></tbody></table></figure>
-</li>
+          <p>思路:</p>
+<ol>
+<li>先判断正负数</li>
+<li>将这个数转成字符串再转成字符数组</li>
+<li>将数组的首尾元素交换（注意正负）</li>
+<li>将字符数组转成字符串再转成整数（注意转换后的数是否超出 int 的取值范围）</li>
+<li>将这个整数返回 </li>
 </ol>
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">reverse</span>(<span class="params">self, x: int</span>) -&gt; int:</span></span><br><span class="line">        <span class="keyword">if</span> x &lt;<span class="number">0</span>:</span><br><span class="line">            res = -int(<span class="string">""</span>.join(list(str(-x))[::<span class="number">-1</span>]))</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            res = int(<span class="string">""</span>.join(list(str(x))[::<span class="number">-1</span>]))</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span> <span class="number">-2</span>**<span class="number">31</span>&lt;=res&lt;<span class="number">2</span>**<span class="number">31</span><span class="number">-1</span>:</span><br><span class="line">            <span class="keyword">return</span> res</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span></span><br></pre></td></tr></tbody></table></figure>
 
       
     </div>
@@ -366,7 +640,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://sunyancn.github.io/2019/11/06/Linux%E4%BD%BF%E7%94%A8%E7%99%BE%E5%BA%A6%E4%BA%91%E4%B8%8B%E8%BD%BD/">
+    <link itemprop="mainEntityOfPage" href="http://sunyancn.github.io/post/47969.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="https://i.loli.net/2020/08/25/NrIpckD9qPLY38C.jpg">
@@ -380,7 +654,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2019/11/06/Linux%E4%BD%BF%E7%94%A8%E7%99%BE%E5%BA%A6%E4%BA%91%E4%B8%8B%E8%BD%BD/" class="post-title-link" itemprop="url">Linux 使用百度云下载</a>
+            <a href="/post/47969.html" class="post-title-link" itemprop="url">leetcode top 100 1—two sum</a>
         </h2>
 
         <div class="post-meta">
@@ -390,14 +664,14 @@
               </span>
               <span class="post-meta-item-text">Posted on</span>
 
-              <time title="Created: 2019-11-06 18:46:35" itemprop="dateCreated datePublished" datetime="2019-11-06T18:46:35+08:00">2019-11-06</time>
+              <time title="Created: 2020-02-24 22:04:42" itemprop="dateCreated datePublished" datetime="2020-02-24T22:04:42+08:00">2020-02-24</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-08-27 01:27:02" itemprop="dateModified" datetime="2020-08-27T01:27:02+08:00">2020-08-27</time>
+                <time title="Modified: 2020-08-27 01:32:16" itemprop="dateModified" datetime="2020-08-27T01:32:16+08:00">2020-08-27</time>
               </span>
 
           
@@ -413,27 +687,12 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <html><head></head><body><h3 id="前言" class="heading-control"><a href="#前言" class="headerlink" title="前言"></a>前言<a class="heading-anchor" href="#前言" aria-hidden="true"></a></h3><p>项目 github 地址：<a target="_blank" rel="noopener" href="https://github.com/iikira/BaiduPCS-Go">https://github.com/iikira/BaiduPCS-Go</a></p>
-<h3 id="安装" class="heading-control"><a href="#安装" class="headerlink" title="安装"></a>安装<a class="heading-anchor" href="#安装" aria-hidden="true"></a></h3><ul>
-<li>下载到本地：<a target="_blank" rel="noopener" href="https://github.com/iikira/BaiduPCS-Go/releases/download/v3.6/BaiduPCS-Go-v3.6-linux-386.zip">3.6 版本</a></li>
-<li> scp 传输到服务器：<code>scp -P 2222 C:\Users\lenovo\Pictures\BaiduPCS-Go-v3.6-linux-386.zip root@127.0.0.1:/home</code></li>
-<li>解压：<code>unzip BaiduPCS-Go-v3.6-linux-386.zip</code><br>询问是否覆盖：y<br>进入目录：<code>cd BaiduPCS-Go-v3.6-linux-386</code><br>启动：<code>./BaiduPCS-Go</code></li>
-</ul>
-<h3 id="登录" class="heading-control"><a href="#登录" class="headerlink" title="登录"></a>登录<a class="heading-anchor" href="#登录" aria-hidden="true"></a></h3><ul>
-<li>登录：<code>login</code></li>
-<li>然后按照提示输入用户名，密码。回车后，会让输入验证码。会提示打开浏览器查看验证码，可能试验登录多次，才正确。</li>
-</ul>
-<p>然后让你输入验证手机号，会给你发短信，输入短信的验证码后，就能登录了。</p>
-<h3 id="操作" class="heading-control"><a href="#操作" class="headerlink" title="操作"></a>操作<a class="heading-anchor" href="#操作" aria-hidden="true"></a></h3><ul>
-<li>登录进去后，查看有哪些百度网盘命令：<code>help</code></li>
-<li>列出百度网盘的目录：<code>ls</code></li>
-<li>下载百度网盘的文件： <code>d 文件名</code></li>
-<li>下载完成后，会提示你，把文件下载到哪个目录了。 一般在 根目录下，点进去 <code>root</code> 文件夹，即 <code>/root/Downloads/</code></li>
-<li>修改默认储存路径：<code>BaiduPCS-Go config set -savedir download</code></li>
-<li>退出程序：运行命令 <code>quit</code> 或 <code>exit</code> 或 组合键 <code>Ctrl+C</code> 或 组合键 <code>Ctrl+D</code></li>
-<li>下载大文件：<code>./BaiduPCS-Go config set -user_agent=""</code></li>
-</ul>
-<h3 id="退出" class="heading-control"><a href="#退出" class="headerlink" title="退出"></a>退出<a class="heading-anchor" href="#退出" aria-hidden="true"></a></h3><p>退出当前登录的百度帐号：<code>logout</code></p>
+          <html><head></head><body><p>这道题本身如果通过暴力遍历的话也是很容易解决的，时间复杂度在 O (n2)，由于哈希查找的时间复杂度为 O (1)，所以可以利用哈希容器 map 降低时间复杂度 (这里使用 python 的字典)。</p>
+<h3 id="方法1：两重循环" class="heading-control"><a href="#方法1：两重循环" class="headerlink" title="方法1：两重循环"></a>方法 1：两重循环<a class="heading-anchor" href="#方法1：两重循环" aria-hidden="true"></a></h3><p>会报超时错误<br></p><figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">two_sum</span>(<span class="params">nums, target</span>):</span></span><br><span class="line">    <span class="keyword">for</span> i, n <span class="keyword">in</span> enumerate(nums):</span><br><span class="line">        <span class="keyword">for</span> j, m <span class="keyword">in</span> enumerate(nums):</span><br><span class="line">            <span class="keyword">if</span> target - n == m <span class="keyword">and</span> i!=j:</span><br><span class="line">                <span class="keyword">return</span> [i,j]</span><br></pre></td></tr></tbody></table></figure><br>时间复杂度：O(n2)<br>空间复杂度：O(n)<p></p>
+<h3 id="方法2：两遍Hash" class="heading-control"><a href="#方法2：两遍Hash" class="headerlink" title="方法2：两遍Hash"></a>方法 2：两遍 Hash<a class="heading-anchor" href="#方法2：两遍Hash" aria-hidden="true"></a></h3><figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">two_sum</span>(<span class="params">nums, target</span>):</span></span><br><span class="line">    dct = dict(zip(nums, range(len(nums))))</span><br><span class="line">    <span class="keyword">for</span> i, n <span class="keyword">in</span> enumerate(nums) <span class="keyword">and</span> i!=dct[target - n]:</span><br><span class="line">        <span class="keyword">if</span> target - n <span class="keyword">in</span> dct:</span><br><span class="line">            <span class="keyword">return</span> [dct[target - n], i]</span><br></pre></td></tr></tbody></table></figure>
+<p>时间复杂度：O (n2)<br>空间复杂度：O (n)</p>
+<h3 id="方法2：一遍Hash-边循环边查字典" class="heading-control"><a href="#方法2：一遍Hash-边循环边查字典" class="headerlink" title="方法2：一遍Hash(边循环边查字典)"></a>方法 2：一遍 Hash (边循环边查字典)<a class="heading-anchor" href="#方法2：一遍Hash-边循环边查字典" aria-hidden="true"></a></h3><figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">two_sum</span>(<span class="params">nums, target</span>):</span></span><br><span class="line">    dct = {}</span><br><span class="line">    <span class="keyword">for</span> i, n <span class="keyword">in</span> enumerate(nums):</span><br><span class="line">        <span class="keyword">if</span> target - n <span class="keyword">in</span> dct:</span><br><span class="line">            <span class="keyword">return</span> [dct[target - n], i]</span><br><span class="line">        dct[n] = i</span><br></pre></td></tr></tbody></table></figure>
+<p>时间复杂度：O (n2)<br>空间复杂度：O (n)</p>
 </body></html>
       
     </div>
@@ -454,7 +713,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://sunyancn.github.io/2019/11/06/%E8%AE%B0%E5%BD%95%E4%B8%80%E4%BA%9B%E6%9C%80%E8%BF%91%E8%B0%83%E4%BB%A3%E7%A0%81%E7%9A%84bug/">
+    <link itemprop="mainEntityOfPage" href="http://sunyancn.github.io/post/6222.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="https://i.loli.net/2020/08/25/NrIpckD9qPLY38C.jpg">
@@ -468,7 +727,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2019/11/06/%E8%AE%B0%E5%BD%95%E4%B8%80%E4%BA%9B%E6%9C%80%E8%BF%91%E8%B0%83%E4%BB%A3%E7%A0%81%E7%9A%84bug/" class="post-title-link" itemprop="url">最近调代码两个的 bug</a>
+            <a href="/post/6222.html" class="post-title-link" itemprop="url">20200224210643</a>
         </h2>
 
         <div class="post-meta">
@@ -478,81 +737,7 @@
               </span>
               <span class="post-meta-item-text">Posted on</span>
 
-              <time title="Created: 2019-11-06 16:01:21" itemprop="dateCreated datePublished" datetime="2019-11-06T16:01:21+08:00">2019-11-06</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-08-27 01:27:02" itemprop="dateModified" datetime="2020-08-27T01:27:02+08:00">2020-08-27</time>
-              </span>
-
-          
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <html><head></head><body><h3 id="标签错误" class="heading-control"><a href="#标签错误" class="headerlink" title="标签错误"></a>标签错误<a class="heading-anchor" href="#标签错误" aria-hidden="true"></a></h3><p>错误 log:<br></p><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">RuntimeError: cuda runtime error (59) :device-side assert triggered</span><br></pre></td></tr></tbody></table></figure><br>一般是标签出错，检查两点：<p></p>
-<ul>
-<li>标签中是否有 - 1</li>
-<li> 标签个数和分类的个数是否匹配（检查模型最后的分类个数）</li>
-</ul>
-<h3 id="Shell脚本dos2unix" class="heading-control"><a href="#Shell脚本dos2unix" class="headerlink" title="Shell脚本dos2unix"></a>Shell 脚本 dos2unix<a class="heading-anchor" href="#Shell脚本dos2unix" aria-hidden="true"></a></h3><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Shell脚本出现$<span class="string">'\r'</span>: <span class="built_in">command</span> not found</span><br></pre></td></tr></tbody></table></figure>
-<p>这是因为脚本文件可能在 window 弄过，有 window 下的空行，把他转换成 unix 格式的就行。<br></p><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">yum install dos2unix</span><br><span class="line">dos2unix run.sh</span><br></pre></td></tr></tbody></table></figure><p></p>
-</body></html>
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-    <script type="text/javascript" src="/js/linkcard.js"></script>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://sunyancn.github.io/2019/11/04/ACL2020-paper%E7%9B%B8%E5%85%B3%E8%AE%BA%E6%96%87/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://i.loli.net/2020/08/25/NrIpckD9qPLY38C.jpg">
-      <meta itemprop="name" content="Sun Yan">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="故事尾音">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/11/04/ACL2020-paper%E7%9B%B8%E5%85%B3%E8%AE%BA%E6%96%87/" class="post-title-link" itemprop="url">ACL2020 paper 相关论文</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2019-11-04 21:57:27" itemprop="dateCreated datePublished" datetime="2019-11-04T21:57:27+08:00">2019-11-04</time>
+              <time title="Created: 2020-02-24 21:06:43" itemprop="dateCreated datePublished" datetime="2020-02-24T21:06:43+08:00">2020-02-24</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
@@ -575,8 +760,24 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <html><head></head><body><h3 id="数据集" class="heading-control"><a href="#数据集" class="headerlink" title="数据集"></a>数据集<a class="heading-anchor" href="#数据集" aria-hidden="true"></a></h3><p><a target="_blank" rel="noopener" href="https://arxiv.xilesou.top/pdf/1810.07366.pdf">CMRC2018</a><br><a target="_blank" rel="noopener" href="https://arxiv.xilesou.top/ftp/arxiv/papers/1806/1806.00920.pdf">DRCD</a></p>
-<h3 id="Rank" class="heading-control"><a href="#Rank" class="headerlink" title="Rank"></a>Rank<a class="heading-anchor" href="#Rank" aria-hidden="true"></a></h3><p><a target="_blank" rel="noopener" href="https://arxiv.xilesou.top/pdf/1901.04085.pdf">Passage Re-ranking with BERT</a></p>
+          <html><head></head><body><h3 id="nodejs更新" class="heading-control"><a href="#nodejs更新" class="headerlink" title="nodejs更新"></a>nodejs 更新<a class="heading-anchor" href="#nodejs更新" aria-hidden="true"></a></h3><ol>
+<li><p>`npm install -g n 对 n 模块进行全局安装</p>
+</li>
+<li><p>使用 n 命令进行更新<br>n stable // 更新到稳定版<br>n latest // 更新到最新版</p>
+</li>
+<li><p>使用 node -v 看是否已经更新完成了</p>
+</li>
+</ol>
+<h3 id="查看文件的状态" class="heading-control"><a href="#查看文件的状态" class="headerlink" title="查看文件的状态"></a>查看文件的状态<a class="heading-anchor" href="#查看文件的状态" aria-hidden="true"></a></h3><p>在 Linux 下，一个文件有三种时间，分别是访问时间（Access）、修改时间（Modify）、状态改变时间（Change）。可以通过 stat 命令查看文件的状态<br>stat file<br>example: stat A.py</p>
+<h3 id="模型性能通常会随着时间而下降" class="heading-control"><a href="#模型性能通常会随着时间而下降" class="headerlink" title="模型性能通常会随着时间而下降"></a>模型性能通常会随着时间而下降<a class="heading-anchor" href="#模型性能通常会随着时间而下降" aria-hidden="true"></a></h3><p>观点：模型性能通常会随着时间而下降<br>因为新的数据在不断产生，俗话说学如逆水行舟，不进则退</p>
+<h3 id="两个github库" class="heading-control"><a href="#两个github库" class="headerlink" title="两个github库"></a>两个 github 库<a class="heading-anchor" href="#两个github库" aria-hidden="true"></a></h3><ul>
+<li>streamlit：可视化构建应用<br><a target="_blank" rel="noopener" href="https://mlwhiz.com/blog/2019/12/07/streamlit/">https://mlwhiz.com/blog/2019/12/07/streamlit/</a></li>
+<li>ELI5：模型解释性</li>
+</ul>
+<h3 id="对象检测和实例分割" class="heading-control"><a href="#对象检测和实例分割" class="headerlink" title="对象检测和实例分割"></a>对象检测和实例分割<a class="heading-anchor" href="#对象检测和实例分割" aria-hidden="true"></a></h3><ul>
+<li><a target="_blank" rel="noopener" href="https://mlwhiz.com/blog/2019/12/06/weapons/">https://mlwhiz.com/blog/2019/12/06/weapons/</a></li>
+<li><a target="_blank" rel="noopener" href="https://mlwhiz.com/blog/2019/12/05/od/">https://mlwhiz.com/blog/2019/12/05/od/</a><br>-<a target="_blank" rel="noopener" href="https://mlwhiz.com/blog/2019/11/08/interpret_models/">https://mlwhiz.com/blog/2019/11/08/interpret_models/</a></li>
+</ul>
 </body></html>
       
     </div>
@@ -597,7 +798,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://sunyancn.github.io/2019/11/02/HEXO%E5%8D%9A%E5%AE%A2%E8%BF%81%E7%A7%BB%E7%9A%84%E6%AD%A5%E9%AA%A4/">
+    <link itemprop="mainEntityOfPage" href="http://sunyancn.github.io/post/30365.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="https://i.loli.net/2020/08/25/NrIpckD9qPLY38C.jpg">
@@ -611,7 +812,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2019/11/02/HEXO%E5%8D%9A%E5%AE%A2%E8%BF%81%E7%A7%BB%E7%9A%84%E6%AD%A5%E9%AA%A4/" class="post-title-link" itemprop="url">HEXO 博客迁移的步骤</a>
+            <a href="/post/30365.html" class="post-title-link" itemprop="url">20200203123847</a>
         </h2>
 
         <div class="post-meta">
@@ -621,14 +822,14 @@
               </span>
               <span class="post-meta-item-text">Posted on</span>
 
-              <time title="Created: 2019-11-02 14:19:36" itemprop="dateCreated datePublished" datetime="2019-11-02T14:19:36+08:00">2019-11-02</time>
+              <time title="Created: 2020-02-03 12:38:47" itemprop="dateCreated datePublished" datetime="2020-02-03T12:38:47+08:00">2020-02-03</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-08-27 01:27:02" itemprop="dateModified" datetime="2020-08-27T01:27:02+08:00">2020-08-27</time>
+                <time title="Modified: 2020-08-27 01:27:01" itemprop="dateModified" datetime="2020-08-27T01:27:01+08:00">2020-08-27</time>
               </span>
 
           
@@ -644,12 +845,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <html><head></head><body><p>最近买了新电脑，但是博客是今天才迁移过来。本以为很麻烦，实际上操作非常简单，只需要三个步骤。</p>
-<h3 id="拷贝博客文件夹" class="heading-control"><a href="#拷贝博客文件夹" class="headerlink" title="拷贝博客文件夹"></a>拷贝博客文件夹<a class="heading-anchor" href="#拷贝博客文件夹" aria-hidden="true"></a></h3><p>大概 50 多 M 的样子，原封不动的拷贝到新电脑上。</p>
-<h3 id="安装hexo" class="heading-control"><a href="#安装hexo" class="headerlink" title="安装hexo"></a>安装 hexo<a class="heading-anchor" href="#安装hexo" aria-hidden="true"></a></h3><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install -g hexo-cli</span><br></pre></td></tr></tbody></table></figure>
-<p>有时候会出现 <code>warning: LF will be replaced by CRLF in</code> 的警告，输入下面的命令解决：<br></p><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config --global core.autocrlf <span class="literal">false</span></span><br></pre></td></tr></tbody></table></figure><p></p>
-<h3 id="重新配置ssh密钥" class="heading-control"><a href="#重新配置ssh密钥" class="headerlink" title="重新配置ssh密钥"></a>重新配置 ssh 密钥<a class="heading-anchor" href="#重新配置ssh密钥" aria-hidden="true"></a></h3><figure class="highlight bash"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen</span><br><span class="line">cat ~/.ssh/id_rsa.pub</span><br></pre></td></tr></tbody></table></figure>
-<p>复制到 github ssh 里面就行了。</p>
+          <html><head></head><body><h2 id="0x01-Python好用的格式化" class="heading-control"><a href="#0x01-Python好用的格式化" class="headerlink" title="0x01 Python好用的格式化"></a>0x01 Python 好用的格式化<a class="heading-anchor" href="#0x01-Python好用的格式化" aria-hidden="true"></a></h2><p>来自文章<a href>《Write Better Python Code Today》</a>，从 Python 3.6 开始，f-string 是格式化字符串的一种很好的新方法。与其他格式化方式相比，它们不仅更易读，更简洁，不易出错，而且速度更快。<br>下面是一个简单例子 (注意大写的 F 也是有效的)：<br></p><figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">name = <span class="string">"Eric"</span></span><br><span class="line">age = <span class="number">74</span></span><br><span class="line"><span class="string">f"Hello, <span class="subst">{name}</span>. You are <span class="subst">{age}</span>."</span></span><br><span class="line"><span class="comment">#or F"Hello, {name}. You are {age}."</span></span><br><span class="line"><span class="comment"># 输出</span></span><br><span class="line"><span class="string">'Hello, Eric. You are 74.'</span></span><br></pre></td></tr></tbody></table></figure><p></p>
 </body></html>
       
     </div>
@@ -670,7 +866,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://sunyancn.github.io/2019/11/02/Dureader%E6%95%B0%E6%8D%AE%E9%9B%86/">
+    <link itemprop="mainEntityOfPage" href="http://sunyancn.github.io/post/20868.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="https://i.loli.net/2020/08/25/NrIpckD9qPLY38C.jpg">
@@ -684,7 +880,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2019/11/02/Dureader%E6%95%B0%E6%8D%AE%E9%9B%86/" class="post-title-link" itemprop="url">Dureader 数据集</a>
+            <a href="/post/20868.html" class="post-title-link" itemprop="url">智慧海洋建设比赛</a>
         </h2>
 
         <div class="post-meta">
@@ -694,7 +890,7 @@
               </span>
               <span class="post-meta-item-text">Posted on</span>
 
-              <time title="Created: 2019-11-02 14:14:58" itemprop="dateCreated datePublished" datetime="2019-11-02T14:14:58+08:00">2019-11-02</time>
+              <time title="Created: 2020-01-22 14:10:04" itemprop="dateCreated datePublished" datetime="2020-01-22T14:10:04+08:00">2020-01-22</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
@@ -717,154 +913,33 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h2 id="Dureader数据集"><a href="#Dureader数据集" class="headerlink" title="Dureader数据集"></a>Dureader 数据集</h2><h3 id="数据示例"><a href="#数据示例" class="headerlink" title="数据示例"></a>数据示例</h3><figure class="highlight json"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br></pre></td><td class="code"><pre><span class="line">{<span class="attr">"documents"</span>: [{</span><br><span class="line">		<span class="attr">"is_selected"</span>: <span class="literal">true</span>,</span><br><span class="line">		<span class="attr">"title"</span>: <span class="string">"iOS里,把一个页面链接分享给好友,好友在微信里打开这个链接,怎么跳"</span>,</span><br><span class="line">		<span class="attr">"most_related_para"</span>: <span class="number">0</span>,</span><br><span class="line">		<span class="attr">"segmented_title"</span>: [<span class="string">"iOS"</span>, <span class="string">"里"</span>, <span class="string">","</span>, <span class="string">"把"</span>, <span class="string">"一"</span>, <span class="string">"个"</span>, <span class="string">"页面"</span>, <span class="string">"链接"</span>, <span class="string">"分享"</span>, <span class="string">"给"</span>, <span class="string">"好友"</span>, <span class="string">","</span>, <span class="string">"好友"</span>, <span class="string">"在"</span>, <span class="string">"微信"</span>, <span class="string">"里"</span>, <span class="string">"打开"</span>, <span class="string">"这个"</span>, <span class="string">"链接"</span>, <span class="string">","</span>, <span class="string">"怎么"</span>, <span class="string">"跳"</span>],</span><br><span class="line">		<span class="attr">"segmented_paragraphs"</span>: [</span><br><span class="line">			[<span class="string">"iOS"</span>, <span class="string">"里"</span>, <span class="string">","</span>, <span class="string">"把"</span>, <span class="string">"一"</span>, <span class="string">"个"</span>, <span class="string">"页面"</span>, <span class="string">"链接"</span>, <span class="string">"分享"</span>, <span class="string">"给"</span>, <span class="string">"好友"</span>, <span class="string">","</span>, <span class="string">"好友"</span>, <span class="string">"在"</span>, <span class="string">"微信"</span>, <span class="string">"里"</span>, <span class="string">"打开"</span>, <span class="string">"这个"</span>, <span class="string">"链接"</span>, <span class="string">","</span>, <span class="string">"怎么"</span>, <span class="string">"跳"</span>, <span class="string">"&lt;splitter&gt;"</span>, <span class="string">"iOS"</span>, <span class="string">"里"</span>, <span class="string">","</span>, <span class="string">"把"</span>, <span class="string">"一"</span>, <span class="string">"个"</span>, <span class="string">"页面"</span>, <span class="string">"链接"</span>, <span class="string">"分享"</span>, <span class="string">"给"</span>, <span class="string">"微信"</span>, <span class="string">"好友"</span>, <span class="string">"("</span>, <span class="string">"会话"</span>, <span class="string">")"</span>, <span class="string">","</span>, <span class="string">"好友"</span>, <span class="string">"在"</span>, <span class="string">"微信"</span>, <span class="string">"里"</span>, <span class="string">"打开"</span>, <span class="string">"这个"</span>, <span class="string">"链接"</span>, <span class="string">","</span>, <span class="string">"也"</span>, <span class="string">"就是"</span>, <span class="string">"打开"</span>, <span class="string">"了"</span>, <span class="string">"一"</span>, <span class="string">"个"</span>, <span class="string">"网页"</span>, <span class="string">","</span>, <span class="string">"点击"</span>, <span class="string">"网页"</span>, <span class="string">"里"</span>, <span class="string">"的"</span>, <span class="string">"某"</span>, <span class="string">"个"</span>, <span class="string">"地方"</span>, <span class="string">"后"</span>, <span class="string">"("</span>, <span class="string">"比如"</span>, <span class="string">"网页"</span>, <span class="string">"中"</span>, <span class="string">"“"</span>, <span class="string">"打开"</span>, <span class="string">"xx"</span>, <span class="string">"应用程序"</span>, <span class="string">"”"</span>, <span class="string">"的"</span>, <span class="string">"按钮"</span>, <span class="string">")"</span>, <span class="string">","</span>, <span class="string">"代码"</span>, <span class="string">"里"</span>, <span class="string">"怎么"</span>, <span class="string">"设置"</span>, <span class="string">"可以"</span>, <span class="string">"跳"</span>, <span class="string">"回到"</span>, <span class="string">"第三方"</span>, <span class="string">"app"</span>, <span class="string">"?"</span>, <span class="string">"知乎"</span>, <span class="string">"的"</span>, <span class="string">"ios"</span>, <span class="string">"客户端"</span>, <span class="string">"就"</span>, <span class="string">"有"</span>, <span class="string">"这种"</span>, <span class="string">"功能"</span>, <span class="string">","</span>, <span class="string">"在"</span>, <span class="string">"微信"</span>, <span class="string">"里"</span>, <span class="string">"分享"</span>, <span class="string">"链接"</span>, <span class="string">"后"</span>, <span class="string">","</span>, <span class="string">"点"</span>, <span class="string">"开"</span>, <span class="string">"链接"</span>, <span class="string">","</span>, <span class="string">"再"</span>, <span class="string">"点"</span>, <span class="string">"网页"</span>, <span class="string">"中"</span>, <span class="string">"的"</span>, <span class="string">"某处"</span>, <span class="string">","</span>, <span class="string">"就"</span>, <span class="string">"可以"</span>, <span class="string">"打开"</span>, <span class="string">"知乎"</span>, <span class="string">"客户端"</span>, <span class="string">"显示全部"</span>, <span class="string">"&lt;splitter&gt;"</span>, <span class="string">"微信"</span>, <span class="string">"中"</span>, <span class="string">"不能"</span>, <span class="string">"用"</span>, <span class="string">"自定义"</span>, <span class="string">"url"</span>, <span class="string">"的"</span>, <span class="string">"方式"</span>, <span class="string">","</span>, <span class="string">"微信"</span>, <span class="string">"提供"</span>, <span class="string">"了"</span>, <span class="string">"打开"</span>, <span class="string">"第三方"</span>, <span class="string">"应用"</span>, <span class="string">"的"</span>, <span class="string">"接口"</span>, <span class="string">":"</span>, <span class="string">"launch"</span>, <span class="string">"3rd"</span>, <span class="string">"App"</span>, <span class="string">"&lt;splitter&gt;"</span>, <span class="string">"谢"</span>, <span class="string">"。"</span>, <span class="string">"一般"</span>, <span class="string">"用"</span>, <span class="string">"自带"</span>, <span class="string">"浏览器"</span>, <span class="string">"可以"</span>, <span class="string">"调用"</span>, <span class="string">"起"</span>, <span class="string">"app"</span>, <span class="string">"没问题"</span>, <span class="string">"。"</span>, <span class="string">"微信"</span>, <span class="string">"里面"</span>, <span class="string">"能"</span>, <span class="string">"调出"</span>, <span class="string">"app"</span>, <span class="string">"的"</span>, <span class="string">","</span>, <span class="string">"是"</span>, <span class="string">"和"</span>, <span class="string">"腾讯"</span>, <span class="string">"有"</span>, <span class="string">"合作"</span>, <span class="string">"的"</span>, <span class="string">"应用"</span>, <span class="string">","</span>, <span class="string">"其他"</span>, <span class="string">"会"</span>, <span class="string">"被"</span>, <span class="string">"过滤"</span>, <span class="string">"掉"</span>, <span class="string">"。"</span>, <span class="string">"&lt;splitter&gt;"</span>, <span class="string">"有"</span>, <span class="string">"一"</span>, <span class="string">"个"</span>, <span class="string">"公司"</span>, <span class="string">"的"</span>, <span class="string">"产品"</span>, <span class="string">","</span>, <span class="string">"叫"</span>, <span class="string">"魔"</span>, <span class="string">"窗"</span>, <span class="string">","</span>, <span class="string">"免费"</span>, <span class="string">"可以"</span>, <span class="string">"接入"</span>, <span class="string">"的"</span>, <span class="string">"&lt;splitter&gt;"</span>, <span class="string">"分享"</span>, <span class="string">"出去"</span>, <span class="string">"的"</span>, <span class="string">"是"</span>, <span class="string">"一"</span>, <span class="string">"个"</span>, <span class="string">"网页"</span>, <span class="string">","</span>, <span class="string">"前端"</span>, <span class="string">"人员"</span>, <span class="string">"与"</span>, <span class="string">"app"</span>, <span class="string">"客户端"</span>, <span class="string">"人员"</span>, <span class="string">"约定"</span>, <span class="string">"好"</span>, <span class="string">"一"</span>, <span class="string">"个"</span>, <span class="string">"头部"</span>, <span class="string">"协议"</span>, <span class="string">"。"</span>, <span class="string">"当"</span>, <span class="string">"用户"</span>, <span class="string">"在"</span>, <span class="string">"网页"</span>, <span class="string">"的"</span>, <span class="string">"点击"</span>, <span class="string">"某"</span>, <span class="string">"个"</span>, <span class="string">"按钮"</span>, <span class="string">","</span>, <span class="string">"调用"</span>, <span class="string">"注册"</span>, <span class="string">"的"</span>, <span class="string">"协议"</span>, <span class="string">"头"</span>, <span class="string">","</span>, <span class="string">"就"</span>, <span class="string">"可以"</span>, <span class="string">"呼"</span>, <span class="string">"起"</span>, <span class="string">"安装"</span>, <span class="string">"的"</span>, <span class="string">"app"</span>, <span class="string">"。"</span>, <span class="string">"比如"</span>, <span class="string">"知乎"</span>, <span class="string">"app"</span>, <span class="string">"可能"</span>, <span class="string">"注册"</span>, <span class="string">"了"</span>, <span class="string">"zhifu"</span>, <span class="string">":"</span>, <span class="string">"/"</span>, <span class="string">"/"</span>, <span class="string">"xxx"</span>, <span class="string">"zhifu"</span>, <span class="string">":"</span>, <span class="string">"/"</span>, <span class="string">"/"</span>, <span class="string">"就是"</span>, <span class="string">"约定"</span>, <span class="string">"好"</span>, <span class="string">"的"</span>, <span class="string">"xxx"</span>, <span class="string">"是"</span>, <span class="string">"指"</span>, <span class="string">"参数"</span>, <span class="string">"可以"</span>, <span class="string">"任意"</span>, <span class="string">"带"</span>, <span class="string">"这样"</span>, <span class="string">"访问"</span>, <span class="string">"后"</span>, <span class="string">"就"</span>, <span class="string">"可以"</span>, <span class="string">"呼"</span>, <span class="string">"起"</span>, <span class="string">"app"</span>, <span class="string">"了"</span>, <span class="string">"。"</span>, <span class="string">"&lt;splitter&gt;"</span>, <span class="string">"目前"</span>, <span class="string">"已经"</span>, <span class="string">"解决"</span>, <span class="string">"直接"</span>, <span class="string">"从"</span>, <span class="string">"微信"</span>, <span class="string">"打开"</span>, <span class="string">"的"</span>, <span class="string">"链接"</span>, <span class="string">"可以直接"</span>, <span class="string">"点击"</span>, <span class="string">"下载"</span>, <span class="string">"APP"</span>, <span class="string">"的"</span>, <span class="string">"跳转"</span>, <span class="string">","</span>, <span class="string">"无需"</span>, <span class="string">"再"</span>, <span class="string">"通过"</span>, <span class="string">"另外"</span>, <span class="string">"浏览"</span>, <span class="string">"中"</span>, <span class="string">"打开"</span>, <span class="string">"才能"</span>, <span class="string">"点击"</span>, <span class="string">"下载"</span>, <span class="string">","</span>, <span class="string">"在"</span>, <span class="string">"微信"</span>, <span class="string">"中"</span>, <span class="string">"即可"</span>, <span class="string">"直接"</span>, <span class="string">"点击"</span>, <span class="string">"下载"</span>, <span class="string">","</span>, <span class="string">"需要"</span>, <span class="string">"的"</span>, <span class="string">"联系"</span>, <span class="string">"QQ"</span>, <span class="string">"77408026"</span>, <span class="string">"&lt;splitter&gt;"</span>, <span class="string">"你可以"</span>, <span class="string">"去"</span>, <span class="string">"看看"</span>, <span class="string">"openinstall"</span>, <span class="string">","</span>, <span class="string">"它"</span>, <span class="string">"可以"</span>, <span class="string">"实现"</span>, <span class="string">"让"</span>, <span class="string">"用户"</span>, <span class="string">"分享"</span>, <span class="string">"链接"</span>, <span class="string">"让"</span>, <span class="string">"别"</span>, <span class="string">"的"</span>, <span class="string">"用户"</span>, <span class="string">"可以打开"</span>, <span class="string">"下载"</span>, <span class="string">"或者"</span>, <span class="string">"跳转"</span>, <span class="string">"APP"</span>, <span class="string">"。"</span>, <span class="string">"而且"</span>, <span class="string">"打开"</span>, <span class="string">"或者"</span>, <span class="string">"下载"</span>, <span class="string">"后"</span>, <span class="string">"还能"</span>, <span class="string">"获取"</span>, <span class="string">"到"</span>, <span class="string">"自己"</span>, <span class="string">"想"</span>, <span class="string">"传"</span>, <span class="string">"过去"</span>, <span class="string">"的"</span>, <span class="string">"参数"</span>, <span class="string">"。"</span>, <span class="string">"&lt;splitter&gt;"</span>, <span class="string">"方法"</span>, <span class="string">"一"</span>, <span class="string">":"</span>, <span class="string">"微信"</span>, <span class="string">"API"</span>, <span class="string">"-"</span>, <span class="string">"-"</span>, <span class="string">"WXApp"</span>, <span class="string">"Extend"</span>, <span class="string">"Object"</span>, <span class="string">"."</span>, <span class="string">"("</span>, <span class="string">"参考"</span>, <span class="string">"app"</span>, <span class="string">"-"</span>, <span class="string">"微博"</span>, <span class="string">")"</span>, <span class="string">"方法"</span>, <span class="string">"二"</span>, <span class="string">":"</span>, <span class="string">"iOS"</span>, <span class="string">"9"</span>, <span class="string">"Universal"</span>, <span class="string">"Link"</span>, <span class="string">"."</span>, <span class="string">"("</span>, <span class="string">"参考"</span>, <span class="string">"app"</span>, <span class="string">"-"</span>, <span class="string">"蘑菇街"</span>, <span class="string">")"</span>, <span class="string">"&lt;splitter&gt;"</span>, <span class="string">"目前"</span>, <span class="string">"要"</span>, <span class="string">"先"</span>, <span class="string">"用"</span>, <span class="string">"浏览器"</span>, <span class="string">"打开"</span>, <span class="string">","</span>, <span class="string">"然后"</span>, <span class="string">"才能"</span>, <span class="string">"跳"</span>, <span class="string">"。"</span>, <span class="string">"有"</span>, <span class="string">"解决办法"</span>, <span class="string">"么"</span>, <span class="string">"&lt;splitter&gt;"</span>, <span class="string">"下载"</span>, <span class="string">"知乎"</span>, <span class="string">"客户端"</span>, <span class="string">"与"</span>, <span class="string">"世界"</span>, <span class="string">"分享"</span>, <span class="string">"知识"</span>, <span class="string">"、"</span>, <span class="string">"经验"</span>, <span class="string">"和"</span>, <span class="string">"见解"</span>, <span class="string">"&lt;splitter&gt;"</span>, <span class="string">"相关"</span>, <span class="string">"Live"</span>, <span class="string">"推荐"</span>]</span><br><span class="line">		],</span><br><span class="line">		<span class="attr">"paragraphs"</span>: [<span class="string">"iOS里,把一个页面链接分享给好友,好友在微信里打开这个链接,怎么跳&lt;splitter&gt;iOS里,把一个页面链接分享给微信好友(会话),好友在微信里打开这个链接,也就是打开了一个网页,点击网页里的某个地方后(比如网页中“打开xx应用程序”的按钮),代码里怎么设置可以跳回到第三方app?知乎的ios客户端就有这种功能,在微信里分享链接后,点开链接,再点网页中的某处,就可以打开知乎客户端显示全部&lt;splitter&gt;微信中不能用自定义url的方式,微信提供了打开第三方应用的接口:launch3rdApp&lt;splitter&gt;谢。一般用自带浏览器可以调用起app没问题。微信里面能调出app的,是和腾讯有合作的应用,其他会被过滤掉。&lt;splitter&gt;有一个公司的产品,叫魔窗,免费可以接入的&lt;splitter&gt;分享出去的是一个网页,前端人员与app客户端人员约定好一个头部协议。当用户在网页的点击某个按钮,调用注册的协议头,就可以呼起安装的app。比如知乎app可能注册了zhifu://xxxzhifu://就是约定好的xxx是指参数可以任意带这样访问后就可以呼起app了。&lt;splitter&gt;目前已经解决直接从微信打开的链接可以直接点击下载APP的跳转,无需再通过另外浏览中打开才能点击下载,在微信中即可直接点击下载,需要的联系QQ77408026&lt;splitter&gt;你可以去看看openinstall,它可以实现让用户分享链接让别的用户可以打开下载或者跳转APP。而且打开或者下载后还能获取到自己想传过去的参数。&lt;splitter&gt;方法一:微信API--WXAppExtendObject.(参考app-微博)方法二:iOS9UniversalLink.(参考app-蘑菇街)&lt;splitter&gt;目前要先用浏览器打开,然后才能跳。有解决办法么&lt;splitter&gt;下载知乎客户端与世界分享知识、经验和见解&lt;splitter&gt;相关Live推荐"</span>],</span><br><span class="line">		<span class="attr">"segmented_paragraphs_scores"</span>: [<span class="number">1.0</span>],</span><br><span class="line">		<span class="attr">"paragraphs_length"</span>: [<span class="number">415</span>]</span><br><span class="line">	}, {</span><br><span class="line">		<span class="attr">"is_selected"</span>: <span class="literal">true</span>,</span><br><span class="line">		<span class="attr">"title"</span>: <span class="string">"怎么可以在微信里面打开APP下载链接地址_百度经验"</span>,</span><br><span class="line">		<span class="attr">"most_related_para"</span>: <span class="number">0</span>,</span><br><span class="line">		<span class="attr">"segmented_title"</span>: [<span class="string">"怎么"</span>, <span class="string">"可以"</span>, <span class="string">"在"</span>, <span class="string">"微信"</span>, <span class="string">"里面"</span>, <span class="string">"打开"</span>, <span class="string">"APP"</span>, <span class="string">"下载"</span>, <span class="string">"链接地址"</span>, <span class="string">"_"</span>, <span class="string">"百度"</span>, <span class="string">"经验"</span>],</span><br><span class="line">		<span class="attr">"segmented_paragraphs"</span>: [</span><br><span class="line">			[<span class="string">"怎么"</span>, <span class="string">"可以"</span>, <span class="string">"在"</span>, <span class="string">"微信"</span>, <span class="string">"里面"</span>, <span class="string">"打开"</span>, <span class="string">"APP"</span>, <span class="string">"下载"</span>, <span class="string">"链接地址"</span>, <span class="string">"_"</span>, <span class="string">"百度"</span>, <span class="string">"经验"</span>, <span class="string">"&lt;splitter&gt;"</span>, <span class="string">"百度"</span>, <span class="string">"经验"</span>, <span class="string">":"</span>, <span class="string">"jingyan"</span>, <span class="string">"."</span>, <span class="string">"baidu"</span>, <span class="string">"."</span>, <span class="string">"com"</span>, <span class="string">"&lt;splitter&gt;"</span>, <span class="string">"我们"</span>, <span class="string">"都"</span>, <span class="string">"知道"</span>, <span class="string">"手游"</span>, <span class="string">"、"</span>, <span class="string">"APP"</span>, <span class="string">"想"</span>, <span class="string">"在"</span>, <span class="string">"微信"</span>, <span class="string">"分享"</span>, <span class="string">"时"</span>, <span class="string">","</span>, <span class="string">"下载"</span>, <span class="string">"的"</span>, <span class="string">"链接"</span>, <span class="string">"会"</span>, <span class="string">"被"</span>, <span class="string">"微信"</span>, <span class="string">"屏蔽"</span>, <span class="string">","</span>, <span class="string">"不能"</span>, <span class="string">"直接"</span>, <span class="string">"点击"</span>, <span class="string">","</span>, <span class="string">"那"</span>, <span class="string">"怎样"</span>, <span class="string">"才能"</span>, <span class="string">"得到"</span>, <span class="string">"微信"</span>, <span class="string">"认可"</span>, <span class="string">"的"</span>, <span class="string">"下载"</span>, <span class="string">"页面"</span>, <span class="string">"呢"</span>, <span class="string">","</span>, <span class="string">"这里"</span>, <span class="string">"就"</span>, <span class="string">"需要"</span>, <span class="string">"用"</span>, <span class="string">"到"</span>, <span class="string">"腾讯"</span>, <span class="string">"的"</span>, <span class="string">"开放"</span>, <span class="string">"平台"</span>, <span class="string">","</span>, <span class="string">"而"</span>, <span class="string">"你"</span>, <span class="string">"的"</span>, <span class="string">"应用"</span>, <span class="string">"也"</span>, <span class="string">"需要提交"</span>, <span class="string">"到"</span>, <span class="string">"这个平台"</span>, <span class="string">"。"</span>, <span class="string">"在"</span>, <span class="string">"这里"</span>, <span class="string">"可以"</span>, <span class="string">"得到"</span>, <span class="string">"微信"</span>, <span class="string">"认可"</span>, <span class="string">"的"</span>, <span class="string">"链接地址"</span>, <span class="string">"。"</span>, <span class="string">"接下来"</span>, <span class="string">"介绍"</span>, <span class="string">"相关"</span>, <span class="string">"方法"</span>, <span class="string">"。"</span>, <span class="string">"&lt;splitter&gt;"</span>, <span class="string">"1"</span>, <span class="string">"首先"</span>, <span class="string">"打开"</span>, <span class="string">"腾讯"</span>, <span class="string">"开放"</span>, <span class="string">"平台"</span>, <span class="string">","</span>, <span class="string">"注册"</span>, <span class="string">"开放"</span>, <span class="string">"平台"</span>, <span class="string">"的"</span>, <span class="string">"一"</span>, <span class="string">"个"</span>, <span class="string">"账号"</span>, <span class="string">","</span>, <span class="string">"如"</span>, <span class="string">"下"</span>, <span class="string">"图"</span>, <span class="string">"所示"</span>, <span class="string">"。"</span>, <span class="string">"步骤"</span>, <span class="string">"阅读"</span>, <span class="string">"2"</span>, <span class="string">"登录"</span>, <span class="string">"后"</span>, <span class="string">"在"</span>, <span class="string">"”"</span>, <span class="string">"管理"</span>, <span class="string">"中心"</span>, <span class="string">"“"</span>, <span class="string">"中"</span>, <span class="string">"创建"</span>, <span class="string">"应用"</span>, <span class="string">","</span>, <span class="string">"如"</span>, <span class="string">"下"</span>, <span class="string">"图"</span>, <span class="string">"所示"</span>, <span class="string">"点击"</span>, <span class="string">"红线"</span>, <span class="string">"框"</span>, <span class="string">"选"</span>, <span class="string">"按钮"</span>, <span class="string">"。"</span>, <span class="string">"步骤"</span>, <span class="string">"阅读"</span>, <span class="string">"3"</span>, <span class="string">"选择"</span>, <span class="string">"创建"</span>, <span class="string">"应用"</span>, <span class="string">"的"</span>, <span class="string">"类型"</span>, <span class="string">"如"</span>, <span class="string">"下"</span>, <span class="string">"图"</span>, <span class="string">"所示"</span>, <span class="string">","</span>, <span class="string">"然后"</span>, <span class="string">"按钮"</span>, <span class="string">"提示"</span>, <span class="string">"填写"</span>, <span class="string">"应用"</span>, <span class="string">"的"</span>, <span class="string">"相关"</span>, <span class="string">"信息"</span>, <span class="string">","</span>, <span class="string">"提交"</span>, <span class="string">"进入"</span>, <span class="string">"审核"</span>, <span class="string">"。"</span>, <span class="string">"步骤"</span>, <span class="string">"阅读"</span>, <span class="string">"步骤"</span>, <span class="string">"阅读"</span>, <span class="string">"4"</span>, <span class="string">"应用"</span>, <span class="string">"审核"</span>, <span class="string">"通过"</span>, <span class="string">"后"</span>, <span class="string">"会"</span>, <span class="string">"在"</span>, <span class="string">"管理"</span>, <span class="string">"中心"</span>, <span class="string">"中"</span>, <span class="string">"显示"</span>, <span class="string">"”"</span>, <span class="string">"已"</span>, <span class="string">"上线"</span>, <span class="string">"“"</span>, <span class="string">","</span>, <span class="string">"然后"</span>, <span class="string">"点击"</span>, <span class="string">"应用"</span>, <span class="string">"的"</span>, <span class="string">"图标"</span>, <span class="string">"。"</span>, <span class="string">"步骤"</span>, <span class="string">"阅读"</span>, <span class="string">"5"</span>, <span class="string">"在"</span>, <span class="string">"应用"</span>, <span class="string">"详情"</span>, <span class="string">"中"</span>, <span class="string">"找到"</span>, <span class="string">"运营"</span>, <span class="string">"服务"</span>, <span class="string">"中"</span>, <span class="string">"的"</span>, <span class="string">"”"</span>, <span class="string">"微"</span>, <span class="string">"下载"</span>, <span class="string">"“"</span>, <span class="string">","</span>, <span class="string">"点击进入"</span>, <span class="string">"详情"</span>, <span class="string">"页面"</span>, <span class="string">"。"</span>, <span class="string">"步骤"</span>, <span class="string">"阅读"</span>, <span class="string">"6"</span>, <span class="string">"在"</span>, <span class="string">"详情"</span>, <span class="string">"页面"</span>, <span class="string">"中"</span>, <span class="string">"就"</span>, <span class="string">"可以"</span>, <span class="string">"看到"</span>, <span class="string">"系统"</span>, <span class="string">"生成"</span>, <span class="string">"的"</span>, <span class="string">"推广"</span>, <span class="string">"链接地址"</span>, <span class="string">"了"</span>, <span class="string">","</span>, <span class="string">"复制"</span>, <span class="string">"此"</span>, <span class="string">"地址"</span>, <span class="string">"就"</span>, <span class="string">"可以"</span>, <span class="string">"微信"</span>, <span class="string">"中"</span>, <span class="string">"转发"</span>, <span class="string">"了"</span>, <span class="string">"。"</span>, <span class="string">"步骤"</span>, <span class="string">"阅读"</span>, <span class="string">"END"</span>, <span class="string">"&lt;splitter&gt;"</span>, <span class="string">"经验"</span>, <span class="string">"内容"</span>, <span class="string">"仅供参考"</span>, <span class="string">","</span>, <span class="string">"如果"</span>, <span class="string">"您"</span>, <span class="string">"需"</span>, <span class="string">"解决"</span>, <span class="string">"具体"</span>, <span class="string">"问题"</span>, <span class="string">"("</span>, <span class="string">"尤其"</span>, <span class="string">"法律"</span>, <span class="string">"、"</span>, <span class="string">"医学"</span>, <span class="string">"等"</span>, <span class="string">"领域"</span>, <span class="string">")"</span>, <span class="string">","</span>, <span class="string">"建议"</span>, <span class="string">"您"</span>, <span class="string">"详细"</span>, <span class="string">"咨询"</span>, <span class="string">"相关"</span>, <span class="string">"领域"</span>, <span class="string">"专业人士"</span>, <span class="string">"。"</span>]</span><br><span class="line">		],</span><br><span class="line">		<span class="attr">"paragraphs"</span>: [<span class="string">"怎么可以在微信里面打开APP下载链接地址_百度经验&lt;splitter&gt;百度经验:jingyan.baidu.com&lt;splitter&gt;我们都知道手游、APP想在微信分享时,下载的链接会被微信屏蔽,不能直接点击,那怎样才能得到微信认可的下载页面呢,这里就需要用到腾讯的开放平台,而你的应用也需要提交到这个平台。在这里可以得到微信认可的链接地址。接下来介绍相关方法。&lt;splitter&gt;1首先打开腾讯开放平台,注册开放平台的一个账号,如下图所示。步骤阅读2登录后在”管理中心“中创建应用,如下图所示点击红线框选按钮。步骤阅读3选择创建应用的类型如下图所示,然后按钮提示填写应用的相关信息,提交进入审核。步骤阅读步骤阅读4应用审核通过后会在管理中心中显示”已上线“,然后点击应用的图标。步骤阅读5在应用详情中找到运营服务中的”微下载“,点击进入详情页面。步骤阅读6在详情页面中就可以看到系统生成的推广链接地址了,复制此地址就可以微信中转发了。步骤阅读END&lt;splitter&gt;经验内容仅供参考,如果您需解决具体问题(尤其法律、医学等领域),建议您详细咨询相关领域专业人士。"</span>],</span><br><span class="line">		<span class="attr">"segmented_paragraphs_scores"</span>: [<span class="number">1.0</span>],</span><br><span class="line">		<span class="attr">"paragraphs_length"</span>: [<span class="number">266</span>]</span><br><span class="line">	}, {</span><br><span class="line">		<span class="attr">"is_selected"</span>: <span class="literal">false</span>,</span><br><span class="line">		<span class="attr">"title"</span>: <span class="string">"android微信分享的链接怎么启动app-CSDN论坛"</span>,</span><br><span class="line">		<span class="attr">"most_related_para"</span>: <span class="number">0</span>,</span><br><span class="line">		<span class="attr">"segmented_title"</span>: [<span class="string">"android"</span>, <span class="string">"微信"</span>, <span class="string">"分享"</span>, <span class="string">"的"</span>, <span class="string">"链接"</span>, <span class="string">"怎么"</span>, <span class="string">"启动"</span>, <span class="string">"app"</span>, <span class="string">"-"</span>, <span class="string">"CSDN"</span>, <span class="string">"论坛"</span>],</span><br><span class="line">		<span class="attr">"segmented_paragraphs"</span>: [</span><br><span class="line">			[<span class="string">"android"</span>, <span class="string">"微信"</span>, <span class="string">"分享"</span>, <span class="string">"的"</span>, <span class="string">"链接"</span>, <span class="string">"怎么"</span>, <span class="string">"启动"</span>, <span class="string">"app"</span>, <span class="string">"-"</span>, <span class="string">"CSDN"</span>, <span class="string">"论坛"</span>, <span class="string">"&lt;splitter&gt;"</span>, <span class="string">"app"</span>, <span class="string">"中"</span>, <span class="string">"分享"</span>, <span class="string">"到"</span>, <span class="string">"微信"</span>, <span class="string">"已经"</span>, <span class="string">"成功"</span>, <span class="string">","</span>, <span class="string">"但是"</span>, <span class="string">"通过"</span>, <span class="string">"分享"</span>, <span class="string">"的"</span>, <span class="string">"连接"</span>, <span class="string">"无法"</span>, <span class="string">"启动"</span>, <span class="string">"app"</span>, <span class="string">"。"</span>, <span class="string">"&lt;splitter&gt;"</span>, <span class="string">"分享"</span>, <span class="string">"的"</span>, <span class="string">"链接"</span>, <span class="string">"就是"</span>, <span class="string">"普通"</span>, <span class="string">"的"</span>, <span class="string">"自定义"</span>, <span class="string">"url"</span>, <span class="string">":"</span>, <span class="string">"myapp"</span>, <span class="string">":"</span>, <span class="string">"/"</span>, <span class="string">"/"</span>, <span class="string">"www"</span>, <span class="string">"."</span>, <span class="string">"myapp"</span>, <span class="string">"."</span>, <span class="string">"com"</span>, <span class="string">"."</span>, <span class="string">"&lt;splitter&gt;"</span>, <span class="string">"博客"</span>, <span class="string">"专家"</span>, <span class="string">"带"</span>, <span class="string">"你"</span>, <span class="string">"学"</span>, <span class="string">"swift"</span>, <span class="string">"晒"</span>, <span class="string">"图谱"</span>, <span class="string">","</span>, <span class="string">"涨"</span>, <span class="string">"知识"</span>, <span class="string">","</span>, <span class="string">"得"</span>, <span class="string">"好"</span>, <span class="string">"礼"</span>, <span class="string">"Swift"</span>, <span class="string">"问题"</span>, <span class="string">"与"</span>, <span class="string">"解答"</span>, <span class="string">"视频直播"</span>, <span class="string">"技术"</span>, <span class="string">"免费"</span>, <span class="string">"课"</span>]</span><br><span class="line">		],</span><br><span class="line">		<span class="attr">"paragraphs"</span>: [<span class="string">"android微信分享的链接怎么启动app-CSDN论坛&lt;splitter&gt;app中分享到微信已经成功,但是通过分享的连接无法启动app。&lt;splitter&gt;分享的链接就是普通的自定义url:myapp://www.myapp.com.&lt;splitter&gt;博客专家带你学swift晒图谱,涨知识,得好礼Swift问题与解答视频直播技术免费课"</span>],</span><br><span class="line">		<span class="attr">"segmented_paragraphs_scores"</span>: [<span class="number">1.0</span>],</span><br><span class="line">		<span class="attr">"paragraphs_length"</span>: [<span class="number">73</span>]</span><br><span class="line">	}, {</span><br><span class="line">		<span class="attr">"is_selected"</span>: <span class="literal">false</span>,</span><br><span class="line">		<span class="attr">"title"</span>: <span class="string">"android 从微信分享的网页中启动APP - mattdong1024的专栏 - CSDN"</span>,</span><br><span class="line">		<span class="attr">"most_related_para"</span>: <span class="number">0</span>,</span><br><span class="line">		<span class="attr">"segmented_title"</span>: [<span class="string">"android"</span>, <span class="string">"从"</span>, <span class="string">"微信"</span>, <span class="string">"分享"</span>, <span class="string">"的"</span>, <span class="string">"网页"</span>, <span class="string">"中"</span>, <span class="string">"启动"</span>, <span class="string">"APP"</span>, <span class="string">"-"</span>, <span class="string">"matt"</span>, <span class="string">"dong"</span>, <span class="string">"1024"</span>, <span class="string">"的"</span>, <span class="string">"专栏"</span>, <span class="string">"-"</span>, <span class="string">"CSDN"</span>],</span><br><span class="line">		<span class="attr">"segmented_paragraphs"</span>: [</span><br><span class="line">			[<span class="string">"android"</span>, <span class="string">"从"</span>, <span class="string">"微信"</span>, <span class="string">"分享"</span>, <span class="string">"的"</span>, <span class="string">"网页"</span>, <span class="string">"中"</span>, <span class="string">"启动"</span>, <span class="string">"APP"</span>, <span class="string">"-"</span>, <span class="string">"matt"</span>, <span class="string">"dong"</span>, <span class="string">"1024"</span>, <span class="string">"的"</span>, <span class="string">"专栏"</span>, <span class="string">"-"</span>, <span class="string">"CSDN"</span>, <span class="string">"&lt;splitter&gt;"</span>, <span class="string">"项目"</span>, <span class="string">"中"</span>, <span class="string">"有"</span>, <span class="string">"个"</span>, <span class="string">"需求"</span>, <span class="string">","</span>, <span class="string">"让"</span>, <span class="string">"用户"</span>, <span class="string">"可以"</span>, <span class="string">"从"</span>, <span class="string">"分享"</span>, <span class="string">"到"</span>, <span class="string">"微信"</span>, <span class="string">"的"</span>, <span class="string">"网页"</span>, <span class="string">"中"</span>, <span class="string">"启动"</span>, <span class="string">"自己"</span>, <span class="string">"的"</span>, <span class="string">"APP"</span>, <span class="string">","</span>, <span class="string">"如果"</span>, <span class="string">"本"</span>, <span class="string">"机"</span>, <span class="string">"没有"</span>, <span class="string">"安装"</span>, <span class="string">"该"</span>, <span class="string">"应用程序"</span>, <span class="string">"则"</span>, <span class="string">"打开"</span>, <span class="string">"应用"</span>, <span class="string">"商店"</span>, <span class="string">"并"</span>, <span class="string">"打开"</span>, <span class="string">"该"</span>, <span class="string">"程序"</span>, <span class="string">"在"</span>, <span class="string">"商店"</span>, <span class="string">"中"</span>, <span class="string">"的"</span>, <span class="string">"搜索"</span>, <span class="string">"结果"</span>, <span class="string">"页面"</span>, <span class="string">"。"</span>, <span class="string">"在这里"</span>, <span class="string">"跟"</span>, <span class="string">"大家"</span>, <span class="string">"分享"</span>, <span class="string">"一"</span>, <span class="string">"下"</span>, <span class="string">":"</span>, <span class="string">"&lt;splitter&gt;"</span>, <span class="string">"实践"</span>, <span class="string">":"</span>, <span class="string">"从"</span>, <span class="string">"微信"</span>, <span class="string">"分享"</span>, <span class="string">"的"</span>, <span class="string">"网页"</span>, <span class="string">"中"</span>, <span class="string">"启动"</span>, <span class="string">"app"</span>, <span class="string">","</span>, <span class="string">"如果"</span>, <span class="string">"本"</span>, <span class="string">"机"</span>, <span class="string">"安装"</span>, <span class="string">"了"</span>, <span class="string">"该"</span>, <span class="string">"应用"</span>, <span class="string">"可以"</span>, <span class="string">"正常"</span>, <span class="string">"启动"</span>, <span class="string">","</span>, <span class="string">"如果没有"</span>, <span class="string">"安装"</span>, <span class="string">"该"</span>, <span class="string">"应用"</span>, <span class="string">","</span>, <span class="string">"会"</span>, <span class="string">"跳转"</span>, <span class="string">"到"</span>, <span class="string">"应用宝"</span>, <span class="string">"的"</span>, <span class="string">"网页"</span>, <span class="string">","</span>, <span class="string">"提示"</span>, <span class="string">"你"</span>, <span class="string">"下载"</span>, <span class="string">"应用"</span>, <span class="string">"&lt;splitter&gt;"</span>, <span class="string">"如果"</span>, <span class="string">"是"</span>, <span class="string">"从"</span>, <span class="string">"其他"</span>, <span class="string">"浏览器"</span>, <span class="string">"启动"</span>, <span class="string">"app"</span>, <span class="string">"的"</span>, <span class="string">"话"</span>, <span class="string">","</span>, <span class="string">"除了"</span>, <span class="string">"自带"</span>, <span class="string">"浏览器"</span>, <span class="string">"和"</span>, <span class="string">"谷歌"</span>, <span class="string">"浏览器"</span>, <span class="string">"外"</span>, <span class="string">","</span>, <span class="string">"其他"</span>, <span class="string">"第三方"</span>, <span class="string">"浏览器"</span>, <span class="string">"可能会"</span>, <span class="string">"有"</span>, <span class="string">"兼容性"</span>, <span class="string">"问题"</span>, <span class="string">","</span>, <span class="string">"也就是说"</span>, <span class="string">","</span>, <span class="string">"有"</span>, <span class="string">"可能"</span>, <span class="string">"无法"</span>, <span class="string">"从"</span>, <span class="string">"第三方"</span>, <span class="string">"浏览器"</span>, <span class="string">"启动"</span>, <span class="string">"app"</span>, <span class="string">"。"</span>]</span><br><span class="line">		],</span><br><span class="line">		<span class="attr">"paragraphs"</span>: [<span class="string">"android从微信分享的网页中启动APP-mattdong1024的专栏-CSDN&lt;splitter&gt;项目中有个需求,让用户可以从分享到微信的网页中启动自己的APP,如果本机没有安装该应用程序则打开应用商店并打开该程序在商店中的搜索结果页面。在这里跟大家分享一下:&lt;splitter&gt;实践:从微信分享的网页中启动app,如果本机安装了该应用可以正常启动,如果没有安装该应用,会跳转到应用宝的网页,提示你下载应用&lt;splitter&gt;如果是从其他浏览器启动app的话,除了自带浏览器和谷歌浏览器外,其他第三方浏览器可能会有兼容性问题,也就是说,有可能无法从第三方浏览器启动app。"</span>],</span><br><span class="line">		<span class="attr">"segmented_paragraphs_scores"</span>: [<span class="number">1.0</span>],</span><br><span class="line">		<span class="attr">"paragraphs_length"</span>: [<span class="number">146</span>]</span><br><span class="line">	}, {</span><br><span class="line">		<span class="attr">"is_selected"</span>: <span class="literal">true</span>,</span><br><span class="line">		<span class="attr">"title"</span>: <span class="string">"微信浏览器中点击链接怎么打开本地app_百度经验"</span>,</span><br><span class="line">		<span class="attr">"most_related_para"</span>: <span class="number">0</span>,</span><br><span class="line">		<span class="attr">"segmented_title"</span>: [<span class="string">"微信"</span>, <span class="string">"浏览器"</span>, <span class="string">"中"</span>, <span class="string">"点击"</span>, <span class="string">"链接"</span>, <span class="string">"怎么"</span>, <span class="string">"打开"</span>, <span class="string">"本地"</span>, <span class="string">"app"</span>, <span class="string">"_"</span>, <span class="string">"百度"</span>, <span class="string">"经验"</span>],</span><br><span class="line">		<span class="attr">"segmented_paragraphs"</span>: [</span><br><span class="line">			[<span class="string">"微信"</span>, <span class="string">"浏览器"</span>, <span class="string">"中"</span>, <span class="string">"点击"</span>, <span class="string">"链接"</span>, <span class="string">"怎么"</span>, <span class="string">"打开"</span>, <span class="string">"本地"</span>, <span class="string">"app"</span>, <span class="string">"_"</span>, <span class="string">"百度"</span>, <span class="string">"经验"</span>, <span class="string">"&lt;splitter&gt;"</span>, <span class="string">"百度"</span>, <span class="string">"经验"</span>, <span class="string">":"</span>, <span class="string">"jingyan"</span>, <span class="string">"."</span>, <span class="string">"baidu"</span>, <span class="string">"."</span>, <span class="string">"com"</span>, <span class="string">"&lt;splitter&gt;"</span>, <span class="string">"微信"</span>, <span class="string">"已经成为"</span>, <span class="string">"现代人"</span>, <span class="string">"生活"</span>, <span class="string">"中"</span>, <span class="string">"必不可少"</span>, <span class="string">"的"</span>, <span class="string">"一部分"</span>, <span class="string">","</span>, <span class="string">"下面"</span>, <span class="string">"我"</span>, <span class="string">"就"</span>, <span class="string">"教"</span>, <span class="string">"大家"</span>, <span class="string">"如何"</span>, <span class="string">"在"</span>, <span class="string">"微信"</span>, <span class="string">"浏览器"</span>, <span class="string">"中"</span>, <span class="string">"打开"</span>, <span class="string">"本地"</span>, <span class="string">"APP"</span>, <span class="string">"吧"</span>, <span class="string">"!"</span>, <span class="string">"&lt;splitter&gt;"</span>, <span class="string">"1"</span>, <span class="string">"将"</span>, <span class="string">"手机"</span>, <span class="string">"微信"</span>, <span class="string">"打开"</span>, <span class="string">"。"</span>, <span class="string">"步骤"</span>, <span class="string">"阅读"</span>, <span class="string">"2"</span>, <span class="string">"打开"</span>, <span class="string">"微信"</span>, <span class="string">"中"</span>, <span class="string">"的"</span>, <span class="string">"链接"</span>, <span class="string">"。"</span>, <span class="string">"步骤"</span>, <span class="string">"阅读"</span>, <span class="string">"3"</span>, <span class="string">"如图"</span>, <span class="string">"我们"</span>, <span class="string">"打开"</span>, <span class="string">"百度"</span>, <span class="string">"经验"</span>, <span class="string">"的"</span>, <span class="string">"链接"</span>, <span class="string">","</span>, <span class="string">"用"</span>, <span class="string">"微信"</span>, <span class="string">"浏览器"</span>, <span class="string">"进入"</span>, <span class="string">"网页"</span>, <span class="string">"以后"</span>, <span class="string">","</span>, <span class="string">"点击"</span>, <span class="string">"右"</span>, <span class="string">"上方"</span>, <span class="string">"如图"</span>, <span class="string">"符号"</span>, <span class="string">"。"</span>, <span class="string">"步骤"</span>, <span class="string">"阅读"</span>, <span class="string">"4"</span>, <span class="string">"进入"</span>, <span class="string">"选择"</span>, <span class="string">"页面"</span>, <span class="string">","</span>, <span class="string">"点击"</span>, <span class="string">"“"</span>, <span class="string">"在"</span>, <span class="string">"浏览器"</span>, <span class="string">"”"</span>, <span class="string">"打开"</span>, <span class="string">"。"</span>, <span class="string">"步骤"</span>, <span class="string">"阅读"</span>, <span class="string">"5"</span>, <span class="string">"如图"</span>, <span class="string">"会出现"</span>, <span class="string">"手机"</span>, <span class="string">"已"</span>, <span class="string">"安装"</span>, <span class="string">"的"</span>, <span class="string">"本地"</span>, <span class="string">"APP"</span>, <span class="string">"浏览器"</span>, <span class="string">","</span>, <span class="string">"我们"</span>, <span class="string">"选择"</span>, <span class="string">"一"</span>, <span class="string">"个"</span>, <span class="string">"自己"</span>, <span class="string">"想"</span>, <span class="string">"用"</span>, <span class="string">"的"</span>, <span class="string">"本地"</span>, <span class="string">"浏览器"</span>, <span class="string">"点击"</span>, <span class="string">"下方"</span>, <span class="string">"“"</span>, <span class="string">"仅"</span>, <span class="string">"一次"</span>, <span class="string">"”"</span>, <span class="string">"或"</span>, <span class="string">"“"</span>, <span class="string">"总是"</span>, <span class="string">"”"</span>, <span class="string">"都"</span>, <span class="string">"可以"</span>, <span class="string">"打开"</span>, <span class="string">"打开"</span>, <span class="string">"本地"</span>, <span class="string">"APP"</span>, <span class="string">"浏览器"</span>, <span class="string">"。"</span>, <span class="string">"步骤"</span>, <span class="string">"阅读"</span>, <span class="string">"6"</span>, <span class="string">"此时"</span>, <span class="string">","</span>, <span class="string">"我们"</span>, <span class="string">"就"</span>, <span class="string">"已经"</span>, <span class="string">"在"</span>, <span class="string">"微信"</span>, <span class="string">"浏览器"</span>, <span class="string">"中将"</span>, <span class="string">"本地"</span>, <span class="string">"APP"</span>, <span class="string">"浏览器"</span>, <span class="string">"打开"</span>, <span class="string">"了"</span>, <span class="string">"步骤"</span>, <span class="string">"阅读"</span>, <span class="string">"END"</span>, <span class="string">"&lt;splitter&gt;"</span>, <span class="string">"经验"</span>, <span class="string">"内容"</span>, <span class="string">"仅供参考"</span>, <span class="string">","</span>, <span class="string">"如果"</span>, <span class="string">"您"</span>, <span class="string">"需"</span>, <span class="string">"解决"</span>, <span class="string">"具体"</span>, <span class="string">"问题"</span>, <span class="string">"("</span>, <span class="string">"尤其"</span>, <span class="string">"法律"</span>, <span class="string">"、"</span>, <span class="string">"医学"</span>, <span class="string">"等"</span>, <span class="string">"领域"</span>, <span class="string">")"</span>, <span class="string">","</span>, <span class="string">"建议"</span>, <span class="string">"您"</span>, <span class="string">"详细"</span>, <span class="string">"咨询"</span>, <span class="string">"相关"</span>, <span class="string">"领域"</span>, <span class="string">"专业人士"</span>, <span class="string">"。"</span>]</span><br><span class="line">		],</span><br><span class="line">		<span class="attr">"paragraphs"</span>: [<span class="string">"微信浏览器中点击链接怎么打开本地app_百度经验&lt;splitter&gt;百度经验:jingyan.baidu.com&lt;splitter&gt;微信已经成为现代人生活中必不可少的一部分,下面我就教大家如何在微信浏览器中打开本地APP吧!&lt;splitter&gt;1将手机微信打开。步骤阅读2打开微信中的链接。步骤阅读3如图我们打开百度经验的链接,用微信浏览器进入网页以后,点击右上方如图符号。步骤阅读4进入选择页面,点击“在浏览器”打开。步骤阅读5如图会出现手机已安装的本地APP浏览器,我们选择一个自己想用的本地浏览器点击下方“仅一次”或“总是”都可以打开打开本地APP浏览器。步骤阅读6此时,我们就已经在微信浏览器中将本地APP浏览器打开了步骤阅读END&lt;splitter&gt;经验内容仅供参考,如果您需解决具体问题(尤其法律、医学等领域),建议您详细咨询相关领域专业人士。"</span>],</span><br><span class="line">		<span class="attr">"segmented_paragraphs_scores"</span>: [<span class="number">1.0</span>],</span><br><span class="line">		<span class="attr">"paragraphs_length"</span>: [<span class="number">189</span>]</span><br><span class="line">	}],</span><br><span class="line">	<span class="attr">"answer_spans"</span>: [</span><br><span class="line">		[<span class="number">47</span>, <span class="number">157</span>]</span><br><span class="line">	],</span><br><span class="line">	<span class="attr">"fake_answers"</span>: [<span class="string">"1将手机微信打开。步骤阅读2打开微信中的链接。步骤阅读3如图我们打开百度经验的链接,用微信浏览器进入网页以后,点击右上方如图符号。步骤阅读4进入选择页面,点击“在浏览器”打开。步骤阅读5如图会出现手机已安装的本地APP浏览器,我们选择一个自己想用的本地浏览器点击下方“仅一次”或“总是”都可以打开打开本地APP浏览器。步骤阅读6此时,我们就已经在微信浏览器中将本地APP浏览器打开了"</span>],</span><br><span class="line">	<span class="attr">"question"</span>: <span class="string">"微信分享链接打开app"</span>,</span><br><span class="line">	<span class="attr">"segmented_answers"</span>: [</span><br><span class="line">		[<span class="string">"iOS"</span>, <span class="string">"里"</span>, <span class="string">"，"</span>, <span class="string">"把"</span>, <span class="string">"一"</span>, <span class="string">"个"</span>, <span class="string">"页面"</span>, <span class="string">"链接"</span>, <span class="string">"分享"</span>, <span class="string">"给"</span>, <span class="string">"微信"</span>, <span class="string">"好友"</span>, <span class="string">"（"</span>, <span class="string">"会话"</span>, <span class="string">"）"</span>, <span class="string">"，"</span>, <span class="string">"好友"</span>, <span class="string">"在"</span>, <span class="string">"微信"</span>, <span class="string">"里"</span>, <span class="string">"打开"</span>, <span class="string">"这个"</span>, <span class="string">"链接"</span>, <span class="string">","</span>, <span class="string">"也"</span>, <span class="string">"就是"</span>, <span class="string">"打开"</span>, <span class="string">"了"</span>, <span class="string">"一"</span>, <span class="string">"个"</span>, <span class="string">"网页"</span>, <span class="string">"，"</span>, <span class="string">"点击"</span>, <span class="string">"网页"</span>, <span class="string">"里"</span>, <span class="string">"的"</span>, <span class="string">"某"</span>, <span class="string">"个"</span>, <span class="string">"地方"</span>, <span class="string">"后"</span>, <span class="string">"（"</span>, <span class="string">"比如"</span>, <span class="string">"网页"</span>, <span class="string">"中"</span>, <span class="string">"“"</span>, <span class="string">"打开"</span>, <span class="string">"xx"</span>, <span class="string">"应用程序"</span>, <span class="string">"”"</span>, <span class="string">"的"</span>, <span class="string">"按钮"</span>, <span class="string">"）"</span>, <span class="string">"，"</span>, <span class="string">"代码"</span>, <span class="string">"里"</span>, <span class="string">"怎么"</span>, <span class="string">"设置"</span>, <span class="string">"可以"</span>, <span class="string">"跳"</span>, <span class="string">"回到"</span>, <span class="string">"第三方"</span>, <span class="string">"app"</span>, <span class="string">"？"</span>, <span class="string">"知乎"</span>, <span class="string">"的"</span>, <span class="string">"ios"</span>, <span class="string">"客户端"</span>, <span class="string">"就"</span>, <span class="string">"有"</span>, <span class="string">"这种"</span>, <span class="string">"功能"</span>, <span class="string">"，"</span>, <span class="string">"在"</span>, <span class="string">"微信"</span>, <span class="string">"里"</span>, <span class="string">"分享"</span>, <span class="string">"链接"</span>, <span class="string">"后"</span>, <span class="string">"，"</span>, <span class="string">"点"</span>, <span class="string">"开"</span>, <span class="string">"链接"</span>, <span class="string">"，"</span>, <span class="string">"再"</span>, <span class="string">"点"</span>, <span class="string">"网页"</span>, <span class="string">"中"</span>, <span class="string">"的"</span>, <span class="string">"某处"</span>, <span class="string">"，"</span>, <span class="string">"就"</span>, <span class="string">"可以"</span>, <span class="string">"打开"</span>, <span class="string">"知乎"</span>, <span class="string">"客户端"</span>, <span class="string">"。"</span>],</span><br><span class="line">		[<span class="string">"1"</span>, <span class="string">"、"</span>, <span class="string">"首先"</span>, <span class="string">"打开"</span>, <span class="string">"腾讯"</span>, <span class="string">"开放"</span>, <span class="string">"平台"</span>, <span class="string">"，"</span>, <span class="string">"注册"</span>, <span class="string">"开放"</span>, <span class="string">"平台"</span>, <span class="string">"的"</span>, <span class="string">"一"</span>, <span class="string">"个"</span>, <span class="string">"账号"</span>, <span class="string">"。"</span>, <span class="string">"2"</span>, <span class="string">"、"</span>, <span class="string">"登录"</span>, <span class="string">"后"</span>, <span class="string">"在"</span>, <span class="string">"”"</span>, <span class="string">"管理"</span>, <span class="string">"中心"</span>, <span class="string">"“"</span>, <span class="string">"中"</span>, <span class="string">"创建"</span>, <span class="string">"应用"</span>, <span class="string">"。"</span>, <span class="string">"3"</span>, <span class="string">"、"</span>, <span class="string">"选择"</span>, <span class="string">"创建"</span>, <span class="string">"应用"</span>, <span class="string">"的"</span>, <span class="string">"类型"</span>, <span class="string">"如"</span>, <span class="string">"下"</span>, <span class="string">"图"</span>, <span class="string">"所示"</span>, <span class="string">"，"</span>, <span class="string">"然后"</span>, <span class="string">"按钮"</span>, <span class="string">"提示"</span>, <span class="string">"填写"</span>, <span class="string">"应用"</span>, <span class="string">"的"</span>, <span class="string">"相关"</span>, <span class="string">"信息"</span>, <span class="string">"，"</span>, <span class="string">"提交"</span>, <span class="string">"进入"</span>, <span class="string">"审核"</span>, <span class="string">"。"</span>, <span class="string">"4"</span>, <span class="string">"、"</span>, <span class="string">"应用"</span>, <span class="string">"审核"</span>, <span class="string">"通过"</span>, <span class="string">"后"</span>, <span class="string">"会"</span>, <span class="string">"在"</span>, <span class="string">"管理"</span>, <span class="string">"中心"</span>, <span class="string">"中"</span>, <span class="string">"显示"</span>, <span class="string">"”"</span>, <span class="string">"已"</span>, <span class="string">"上线"</span>, <span class="string">"“"</span>, <span class="string">"，"</span>, <span class="string">"然后"</span>, <span class="string">"点击"</span>, <span class="string">"应用"</span>, <span class="string">"的"</span>, <span class="string">"图标"</span>, <span class="string">"。"</span>, <span class="string">"5"</span>, <span class="string">"、"</span>, <span class="string">"在"</span>, <span class="string">"应用"</span>, <span class="string">"详情"</span>, <span class="string">"中"</span>, <span class="string">"找到"</span>, <span class="string">"运营"</span>, <span class="string">"服务"</span>, <span class="string">"中"</span>, <span class="string">"的"</span>, <span class="string">"”"</span>, <span class="string">"微"</span>, <span class="string">"下载"</span>, <span class="string">"“"</span>, <span class="string">"。"</span>, <span class="string">"6"</span>, <span class="string">"、"</span>, <span class="string">"在"</span>, <span class="string">"详情"</span>, <span class="string">"页面"</span>, <span class="string">"中"</span>, <span class="string">"就"</span>, <span class="string">"可以"</span>, <span class="string">"看到"</span>, <span class="string">"系统"</span>, <span class="string">"生成"</span>, <span class="string">"的"</span>, <span class="string">"推广"</span>, <span class="string">"链接地址"</span>, <span class="string">"了"</span>, <span class="string">"，"</span>, <span class="string">"复制"</span>, <span class="string">"此"</span>, <span class="string">"地址"</span>, <span class="string">"就"</span>, <span class="string">"可以"</span>, <span class="string">"微信"</span>, <span class="string">"中"</span>, <span class="string">"转发"</span>, <span class="string">"了"</span>, <span class="string">"。"</span>],</span><br><span class="line">		[<span class="string">"1"</span>, <span class="string">"将"</span>, <span class="string">"手机"</span>, <span class="string">"微信"</span>, <span class="string">"打开"</span>, <span class="string">"。"</span>, <span class="string">"2"</span>, <span class="string">"打开"</span>, <span class="string">"微信"</span>, <span class="string">"中"</span>, <span class="string">"的"</span>, <span class="string">"链接"</span>, <span class="string">"。"</span>, <span class="string">"3"</span>, <span class="string">"我们"</span>, <span class="string">"打开"</span>, <span class="string">"百度"</span>, <span class="string">"经验"</span>, <span class="string">"的"</span>, <span class="string">"链接"</span>, <span class="string">"，"</span>, <span class="string">"用"</span>, <span class="string">"微信"</span>, <span class="string">"浏览器"</span>, <span class="string">"进入"</span>, <span class="string">"网页"</span>, <span class="string">"以后"</span>, <span class="string">"，"</span>, <span class="string">"点击"</span>, <span class="string">"右"</span>, <span class="string">"上方"</span>, <span class="string">"如图"</span>, <span class="string">"符号"</span>, <span class="string">"。"</span>, <span class="string">"4"</span>, <span class="string">"进入"</span>, <span class="string">"选择"</span>, <span class="string">"页面"</span>, <span class="string">"，"</span>, <span class="string">"点击"</span>, <span class="string">"“"</span>, <span class="string">"在"</span>, <span class="string">"浏览器"</span>, <span class="string">"”"</span>, <span class="string">"打开"</span>, <span class="string">"。"</span>, <span class="string">"5"</span>, <span class="string">"出现"</span>, <span class="string">"手机"</span>, <span class="string">"已"</span>, <span class="string">"安装"</span>, <span class="string">"的"</span>, <span class="string">"本地"</span>, <span class="string">"APP"</span>, <span class="string">"浏览器"</span>, <span class="string">"，"</span>, <span class="string">"我们"</span>, <span class="string">"选择"</span>, <span class="string">"一"</span>, <span class="string">"个"</span>, <span class="string">"自己"</span>, <span class="string">"想"</span>, <span class="string">"用"</span>, <span class="string">"的"</span>, <span class="string">"本地"</span>, <span class="string">"浏览器"</span>, <span class="string">"点击"</span>, <span class="string">"下方"</span>, <span class="string">"“"</span>, <span class="string">"仅"</span>, <span class="string">"一次"</span>, <span class="string">"”"</span>, <span class="string">"或"</span>, <span class="string">"“"</span>, <span class="string">"总是"</span>, <span class="string">"”"</span>, <span class="string">"都"</span>, <span class="string">"可以"</span>, <span class="string">"打开"</span>, <span class="string">"打开"</span>, <span class="string">"本地"</span>, <span class="string">"APP"</span>, <span class="string">"浏览器"</span>, <span class="string">"。"</span>, <span class="string">"6"</span>, <span class="string">"此时"</span>, <span class="string">"，"</span>, <span class="string">"我们"</span>, <span class="string">"就"</span>, <span class="string">"已经"</span>, <span class="string">"在"</span>, <span class="string">"微信"</span>, <span class="string">"浏览器"</span>, <span class="string">"中将"</span>, <span class="string">"本地"</span>, <span class="string">"APP"</span>, <span class="string">"浏览器"</span>, <span class="string">"打开"</span>, <span class="string">"了"</span>, <span class="string">"。"</span>]</span><br><span class="line">	],</span><br><span class="line">	<span class="attr">"answers"</span>: [<span class="string">"iOS里，把一个页面链接分享给微信好友（会话），好友在微信里打开这个链接,也就是打开了一个网页，点击网页里的某个地方后（比如网页中“打开xx应用程序”的按钮），代码里怎么设置可以跳回到第三方app？知乎的ios客户端就有这种功能，在微信里分享链接后，点开链接，再点网页中的某处，就可以打开知乎客户端 。"</span>, <span class="string">"1、首先打开腾讯开放平台，注册开放平台的一个账号。2、登录后在”管理中心“中创建应用。3、选择创建应用的类型如下图所示，然后按钮提示填写应用的相关信息，提交进入审核。4、应用审核通过后会在管理中心中显示”已上线“，然后点击应用的图标。5、在应用详情中找到运营服务中的”微下载“。6、在详情页面中就可以看到系统生成的推广链接地址了，复制此地址就可以微信中转发了。"</span>, <span class="string">"1将手机微信打开。2打开微信中的链接。3我们打开百度经验的链接，用微信浏览器进入网页以后，点击右上方如图符号。4进入选择页面，点击“在浏览器”打开。5出现手机已安装的本地APP浏览器，我们选择一个自己想用的本地浏览器点击下方“仅一次”或“总是”都可以打开打开本地APP浏览器。6此时，我们就已经在微信浏览器中将本地APP浏览器打开了。"</span>],</span><br><span class="line">	<span class="attr">"answer_docs"</span>: [<span class="number">4</span>],</span><br><span class="line">	<span class="attr">"segmented_question"</span>: [<span class="string">"微信"</span>, <span class="string">"分享"</span>, <span class="string">"链接"</span>, <span class="string">"打开"</span>, <span class="string">"app"</span>],</span><br><span class="line">	<span class="attr">"question_type"</span>: <span class="string">"DESCRIPTION"</span>,</span><br><span class="line">	<span class="attr">"match_scores"</span>: [<span class="number">0.8815165876777251</span>],</span><br><span class="line">	<span class="attr">"fact_or_opinion"</span>: <span class="string">"FACT"</span>,</span><br><span class="line">    <span class="attr">"question_id"</span>: <span class="number">91159</span></span><br><span class="line">    }</span><br></pre></td></tr></tbody></table></figure>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2019/11/02/Dureader%E6%95%B0%E6%8D%AE%E9%9B%86/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-    <script type="text/javascript" src="/js/linkcard.js"></script>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://sunyancn.github.io/2019/11/02/nohup%E8%AF%A6%E8%A7%A3/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://i.loli.net/2020/08/25/NrIpckD9qPLY38C.jpg">
-      <meta itemprop="name" content="Sun Yan">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="故事尾音">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/11/02/nohup%E8%AF%A6%E8%A7%A3/" class="post-title-link" itemprop="url">nohup 详解</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2019-11-02 14:13:49" itemprop="dateCreated datePublished" datetime="2019-11-02T14:13:49+08:00">2019-11-02</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-08-27 01:27:02" itemprop="dateModified" datetime="2020-08-27T01:27:02+08:00">2020-08-27</time>
-              </span>
-
-          
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <html><head></head><body><p>功能：使程序在后台运行，当连接服务器终端时，程序还在运行</p>
-<h3 id="后台运行的命令" class="heading-control"><a href="#后台运行的命令" class="headerlink" title="后台运行的命令"></a>后台运行的命令<a class="heading-anchor" href="#后台运行的命令" aria-hidden="true"></a></h3><figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">nohup python 文件名.py &</span><br><span class="line"><span class="comment"># 会出现一个进程后，记住这是该程序的进程号，</span></span><br><span class="line"><span class="comment"># 后期如果想要停止，可以使用该命令：kill -9 进程号</span></span><br></pre></td></tr></tbody></table></figure>
-<h3 id="查看后台运行的进程" class="heading-control"><a href="#查看后台运行的进程" class="headerlink" title="查看后台运行的进程"></a>查看后台运行的进程<a class="heading-anchor" href="#查看后台运行的进程" aria-hidden="true"></a></h3><figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 如果发现没记nohup运行的进程，可以使用以下的命令来查看进程号</span></span><br><span class="line"><span class="number">1.</span> jobs -l <span class="comment"># 查看后台运行的进程，如果后台运行的进程很多，可以使用下面的命令</span></span><br><span class="line"><span class="number">2.</span> ps aux | grep nohup 查看nohup 的进程，然后使用 kill <span class="number">-9</span> 进程号杀死该进程</span><br></pre></td></tr></tbody></table></figure>
-<h3 id="nohup的输出重定向问题" class="heading-control"><a href="#nohup的输出重定向问题" class="headerlink" title="nohup的输出重定向问题"></a>nohup 的输出重定向问题<a class="heading-anchor" href="#nohup的输出重定向问题" aria-hidden="true"></a></h3><p>如果后台同时运行多个程序，它们的输出全都在 nohup.out 中，阅读起来很不方便。可通过重定向到不同文件中来解决这个问题；也可以通过在不同的文件下，运行 nohup 来避免这种情况。<br>linux 启动后，会默认打开 3 个文件描述符，0 表示标准输入，1 表示正确输出，2 表示错误输出。<br></p><figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">nohup python 文件名.py <span class="number">1</span>>result.out <span class="number">2</span>>result.out & </span><br><span class="line"><span class="comment"># 将正确输出和错误输出均写入result.out文件</span></span><br></pre></td></tr></tbody></table></figure><p></p>
-<h3 id="查看运行输出" class="heading-control"><a href="#查看运行输出" class="headerlink" title="查看运行输出"></a>查看运行输出<a class="heading-anchor" href="#查看运行输出" aria-hidden="true"></a></h3><figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#实时查看</span></span><br><span class="line">tailf result.out</span><br><span class="line"><span class="comment">#查看几行</span></span><br><span class="line">head <span class="number">10</span> result.out <span class="comment">#查看文件的前面10行</span></span><br><span class="line">tail <span class="number">10</span> result.out <span class="comment"># 查看文件的后面10行</span></span><br></pre></td></tr></tbody></table></figure></body></html>
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-    <script type="text/javascript" src="/js/linkcard.js"></script>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://sunyancn.github.io/2019/11/02/Tqdm%E5%AE%9E%E6%97%B6%E6%98%BE%E7%A4%BALoss%E5%92%8CAcc/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://i.loli.net/2020/08/25/NrIpckD9qPLY38C.jpg">
-      <meta itemprop="name" content="Sun Yan">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="故事尾音">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/11/02/Tqdm%E5%AE%9E%E6%97%B6%E6%98%BE%E7%A4%BALoss%E5%92%8CAcc/" class="post-title-link" itemprop="url">Tqdm 实时显示 Loss 和 Acc</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2019-11-02 14:12:26" itemprop="dateCreated datePublished" datetime="2019-11-02T14:12:26+08:00">2019-11-02</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-08-27 01:27:02" itemprop="dateModified" datetime="2020-08-27T01:27:02+08:00">2020-08-27</time>
-              </span>
-
-          
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <html><head></head><body><h3 id="代码示例" class="heading-control"><a href="#代码示例" class="headerlink" title="代码示例"></a>代码示例<a class="heading-anchor" href="#代码示例" aria-hidden="true"></a></h3><figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> random <span class="keyword">import</span> random</span><br><span class="line"><span class="keyword">from</span> time <span class="keyword">import</span> sleep</span><br><span class="line"><span class="keyword">from</span> tqdm <span class="keyword">import</span> tqdm</span><br><span class="line"></span><br><span class="line">epochs = <span class="number">2</span></span><br><span class="line">train_data_num = <span class="number">10</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(epochs):</span><br><span class="line">    <span class="keyword">with</span> tqdm(total=train_data_num) <span class="keyword">as</span> t:</span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> range(<span class="number">10</span>):</span><br><span class="line">            <span class="comment"># Description will be displayed on the left</span></span><br><span class="line">            t.set_description(<span class="string">'Epoch %i'</span> % i)</span><br><span class="line">            <span class="comment"># Postfix will be displayed on the right,</span></span><br><span class="line">            <span class="comment"># formatted automatically based on argument's datatype</span></span><br><span class="line">            t.set_postfix(loss=random(),acc=random())</span><br><span class="line">            sleep(<span class="number">0.1</span>)</span><br><span class="line">            t.update(<span class="number">1</span>)</span><br></pre></td></tr></tbody></table></figure>
-<p>输出结果：<br></p><figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Epoch <span class="number">0</span>: <span class="number">100</span>%|██████████| <span class="number">10</span>/<span class="number">10</span> [<span class="number">00</span>:<span class="number">01</span><<span class="number">00</span>:<span class="number">00</span>,  <span class="number">9.94</span>it/s, acc=<span class="number">0.0863</span>, loss=<span class="number">0.999</span>]</span><br><span class="line">Epoch <span class="number">1</span>: <span class="number">100</span>%|██████████| <span class="number">10</span>/<span class="number">10</span> [<span class="number">00</span>:<span class="number">01</span><<span class="number">00</span>:<span class="number">00</span>,  <span class="number">9.93</span>it/s, acc=<span class="number">0.459</span>, loss=<span class="number">0.921</span>]</span><br></pre></td></tr></tbody></table></figure><p></p>
+          <html><head></head><body><p>这个比赛算是我第一个做的数值类特征的比赛，主要以学习为主。学习的内容包括：</p>
+<ul>
+<li>数值特征数据的特征工程，从数据中构建算法需要的特征</li>
+<li>模型使用以及调参（包括 Lightgb, Xgboost 等等）</li>
+</ul>
+<h2 id="比赛内容和数据分析" class="heading-control"><a href="#比赛内容和数据分析" class="headerlink" title="比赛内容和数据分析"></a>比赛内容和数据分析<a class="heading-anchor" href="#比赛内容和数据分析" aria-hidden="true"></a></h2><p>这部分主要搞清楚几个问题：</p>
+<ul>
+<li>比赛内容是什么，以及给了哪些数据</li>
+<li>是分类问题还是回归问题</li>
+</ul>
+<p>首先看赛题：</p>
+<blockquote>
+<p>本赛题基于位置数据对海上目标进行智能识别和作业行为分析，要求选手通过分析渔船北斗设备位置数据，得出该船的生产作业行为，具体判断出是拖网作业、围网作业还是流刺网作业。初赛将提供 11000 条 (其中 7000 条训练数据、2000 条 testA、2000 条 testB) 渔船轨迹北斗数据。数据包含脱敏后的渔船 ID、经纬度坐标、上报时间、速度、航向信息，由于真实场景下海上环境复杂，经常出现信号丢失，设备故障等原因导致的上报坐标错误、上报数据丢失、甚至有些设备疯狂上报等。</p>
+</blockquote>
+<p>数据示例：<br><img src="/智慧海洋建设比赛/20200122022107557.png" alt></p>
+<ul>
+<li>渔船 ID：渔船的唯一识别，结果文件以此 ID 为标示</li>
+<li> x: 渔船在平面坐标系的 x 轴坐标</li>
+<li> y: 渔船在平面坐标系的 y 轴坐标</li>
+<li>速度：渔船当前时刻航速，单位节</li>
+<li>方向：渔船当前时刻航首向，单位度</li>
+<li> time：数据上报时刻，单位月日 时：分</li>
+<li> type：渔船 label，作业类型</li>
+</ul>
+<p>可以看出这是一个分类问题，所给数据是数值型特征。再来看一下结果的评价指标：</p>
+<p><img src="/智慧海洋建设比赛/20200122022332055.png" alt></p>
+<h2 id="数据预处理" class="heading-control"><a href="#数据预处理" class="headerlink" title="数据预处理"></a>数据预处理<a class="heading-anchor" href="#数据预处理" aria-hidden="true"></a></h2><p>因为数据给的是一些 csv 文件，所以首先需要对所有的文件进行合并，生成一个训练文件和一个测试文件。这里是我参考的 <a target="_blank" rel="noopener" href="https://github.com/GrinAndBear/tianchi_hy">baseline</a>。<br>baseline 采用的文件合并代码如下：<br></p><figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"></span><br><span class="line">train_dir = <span class="string">"./data/hy_round1_train_20200102"</span></span><br><span class="line">test_dir = <span class="string">"./data/hy_round1_testA_20200102"</span></span><br><span class="line"></span><br><span class="line">test = pd.DataFrame(columns=[<span class="string">'渔船ID'</span>, <span class="string">'x'</span>, <span class="string">'y'</span>, <span class="string">'速度'</span>, <span class="string">'方向'</span>, <span class="string">'time'</span>])</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> root, dirs, files <span class="keyword">in</span> os.walk(test_dir):</span><br><span class="line">    <span class="keyword">for</span> file <span class="keyword">in</span> files:</span><br><span class="line">        filename = os.path.join(root, file)</span><br><span class="line">        temp = pd.read_csv(filename)</span><br><span class="line">        test = pd.concat([test, temp])</span><br><span class="line">print(test.info())</span><br><span class="line"></span><br><span class="line">train = pd.DataFrame(columns=[<span class="string">'渔船ID'</span>, <span class="string">'x'</span>, <span class="string">'y'</span>, <span class="string">'速度'</span>, <span class="string">'方向'</span>, <span class="string">'time'</span>])</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> root, dirs, files <span class="keyword">in</span> os.walk(train_dir):</span><br><span class="line">    <span class="keyword">for</span> file <span class="keyword">in</span> files:</span><br><span class="line">        filename = os.path.join(root, file)</span><br><span class="line">        temp = pd.read_csv(filename)</span><br><span class="line">        train = pd.concat([train, temp])</span><br><span class="line">print(train.info())</span><br><span class="line"></span><br><span class="line">test.to_csv(<span class="string">"./data/test_origin.csv"</span>, index=<span class="literal">None</span>)</span><br><span class="line">train.to_csv(<span class="string">"./data/train_origin.csv"</span>, index=<span class="literal">None</span>)</span><br></pre></td></tr></tbody></table></figure><br>这个代码没什么问题，但是实际跑起来却很慢，代码的瓶颈在于读取的数据是串行的，因此我们可以改造一个并行的加速版本。<p></p>
 </body></html>
       
     </div>
@@ -885,7 +960,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://sunyancn.github.io/2019/11/02/%E5%A6%82%E4%BD%95%E9%85%8D%E7%BD%AE%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E7%B3%BB%E7%BB%9F/">
+    <link itemprop="mainEntityOfPage" href="http://sunyancn.github.io/post/1215.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="https://i.loli.net/2020/08/25/NrIpckD9qPLY38C.jpg">
@@ -899,7 +974,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2019/11/02/%E5%A6%82%E4%BD%95%E9%85%8D%E7%BD%AE%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E7%B3%BB%E7%BB%9F/" class="post-title-link" itemprop="url">如何配置深度学习系统</a>
+            <a href="/post/1215.html" class="post-title-link" itemprop="url">算法和开发哪个更累</a>
         </h2>
 
         <div class="post-meta">
@@ -909,7 +984,7 @@
               </span>
               <span class="post-meta-item-text">Posted on</span>
 
-              <time title="Created: 2019-11-02 14:10:35" itemprop="dateCreated datePublished" datetime="2019-11-02T14:10:35+08:00">2019-11-02</time>
+              <time title="Created: 2019-11-29 21:57:07" itemprop="dateCreated datePublished" datetime="2019-11-29T21:57:07+08:00">2019-11-29</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
@@ -932,18 +1007,13 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h2 id="Anacodna相关操作"><a href="#Anacodna相关操作" class="headerlink" title="Anacodna相关操作"></a>Anacodna 相关操作</h2><h3 id="下载安装以及切换镜像"><a href="#下载安装以及切换镜像" class="headerlink" title="下载安装以及切换镜像"></a>下载安装以及切换镜像</h3><figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#下载和安装anaconda</span></span><br><span class="line">wget https://mirrors.tuna.tsinghua.edu.cn/anaconda/archive/Anaconda3<span class="number">-5.2</span><span class="number">.0</span>-Linux-x86_64.sh</span><br><span class="line">bash Anaconda3<span class="number">-5.2</span><span class="number">.0</span>-Linux-x86_64.sh</span><br><span class="line"></span><br><span class="line"><span class="comment">#切换到清华源,加快下载速度</span></span><br><span class="line">wget https://tuna.moe/oh-my-tuna/oh-my-tuna.py</span><br><span class="line">python oh-my-tuna.py</span><br></pre></td></tr></tbody></table></figure>
-<p>conda 环境创建、退出和移除<br></p><figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">conda create --name py36 python=<span class="number">3.6</span> <span class="comment">#创建环境</span></span><br><span class="line">conda activate py36 <span class="comment">#激活环境</span></span><br><span class="line">conda deactivate py36 <span class="comment">#退出环境</span></span><br><span class="line">conda remove --name py36 --all <span class="comment">#删除环境</span></span><br><span class="line">conda info -e <span class="comment">#查看系统中的所有环境</span></span><br></pre></td></tr></tbody></table></figure><br>conda查找包的所有版本<br><figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda search tensorflow</span><br></pre></td></tr></tbody></table></figure><br>conda瘦身<br><figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">conda clean -p      //删除没有用的包</span><br><span class="line">conda clean -t      //清理tar</span><br></pre></td></tr></tbody></table></figure><p></p>
-<h2 id="查看系统内存和进程"><a href="#查看系统内存和进程" class="headerlink" title="查看系统内存和进程"></a>查看系统内存和进程</h2><figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#安装系统查看器</span></span><br><span class="line">pip install glances</span><br></pre></td></tr></tbody></table></figure>
-<p>运行 <code>glances</code> 查看系统状态<br><img src="https://s2.ax1x.com/2019/10/26/K02cEn.png" alt="K02cEn.png"><br>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2019/11/02/%E5%A6%82%E4%BD%95%E9%85%8D%E7%BD%AE%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E7%B3%BB%E7%BB%9F/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
+          <p>来自知乎，觉得很有道理。<a target="_blank" rel="noopener" href="https://www.zhihu.com/question/353534822/answer/878932462">原文</a></p>
+<ul>
+<li>在做开发的时候，主要是体力和精神紧绷，做不完的需求和紧迫的 deadline，没完没了的加班。体力上会更累一些，精神上虽然紧绷，但大部分的时候不慌。</li>
+<li>在做算法的时候，主要就是精神压力了。大量的不确定性，导致没有办法保证这次做的事情会不会有产出，没有产出就没有办法生存，会主动的做尝试很多 idea。不确定性带来的心理压力，是做开发的时候没有的，心累。</li>
+</ul>
+<p>我的博客即将同步至腾讯云 + 社区，邀请大家一同入驻：<a target="_blank" rel="noopener" href="https://cloud.tencent.com/developer/support-plan?invite_code=33juwuyf1pa8c">https://cloud.tencent.com/developer/support-plan?invite_code=33juwuyf1pa8c</a></p>
+
       
     </div>
 
@@ -962,7 +1032,7 @@
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/11/">11</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
+    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/12/">12</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
   </nav>
 
 
@@ -1030,20 +1100,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">102</span>
+          <span class="site-state-item-count">115</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">12</span>
+        <span class="site-state-item-count">17</span>
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">69</span>
+        <span class="site-state-item-count">79</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -1148,6 +1218,59 @@
   
 
   
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
 
   
 <div id="needsharebutton-float">
@@ -1167,7 +1290,7 @@
 
 <script>
 NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
-  NexT.utils.getScript('//cdn.jsdelivr.net/npm/valine@1/dist/Valine.min.js', () => {
+  NexT.utils.getScript('https://cdn.jsdelivr.net/gh//AshinWang/SimpleValine/SimpleValine.min.js', () => {
     var GUEST = ['nick', 'mail', 'link'];
     var guest = 'nick,mail';
     guest = guest.split(',').filter(item => {

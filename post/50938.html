@@ -1,0 +1,838 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.1.1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Noto Serif SC:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"sunyancn.github.io","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"valine","storage":true,"lazyload":false,"nav":null,"activeClass":"valine"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="介绍Quick Draw 数据集是一个包含 5000 万张图画的集合，分成了 345 个类别，这些图画都来自于 Quick, Draw! 游戏的玩家。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="你画我猜">
+<meta property="og:url" content="http://sunyancn.github.io/post/50938.html">
+<meta property="og:site_name" content="故事尾音">
+<meta property="og:description" content="介绍Quick Draw 数据集是一个包含 5000 万张图画的集合，分成了 345 个类别，这些图画都来自于 Quick, Draw! 游戏的玩家。">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://i.loli.net/2018/11/02/5bdc31e0a45e4.png">
+<meta property="og:image" content="https://i.loli.net/2018/11/02/5bdc264ade394.png">
+<meta property="og:image" content="https://i.loli.net/2018/11/04/5bded5243aa18.png">
+<meta property="og:image" content="https://i.loli.net/2018/11/02/5bdc3041c78b3.png">
+<meta property="og:image" content="https://i.loli.net/2018/11/02/5bdc307dca994.png">
+<meta property="og:image" content="https://i.loli.net/2018/12/06/5c090e8c8ea6a.png">
+<meta property="og:image" content="https://i.loli.net/2018/11/04/5bded577194ee.png">
+<meta property="og:image" content="https://i.loli.net/2018/11/04/5bded8dd0b6f5.png">
+<meta property="og:image" content="https://i.loli.net/2018/11/04/5bded8dc0ea7c.png">
+<meta property="og:image" content="https://i.loli.net/2018/11/04/5bded8dc0f29e.png">
+<meta property="og:image" content="https://i.loli.net/2018/11/04/5bded8dc0e437.png">
+<meta property="og:image" content="https://i.loli.net/2018/11/04/5bdecf2d9a4e1.png">
+<meta property="og:image" content="https://i.loli.net/2018/11/04/5bded14c0663a.png">
+<meta property="og:image" content="https://i.loli.net/2018/11/04/5bded1afd038a.png">
+<meta property="og:image" content="https://i.loli.net/2018/11/04/5bded17296c6e.png">
+<meta property="og:image" content="https://i.loli.net/2018/11/04/5bded1afd118f.png">
+<meta property="og:image" content="https://i.loli.net/2018/11/04/5bdee438c7530.png">
+<meta property="og:image" content="https://i.loli.net/2018/11/04/5bdee51a2d5c8.png">
+<meta property="og:image" content="https://i.loli.net/2018/11/04/5bdee519ca278.png">
+<meta property="og:image" content="https://i.loli.net/2018/11/04/5bdee5199ca9c.png">
+<meta property="og:image" content="https://i.loli.net/2018/11/04/5bdee519eaccd.png">
+<meta property="og:image" content="https://i.loli.net/2018/12/06/5c090fcf8ffb6.png">
+<meta property="og:image" content="https://i.loli.net/2018/12/06/5c090fcfc2a16.png">
+<meta property="article:published_time" content="2018-11-01T03:33:31.000Z">
+<meta property="article:modified_time" content="2020-08-26T17:27:02.309Z">
+<meta property="article:author" content="Sun Yan">
+<meta property="article:tag" content="CNN">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.loli.net/2018/11/02/5bdc31e0a45e4.png">
+
+<link rel="canonical" href="http://sunyancn.github.io/post/50938.html">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+<script src="/lib/fireworks.js"></script><link rel="stylesheet" href="//cdn.jsdelivr.net/gh/theme-next/theme-next-needmoreshare2@1/needsharebutton.min.css"><style>
+#needsharebutton-float {
+  bottom: 88px;
+  cursor: pointer;
+  left: -8px;
+  position: fixed;
+  z-index: 9999;
+}
+#needsharebutton-float .btn {
+  border: 1px solid $btn-default-border-color;
+  border-radius: 4px;
+  padding: 0 10px 0 14px;
+}
+</style>
+  <title>你画我猜 | 故事尾音</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="故事尾音" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">故事尾音</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">喜欢推导也喜欢被推倒</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+        <li class="menu-item menu-item-image">
+
+    <a href="/image/" rel="section"><i class="fa fa-image fa-fw"></i>image</a>
+
+  </li>
+        <li class="menu-item menu-item-music">
+
+    <a href="/music/" rel="section"><i class="fa fa-music fa-fw"></i>music</a>
+
+  </li>
+        <li class="menu-item menu-item-shuoshuo">
+
+    <a href="/shuoshuo/" rel="section"><i class="fa fa-heartbeat fa-fw"></i>shuoshuo</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://sunyancn.github.io/post/50938.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://i.loli.net/2020/08/25/NrIpckD9qPLY38C.jpg">
+      <meta itemprop="name" content="Sun Yan">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="故事尾音">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          你画我猜
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2018-11-01 11:33:31" itemprop="dateCreated datePublished" datetime="2018-11-01T11:33:31+08:00">2018-11-01</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-08-27 01:27:02" itemprop="dateModified" datetime="2020-08-27T01:27:02+08:00">2020-08-27</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E9%A1%B9%E7%9B%AE/" itemprop="url" rel="index"><span itemprop="name">项目</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine: </span>
+    
+    <a title="valine" href="/post/50938.html#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/post/50938.html" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <html><head></head><body><h2 id="介绍" class="heading-control"><a href="#介绍" class="headerlink" title="介绍"></a>介绍<a class="heading-anchor" href="#介绍" aria-hidden="true"></a></h2><p>Quick Draw 数据集是一个包含 5000 万张图画的集合，分成了 345 个类别，这些图画都来自于 Quick, Draw! 游戏的玩家。<br><img src="https://i.loli.net/2018/11/02/5bdc31e0a45e4.png" alt><br><a id="more"></a></p>
+<h2 id="资源" class="heading-control"><a href="#资源" class="headerlink" title="资源"></a>资源<a class="heading-anchor" href="#资源" aria-hidden="true"></a></h2><ul>
+<li><p>数据集地址：<a target="_blank" rel="noopener" href="https://console.cloud.google.com/storage/browser/quickdraw_dataset/full/?pli=1">https://console.cloud.google.com/storage/browser/quickdraw_dataset/full/?pli=1</a></p>
+</li>
+<li><p> 数据集官网：<a target="_blank" rel="noopener" href="https://quickdraw.withgoogle.com/data">https://quickdraw.withgoogle.com/data</a></p>
+</li>
+<li><p>Quick, Draw! 在线体验：<a target="_blank" rel="noopener" href="https://quickdraw.withgoogle.com">https://quickdraw.withgoogle.com</a></p>
+</li>
+<li><p>AutoDraw 在线体验：<a target="_blank" rel="noopener" href="https://www.autodraw.com">https://www.autodraw.com</a></p>
+</li>
+<li><p> 相关论文：<a target="_blank" rel="noopener" href="https://arxiv.org/abs/1704.03477">https://arxiv.org/abs/1704.03477</a></p>
+</li>
+</ul>
+<h2 id="模型压缩" class="heading-control"><a href="#模型压缩" class="headerlink" title="模型压缩"></a>模型压缩<a class="heading-anchor" href="#模型压缩" aria-hidden="true"></a></h2><p>自从 AlexNet 一举夺得 ILSVRC 2012 ImageNet 图像分类竞赛的冠军后，卷积神经网络（CNN）的热潮便席卷了整个计算机视觉领域。CNN 模型火速替代了传统人工设计（hand-crafted）特征和分类器，不仅提供了一种端到端的处理方法，还大幅度地刷新了各个图像竞赛任务的精度，更甚者超越了人眼的精度（LFW 人脸识别任务）。CNN 模型在不断逼近计算机视觉任务的精度极限的同时，其深度和尺寸也在成倍增长。<br>所有模型压缩方法的核心思想是 —— 在保证精度的同时使用最少的参数。</p>
+<p>下面是几种经典模型的尺寸和参数数量对比：</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Model</th>
+<th style="text-align:center">Model Size(MB)</th>
+<th style="text-align:center"> 参数 (百万)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">AlexNet</td>
+<td style="text-align:center">>200</td>
+<td style="text-align:center">60</td>
+</tr>
+<tr>
+<td style="text-align:center">VGG16</td>
+<td style="text-align:center">>500</td>
+<td style="text-align:center">138</td>
+</tr>
+<tr>
+<td style="text-align:center">GoogleNet</td>
+<td style="text-align:center">~50</td>
+<td style="text-align:center">6.8</td>
+</tr>
+<tr>
+<td style="text-align:center">Inception-v3</td>
+<td style="text-align:center">90~100</td>
+<td style="text-align:center">23.2</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>随之而来的是一个很尴尬的场景：如此巨大的模型只能在有限的平台下使用，根本无法移植到移动端和嵌入式芯片当中。就算想通过网络传输，但较高的带宽占用也让很多用户望而生畏。另一方面，大尺寸的模型也对设备功耗和运行速度带来了巨大的挑战。因此这样的模型距离实用还有一段距离。</p>
+<p>在这样的情形下，模型小型化与加速成了亟待解决的问题。其实早期就有学者提出了一系列 CNN 模型压缩方法，包括权值剪值（prunning）和矩阵 SVD 分解等，但压缩率和效率还远不能令人满意。</p>
+<p>近年来，关于模型小型化的算法从压缩角度上可以大致分为两类：从模型权重数值角度压缩和从网络架构角度压缩。另一方面，从兼顾计算速度方面，又可以划分为：仅压缩尺寸和压缩尺寸的同时提升速度。</p>
+<h3 id="GAP替换全连接" class="heading-control"><a href="#GAP替换全连接" class="headerlink" title="GAP替换全连接"></a>GAP 替换全连接<a class="heading-anchor" href="#GAP替换全连接" aria-hidden="true"></a></h3><p>Golbal Average Pooling 第一次出现在论文 Network in Network 中，后来又很多工作延续使用了 GAP，实验证明：Global Average Pooling 确实可以提高 CNN 效果。</p>
+<h4 id="Fully-Connected-layer" class="heading-control"><a href="#Fully-Connected-layer" class="headerlink" title="Fully Connected layer"></a>Fully Connected layer<a class="heading-anchor" href="#Fully-Connected-layer" aria-hidden="true"></a></h4><p>很长一段时间以来，全连接网络一直是 CNN 分类网络的标配结构。一般在全连接后会有激活函数来做分类，假设这个激活函数是一个多分类 softmax，那么全连接网络的作用就是将最后一层卷积得到的 feature map stretch 成向量，对这个向量做乘法，最终降低其维度，然后输入到 softmax 层中得到对应的每个类别的得分。</p>
+<p>全连接层如此的重要，以至于全连接层过多的参数重要到会造成过拟合，所以也会有一些方法专门用来解决过拟合，比如 dropout。</p>
+<h4 id="Global-Average-Pooling" class="heading-control"><a href="#Global-Average-Pooling" class="headerlink" title="Global Average Pooling"></a>Global Average Pooling<a class="heading-anchor" href="#Global-Average-Pooling" aria-hidden="true"></a></h4><p>既然全连接网络可以使 feature map 的维度减少，进而输入到 softmax，但是又会造成过拟合，是不是可以用 pooling 来代替全连接。</p>
+<p>答案是肯定的，Network in Network 工作使用 GAP 来取代了最后的全连接层，直接实现了降维，更重要的是极大地减少了网络的参数 (CNN 网络中占比最大的参数其实后面的全连接层)。Global average pooling 的结构如下图所示:<br><img src="https://i.loli.net/2018/11/02/5bdc264ade394.png" alt><br>GAP 的意义是对整个网络从结构上做正则化防止过拟合。既要参数少避免全连接带来的过拟合风险，又要能达到全连接一样的转换功能，怎么做呢？直接从 feature map 的通道上下手，如果我们最终有 1000 类，那么最后一层卷积输出的 feature map 就只有 1000 个 channel，然后对这个 feature map 应用全局池化，输出长度为 1000 的向量，这就相当于剔除了全连接层黑箱子操作的特征，直接赋予了每个 channel 实际的类别意义。<br><img src="https://i.loli.net/2018/11/04/5bded5243aa18.png" alt><br>实验证明，这种方法是非常有效的，这样做还有另外一个好处：不用在乎网络输入的图像尺寸。同时需要注意的是，使用 gap 也有可能造成收敛变慢。</p>
+<h4 id="Reference" class="heading-control"><a href="#Reference" class="headerlink" title="Reference"></a>Reference<a class="heading-anchor" href="#Reference" aria-hidden="true"></a></h4><ul>
+<li><a target="_blank" rel="noopener" href="https://arxiv.org/abs/1312.4400">Network In Network</a></li>
+<li><a target="_blank" rel="noopener" href="http://blog.leanote.com/post/sunalbert/Global-average-pooling">Global Average Pooling</a></li>
+</ul>
+<h3 id="SqueezeNet" class="heading-control"><a href="#SqueezeNet" class="headerlink" title="SqueezeNet"></a>SqueezeNet<a class="heading-anchor" href="#SqueezeNet" aria-hidden="true"></a></h3><p>SqueezeNet 是 F. N. Iandola,S.Han 等人于 2016 年的论文《SqueezeNet: AlexNet-level accuracy with 50x fewer parameters and < 0.5MB model size》中提出的一个小型化的网络模型结构，该网络能在保证不损失精度的同时，将原始 AlexNet 压缩至原来的 510 倍左右（< 0.5MB）。</p>
+<p>SqueezeNet 提出了 3 点网络结构设计策略：</p>
+<ul>
+<li><p>策略 1. 将 3x3 卷积核替换为 1x1 卷积核。<br>这一策略很好理解，因为 1 个 1x1 卷积核的参数是 3x3 卷积核参数的 1/9，这一改动理论上可以将模型尺寸压缩 9 倍。</p>
+</li>
+<li><p>策略 2. 减小输入到 3x3 卷积核的输入通道数。<br>我们知道，对于一个采用 3x3 卷积核的卷积层，该层所有卷积参数的数量（不考虑偏置）为：</p>
+<script type="math/tex; mode=display">
+\begin{equation}
+P=N*C*3*3
+\end{equation}</script><p>式中，N 是卷积核的数量，也即输出通道数，C 是输入通道数。<br>因此，为了保证减小网络参数，不仅仅需要减少 3x3 卷积核的数量，还需减少输入到 3x3 卷积核的输入通道数量，即式中 C 的数量。</p>
+</li>
+<li><p>策略 3. 尽可能的将降采样放在网络后面的层中。<br>在卷积神经网络中，每层输出的特征图（feature map）是否下采样是由卷积层的步长或者池化层决定的。而一个重要的观点是：分辨率越大的特征图（延迟降采样）可以带来更高的分类精度，而这一观点从直觉上也可以很好理解，因为分辨率越大的输入能够提供的信息就越多。</p>
+</li>
+</ul>
+<p>下面举一个例子，假如输入为 28×28×192，输出 feature map 通道数为 128。那么，直接接 3×3 卷积，参数量为 3×3×192×128=221184。</p>
+<p>如果先用 1×1 卷积进行降维到 96 个通道，然后再用 3×3 升维到 128，则参数量为：1×1×192×96+3×3×96×128=129024，参数量减少一半。虽然参数量减少不是很明显，但是如果 1×1 输出维度降低到 48 呢？则参数量又减少一半。</p>
+<p><img src="https://i.loli.net/2018/11/02/5bdc3041c78b3.png" alt><br>实验结果：<br><img src="https://i.loli.net/2018/11/02/5bdc307dca994.png" alt><br>总结一句，可以先使用 1x1 的卷积降低通道数，然后再用 3x3 卷积升维，参数量可以大大减小。</p>
+<h2 id="实际建模" class="heading-control"><a href="#实际建模" class="headerlink" title="实际建模"></a>实际建模<a class="heading-anchor" href="#实际建模" aria-hidden="true"></a></h2><p><a target="_blank" rel="noopener" href="https://pacinoyan.github.io/">游戏网址</a>在这里。<br><img src="https://i.loli.net/2018/12/06/5c090e8c8ea6a.png" alt></p>
+<h3 id="简单的CNN模型" class="heading-control"><a href="#简单的CNN模型" class="headerlink" title="简单的CNN模型"></a>简单的 CNN 模型<a class="heading-anchor" href="#简单的CNN模型" aria-hidden="true"></a></h3><p>模型架构如下：<br><img src="https://i.loli.net/2018/11/04/5bded577194ee.png" alt><br>训练结果：(参数：110,052 Test accuarcy: 92.92% 大小：401KB)</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">TensorBoard</th>
+<th style="text-align:center"> 训练集</th>
+<th style="text-align:center">验证集</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">误差</td>
+<td style="text-align:center"><img src="https://i.loli.net/2018/11/04/5bded8dd0b6f5.png" alt></td>
+<td style="text-align:center"><img src="https://i.loli.net/2018/11/04/5bded8dc0ea7c.png" alt></td>
+</tr>
+<tr>
+<td style="text-align:center">正确率</td>
+<td style="text-align:center"><img src="https://i.loli.net/2018/11/04/5bded8dc0f29e.png" alt></td>
+<td style="text-align:center"><img src="https://i.loli.net/2018/11/04/5bded8dc0e437.png" alt></td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 id="先1后3" class="heading-control"><a href="#先1后3" class="headerlink" title="先1后3"></a>先 1 后 3<a class="heading-anchor" href="#先1后3" aria-hidden="true"></a></h3><p>模型架构如下：<br><img src="https://i.loli.net/2018/11/04/5bdecf2d9a4e1.png" alt><br>训练结果:（参数：106,236  Test accuarcy: 92.64% 大小：387KB）</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">TensorBoard</th>
+<th style="text-align:center"> 训练集</th>
+<th style="text-align:center">验证集</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">误差</td>
+<td style="text-align:center"><img src="https://i.loli.net/2018/11/04/5bded14c0663a.png" alt></td>
+<td style="text-align:center"><img src="https://i.loli.net/2018/11/04/5bded1afd038a.png" alt></td>
+</tr>
+<tr>
+<td style="text-align:center">正确率</td>
+<td style="text-align:center"><img src="https://i.loli.net/2018/11/04/5bded17296c6e.png" alt></td>
+<td style="text-align:center"><img src="https://i.loli.net/2018/11/04/5bded1afd118f.png" alt></td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 id="GAP" class="heading-control"><a href="#GAP" class="headerlink" title="GAP"></a>GAP<a class="heading-anchor" href="#GAP" aria-hidden="true"></a></h3><p>模型架构如下：<br><img src="https://i.loli.net/2018/11/04/5bdee438c7530.png" alt><br>训练结果:（参数：29,796 Test accuarcy: 88.82%(20 轮：90.88%) 大小：110KB）</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">TensorBoard</th>
+<th style="text-align:center"> 训练集</th>
+<th style="text-align:center">验证集</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">误差</td>
+<td style="text-align:center"><img src="https://i.loli.net/2018/11/04/5bdee51a2d5c8.png" alt></td>
+<td style="text-align:center"><img src="https://i.loli.net/2018/11/04/5bdee519ca278.png" alt></td>
+</tr>
+<tr>
+<td style="text-align:center">正确率</td>
+<td style="text-align:center"><img src="https://i.loli.net/2018/11/04/5bdee5199ca9c.png" alt></td>
+<td style="text-align:center"><img src="https://i.loli.net/2018/11/04/5bdee519eaccd.png" alt></td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 id="总结对比" class="heading-control"><a href="#总结对比" class="headerlink" title="总结对比"></a>总结对比<a class="heading-anchor" href="#总结对比" aria-hidden="true"></a></h3><p>下面是各方法在相同参数情况下，10 轮训练后的表现：<br>在简单 CNN 上：<br><img src="https://i.loli.net/2018/12/06/5c090fcf8ffb6.png" alt><br>在 LeNet 上：<br><img src="https://i.loli.net/2018/12/06/5c090fcfc2a16.png" alt><br>可以看出 GAP 的压缩比最高，但是也是收敛速度最慢的；K1K3 压缩表现不佳，主要原因是两个基本模型的 Feature Map 的数量都不够多，如果卷积层数达到 100 层以上可能效果会非常明显。</p>
+<h3 id="代码" class="heading-control"><a href="#代码" class="headerlink" title="代码"></a>代码<a class="heading-anchor" href="#代码" aria-hidden="true"></a></h3><figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br><span class="line">225</span><br><span class="line">226</span><br><span class="line">227</span><br><span class="line">228</span><br><span class="line">229</span><br><span class="line">230</span><br><span class="line">231</span><br><span class="line">232</span><br><span class="line">233</span><br><span class="line">234</span><br><span class="line">235</span><br><span class="line">236</span><br><span class="line">237</span><br><span class="line">238</span><br><span class="line">239</span><br><span class="line">240</span><br><span class="line">241</span><br><span class="line">242</span><br><span class="line">243</span><br><span class="line">244</span><br><span class="line">245</span><br><span class="line">246</span><br><span class="line">247</span><br><span class="line">248</span><br><span class="line">249</span><br><span class="line">250</span><br><span class="line">251</span><br><span class="line">252</span><br><span class="line">253</span><br><span class="line">254</span><br><span class="line">255</span><br><span class="line">256</span><br><span class="line">257</span><br><span class="line">258</span><br><span class="line">259</span><br><span class="line">260</span><br><span class="line">261</span><br><span class="line">262</span><br><span class="line">263</span><br><span class="line">264</span><br><span class="line">265</span><br><span class="line">266</span><br><span class="line">267</span><br><span class="line">268</span><br><span class="line">269</span><br><span class="line">270</span><br><span class="line">271</span><br><span class="line">272</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">from</span> tqdm <span class="keyword">import</span> tqdm</span><br><span class="line"><span class="keyword">import</span> keras</span><br><span class="line"><span class="keyword">from</span> keras <span class="keyword">import</span> layers</span><br><span class="line"><span class="keyword">import</span> tensorflow <span class="keyword">as</span> tf</span><br><span class="line"><span class="keyword">from</span> joblib <span class="keyword">import</span> dump,load</span><br><span class="line"><span class="keyword">from</span> keras.callbacks <span class="keyword">import</span> TensorBoard</span><br><span class="line"><span class="keyword">from</span> keras.applications <span class="keyword">import</span> MobileNetV2</span><br><span class="line"><span class="keyword">from</span> keras <span class="keyword">import</span> layers</span><br><span class="line"><span class="keyword">from</span> keras.models <span class="keyword">import</span> Model</span><br><span class="line"><span class="keyword">from</span> keras.optimizers <span class="keyword">import</span> SGD</span><br><span class="line"></span><br><span class="line">root = <span class="string">'/media/sunyan/文档/data'</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">load_data</span>(<span class="params">root, vfold_ratio=<span class="number">0.2</span>, max_items_per_class=<span class="number">4000</span></span>):</span></span><br><span class="line">    all_files = os.listdir(root)</span><br><span class="line">    files_paths = [os.path.join(root,i) <span class="keyword">for</span> i <span class="keyword">in</span> all_files]</span><br><span class="line">    <span class="comment"># initialize variables</span></span><br><span class="line">    x = np.empty([<span class="number">0</span>, <span class="number">784</span>])</span><br><span class="line">    y = np.empty([<span class="number">0</span>])</span><br><span class="line">    class_names = []</span><br><span class="line"></span><br><span class="line">    <span class="comment"># load each data file</span></span><br><span class="line">    <span class="keyword">for</span> idx, file <span class="keyword">in</span> enumerate(tqdm(files_paths)):</span><br><span class="line">        data = np.load(file)</span><br><span class="line">        data = data[<span class="number">0</span>: max_items_per_class, :]</span><br><span class="line">        labels = np.full(data.shape[<span class="number">0</span>], idx)</span><br><span class="line"></span><br><span class="line">        x = np.concatenate((x, data), axis=<span class="number">0</span>)</span><br><span class="line">        y = np.append(y, labels)</span><br><span class="line"></span><br><span class="line">        class_name, ext = os.path.splitext(os.path.basename(file))</span><br><span class="line">        class_names.append(class_name)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># randomize the dataset</span></span><br><span class="line">    permutation = np.random.permutation(y.shape[<span class="number">0</span>])</span><br><span class="line">    x = x[permutation, :]</span><br><span class="line">    y = y[permutation]</span><br><span class="line"></span><br><span class="line">    <span class="comment"># separate into training and testing</span></span><br><span class="line">    vfold_size = int(x.shape[<span class="number">0</span>] / <span class="number">100</span> * (vfold_ratio * <span class="number">100</span>))</span><br><span class="line"></span><br><span class="line">    x_test = x[<span class="number">0</span>:vfold_size, :]</span><br><span class="line">    y_test = y[<span class="number">0</span>:vfold_size]</span><br><span class="line"></span><br><span class="line">    x_train = x[vfold_size:x.shape[<span class="number">0</span>], :]</span><br><span class="line">    y_train = y[vfold_size:y.shape[<span class="number">0</span>]]</span><br><span class="line">    <span class="keyword">return</span> x_train, y_train, x_test, y_test, class_names</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">build_model</span>():</span></span><br><span class="line">    <span class="comment"># Define model</span></span><br><span class="line">    model = keras.Sequential()</span><br><span class="line">    model.add(layers.Convolution2D(<span class="number">16</span>, (<span class="number">3</span>, <span class="number">3</span>),</span><br><span class="line">                                   padding=<span class="string">'same'</span>,</span><br><span class="line">                                   input_shape=x_train.shape[<span class="number">1</span>:], activation=<span class="string">'relu'</span>))</span><br><span class="line">    model.add(layers.MaxPooling2D(pool_size=(<span class="number">2</span>, <span class="number">2</span>)))</span><br><span class="line">    model.add(layers.Convolution2D(<span class="number">32</span>, (<span class="number">3</span>, <span class="number">3</span>), padding=<span class="string">'same'</span>, activation=<span class="string">'relu'</span>))</span><br><span class="line">    model.add(layers.MaxPooling2D(pool_size=(<span class="number">2</span>, <span class="number">2</span>)))</span><br><span class="line">    model.add(layers.Convolution2D(<span class="number">64</span>, (<span class="number">3</span>, <span class="number">3</span>), padding=<span class="string">'same'</span>, activation=<span class="string">'relu'</span>))</span><br><span class="line">    model.add(layers.MaxPooling2D(pool_size=(<span class="number">2</span>, <span class="number">2</span>)))</span><br><span class="line">    model.add(layers.Flatten())</span><br><span class="line">    model.add(layers.Dense(<span class="number">128</span>, activation=<span class="string">'relu'</span>))</span><br><span class="line">    model.add(layers.Dense(<span class="number">100</span>, activation=<span class="string">'softmax'</span>))</span><br><span class="line">    <span class="comment"># Train model</span></span><br><span class="line">    model.compile(loss=<span class="string">'categorical_crossentropy'</span>,</span><br><span class="line">                  optimizer=<span class="string">'adam'</span>,</span><br><span class="line">                  metrics=[<span class="string">'top_k_categorical_accuracy'</span>])</span><br><span class="line">    print(model.summary())</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> model</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">gap_model</span>():</span></span><br><span class="line">    <span class="comment"># Define model</span></span><br><span class="line">    model = keras.Sequential()</span><br><span class="line">    model.add(layers.Convolution2D(<span class="number">16</span>, (<span class="number">3</span>, <span class="number">3</span>),</span><br><span class="line">                                   padding=<span class="string">'same'</span>,</span><br><span class="line">                                   input_shape=x_train.shape[<span class="number">1</span>:], activation=<span class="string">'relu'</span>))</span><br><span class="line">    model.add(layers.MaxPooling2D(pool_size=(<span class="number">2</span>, <span class="number">2</span>)))</span><br><span class="line">    model.add(layers.Convolution2D(<span class="number">32</span>, (<span class="number">3</span>, <span class="number">3</span>), padding=<span class="string">'same'</span>, activation=<span class="string">'relu'</span>))</span><br><span class="line">    model.add(layers.MaxPooling2D(pool_size=(<span class="number">2</span>, <span class="number">2</span>)))</span><br><span class="line">    model.add(layers.Convolution2D(<span class="number">64</span>, (<span class="number">3</span>, <span class="number">3</span>), padding=<span class="string">'same'</span>, activation=<span class="string">'relu'</span>))</span><br><span class="line">    model.add(layers.MaxPooling2D(pool_size=(<span class="number">2</span>, <span class="number">2</span>)))</span><br><span class="line">    model.add(layers.GlobalAveragePooling2D())</span><br><span class="line">    model.add(layers.Dense(<span class="number">100</span>, activation=<span class="string">'softmax'</span>))</span><br><span class="line">    <span class="comment"># Train model</span></span><br><span class="line">    model.compile(loss=<span class="string">'categorical_crossentropy'</span>,</span><br><span class="line">                  optimizer=<span class="string">'adam'</span>,</span><br><span class="line">                  metrics=[<span class="string">'top_k_categorical_accuracy'</span>])</span><br><span class="line">    print(model.summary())</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> model</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">one2three_model</span>():</span></span><br><span class="line">    model = keras.Sequential()</span><br><span class="line">    model.add(layers.Convolution2D(<span class="number">16</span>, (<span class="number">3</span>, <span class="number">3</span>),padding=<span class="string">'same'</span>,</span><br><span class="line">                                   input_shape=x_train.shape[<span class="number">1</span>:], activation=<span class="string">'relu'</span>))</span><br><span class="line">    model.add(layers.MaxPooling2D(pool_size=(<span class="number">2</span>, <span class="number">2</span>)))</span><br><span class="line">    model.add(layers.Convolution2D(<span class="number">32</span>, (<span class="number">3</span>, <span class="number">3</span>), padding=<span class="string">'same'</span>, activation=<span class="string">'relu'</span>))</span><br><span class="line">    model.add(layers.MaxPooling2D(pool_size=(<span class="number">2</span>, <span class="number">2</span>)))</span><br><span class="line">    model.add(layers.Convolution2D(<span class="number">24</span>, (<span class="number">1</span>, <span class="number">1</span>), padding=<span class="string">'same'</span>, activation=<span class="string">'relu'</span>))</span><br><span class="line">    model.add(layers.Convolution2D(<span class="number">64</span>, (<span class="number">3</span>, <span class="number">3</span>), padding=<span class="string">'same'</span>, activation=<span class="string">'relu'</span>))</span><br><span class="line">    model.add(layers.MaxPooling2D(pool_size=(<span class="number">2</span>, <span class="number">2</span>)))</span><br><span class="line">    model.add(layers.Flatten())</span><br><span class="line">    model.add(layers.Dense(<span class="number">128</span>, activation=<span class="string">'relu'</span>))</span><br><span class="line">    model.add(layers.Dense(<span class="number">100</span>, activation=<span class="string">'softmax'</span>))</span><br><span class="line">    <span class="comment"># Train model</span></span><br><span class="line">    model.compile(loss=<span class="string">'categorical_crossentropy'</span>,</span><br><span class="line">                  optimizer=<span class="string">'adam'</span>,</span><br><span class="line">                  metrics=[<span class="string">'top_k_categorical_accuracy'</span>])</span><br><span class="line">    print(model.summary())</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> model</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">lenet</span>():</span></span><br><span class="line">    model = keras.Sequential()</span><br><span class="line">    <span class="comment"># Layer 1: Convolutional. Input = 28x28x1. Output = 28x28x6.</span></span><br><span class="line">    model.add(keras.layers.Convolution2D(filters=<span class="number">6</span>, kernel_size=(<span class="number">5</span>, <span class="number">5</span>), strides=(<span class="number">1</span>, <span class="number">1</span>),</span><br><span class="line">                                         padding=<span class="string">'same'</span>, input_shape=x_train.shape[<span class="number">1</span>:], activation=<span class="string">'relu'</span>))</span><br><span class="line">    <span class="comment"># Pooling. Input = 28x28x6. Output = 14x14x6.</span></span><br><span class="line">    model.add(keras.layers.MaxPooling2D(pool_size=(<span class="number">2</span>, <span class="number">2</span>), strides=<span class="number">2</span>, padding=<span class="string">'valid'</span>))</span><br><span class="line">    <span class="comment"># Layer 2: Convolutional. Output = 10x10x16.</span></span><br><span class="line">    model.add(keras.layers.Convolution2D(filters=<span class="number">16</span>, kernel_size=(<span class="number">5</span>, <span class="number">5</span>), strides=(<span class="number">1</span>, <span class="number">1</span>),</span><br><span class="line">                                         padding=<span class="string">'valid'</span>, activation=<span class="string">'relu'</span>))</span><br><span class="line">    <span class="comment"># Pooling. Input = 10x10x16. Output = 5x5x16.</span></span><br><span class="line">    model.add(keras.layers.MaxPooling2D(pool_size=(<span class="number">2</span>, <span class="number">2</span>), strides=<span class="number">2</span>, padding=<span class="string">'valid'</span>))</span><br><span class="line">    <span class="comment"># Flatten. Input = 5x5x16. Output = 400.</span></span><br><span class="line">    model.add(keras.layers.Flatten())</span><br><span class="line">    <span class="comment"># Layer 3: Fully Connected. Input = 400. Output = 300.</span></span><br><span class="line">    model.add(keras.layers.Dense(<span class="number">300</span>, activation=<span class="string">'relu'</span>))</span><br><span class="line">    <span class="comment"># Layer 4: Fully Connected. Input = 300. Output = 200.</span></span><br><span class="line">    model.add(keras.layers.Dense(<span class="number">200</span>, activation=<span class="string">'relu'</span>))</span><br><span class="line">    <span class="comment"># Layer 5: Fully Connected. Input = 200. Output = 100.</span></span><br><span class="line">    model.add(keras.layers.Dense(<span class="number">100</span>, activation=<span class="string">'softmax'</span>))</span><br><span class="line">    <span class="comment"># Train model</span></span><br><span class="line">    model.compile(loss=<span class="string">'categorical_crossentropy'</span>,</span><br><span class="line">                  optimizer=<span class="string">'adam'</span>,</span><br><span class="line">                  metrics=[<span class="string">'top_k_categorical_accuracy'</span>])</span><br><span class="line">    print(model.summary())</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> model</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">lenet_one2three</span>():</span></span><br><span class="line">    model = keras.Sequential()</span><br><span class="line">    <span class="comment"># Layer 1: Convolutional. Input = 28x28x1. Output = 28x28x6.</span></span><br><span class="line">    model.add(keras.layers.Convolution2D(filters=<span class="number">6</span>, kernel_size=(<span class="number">5</span>, <span class="number">5</span>), strides=(<span class="number">1</span>, <span class="number">1</span>),</span><br><span class="line">                                         padding=<span class="string">'same'</span>, input_shape=x_train.shape[<span class="number">1</span>:], activation=<span class="string">'relu'</span>))</span><br><span class="line">    <span class="comment"># Pooling. Input = 28x28x6. Output = 14x14x6.</span></span><br><span class="line">    model.add(keras.layers.MaxPooling2D(pool_size=(<span class="number">2</span>, <span class="number">2</span>), strides=<span class="number">2</span>, padding=<span class="string">'valid'</span>))</span><br><span class="line">    <span class="comment"># Layer 2: Convolutional. Output = 10x10x16.</span></span><br><span class="line">    model.add(layers.Convolution2D(<span class="number">3</span>, kernel_size=(<span class="number">1</span>, <span class="number">1</span>), strides=(<span class="number">1</span>, <span class="number">1</span>),padding=<span class="string">'same'</span>, activation=<span class="string">'relu'</span>))</span><br><span class="line">    model.add(keras.layers.Convolution2D(filters=<span class="number">16</span>, kernel_size=(<span class="number">5</span>, <span class="number">5</span>), strides=(<span class="number">1</span>, <span class="number">1</span>),</span><br><span class="line">                                         padding=<span class="string">'valid'</span>, activation=<span class="string">'relu'</span>))</span><br><span class="line">    <span class="comment"># Pooling. Input = 10x10x16. Output = 5x5x16.</span></span><br><span class="line">    model.add(keras.layers.MaxPooling2D(pool_size=(<span class="number">2</span>, <span class="number">2</span>), strides=<span class="number">2</span>, padding=<span class="string">'valid'</span>))</span><br><span class="line">    <span class="comment"># Flatten. Input = 5x5x16. Output = 400.</span></span><br><span class="line">    model.add(keras.layers.Flatten())</span><br><span class="line">    <span class="comment"># Layer 3: Fully Connected. Input = 400. Output = 300.</span></span><br><span class="line">    model.add(keras.layers.Dense(<span class="number">300</span>, activation=<span class="string">'relu'</span>))</span><br><span class="line">    <span class="comment"># Layer 4: Fully Connected. Input = 300. Output = 200.</span></span><br><span class="line">    model.add(keras.layers.Dense(<span class="number">200</span>, activation=<span class="string">'relu'</span>))</span><br><span class="line">    <span class="comment"># Layer 5: Fully Connected. Input = 200. Output = 100.</span></span><br><span class="line">    model.add(keras.layers.Dense(<span class="number">100</span>, activation=<span class="string">'softmax'</span>))</span><br><span class="line">    <span class="comment"># Train model</span></span><br><span class="line">    model.compile(loss=<span class="string">'categorical_crossentropy'</span>,</span><br><span class="line">                  optimizer=<span class="string">'adam'</span>,</span><br><span class="line">                  metrics=[<span class="string">'top_k_categorical_accuracy'</span>])</span><br><span class="line">    print(model.summary())</span><br><span class="line">    <span class="keyword">return</span> model</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">lenet_gap</span>():</span></span><br><span class="line">    model = keras.Sequential()</span><br><span class="line">    <span class="comment"># Layer 1: Convolutional. Input = 28x28x1. Output = 28x28x6.</span></span><br><span class="line">    model.add(keras.layers.Convolution2D(filters=<span class="number">6</span>, kernel_size=(<span class="number">5</span>, <span class="number">5</span>), strides=(<span class="number">1</span>, <span class="number">1</span>),</span><br><span class="line">                                         padding=<span class="string">'same'</span>, input_shape=x_train.shape[<span class="number">1</span>:], activation=<span class="string">'relu'</span>))</span><br><span class="line">    <span class="comment"># Pooling. Input = 28x28x6. Output = 14x14x6.</span></span><br><span class="line">    model.add(keras.layers.MaxPooling2D(pool_size=(<span class="number">2</span>, <span class="number">2</span>), strides=<span class="number">2</span>, padding=<span class="string">'valid'</span>))</span><br><span class="line">    <span class="comment"># Layer 2: Convolutional. Output = 10x10x16.</span></span><br><span class="line">    model.add(keras.layers.Convolution2D(filters=<span class="number">16</span>, kernel_size=(<span class="number">5</span>, <span class="number">5</span>), strides=(<span class="number">1</span>, <span class="number">1</span>),</span><br><span class="line">                                         padding=<span class="string">'valid'</span>, activation=<span class="string">'relu'</span>))</span><br><span class="line">    <span class="comment"># Pooling. Input = 10x10x16. Output = 5x5x16.</span></span><br><span class="line">    model.add(keras.layers.MaxPooling2D(pool_size=(<span class="number">2</span>, <span class="number">2</span>), strides=<span class="number">2</span>, padding=<span class="string">'valid'</span>))</span><br><span class="line">    model.add(layers.GlobalAveragePooling2D())</span><br><span class="line">    <span class="comment"># Layer 5: Fully Connected. Input = 200. Output = 100.</span></span><br><span class="line">    model.add(keras.layers.Dense(<span class="number">64</span>,activation=<span class="string">'relu'</span>))</span><br><span class="line">    model.add(keras.layers.Dense(<span class="number">100</span>, activation=<span class="string">'softmax'</span>))</span><br><span class="line">    <span class="comment"># Train model</span></span><br><span class="line">    model.compile(loss=<span class="string">'categorical_crossentropy'</span>,</span><br><span class="line">                  optimizer=<span class="string">'adam'</span>,</span><br><span class="line">                  metrics=[<span class="string">'top_k_categorical_accuracy'</span>])</span><br><span class="line">    print(model.summary())</span><br><span class="line">    <span class="keyword">return</span> model</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">pickle_load</span>():</span></span><br><span class="line">    <span class="keyword">with</span> open(<span class="string">'x_train.pkl'</span>, <span class="string">'rb'</span>) <span class="keyword">as</span> f:</span><br><span class="line">        x_train= load(f)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">with</span> open(<span class="string">'y_train.pkl'</span>, <span class="string">'rb'</span>) <span class="keyword">as</span> f:</span><br><span class="line">        y_train = load(f)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">with</span> open(<span class="string">'x_test.pkl'</span>, <span class="string">'rb'</span>) <span class="keyword">as</span> f:</span><br><span class="line">        x_test = load(f)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">with</span> open(<span class="string">'y_test.pkl'</span>, <span class="string">'rb'</span>) <span class="keyword">as</span> f:</span><br><span class="line">        y_test = load(f)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">with</span> open(<span class="string">'class_names.pkl'</span>, <span class="string">'rb'</span>) <span class="keyword">as</span> f:</span><br><span class="line">        class_names = load(f)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> x_train, y_train, x_test, y_test, class_names</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    <span class="comment"># x_train, y_train, x_test, y_test, class_names = load_data(root=root)</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># with open('x_train.pkl', 'wb') as f:</span></span><br><span class="line">    <span class="comment">#     dump(x_train, f)</span></span><br><span class="line">    <span class="comment">#</span></span><br><span class="line">    <span class="comment"># with open('y_train.pkl', 'wb') as f:</span></span><br><span class="line">    <span class="comment">#     dump(y_train, f)</span></span><br><span class="line">    <span class="comment">#</span></span><br><span class="line">    <span class="comment"># with open('x_test.pkl', 'wb') as f:</span></span><br><span class="line">    <span class="comment">#     dump(x_test, f)</span></span><br><span class="line">    <span class="comment">#</span></span><br><span class="line">    <span class="comment"># with open('y_test.pkl', 'wb') as f:</span></span><br><span class="line">    <span class="comment">#     dump(y_test, f)</span></span><br><span class="line">    <span class="comment">#</span></span><br><span class="line">    <span class="comment"># with open('class_names.pkl', 'wb') as f:</span></span><br><span class="line">    <span class="comment">#     dump(class_names, f)</span></span><br><span class="line"></span><br><span class="line">    x_train, y_train, x_test, y_test, class_names = pickle_load()</span><br><span class="line"></span><br><span class="line">    num_classes = len(class_names)</span><br><span class="line">    image_size = <span class="number">28</span></span><br><span class="line">    print(len(x_train))</span><br><span class="line"></span><br><span class="line">    <span class="comment"># import matplotlib.pyplot as plt</span></span><br><span class="line">    <span class="comment"># from random import randint</span></span><br><span class="line">    <span class="comment">#</span></span><br><span class="line">    <span class="comment"># idx = randint(0, len(x_train))</span></span><br><span class="line">    <span class="comment"># plt.imshow(x_train[idx].reshape(28, 28))</span></span><br><span class="line">    <span class="comment"># print(class_names[int(y_train[idx].item())])</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># Reshape and normalize</span></span><br><span class="line">    x_train = x_train.reshape(x_train.shape[<span class="number">0</span>], image_size, image_size, <span class="number">1</span>).astype(<span class="string">'float32'</span>)</span><br><span class="line">    x_test = x_test.reshape(x_test.shape[<span class="number">0</span>], image_size, image_size, <span class="number">1</span>).astype(<span class="string">'float32'</span>)</span><br><span class="line"></span><br><span class="line">    x_train /= <span class="number">255.0</span></span><br><span class="line">    x_test /= <span class="number">255.0</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># Convert class vectors to class matrices</span></span><br><span class="line">    y_train = keras.utils.to_categorical(y_train, num_classes)</span><br><span class="line">    y_test = keras.utils.to_categorical(y_test, num_classes)</span><br><span class="line"></span><br><span class="line">    model = lenet_one2three()</span><br><span class="line"></span><br><span class="line">    model.fit(x=x_train, y=y_train, validation_split=<span class="number">0.2</span>, batch_size=<span class="number">256</span>, verbose=<span class="number">2</span>, epochs=<span class="number">10</span>,callbacks=[TensorBoard(log_dir=<span class="string">'log'</span>)])</span><br><span class="line"></span><br><span class="line">    score = model.evaluate(x_test, y_test, verbose=<span class="number">0</span>)</span><br><span class="line">    print(<span class="string">'Test accuarcy: {:0.2f}%'</span>.format(score[<span class="number">1</span>] * <span class="number">100</span>))</span><br><span class="line"></span><br><span class="line">    model.save(<span class="string">'keras.h5'</span>)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">with</span> open(<span class="string">'class_names.txt'</span>, <span class="string">'w'</span>) <span class="keyword">as</span> file_handler:</span><br><span class="line">        <span class="keyword">for</span> item <span class="keyword">in</span> class_names:</span><br><span class="line">            file_handler.write(<span class="string">"{}\n"</span>.format(item))</span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
+</body></html>
+    </div>
+
+    
+    
+    
+      
+  <div class="popular-posts-header">相关文章推荐</div>
+  <ul class="popular-posts">
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\post\34384.html" rel="bookmark">BiliBili 蒙版弹幕</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\post\27176.html" rel="bookmark">Network In Network</a></div>
+    </li>
+  </ul>
+
+        <div class="reward-container">
+  <div>支持一根棒棒糖！</div>
+  <button onclick="var qr = document.getElementById('qr'); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+    Donate
+  </button>
+  <div id="qr" style="display: none;">
+      
+      <div style="display: inline-block;">
+        <img src="https://i.loli.net/2020/08/27/Z63uzPfeimEYrD2.png" alt="Sun Yan WeChat Pay">
+        <p>WeChat Pay</p>
+      </div>
+      
+      <div style="display: inline-block;">
+        <img src="https://i.loli.net/2020/08/27/Zz62YJyVH1SRgGj.jpg" alt="Sun Yan Alipay">
+        <p>Alipay</p>
+      </div>
+
+  </div>
+</div>
+
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>Post author:  </strong>Sun Yan
+  </li>
+  <li class="post-copyright-link">
+    <strong>Post link: </strong>
+    <a href="http://sunyancn.github.io/post/50938.html" title="你画我猜">http://sunyancn.github.io/post/50938.html</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> unless stating additionally.
+  </li>
+</ul>
+</div>
+
+
+      <footer class="post-footer">
+          
+          <div class="post-tags">
+              <a href="/tags/CNN/" rel="tag"><i class="fa fa-tag"></i> CNN</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/post/31913.html" rel="prev" title="Mathpix:Image to Latex">
+      <i class="fa fa-chevron-left"></i> Mathpix:Image to Latex
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/post/60371.html" rel="next" title="Keras 迁移学习">
+      Keras 迁移学习 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+    <script type="text/javascript" src="/js/linkcard.js"></script>
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    <div class="comments" id="valine-comments"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%8B%E7%BB%8D"><span class="nav-number">1.</span> <span class="nav-text">介绍</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%B5%84%E6%BA%90"><span class="nav-number">2.</span> <span class="nav-text">资源</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A8%A1%E5%9E%8B%E5%8E%8B%E7%BC%A9"><span class="nav-number">3.</span> <span class="nav-text">模型压缩</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#GAP%E6%9B%BF%E6%8D%A2%E5%85%A8%E8%BF%9E%E6%8E%A5"><span class="nav-number">3.1.</span> <span class="nav-text">GAP 替换全连接</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Fully-Connected-layer"><span class="nav-number">3.1.1.</span> <span class="nav-text">Fully Connected layer</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Global-Average-Pooling"><span class="nav-number">3.1.2.</span> <span class="nav-text">Global Average Pooling</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Reference"><span class="nav-number">3.1.3.</span> <span class="nav-text">Reference</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#SqueezeNet"><span class="nav-number">3.2.</span> <span class="nav-text">SqueezeNet</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%9E%E9%99%85%E5%BB%BA%E6%A8%A1"><span class="nav-number">4.</span> <span class="nav-text">实际建模</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AE%80%E5%8D%95%E7%9A%84CNN%E6%A8%A1%E5%9E%8B"><span class="nav-number">4.1.</span> <span class="nav-text">简单的 CNN 模型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%881%E5%90%8E3"><span class="nav-number">4.2.</span> <span class="nav-text">先 1 后 3</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#GAP"><span class="nav-number">4.3.</span> <span class="nav-text">GAP</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%80%BB%E7%BB%93%E5%AF%B9%E6%AF%94"><span class="nav-number">4.4.</span> <span class="nav-text">总结对比</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%A3%E7%A0%81"><span class="nav-number">4.5.</span> <span class="nav-text">代码</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Sun Yan"
+      src="https://i.loli.net/2020/08/25/NrIpckD9qPLY38C.jpg">
+  <p class="site-author-name" itemprop="name">Sun Yan</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">115</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">17</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">79</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/sunyancn" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;sunyancn" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:sunyanhust@163.com" title="E-Mail → mailto:sunyanhust@163.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/atom.xml" title="RSS → &#x2F;atom.xml"><i class="fas fa-rss fa-fw"></i>RSS</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://weibo.com/u/5270232660" title="Weibo → https:&#x2F;&#x2F;weibo.com&#x2F;u&#x2F;5270232660" rel="noopener" target="_blank"><i class="fab fa-weibo fa-fw"></i>Weibo</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 2015 – 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Sun Yan</span>
+</div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script size="300" alpha="0.6" zIndex="-1" src="//cdn.jsdelivr.net/gh/theme-next/theme-next-canvas-ribbon@1/canvas-ribbon.js"></script>
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+<script src="/js/bookmark.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
+
+  
+<div id="needsharebutton-float">
+      <span class="btn">
+        <i class="fa fa-share-alt" aria-hidden="true"></i>
+      </span>
+    </div>
+  <script src="//cdn.jsdelivr.net/gh/theme-next/theme-next-needmoreshare2@1/needsharebutton.min.js"></script>
+  <script>
+      flOptions = {};
+        flOptions.iconStyle = "box";
+        flOptions.boxForm = "horizontal";
+        flOptions.position = "middleRight";
+        flOptions.networks = "Weibo,Wechat,Douban,QQZone,Twitter,Facebook";
+      new needShareButton('#needsharebutton-float', flOptions);
+  </script>
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('https://cdn.jsdelivr.net/gh//AshinWang/SimpleValine/SimpleValine.min.js', () => {
+    var GUEST = ['nick', 'mail', 'link'];
+    var guest = 'nick,mail';
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
+    });
+    new Valine({
+      el         : '#valine-comments',
+      verify     : false,
+      notify     : false,
+      appId      : 'IAIsNxUL4BLqJ2c4nTn8HlLv-gzGzoHsz',
+      appKey     : '73p5IVTPonVrJhOylbVtJffi',
+      placeholder: "(๑•́ ₃ •̀๑) 留言时填写您的邮箱可以邮件收到博主的回复噢~",
+      avatar     : 'wavatar',
+      meta       : guest,
+      pageSize   : '10' || 10,
+      visitor    : false,
+      lang       : '' || 'zh-cn',
+      path       : location.pathname,
+      recordIP   : true,
+      serverURLs : ''
+    });
+  }, window.Valine);
+});
+</script>
+
+</body>
+</html>

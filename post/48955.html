@@ -1,0 +1,947 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.1.1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Noto Serif SC:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"sunyancn.github.io","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"valine","storage":true,"lazyload":false,"nav":null,"activeClass":"valine"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="Step0：搭建深度学习环境 Doker 搭建深度学习环境：https:&#x2F;&#x2F;www.cnblogs.com&#x2F;bingmang&#x2F;p&#x2F;9813686.html Pycharm 远程连接服务器：https:&#x2F;&#x2F;www.cnblogs.com&#x2F;zhuminghui&#x2F;p&#x2F;10947930.html  服务器使用 screen 后台运行程序：https:&#x2F;&#x2F;sunyanhust.github.io&#x2F;post&#x2F;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="如何入门深度学习">
+<meta property="og:url" content="http://sunyancn.github.io/post/48955.html">
+<meta property="og:site_name" content="故事尾音">
+<meta property="og:description" content="Step0：搭建深度学习环境 Doker 搭建深度学习环境：https:&#x2F;&#x2F;www.cnblogs.com&#x2F;bingmang&#x2F;p&#x2F;9813686.html Pycharm 远程连接服务器：https:&#x2F;&#x2F;www.cnblogs.com&#x2F;zhuminghui&#x2F;p&#x2F;10947930.html  服务器使用 screen 后台运行程序：https:&#x2F;&#x2F;sunyanhust.github.io&#x2F;post&#x2F;">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-05-22T10:20:45.000Z">
+<meta property="article:modified_time" content="2020-09-02T13:44:33.414Z">
+<meta property="article:author" content="Sun Yan">
+<meta property="article:tag" content="深度学习">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://sunyancn.github.io/post/48955.html">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+<script src="/lib/fireworks.js"></script><link rel="stylesheet" href="//cdn.jsdelivr.net/gh/theme-next/theme-next-needmoreshare2@1/needsharebutton.min.css"><style>
+#needsharebutton-float {
+  bottom: 88px;
+  cursor: pointer;
+  left: -8px;
+  position: fixed;
+  z-index: 9999;
+}
+#needsharebutton-float .btn {
+  border: 1px solid $btn-default-border-color;
+  border-radius: 4px;
+  padding: 0 10px 0 14px;
+}
+</style>
+  <title>如何入门深度学习 | 故事尾音</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="故事尾音" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">故事尾音</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">喜欢推导也喜欢被推倒</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+        <li class="menu-item menu-item-image">
+
+    <a href="/image/" rel="section"><i class="fa fa-image fa-fw"></i>image</a>
+
+  </li>
+        <li class="menu-item menu-item-music">
+
+    <a href="/music/" rel="section"><i class="fa fa-music fa-fw"></i>music</a>
+
+  </li>
+        <li class="menu-item menu-item-shuoshuo">
+
+    <a href="/shuoshuo/" rel="section"><i class="fa fa-heartbeat fa-fw"></i>shuoshuo</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://sunyancn.github.io/post/48955.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://i.loli.net/2020/08/25/NrIpckD9qPLY38C.jpg">
+      <meta itemprop="name" content="Sun Yan">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="故事尾音">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          如何入门深度学习
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2020-05-22 18:20:45" itemprop="dateCreated datePublished" datetime="2020-05-22T18:20:45+08:00">2020-05-22</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-09-02 21:44:33" itemprop="dateModified" datetime="2020-09-02T21:44:33+08:00">2020-09-02</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">笔记</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine: </span>
+    
+    <a title="valine" href="/post/48955.html#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/post/48955.html" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <html><head></head><body><h2 id="Step0：搭建深度学习环境" class="heading-control"><a href="#Step0：搭建深度学习环境" class="headerlink" title="Step0：搭建深度学习环境"></a>Step0：搭建深度学习环境<a class="heading-anchor" href="#Step0：搭建深度学习环境" aria-hidden="true"></a></h2><ul>
+<li>Doker 搭建深度学习环境：<a target="_blank" rel="noopener" href="https://www.cnblogs.com/bingmang/p/9813686.html">https://www.cnblogs.com/bingmang/p/9813686.html</a></li>
+<li>Pycharm 远程连接服务器：<a target="_blank" rel="noopener" href="https://www.cnblogs.com/zhuminghui/p/10947930.html">https://www.cnblogs.com/zhuminghui/p/10947930.html</a></li>
+<li> 服务器使用 screen 后台运行程序：<a target="_blank" rel="noopener" href="https://sunyanhust.github.io/post/fu-wu-qi-shi-yong-screen-hou-tai-yun-xing-cheng-xu/">https://sunyanhust.github.io/post/fu-wu-qi-shi-yong-screen-hou-tai-yun-xing-cheng-xu/</a></li>
+</ul>
+<a id="more"></a>
+<h2 id="Step1-通过阅读《Python深度学习》掌握深度学习基础知识" class="heading-control"><a href="#Step1-通过阅读《Python深度学习》掌握深度学习基础知识" class="headerlink" title="Step1: 通过阅读《Python深度学习》掌握深度学习基础知识"></a>Step1: 通过阅读《Python 深度学习》掌握深度学习基础知识<a class="heading-anchor" href="#Step1-通过阅读《Python深度学习》掌握深度学习基础知识" aria-hidden="true"></a></h2><p>《Python 深度学习》这本书是 Keras 之父 Francois Chollet 所著，该书假定读者无任何机器学习知识，以 Keras 为工具，使用丰富的范例示范深度学习的最佳实践，该书通俗易懂，全书没有一个数学公式，注重培养读者的深度学习直觉。</p>
+<ul>
+<li><strong>电子版下载</strong>：<a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1-4q6VjLTb3ZxcefyNCbjSA">https://pan.baidu.com/s/1-4q6VjLTb3ZxcefyNCbjSA</a> 提取码：wtzo，</li>
+<li><strong>代码</strong>：<a target="_blank" rel="noopener" href="https://github.com/fchollet/deep-learning-with-python-notebooks">https://github.com/fchollet/deep-learning-with-python-notebooks</a></li>
+</ul>
+<h2 id="Step2：通过教程《30天吃掉那只-TensorFlow2》深入学习TensorFlow" class="heading-control"><a href="#Step2：通过教程《30天吃掉那只-TensorFlow2》深入学习TensorFlow" class="headerlink" title="Step2：通过教程《30天吃掉那只 TensorFlow2》深入学习TensorFlow"></a>Step2：通过教程《30 天吃掉那只 TensorFlow2》深入学习 TensorFlow<a class="heading-anchor" href="#Step2：通过教程《30天吃掉那只-TensorFlow2》深入学习TensorFlow" aria-hidden="true"></a></h2><ul>
+<li>📚 gitbook 电子书地址： <a target="_blank" rel="noopener" href="https://lyhue1991.github.io/eat_tensorflow2_in_30_days">https://lyhue1991.github.io/eat_tensorflow2_in_30_days</a></li>
+<li>🚀 github 项目地址：<a target="_blank" rel="noopener" href="https://github.com/lyhue1991/eat_tensorflow2_in_30_days">https://github.com/lyhue1991/eat_tensorflow2_in_30_days</a></li>
+<li>🐳 kesci 专栏地址：<a target="_blank" rel="noopener" href="https://www.kesci.com/home/column/5d8ef3c3037db3002d3aa3a0">https://www.kesci.com/home/column/5d8ef3c3037db3002d3aa3a0</a></li>
+</ul>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:right"> 日期</th>
+<th style="text-align:left">学习内容</th>
+<th style="text-align:right">内容难度</th>
+<th style="text-align:right">预计学习时间</th>
+<th style="text-align:right">更新状态</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right"> </td>
+<td style="text-align:left"><a href="./一、TensorFlow的建模流程.md"><strong>一、TensorFlow 的建模流程</strong></a></td>
+<td style="text-align:right">⭐️</td>
+<td style="text-align:right">0hour</td>
+<td style="text-align:right">✅</td>
+</tr>
+<tr>
+<td style="text-align:right">day1</td>
+<td style="text-align:left"><a href="./1-1,结构化数据建模流程范例.md">1-1, 结构化数据建模流程范例</a></td>
+<td style="text-align:right">⭐️⭐️⭐️</td>
+<td style="text-align:right">1hour</td>
+<td style="text-align:right">✅</td>
+</tr>
+<tr>
+<td style="text-align:right">day2</td>
+<td style="text-align:left"><a href="./1-2,图片数据建模流程范例.md">1-2, 图片数据建模流程范例</a></td>
+<td style="text-align:right">⭐️⭐️⭐️⭐️</td>
+<td style="text-align:right">2hour</td>
+<td style="text-align:right">✅</td>
+</tr>
+<tr>
+<td style="text-align:right">day3</td>
+<td style="text-align:left"><a href="./1-3,文本数据建模流程范例.md">1-3, 文本数据建模流程范例</a></td>
+<td style="text-align:right">⭐️⭐️⭐️⭐️⭐️</td>
+<td style="text-align:right">2hour</td>
+<td style="text-align:right">✅</td>
+</tr>
+<tr>
+<td style="text-align:right">day4</td>
+<td style="text-align:left"><a href="./1-4,时间序列数据建模流程范例.md">1-4, 时间序列数据建模流程范例</a></td>
+<td style="text-align:right">⭐️⭐️⭐️⭐️⭐️</td>
+<td style="text-align:right">2hour</td>
+<td style="text-align:right">✅</td>
+</tr>
+<tr>
+<td style="text-align:right"> </td>
+<td style="text-align:left"><a href="./二、TensorFlow的核心概念.md"><strong>二、TensorFlow 的核心概念</strong></a></td>
+<td style="text-align:right">⭐️</td>
+<td style="text-align:right">0hour</td>
+<td style="text-align:right">✅</td>
+</tr>
+<tr>
+<td style="text-align:right">day5</td>
+<td style="text-align:left"><a href="./2-1,张量数据结构.md">2-1, 张量数据结构</a></td>
+<td style="text-align:right">⭐️⭐️⭐️⭐️</td>
+<td style="text-align:right">1hour</td>
+<td style="text-align:right">✅</td>
+</tr>
+<tr>
+<td style="text-align:right">day6</td>
+<td style="text-align:left"><a href="./2-2,三种计算图.md">2-2, 三种计算图</a></td>
+<td style="text-align:right">⭐️⭐️⭐️⭐️⭐️</td>
+<td style="text-align:right">2hour</td>
+<td style="text-align:right">✅</td>
+</tr>
+<tr>
+<td style="text-align:right">day7</td>
+<td style="text-align:left"><a href="./2-3,自动微分机制.md">2-3, 自动微分机制</a></td>
+<td style="text-align:right">⭐️⭐️⭐️</td>
+<td style="text-align:right">1hour</td>
+<td style="text-align:right">✅</td>
+</tr>
+<tr>
+<td style="text-align:right"> </td>
+<td style="text-align:left"><a href="./三、TensorFlow的层次结构.md"><strong>三、TensorFlow 的层次结构</strong></a></td>
+<td style="text-align:right">⭐️</td>
+<td style="text-align:right">0hour</td>
+<td style="text-align:right">✅</td>
+</tr>
+<tr>
+<td style="text-align:right">day8</td>
+<td style="text-align:left"><a href="./3-1,低阶API示范.md">3-1, 低阶 API 示范</a></td>
+<td style="text-align:right">⭐️⭐️⭐️⭐️</td>
+<td style="text-align:right">1hour</td>
+<td style="text-align:right">✅</td>
+</tr>
+<tr>
+<td style="text-align:right">day9</td>
+<td style="text-align:left"><a href="./3-2,中阶API示范.md">3-2, 中阶 API 示范</a></td>
+<td style="text-align:right">⭐️⭐️⭐️</td>
+<td style="text-align:right">1hour</td>
+<td style="text-align:right">✅</td>
+</tr>
+<tr>
+<td style="text-align:right">day10</td>
+<td style="text-align:left"><a href="./3-3,高阶API示范.md">3-3, 高阶 API 示范</a></td>
+<td style="text-align:right">⭐️⭐️⭐️</td>
+<td style="text-align:right">1hour</td>
+<td style="text-align:right">✅</td>
+</tr>
+<tr>
+<td style="text-align:right"> </td>
+<td style="text-align:left"><a href="./四、TensorFlow的低阶API.md"><strong>四、TensorFlow 的低阶 API</strong></a></td>
+<td style="text-align:right">⭐️</td>
+<td style="text-align:right">0hour</td>
+<td style="text-align:right">✅</td>
+</tr>
+<tr>
+<td style="text-align:right">day11</td>
+<td style="text-align:left"><a href="./4-1,张量的结构操作.md">4-1, 张量的结构操作</a></td>
+<td style="text-align:right">⭐️⭐️⭐️⭐️⭐️</td>
+<td style="text-align:right">2hour</td>
+<td style="text-align:right">✅</td>
+</tr>
+<tr>
+<td style="text-align:right">day12</td>
+<td style="text-align:left"><a href="./4-2,张量的数学运算.md">4-2, 张量的数学运算</a></td>
+<td style="text-align:right">⭐️⭐️⭐️⭐️</td>
+<td style="text-align:right">1hour</td>
+<td style="text-align:right">✅</td>
+</tr>
+<tr>
+<td style="text-align:right">day13</td>
+<td style="text-align:left"><a href="./4-3,AutoGraph的使用规范.md">4-3,AutoGraph 的使用规范</a></td>
+<td style="text-align:right">⭐️⭐️⭐️</td>
+<td style="text-align:right">0.5hour</td>
+<td style="text-align:right">✅</td>
+</tr>
+<tr>
+<td style="text-align:right">day14</td>
+<td style="text-align:left"><a href="./4-4,AutoGraph的机制原理.md">4-4,AutoGraph 的机制原理</a></td>
+<td style="text-align:right">⭐️⭐️⭐️⭐️⭐️</td>
+<td style="text-align:right">2hour</td>
+<td style="text-align:right">✅</td>
+</tr>
+<tr>
+<td style="text-align:right">day15</td>
+<td style="text-align:left"><a href="./4-5,AutoGraph和tf.Module.md">4-5,AutoGraph 和 tf.Module</a></td>
+<td style="text-align:right">⭐️⭐️⭐️⭐️</td>
+<td style="text-align:right">1hour</td>
+<td style="text-align:right">✅</td>
+</tr>
+<tr>
+<td style="text-align:right"> </td>
+<td style="text-align:left"><a href="./五、TensorFlow的中阶API.md"><strong>五、TensorFlow 的中阶 API</strong></a></td>
+<td style="text-align:right">⭐️</td>
+<td style="text-align:right">0hour</td>
+<td style="text-align:right">✅</td>
+</tr>
+<tr>
+<td style="text-align:right">day16</td>
+<td style="text-align:left"><a href="./5-1,数据管道Dataset.md">5-1, 数据管道 Dataset</a></td>
+<td style="text-align:right">⭐️⭐️⭐️⭐️⭐️</td>
+<td style="text-align:right">2hour</td>
+<td style="text-align:right">✅</td>
+</tr>
+<tr>
+<td style="text-align:right">day17</td>
+<td style="text-align:left"><a href="./5-2,特征列feature_column.md">5-2, 特征列 feature_column</a></td>
+<td style="text-align:right">⭐️⭐️⭐️⭐️</td>
+<td style="text-align:right">1hour</td>
+<td style="text-align:right">✅</td>
+</tr>
+<tr>
+<td style="text-align:right">day18</td>
+<td style="text-align:left"><a href="./5-3,激活函数activation.md">5-3, 激活函数 activation</a></td>
+<td style="text-align:right">⭐️⭐️⭐️</td>
+<td style="text-align:right">0.5hour</td>
+<td style="text-align:right">✅</td>
+</tr>
+<tr>
+<td style="text-align:right">day19</td>
+<td style="text-align:left"><a href="./5-4,模型层layers.md">5-4, 模型层 layers</a></td>
+<td style="text-align:right">⭐️⭐️⭐️</td>
+<td style="text-align:right">1hour</td>
+<td style="text-align:right">✅</td>
+</tr>
+<tr>
+<td style="text-align:right">day20</td>
+<td style="text-align:left"><a href="./5-5,损失函数losses.md">5-5, 损失函数 losses</a></td>
+<td style="text-align:right">⭐️⭐️⭐️</td>
+<td style="text-align:right">1hour</td>
+<td style="text-align:right">✅</td>
+</tr>
+<tr>
+<td style="text-align:right">day21</td>
+<td style="text-align:left"><a href="./5-6,评估指标metrics.md">5-6, 评估指标 metrics</a></td>
+<td style="text-align:right">⭐️⭐️⭐️</td>
+<td style="text-align:right">1hour</td>
+<td style="text-align:right">✅</td>
+</tr>
+<tr>
+<td style="text-align:right">day22</td>
+<td style="text-align:left"><a href="./5-7,优化器optimizers.md">5-7, 优化器 optimizers</a></td>
+<td style="text-align:right">⭐️⭐️⭐️</td>
+<td style="text-align:right">0.5hour</td>
+<td style="text-align:right">✅</td>
+</tr>
+<tr>
+<td style="text-align:right">day23</td>
+<td style="text-align:left"><a href="./5-8,回调函数callbacks.md">5-8, 回调函数 callbacks</a></td>
+<td style="text-align:right">⭐️⭐️⭐️⭐️</td>
+<td style="text-align:right">1hour</td>
+<td style="text-align:right">✅</td>
+</tr>
+<tr>
+<td style="text-align:right"> </td>
+<td style="text-align:left"><a href="./六、TensorFlow的高阶API.md"><strong>六、TensorFlow 的高阶 API</strong></a></td>
+<td style="text-align:right">⭐️</td>
+<td style="text-align:right">0hour</td>
+<td style="text-align:right">✅</td>
+</tr>
+<tr>
+<td style="text-align:right">day24</td>
+<td style="text-align:left"><a href="./6-1,构建模型的3种方法.md">6-1, 构建模型的 3 种方法</a></td>
+<td style="text-align:right">⭐️⭐️⭐️</td>
+<td style="text-align:right">1hour</td>
+<td style="text-align:right">✅</td>
+</tr>
+<tr>
+<td style="text-align:right">day25</td>
+<td style="text-align:left"><a href="./6-2,训练模型的3种方法.md">6-2, 训练模型的 3 种方法</a></td>
+<td style="text-align:right">⭐️⭐️⭐️⭐️</td>
+<td style="text-align:right">1hour</td>
+<td style="text-align:right">✅</td>
+</tr>
+<tr>
+<td style="text-align:right">day26</td>
+<td style="text-align:left"><a href="./6-3,使用单GPU训练模型.md">6-3, 使用单 GPU 训练模型</a></td>
+<td style="text-align:right">⭐️⭐️</td>
+<td style="text-align:right">0.5hour</td>
+<td style="text-align:right">✅</td>
+</tr>
+<tr>
+<td style="text-align:right">day27</td>
+<td style="text-align:left"><a href="./6-4,使用多GPU训练模型.md">6-4, 使用多 GPU 训练模型</a></td>
+<td style="text-align:right">⭐️⭐️</td>
+<td style="text-align:right">0.5hour</td>
+<td style="text-align:right">✅</td>
+</tr>
+<tr>
+<td style="text-align:right">day28</td>
+<td style="text-align:left"><a href="./6-5,使用TPU训练模型.md">6-5, 使用 TPU 训练模型</a></td>
+<td style="text-align:right">⭐️⭐️</td>
+<td style="text-align:right">0.5hour</td>
+<td style="text-align:right">✅</td>
+</tr>
+<tr>
+<td style="text-align:right">day29</td>
+<td style="text-align:left"><a href="./6-6,使用tensorflow-serving部署模型.md">6-6, 使用 tensorflow-serving 部署模型</a></td>
+<td style="text-align:right">⭐️⭐️⭐️⭐️</td>
+<td style="text-align:right">1hour</td>
+<td style="text-align:right">✅</td>
+</tr>
+<tr>
+<td style="text-align:right">day30</td>
+<td style="text-align:left"><a href="./6-7,使用spark-scala调用tensorflow模型.md">6-7, 使用 spark-scala 调用 tensorflow 模型</a></td>
+<td style="text-align:right">⭐️⭐️⭐️⭐️⭐️</td>
+<td style="text-align:right">2hour</td>
+<td style="text-align:right">✅</td>
+</tr>
+<tr>
+<td style="text-align:right"> </td>
+<td style="text-align:left"><a href="./后记：一个吃货和一道菜的故事.md">后记：一个吃货和一道菜的故事</a></td>
+<td style="text-align:right">⭐️</td>
+<td style="text-align:right">0hour</td>
+<td style="text-align:right">✅</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 id="Step4-通过《CNN-Architectures》项目复现常见CNN模型，并阅读有关论文" class="heading-control"><a href="#Step4-通过《CNN-Architectures》项目复现常见CNN模型，并阅读有关论文" class="headerlink" title="Step4: 通过《CNN-Architectures》项目复现常见CNN模型，并阅读有关论文"></a>Step4: 通过《CNN-Architectures》项目复现常见 CNN 模型，并阅读有关论文<a class="heading-anchor" href="#Step4-通过《CNN-Architectures》项目复现常见CNN模型，并阅读有关论文" aria-hidden="true"></a></h2><p><strong>CNN-Architectures：</strong>  <a target="_blank" rel="noopener" href="https://github.com/Machine-Learning-Tokyo/CNN-Architectures/tree/master/Implementations">https://github.com/Machine-Learning-Tokyo/CNN-Architectures/tree/master/Implementations</a></p>
+<p>使用 <code>tf.keras</code>API 复现了一些常见 CNN 模型，包括：AlexNet、VGG、GoogLeNet、MobileNet、ResNet、Xception、SqueezeNet、DenseNet、ShuffleNet</p>
+<h2 id="Step5-通过《Deep-Models-for-NLP-beginners》项目学习NLP基础知识" class="heading-control"><a href="#Step5-通过《Deep-Models-for-NLP-beginners》项目学习NLP基础知识" class="headerlink" title="Step5: 通过《Deep Models for NLP beginners》项目学习NLP基础知识"></a>Step5: 通过《Deep Models for NLP beginners》项目学习 NLP 基础知识<a class="heading-anchor" href="#Step5-通过《Deep-Models-for-NLP-beginners》项目学习NLP基础知识" aria-hidden="true"></a></h2><p>Deep Models for NLP beginners：<a target="_blank" rel="noopener" href="https://github.com/BrambleXu/nlp-beginner-guide-keras">https://github.com/BrambleXu/nlp-beginner-guide-keras</a></p>
+<p>包括词向量、情感分类以及实体识别</p>
+</body></html>
+    </div>
+
+    
+    
+    
+      
+
+        <div class="reward-container">
+  <div>支持一根棒棒糖！</div>
+  <button onclick="var qr = document.getElementById('qr'); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+    Donate
+  </button>
+  <div id="qr" style="display: none;">
+      
+      <div style="display: inline-block;">
+        <img src="https://i.loli.net/2020/08/27/Z63uzPfeimEYrD2.png" alt="Sun Yan WeChat Pay">
+        <p>WeChat Pay</p>
+      </div>
+      
+      <div style="display: inline-block;">
+        <img src="https://i.loli.net/2020/08/27/Zz62YJyVH1SRgGj.jpg" alt="Sun Yan Alipay">
+        <p>Alipay</p>
+      </div>
+
+  </div>
+</div>
+
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>Post author:  </strong>Sun Yan
+  </li>
+  <li class="post-copyright-link">
+    <strong>Post link: </strong>
+    <a href="http://sunyancn.github.io/post/48955.html" title="如何入门深度学习">http://sunyancn.github.io/post/48955.html</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> unless stating additionally.
+  </li>
+</ul>
+</div>
+
+
+      <footer class="post-footer">
+          
+          <div class="post-tags">
+              <a href="/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/" rel="tag"><i class="fa fa-tag"></i> 深度学习</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/post/60709.html" rel="prev" title="多标签文本分类 kaggle kernel">
+      <i class="fa fa-chevron-left"></i> 多标签文本分类 kaggle kernel
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/post/22891.html" rel="next" title="VSCode 配置远程开发">
+      VSCode 配置远程开发 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+    <script type="text/javascript" src="/js/linkcard.js"></script>
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    <div class="comments" id="valine-comments"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Step0%EF%BC%9A%E6%90%AD%E5%BB%BA%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E7%8E%AF%E5%A2%83"><span class="nav-number">1.</span> <span class="nav-text">Step0：搭建深度学习环境</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Step1-%E9%80%9A%E8%BF%87%E9%98%85%E8%AF%BB%E3%80%8APython%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E3%80%8B%E6%8E%8C%E6%8F%A1%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86"><span class="nav-number">2.</span> <span class="nav-text">Step1: 通过阅读《Python 深度学习》掌握深度学习基础知识</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Step2%EF%BC%9A%E9%80%9A%E8%BF%87%E6%95%99%E7%A8%8B%E3%80%8A30%E5%A4%A9%E5%90%83%E6%8E%89%E9%82%A3%E5%8F%AA-TensorFlow2%E3%80%8B%E6%B7%B1%E5%85%A5%E5%AD%A6%E4%B9%A0TensorFlow"><span class="nav-number">3.</span> <span class="nav-text">Step2：通过教程《30 天吃掉那只 TensorFlow2》深入学习 TensorFlow</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Step4-%E9%80%9A%E8%BF%87%E3%80%8ACNN-Architectures%E3%80%8B%E9%A1%B9%E7%9B%AE%E5%A4%8D%E7%8E%B0%E5%B8%B8%E8%A7%81CNN%E6%A8%A1%E5%9E%8B%EF%BC%8C%E5%B9%B6%E9%98%85%E8%AF%BB%E6%9C%89%E5%85%B3%E8%AE%BA%E6%96%87"><span class="nav-number">4.</span> <span class="nav-text">Step4: 通过《CNN-Architectures》项目复现常见 CNN 模型，并阅读有关论文</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Step5-%E9%80%9A%E8%BF%87%E3%80%8ADeep-Models-for-NLP-beginners%E3%80%8B%E9%A1%B9%E7%9B%AE%E5%AD%A6%E4%B9%A0NLP%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86"><span class="nav-number">5.</span> <span class="nav-text">Step5: 通过《Deep Models for NLP beginners》项目学习 NLP 基础知识</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Sun Yan"
+      src="https://i.loli.net/2020/08/25/NrIpckD9qPLY38C.jpg">
+  <p class="site-author-name" itemprop="name">Sun Yan</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">115</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">17</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">79</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/sunyancn" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;sunyancn" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:sunyanhust@163.com" title="E-Mail → mailto:sunyanhust@163.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/atom.xml" title="RSS → &#x2F;atom.xml"><i class="fas fa-rss fa-fw"></i>RSS</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://weibo.com/u/5270232660" title="Weibo → https:&#x2F;&#x2F;weibo.com&#x2F;u&#x2F;5270232660" rel="noopener" target="_blank"><i class="fab fa-weibo fa-fw"></i>Weibo</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 2015 – 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Sun Yan</span>
+</div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script size="300" alpha="0.6" zIndex="-1" src="//cdn.jsdelivr.net/gh/theme-next/theme-next-canvas-ribbon@1/canvas-ribbon.js"></script>
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+<script src="/js/bookmark.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
+
+  
+<div id="needsharebutton-float">
+      <span class="btn">
+        <i class="fa fa-share-alt" aria-hidden="true"></i>
+      </span>
+    </div>
+  <script src="//cdn.jsdelivr.net/gh/theme-next/theme-next-needmoreshare2@1/needsharebutton.min.js"></script>
+  <script>
+      flOptions = {};
+        flOptions.iconStyle = "box";
+        flOptions.boxForm = "horizontal";
+        flOptions.position = "middleRight";
+        flOptions.networks = "Weibo,Wechat,Douban,QQZone,Twitter,Facebook";
+      new needShareButton('#needsharebutton-float', flOptions);
+  </script>
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('https://cdn.jsdelivr.net/gh//AshinWang/SimpleValine/SimpleValine.min.js', () => {
+    var GUEST = ['nick', 'mail', 'link'];
+    var guest = 'nick,mail';
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
+    });
+    new Valine({
+      el         : '#valine-comments',
+      verify     : false,
+      notify     : false,
+      appId      : 'IAIsNxUL4BLqJ2c4nTn8HlLv-gzGzoHsz',
+      appKey     : '73p5IVTPonVrJhOylbVtJffi',
+      placeholder: "(๑•́ ₃ •̀๑) 留言时填写您的邮箱可以邮件收到博主的回复噢~",
+      avatar     : 'wavatar',
+      meta       : guest,
+      pageSize   : '10' || 10,
+      visitor    : false,
+      lang       : '' || 'zh-cn',
+      path       : location.pathname,
+      recordIP   : true,
+      serverURLs : ''
+    });
+  }, window.Valine);
+});
+</script>
+
+</body>
+</html>

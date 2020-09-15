@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.1.1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Noto Serif SC:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"sunyancn.github.io","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"valine","storage":true,"lazyload":false,"nav":null,"activeClass":"valine"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="卷积神经网络卷积神经网络主要包括 3 层，即：卷积层、池化层以及全连接层。本文讲分别细致介绍这三层的作用和计算来复习一下卷积神经网络。本文采用简单的 LeNet 来讨论这些问题，模型的结构如下。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="卷积神经网络复习">
+<meta property="og:url" content="http://sunyancn.github.io/post/48895.html">
+<meta property="og:site_name" content="故事尾音">
+<meta property="og:description" content="卷积神经网络卷积神经网络主要包括 3 层，即：卷积层、池化层以及全连接层。本文讲分别细致介绍这三层的作用和计算来复习一下卷积神经网络。本文采用简单的 LeNet 来讨论这些问题，模型的结构如下。">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://i.loli.net/2019/01/19/5c42b8b0d6f16.png">
+<meta property="og:image" content="https://i.loli.net/2018/10/25/5bd1c482c424a.png">
+<meta property="og:image" content="https://i.loli.net/2018/11/14/5bec277000545.png">
+<meta property="og:image" content="https://i.loli.net/2018/11/14/5bec27d86614a.png">
+<meta property="og:image" content="https://i.loli.net/2018/11/14/5bec281a938de.png">
+<meta property="og:image" content="https://i.loli.net/2018/11/14/5bec287a44825.png">
+<meta property="og:image" content="http://sunyancn.github.io/卷积神经网络复习/20190119015827918.png">
+<meta property="og:image" content="http://sunyancn.github.io/卷积神经网络复习/20190119020156227.png">
+<meta property="og:image" content="http://sunyancn.github.io/卷积神经网络复习/20190119020442527.png">
+<meta property="og:image" content="http://sunyancn.github.io/卷积神经网络复习/20190119020805093.png">
+<meta property="article:published_time" content="2018-10-25T13:11:57.000Z">
+<meta property="article:modified_time" content="2020-08-26T17:27:02.175Z">
+<meta property="article:author" content="Sun Yan">
+<meta property="article:tag" content="CNN">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.loli.net/2019/01/19/5c42b8b0d6f16.png">
+
+<link rel="canonical" href="http://sunyancn.github.io/post/48895.html">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+<script src="/lib/fireworks.js"></script><link rel="stylesheet" href="//cdn.jsdelivr.net/gh/theme-next/theme-next-needmoreshare2@1/needsharebutton.min.css"><style>
+#needsharebutton-float {
+  bottom: 88px;
+  cursor: pointer;
+  left: -8px;
+  position: fixed;
+  z-index: 9999;
+}
+#needsharebutton-float .btn {
+  border: 1px solid $btn-default-border-color;
+  border-radius: 4px;
+  padding: 0 10px 0 14px;
+}
+</style>
+  <title>卷积神经网络复习 | 故事尾音</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="故事尾音" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">故事尾音</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">喜欢推导也喜欢被推倒</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+        <li class="menu-item menu-item-image">
+
+    <a href="/image/" rel="section"><i class="fa fa-image fa-fw"></i>image</a>
+
+  </li>
+        <li class="menu-item menu-item-music">
+
+    <a href="/music/" rel="section"><i class="fa fa-music fa-fw"></i>music</a>
+
+  </li>
+        <li class="menu-item menu-item-shuoshuo">
+
+    <a href="/shuoshuo/" rel="section"><i class="fa fa-heartbeat fa-fw"></i>shuoshuo</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://sunyancn.github.io/post/48895.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://i.loli.net/2020/08/25/NrIpckD9qPLY38C.jpg">
+      <meta itemprop="name" content="Sun Yan">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="故事尾音">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          卷积神经网络复习
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2018-10-25 21:11:57" itemprop="dateCreated datePublished" datetime="2018-10-25T21:11:57+08:00">2018-10-25</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-08-27 01:27:02" itemprop="dateModified" datetime="2020-08-27T01:27:02+08:00">2020-08-27</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">笔记</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine: </span>
+    
+    <a title="valine" href="/post/48895.html#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/post/48895.html" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <html><head></head><body><p><img src="https://i.loli.net/2019/01/19/5c42b8b0d6f16.png" alt></p>
+<h2 id="卷积神经网络" class="heading-control"><a href="#卷积神经网络" class="headerlink" title="卷积神经网络"></a>卷积神经网络<a class="heading-anchor" href="#卷积神经网络" aria-hidden="true"></a></h2><p>卷积神经网络主要包括 3 层，即：卷积层、池化层以及全连接层。本文讲分别细致介绍这三层的作用和计算来复习一下卷积神经网络。本文采用简单的 LeNet 来讨论这些问题，模型的结构如下。<br><img src="https://i.loli.net/2018/10/25/5bd1c482c424a.png" alt><br><a id="more"></a></p>
+<h2 id="卷积层" class="heading-control"><a href="#卷积层" class="headerlink" title="卷积层"></a>卷积层<a class="heading-anchor" href="#卷积层" aria-hidden="true"></a></h2><p>卷积层的功能是特征提取。我们先设定下面的符号：</p>
+<ul>
+<li>H：图片高度；</li>
+<li>W：图片宽度；</li>
+<li>D：原始图片通道数，也是卷积核个数；</li>
+<li>F：卷积核高宽大小；</li>
+<li>P：图像边扩充大小；</li>
+<li>S：滑动步长</li>
+<li> K：卷积核的个数</li>
+</ul>
+<p>在卷积操作中卷积核是可学习的参数，每层卷积的参数大小为 D×F×F×K。这样看来卷积层的参数还是比较少的，主要原因是采用了两个重要的特性：局部连接和权值共享。</p>
+<ul>
+<li>局部连接<br>从神经网络连接结构的角度，CNN 的底层与隐藏不再是全连接，而是局部区域的成块连接:<br><img src="https://i.loli.net/2018/11/14/5bec277000545.png" alt="Untitled-28.png"><br>成块连接后，那些小块，还能在上层聚集成更大的块:<br><img src="https://i.loli.net/2018/11/14/5bec27d86614a.png" alt="Untitled-29.png"></li>
+<li>权值共享<br>给一张输入图片，用一个 filter 去扫这张图，filter 里面的数就叫权重，这张图每个位置就是被同样的 filter 扫的，所以权重是一样的，也就是共享。</li>
+</ul>
+<h2 id="池化层" class="heading-control"><a href="#池化层" class="headerlink" title="池化层"></a>池化层<a class="heading-anchor" href="#池化层" aria-hidden="true"></a></h2><p>如果用上面的方法堆砌 CNN 网络，隐藏层的参数还是太多了，不是吗？每个相邻块都要在上层生成一个大的块。所以有时我们为了减少参数复杂度，不严格把相邻的块都至少聚合成一个上层块，我们可以把下层块分一些区域，在这些区域中聚合:<br><img src="https://i.loli.net/2018/11/14/5bec281a938de.png" alt="Untitled-30.png"><br>所以池化层的功能主要是对输入的特征图进行压缩，一方面使特征图变小，简化网络计算复杂度；另一方面进行特征压缩，提取主要特征。<br>最常见的池化操作为平均池化 mean pooling 和最大池化 max pooling：</p>
+<ul>
+<li>平均池化：计算图像区域的平均值作为该区域池化后的值。 </li>
+<li>最大池化：选图像区域的最大值作为该区域池化后的值。</li>
+</ul>
+<p>3D 的卷积和池化如图所示：<br><img src="https://i.loli.net/2018/11/14/5bec287a44825.png" alt="Untitled-34.png"></p>
+<h2 id="全连接层" class="heading-control"><a href="#全连接层" class="headerlink" title="全连接层"></a>全连接层<a class="heading-anchor" href="#全连接层" aria-hidden="true"></a></h2><p>卷积取的是局部特征，全连接就是把以前的局部特征重新通过权值矩阵组装成完整的图，将输出值送给分类器（如 softmax 分类器）。</p>
+<h2 id="LeNet" class="heading-control"><a href="#LeNet" class="headerlink" title="LeNet"></a>LeNet<a class="heading-anchor" href="#LeNet" aria-hidden="true"></a></h2><h3 id="第一层，卷积层" class="heading-control"><a href="#第一层，卷积层" class="headerlink" title="第一层，卷积层"></a>第一层，卷积层<a class="heading-anchor" href="#第一层，卷积层" aria-hidden="true"></a></h3><p>输入图像的大小 32x32x1, 卷积核尺寸为 5x5，深度为 6，不使用全 0 填充，步长为 1。所以这一层的输出：28x28x6，卷积层共有 5x5x1x6+6=156 个参数。</p>
+<h3 id="第二层，池化层" class="heading-control"><a href="#第二层，池化层" class="headerlink" title="第二层，池化层"></a>第二层，池化层<a class="heading-anchor" href="#第二层，池化层" aria-hidden="true"></a></h3><p>这一层的输入为第一层的输出，是一个 28x28x6 的节点矩阵。本层采用的过滤器大小为 2x2，长和宽的步长均为 2，所以本层的输出矩阵大小为 14x14x6。</p>
+<h3 id="第三层，卷积层" class="heading-control"><a href="#第三层，卷积层" class="headerlink" title="第三层，卷积层"></a>第三层，卷积层<a class="heading-anchor" href="#第三层，卷积层" aria-hidden="true"></a></h3><p>本层的输入矩阵大小为 14x14x6，使用的过滤器大小为 5x5，深度为 16. 本层不使用全 0 填充，步长为 1。本层的输出矩阵大小为 10x10x16。本层有 5x5x6x16+16=2416 个参数。</p>
+<h3 id="第四层，池化层" class="heading-control"><a href="#第四层，池化层" class="headerlink" title="第四层，池化层"></a>第四层，池化层<a class="heading-anchor" href="#第四层，池化层" aria-hidden="true"></a></h3><p>本层的输入矩阵大小 10x10x16。本层采用的过滤器大小为 2x2，长和宽的步长均为 2，所以本层的输出矩阵大小为 5x5x16。</p>
+<h3 id="第五层，全连接层" class="heading-control"><a href="#第五层，全连接层" class="headerlink" title="第五层，全连接层"></a>第五层，全连接层<a class="heading-anchor" href="#第五层，全连接层" aria-hidden="true"></a></h3><p>本层的输入矩阵大小为 5x5x16，在 LeNet-5 论文中将这一层成为卷积层，但是因为过滤器的大小就是 5x5，所以和全连接层没有区别。如果将 5x5x16 矩阵中的节点拉成一个向量，那么这一层和全连接层就一样了。本层的输出节点个数为 120，总共有 5x5x16x120+120=48120 个参数。</p>
+<h3 id="第六层，全连接层" class="heading-control"><a href="#第六层，全连接层" class="headerlink" title="第六层，全连接层"></a>第六层，全连接层<a class="heading-anchor" href="#第六层，全连接层" aria-hidden="true"></a></h3><p>本层的输入节点个数为 120 个，输出节点个数为 84 个，总共参数为 120x84+84=10164 个。</p>
+<h3 id="第七层，全连接层" class="heading-control"><a href="#第七层，全连接层" class="headerlink" title="第七层，全连接层"></a>第七层，全连接层<a class="heading-anchor" href="#第七层，全连接层" aria-hidden="true"></a></h3><p>本层的输入节点个数为 84 个，输出节点个数为 10 个，总共参数为 84x10+10=850</p>
+<h2 id="一些有用的代码" class="heading-control"><a href="#一些有用的代码" class="headerlink" title="一些有用的代码"></a>一些有用的代码<a class="heading-anchor" href="#一些有用的代码" aria-hidden="true"></a></h2><h3 id="在NoteBook里面显示训练用到的图片" class="heading-control"><a href="#在NoteBook里面显示训练用到的图片" class="headerlink" title="在NoteBook里面显示训练用到的图片"></a>在 NoteBook 里面显示训练用到的图片<a class="heading-anchor" href="#在NoteBook里面显示训练用到的图片" aria-hidden="true"></a></h3><figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">%matplotlib inline</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="keyword">import</span> matplotlib.image <span class="keyword">as</span> mpimg</span><br><span class="line"><span class="comment"># Parameters for our graph; we'll output images in a 4x4 configuration</span></span><br><span class="line">nrows = <span class="number">4</span></span><br><span class="line">ncols = <span class="number">4</span></span><br><span class="line"><span class="comment"># Index for iterating over images</span></span><br><span class="line">pic_index = <span class="number">0</span></span><br><span class="line"><span class="comment"># Set up matplotlib fig, and size it to fit 4x4 pics</span></span><br><span class="line">fig = plt.gcf()</span><br><span class="line">fig.set_size_inches(ncols * <span class="number">4</span>, nrows * <span class="number">4</span>)</span><br><span class="line">pic_index += <span class="number">8</span></span><br><span class="line">next_cat_pix = [os.path.join(train_cats_dir, fname) </span><br><span class="line">                <span class="keyword">for</span> fname <span class="keyword">in</span> train_cat_fnames[pic_index<span class="number">-8</span>:pic_index]]</span><br><span class="line">next_dog_pix = [os.path.join(train_dogs_dir, fname) </span><br><span class="line">                <span class="keyword">for</span> fname <span class="keyword">in</span> train_dog_fnames[pic_index<span class="number">-8</span>:pic_index]]</span><br><span class="line"><span class="keyword">for</span> i, img_path <span class="keyword">in</span> enumerate(next_cat_pix+next_dog_pix):</span><br><span class="line">  <span class="comment"># Set up subplot; subplot indices start at 1</span></span><br><span class="line">  sp = plt.subplot(nrows, ncols, i + <span class="number">1</span>)</span><br><span class="line">  sp.axis(<span class="string">'Off'</span>) <span class="comment"># Don't show axes (or gridlines)</span></span><br><span class="line">  img = mpimg.imread(img_path)</span><br><span class="line">  plt.imshow(img)</span><br><span class="line">plt.show()</span><br></pre></td></tr></tbody></table></figure>
+<p>主要使用 matplotlib 画一个 4x4 的图，代码效果如下：<br><img src="/卷积神经网络复习/20190119015827918.png" alt></p>
+<h3 id="Keras图像增强" class="heading-control"><a href="#Keras图像增强" class="headerlink" title="Keras图像增强"></a>Keras 图像增强<a class="heading-anchor" href="#Keras图像增强" aria-hidden="true"></a></h3><p>通过对现有图像执行随机变换来人为地增加训练样例的多样性和数量，以创建一组新变体。当原始训练数据集相对较小时，数据增加特别有用。<br></p><figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> tensorflow.keras.preprocessing.image <span class="keyword">import</span> ImageDataGenerator</span><br><span class="line"></span><br><span class="line"><span class="comment"># All images will be rescaled by 1./255</span></span><br><span class="line">train_datagen = ImageDataGenerator(rescale=<span class="number">1.</span>/<span class="number">255</span>)</span><br><span class="line">test_datagen = ImageDataGenerator(rescale=<span class="number">1.</span>/<span class="number">255</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># datagen = ImageDataGenerator(</span></span><br><span class="line"><span class="comment">#       rotation_range=40,</span></span><br><span class="line"><span class="comment">#       width_shift_range=0.2,</span></span><br><span class="line"><span class="comment">#       height_shift_range=0.2,</span></span><br><span class="line"><span class="comment">#       shear_range=0.2,</span></span><br><span class="line"><span class="comment">#       zoom_range=0.2,</span></span><br><span class="line"><span class="comment">#       horizontal_flip=True,</span></span><br><span class="line"><span class="comment">#       fill_mode='nearest')</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Flow training images in batches of 20 using train_datagen generator</span></span><br><span class="line">train_generator = train_datagen.flow_from_directory(</span><br><span class="line">        train_dir,  <span class="comment"># This is the source directory for training images</span></span><br><span class="line">        target_size=(<span class="number">150</span>, <span class="number">150</span>),  <span class="comment"># All images will be resized to 150x150</span></span><br><span class="line">        batch_size=<span class="number">20</span>,</span><br><span class="line">        <span class="comment"># Since we use binary_crossentropy loss, we need binary labels</span></span><br><span class="line">        class_mode=<span class="string">'binary'</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Flow validation images in batches of 20 using test_datagen generator</span></span><br><span class="line">validation_generator = test_datagen.flow_from_directory(</span><br><span class="line">        validation_dir,</span><br><span class="line">        target_size=(<span class="number">150</span>, <span class="number">150</span>),</span><br><span class="line">        batch_size=<span class="number">20</span>,</span><br><span class="line">        class_mode=<span class="string">'binary'</span>)</span><br><span class="line">history = model.fit_generator(</span><br><span class="line">      train_generator,</span><br><span class="line">      steps_per_epoch=<span class="number">100</span>,  <span class="comment"># 2000 images = batch_size * steps</span></span><br><span class="line">      epochs=<span class="number">15</span>,</span><br><span class="line">      validation_data=validation_generator,</span><br><span class="line">      validation_steps=<span class="number">50</span>,  <span class="comment"># 1000 images = batch_size * steps</span></span><br><span class="line">      verbose=<span class="number">2</span>)</span><br></pre></td></tr></tbody></table></figure><br>ImageDataGenerator的一些参数介绍：<p></p>
+<ul>
+<li>rotation_range is a value in degrees (0–180), a range within which to randomly rotate pictures.</li>
+<li>width_shift and height_shift are ranges (as a fraction of total width or height) within which to randomly translate pictures vertically or horizontally.</li>
+<li>shear_range is for randomly applying shearing transformations.</li>
+<li>zoom_range is for randomly zooming inside pictures.</li>
+<li>horizontal_flip is for randomly flipping half of the images horizontally. This is relevant when there are no assumptions of horizontal assymmetry (e.g. real-world pictures).</li>
+<li>fill_mode is the strategy used for filling in newly created pixels, which can appear after a rotation or a width/height shift.</li>
+</ul>
+<p><img src="/卷积神经网络复习/20190119020156227.png" alt></p>
+<h3 id="可视化中间层" class="heading-control"><a href="#可视化中间层" class="headerlink" title="可视化中间层"></a>可视化中间层<a class="heading-anchor" href="#可视化中间层" aria-hidden="true"></a></h3><figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> random</span><br><span class="line"><span class="keyword">from</span> tensorflow.keras.preprocessing.image <span class="keyword">import</span> img_to_array, load_img</span><br><span class="line"></span><br><span class="line"><span class="comment"># Let's define a new Model that will take an image as input, and will output</span></span><br><span class="line"><span class="comment"># intermediate representations for all layers in the previous model after</span></span><br><span class="line"><span class="comment"># the first.</span></span><br><span class="line">successive_outputs = [layer.output <span class="keyword">for</span> layer <span class="keyword">in</span> model.layers[<span class="number">1</span>:]]</span><br><span class="line">visualization_model = Model(img_input, successive_outputs)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Let's prepare a random input image of a cat or dog from the training set.</span></span><br><span class="line">cat_img_files = [os.path.join(train_cats_dir, f) <span class="keyword">for</span> f <span class="keyword">in</span> train_cat_fnames]</span><br><span class="line">dog_img_files = [os.path.join(train_dogs_dir, f) <span class="keyword">for</span> f <span class="keyword">in</span> train_dog_fnames]</span><br><span class="line">img_path = random.choice(cat_img_files + dog_img_files)</span><br><span class="line"></span><br><span class="line">img = load_img(img_path, target_size=(<span class="number">150</span>, <span class="number">150</span>))  <span class="comment"># this is a PIL image</span></span><br><span class="line">x = img_to_array(img)  <span class="comment"># Numpy array with shape (150, 150, 3)</span></span><br><span class="line">x = x.reshape((<span class="number">1</span>,) + x.shape)  <span class="comment"># Numpy array with shape (1, 150, 150, 3)</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Rescale by 1/255</span></span><br><span class="line">x /= <span class="number">255</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Let's run our image through our network, thus obtaining all</span></span><br><span class="line"><span class="comment"># intermediate representations for this image.</span></span><br><span class="line">successive_feature_maps = visualization_model.predict(x)</span><br><span class="line"></span><br><span class="line"><span class="comment"># These are the names of the layers, so can have them as part of our plot</span></span><br><span class="line">layer_names = [layer.name <span class="keyword">for</span> layer <span class="keyword">in</span> model.layers]</span><br><span class="line"></span><br><span class="line"><span class="comment"># Now let's display our representations</span></span><br><span class="line"><span class="keyword">for</span> layer_name, feature_map <span class="keyword">in</span> zip(layer_names, successive_feature_maps):</span><br><span class="line">  <span class="keyword">if</span> len(feature_map.shape) == <span class="number">4</span>:</span><br><span class="line">    <span class="comment"># Just do this for the conv / maxpool layers, not the fully-connected layers</span></span><br><span class="line">    n_features = feature_map.shape[<span class="number">-1</span>]  <span class="comment"># number of features in feature map</span></span><br><span class="line">    <span class="comment"># The feature map has shape (1, size, size, n_features)</span></span><br><span class="line">    size = feature_map.shape[<span class="number">1</span>]</span><br><span class="line">    <span class="comment"># We will tile our images in this matrix</span></span><br><span class="line">    display_grid = np.zeros((size, size * n_features))</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(n_features):</span><br><span class="line">      <span class="comment"># Postprocess the feature to make it visually palatable</span></span><br><span class="line">      x = feature_map[<span class="number">0</span>, :, :, i]</span><br><span class="line">      x -= x.mean()</span><br><span class="line">      x /= x.std()</span><br><span class="line">      x *= <span class="number">64</span></span><br><span class="line">      x += <span class="number">128</span></span><br><span class="line">      x = np.clip(x, <span class="number">0</span>, <span class="number">255</span>).astype(<span class="string">'uint8'</span>)</span><br><span class="line">      <span class="comment"># We'll tile each filter into this big horizontal grid</span></span><br><span class="line">      display_grid[:, i * size : (i + <span class="number">1</span>) * size] = x</span><br><span class="line">    <span class="comment"># Display the grid</span></span><br><span class="line">    scale = <span class="number">20.</span> / n_features</span><br><span class="line">    plt.figure(figsize=(scale * n_features, scale))</span><br><span class="line">    plt.title(layer_name)</span><br><span class="line">    plt.grid(<span class="literal">False</span>)</span><br><span class="line">    plt.imshow(display_grid, aspect=<span class="string">'auto'</span>, cmap=<span class="string">'viridis'</span>)</span><br></pre></td></tr></tbody></table></figure>
+<p><img src="/卷积神经网络复习/20190119020442527.png" alt><br>可以看出，从浅到深模型学习到的特征越来越抽象，图像的原始像素的信息越来越少，但是关于图像类别的信息越来越精细。</p>
+<h3 id="Loss和Acc可视化" class="heading-control"><a href="#Loss和Acc可视化" class="headerlink" title="Loss和Acc可视化"></a>Loss 和 Acc 可视化<a class="heading-anchor" href="#Loss和Acc可视化" aria-hidden="true"></a></h3><figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Retrieve a list of accuracy results on training and test data</span></span><br><span class="line"><span class="comment"># sets for each training epoch</span></span><br><span class="line">acc = history.history[<span class="string">'acc'</span>]</span><br><span class="line">val_acc = history.history[<span class="string">'val_acc'</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment"># Retrieve a list of list results on training and test data</span></span><br><span class="line"><span class="comment"># sets for each training epoch</span></span><br><span class="line">loss = history.history[<span class="string">'loss'</span>]</span><br><span class="line">val_loss = history.history[<span class="string">'val_loss'</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment"># Get number of epochs</span></span><br><span class="line">epochs = range(len(acc))</span><br><span class="line"></span><br><span class="line"><span class="comment"># Plot training and validation accuracy per epoch</span></span><br><span class="line">plt.plot(epochs, acc)</span><br><span class="line">plt.plot(epochs, val_acc)</span><br><span class="line">plt.title(<span class="string">'Training and validation accuracy'</span>)</span><br><span class="line"></span><br><span class="line">plt.figure()</span><br><span class="line"></span><br><span class="line"><span class="comment"># Plot training and validation loss per epoch</span></span><br><span class="line">plt.plot(epochs, loss)</span><br><span class="line">plt.plot(epochs, val_loss)</span><br><span class="line">plt.title(<span class="string">'Training and validation loss'</span>)</span><br></pre></td></tr></tbody></table></figure>
+<p><img src="/卷积神经网络复习/20190119020805093.png" alt><br>上图表示模型过拟合了，简单来说就是训练集和验证集上模型表现不一致。主要原因的数据集太小，一些示例太少，导致模型学习到的知识推广不到新的数据集上，即当模型开始用不相关的特征进行预测的时候就会发生过拟合。例如，如果你作为人类，只能看到三个伐木工人的图像，以及三个水手人的图像，其中唯一一个戴帽子的人是伐木工人，你可能会开始认为戴着帽子是一名伐木工人而不是水手的标志。然后你会做一个非常差的伐木工人 / 水手分类器。</p>
+<h2 id="Reference" class="heading-control"><a href="#Reference" class="headerlink" title="Reference"></a>Reference<a class="heading-anchor" href="#Reference" aria-hidden="true"></a></h2><ul>
+<li><a target="_blank" rel="noopener" href="https://developers.google.cn/machine-learning/practica/image-classification/">https://developers.google.cn/machine-learning/practica/image-classification/</a></li>
+<li><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s?__biz=MzA3NDIyMjM1NA==&mid=2649029512&idx=1&sn=a46fc10de7daba25694bda75a916aa91&chksm=871345f5b064cce3c16ab3b7c671f9e93c838836e20d0aa91bc83f7879915d0c8318bcd9d187&token=1879088111&lang=zh_CN#rd">从 LeNet 到 VGG，看卷积 + 池化串联的网络结构</a></li>
+</ul>
+</body></html>
+    </div>
+
+    
+    
+    
+      
+  <div class="popular-posts-header">相关文章推荐</div>
+  <ul class="popular-posts">
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\post\34384.html" rel="bookmark">BiliBili 蒙版弹幕</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\post\27176.html" rel="bookmark">Network In Network</a></div>
+    </li>
+  </ul>
+
+        <div class="reward-container">
+  <div>支持一根棒棒糖！</div>
+  <button onclick="var qr = document.getElementById('qr'); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+    Donate
+  </button>
+  <div id="qr" style="display: none;">
+      
+      <div style="display: inline-block;">
+        <img src="https://i.loli.net/2020/08/27/Z63uzPfeimEYrD2.png" alt="Sun Yan WeChat Pay">
+        <p>WeChat Pay</p>
+      </div>
+      
+      <div style="display: inline-block;">
+        <img src="https://i.loli.net/2020/08/27/Zz62YJyVH1SRgGj.jpg" alt="Sun Yan Alipay">
+        <p>Alipay</p>
+      </div>
+
+  </div>
+</div>
+
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>Post author:  </strong>Sun Yan
+  </li>
+  <li class="post-copyright-link">
+    <strong>Post link: </strong>
+    <a href="http://sunyancn.github.io/post/48895.html" title="卷积神经网络复习">http://sunyancn.github.io/post/48895.html</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> unless stating additionally.
+  </li>
+</ul>
+</div>
+
+
+      <footer class="post-footer">
+          
+          <div class="post-tags">
+              <a href="/tags/CNN/" rel="tag"><i class="fa fa-tag"></i> CNN</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/post/32742.html" rel="prev" title="目标检测综述">
+      <i class="fa fa-chevron-left"></i> 目标检测综述
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/post/34384.html" rel="next" title="BiliBili 蒙版弹幕">
+      BiliBili 蒙版弹幕 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+    <script type="text/javascript" src="/js/linkcard.js"></script>
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    <div class="comments" id="valine-comments"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8D%B7%E7%A7%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C"><span class="nav-number">1.</span> <span class="nav-text">卷积神经网络</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8D%B7%E7%A7%AF%E5%B1%82"><span class="nav-number">2.</span> <span class="nav-text">卷积层</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B1%A0%E5%8C%96%E5%B1%82"><span class="nav-number">3.</span> <span class="nav-text">池化层</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%A8%E8%BF%9E%E6%8E%A5%E5%B1%82"><span class="nav-number">4.</span> <span class="nav-text">全连接层</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#LeNet"><span class="nav-number">5.</span> <span class="nav-text">LeNet</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AC%AC%E4%B8%80%E5%B1%82%EF%BC%8C%E5%8D%B7%E7%A7%AF%E5%B1%82"><span class="nav-number">5.1.</span> <span class="nav-text">第一层，卷积层</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AC%AC%E4%BA%8C%E5%B1%82%EF%BC%8C%E6%B1%A0%E5%8C%96%E5%B1%82"><span class="nav-number">5.2.</span> <span class="nav-text">第二层，池化层</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AC%AC%E4%B8%89%E5%B1%82%EF%BC%8C%E5%8D%B7%E7%A7%AF%E5%B1%82"><span class="nav-number">5.3.</span> <span class="nav-text">第三层，卷积层</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AC%AC%E5%9B%9B%E5%B1%82%EF%BC%8C%E6%B1%A0%E5%8C%96%E5%B1%82"><span class="nav-number">5.4.</span> <span class="nav-text">第四层，池化层</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AC%AC%E4%BA%94%E5%B1%82%EF%BC%8C%E5%85%A8%E8%BF%9E%E6%8E%A5%E5%B1%82"><span class="nav-number">5.5.</span> <span class="nav-text">第五层，全连接层</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AC%AC%E5%85%AD%E5%B1%82%EF%BC%8C%E5%85%A8%E8%BF%9E%E6%8E%A5%E5%B1%82"><span class="nav-number">5.6.</span> <span class="nav-text">第六层，全连接层</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AC%AC%E4%B8%83%E5%B1%82%EF%BC%8C%E5%85%A8%E8%BF%9E%E6%8E%A5%E5%B1%82"><span class="nav-number">5.7.</span> <span class="nav-text">第七层，全连接层</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80%E4%BA%9B%E6%9C%89%E7%94%A8%E7%9A%84%E4%BB%A3%E7%A0%81"><span class="nav-number">6.</span> <span class="nav-text">一些有用的代码</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9C%A8NoteBook%E9%87%8C%E9%9D%A2%E6%98%BE%E7%A4%BA%E8%AE%AD%E7%BB%83%E7%94%A8%E5%88%B0%E7%9A%84%E5%9B%BE%E7%89%87"><span class="nav-number">6.1.</span> <span class="nav-text">在 NoteBook 里面显示训练用到的图片</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Keras%E5%9B%BE%E5%83%8F%E5%A2%9E%E5%BC%BA"><span class="nav-number">6.2.</span> <span class="nav-text">Keras 图像增强</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%AF%E8%A7%86%E5%8C%96%E4%B8%AD%E9%97%B4%E5%B1%82"><span class="nav-number">6.3.</span> <span class="nav-text">可视化中间层</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Loss%E5%92%8CAcc%E5%8F%AF%E8%A7%86%E5%8C%96"><span class="nav-number">6.4.</span> <span class="nav-text">Loss 和 Acc 可视化</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Reference"><span class="nav-number">7.</span> <span class="nav-text">Reference</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Sun Yan"
+      src="https://i.loli.net/2020/08/25/NrIpckD9qPLY38C.jpg">
+  <p class="site-author-name" itemprop="name">Sun Yan</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">115</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">17</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">79</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/sunyancn" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;sunyancn" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:sunyanhust@163.com" title="E-Mail → mailto:sunyanhust@163.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/atom.xml" title="RSS → &#x2F;atom.xml"><i class="fas fa-rss fa-fw"></i>RSS</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://weibo.com/u/5270232660" title="Weibo → https:&#x2F;&#x2F;weibo.com&#x2F;u&#x2F;5270232660" rel="noopener" target="_blank"><i class="fab fa-weibo fa-fw"></i>Weibo</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 2015 – 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Sun Yan</span>
+</div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script size="300" alpha="0.6" zIndex="-1" src="//cdn.jsdelivr.net/gh/theme-next/theme-next-canvas-ribbon@1/canvas-ribbon.js"></script>
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+<script src="/js/bookmark.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
+
+  
+<div id="needsharebutton-float">
+      <span class="btn">
+        <i class="fa fa-share-alt" aria-hidden="true"></i>
+      </span>
+    </div>
+  <script src="//cdn.jsdelivr.net/gh/theme-next/theme-next-needmoreshare2@1/needsharebutton.min.js"></script>
+  <script>
+      flOptions = {};
+        flOptions.iconStyle = "box";
+        flOptions.boxForm = "horizontal";
+        flOptions.position = "middleRight";
+        flOptions.networks = "Weibo,Wechat,Douban,QQZone,Twitter,Facebook";
+      new needShareButton('#needsharebutton-float', flOptions);
+  </script>
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('https://cdn.jsdelivr.net/gh//AshinWang/SimpleValine/SimpleValine.min.js', () => {
+    var GUEST = ['nick', 'mail', 'link'];
+    var guest = 'nick,mail';
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
+    });
+    new Valine({
+      el         : '#valine-comments',
+      verify     : false,
+      notify     : false,
+      appId      : 'IAIsNxUL4BLqJ2c4nTn8HlLv-gzGzoHsz',
+      appKey     : '73p5IVTPonVrJhOylbVtJffi',
+      placeholder: "(๑•́ ₃ •̀๑) 留言时填写您的邮箱可以邮件收到博主的回复噢~",
+      avatar     : 'wavatar',
+      meta       : guest,
+      pageSize   : '10' || 10,
+      visitor    : false,
+      lang       : '' || 'zh-cn',
+      path       : location.pathname,
+      recordIP   : true,
+      serverURLs : ''
+    });
+  }, window.Valine);
+});
+</script>
+
+</body>
+</html>

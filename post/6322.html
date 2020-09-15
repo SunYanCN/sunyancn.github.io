@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.1.1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Noto Serif SC:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"sunyancn.github.io","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"valine","storage":true,"lazyload":false,"nav":null,"activeClass":"valine"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="Memory Networks论文简介 Memory Networks ，ICLR 2015，Facebook AI Research Answering Reading Comprehension Using Memory Networks，Stanford  (2018 年 12 月 3 日补充：第二篇不是论文，应该是斯坦福写的一个类似教程之类的东西，但是写的太像论文了 (ˇˍˇ)，我都搞混了">
+<meta property="og:type" content="article">
+<meta property="og:title" content="QA 综述">
+<meta property="og:url" content="http://sunyancn.github.io/post/6322.html">
+<meta property="og:site_name" content="故事尾音">
+<meta property="og:description" content="Memory Networks论文简介 Memory Networks ，ICLR 2015，Facebook AI Research Answering Reading Comprehension Using Memory Networks，Stanford  (2018 年 12 月 3 日补充：第二篇不是论文，应该是斯坦福写的一个类似教程之类的东西，但是写的太像论文了 (ˇˍˇ)，我都搞混了">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://i.loli.net/2018/12/03/5c050e6481611.png">
+<meta property="og:image" content="https://i.loli.net/2018/12/03/5c05183c3962f.png">
+<meta property="og:image" content="https://i.loli.net/2018/12/03/5c051a6d2d277.png">
+<meta property="og:image" content="https://i.loli.net/2018/12/03/5c052a23169f2.png">
+<meta property="og:image" content="https://i.loli.net/2018/12/03/5c051dd1571df.png">
+<meta property="og:image" content="https://i.loli.net/2018/12/03/5c0531196f1d0.png">
+<meta property="article:published_time" content="2018-12-03T13:11:30.000Z">
+<meta property="article:modified_time" content="2020-08-26T17:27:02.095Z">
+<meta property="article:author" content="Sun Yan">
+<meta property="article:tag" content="NLP">
+<meta property="article:tag" content="QA">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.loli.net/2018/12/03/5c050e6481611.png">
+
+<link rel="canonical" href="http://sunyancn.github.io/post/6322.html">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+<script src="/lib/fireworks.js"></script><link rel="stylesheet" href="//cdn.jsdelivr.net/gh/theme-next/theme-next-needmoreshare2@1/needsharebutton.min.css"><style>
+#needsharebutton-float {
+  bottom: 88px;
+  cursor: pointer;
+  left: -8px;
+  position: fixed;
+  z-index: 9999;
+}
+#needsharebutton-float .btn {
+  border: 1px solid $btn-default-border-color;
+  border-radius: 4px;
+  padding: 0 10px 0 14px;
+}
+</style>
+  <title>QA 综述 | 故事尾音</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="故事尾音" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">故事尾音</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">喜欢推导也喜欢被推倒</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+        <li class="menu-item menu-item-image">
+
+    <a href="/image/" rel="section"><i class="fa fa-image fa-fw"></i>image</a>
+
+  </li>
+        <li class="menu-item menu-item-music">
+
+    <a href="/music/" rel="section"><i class="fa fa-music fa-fw"></i>music</a>
+
+  </li>
+        <li class="menu-item menu-item-shuoshuo">
+
+    <a href="/shuoshuo/" rel="section"><i class="fa fa-heartbeat fa-fw"></i>shuoshuo</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://sunyancn.github.io/post/6322.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://i.loli.net/2020/08/25/NrIpckD9qPLY38C.jpg">
+      <meta itemprop="name" content="Sun Yan">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="故事尾音">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          QA 综述
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2018-12-03 21:11:30" itemprop="dateCreated datePublished" datetime="2018-12-03T21:11:30+08:00">2018-12-03</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-08-27 01:27:02" itemprop="dateModified" datetime="2020-08-27T01:27:02+08:00">2020-08-27</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E9%A1%B9%E7%9B%AE/" itemprop="url" rel="index"><span itemprop="name">项目</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine: </span>
+    
+    <a title="valine" href="/post/6322.html#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/post/6322.html" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <html><head></head><body><h2 id="Memory-Networks" class="heading-control"><a href="#Memory-Networks" class="headerlink" title="Memory Networks"></a>Memory Networks<a class="heading-anchor" href="#Memory-Networks" aria-hidden="true"></a></h2><h3 id="论文简介" class="heading-control"><a href="#论文简介" class="headerlink" title="论文简介"></a>论文简介<a class="heading-anchor" href="#论文简介" aria-hidden="true"></a></h3><ol>
+<li><a target="_blank" rel="noopener" href="http://arxiv.org/pdf/1410.3916v11.pdf">Memory Networks</a> ，<strong>ICLR 2015</strong>，Facebook AI Research</li>
+<li><a target="_blank" rel="noopener" href="http://cs224d.stanford.edu/reports/KapashiDarshan.pdf">Answering Reading Comprehension Using Memory Networks</a>，Stanford</li>
+</ol>
+<p>(2018 年 12 月 3 日补充：第二篇不是论文，应该是斯坦福写的一个类似教程之类的东西，但是写的太像论文了 (ˇˍˇ)，我都搞混了 )</p>
+<p>看名字就知道第一篇是原论文，第二篇是第一篇的实现。（这里必须吐槽一下，第一篇论文一个图都没有，让我这种看论文先看图的人瞬间丧失好感。第二篇就人性化的多，简单的一个模型架构图就能瞬间让人领悟许多。）</p>
+<ul>
+<li><strong>起因</strong>：作者认为 RNN、Attention 机制把很长的语句编码为定长向量 (Context Vector) 作为模型的记忆，会带来很大的信息压缩损失</li>
+<li><strong>想法</strong>:   既然是因为向量太小带来的问题，那就直接加一个外部记忆模块，称之为 Memory</li>
+<li><strong> 评价</strong>：开山之作，但是模型比较简单，也没有特别具体的说明。</li>
+</ul>
+<p>在第二篇论文里面的引言部分有一些比较精辟的话，我也摘录出来，不妨作为 NLP 的部分真理以供参考。</p>
+<ol>
+<li>QA 是最容易评估 AI 的标准。(这个容易理解，图灵测试不就是这样吗？)</li>
+<li>AI 要想很好的完成 QA 任务，要在两个方面得到提高：检索和推理。</li>
+<li>单纯的记忆是不够的，他们需要一些知识去检索。(人不也经常使用浏览器吗？)</li>
+</ol>
+<a id="more"></a>
+<h3 id="具体实现" class="heading-control"><a href="#具体实现" class="headerlink" title="具体实现"></a>具体实现<a class="heading-anchor" href="#具体实现" aria-hidden="true"></a></h3><p>看下面这个图就很清楚，这个模型主要包括五个部分：Memory 单元和 I、G、O、R。</p>
+<ul>
+<li>Input 模块：输入的文本经过 Input 模块编码成特征向量 (各种方式都可以，最简单就是 wordvec)。</li>
+<li>Generalization 模块：根据特征向量对 Memory 单元进行读写操作，即更新记忆。</li>
+<li>Output 模块：根据 Question（也会进过 Input 模块进行编码）对 Memory 单元进行组合（比如加权），得到编码的输出向量</li>
+<li> Response 模块：根据输出向量编码生成一个自然语言的答案出来。</li>
+</ul>
+<p><img src="https://i.loli.net/2018/12/03/5c050e6481611.png" alt></p>
+<p>举个例子。假设有下面一段文字，针对文字可以提出几个问题，然后让模型去回答：</p>
+<p><img src="https://i.loli.net/2018/12/03/5c05183c3962f.png" alt></p>
+<p>这里我们首先使用 Input 模块对文档进行编码，Generalization 模块存储编码结果，然后使用 Input 对问题 where is the milk now？进行编码，Output 模块根据问题编码后的向量从 Memory 单元中选出最相关的一句话：Joe left the milk，然后再对剩下的记忆进行评分，找出与 where is the milk now？和 Joe left the milk 最相关的 memory。我们发现是 Joe travelled to the office。这样我们就找到了最相关的记忆，接下来使用 R 模块对所有的单词进行评分找到得分最高的单词作为答案即可。</p>
+<h3 id="代码复现" class="heading-control"><a href="#代码复现" class="headerlink" title="代码复现"></a>代码复现<a class="heading-anchor" href="#代码复现" aria-hidden="true"></a></h3><ol>
+<li><a target="_blank" rel="noopener" href="https://github.com/pararthshah/qa-memnn/blob/master/memnn_theano_v3.py">Theano 版本的代码</a></li>
+</ol>
+<h2 id="End-To-End-Memory-Networks" class="heading-control"><a href="#End-To-End-Memory-Networks" class="headerlink" title="End-To-End Memory Networks"></a>End-To-End Memory Networks<a class="heading-anchor" href="#End-To-End-Memory-Networks" aria-hidden="true"></a></h2><h3 id="论文简介-1" class="heading-control"><a href="#论文简介-1" class="headerlink" title="论文简介"></a>论文简介<a class="heading-anchor" href="#论文简介-1" aria-hidden="true"></a></h3><ul>
+<li><a target="_blank" rel="noopener" href="https://arxiv.org/pdf/1503.08895v5.pdf">End-To-End Memory Networks</a>，Facebook AI Research</li>
+</ul>
+<p>这是 Facebook AI 在 Memory networks 后的续作。上文记忆网络介绍模型并非端到端的 QA 训练，该论文 End-To-End Memory Networks 就在上文的基础上进行端到端的模型构建，减少生成答案时需要事实依据的监督项，在实际应用中应用意义更大。</p>
+<p><strong>End to end</strong>：一端输入我的原始数据，一端输出我想得到的结果。只关心输入和输出，中间的步骤全部都不管。</p>
+<h3 id="具体实现-1" class="heading-control"><a href="#具体实现-1" class="headerlink" title="具体实现"></a>具体实现<a class="heading-anchor" href="#具体实现-1" aria-hidden="true"></a></h3><p><img src="https://i.loli.net/2018/12/03/5c051a6d2d277.png" alt></p>
+<p>这一篇文章提到一个更加具体但是复杂一点的模型如上图所示。</p>
+<p>模型主要的参数包括 A,B,C,W 四个矩阵，其中 A,B,C 三个矩阵就是 embedding 矩阵，主要是将输入文本和 Question 编码成词向量，W 是最终的输出矩阵。从上图可以看出，对于输入的句子 s 分别会使用 A 和 C 进行编码得到 Input 和 Output 的记忆模块，Input 用来跟 Question 编码得到的向量相乘得到每句话跟 q 的相关性，Output 则与该相关性进行加权求和得到输出向量。然后再加上 q 并传入最终的输出层。</p>
+<h4 id="输入输出模块" class="heading-control"><a href="#输入输出模块" class="headerlink" title="输入输出模块"></a>输入输出模块<a class="heading-anchor" href="#输入输出模块" aria-hidden="true"></a></h4><p>通过把每句话压缩成一个向量对应到 memory 中的一个 slot（上图中的蓝色或者黄色竖条），将输入的文本转化成向量并保存在 memory 中 (通过词向量得到句向量)。论文中提出了两种编码方式，BoW 和位置编码：</p>
+<ul>
+<li>BoW：直接把词向量加起来，会丢失位置关系。</li>
+<li>位置编码：认为不同位置的单词的权重是不一样的，然后对各个单词的词向量按照不同位置权重进行加权求和得到句子表示。</li>
+</ul>
+<p>输入模块把输入文本编码为向量，保存在 Input 和 Output 两个模块中，Input 模块用于跟 Question 相互作用得到各个 memory slot 与问题的相关程度，使用 Output 模块的信息产生输出。</p>
+<ul>
+<li>Input 模块：将 Question 经过输入模块编码成一个向量 u，与 $m<em>{i}$ 维度相同，然后将其与每个 $m</em>{i}$ 点积得到两个向量的相似度，在通过一个 softmax 函数进行归一化得到 $p<em>{i}$，$p</em>{i}$ 就是 q 与 $m_{i}$ 的相关性指标。</li>
+<li>Output 模块：对其中各个记忆 ci 按照 pi 进行加权求和即可得到模型的输出向量 o。</li>
+</ul>
+<h4 id="Response模块" class="heading-control"><a href="#Response模块" class="headerlink" title="Response模块"></a>Response 模块<a class="heading-anchor" href="#Response模块" aria-hidden="true"></a></h4><p>Response 模块主要是根据输出向量 o 和问题向量 q 产生最终的答案。其结合 o 和 q 两个向量的和与 W 相乘在经过一个 softmax 函数产生各个单词是答案的概率，值最高的单词就是答案。并且使用交叉熵损失函数最为目标函数进行训练。</p>
+<h4 id="多层模型" class="heading-control"><a href="#多层模型" class="headerlink" title="多层模型"></a>多层模型<a class="heading-anchor" href="#多层模型" aria-hidden="true"></a></h4><p>将多个单层模型进行 stack 在一块，结构图如下所示：</p>
+<p><img src="https://i.loli.net/2018/12/03/5c052a23169f2.png" alt></p>
+<p>上面几层的输入就是下层 o 和 u 的和。至于各层的参数选择，论文中提出了两种方法（主要是为了减少参数量，如果每层参数都不同的话会导致参数很多难以训练）。</p>
+<ul>
+<li><strong>Adjacent</strong>：这种方法让相邻层之间的 A=C。也就是说 $A {k}+1=C_{k}$，此外 W 等于顶层的 C，B 等于底层的 A，这样就减少了一半的参数量。</li>
+<li><strong>Layer-wise（RNN-like)</strong>：与 RNN 相似，采用完全共享参数的方法，即各层之间参数均相等。由于这样会大大的减少参数量导致模型效果变差，所以提出一种改进方法，即令 $u<em>{k+1}=u</em>{k}+o_{k}$，也就是在每一层之间加一个线性映射矩阵 H。</li>
+</ul>
+<h4 id="论文公式" class="heading-control"><a href="#论文公式" class="headerlink" title="论文公式"></a>论文公式<a class="heading-anchor" href="#论文公式" aria-hidden="true"></a></h4><p>具体的公式如下：</p>
+<p><img src="https://i.loli.net/2018/12/03/5c051dd1571df.png" alt></p>
+<h3 id="代码实现" class="heading-control"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现<a class="heading-anchor" href="#代码实现" aria-hidden="true"></a></h3><ol>
+<li><a target="_blank" rel="noopener" href="https://github.com/domluna/memn2n">End-To-End Memory Network using Tensorflow</a></li>
+</ol>
+<h2 id="Dynamic-Memory-Networks" class="heading-control"><a href="#Dynamic-Memory-Networks" class="headerlink" title="Dynamic Memory Networks"></a>Dynamic Memory Networks<a class="heading-anchor" href="#Dynamic-Memory-Networks" aria-hidden="true"></a></h2><h3 id="论文简介-2" class="heading-control"><a href="#论文简介-2" class="headerlink" title="论文简介"></a>论文简介<a class="heading-anchor" href="#论文简介-2" aria-hidden="true"></a></h3><ul>
+<li><a target="_blank" rel="noopener" href="https://arxiv.org/pdf/1506.07285v3.pdf">Ask Me Anything: Dynamic Memory Networks for Natural Language Processing</a></li>
+</ul>
+<p>论文中说 NLP 中很多任务都可以归结为 QA 问题，所以本文的 DMN 模型以 QA 为基础进行训练，但是可以扩展到很多别的任务中，包括序列标注、分类、翻译等等。</p>
+<h3 id="具体实现-2" class="heading-control"><a href="#具体实现-2" class="headerlink" title="具体实现"></a>具体实现<a class="heading-anchor" href="#具体实现-2" aria-hidden="true"></a></h3><p><img src="https://i.loli.net/2018/12/03/5c0531196f1d0.png" alt></p>
+</body></html>
+    </div>
+
+    
+    
+    
+      
+  <div class="popular-posts-header">相关文章推荐</div>
+  <ul class="popular-posts">
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\post\50119.html" rel="bookmark">Attention,BiLSTM 以及 Transform</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\post\38864.html" rel="bookmark">HMM,MEMM 和 CRF</a></div>
+    </li>
+  </ul>
+
+        <div class="reward-container">
+  <div>支持一根棒棒糖！</div>
+  <button onclick="var qr = document.getElementById('qr'); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+    Donate
+  </button>
+  <div id="qr" style="display: none;">
+      
+      <div style="display: inline-block;">
+        <img src="https://i.loli.net/2020/08/27/Z63uzPfeimEYrD2.png" alt="Sun Yan WeChat Pay">
+        <p>WeChat Pay</p>
+      </div>
+      
+      <div style="display: inline-block;">
+        <img src="https://i.loli.net/2020/08/27/Zz62YJyVH1SRgGj.jpg" alt="Sun Yan Alipay">
+        <p>Alipay</p>
+      </div>
+
+  </div>
+</div>
+
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>Post author:  </strong>Sun Yan
+  </li>
+  <li class="post-copyright-link">
+    <strong>Post link: </strong>
+    <a href="http://sunyancn.github.io/post/6322.html" title="QA 综述">http://sunyancn.github.io/post/6322.html</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> unless stating additionally.
+  </li>
+</ul>
+</div>
+
+
+      <footer class="post-footer">
+          
+          <div class="post-tags">
+              <a href="/tags/NLP/" rel="tag"><i class="fa fa-tag"></i> NLP</a>
+              <a href="/tags/QA/" rel="tag"><i class="fa fa-tag"></i> QA</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/post/20925.html" rel="prev" title="Docker 入手">
+      <i class="fa fa-chevron-left"></i> Docker 入手
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/post/61903.html" rel="next" title="ULMFiT 进行文本分类">
+      ULMFiT 进行文本分类 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+    <script type="text/javascript" src="/js/linkcard.js"></script>
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    <div class="comments" id="valine-comments"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Memory-Networks"><span class="nav-number">1.</span> <span class="nav-text">Memory Networks</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AE%BA%E6%96%87%E7%AE%80%E4%BB%8B"><span class="nav-number">1.1.</span> <span class="nav-text">论文简介</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%B7%E4%BD%93%E5%AE%9E%E7%8E%B0"><span class="nav-number">1.2.</span> <span class="nav-text">具体实现</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%A3%E7%A0%81%E5%A4%8D%E7%8E%B0"><span class="nav-number">1.3.</span> <span class="nav-text">代码复现</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#End-To-End-Memory-Networks"><span class="nav-number">2.</span> <span class="nav-text">End-To-End Memory Networks</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AE%BA%E6%96%87%E7%AE%80%E4%BB%8B-1"><span class="nav-number">2.1.</span> <span class="nav-text">论文简介</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%B7%E4%BD%93%E5%AE%9E%E7%8E%B0-1"><span class="nav-number">2.2.</span> <span class="nav-text">具体实现</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA%E6%A8%A1%E5%9D%97"><span class="nav-number">2.2.1.</span> <span class="nav-text">输入输出模块</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Response%E6%A8%A1%E5%9D%97"><span class="nav-number">2.2.2.</span> <span class="nav-text">Response 模块</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%A4%9A%E5%B1%82%E6%A8%A1%E5%9E%8B"><span class="nav-number">2.2.3.</span> <span class="nav-text">多层模型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%AE%BA%E6%96%87%E5%85%AC%E5%BC%8F"><span class="nav-number">2.2.4.</span> <span class="nav-text">论文公式</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0"><span class="nav-number">2.3.</span> <span class="nav-text">代码实现</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Dynamic-Memory-Networks"><span class="nav-number">3.</span> <span class="nav-text">Dynamic Memory Networks</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AE%BA%E6%96%87%E7%AE%80%E4%BB%8B-2"><span class="nav-number">3.1.</span> <span class="nav-text">论文简介</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%B7%E4%BD%93%E5%AE%9E%E7%8E%B0-2"><span class="nav-number">3.2.</span> <span class="nav-text">具体实现</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Sun Yan"
+      src="https://i.loli.net/2020/08/25/NrIpckD9qPLY38C.jpg">
+  <p class="site-author-name" itemprop="name">Sun Yan</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">115</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">17</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">79</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/sunyancn" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;sunyancn" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:sunyanhust@163.com" title="E-Mail → mailto:sunyanhust@163.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/atom.xml" title="RSS → &#x2F;atom.xml"><i class="fas fa-rss fa-fw"></i>RSS</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://weibo.com/u/5270232660" title="Weibo → https:&#x2F;&#x2F;weibo.com&#x2F;u&#x2F;5270232660" rel="noopener" target="_blank"><i class="fab fa-weibo fa-fw"></i>Weibo</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 2015 – 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Sun Yan</span>
+</div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script size="300" alpha="0.6" zIndex="-1" src="//cdn.jsdelivr.net/gh/theme-next/theme-next-canvas-ribbon@1/canvas-ribbon.js"></script>
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+<script src="/js/bookmark.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
+
+  
+<div id="needsharebutton-float">
+      <span class="btn">
+        <i class="fa fa-share-alt" aria-hidden="true"></i>
+      </span>
+    </div>
+  <script src="//cdn.jsdelivr.net/gh/theme-next/theme-next-needmoreshare2@1/needsharebutton.min.js"></script>
+  <script>
+      flOptions = {};
+        flOptions.iconStyle = "box";
+        flOptions.boxForm = "horizontal";
+        flOptions.position = "middleRight";
+        flOptions.networks = "Weibo,Wechat,Douban,QQZone,Twitter,Facebook";
+      new needShareButton('#needsharebutton-float', flOptions);
+  </script>
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('https://cdn.jsdelivr.net/gh//AshinWang/SimpleValine/SimpleValine.min.js', () => {
+    var GUEST = ['nick', 'mail', 'link'];
+    var guest = 'nick,mail';
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
+    });
+    new Valine({
+      el         : '#valine-comments',
+      verify     : false,
+      notify     : false,
+      appId      : 'IAIsNxUL4BLqJ2c4nTn8HlLv-gzGzoHsz',
+      appKey     : '73p5IVTPonVrJhOylbVtJffi',
+      placeholder: "(๑•́ ₃ •̀๑) 留言时填写您的邮箱可以邮件收到博主的回复噢~",
+      avatar     : 'wavatar',
+      meta       : guest,
+      pageSize   : '10' || 10,
+      visitor    : false,
+      lang       : '' || 'zh-cn',
+      path       : location.pathname,
+      recordIP   : true,
+      serverURLs : ''
+    });
+  }, window.Valine);
+});
+</script>
+
+</body>
+</html>

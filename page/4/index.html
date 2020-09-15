@@ -40,7 +40,7 @@
     lang   : 'en'
   };
 </script>
-<link rel="stylesheet" href="//cdn.jsdelivr.net/gh/theme-next/theme-next-needmoreshare2@1/needsharebutton.min.css"><style>
+<script src="/lib/fireworks.js"></script><link rel="stylesheet" href="//cdn.jsdelivr.net/gh/theme-next/theme-next-needmoreshare2@1/needsharebutton.min.css"><style>
 #needsharebutton-float {
   bottom: 88px;
   cursor: pointer;
@@ -53,7 +53,7 @@
   border-radius: 4px;
   padding: 0 10px 0 14px;
 }
-</style><script src="/lib/fireworks.js"></script>
+</style>
   <title>故事尾音</title>
   
 
@@ -129,11 +129,6 @@
     <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
 
   </li>
-        <li class="menu-item menu-item-about">
-
-    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a>
-
-  </li>
         <li class="menu-item menu-item-tags">
 
     <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a>
@@ -149,6 +144,11 @@
     <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
 
   </li>
+        <li class="menu-item menu-item-image">
+
+    <a href="/image/" rel="section"><i class="fa fa-image fa-fw"></i>image</a>
+
+  </li>
         <li class="menu-item menu-item-music">
 
     <a href="/music/" rel="section"><i class="fa fa-music fa-fw"></i>music</a>
@@ -157,6 +157,11 @@
         <li class="menu-item menu-item-shuoshuo">
 
     <a href="/shuoshuo/" rel="section"><i class="fa fa-heartbeat fa-fw"></i>shuoshuo</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a>
 
   </li>
       <li class="menu-item menu-item-search">
@@ -214,7 +219,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://sunyancn.github.io/2019/09/24/CS231N%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
+    <link itemprop="mainEntityOfPage" href="http://sunyancn.github.io/post/48347.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="https://i.loli.net/2020/08/25/NrIpckD9qPLY38C.jpg">
@@ -228,7 +233,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2019/09/24/CS231N%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="post-title-link" itemprop="url">CS231N 学习笔记</a>
+            <a href="/post/48347.html" class="post-title-link" itemprop="url">nohup 详解</a>
         </h2>
 
         <div class="post-meta">
@@ -238,7 +243,449 @@
               </span>
               <span class="post-meta-item-text">Posted on</span>
 
-              <time title="Created: 2019-09-24 10:39:11" itemprop="dateCreated datePublished" datetime="2019-09-24T10:39:11+08:00">2019-09-24</time>
+              <time title="Created: 2019-11-02 14:13:49" itemprop="dateCreated datePublished" datetime="2019-11-02T14:13:49+08:00">2019-11-02</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-08-27 01:27:02" itemprop="dateModified" datetime="2020-08-27T01:27:02+08:00">2020-08-27</time>
+              </span>
+
+          
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <html><head></head><body><p>功能：使程序在后台运行，当连接服务器终端时，程序还在运行</p>
+<h3 id="后台运行的命令" class="heading-control"><a href="#后台运行的命令" class="headerlink" title="后台运行的命令"></a>后台运行的命令<a class="heading-anchor" href="#后台运行的命令" aria-hidden="true"></a></h3><figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">nohup python 文件名.py &</span><br><span class="line"><span class="comment"># 会出现一个进程后，记住这是该程序的进程号，</span></span><br><span class="line"><span class="comment"># 后期如果想要停止，可以使用该命令：kill -9 进程号</span></span><br></pre></td></tr></tbody></table></figure>
+<h3 id="查看后台运行的进程" class="heading-control"><a href="#查看后台运行的进程" class="headerlink" title="查看后台运行的进程"></a>查看后台运行的进程<a class="heading-anchor" href="#查看后台运行的进程" aria-hidden="true"></a></h3><figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 如果发现没记nohup运行的进程，可以使用以下的命令来查看进程号</span></span><br><span class="line"><span class="number">1.</span> jobs -l <span class="comment"># 查看后台运行的进程，如果后台运行的进程很多，可以使用下面的命令</span></span><br><span class="line"><span class="number">2.</span> ps aux | grep nohup 查看nohup 的进程，然后使用 kill <span class="number">-9</span> 进程号杀死该进程</span><br></pre></td></tr></tbody></table></figure>
+<h3 id="nohup的输出重定向问题" class="heading-control"><a href="#nohup的输出重定向问题" class="headerlink" title="nohup的输出重定向问题"></a>nohup 的输出重定向问题<a class="heading-anchor" href="#nohup的输出重定向问题" aria-hidden="true"></a></h3><p>如果后台同时运行多个程序，它们的输出全都在 nohup.out 中，阅读起来很不方便。可通过重定向到不同文件中来解决这个问题；也可以通过在不同的文件下，运行 nohup 来避免这种情况。<br>linux 启动后，会默认打开 3 个文件描述符，0 表示标准输入，1 表示正确输出，2 表示错误输出。<br></p><figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">nohup python 文件名.py <span class="number">1</span>>result.out <span class="number">2</span>>result.out & </span><br><span class="line"><span class="comment"># 将正确输出和错误输出均写入result.out文件</span></span><br></pre></td></tr></tbody></table></figure><p></p>
+<h3 id="查看运行输出" class="heading-control"><a href="#查看运行输出" class="headerlink" title="查看运行输出"></a>查看运行输出<a class="heading-anchor" href="#查看运行输出" aria-hidden="true"></a></h3><figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#实时查看</span></span><br><span class="line">tailf result.out</span><br><span class="line"><span class="comment">#查看几行</span></span><br><span class="line">head <span class="number">10</span> result.out <span class="comment">#查看文件的前面10行</span></span><br><span class="line">tail <span class="number">10</span> result.out <span class="comment"># 查看文件的后面10行</span></span><br></pre></td></tr></tbody></table></figure></body></html>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+    <script type="text/javascript" src="/js/linkcard.js"></script>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://sunyancn.github.io/post/61076.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://i.loli.net/2020/08/25/NrIpckD9qPLY38C.jpg">
+      <meta itemprop="name" content="Sun Yan">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="故事尾音">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/post/61076.html" class="post-title-link" itemprop="url">Tqdm 实时显示 Loss 和 Acc</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2019-11-02 14:12:26" itemprop="dateCreated datePublished" datetime="2019-11-02T14:12:26+08:00">2019-11-02</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-08-27 01:27:02" itemprop="dateModified" datetime="2020-08-27T01:27:02+08:00">2020-08-27</time>
+              </span>
+
+          
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <html><head></head><body><h3 id="代码示例" class="heading-control"><a href="#代码示例" class="headerlink" title="代码示例"></a>代码示例<a class="heading-anchor" href="#代码示例" aria-hidden="true"></a></h3><figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> random <span class="keyword">import</span> random</span><br><span class="line"><span class="keyword">from</span> time <span class="keyword">import</span> sleep</span><br><span class="line"><span class="keyword">from</span> tqdm <span class="keyword">import</span> tqdm</span><br><span class="line"></span><br><span class="line">epochs = <span class="number">2</span></span><br><span class="line">train_data_num = <span class="number">10</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(epochs):</span><br><span class="line">    <span class="keyword">with</span> tqdm(total=train_data_num) <span class="keyword">as</span> t:</span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> range(<span class="number">10</span>):</span><br><span class="line">            <span class="comment"># Description will be displayed on the left</span></span><br><span class="line">            t.set_description(<span class="string">'Epoch %i'</span> % i)</span><br><span class="line">            <span class="comment"># Postfix will be displayed on the right,</span></span><br><span class="line">            <span class="comment"># formatted automatically based on argument's datatype</span></span><br><span class="line">            t.set_postfix(loss=random(),acc=random())</span><br><span class="line">            sleep(<span class="number">0.1</span>)</span><br><span class="line">            t.update(<span class="number">1</span>)</span><br></pre></td></tr></tbody></table></figure>
+<p>输出结果：<br></p><figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Epoch <span class="number">0</span>: <span class="number">100</span>%|██████████| <span class="number">10</span>/<span class="number">10</span> [<span class="number">00</span>:<span class="number">01</span><<span class="number">00</span>:<span class="number">00</span>,  <span class="number">9.94</span>it/s, acc=<span class="number">0.0863</span>, loss=<span class="number">0.999</span>]</span><br><span class="line">Epoch <span class="number">1</span>: <span class="number">100</span>%|██████████| <span class="number">10</span>/<span class="number">10</span> [<span class="number">00</span>:<span class="number">01</span><<span class="number">00</span>:<span class="number">00</span>,  <span class="number">9.93</span>it/s, acc=<span class="number">0.459</span>, loss=<span class="number">0.921</span>]</span><br></pre></td></tr></tbody></table></figure><p></p>
+</body></html>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+    <script type="text/javascript" src="/js/linkcard.js"></script>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://sunyancn.github.io/post/65507.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://i.loli.net/2020/08/25/NrIpckD9qPLY38C.jpg">
+      <meta itemprop="name" content="Sun Yan">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="故事尾音">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/post/65507.html" class="post-title-link" itemprop="url">如何配置深度学习系统</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2019-11-02 14:10:35" itemprop="dateCreated datePublished" datetime="2019-11-02T14:10:35+08:00">2019-11-02</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-08-27 01:27:02" itemprop="dateModified" datetime="2020-08-27T01:27:02+08:00">2020-08-27</time>
+              </span>
+
+          
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="Anacodna相关操作"><a href="#Anacodna相关操作" class="headerlink" title="Anacodna相关操作"></a>Anacodna 相关操作</h2><h3 id="下载安装以及切换镜像"><a href="#下载安装以及切换镜像" class="headerlink" title="下载安装以及切换镜像"></a>下载安装以及切换镜像</h3><figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#下载和安装anaconda</span></span><br><span class="line">wget https://mirrors.tuna.tsinghua.edu.cn/anaconda/archive/Anaconda3<span class="number">-5.2</span><span class="number">.0</span>-Linux-x86_64.sh</span><br><span class="line">bash Anaconda3<span class="number">-5.2</span><span class="number">.0</span>-Linux-x86_64.sh</span><br><span class="line"></span><br><span class="line"><span class="comment">#切换到清华源,加快下载速度</span></span><br><span class="line">wget https://tuna.moe/oh-my-tuna/oh-my-tuna.py</span><br><span class="line">python oh-my-tuna.py</span><br></pre></td></tr></tbody></table></figure>
+<p>conda 环境创建、退出和移除<br></p><figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">conda create --name py36 python=<span class="number">3.6</span> <span class="comment">#创建环境</span></span><br><span class="line">conda activate py36 <span class="comment">#激活环境</span></span><br><span class="line">conda deactivate py36 <span class="comment">#退出环境</span></span><br><span class="line">conda remove --name py36 --all <span class="comment">#删除环境</span></span><br><span class="line">conda info -e <span class="comment">#查看系统中的所有环境</span></span><br></pre></td></tr></tbody></table></figure><br>conda查找包的所有版本<br><figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda search tensorflow</span><br></pre></td></tr></tbody></table></figure><br>conda瘦身<br><figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">conda clean -p      //删除没有用的包</span><br><span class="line">conda clean -t      //清理tar</span><br></pre></td></tr></tbody></table></figure><p></p>
+<h2 id="查看系统内存和进程"><a href="#查看系统内存和进程" class="headerlink" title="查看系统内存和进程"></a>查看系统内存和进程</h2><figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#安装系统查看器</span></span><br><span class="line">pip install glances</span><br></pre></td></tr></tbody></table></figure>
+<p>运行 <code>glances</code> 查看系统状态<br><img src="https://s2.ax1x.com/2019/10/26/K02cEn.png" alt="K02cEn.png"><br>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/post/65507.html#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+    <script type="text/javascript" src="/js/linkcard.js"></script>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://sunyancn.github.io/post/5681.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://i.loli.net/2020/08/25/NrIpckD9qPLY38C.jpg">
+      <meta itemprop="name" content="Sun Yan">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="故事尾音">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/post/5681.html" class="post-title-link" itemprop="url">基于文档的限定领域对话式问答系统设计说明</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2019-10-15 20:00:41" itemprop="dateCreated datePublished" datetime="2019-10-15T20:00:41+08:00">2019-10-15</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-08-27 01:27:02" itemprop="dateModified" datetime="2020-08-27T01:27:02+08:00">2020-08-27</time>
+              </span>
+
+          
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <html><head></head><body><h2 id="引言" class="heading-control"><a href="#引言" class="headerlink" title="引言"></a>引言<a class="heading-anchor" href="#引言" aria-hidden="true"></a></h2><h3 id="编写目的" class="heading-control"><a href="#编写目的" class="headerlink" title="编写目的"></a>编写目的<a class="heading-anchor" href="#编写目的" aria-hidden="true"></a></h3><p>为了从整体上描述基于文档的限定领域对话式问答系统要实现的功能，使用户能够对本系统有一个全面正确的认识，同时给程序开发者一个关于系统的使用，系统的功能模块，以及系统的各种技术解决方案一个详细的说明。</p>
+<h3 id="背景" class="heading-control"><a href="#背景" class="headerlink" title="背景"></a>背景<a class="heading-anchor" href="#背景" aria-hidden="true"></a></h3><p>问答系统 (Question Answering System, QA) 是信息检索系统的一种高级形式，它能用准确、简洁的自然语言回答用户用自然语言提出的问题。其研究兴起的主要原因是人们对快速、准确地获取信息的需求。问答系统是目前人工智能和自然语言处理领域中一个倍受关注并具有广泛发展前景的研究方向。<br>不同的应用需要不同形式的问答系统，其所采用的语料和技术也不尽相同。从涉及的应用领域进行分类，可将问答系统分为限定域问答系统和开放域问答系统。<br>限定域问答系统是指系统所能处理的问题只限定于某个领域或者某个内容范围，比如只限定于医学、化学或者某企业的业务领域等。由于系统要解决的问题限定于某个领域或者范围，因此如果把系统所需要的全部领域知识都按照统一的方式表示成内部的结构化格式，则回答问题时就能比较容易地产生答案。<br><img src="/针对文档的问答系统设计说明/20191017082302115.png" alt><br>开放域问答系统不同于限定域问答系统，这类系统可回答的问题不限定于某个特定领域。在回答开放领域的问题时，需要一定的常识知识或者世界知识并具有语义词典。<br>按支持问答系统产生答案的文档库、知识库，以及实现的技术分类，可分为自然语言的数据库问答系统、对话式问答系统、阅读理解系统、基于常用问题集的问答系统、基于知识库的问答系统，以及基于大规模文档集的问答系统。<br>目前国内的大多数问答系统都是针对开放领域的对话式问答系统，在限定领域特别是基于文档的对话式问答系统很少，且功能均不够完善。本文设计了一种使用最先进的深度学习自然语言技术的基于文档的限定领域对话式问答系统设计说明。基本步骤包括处理文档数据、构造训练数据集、模型训练和优化、模型部署等，使用时输入用户需要查询的问题，系统可以自动匹配与问题最相关的段落，并由模型给出问题的答案。此外模型有完整的日志系统以及在线训练和离线训练模块。</p>
+<h2 id="概要设计" class="heading-control"><a href="#概要设计" class="headerlink" title="概要设计"></a>概要设计<a class="heading-anchor" href="#概要设计" aria-hidden="true"></a></h2><h3 id="系统总体设计" class="heading-control"><a href="#系统总体设计" class="headerlink" title="系统总体设计"></a>系统总体设计<a class="heading-anchor" href="#系统总体设计" aria-hidden="true"></a></h3><p>系统的整体编程语言使用 Python 进行开发，使用的深度学习框架为 TensorFlow。基于机器阅读理解模型的问答流程如下图所示：<br><img src="/针对文档的问答系统设计说明/20191017084213733.png" alt></p>
+<h3 id="系统模块功能" class="heading-control"><a href="#系统模块功能" class="headerlink" title="系统模块功能"></a>系统模块功能<a class="heading-anchor" href="#系统模块功能" aria-hidden="true"></a></h3><h4 id="文档数据识别和处理模块" class="heading-control"><a href="#文档数据识别和处理模块" class="headerlink" title="文档数据识别和处理模块"></a>文档数据识别和处理模块<a class="heading-anchor" href="#文档数据识别和处理模块" aria-hidden="true"></a></h4><p>常见的办公文档多数为 txt 文档，word 文档，excel 表格或者 pdf 文档。针对不同的文档需要设计不同的数据读取方式并进行读取后数据的存储。</p>
+<h4 id="模型训练数据的构建模块" class="heading-control"><a href="#模型训练数据的构建模块" class="headerlink" title="模型训练数据的构建模块"></a>模型训练数据的构建模块<a class="heading-anchor" href="#模型训练数据的构建模块" aria-hidden="true"></a></h4><p>SQuAD 示例：<br>内容：阿波罗计划于 1962 至 1972 年间进行，期间得到了同期的双子座计划（1962 年 - 1966 年）的支持。双子座计划为阿波罗计划成功必需的一些太空旅行技术做了铺垫。阿波罗计划使用土星系列火箭作为运载工具来发射飞船。这些火箭还被用于阿波罗应用计划，包括 1973 年到 1974 年间支持了三个载人飞行任务的空间站 Skylab，以及 1975 年和前苏联合作的联合地球轨道任务阿波罗联盟测试计划。<br>问题：哪一个空间站于 1973 到 1974 年间承载了三项载人飞行任务？<br>答案：Skylab 空间站</p>
+<h4 id="基于深度学习的阅读理解模型" class="heading-control"><a href="#基于深度学习的阅读理解模型" class="headerlink" title="基于深度学习的阅读理解模型"></a>基于深度学习的阅读理解模型<a class="heading-anchor" href="#基于深度学习的阅读理解模型" aria-hidden="true"></a></h4><p>YESNO 问题类型的处理方式<br>在第一阶段使用的是分类的方法，我后来考虑同样的问题可能在不同原文中可能是不同的回答，所以我就把 YESNO 作为原文进行训练。具体做法就是在原文后边拼接 YESNO 字符串，然后将之前的答案索引修改为 YESNO 对应的索引。这样在训练过程中就可以学到答案跟原文之间的关系，而不像之前只关注问题直接得出答案，实验证明这种方法确实能提高成绩，大概提高了 3 个百分点。2. 不能回答的问题的处理方式在 BERT 的源码中，对于不能回答的问题有一套处理方式，就是根据预测结果得出的 nbest 和答案为空的概率进行对比，如果答案为空的概率最高就把空作为答案。我使用与处理 YESNO 问题的方式去试了一下，就是将 NULL 拼接到原文后，将对应的答案索引改为 NULL 的索引，实验效果证明能提升， 但是只能提升百分之零点几，anyway，有点提升就用起来吧。</p>
+<h4 id="模型导出和部署模块" class="heading-control"><a href="#模型导出和部署模块" class="headerlink" title="模型导出和部署模块"></a>模型导出和部署模块<a class="heading-anchor" href="#模型导出和部署模块" aria-hidden="true"></a></h4><h4 id="针对问题段落匹配的信息检索模块" class="heading-control"><a href="#针对问题段落匹配的信息检索模块" class="headerlink" title="针对问题段落匹配的信息检索模块"></a>针对问题段落匹配的信息检索模块<a class="heading-anchor" href="#针对问题段落匹配的信息检索模块" aria-hidden="true"></a></h4></body></html>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+    <script type="text/javascript" src="/js/linkcard.js"></script>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://sunyancn.github.io/post/37942.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://i.loli.net/2020/08/25/NrIpckD9qPLY38C.jpg">
+      <meta itemprop="name" content="Sun Yan">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="故事尾音">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/post/37942.html" class="post-title-link" itemprop="url">cdqa 使用方法</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2019-10-09 16:47:35" itemprop="dateCreated datePublished" datetime="2019-10-09T16:47:35+08:00">2019-10-09</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-08-27 01:27:02" itemprop="dateModified" datetime="2020-08-27T01:27:02+08:00">2020-08-27</time>
+              </span>
+
+          
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>文档：<a target="_blank" rel="noopener" href="https://github.com/cdqa-suite/cdQA">Closed Domain Question Answering</a></p>
+<h2 id="使用CSV文件数据"><a href="#使用CSV文件数据" class="headerlink" title="使用CSV文件数据"></a>使用 CSV 文件数据</h2><figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"><span class="keyword">from</span> ast <span class="keyword">import</span> literal_eval</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> cdqa.utils.filters <span class="keyword">import</span> filter_paragraphs</span><br><span class="line"><span class="keyword">from</span> cdqa.pipeline <span class="keyword">import</span> QAPipeline</span><br><span class="line"></span><br><span class="line"><span class="comment">#Download pre-trained reader model and example dataset</span></span><br><span class="line"><span class="keyword">from</span> cdqa.utils.download <span class="keyword">import</span> download_model, download_bnpp_data</span><br><span class="line">download_bnpp_data(dir=<span class="string">'./data/bnpp_newsroom_v1.1/'</span>)</span><br><span class="line">download_model(model=<span class="string">'bert-squad_1.1'</span>, dir=<span class="string">'./models'</span>)</span><br><span class="line"><span class="comment">#Visualize the dataset</span></span><br><span class="line">df = pd.read_csv(<span class="string">'./data/bnpp_newsroom_v1.1/bnpp_newsroom-v1.1.csv'</span>, converters={<span class="string">'paragraphs'</span>: literal_eval})</span><br><span class="line">df = filter_paragraphs(df)</span><br><span class="line">print(df.head())</span><br><span class="line"><span class="comment">#Instantiate the cdQA pipeline from a pre-trained CPU reader</span></span><br><span class="line">cdqa_pipeline = QAPipeline(reader=<span class="string">'./models/bert_qa_vCPU-sklearn.joblib'</span>)</span><br><span class="line">cdqa_pipeline.fit_retriever(df=df)</span><br><span class="line"><span class="comment">#Execute a query</span></span><br><span class="line">query = <span class="string">'Since when does the Excellence Program of BNP Paribas exist?'</span></span><br><span class="line">prediction = cdqa_pipeline.predict(query)</span><br><span class="line"><span class="comment">#Explore predictions</span></span><br><span class="line">print(<span class="string">'query: {}'</span>.format(query))</span><br><span class="line">print(<span class="string">'answer: {}'</span>.format(prediction[<span class="number">0</span>]))</span><br><span class="line">print(<span class="string">'title: {}'</span>.format(prediction[<span class="number">1</span>]))</span><br><span class="line">print(<span class="string">'paragraph: {}'</span>.format(prediction[<span class="number">2</span>]))</span><br></pre></td></tr></tbody></table></figure>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/post/37942.html#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+    <script type="text/javascript" src="/js/linkcard.js"></script>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://sunyancn.github.io/post/10170.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://i.loli.net/2020/08/25/NrIpckD9qPLY38C.jpg">
+      <meta itemprop="name" content="Sun Yan">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="故事尾音">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/post/10170.html" class="post-title-link" itemprop="url">kashgari 学习</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2019-10-08 20:05:23" itemprop="dateCreated datePublished" datetime="2019-10-08T20:05:23+08:00">2019-10-08</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-08-27 01:27:02" itemprop="dateModified" datetime="2020-08-27T01:27:02+08:00">2020-08-27</time>
+              </span>
+
+          
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="文本分类"><a href="#文本分类" class="headerlink" title="文本分类"></a>文本分类</h2><h3 id="训练和保存模型代码"><a href="#训练和保存模型代码" class="headerlink" title="训练和保存模型代码"></a>训练和保存模型代码</h3><figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> kashgari</span><br><span class="line"><span class="keyword">from</span> kashgari.corpus <span class="keyword">import</span> SMP2018ECDTCorpus</span><br><span class="line"><span class="keyword">from</span> kashgari.tasks.classification <span class="keyword">import</span> BiLSTM_Model</span><br><span class="line"><span class="keyword">from</span> kashgari.embeddings <span class="keyword">import</span> BERTEmbedding</span><br><span class="line"><span class="keyword">from</span> kashgari.callbacks <span class="keyword">import</span> EvalCallBack</span><br><span class="line"><span class="keyword">from</span> tensorflow.python <span class="keyword">import</span> keras</span><br><span class="line"><span class="keyword">from</span> kashgari <span class="keyword">import</span> utils</span><br><span class="line"></span><br><span class="line"><span class="comment"># 有GPU的话</span></span><br><span class="line">kashgari.config.use_cudnn_cell = <span class="literal">True</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 数据集</span></span><br><span class="line">train_x, train_y = SMP2018ECDTCorpus.load_data(<span class="string">'train'</span>)</span><br><span class="line">valid_x, valid_y = SMP2018ECDTCorpus.load_data(<span class="string">'valid'</span>)</span><br><span class="line">test_x, test_y = SMP2018ECDTCorpus.load_data(<span class="string">'test'</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># '&lt;PRE_TRAINED_BERT_MODEL_FOLDER&gt;'：BERT模型路径</span></span><br><span class="line">bert_embed = BERTEmbedding(<span class="string">'/home/new/Toxicity/bert_model/models/chinese_L-12_H-768_A-12'</span>,</span><br><span class="line">                           task=kashgari.CLASSIFICATION,</span><br><span class="line">                           sequence_length=<span class="number">100</span>)</span><br><span class="line"></span><br><span class="line">model = BiLSTM_Model(bert_embed)</span><br><span class="line">tf_board_callback = keras.callbacks.TensorBoard(log_dir=<span class="string">'./logs'</span>, update_freq=<span class="number">1000</span>)</span><br><span class="line"></span><br><span class="line">eval_callback = EvalCallBack(kash_model=model,</span><br><span class="line">                             valid_x=valid_x,</span><br><span class="line">                             valid_y=valid_y,</span><br><span class="line">                             step=<span class="number">5</span>)</span><br><span class="line"></span><br><span class="line">model.fit(train_x,</span><br><span class="line">          train_y,</span><br><span class="line">          valid_x,</span><br><span class="line">          valid_y,</span><br><span class="line">          batch_size=<span class="number">100</span>,</span><br><span class="line">          callbacks=[eval_callback, tf_board_callback])</span><br><span class="line"></span><br><span class="line">model.evaluate(test_x, test_y)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 保存模型到 `saved_classification_model` 目录下</span></span><br><span class="line">model.save(<span class="string">'saved_classification_model'</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 加载保存模型</span></span><br><span class="line">loaded_model = kashgari.utils.load_model(<span class="string">'saved_classification_model'</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 使用模型进行预测</span></span><br><span class="line">loaded_model.predict(test_x[:<span class="number">10</span>])</span><br><span class="line"></span><br><span class="line"><span class="comment"># Save model</span></span><br><span class="line">utils.convert_to_saved_model(model, </span><br><span class="line">                             model_path=<span class="string">'saved_model/blstm'</span>, </span><br><span class="line">                             version=<span class="number">1</span>)</span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/post/10170.html#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+    <script type="text/javascript" src="/js/linkcard.js"></script>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://sunyancn.github.io/post/55675.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://i.loli.net/2020/08/25/NrIpckD9qPLY38C.jpg">
+      <meta itemprop="name" content="Sun Yan">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="故事尾音">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/post/55675.html" class="post-title-link" itemprop="url">2019 面试</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2019-10-02 14:36:52" itemprop="dateCreated datePublished" datetime="2019-10-02T14:36:52+08:00">2019-10-02</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
@@ -261,10 +708,146 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h2 id="CS231N课程描述和资源"><a href="#CS231N课程描述和资源" class="headerlink" title="CS231N课程描述和资源"></a>CS231N 课程描述和资源</h2><p>CS231n 的全称是 CS231n: Convolutional Neural Networks for Visual Recognition，即面向视觉识别的卷积神经网络。该课程是斯坦福大学计算机视觉实验室推出的课程。<br>课程官网：<a target="_blank" rel="noopener" href="http://cs231n.stanford.edu/">http://cs231n.stanford.edu/</a><br>官方笔记：<a target="_blank" rel="noopener" href="http://cs231n.github.io/">http://cs231n.github.io/</a><br>B 站视频：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/av58778425">https://www.bilibili.com/video/av58778425</a><br>课程作业：<a target="_blank" rel="noopener" href="https://github.com/Burton2000/CS231n-2017">https://github.com/Burton2000/CS231n-2017</a></p>
+          <div class="table-container">
+<table>
+<thead>
+<tr>
+<th>面试公司</th>
+<th>投递时间</th>
+<th>投递方式</th>
+<th>面试情况</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>云从科技</td>
+<td> 2019 年 8 月 2 日</td>
+<td> moka</td>
+<td> 等待面试</td>
+</tr>
+<tr>
+<td> B 站</td>
+<td> 2019 年 8 月 2 日</td>
+<td> moka</td>
+<td> 等待面试</td>
+</tr>
+<tr>
+<td>快手</td>
+<td> 2019 年 8 月 2 日</td>
+<td>官网内推</td>
+<td>等待面试</td>
+</tr>
+<tr>
+<td>斗鱼校招提前批</td>
+<td> 2019 年 8 月 4 日</td>
+<td>官网内推</td>
+<td>等待面试</td>
+</tr>
+<tr>
+<td>字节跳动秋招</td>
+<td> 2019 年 8 月 5 日</td>
+<td>官网内推</td>
+<td>等待面试</td>
+</tr>
+<tr>
+<td>顺丰</td>
+<td> 2019 年 8 月 5 日</td>
+<td>官网内推</td>
+<td>等待面试</td>
+</tr>
+<tr>
+<td>百度提前批</td>
+<td> 2019 年 8 月 5 日</td>
+<td>邮箱投递</td>
+<td>等待面试 </td>
+</tr>
+</tbody>
+</table>
+</div>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://app.mokahr.com/campus_apply/transwarp/3196#/candidateHome/applications?_k=5fww6j">MoKa 简历状态查询</a></li>
+<li>超级简历一个月会员激活码：guluvlogs</li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+    <script type="text/javascript" src="/js/linkcard.js"></script>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://sunyancn.github.io/post/49484.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://i.loli.net/2020/08/25/NrIpckD9qPLY38C.jpg">
+      <meta itemprop="name" content="Sun Yan">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="故事尾音">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/post/49484.html" class="post-title-link" itemprop="url">论文阅读 - 20190928</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2019-09-28 21:28:48" itemprop="dateCreated datePublished" datetime="2019-09-28T21:28:48+08:00">2019-09-28</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-08-27 01:27:02" itemprop="dateModified" datetime="2020-08-27T01:27:02+08:00">2020-08-27</time>
+              </span>
+
+          
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="论文1"><a href="#论文1" class="headerlink" title="论文1"></a>论文 1</h2><p><strong>《 3R: Reading - Ranking - Recognizing for Multi-Passage Reading Comprehension》</strong></p>
+<h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><p>ITAIC 2019 的一篇文章。本文主要用来解决的是 Multi-passage reading comprehension 问题。</p>
+<h3 id="模型结构"><a href="#模型结构" class="headerlink" title="模型结构"></a>模型结构</h3><p>文章提出了阅读 - 排序 - 识别三段式模型，分别为：</p>
+<ul>
+<li><strong>段落提取模块</strong>：提取所有与问题相关的段落</li>
+<li><strong>阅读理解模块</strong>：阅读每个提取出来的相关段落，抽取出候选答案。其中阅读理解模块基于 BERT。</li>
+<li><strong>答案排序模块</strong>：提出两种答案排序策略，分别是 question-to-answer verify 和 answer-to-answer verify</li>
+</ul>
+<p>这三个模块完成后，还增加了 no answer recognition section，来判断是否有问题的答案。</p>
+<p><img src="https://i.loli.net/2019/09/29/Y94pMrHwCWDZyue.png" alt=""></p>
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/2019/09/24/CS231N%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/#more" rel="contents">
+              <a class="btn" href="/post/49484.html#more" rel="contents">
                 Read more &raquo;
               </a>
             </div>
@@ -289,7 +872,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://sunyancn.github.io/2019/09/13/%E4%B8%AD%E7%A7%8B/">
+    <link itemprop="mainEntityOfPage" href="http://sunyancn.github.io/post/1488.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="https://i.loli.net/2020/08/25/NrIpckD9qPLY38C.jpg">
@@ -303,7 +886,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2019/09/13/%E4%B8%AD%E7%A7%8B/" class="post-title-link" itemprop="url">中秋</a>
+            <a href="/post/1488.html" class="post-title-link" itemprop="url">Docker 部署深度学习模型</a>
         </h2>
 
         <div class="post-meta">
@@ -313,7 +896,7 @@
               </span>
               <span class="post-meta-item-text">Posted on</span>
 
-              <time title="Created: 2019-09-13 20:19:34" itemprop="dateCreated datePublished" datetime="2019-09-13T20:19:34+08:00">2019-09-13</time>
+              <time title="Created: 2019-09-27 15:57:33" itemprop="dateCreated datePublished" datetime="2019-09-27T15:57:33+08:00">2019-09-27</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
@@ -336,231 +919,10 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>2019 年的夏天很快的过去了。今天是中秋，在古代诗歌中中秋都是思念的代名词，虽然逢人便道中秋快乐，但是自己却快乐不起来呢。<br>从 6 月底到现在陆陆续续找了快 3 个月的工作，属实有点累了。每逢一个休息日都想要静静的躺着。这段时间焦虑，等待，兴奋以及各种失败，其实蛮痛苦的。希望自己能挺过这段时间，有个好的结尾吧。<br>晚上没吃月饼，心里好怀念小时候的五仁月饼，但是也不想故意去买个吃了，就让这段时间安静的溜走吧，仿佛从来没有来过一样。</p>
-<p><img src="https://i.loli.net/2019/09/13/L6RsEIFqrgcVknB.png" alt=""></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-    <script type="text/javascript" src="/js/linkcard.js"></script>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://sunyancn.github.io/2019/09/13/%E4%B8%AD%E6%96%87%E5%88%86%E8%AF%8D%E7%AE%97%E6%B3%95%E6%80%BB%E7%BB%93/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://i.loli.net/2020/08/25/NrIpckD9qPLY38C.jpg">
-      <meta itemprop="name" content="Sun Yan">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="故事尾音">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/09/13/%E4%B8%AD%E6%96%87%E5%88%86%E8%AF%8D%E7%AE%97%E6%B3%95%E6%80%BB%E7%BB%93/" class="post-title-link" itemprop="url">中文分词算法总结</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2019-09-13 15:19:56" itemprop="dateCreated datePublished" datetime="2019-09-13T15:19:56+08:00">2019-09-13</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-08-27 01:27:02" itemprop="dateModified" datetime="2020-08-27T01:27:02+08:00">2020-08-27</time>
-              </span>
-
-          
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <html><head></head><body><h2 id="最大匹配算法" class="heading-control"><a href="#最大匹配算法" class="headerlink" title="最大匹配算法"></a>最大匹配算法<a class="heading-anchor" href="#最大匹配算法" aria-hidden="true"></a></h2><p>基于词典的双向匹配算法的中文分词算法的实现。<br>例子：[我们经常有意见分歧]<br>词典：[我们，经常，有，有意见，意见，分歧]</p>
-<h3 id="前向最大匹配" class="heading-control"><a href="#前向最大匹配" class="headerlink" title="前向最大匹配"></a>前向最大匹配<a class="heading-anchor" href="#前向最大匹配" aria-hidden="true"></a></h3><p>先设定扫描的窗口大小 maxLen（最好是字典最长的单词长度），从左向右取待切分汉语句的 maxLen 个字符作为匹配字段。查找词典并进行匹配。若匹配成功，则将这个匹配字段作为一个词切分出来，并将窗口向右移动这个单词的长度。若匹配不成功，则将这个匹配字段的最后一个字去掉，剩下的字符串作为新的匹配字段，进行再次匹配，重复以上过程，直到切分出所有词为止。</p>
-<h3 id="后向最大匹配" class="heading-control"><a href="#后向最大匹配" class="headerlink" title="后向最大匹配"></a>后向最大匹配<a class="heading-anchor" href="#后向最大匹配" aria-hidden="true"></a></h3><p>该算法是正向的逆向算法，区别是窗口是从后向左扫描，若匹配不成功，则去掉第一个字符，重复上述的匹配步骤。</p>
-<h3 id="双向最大匹配" class="heading-control"><a href="#双向最大匹配" class="headerlink" title="双向最大匹配"></a>双向最大匹配<a class="heading-anchor" href="#双向最大匹配" aria-hidden="true"></a></h3><p>双向最大匹配法是将正向最大匹配法得到的分词结果和逆向最大匹配法的到的结果进行比较，从而决定正确的分词方法。定义的匹配规则如下：</p>
-<ol>
-<li>如果正反向匹配算法得到的结果相同，我们则认为分词正确，返回任意一个结果即可。</li>
-<li>如果正反向匹配算法得到的结果不同，则考虑单字词、非字典词、总词数数量的数量，三者的数量越少，认为分词的效果越好。我们设定一个惩罚分数（score_fmm /score_bmm = 0），例如：正向匹配中单字词数量多于反向匹配，则正向匹配的分值 score_fmm += 1。其他两个条件相同。可以根据实际的分词效果调整惩罚分数的大小，但由于没有正确分词的数据，因此惩罚分数都设为 1。最后比较惩罚分数，返回较小的匹配结果。</li>
-</ol>
-</body></html>
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-    <script type="text/javascript" src="/js/linkcard.js"></script>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://sunyancn.github.io/2019/09/13/%E6%A6%82%E7%8E%87%E5%9B%BE%E6%A8%A1%E5%9E%8B%E7%90%86%E8%AE%BA%E4%B8%8E%E5%BA%94%E7%94%A8/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://i.loli.net/2020/08/25/NrIpckD9qPLY38C.jpg">
-      <meta itemprop="name" content="Sun Yan">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="故事尾音">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/09/13/%E6%A6%82%E7%8E%87%E5%9B%BE%E6%A8%A1%E5%9E%8B%E7%90%86%E8%AE%BA%E4%B8%8E%E5%BA%94%E7%94%A8/" class="post-title-link" itemprop="url">概率图模型理论与应用</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2019-09-13 12:45:46" itemprop="dateCreated datePublished" datetime="2019-09-13T12:45:46+08:00">2019-09-13</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-08-27 01:27:02" itemprop="dateModified" datetime="2020-08-27T01:27:02+08:00">2020-08-27</time>
-              </span>
-
-          
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <html><head></head><body><h2 id="概率图模型" class="heading-control"><a href="#概率图模型" class="headerlink" title="概率图模型"></a>概率图模型<a class="heading-anchor" href="#概率图模型" aria-hidden="true"></a></h2><p><img src="https://i.loli.net/2019/09/13/o1c8PFYmTK3JVXA.png" alt></p>
-</body></html>
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-    <script type="text/javascript" src="/js/linkcard.js"></script>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://sunyancn.github.io/2019/09/12/Hexo%E4%BC%98%E5%8C%96%E5%92%8CGithub%E6%8F%92%E4%BB%B6/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://i.loli.net/2020/08/25/NrIpckD9qPLY38C.jpg">
-      <meta itemprop="name" content="Sun Yan">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="故事尾音">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/09/12/Hexo%E4%BC%98%E5%8C%96%E5%92%8CGithub%E6%8F%92%E4%BB%B6/" class="post-title-link" itemprop="url">Hexo 优化和 Github 插件</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2019-09-12 16:41:25" itemprop="dateCreated datePublished" datetime="2019-09-12T16:41:25+08:00">2019-09-12</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-08-27 01:27:02" itemprop="dateModified" datetime="2020-08-27T01:27:02+08:00">2020-08-27</time>
-              </span>
-
-          
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="Hexo-Next主题优化"><a href="#Hexo-Next主题优化" class="headerlink" title="Hexo Next主题优化"></a>Hexo Next 主题优化</h2><p>记录一些 Hexo Next 博客优化的文章：</p>
-<ul>
-<li><a target="_blank" rel="noopener" href="https://aoenian.github.io/2018/08/09/next-theme-customized-2/">代码块优化</a></li>
-<li><a target="_blank" rel="noopener" href="https://crayonnew.github.io/2018/11/05/Hexo-NexT%E4%B8%BB%E9%A2%98-%E8%AE%BE%E7%BD%AE%E5%9C%86%E5%BD%A2%E5%A4%B4%E5%83%8F%E5%B9%B6%E6%97%8B%E8%BD%AC/">设置圆形头像并旋转</a></li>
-<li><a target="_blank" rel="noopener" href="https://www.andyvj.com/2019/02/26/190226-02/">hexo 数学公式</a></li>
-<li><a target="_blank" rel="noopener" href="https://www.andyvj.com/2019/02/12/190213-01/">hexo 中插入视频音频</a></li>
-<li><a target="_blank" rel="noopener" href="https://www.anmou.me/20181017-Private_Setting_to_Next/">主题个性化配置</a></li>
-<li><a target="_blank" rel="noopener" href="https://blog.diqigan.cn/posts/add-background-picture-for-next.html">hexo 背景修改</a></li>
-<li><a target="_blank" rel="noopener" href="https://sjq597.github.io/2018/05/18/Hexo-%E4%BD%BF%E7%94%A8Gitment%E8%AF%84%E8%AE%BA%E5%8A%9F%E8%83%BD/">hexo gitment 配置</a></li>
-</ul>
+          <h2 id="Docker安装"><a href="#Docker安装" class="headerlink" title="Docker安装"></a>Docker 安装</h2><p>参考链接：<a target="_blank" rel="noopener" href="https://docs.docker.com/install/linux/docker-ce/centos/">https://docs.docker.com/install/linux/docker-ce/centos/</a><br>运行到 <code>sudo docker run hello-world</code> 正常输出即可<br>
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/2019/09/12/Hexo%E4%BC%98%E5%8C%96%E5%92%8CGithub%E6%8F%92%E4%BB%B6/#more" rel="contents">
+              <a class="btn" href="/post/1488.html#more" rel="contents">
                 Read more &raquo;
               </a>
             </div>
@@ -585,7 +947,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://sunyancn.github.io/2019/09/10/Python%E9%9F%B3%E9%A2%91%E4%BF%A1%E5%8F%B7%E5%A4%84%E7%90%86/">
+    <link itemprop="mainEntityOfPage" href="http://sunyancn.github.io/post/50252.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="https://i.loli.net/2020/08/25/NrIpckD9qPLY38C.jpg">
@@ -599,7 +961,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2019/09/10/Python%E9%9F%B3%E9%A2%91%E4%BF%A1%E5%8F%B7%E5%A4%84%E7%90%86/" class="post-title-link" itemprop="url">Python 音频信号处理</a>
+            <a href="/post/50252.html" class="post-title-link" itemprop="url">论文阅读 - 20190924</a>
         </h2>
 
         <div class="post-meta">
@@ -609,7 +971,7 @@
               </span>
               <span class="post-meta-item-text">Posted on</span>
 
-              <time title="Created: 2019-09-10 13:16:37" itemprop="dateCreated datePublished" datetime="2019-09-10T13:16:37+08:00">2019-09-10</time>
+              <time title="Created: 2019-09-24 20:45:28" itemprop="dateCreated datePublished" datetime="2019-09-24T20:45:28+08:00">2019-09-24</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
@@ -632,334 +994,12 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <blockquote>
-<p>本文主要是对网上的一些文章的总结，参考的文章在文末已经列出</p>
-</blockquote>
-<p>音频信号是模拟信号，我们需要将其保存为数字信号，才能对语音进行算法操作，WAV 是 Microsoft 开发的一种声音文件格式，通常被用来保存未压缩的声音数据。</p>
-<p>语音信号有三个重要的参数：<strong>声道数</strong>、<strong>取样频率</strong>和<strong>量化位数</strong>。</p>
-<ul>
-<li><strong>声道数</strong>：可以是单声道或者是双声道</li>
-<li><strong>采样频率</strong>：一秒内对声音信号的采集次数，44100Hz 采样频率意味着每秒钟信号被分解成 44100 份，如果采样率高，那么媒体播放音频时会感觉信号是连续的。</li>
-<li><strong>量化位数</strong>：用多少 bit 表达一次采样所采集的数据，通常有 8bit、16bit、24bit 和 32bit 等几种</li>
-</ul>
-<p>如果你需要自己录制和编辑声音文件，推荐使用 Audacity (<a target="_blank" rel="noopener" href="http://audacity.sourceforge.net)，">http://audacity.sourceforge.net)，</a> 它是一款开源的、跨平台、多声道的录音编辑软件。</p>
+          <h2 id="论文1"><a href="#论文1" class="headerlink" title="论文1"></a>论文 1</h2><p><strong>《SANVis: Visual Analytics for Understanding Self-Attention Networks》</strong></p>
+<h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><p>这一篇文章是关于 Self-Attention 可视化的，可视化的网络有 Transformer 和 BERT。里面有一幅 Transformer 的图很好，贴过来。</p>
+<p><img src="https://i.loli.net/2019/09/24/RF15kyJbirDtnh3.png" alt=""></p>
           <!--noindex-->
             <div class="post-button">
-              <a class="btn" href="/2019/09/10/Python%E9%9F%B3%E9%A2%91%E4%BF%A1%E5%8F%B7%E5%A4%84%E7%90%86/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-    <script type="text/javascript" src="/js/linkcard.js"></script>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://sunyancn.github.io/2019/08/12/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://i.loli.net/2020/08/25/NrIpckD9qPLY38C.jpg">
-      <meta itemprop="name" content="Sun Yan">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="故事尾音">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/08/12/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/" class="post-title-link" itemprop="url">动态规划</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2019-08-12 15:31:23" itemprop="dateCreated datePublished" datetime="2019-08-12T15:31:23+08:00">2019-08-12</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-08-27 01:27:02" itemprop="dateModified" datetime="2020-08-27T01:27:02+08:00">2020-08-27</time>
-              </span>
-
-          
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <html><head></head><body><h2 id="从青蛙跳台阶说起" class="heading-control"><a href="#从青蛙跳台阶说起" class="headerlink" title="从青蛙跳台阶说起"></a>从青蛙跳台阶说起<a class="heading-anchor" href="#从青蛙跳台阶说起" aria-hidden="true"></a></h2><p>这个问题和斐波纳契数字问题是一样的。题目描述如下：</p>
-<blockquote>
-<p>一只青蛙一次可以跳上 1 级台阶，也可以跳上 2 级。求该青蛙跳上一个 n 级的台阶总共有多少种跳法（先后次序不同算不同的结果）。</p>
-</blockquote>
-<h3 id="考虑递归" class="heading-control"><a href="#考虑递归" class="headerlink" title="考虑递归"></a>考虑递归<a class="heading-anchor" href="#考虑递归" aria-hidden="true"></a></h3><p>首先用递归的思路来考虑。递归是倒着分析的。</p>
-<p>假如只差一步就能走完整个台阶，要分为几种情况？因为每一步能走一级或者两级台阶，所以有如下两种情况：</p>
-<ul>
-<li>最后一步走 2 级台阶，也就是从 n-2 级到 n 级</li>
-<li>最后一步走 1 级台阶，也就是从 n-1 级到 n 级</li>
-</ul>
-<p>所以第 n 步的走法由两种方法的和构成。如果定义 F (n) 为第 n 步的走法，那么 F (n)=F (n-1)+F (n-2)。这个公式称之为<strong>递推公式</strong>。<br>当只有 1 级台阶和 2 级台阶时走法很明显，即 F (1)=1、F (2)=2。称之为<strong>边界条件</strong>。<br>两部分具备之后，很容易可以写出代码：<br></p><figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">fun</span>(<span class="params">n</span>):</span></span><br><span class="line">    <span class="keyword">if</span> n==<span class="number">2</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="number">2</span></span><br><span class="line">    <span class="keyword">if</span> n==<span class="number">1</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span></span><br><span class="line">    <span class="keyword">return</span> fun(n<span class="number">-1</span>)+fun(n<span class="number">-2</span>)</span><br></pre></td></tr></tbody></table></figure><br>验证的时候会发现一个问题，如果n比较大，那么会导致计算机栈的溢出，即便是n=100的时候也需要相当长的计算时间。那么问题出在哪里呢？<p></p>
-<h2 id="重叠子问题" class="heading-control"><a href="#重叠子问题" class="headerlink" title="重叠子问题"></a>重叠子问题<a class="heading-anchor" href="#重叠子问题" aria-hidden="true"></a></h2><p>我们不妨把上面的递归式子以树的形式表示出来，结果如下：<br></p><figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">                       F(<span class="number">5</span>)</span><br><span class="line">                  /             \</span><br><span class="line">             F(<span class="number">4</span>)                  F(<span class="number">3</span>)</span><br><span class="line">          /      \                /     \</span><br><span class="line">      F(<span class="number">3</span>)       F(<span class="number">2</span>)         F(<span class="number">2</span>)     F(<span class="number">1</span>)</span><br><span class="line">     /     \     /    \       /    \</span><br><span class="line">   F(<span class="number">2</span>)   F(<span class="number">1</span>) F(<span class="number">1</span>)  F(<span class="number">0</span>)  F(<span class="number">1</span>)   F(<span class="number">0</span>)</span><br><span class="line">  /    \</span><br><span class="line">F(<span class="number">1</span>)  F(<span class="number">0</span>)</span><br></pre></td></tr></tbody></table></figure><br>可以看到这其中有很多重复求解部分，称之为重叠子问题。<br>一种想到的改进方法是我们可不可以把递归计算中某些计算过的结果存起来，来避免这个问题。下面介绍记忆化搜索和LRU 缓存策略实现这种改进方法。<p></p>
-<h3 id="记忆化搜索" class="heading-control"><a href="#记忆化搜索" class="headerlink" title="记忆化搜索"></a>记忆化搜索<a class="heading-anchor" href="#记忆化搜索" aria-hidden="true"></a></h3><p>记忆化搜索的思路如下：每当我们需要解决子问题时，我们首先查找查找表。如果预先计算的值存在，那么我们返回该值，否则我们计算值，并将结果放在查找表中，以便以后可以重复使用。<br></p><figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">lookup = [<span class="number">0</span>,<span class="number">1</span>,<span class="number">2</span>]+[<span class="number">0</span>]*<span class="number">100</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">fun</span>(<span class="params">n</span>):</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> lookup[n] == <span class="number">0</span>:</span><br><span class="line">        lookup[n] = fun(n<span class="number">-1</span>)+fun(n<span class="number">-2</span>)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> lookup[n]</span><br></pre></td></tr></tbody></table></figure><p></p>
-<h3 id="LRU缓存" class="heading-control"><a href="#LRU缓存" class="headerlink" title="LRU缓存"></a>LRU 缓存<a class="heading-anchor" href="#LRU缓存" aria-hidden="true"></a></h3><p>LRU（Least recently used，最近最少使用），其核心思想是 “如果数据最近被访问过，那么将来被访问的几率也更高”。对于本题目，如果是高频出现的计算函数的结果会被放到缓存中，再次出现只需要在缓存中读取即可，和记忆化搜索类似。python 有 LRU 的内置函数：<br></p><figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> functools <span class="keyword">import</span> lru_cache</span><br><span class="line"><span class="meta">@lru_cache(None)</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">fun</span>(<span class="params">n</span>):</span></span><br><span class="line">    <span class="keyword">if</span> n==<span class="number">2</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="number">2</span></span><br><span class="line">    <span class="keyword">if</span> n==<span class="number">1</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span></span><br><span class="line">    <span class="keyword">return</span> fun(n<span class="number">-1</span>)+fun(n<span class="number">-2</span>)</span><br></pre></td></tr></tbody></table></figure><p></p>
-<p>有了上诉方法，n=100 已经可以计算了。但是虽然有这两个缓解的方法，但是仍存在问题。当 n=1000 的时候仍然会存在堆栈溢出的问题。</p>
-<h2 id="一维动态规划" class="heading-control"><a href="#一维动态规划" class="headerlink" title="一维动态规划"></a>一维动态规划<a class="heading-anchor" href="#一维动态规划" aria-hidden="true"></a></h2><p>上面的思考都是基于递归的，即自顶而下的计算方法。如果我们换个思路，自底而上呢？</p>
-<p>其实和上面的记忆化搜索很像了。首选记录 n=1 的情况和 n=2 的情况，然后依次向上计算，每次计算都存表即可。</p>
-<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">N = <span class="number">10</span></span><br><span class="line"></span><br><span class="line">dp  = [<span class="number">0</span>]*(N+<span class="number">1</span>)</span><br><span class="line">dp[<span class="number">1</span>] = <span class="number">1</span></span><br><span class="line">dp[<span class="number">2</span>] = <span class="number">2</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">fun</span>(<span class="params">n</span>):</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(n+<span class="number">1</span>):</span><br><span class="line">        <span class="keyword">if</span> i><span class="number">2</span>:</span><br><span class="line">            dp[i] = dp[i<span class="number">-1</span>] + dp[i<span class="number">-2</span>]</span><br><span class="line">    <span class="keyword">return</span> dp[<span class="number">-1</span>]    </span><br></pre></td></tr></tbody></table></figure>
-<p>这种方法存的表称之为 DP Table, 这种解决思路称之为动态规划。本题目的 DP Table 是一维的，所以称之为一维动态规划。</p>
-<p>当然针对这个问题，对空间还可以进一步优化：<br></p><figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">fun</span>(<span class="params">n</span>):</span></span><br><span class="line">    <span class="keyword">if</span> n == <span class="number">1</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span></span><br><span class="line">    <span class="keyword">if</span> n == <span class="number">2</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="number">2</span></span><br><span class="line">    pre,prepre = <span class="number">2</span>,<span class="number">1</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(n - <span class="number">2</span>):</span><br><span class="line">         prepre, pre = pre, pre + prepre</span><br><span class="line">    <span class="keyword">return</span> pre</span><br></pre></td></tr></tbody></table></figure><p></p>
-<h3 id="动态规划和递归" class="heading-control"><a href="#动态规划和递归" class="headerlink" title="动态规划和递归"></a>动态规划和递归<a class="heading-anchor" href="#动态规划和递归" aria-hidden="true"></a></h3><p>上面我们已经见到过了：递归采用的是 “由上而下” 的解题策略并带有可能的” 子问题 “重复调用，时间复杂度自然高，而且容易造成堆栈的溢出。</p>
-<h3 id="动态规划和分治" class="heading-control"><a href="#动态规划和分治" class="headerlink" title="动态规划和分治"></a>动态规划和分治<a class="heading-anchor" href="#动态规划和分治" aria-hidden="true"></a></h3><p>两者的区别在于：动态规划的下一个子阶段的求解是建立在上一个子阶段的解的基础上，进行进一步的求解。</p>
-<h3 id="动态规划和贪心" class="heading-control"><a href="#动态规划和贪心" class="headerlink" title="动态规划和贪心"></a>动态规划和贪心<a class="heading-anchor" href="#动态规划和贪心" aria-hidden="true"></a></h3><p>贪心算法每走一步都是不可撤回的，而动态规划是在一个问题的多种策略中寻找最优策略，所以动态规划中前一种策略可能会被后一种策略推翻。</p>
-<h3 id="一维动态规划Leetcode题目" class="heading-control"><a href="#一维动态规划Leetcode题目" class="headerlink" title="一维动态规划Leetcode题目"></a>一维动态规划 Leetcode 题目<a class="heading-anchor" href="#一维动态规划Leetcode题目" aria-hidden="true"></a></h3><ul>
-<li><a target="_blank" rel="noopener" href="http://oj.leetcode.com/problems/climbing-stairs/">Climbing Stairs</a></li>
-<li><a target="_blank" rel="noopener" href="http://oj.leetcode.com/problems/decode-ways/">Decode Ways</a></li>
-<li><a target="_blank" rel="noopener" href="http://oj.leetcode.com/problems/unique-binary-search-trees/">Unique Binary Search Trees</a></li>
-<li><a target="_blank" rel="noopener" href="http://oj.leetcode.com/problems/maximum-subarray/">Maximum Subarray</a></li>
-<li><a target="_blank" rel="noopener" href="https://leetcode.com/problems/maximum-product-subarray/">Maximum Product Subarray</a></li>
-<li><a target="_blank" rel="noopener" href="http://oj.leetcode.com/problems/best-time-to-buy-and-sell-stock/">Best Time to Buy and Sell Stock</a></li>
-</ul>
-<h2 id="二维动态规划" class="heading-control"><a href="#二维动态规划" class="headerlink" title="二维动态规划"></a>二维动态规划<a class="heading-anchor" href="#二维动态规划" aria-hidden="true"></a></h2></body></html>
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-    <script type="text/javascript" src="/js/linkcard.js"></script>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://sunyancn.github.io/2019/08/12/%E5%AF%BB%E6%89%BE%E6%9C%80%E5%A4%A7%E7%9A%84K%E4%B8%AA%E6%95%B0/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://i.loli.net/2020/08/25/NrIpckD9qPLY38C.jpg">
-      <meta itemprop="name" content="Sun Yan">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="故事尾音">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/08/12/%E5%AF%BB%E6%89%BE%E6%9C%80%E5%A4%A7%E7%9A%84K%E4%B8%AA%E6%95%B0/" class="post-title-link" itemprop="url">寻找最大的 K 个数</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2019-08-12 11:12:32" itemprop="dateCreated datePublished" datetime="2019-08-12T11:12:32+08:00">2019-08-12</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-08-27 01:27:02" itemprop="dateModified" datetime="2020-08-27T01:27:02+08:00">2020-08-27</time>
-              </span>
-
-          
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <ul>
-<li>方法一：常规解法，先排序 (时间复杂度为 O (N*logN))</li>
-<li> 方法二：利用快速排序原理 (时间复杂度 O (N*logK)</li>
-<li> 方法三：利用最小堆的原理 (时间复杂度为 O (N*logK))</li>
-<li> 方法四：计数排序，用空间换取时间的方法，不适合浮点数</li>
-</ul>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-    <script type="text/javascript" src="/js/linkcard.js"></script>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://sunyancn.github.io/2019/08/12/python%E7%9A%84%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE%E5%BA%93%EF%BC%9Abisect/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://i.loli.net/2020/08/25/NrIpckD9qPLY38C.jpg">
-      <meta itemprop="name" content="Sun Yan">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="故事尾音">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/08/12/python%E7%9A%84%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE%E5%BA%93%EF%BC%9Abisect/" class="post-title-link" itemprop="url">python 的二分查找库：bisect</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2019-08-12 10:53:23" itemprop="dateCreated datePublished" datetime="2019-08-12T10:53:23+08:00">2019-08-12</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-08-27 01:27:02" itemprop="dateModified" datetime="2020-08-27T01:27:02+08:00">2020-08-27</time>
-              </span>
-
-          
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>具体参考 <a target="_blank" rel="noopener" href="http://kuanghy.github.io/2016/06/14/python-bisect">文章</a><br></p><figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> bisect</span><br><span class="line"></span><br><span class="line"><span class="comment">#查找指定区间中包含的元素个数</span></span><br><span class="line">A = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">2.5</span>,<span class="number">3</span>,<span class="number">3.5</span>,<span class="number">4</span>,<span class="number">5</span>]</span><br><span class="line">lindex = bisect.bisect_left(A,<span class="number">2.5</span>)</span><br><span class="line">rindex = bisect.bisect_right(A,<span class="number">3.5</span>)</span><br><span class="line">print(lindex, rindex, rindex-lindex)</span><br><span class="line"></span><br><span class="line"><span class="comment">#分数等级</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">grade</span>(<span class="params">score,breakpoints=[<span class="number">60</span>, <span class="number">70</span>, <span class="number">80</span>, <span class="number">90</span>], grades=<span class="string">'FDCBA'</span></span>):</span></span><br><span class="line">    i = bisect.bisect(breakpoints, score)</span><br><span class="line">    <span class="keyword">return</span> grades[i]</span><br><span class="line"></span><br><span class="line">print([grade(score) <span class="keyword">for</span> score <span class="keyword">in</span> [<span class="number">33</span>, <span class="number">99</span>, <span class="number">77</span>, <span class="number">70</span>, <span class="number">89</span>, <span class="number">90</span>, <span class="number">100</span>]])</span><br><span class="line"></span><br><span class="line"><span class="comment">#二分查找</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">binary_search_bisect</span>(<span class="params">lst, x</span>):</span></span><br><span class="line">    <span class="keyword">from</span> bisect <span class="keyword">import</span> bisect_left</span><br><span class="line">    i = bisect_left(lst, x)</span><br><span class="line">    <span class="keyword">if</span> i != len(lst) <span class="keyword">and</span> lst[i] == x:</span><br><span class="line">        <span class="keyword">return</span> i</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">None</span></span><br><span class="line"></span><br><span class="line">print(binary_search_bisect(A,<span class="number">4</span>))</span><br></pre></td></tr></tbody></table></figure><p></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-    <script type="text/javascript" src="/js/linkcard.js"></script>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://sunyancn.github.io/2019/08/12/leetcode226-%E7%BF%BB%E8%BD%AC%E4%BA%8C%E5%8F%89%E6%A0%91/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://i.loli.net/2020/08/25/NrIpckD9qPLY38C.jpg">
-      <meta itemprop="name" content="Sun Yan">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="故事尾音">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/08/12/leetcode226-%E7%BF%BB%E8%BD%AC%E4%BA%8C%E5%8F%89%E6%A0%91/" class="post-title-link" itemprop="url">leetcode226— 翻转二叉树</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2019-08-12 09:31:52" itemprop="dateCreated datePublished" datetime="2019-08-12T09:31:52+08:00">2019-08-12</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-08-27 01:31:33" itemprop="dateModified" datetime="2020-08-27T01:31:33+08:00">2020-08-27</time>
-              </span>
-
-          
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p><img src="https://i.loli.net/2019/08/12/nb9EH4gKTdricY8.png" alt=""><br>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2019/08/12/leetcode226-%E7%BF%BB%E8%BD%AC%E4%BA%8C%E5%8F%89%E6%A0%91/#more" rel="contents">
+              <a class="btn" href="/post/50252.html#more" rel="contents">
                 Read more &raquo;
               </a>
             </div>
@@ -983,7 +1023,7 @@
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/3/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><span class="space">&hellip;</span><a class="page-number" href="/page/11/">11</a><a class="extend next" rel="next" href="/page/5/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
+    <a class="extend prev" rel="prev" href="/page/3/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><span class="space">&hellip;</span><a class="page-number" href="/page/12/">12</a><a class="extend next" rel="next" href="/page/5/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
   </nav>
 
 
@@ -1051,20 +1091,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">102</span>
+          <span class="site-state-item-count">115</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">12</span>
+        <span class="site-state-item-count">17</span>
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">69</span>
+        <span class="site-state-item-count">79</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -1175,7 +1215,6 @@
   if (typeof MathJax === 'undefined') {
     window.MathJax = {
       loader: {
-          load: ['[tex]/mhchem'],
         source: {
           '[tex]/amsCd': '[tex]/amscd',
           '[tex]/AMScd': '[tex]/amscd'
@@ -1183,7 +1222,6 @@
       },
       tex: {
         inlineMath: {'[+]': [['$', '$']]},
-          packages: {'[+]': ['mhchem']},
         tags: 'ams'
       },
       options: {
@@ -1243,7 +1281,7 @@
 
 <script>
 NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
-  NexT.utils.getScript('//cdn.jsdelivr.net/npm/valine@1/dist/Valine.min.js', () => {
+  NexT.utils.getScript('https://cdn.jsdelivr.net/gh//AshinWang/SimpleValine/SimpleValine.min.js', () => {
     var GUEST = ['nick', 'mail', 'link'];
     var guest = 'nick,mail';
     guest = guest.split(',').filter(item => {

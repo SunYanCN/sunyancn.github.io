@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.1.1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Noto Serif SC:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"sunyancn.github.io","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"valine","storage":true,"lazyload":false,"nav":null,"activeClass":"valine"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="通过 PowerShell 安装 OpenSSH来自微软官方文档。 若要使用 PowerShell 安装 OpenSSH，请首先以管理员身份启动 PowerShell。 若要确保 OpenSSH 功能可以安装，请执行以下操作： 12345678910# 输入这句话Get-WindowsCapability -Online | ? Name -like &#39;OpenSSH*&#39;# This should">
+<meta property="og:type" content="article">
+<meta property="og:title" content="VSCode 配置远程开发">
+<meta property="og:url" content="http://sunyancn.github.io/post/22891.html">
+<meta property="og:site_name" content="故事尾音">
+<meta property="og:description" content="通过 PowerShell 安装 OpenSSH来自微软官方文档。 若要使用 PowerShell 安装 OpenSSH，请首先以管理员身份启动 PowerShell。 若要确保 OpenSSH 功能可以安装，请执行以下操作： 12345678910# 输入这句话Get-WindowsCapability -Online | ? Name -like &#39;OpenSSH*&#39;# This should">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://i.loli.net/2020/08/29/UNowsM7Ky9BPb2j.png">
+<meta property="og:image" content="https://i.loli.net/2020/08/29/kOMhLKCsIqfNoz3.png">
+<meta property="og:image" content="https://i.loli.net/2020/08/29/4mHNFvrS9MfOjpJ.png">
+<meta property="og:image" content="https://i.loli.net/2020/08/29/aoPCzh8wYBML4VA.jpg">
+<meta property="og:image" content="https://i.loli.net/2020/08/29/baMv6uTHQqGWyDc.png">
+<meta property="og:image" content="https://i.loli.net/2020/08/29/2Zl6yFC9mLjw7Kh.png">
+<meta property="og:image" content="https://i.loli.net/2020/08/29/Wap6ubrSYLvy43g.png">
+<meta property="og:image" content="https://i.loli.net/2020/08/29/4PasoT1e79fwtNj.png">
+<meta property="og:image" content="https://i.loli.net/2020/08/29/BpV9CfoP8Dzm62k.png">
+<meta property="article:published_time" content="2020-08-29T08:15:19.000Z">
+<meta property="article:modified_time" content="2020-08-29T09:59:22.787Z">
+<meta property="article:author" content="Sun Yan">
+<meta property="article:tag" content="远程开发">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.loli.net/2020/08/29/UNowsM7Ky9BPb2j.png">
+
+<link rel="canonical" href="http://sunyancn.github.io/post/22891.html">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+<script src="/lib/fireworks.js"></script><link rel="stylesheet" href="//cdn.jsdelivr.net/gh/theme-next/theme-next-needmoreshare2@1/needsharebutton.min.css"><style>
+#needsharebutton-float {
+  bottom: 88px;
+  cursor: pointer;
+  left: -8px;
+  position: fixed;
+  z-index: 9999;
+}
+#needsharebutton-float .btn {
+  border: 1px solid $btn-default-border-color;
+  border-radius: 4px;
+  padding: 0 10px 0 14px;
+}
+</style>
+  <title>VSCode 配置远程开发 | 故事尾音</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="故事尾音" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">故事尾音</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">喜欢推导也喜欢被推倒</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+        <li class="menu-item menu-item-image">
+
+    <a href="/image/" rel="section"><i class="fa fa-image fa-fw"></i>image</a>
+
+  </li>
+        <li class="menu-item menu-item-music">
+
+    <a href="/music/" rel="section"><i class="fa fa-music fa-fw"></i>music</a>
+
+  </li>
+        <li class="menu-item menu-item-shuoshuo">
+
+    <a href="/shuoshuo/" rel="section"><i class="fa fa-heartbeat fa-fw"></i>shuoshuo</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://sunyancn.github.io/post/22891.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://i.loli.net/2020/08/25/NrIpckD9qPLY38C.jpg">
+      <meta itemprop="name" content="Sun Yan">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="故事尾音">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          VSCode 配置远程开发
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2020-08-29 16:15:19 / Modified: 17:59:22" itemprop="dateCreated datePublished" datetime="2020-08-29T16:15:19+08:00">2020-08-29</time>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine: </span>
+    
+    <a title="valine" href="/post/22891.html#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/post/22891.html" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <html><head></head><body><h2 id="通过-PowerShell-安装-OpenSSH" class="heading-control"><a href="#通过-PowerShell-安装-OpenSSH" class="headerlink" title="通过 PowerShell 安装 OpenSSH"></a>通过 PowerShell 安装 OpenSSH<a class="heading-anchor" href="#通过-PowerShell-安装-OpenSSH" aria-hidden="true"></a></h2><p><a target="_blank" rel="noopener" href="https://docs.microsoft.com/zh-cn/windows-server/administration/openssh/openssh_install_firstuse">来自微软官方文档</a>。 若要使用 PowerShell 安装 OpenSSH，请首先以管理员身份启动 PowerShell。 若要确保 OpenSSH 功能可以安装，请执行以下操作：</p>
+<figure class="highlight powershell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 输入这句话</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">Get-WindowsCapability</span> <span class="literal">-Online</span> | ? Name <span class="operator">-like</span> <span class="string">'OpenSSH*'</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># This should return the following output:</span></span><br><span class="line"></span><br><span class="line">Name  : OpenSSH.Client~~~~<span class="number">0.0</span>.<span class="number">1.0</span></span><br><span class="line">State : NotPresent</span><br><span class="line">Name  : OpenSSH.Server~~~~<span class="number">0.0</span>.<span class="number">1.0</span></span><br><span class="line">State : NotPresent</span><br></pre></td></tr></tbody></table></figure>
+<a id="more"></a>
+<p>然后安装服务器和 / 或客户端功能：</p>
+<figure class="highlight powershell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Install the OpenSSH Client</span></span><br><span class="line"><span class="built_in">Add-WindowsCapability</span> <span class="literal">-Online</span> <span class="literal">-Name</span> OpenSSH.Client~~~~<span class="number">0.0</span>.<span class="number">1.0</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Install the OpenSSH Server</span></span><br><span class="line"><span class="built_in">Add-WindowsCapability</span> <span class="literal">-Online</span> <span class="literal">-Name</span> OpenSSH.Server~~~~<span class="number">0.0</span>.<span class="number">1.0</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Both of these should return the following output:</span></span><br><span class="line"></span><br><span class="line">Path          :</span><br><span class="line">Online        : True</span><br><span class="line">RestartNeeded : False</span><br></pre></td></tr></tbody></table></figure>
+<p>命令行中输入 <code>ssh</code> 命令验证：</p>
+<figure class="highlight powershell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">[<span class="type">input</span>]: ssh</span><br><span class="line">[<span class="type">out</span>]: usage: ssh [-<span class="number">46</span><span class="type">sdasdsfsf</span>] [-<span class="type">B</span> <span class="type">bind_interface</span>]</span><br><span class="line">           [-<span class="type">b</span> <span class="type">bind_address</span>] [-<span class="type">c</span> <span class="type">cipher_spec</span>] [-<span class="type">D</span> [<span class="type">bind_address</span>:]<span class="type">port</span>]</span><br><span class="line">           [-<span class="type">E</span> <span class="type">log_file</span>] [-<span class="type">e</span> <span class="type">escape_char</span>] [-<span class="type">F</span> <span class="type">configfile</span>] [-<span class="type">I</span> <span class="type">pkcs11</span>]</span><br><span class="line">           [-<span class="type">i</span> <span class="type">identity_file</span>] [-<span class="type">J</span> [<span class="type">user</span><span class="selector-tag">@</span>]<span class="type">host</span>[:<span class="type">port</span>]] [-<span class="type">L</span> <span class="type">address</span>]</span><br><span class="line">           [-<span class="type">l</span> <span class="type">login_name</span>] [-<span class="type">m</span> <span class="type">mac_spec</span>] [-<span class="type">O</span> <span class="type">ctl_cmd</span>] [-<span class="type">o</span> <span class="type">option</span>] [-<span class="type">p</span> <span class="type">port</span>]</span><br><span class="line">           [-<span class="type">Q</span> <span class="type">query_option</span>] [-<span class="type">R</span> <span class="type">address</span>] [-<span class="type">S</span> <span class="type">ctl_path</span>] [-<span class="type">W</span> <span class="type">host</span>:<span class="type">port</span>]</span><br><span class="line">           [-<span class="type">w</span> <span class="type">local_tun</span>[:<span class="type">remote_tun</span>]] destination [<span class="type">command</span>]</span><br></pre></td></tr></tbody></table></figure>
+<p>查看 openssh 路径</p>
+<p><img src="https://i.loli.net/2020/08/29/UNowsM7Ky9BPb2j.png" alt="image-20200829152810966"></p>
+<blockquote>
+<p>这里显示了两个路径，使用 openssh 的那个</p>
+</blockquote>
+<h2 id="SSH-服务器的初始配置" class="heading-control"><a href="#SSH-服务器的初始配置" class="headerlink" title="SSH 服务器的初始配置"></a>SSH 服务器的初始配置<a class="heading-anchor" href="#SSH-服务器的初始配置" aria-hidden="true"></a></h2><figure class="highlight powershell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Set-Service</span> ssh<span class="literal">-agent</span> <span class="literal">-StartupType</span> Automatic</span><br><span class="line"><span class="built_in">Start-Service</span> ssh<span class="literal">-agent</span></span><br><span class="line"><span class="built_in">Get-Service</span> ssh<span class="literal">-agent</span></span><br></pre></td></tr></tbody></table></figure>
+<h2 id="配置VScode-Remote-SSH" class="heading-control"><a href="#配置VScode-Remote-SSH" class="headerlink" title="配置VScode Remote-SSH"></a>配置 VScode Remote-SSH<a class="heading-anchor" href="#配置VScode-Remote-SSH" aria-hidden="true"></a></h2><h3 id="安装插件" class="heading-control"><a href="#安装插件" class="headerlink" title="安装插件"></a>安装插件<a class="heading-anchor" href="#安装插件" aria-hidden="true"></a></h3><p>在界面左边的 Extensions 里搜索 ssh，找到 Remote-SSH 插件安装。</p>
+<p><img src="https://i.loli.net/2020/08/29/kOMhLKCsIqfNoz3.png" alt="image-20200829153839323"></p>
+<h3 id="编辑配置" class="heading-control"><a href="#编辑配置" class="headerlink" title="编辑配置"></a>编辑配置<a class="heading-anchor" href="#编辑配置" aria-hidden="true"></a></h3><p>安装完成后，选择左边的 SSH 插件按钮，点击 Connections 的齿轮选择 ssh_config 的路径，选择第一项的.ssh/config 就可以，回车即可编辑此文件。</p>
+<p><img src="https://i.loli.net/2020/08/29/4mHNFvrS9MfOjpJ.png" alt="image-20200829153930281"></p>
+<p>假设你的跳板机的 ip 地址为 A，目标机器的地址为 B，那么在你的 config 中写下如下配置并保存：</p>
+<figure class="highlight shell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">Host JumpMachine</span><br><span class="line">    # 跳板机的ip地址</span><br><span class="line">    HostName A</span><br><span class="line">    # 你跳板机的用户名</span><br><span class="line">    User username</span><br><span class="line">    # 跳板机登录端口 </span><br><span class="line">    Port 22</span><br><span class="line"></span><br><span class="line">Host TargetMachine</span><br><span class="line">    # 目标机的ip地址</span><br><span class="line">    HostName B</span><br><span class="line">    # 你目标机的用户名</span><br><span class="line">    User username</span><br><span class="line">    # 目标机登录端口 </span><br><span class="line">    Port 8080</span><br><span class="line">    IdentityFile ~/.ssh/jump_rsa</span><br><span class="line">    ProxyCommand "openssh的安装路径"\ssh.exe -W %h:%p JumpMachine</span><br></pre></td></tr></tbody></table></figure>
+<p>其中”openssh 的安装路径” 因人而异（我的 openssh 的安装路径为 <code>C:\Windows\System32\OpenSSH\ssh.exe</code>）, IdentityFile 是公司给的私钥，原始名称为 id_rsa，可以复制到.ssh，若不想覆盖原 private key,  重命名为 jump_rsa。</p>
+<p>如果一切正常的话，此时你在 SSH Targets 里就可以找到 TargetMachine 啦！点击旁边的小加号就可以开始远程连接啦！</p>
+<p><img src="https://i.loli.net/2020/08/29/aoPCzh8wYBML4VA.jpg" alt="img"></p>
+<h2 id="私钥文件权限太高" class="heading-control"><a href="#私钥文件权限太高" class="headerlink" title="私钥文件权限太高"></a>私钥文件权限太高<a class="heading-anchor" href="#私钥文件权限太高" aria-hidden="true"></a></h2><p>如果 SSH 连接时提示私钥文件权限太高，可以按如下方式修改文件属性。</p>
+<p>右击 <code>jump_rsa</code>, 中文系统：属性→安全→高级→禁止继承→删除所有继承→确定<br>如果系统是英文：<br>Properties -> Security -> Advanced -> Disable Inheritance -> Remove all inherited permissions from this object。</p>
+<p><img src="https://i.loli.net/2020/08/29/baMv6uTHQqGWyDc.png" alt="image-20200829160306077"></p>
+<p>然后重新添加用户，可以设置如下 3 项：</p>
+<p><img src="https://i.loli.net/2020/08/29/2Zl6yFC9mLjw7Kh.png" alt="image-20200829160749900"></p>
+<p>设置方式：</p>
+<p><img src="https://i.loli.net/2020/08/29/Wap6ubrSYLvy43g.png" alt="image-20200829160902719"></p>
+<h2 id="免密登录" class="heading-control"><a href="#免密登录" class="headerlink" title="免密登录"></a>免密登录<a class="heading-anchor" href="#免密登录" aria-hidden="true"></a></h2><p>若不想每次输入 passphrase 可以通过 openssl 指令生成解密之后的 id_rsa 并且修改 IdentityFile 成解密之后的文件即可 </p>
+<p><code>openssl rsa -in ~/.ssh/jump_rsa -out ~/.ssh/jump_rsa_new</code></p>
+<blockquote>
+<p>注意需要输入密码，然后替换掉 ssh 配置里面的 jump_rsa</p>
+</blockquote>
+<h2 id="C-开发和软连接" class="heading-control"><a href="#C-开发和软连接" class="headerlink" title="C++开发和软连接"></a>C++ 开发和软连接<a class="heading-anchor" href="#C-开发和软连接" aria-hidden="true"></a></h2><p>安装插件 C/C++</p>
+<p><img src="https://i.loli.net/2020/08/29/4PasoT1e79fwtNj.png" alt="image-20200829161219572"></p>
+<p>vscode 的 cpp 解析文件默认放在～/.vscode-cpptools 目录，由于开发机上的 /home 目录分区空间非常小，vscode 生成的文件比较大，很容易导致空间占满，可以软连接到其他目录。</p>
+<p>主要转移两个，一个是.vscode-server，另一个是.cache，这占用两个空间比较大。</p>
+<ol>
+<li>首先把这两个文件 mv 到新的存储区域，例如新建目录 <code>/data1/sunyan/work</code>, 然后 <code>mv /home/sunyan/.cache /data1/sunyan/work/</code>，然后 <code>mv /home/sunyan/.vscode-server /data1/sunyan/work/</code>。(注意不要关闭 vscode)</li>
+<li><p> 然后建立软连接：</p>
+<figure class="highlight shell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ln -s  /data1/sunyan/work/.vscode-server /home/sunyan/.vscode-server</span><br><span class="line">ln -s  /data1/sunyan/work/.cache /home/sunyan/.cache </span><br></pre></td></tr></tbody></table></figure>
+</li>
+<li><p>建立好之后：</p>
+<p><img src="https://i.loli.net/2020/08/29/BpV9CfoP8Dzm62k.png" alt="image-20200829175456795"></p>
+</li>
+</ol>
+<blockquote>
+<p>小技巧 1：<code>du -sh .[!.]** ** | sort -hr</code>，显示所有隐藏文件和非隐藏文件的大小并根据占用空间排序</p>
+<p>小技巧 2：<code>ls -lah</code> , 显示目录信息，-a 显示所有文件及目录 (ls 内定将文件名或目录名称开头为”.” 的视为隐藏档，不会列出)，-l 除文件名称外，亦将文件型态、权限、拥有者、文件大小等资讯详细列出，h 选项的意思是生成的结果有利于人看，也就是不是用默认的 byte 做单位，而是根据实际情况调整。</p>
+</blockquote>
+</body></html>
+    </div>
+
+    
+    
+    
+      
+
+        <div class="reward-container">
+  <div>支持一根棒棒糖！</div>
+  <button onclick="var qr = document.getElementById('qr'); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+    Donate
+  </button>
+  <div id="qr" style="display: none;">
+      
+      <div style="display: inline-block;">
+        <img src="https://i.loli.net/2020/08/27/Z63uzPfeimEYrD2.png" alt="Sun Yan WeChat Pay">
+        <p>WeChat Pay</p>
+      </div>
+      
+      <div style="display: inline-block;">
+        <img src="https://i.loli.net/2020/08/27/Zz62YJyVH1SRgGj.jpg" alt="Sun Yan Alipay">
+        <p>Alipay</p>
+      </div>
+
+  </div>
+</div>
+
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>Post author:  </strong>Sun Yan
+  </li>
+  <li class="post-copyright-link">
+    <strong>Post link: </strong>
+    <a href="http://sunyancn.github.io/post/22891.html" title="VSCode 配置远程开发">http://sunyancn.github.io/post/22891.html</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> unless stating additionally.
+  </li>
+</ul>
+</div>
+
+
+      <footer class="post-footer">
+          
+          <div class="post-tags">
+              <a href="/tags/%E8%BF%9C%E7%A8%8B%E5%BC%80%E5%8F%91/" rel="tag"><i class="fa fa-tag"></i> 远程开发</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/post/48955.html" rel="prev" title="如何入门深度学习">
+      <i class="fa fa-chevron-left"></i> 如何入门深度学习
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/post/50690.html" rel="next" title="TFIDF 做文档检索">
+      TFIDF 做文档检索 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+    <script type="text/javascript" src="/js/linkcard.js"></script>
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    <div class="comments" id="valine-comments"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%80%9A%E8%BF%87-PowerShell-%E5%AE%89%E8%A3%85-OpenSSH"><span class="nav-number">1.</span> <span class="nav-text">通过 PowerShell 安装 OpenSSH</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SSH-%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%9A%84%E5%88%9D%E5%A7%8B%E9%85%8D%E7%BD%AE"><span class="nav-number">2.</span> <span class="nav-text">SSH 服务器的初始配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%85%8D%E7%BD%AEVScode-Remote-SSH"><span class="nav-number">3.</span> <span class="nav-text">配置 VScode Remote-SSH</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%89%E8%A3%85%E6%8F%92%E4%BB%B6"><span class="nav-number">3.1.</span> <span class="nav-text">安装插件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BC%96%E8%BE%91%E9%85%8D%E7%BD%AE"><span class="nav-number">3.2.</span> <span class="nav-text">编辑配置</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%A7%81%E9%92%A5%E6%96%87%E4%BB%B6%E6%9D%83%E9%99%90%E5%A4%AA%E9%AB%98"><span class="nav-number">4.</span> <span class="nav-text">私钥文件权限太高</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%8D%E5%AF%86%E7%99%BB%E5%BD%95"><span class="nav-number">5.</span> <span class="nav-text">免密登录</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#C-%E5%BC%80%E5%8F%91%E5%92%8C%E8%BD%AF%E8%BF%9E%E6%8E%A5"><span class="nav-number">6.</span> <span class="nav-text">C++ 开发和软连接</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Sun Yan"
+      src="https://i.loli.net/2020/08/25/NrIpckD9qPLY38C.jpg">
+  <p class="site-author-name" itemprop="name">Sun Yan</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">115</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">17</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">79</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/sunyancn" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;sunyancn" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:sunyanhust@163.com" title="E-Mail → mailto:sunyanhust@163.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/atom.xml" title="RSS → &#x2F;atom.xml"><i class="fas fa-rss fa-fw"></i>RSS</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://weibo.com/u/5270232660" title="Weibo → https:&#x2F;&#x2F;weibo.com&#x2F;u&#x2F;5270232660" rel="noopener" target="_blank"><i class="fab fa-weibo fa-fw"></i>Weibo</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 2015 – 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Sun Yan</span>
+</div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script size="300" alpha="0.6" zIndex="-1" src="//cdn.jsdelivr.net/gh/theme-next/theme-next-canvas-ribbon@1/canvas-ribbon.js"></script>
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+<script src="/js/bookmark.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
+
+  
+<div id="needsharebutton-float">
+      <span class="btn">
+        <i class="fa fa-share-alt" aria-hidden="true"></i>
+      </span>
+    </div>
+  <script src="//cdn.jsdelivr.net/gh/theme-next/theme-next-needmoreshare2@1/needsharebutton.min.js"></script>
+  <script>
+      flOptions = {};
+        flOptions.iconStyle = "box";
+        flOptions.boxForm = "horizontal";
+        flOptions.position = "middleRight";
+        flOptions.networks = "Weibo,Wechat,Douban,QQZone,Twitter,Facebook";
+      new needShareButton('#needsharebutton-float', flOptions);
+  </script>
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('https://cdn.jsdelivr.net/gh//AshinWang/SimpleValine/SimpleValine.min.js', () => {
+    var GUEST = ['nick', 'mail', 'link'];
+    var guest = 'nick,mail';
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
+    });
+    new Valine({
+      el         : '#valine-comments',
+      verify     : false,
+      notify     : false,
+      appId      : 'IAIsNxUL4BLqJ2c4nTn8HlLv-gzGzoHsz',
+      appKey     : '73p5IVTPonVrJhOylbVtJffi',
+      placeholder: "(๑•́ ₃ •̀๑) 留言时填写您的邮箱可以邮件收到博主的回复噢~",
+      avatar     : 'wavatar',
+      meta       : guest,
+      pageSize   : '10' || 10,
+      visitor    : false,
+      lang       : '' || 'zh-cn',
+      path       : location.pathname,
+      recordIP   : true,
+      serverURLs : ''
+    });
+  }, window.Valine);
+});
+</script>
+
+</body>
+</html>

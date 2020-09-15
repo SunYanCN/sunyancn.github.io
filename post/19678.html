@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.1.1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Noto Serif SC:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"sunyancn.github.io","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"valine","storage":true,"lazyload":false,"nav":null,"activeClass":"valine"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="课程介绍B 站视频：https:&#x2F;&#x2F;www.bilibili.com&#x2F;video&#x2F;av31950221观看次序: https:&#x2F;&#x2F;github.com&#x2F;shuhuai007&#x2F;Machine-Learning-Session">
+<meta property="og:type" content="article">
+<meta property="og:title" content="机器学习 - 白板推导系列">
+<meta property="og:url" content="http://sunyancn.github.io/post/19678.html">
+<meta property="og:site_name" content="故事尾音">
+<meta property="og:description" content="课程介绍B 站视频：https:&#x2F;&#x2F;www.bilibili.com&#x2F;video&#x2F;av31950221观看次序: https:&#x2F;&#x2F;github.com&#x2F;shuhuai007&#x2F;Machine-Learning-Session">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://i.loli.net/2019/09/24/ga1PjFQG3WLnk8O.png">
+<meta property="article:published_time" content="2019-09-24T06:34:13.000Z">
+<meta property="article:modified_time" content="2020-08-26T17:27:02.222Z">
+<meta property="article:author" content="Sun Yan">
+<meta property="article:tag" content="白板推导">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.loli.net/2019/09/24/ga1PjFQG3WLnk8O.png">
+
+<link rel="canonical" href="http://sunyancn.github.io/post/19678.html">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+<script src="/lib/fireworks.js"></script><link rel="stylesheet" href="//cdn.jsdelivr.net/gh/theme-next/theme-next-needmoreshare2@1/needsharebutton.min.css"><style>
+#needsharebutton-float {
+  bottom: 88px;
+  cursor: pointer;
+  left: -8px;
+  position: fixed;
+  z-index: 9999;
+}
+#needsharebutton-float .btn {
+  border: 1px solid $btn-default-border-color;
+  border-radius: 4px;
+  padding: 0 10px 0 14px;
+}
+</style>
+  <title>机器学习 - 白板推导系列 | 故事尾音</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="故事尾音" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">故事尾音</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">喜欢推导也喜欢被推倒</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+        <li class="menu-item menu-item-image">
+
+    <a href="/image/" rel="section"><i class="fa fa-image fa-fw"></i>image</a>
+
+  </li>
+        <li class="menu-item menu-item-music">
+
+    <a href="/music/" rel="section"><i class="fa fa-music fa-fw"></i>music</a>
+
+  </li>
+        <li class="menu-item menu-item-shuoshuo">
+
+    <a href="/shuoshuo/" rel="section"><i class="fa fa-heartbeat fa-fw"></i>shuoshuo</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://sunyancn.github.io/post/19678.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://i.loli.net/2020/08/25/NrIpckD9qPLY38C.jpg">
+      <meta itemprop="name" content="Sun Yan">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="故事尾音">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          机器学习 - 白板推导系列
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2019-09-24 14:34:13" itemprop="dateCreated datePublished" datetime="2019-09-24T14:34:13+08:00">2019-09-24</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-08-27 01:27:02" itemprop="dateModified" datetime="2020-08-27T01:27:02+08:00">2020-08-27</time>
+              </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine: </span>
+    
+    <a title="valine" href="/post/19678.html#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/post/19678.html" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <html><head></head><body><h2 id="课程介绍" class="heading-control"><a href="#课程介绍" class="headerlink" title="课程介绍"></a>课程介绍<a class="heading-anchor" href="#课程介绍" aria-hidden="true"></a></h2><p><img src="https://i.loli.net/2019/09/24/ga1PjFQG3WLnk8O.png" alt><br>B 站视频：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/av31950221">https://www.bilibili.com/video/av31950221</a><br>观看次序: <a target="_blank" rel="noopener" href="https://github.com/shuhuai007/Machine-Learning-Session">https://github.com/shuhuai007/Machine-Learning-Session</a></p>
+<a id="more"></a>
+<h2 id="Lecture-1：开篇" class="heading-control"><a href="#Lecture-1：开篇" class="headerlink" title="Lecture 1：开篇"></a>Lecture 1：开篇<a class="heading-anchor" href="#Lecture-1：开篇" aria-hidden="true"></a></h2><p>主要介绍频率派和贝叶斯派的区别以及一些推荐书籍和视频</p>
+<h3 id="频率派和贝叶斯派" class="heading-control"><a href="#频率派和贝叶斯派" class="headerlink" title="频率派和贝叶斯派"></a>频率派和贝叶斯派<a class="heading-anchor" href="#频率派和贝叶斯派" aria-hidden="true"></a></h3><ul>
+<li>频率派，Maximum Likelihood Estimation (MLE，最大似然估计)，把需要推断的参数 θ 看做是固定的未知常数，即概率虽然是未知的，但最起码是确定的一个值，同时，样本 X 是随机的，所以频率派重点研究样本空间，大部分的概率计算都是针对样本 X 的分布；</li>
+<li>贝叶斯派，Bayesian - Maximum A Posteriori (MAP，最大后验估计)，的观点则截然相反，他们认为参数是随机变量，而样本 X 是固定的，由于样本是固定的，所以他们重点研究的是参数的分布。</li>
+</ul>
+<p>随着数据量的增加，参数分布会越来越向数据靠拢，先验的影响力会越来越小如果先验是 uniform distribution，则贝叶斯方法等价于频率方法。因为直观上来讲，先验是 uniform distribution 本质上表示对事物没有任何预判。</p>
+<h3 id="推荐书籍" class="heading-control"><a href="#推荐书籍" class="headerlink" title="推荐书籍"></a>推荐书籍<a class="heading-anchor" href="#推荐书籍" aria-hidden="true"></a></h3><p>频率派 ———— 统计机器学习<br>贝叶斯派 ———— 概率图模型</p>
+<p><strong>BOOK</strong>：</p>
+<ul>
+<li>李航 机器学习方法：感 K 朴决逻，支提 E 隐条</li>
+<li>周志华：西瓜书</li>
+<li> PRML </li>
+<li>MLAPP</li>
+<li>ESL</li>
+<li>Deep Learning</li>
+</ul>
+<p><strong>视频</strong>：</p>
+<ul>
+<li>台大林轩田：机器学习基石和机器学习技法</li>
+<li>张志华：机器学习导论，统计机器学习</li>
+<li> Ng:CS229 </li>
+<li>徐亦达 </li>
+<li>李宏毅</li>
+</ul>
+<h2 id="Lecture-2：数学基础" class="heading-control"><a href="#Lecture-2：数学基础" class="headerlink" title="Lecture 2：数学基础"></a>Lecture 2：数学基础<a class="heading-anchor" href="#Lecture-2：数学基础" aria-hidden="true"></a></h2><h2 id="Lecture-3：线性分类" class="heading-control"><a href="#Lecture-3：线性分类" class="headerlink" title="Lecture 3：线性分类"></a>Lecture 3：线性分类<a class="heading-anchor" href="#Lecture-3：线性分类" aria-hidden="true"></a></h2><h2 id="Lecture-3：降维" class="heading-control"><a href="#Lecture-3：降维" class="headerlink" title="Lecture 3：降维"></a>Lecture 3：降维<a class="heading-anchor" href="#Lecture-3：降维" aria-hidden="true"></a></h2><h2 id="Lecture-4：支持向量机-SVM" class="heading-control"><a href="#Lecture-4：支持向量机-SVM" class="headerlink" title="Lecture 4：支持向量机(SVM)"></a>Lecture 4：支持向量机 (SVM)<a class="heading-anchor" href="#Lecture-4：支持向量机-SVM" aria-hidden="true"></a></h2><h2 id="Lecture-5：核方法-Kernel-Method" class="heading-control"><a href="#Lecture-5：核方法-Kernel-Method" class="headerlink" title="Lecture 5：核方法(Kernel Method)"></a>Lecture 5：核方法 (Kernel Method)<a class="heading-anchor" href="#Lecture-5：核方法-Kernel-Method" aria-hidden="true"></a></h2><h2 id="Lecture-6：指数族分布" class="heading-control"><a href="#Lecture-6：指数族分布" class="headerlink" title="Lecture 6：指数族分布"></a>Lecture 6：指数族分布<a class="heading-anchor" href="#Lecture-6：指数族分布" aria-hidden="true"></a></h2><h2 id="Lecture-7：概率图模型" class="heading-control"><a href="#Lecture-7：概率图模型" class="headerlink" title="Lecture 7：概率图模型"></a>Lecture 7：概率图模型<a class="heading-anchor" href="#Lecture-7：概率图模型" aria-hidden="true"></a></h2><h2 id="Lecture-8：EM算法" class="heading-control"><a href="#Lecture-8：EM算法" class="headerlink" title="Lecture 8：EM算法"></a>Lecture 8：EM 算法<a class="heading-anchor" href="#Lecture-8：EM算法" aria-hidden="true"></a></h2><h2 id="Lecture-9：高斯混合模型-GMM" class="heading-control"><a href="#Lecture-9：高斯混合模型-GMM" class="headerlink" title="Lecture 9：高斯混合模型(GMM)"></a>Lecture 9：高斯混合模型 (GMM)<a class="heading-anchor" href="#Lecture-9：高斯混合模型-GMM" aria-hidden="true"></a></h2><h2 id="Lecture-10：变分推断" class="heading-control"><a href="#Lecture-10：变分推断" class="headerlink" title="Lecture 10：变分推断"></a>Lecture 10：变分推断<a class="heading-anchor" href="#Lecture-10：变分推断" aria-hidden="true"></a></h2><h2 id="Lecture-11：MCMC" class="heading-control"><a href="#Lecture-11：MCMC" class="headerlink" title="Lecture 11：MCMC"></a>Lecture 11：MCMC<a class="heading-anchor" href="#Lecture-11：MCMC" aria-hidden="true"></a></h2><h2 id="Lecture-12：隐马尔可夫模型" class="heading-control"><a href="#Lecture-12：隐马尔可夫模型" class="headerlink" title="Lecture 12：隐马尔可夫模型"></a>Lecture 12：隐马尔可夫模型<a class="heading-anchor" href="#Lecture-12：隐马尔可夫模型" aria-hidden="true"></a></h2><h2 id="Lecture-13：线性动态系统-卡曼滤波" class="heading-control"><a href="#Lecture-13：线性动态系统-卡曼滤波" class="headerlink" title="Lecture 13：线性动态系统-卡曼滤波"></a>Lecture 13：线性动态系统 - 卡曼滤波<a class="heading-anchor" href="#Lecture-13：线性动态系统-卡曼滤波" aria-hidden="true"></a></h2><h2 id="Lecture-14：非线性动态系统-粒子滤波" class="heading-control"><a href="#Lecture-14：非线性动态系统-粒子滤波" class="headerlink" title="Lecture 14：非线性动态系统-粒子滤波"></a>Lecture 14：非线性动态系统 - 粒子滤波<a class="heading-anchor" href="#Lecture-14：非线性动态系统-粒子滤波" aria-hidden="true"></a></h2><h2 id="Lecture-15：条件随机场" class="heading-control"><a href="#Lecture-15：条件随机场" class="headerlink" title="Lecture 15：条件随机场"></a>Lecture 15：条件随机场<a class="heading-anchor" href="#Lecture-15：条件随机场" aria-hidden="true"></a></h2><h2 id="Lecture-16：高斯网络" class="heading-control"><a href="#Lecture-16：高斯网络" class="headerlink" title="Lecture 16：高斯网络"></a>Lecture 16：高斯网络<a class="heading-anchor" href="#Lecture-16：高斯网络" aria-hidden="true"></a></h2><h2 id="Lecture-17：贝叶斯线性回归" class="heading-control"><a href="#Lecture-17：贝叶斯线性回归" class="headerlink" title="Lecture 17：贝叶斯线性回归"></a>Lecture 17：贝叶斯线性回归<a class="heading-anchor" href="#Lecture-17：贝叶斯线性回归" aria-hidden="true"></a></h2><h2 id="Lecture-18：高斯过程回归" class="heading-control"><a href="#Lecture-18：高斯过程回归" class="headerlink" title="Lecture 18：高斯过程回归"></a>Lecture 18：高斯过程回归<a class="heading-anchor" href="#Lecture-18：高斯过程回归" aria-hidden="true"></a></h2><h2 id="Lecture-19：受限玻尔兹曼机" class="heading-control"><a href="#Lecture-19：受限玻尔兹曼机" class="headerlink" title="Lecture 19：受限玻尔兹曼机"></a>Lecture 19：受限玻尔兹曼机<a class="heading-anchor" href="#Lecture-19：受限玻尔兹曼机" aria-hidden="true"></a></h2></body></html>
+    </div>
+
+    
+    
+    
+      
+
+        <div class="reward-container">
+  <div>支持一根棒棒糖！</div>
+  <button onclick="var qr = document.getElementById('qr'); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+    Donate
+  </button>
+  <div id="qr" style="display: none;">
+      
+      <div style="display: inline-block;">
+        <img src="https://i.loli.net/2020/08/27/Z63uzPfeimEYrD2.png" alt="Sun Yan WeChat Pay">
+        <p>WeChat Pay</p>
+      </div>
+      
+      <div style="display: inline-block;">
+        <img src="https://i.loli.net/2020/08/27/Zz62YJyVH1SRgGj.jpg" alt="Sun Yan Alipay">
+        <p>Alipay</p>
+      </div>
+
+  </div>
+</div>
+
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>Post author:  </strong>Sun Yan
+  </li>
+  <li class="post-copyright-link">
+    <strong>Post link: </strong>
+    <a href="http://sunyancn.github.io/post/19678.html" title="机器学习 - 白板推导系列">http://sunyancn.github.io/post/19678.html</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> unless stating additionally.
+  </li>
+</ul>
+</div>
+
+
+      <footer class="post-footer">
+          
+          <div class="post-tags">
+              <a href="/tags/%E7%99%BD%E6%9D%BF%E6%8E%A8%E5%AF%BC/" rel="tag"><i class="fa fa-tag"></i> 白板推导</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/post/64988.html" rel="prev" title="THU 深圳研究院：大数据机器学习">
+      <i class="fa fa-chevron-left"></i> THU 深圳研究院：大数据机器学习
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/post/60043.html" rel="next" title="关于读书">
+      关于读书 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+    <script type="text/javascript" src="/js/linkcard.js"></script>
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    <div class="comments" id="valine-comments"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AF%BE%E7%A8%8B%E4%BB%8B%E7%BB%8D"><span class="nav-number">1.</span> <span class="nav-text">课程介绍</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lecture-1%EF%BC%9A%E5%BC%80%E7%AF%87"><span class="nav-number">2.</span> <span class="nav-text">Lecture 1：开篇</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A2%91%E7%8E%87%E6%B4%BE%E5%92%8C%E8%B4%9D%E5%8F%B6%E6%96%AF%E6%B4%BE"><span class="nav-number">2.1.</span> <span class="nav-text">频率派和贝叶斯派</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8E%A8%E8%8D%90%E4%B9%A6%E7%B1%8D"><span class="nav-number">2.2.</span> <span class="nav-text">推荐书籍</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lecture-2%EF%BC%9A%E6%95%B0%E5%AD%A6%E5%9F%BA%E7%A1%80"><span class="nav-number">3.</span> <span class="nav-text">Lecture 2：数学基础</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lecture-3%EF%BC%9A%E7%BA%BF%E6%80%A7%E5%88%86%E7%B1%BB"><span class="nav-number">4.</span> <span class="nav-text">Lecture 3：线性分类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lecture-3%EF%BC%9A%E9%99%8D%E7%BB%B4"><span class="nav-number">5.</span> <span class="nav-text">Lecture 3：降维</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lecture-4%EF%BC%9A%E6%94%AF%E6%8C%81%E5%90%91%E9%87%8F%E6%9C%BA-SVM"><span class="nav-number">6.</span> <span class="nav-text">Lecture 4：支持向量机 (SVM)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lecture-5%EF%BC%9A%E6%A0%B8%E6%96%B9%E6%B3%95-Kernel-Method"><span class="nav-number">7.</span> <span class="nav-text">Lecture 5：核方法 (Kernel Method)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lecture-6%EF%BC%9A%E6%8C%87%E6%95%B0%E6%97%8F%E5%88%86%E5%B8%83"><span class="nav-number">8.</span> <span class="nav-text">Lecture 6：指数族分布</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lecture-7%EF%BC%9A%E6%A6%82%E7%8E%87%E5%9B%BE%E6%A8%A1%E5%9E%8B"><span class="nav-number">9.</span> <span class="nav-text">Lecture 7：概率图模型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lecture-8%EF%BC%9AEM%E7%AE%97%E6%B3%95"><span class="nav-number">10.</span> <span class="nav-text">Lecture 8：EM 算法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lecture-9%EF%BC%9A%E9%AB%98%E6%96%AF%E6%B7%B7%E5%90%88%E6%A8%A1%E5%9E%8B-GMM"><span class="nav-number">11.</span> <span class="nav-text">Lecture 9：高斯混合模型 (GMM)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lecture-10%EF%BC%9A%E5%8F%98%E5%88%86%E6%8E%A8%E6%96%AD"><span class="nav-number">12.</span> <span class="nav-text">Lecture 10：变分推断</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lecture-11%EF%BC%9AMCMC"><span class="nav-number">13.</span> <span class="nav-text">Lecture 11：MCMC</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lecture-12%EF%BC%9A%E9%9A%90%E9%A9%AC%E5%B0%94%E5%8F%AF%E5%A4%AB%E6%A8%A1%E5%9E%8B"><span class="nav-number">14.</span> <span class="nav-text">Lecture 12：隐马尔可夫模型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lecture-13%EF%BC%9A%E7%BA%BF%E6%80%A7%E5%8A%A8%E6%80%81%E7%B3%BB%E7%BB%9F-%E5%8D%A1%E6%9B%BC%E6%BB%A4%E6%B3%A2"><span class="nav-number">15.</span> <span class="nav-text">Lecture 13：线性动态系统 - 卡曼滤波</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lecture-14%EF%BC%9A%E9%9D%9E%E7%BA%BF%E6%80%A7%E5%8A%A8%E6%80%81%E7%B3%BB%E7%BB%9F-%E7%B2%92%E5%AD%90%E6%BB%A4%E6%B3%A2"><span class="nav-number">16.</span> <span class="nav-text">Lecture 14：非线性动态系统 - 粒子滤波</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lecture-15%EF%BC%9A%E6%9D%A1%E4%BB%B6%E9%9A%8F%E6%9C%BA%E5%9C%BA"><span class="nav-number">17.</span> <span class="nav-text">Lecture 15：条件随机场</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lecture-16%EF%BC%9A%E9%AB%98%E6%96%AF%E7%BD%91%E7%BB%9C"><span class="nav-number">18.</span> <span class="nav-text">Lecture 16：高斯网络</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lecture-17%EF%BC%9A%E8%B4%9D%E5%8F%B6%E6%96%AF%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92"><span class="nav-number">19.</span> <span class="nav-text">Lecture 17：贝叶斯线性回归</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lecture-18%EF%BC%9A%E9%AB%98%E6%96%AF%E8%BF%87%E7%A8%8B%E5%9B%9E%E5%BD%92"><span class="nav-number">20.</span> <span class="nav-text">Lecture 18：高斯过程回归</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lecture-19%EF%BC%9A%E5%8F%97%E9%99%90%E7%8E%BB%E5%B0%94%E5%85%B9%E6%9B%BC%E6%9C%BA"><span class="nav-number">21.</span> <span class="nav-text">Lecture 19：受限玻尔兹曼机</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Sun Yan"
+      src="https://i.loli.net/2020/08/25/NrIpckD9qPLY38C.jpg">
+  <p class="site-author-name" itemprop="name">Sun Yan</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">115</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">17</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">79</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/sunyancn" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;sunyancn" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:sunyanhust@163.com" title="E-Mail → mailto:sunyanhust@163.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/atom.xml" title="RSS → &#x2F;atom.xml"><i class="fas fa-rss fa-fw"></i>RSS</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://weibo.com/u/5270232660" title="Weibo → https:&#x2F;&#x2F;weibo.com&#x2F;u&#x2F;5270232660" rel="noopener" target="_blank"><i class="fab fa-weibo fa-fw"></i>Weibo</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 2015 – 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Sun Yan</span>
+</div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script size="300" alpha="0.6" zIndex="-1" src="//cdn.jsdelivr.net/gh/theme-next/theme-next-canvas-ribbon@1/canvas-ribbon.js"></script>
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+<script src="/js/bookmark.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
+
+  
+<div id="needsharebutton-float">
+      <span class="btn">
+        <i class="fa fa-share-alt" aria-hidden="true"></i>
+      </span>
+    </div>
+  <script src="//cdn.jsdelivr.net/gh/theme-next/theme-next-needmoreshare2@1/needsharebutton.min.js"></script>
+  <script>
+      flOptions = {};
+        flOptions.iconStyle = "box";
+        flOptions.boxForm = "horizontal";
+        flOptions.position = "middleRight";
+        flOptions.networks = "Weibo,Wechat,Douban,QQZone,Twitter,Facebook";
+      new needShareButton('#needsharebutton-float', flOptions);
+  </script>
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('https://cdn.jsdelivr.net/gh//AshinWang/SimpleValine/SimpleValine.min.js', () => {
+    var GUEST = ['nick', 'mail', 'link'];
+    var guest = 'nick,mail';
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
+    });
+    new Valine({
+      el         : '#valine-comments',
+      verify     : false,
+      notify     : false,
+      appId      : 'IAIsNxUL4BLqJ2c4nTn8HlLv-gzGzoHsz',
+      appKey     : '73p5IVTPonVrJhOylbVtJffi',
+      placeholder: "(๑•́ ₃ •̀๑) 留言时填写您的邮箱可以邮件收到博主的回复噢~",
+      avatar     : 'wavatar',
+      meta       : guest,
+      pageSize   : '10' || 10,
+      visitor    : false,
+      lang       : '' || 'zh-cn',
+      path       : location.pathname,
+      recordIP   : true,
+      serverURLs : ''
+    });
+  }, window.Valine);
+});
+</script>
+
+</body>
+</html>

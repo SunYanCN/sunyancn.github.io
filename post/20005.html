@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.1.1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Noto Serif SC:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"sunyancn.github.io","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"valine","storage":true,"lazyload":false,"nav":null,"activeClass":"valine"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="本文主要是对网上的一些文章的总结，参考的文章在文末已经列出  音频信号是模拟信号，我们需要将其保存为数字信号，才能对语音进行算法操作，WAV 是 Microsoft 开发的一种声音文件格式，通常被用来保存未压缩的声音数据。 语音信号有三个重要的参数：声道数、取样频率和量化位数。  声道数：可以是单声道或者是双声道 采样频率：一秒内对声音信号的采集次数，44100Hz 采样频率意味着每秒钟信号被分">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python 音频信号处理">
+<meta property="og:url" content="http://sunyancn.github.io/post/20005.html">
+<meta property="og:site_name" content="故事尾音">
+<meta property="og:description" content="本文主要是对网上的一些文章的总结，参考的文章在文末已经列出  音频信号是模拟信号，我们需要将其保存为数字信号，才能对语音进行算法操作，WAV 是 Microsoft 开发的一种声音文件格式，通常被用来保存未压缩的声音数据。 语音信号有三个重要的参数：声道数、取样频率和量化位数。  声道数：可以是单声道或者是双声道 采样频率：一秒内对声音信号的采集次数，44100Hz 采样频率意味着每秒钟信号被分">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://i.loli.net/2019/09/10/taJsWjAQe21xb6g.png">
+<meta property="og:image" content="https://i.loli.net/2019/09/10/hycELdZWD5qo2AH.png">
+<meta property="og:image" content="https://i.loli.net/2019/09/10/QA89CdDfL3qibS6.png">
+<meta property="og:image" content="https://i.loli.net/2019/09/10/9PzrY5gIXxTiM7U.png">
+<meta property="og:image" content="https://i.loli.net/2019/09/10/rEyK4ZjAeOLDmC6.png">
+<meta property="og:image" content="https://s2.ax1x.com/2019/09/26/unhpCt.png">
+<meta property="article:published_time" content="2019-09-10T05:16:37.000Z">
+<meta property="article:modified_time" content="2020-08-26T17:27:02.085Z">
+<meta property="article:author" content="Sun Yan">
+<meta property="article:tag" content="Python">
+<meta property="article:tag" content="音频信号处理">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.loli.net/2019/09/10/taJsWjAQe21xb6g.png">
+
+<link rel="canonical" href="http://sunyancn.github.io/post/20005.html">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+<script src="/lib/fireworks.js"></script><link rel="stylesheet" href="//cdn.jsdelivr.net/gh/theme-next/theme-next-needmoreshare2@1/needsharebutton.min.css"><style>
+#needsharebutton-float {
+  bottom: 88px;
+  cursor: pointer;
+  left: -8px;
+  position: fixed;
+  z-index: 9999;
+}
+#needsharebutton-float .btn {
+  border: 1px solid $btn-default-border-color;
+  border-radius: 4px;
+  padding: 0 10px 0 14px;
+}
+</style>
+  <title>Python 音频信号处理 | 故事尾音</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="故事尾音" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">故事尾音</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">喜欢推导也喜欢被推倒</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+        <li class="menu-item menu-item-image">
+
+    <a href="/image/" rel="section"><i class="fa fa-image fa-fw"></i>image</a>
+
+  </li>
+        <li class="menu-item menu-item-music">
+
+    <a href="/music/" rel="section"><i class="fa fa-music fa-fw"></i>music</a>
+
+  </li>
+        <li class="menu-item menu-item-shuoshuo">
+
+    <a href="/shuoshuo/" rel="section"><i class="fa fa-heartbeat fa-fw"></i>shuoshuo</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://sunyancn.github.io/post/20005.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://i.loli.net/2020/08/25/NrIpckD9qPLY38C.jpg">
+      <meta itemprop="name" content="Sun Yan">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="故事尾音">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Python 音频信号处理
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2019-09-10 13:16:37" itemprop="dateCreated datePublished" datetime="2019-09-10T13:16:37+08:00">2019-09-10</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-08-27 01:27:02" itemprop="dateModified" datetime="2020-08-27T01:27:02+08:00">2020-08-27</time>
+              </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine: </span>
+    
+    <a title="valine" href="/post/20005.html#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/post/20005.html" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <html><head></head><body><blockquote>
+<p>本文主要是对网上的一些文章的总结，参考的文章在文末已经列出</p>
+</blockquote>
+<p>音频信号是模拟信号，我们需要将其保存为数字信号，才能对语音进行算法操作，WAV 是 Microsoft 开发的一种声音文件格式，通常被用来保存未压缩的声音数据。</p>
+<p>语音信号有三个重要的参数：<strong>声道数</strong>、<strong>取样频率</strong>和<strong>量化位数</strong>。</p>
+<ul>
+<li><strong>声道数</strong>：可以是单声道或者是双声道</li>
+<li><strong>采样频率</strong>：一秒内对声音信号的采集次数，44100Hz 采样频率意味着每秒钟信号被分解成 44100 份，如果采样率高，那么媒体播放音频时会感觉信号是连续的。</li>
+<li><strong>量化位数</strong>：用多少 bit 表达一次采样所采集的数据，通常有 8bit、16bit、24bit 和 32bit 等几种</li>
+</ul>
+<p>如果你需要自己录制和编辑声音文件，推荐使用 Audacity (<a target="_blank" rel="noopener" href="http://audacity.sourceforge.net)，">http://audacity.sourceforge.net)，</a> 它是一款开源的、跨平台、多声道的录音编辑软件。</p>
+<a id="more"></a>
+<h2 id="音频信号读取" class="heading-control"><a href="#音频信号读取" class="headerlink" title="音频信号读取"></a>音频信号读取<a class="heading-anchor" href="#音频信号读取" aria-hidden="true"></a></h2><figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> scipy.io <span class="keyword">import</span> wavfile</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> matplotlib.pylab <span class="keyword">as</span> plt</span><br><span class="line">samplimg_freq, audio = wavfile.read(<span class="string">"data/input_freq.wav"</span>)</span><br><span class="line">plt.plot(np.arange(audio.shape[<span class="number">0</span>]),audio)</span><br><span class="line">plt.show()</span><br></pre></td></tr></tbody></table></figure>
+<p>音频的时域信号波形：<br><img src="https://i.loli.net/2019/09/10/taJsWjAQe21xb6g.png" alt></p>
+<p>语音信号是一个非平稳的时变信号，但语音信号是由声门的激励脉冲通过声道形成的，而声道 (人的口腔、鼻腔) 的肌肉运动是缓慢的，所以 “短时间”(10-30ms) 内可以认为语音信号是平稳时不变的。由此构成了语音信号的 “短时分析技术”。<br>在短时分析中，将语音信号分为一段一段的语音帧，每一帧一般取 10-30ms，我们的研究就建立在每一帧的语音特征分析上。<br>提取的不同的语音特征参数对应着不同的语音信号分析方法：时域分析、频域分析、倒谱域分析… 由于语音信号最重要的感知特性反映在功率谱上，而相位变化只起到很小的作用，所有语音频域分析更加重要。</p>
+<h2 id="预加重" class="heading-control"><a href="#预加重" class="headerlink" title="预加重"></a>预加重<a class="heading-anchor" href="#预加重" aria-hidden="true"></a></h2><p>预增强以帧为单位进行，目的在于加强高频。去除口唇辐射的影响，增加语音的高频分辨率。因为高频端大约在 800Hz 以上按 6dB/oct (倍频程) 衰减，频率越高相应的成分越小，为此要在对语音信号进行分析之前对其高频部分加以提升，也可以改善高频信噪比。k 是预增强系数，常用 0.97。</p>
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">pre_emphasis = <span class="number">0.97</span></span><br><span class="line">emphasized_signal = np.append(audio[<span class="number">0</span>], audio[<span class="number">1</span>:] - pre_emphasis * audio[:<span class="number">-1</span>])</span><br><span class="line">plt.plot(np.arange(emphasized_signal.shape[<span class="number">0</span>]),emphasized_signal)</span><br><span class="line">plt.show()</span><br></pre></td></tr></tbody></table></figure>
+<p><img src="https://i.loli.net/2019/09/10/hycELdZWD5qo2AH.png" alt></p>
+<h2 id="分帧" class="heading-control"><a href="#分帧" class="headerlink" title="分帧"></a>分帧<a class="heading-anchor" href="#分帧" aria-hidden="true"></a></h2><p>分帧是将不定长的音频切分成固定长度的小段。为了避免窗边界对信号的遗漏，因此对帧做偏移时候，帧间要有帧移 (帧与帧之间需要重叠一部分)，帧长 (wlen) = 重叠 (overlap)+ 帧移 (inc)。inc 为帧移，表示后一帧第前一帧的偏移量，fs 表示采样率，fn 表示一段语音信号的分帧数。</p>
+<script type="math/tex; mode=display">\frac{N-overlap}{inc}=\frac{N-wlen+inc}{inc}</script><p>通常的选择是帧长 25ms（下图绿色），帧移为 10ms（下图黄色）。接下来的操作是对单帧进行的。要分帧是因为语音信号是快速变化的，而傅里叶变换适用于分析平稳的信号。帧和帧之间的时间差常常取为 10ms，这样帧与帧之间会有重叠（下图红色），否则，由于帧与帧连接处的信号会因为加窗而被弱化，这部分的信息就丢失了。<br><img src="https://i.loli.net/2019/09/10/QA89CdDfL3qibS6.png" alt></p>
+<h2 id="语音信号的短时频域处理" class="heading-control"><a href="#语音信号的短时频域处理" class="headerlink" title="语音信号的短时频域处理"></a>语音信号的短时频域处理<a class="heading-anchor" href="#语音信号的短时频域处理" aria-hidden="true"></a></h2><p>在语音信号处理中，在语音信号处理中，信号在频域或其他变换域上的分析处理占重要的位置，在频域上研究语音可以使信号在时域上无法表现出来的某些特征变得十分明显，一个音频信号的本质是由其频率内容决定的，将时域信号转换为频域信号一般对语音进行<strong>短时傅里叶变换</strong>。</p>
+<h2 id="python-speech-features" class="heading-control"><a href="#python-speech-features" class="headerlink" title="python_speech_features"></a>python_speech_features<a class="heading-anchor" href="#python-speech-features" aria-hidden="true"></a></h2><p>python_speech_features 的比较好用的地方就是自带预加重参数，只需要设定 preemph 的值，就可以对语音信号进行预加重，增强高频信号。<br>python_speech_features 模块提供的函数主要包括两个：MFCC 和 FBank。API 定义如下：</p>
+<blockquote>
+<p>python_speech_features.base.fbank(signal, samplerate=16000, winlen=0.025, winstep=0.01, nfilt=26, nfft=512, lowfreq=0, highfreq=None, preemph=0.97, winfunc=<function <lambda>>)</function></p>
+</blockquote>
+<p>从一个音频信号中计算梅尔滤波器能量特征，返回：2 个值。第一个是一个包含着特征的大小为 nfilt 的 numpy 数组，每一行都有一个特征向量。第二个返回值是每一帧的能量。</p>
+<blockquote>
+<p>python_speech_features.base.logfbank(signal, samplerate=16000, winlen=0.025, winstep=0.01, nfilt=26, nfft=512, lowfreq=0, highfreq=None, preemph=0.97)</p>
+</blockquote>
+<p>从一个音频信号中计算梅尔滤波器能量特征的对数，返回： 一个包含特征的大小为 nfilt 的 numpy 数组，每一行都有一个特征向量</p>
+<p>参数<br></p><figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">参数：</span><br><span class="line"></span><br><span class="line">signal - 需要用来计算特征的音频信号，应该是一个N*<span class="number">1</span>的数组</span><br><span class="line"></span><br><span class="line">samplerate - 我们用来工作的信号的采样率</span><br><span class="line"></span><br><span class="line">winlen - 分析窗口的长度，按秒计，默认<span class="number">0.025</span>s(<span class="number">25</span>ms)</span><br><span class="line"></span><br><span class="line">winstep - 连续窗口之间的步长，按秒计，默认<span class="number">0.01</span>s（<span class="number">10</span>ms）</span><br><span class="line"></span><br><span class="line">numcep - 倒频谱返回的数量，默认<span class="number">13</span></span><br><span class="line"></span><br><span class="line">nfilt - 滤波器组的滤波器数量，默认<span class="number">26</span></span><br><span class="line"></span><br><span class="line">nfft - FFT的大小，默认<span class="number">512</span></span><br><span class="line"></span><br><span class="line">lowfreq - 梅尔滤波器的最低边缘，单位赫兹，默认为<span class="number">0</span></span><br><span class="line"></span><br><span class="line">highfreq - 梅尔滤波器的最高边缘，单位赫兹，默认为采样率/<span class="number">2</span></span><br><span class="line"></span><br><span class="line">preemph - 应用预加重过滤器和预加重过滤器的系数，<span class="number">0</span>表示没有过滤器，默认<span class="number">0.97</span></span><br><span class="line"></span><br><span class="line">ceplifter - 将升降器应用于最终的倒谱系数。 <span class="number">0</span>没有升降机。默认值为<span class="number">22</span>。</span><br><span class="line"></span><br><span class="line">appendEnergy - 如果是true，则将第<span class="number">0</span>个倒谱系数替换为总帧能量的对数。</span><br><span class="line"></span><br><span class="line">winfunc - 分析窗口应用于每个框架。 默认情况下不应用任何窗口。 你可以在这里使用numpy窗口函数 例如：winfunc=numpy.hamming</span><br></pre></td></tr></tbody></table></figure><p></p>
+<h2 id="MFCC特征和过滤器特征" class="heading-control"><a href="#MFCC特征和过滤器特征" class="headerlink" title="MFCC特征和过滤器特征"></a>MFCC 特征和过滤器特征<a class="heading-anchor" href="#MFCC特征和过滤器特征" aria-hidden="true"></a></h2><figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> python_speech_features <span class="keyword">import</span> mfcc, logfbank</span><br><span class="line"></span><br><span class="line"><span class="comment">#提取MFCC特征和过滤器特征</span></span><br><span class="line">mfcc_features = mfcc(audio, samplimg_freq)</span><br><span class="line">filterbank_features = logfbank(audio, samplimg_freq)</span><br><span class="line"></span><br><span class="line"><span class="comment">#打印参数，查看可生成多少个窗体：</span></span><br><span class="line">print(<span class="string">'\nMFCC:\nNumber of windows ='</span>, mfcc_features.shape[<span class="number">0</span>])</span><br><span class="line">print(<span class="string">'Length of each feature ='</span>, mfcc_features.shape[<span class="number">1</span>])</span><br><span class="line">print(<span class="string">'\nFilter bank:\nNumber of windows='</span>, filterbank_features.shape[<span class="number">0</span>])</span><br><span class="line">print(<span class="string">'Length of each feature ='</span>, filterbank_features.shape[<span class="number">1</span>])</span><br><span class="line"></span><br><span class="line"><span class="comment">#将MFCC特征可视化。转置矩阵，使得时域是水平的。</span></span><br><span class="line">mfcc_features = mfcc_features.T</span><br><span class="line">plt.matshow(mfcc_features)</span><br><span class="line">plt.title(<span class="string">'MFCC'</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">#将滤波器组特征可视化。转置矩阵，使得时域是水平的。</span></span><br><span class="line">filterbank_features = filterbank_features.T</span><br><span class="line">plt.matshow(filterbank_features)</span><br><span class="line">plt.title(<span class="string">'Filter bank'</span>)</span><br><span class="line">plt.show()</span><br></pre></td></tr></tbody></table></figure>
+<p>输出如下：<br></p><figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">MFCC:</span><br><span class="line">Number of windows = <span class="number">42</span></span><br><span class="line">Length of each feature = <span class="number">13</span></span><br><span class="line"></span><br><span class="line">Filter bank:</span><br><span class="line">Number of windows= <span class="number">42</span></span><br><span class="line">Length of each feature = <span class="number">26</span></span><br></pre></td></tr></tbody></table></figure><br><img src="https://i.loli.net/2019/09/10/9PzrY5gIXxTiM7U.png" alt><br><img src="https://i.loli.net/2019/09/10/rEyK4ZjAeOLDmC6.png" alt><p></p>
+<h2 id="触发词检测" class="heading-control"><a href="#触发词检测" class="headerlink" title="触发词检测"></a>触发词检测<a class="heading-anchor" href="#触发词检测" aria-hidden="true"></a></h2><p><img src="https://s2.ax1x.com/2019/09/26/unhpCt.png" alt="unhpCt.png"></p>
+<h2 id="Reference" class="heading-control"><a href="#Reference" class="headerlink" title="Reference"></a>Reference<a class="heading-anchor" href="#Reference" aria-hidden="true"></a></h2><ul>
+<li><a target="_blank" rel="noopener" href="https://jingyan.baidu.com/article/1709ad804e575b4634c4f0b1.html">https://jingyan.baidu.com/article/1709ad804e575b4634c4f0b1.html</a></li>
+<li><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/57004884">https://zhuanlan.zhihu.com/p/57004884</a></li>
+<li><a target="_blank" rel="noopener" href="https://python-speech-features.readthedocs.io/en/latest/">https://python-speech-features.readthedocs.io/en/latest/</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.meiwen.com.cn/subject/ahyxuqtx.html">https://www.meiwen.com.cn/subject/ahyxuqtx.html</a></li>
+<li><a target="_blank" rel="noopener" href="https://haythamfayek.com/2016/04/21/speech-processing-for-machine-learning.html">https://haythamfayek.com/2016/04/21/speech-processing-for-machine-learning.html</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.cnblogs.com/LXP-Never/p/10078200.html#%E9%9F%B3%E9%A2%91%E4%BF%A1%E5%8F%B7%E7%9A%84%E8%AF%BB%E5%86%99%E3%80%81%E6%92%AD%E6%94%BE%E5%8F%8A%E5%BD%95%E9%9F%B3">https://www.cnblogs.com/LXP-Never/p/10078200.html#%E9%9F%B3%E9%A2%91%E4%BF%A1%E5%8F%B7%E7%9A%84%E8%AF%BB%E5%86%99%E3%80%81%E6%92%AD%E6%94%BE%E5%8F%8A%E5%BD%95%E9%9F%B3</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/majianjia/nnom/tree/master/examples/keyword_spotting">https://github.com/majianjia/nnom/tree/master/examples/keyword_spotting</a></li>
+</ul>
+</body></html>
+    </div>
+
+    
+    
+    
+      
+  <div class="popular-posts-header">相关文章推荐</div>
+  <ul class="popular-posts">
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\post\33390.html" rel="bookmark">Python 高级语法</a></div>
+    </li>
+  </ul>
+
+        <div class="reward-container">
+  <div>支持一根棒棒糖！</div>
+  <button onclick="var qr = document.getElementById('qr'); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+    Donate
+  </button>
+  <div id="qr" style="display: none;">
+      
+      <div style="display: inline-block;">
+        <img src="https://i.loli.net/2020/08/27/Z63uzPfeimEYrD2.png" alt="Sun Yan WeChat Pay">
+        <p>WeChat Pay</p>
+      </div>
+      
+      <div style="display: inline-block;">
+        <img src="https://i.loli.net/2020/08/27/Zz62YJyVH1SRgGj.jpg" alt="Sun Yan Alipay">
+        <p>Alipay</p>
+      </div>
+
+  </div>
+</div>
+
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>Post author:  </strong>Sun Yan
+  </li>
+  <li class="post-copyright-link">
+    <strong>Post link: </strong>
+    <a href="http://sunyancn.github.io/post/20005.html" title="Python 音频信号处理">http://sunyancn.github.io/post/20005.html</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> unless stating additionally.
+  </li>
+</ul>
+</div>
+
+
+      <footer class="post-footer">
+          
+          <div class="post-tags">
+              <a href="/tags/Python/" rel="tag"><i class="fa fa-tag"></i> Python</a>
+              <a href="/tags/%E9%9F%B3%E9%A2%91%E4%BF%A1%E5%8F%B7%E5%A4%84%E7%90%86/" rel="tag"><i class="fa fa-tag"></i> 音频信号处理</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/post/55046.html" rel="prev" title="动态规划">
+      <i class="fa fa-chevron-left"></i> 动态规划
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/post/28311.html" rel="next" title="Hexo 优化和 Github 插件">
+      Hexo 优化和 Github 插件 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+    <script type="text/javascript" src="/js/linkcard.js"></script>
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    <div class="comments" id="valine-comments"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%9F%B3%E9%A2%91%E4%BF%A1%E5%8F%B7%E8%AF%BB%E5%8F%96"><span class="nav-number">1.</span> <span class="nav-text">音频信号读取</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A2%84%E5%8A%A0%E9%87%8D"><span class="nav-number">2.</span> <span class="nav-text">预加重</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%86%E5%B8%A7"><span class="nav-number">3.</span> <span class="nav-text">分帧</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AF%AD%E9%9F%B3%E4%BF%A1%E5%8F%B7%E7%9A%84%E7%9F%AD%E6%97%B6%E9%A2%91%E5%9F%9F%E5%A4%84%E7%90%86"><span class="nav-number">4.</span> <span class="nav-text">语音信号的短时频域处理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#python-speech-features"><span class="nav-number">5.</span> <span class="nav-text">python_speech_features</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#MFCC%E7%89%B9%E5%BE%81%E5%92%8C%E8%BF%87%E6%BB%A4%E5%99%A8%E7%89%B9%E5%BE%81"><span class="nav-number">6.</span> <span class="nav-text">MFCC 特征和过滤器特征</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A7%A6%E5%8F%91%E8%AF%8D%E6%A3%80%E6%B5%8B"><span class="nav-number">7.</span> <span class="nav-text">触发词检测</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Reference"><span class="nav-number">8.</span> <span class="nav-text">Reference</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Sun Yan"
+      src="https://i.loli.net/2020/08/25/NrIpckD9qPLY38C.jpg">
+  <p class="site-author-name" itemprop="name">Sun Yan</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">115</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">17</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">79</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/sunyancn" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;sunyancn" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:sunyanhust@163.com" title="E-Mail → mailto:sunyanhust@163.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/atom.xml" title="RSS → &#x2F;atom.xml"><i class="fas fa-rss fa-fw"></i>RSS</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://weibo.com/u/5270232660" title="Weibo → https:&#x2F;&#x2F;weibo.com&#x2F;u&#x2F;5270232660" rel="noopener" target="_blank"><i class="fab fa-weibo fa-fw"></i>Weibo</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 2015 – 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Sun Yan</span>
+</div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script size="300" alpha="0.6" zIndex="-1" src="//cdn.jsdelivr.net/gh/theme-next/theme-next-canvas-ribbon@1/canvas-ribbon.js"></script>
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+<script src="/js/bookmark.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
+
+  
+<div id="needsharebutton-float">
+      <span class="btn">
+        <i class="fa fa-share-alt" aria-hidden="true"></i>
+      </span>
+    </div>
+  <script src="//cdn.jsdelivr.net/gh/theme-next/theme-next-needmoreshare2@1/needsharebutton.min.js"></script>
+  <script>
+      flOptions = {};
+        flOptions.iconStyle = "box";
+        flOptions.boxForm = "horizontal";
+        flOptions.position = "middleRight";
+        flOptions.networks = "Weibo,Wechat,Douban,QQZone,Twitter,Facebook";
+      new needShareButton('#needsharebutton-float', flOptions);
+  </script>
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('https://cdn.jsdelivr.net/gh//AshinWang/SimpleValine/SimpleValine.min.js', () => {
+    var GUEST = ['nick', 'mail', 'link'];
+    var guest = 'nick,mail';
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
+    });
+    new Valine({
+      el         : '#valine-comments',
+      verify     : false,
+      notify     : false,
+      appId      : 'IAIsNxUL4BLqJ2c4nTn8HlLv-gzGzoHsz',
+      appKey     : '73p5IVTPonVrJhOylbVtJffi',
+      placeholder: "(๑•́ ₃ •̀๑) 留言时填写您的邮箱可以邮件收到博主的回复噢~",
+      avatar     : 'wavatar',
+      meta       : guest,
+      pageSize   : '10' || 10,
+      visitor    : false,
+      lang       : '' || 'zh-cn',
+      path       : location.pathname,
+      recordIP   : true,
+      serverURLs : ''
+    });
+  }, window.Valine);
+});
+</script>
+
+</body>
+</html>
