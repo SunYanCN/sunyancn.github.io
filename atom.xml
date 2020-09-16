@@ -6,7 +6,7 @@
   <link href="http://sunyancn.github.io/atom.xml" rel="self"/>
   
   <link href="http://sunyancn.github.io/"/>
-  <updated>2020-09-16T12:18:02.231Z</updated>
+  <updated>2020-09-15T13:33:03.737Z</updated>
   <id>http://sunyancn.github.io/</id>
   
   <author>
@@ -15,29 +15,6 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title>标签页测试</title>
-    <link href="http://sunyancn.github.io/post/5213c80b.html"/>
-    <id>http://sunyancn.github.io/post/5213c80b.html</id>
-    <published>2020-09-16T12:02:25.000Z</published>
-    <updated>2020-09-16T12:18:02.231Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
-        
-      
-    
-    
-    
-    
-    <category term="测试" scheme="http://sunyancn.github.io/tags/%E6%B5%8B%E8%AF%95/"/>
-    
-  </entry>
   
   <entry>
     <title>Hexo 博客 + Next 主题深度优化与定制</title>
@@ -450,6 +427,29 @@
     
     
     <category term="比赛" scheme="http://sunyancn.github.io/tags/%E6%AF%94%E8%B5%9B/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>算法和开发哪个更累</title>
+    <link href="http://sunyancn.github.io/post/1215.html"/>
+    <id>http://sunyancn.github.io/post/1215.html</id>
+    <published>2019-11-29T13:57:07.000Z</published>
+    <updated>2020-08-26T17:27:02.256Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    
+    <category term="工作" scheme="http://sunyancn.github.io/tags/%E5%B7%A5%E4%BD%9C/"/>
     
   </entry>
   

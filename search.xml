@@ -72,6 +72,39 @@
 </body></html>]]></content>
   </entry>
   <entry>
+    <title>20200224210643</title>
+    <url>/post/6222.html</url>
+    <content><![CDATA[<html><head><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script></head><body><h3 id="nodejs更新" class="heading-control"><a href="#nodejs更新" class="headerlink" title="nodejs更新"></a>nodejs 更新<a class="heading-anchor" href="#nodejs更新" aria-hidden="true"></a></h3><ol>
+<li><p>`npm install -g n 对 n 模块进行全局安装</p>
+</li>
+<li><p>使用 n 命令进行更新<br>n stable // 更新到稳定版<br>n latest // 更新到最新版</p>
+</li>
+<li><p>使用 node -v 看是否已经更新完成了</p>
+</li>
+</ol>
+<h3 id="查看文件的状态" class="heading-control"><a href="#查看文件的状态" class="headerlink" title="查看文件的状态"></a>查看文件的状态<a class="heading-anchor" href="#查看文件的状态" aria-hidden="true"></a></h3><p>在 Linux 下，一个文件有三种时间，分别是访问时间（Access）、修改时间（Modify）、状态改变时间（Change）。可以通过 stat 命令查看文件的状态<br>stat file<br>example: stat A.py</p>
+<h3 id="模型性能通常会随着时间而下降" class="heading-control"><a href="#模型性能通常会随着时间而下降" class="headerlink" title="模型性能通常会随着时间而下降"></a>模型性能通常会随着时间而下降<a class="heading-anchor" href="#模型性能通常会随着时间而下降" aria-hidden="true"></a></h3><p>观点：模型性能通常会随着时间而下降<br>因为新的数据在不断产生，俗话说学如逆水行舟，不进则退</p>
+<h3 id="两个github库" class="heading-control"><a href="#两个github库" class="headerlink" title="两个github库"></a>两个 github 库<a class="heading-anchor" href="#两个github库" aria-hidden="true"></a></h3><ul>
+<li>streamlit：可视化构建应用<br><a href="https://mlwhiz.com/blog/2019/12/07/streamlit/">https://mlwhiz.com/blog/2019/12/07/streamlit/</a></li>
+<li>ELI5：模型解释性</li>
+</ul>
+<h3 id="对象检测和实例分割" class="heading-control"><a href="#对象检测和实例分割" class="headerlink" title="对象检测和实例分割"></a>对象检测和实例分割<a class="heading-anchor" href="#对象检测和实例分割" aria-hidden="true"></a></h3><ul>
+<li><a href="https://mlwhiz.com/blog/2019/12/06/weapons/">https://mlwhiz.com/blog/2019/12/06/weapons/</a></li>
+<li><a href="https://mlwhiz.com/blog/2019/12/05/od/">https://mlwhiz.com/blog/2019/12/05/od/</a><br>-<a href="https://mlwhiz.com/blog/2019/11/08/interpret_models/">https://mlwhiz.com/blog/2019/11/08/interpret_models/</a></li>
+</ul>
+</body></html>]]></content>
+  </entry>
+  <entry>
+    <title>ACL2020 paper 相关论文</title>
+    <url>/post/58505.html</url>
+    <content><![CDATA[<html><head><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script></head><body><h3 id="数据集" class="heading-control"><a href="#数据集" class="headerlink" title="数据集"></a>数据集<a class="heading-anchor" href="#数据集" aria-hidden="true"></a></h3><p><a href="https://arxiv.xilesou.top/pdf/1810.07366.pdf">CMRC2018</a><br><a href="https://arxiv.xilesou.top/ftp/arxiv/papers/1806/1806.00920.pdf">DRCD</a></p>
+<h3 id="Rank" class="heading-control"><a href="#Rank" class="headerlink" title="Rank"></a>Rank<a class="heading-anchor" href="#Rank" aria-hidden="true"></a></h3><p><a href="https://arxiv.xilesou.top/pdf/1901.04085.pdf">Passage Re-ranking with BERT</a></p>
+</body></html>]]></content>
+      <tags>
+        <tag>论文</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Attention,BiLSTM 以及 Transform</title>
     <url>/post/50119.html</url>
     <content><![CDATA[<html><head><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script></head><body><h2 id="Attention" class="heading-control"><a href="#Attention" class="headerlink" title="Attention"></a>Attention<a class="heading-anchor" href="#Attention" aria-hidden="true"></a></h2><div id="dplayer0" class="dplayer hexo-tag-dplayer-mark" style="margin-bottom: 20px;"></div><script>(function(){var player = new DPlayer({"container":document.getElementById("dplayer0"),"theme":"#FADFA3","loop":true,"video":{"url":"https://jalammar.github.io/images/attention_process.mp4"},"danmaku":{"api":"https://api.prprpr.me/dplayer/","token":"tokendemo"}});window.dplayers||(window.dplayers=[]);window.dplayers.push(player);})()</script>
@@ -107,39 +140,6 @@
       <tags>
         <tag>NLP</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>ACL2020 paper 相关论文</title>
-    <url>/post/58505.html</url>
-    <content><![CDATA[<html><head><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script></head><body><h3 id="数据集" class="heading-control"><a href="#数据集" class="headerlink" title="数据集"></a>数据集<a class="heading-anchor" href="#数据集" aria-hidden="true"></a></h3><p><a href="https://arxiv.xilesou.top/pdf/1810.07366.pdf">CMRC2018</a><br><a href="https://arxiv.xilesou.top/ftp/arxiv/papers/1806/1806.00920.pdf">DRCD</a></p>
-<h3 id="Rank" class="heading-control"><a href="#Rank" class="headerlink" title="Rank"></a>Rank<a class="heading-anchor" href="#Rank" aria-hidden="true"></a></h3><p><a href="https://arxiv.xilesou.top/pdf/1901.04085.pdf">Passage Re-ranking with BERT</a></p>
-</body></html>]]></content>
-      <tags>
-        <tag>论文</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>20200224210643</title>
-    <url>/post/6222.html</url>
-    <content><![CDATA[<html><head><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script></head><body><h3 id="nodejs更新" class="heading-control"><a href="#nodejs更新" class="headerlink" title="nodejs更新"></a>nodejs 更新<a class="heading-anchor" href="#nodejs更新" aria-hidden="true"></a></h3><ol>
-<li><p>`npm install -g n 对 n 模块进行全局安装</p>
-</li>
-<li><p>使用 n 命令进行更新<br>n stable // 更新到稳定版<br>n latest // 更新到最新版</p>
-</li>
-<li><p>使用 node -v 看是否已经更新完成了</p>
-</li>
-</ol>
-<h3 id="查看文件的状态" class="heading-control"><a href="#查看文件的状态" class="headerlink" title="查看文件的状态"></a>查看文件的状态<a class="heading-anchor" href="#查看文件的状态" aria-hidden="true"></a></h3><p>在 Linux 下，一个文件有三种时间，分别是访问时间（Access）、修改时间（Modify）、状态改变时间（Change）。可以通过 stat 命令查看文件的状态<br>stat file<br>example: stat A.py</p>
-<h3 id="模型性能通常会随着时间而下降" class="heading-control"><a href="#模型性能通常会随着时间而下降" class="headerlink" title="模型性能通常会随着时间而下降"></a>模型性能通常会随着时间而下降<a class="heading-anchor" href="#模型性能通常会随着时间而下降" aria-hidden="true"></a></h3><p>观点：模型性能通常会随着时间而下降<br>因为新的数据在不断产生，俗话说学如逆水行舟，不进则退</p>
-<h3 id="两个github库" class="heading-control"><a href="#两个github库" class="headerlink" title="两个github库"></a>两个 github 库<a class="heading-anchor" href="#两个github库" aria-hidden="true"></a></h3><ul>
-<li>streamlit：可视化构建应用<br><a href="https://mlwhiz.com/blog/2019/12/07/streamlit/">https://mlwhiz.com/blog/2019/12/07/streamlit/</a></li>
-<li>ELI5：模型解释性</li>
-</ul>
-<h3 id="对象检测和实例分割" class="heading-control"><a href="#对象检测和实例分割" class="headerlink" title="对象检测和实例分割"></a>对象检测和实例分割<a class="heading-anchor" href="#对象检测和实例分割" aria-hidden="true"></a></h3><ul>
-<li><a href="https://mlwhiz.com/blog/2019/12/06/weapons/">https://mlwhiz.com/blog/2019/12/06/weapons/</a></li>
-<li><a href="https://mlwhiz.com/blog/2019/12/05/od/">https://mlwhiz.com/blog/2019/12/05/od/</a><br>-<a href="https://mlwhiz.com/blog/2019/11/08/interpret_models/">https://mlwhiz.com/blog/2019/11/08/interpret_models/</a></li>
-</ul>
-</body></html>]]></content>
   </entry>
   <entry>
     <title>CNN+BLSTM+CTC 的验证码识别从训练到部署</title>
@@ -1502,58 +1502,6 @@ Number=(Features+Output\_dim) x Output\_dim+Output\_dim
       </tags>
   </entry>
   <entry>
-    <title>Python 音频信号处理</title>
-    <url>/post/20005.html</url>
-    <content><![CDATA[<html><head><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script></head><body><blockquote>
-<p>本文主要是对网上的一些文章的总结，参考的文章在文末已经列出</p>
-</blockquote>
-<p>音频信号是模拟信号，我们需要将其保存为数字信号，才能对语音进行算法操作，WAV 是 Microsoft 开发的一种声音文件格式，通常被用来保存未压缩的声音数据。</p>
-<p>语音信号有三个重要的参数：<strong>声道数</strong>、<strong>取样频率</strong>和<strong>量化位数</strong>。</p>
-<ul>
-<li><strong>声道数</strong>：可以是单声道或者是双声道</li>
-<li><strong>采样频率</strong>：一秒内对声音信号的采集次数，44100Hz 采样频率意味着每秒钟信号被分解成 44100 份，如果采样率高，那么媒体播放音频时会感觉信号是连续的。</li>
-<li><strong>量化位数</strong>：用多少 bit 表达一次采样所采集的数据，通常有 8bit、16bit、24bit 和 32bit 等几种</li>
-</ul>
-<p>如果你需要自己录制和编辑声音文件，推荐使用 Audacity (<a href="http://audacity.sourceforge.net)，">http://audacity.sourceforge.net)，</a> 它是一款开源的、跨平台、多声道的录音编辑软件。</p>
-<a id="more"></a>
-<h2 id="音频信号读取" class="heading-control"><a href="#音频信号读取" class="headerlink" title="音频信号读取"></a>音频信号读取<a class="heading-anchor" href="#音频信号读取" aria-hidden="true"></a></h2><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> scipy.io <span class="keyword">import</span> wavfile</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> matplotlib.pylab <span class="keyword">as</span> plt</span><br><span class="line">samplimg_freq, audio = wavfile.read(<span class="string">"data/input_freq.wav"</span>)</span><br><span class="line">plt.plot(np.arange(audio.shape[<span class="number">0</span>]),audio)</span><br><span class="line">plt.show()</span><br></pre></td></tr></tbody></table></figure>
-<p>音频的时域信号波形：<br><img src="https://i.loli.net/2019/09/10/taJsWjAQe21xb6g.png" alt></p>
-<p>语音信号是一个非平稳的时变信号，但语音信号是由声门的激励脉冲通过声道形成的，而声道 (人的口腔、鼻腔) 的肌肉运动是缓慢的，所以 “短时间”(10-30ms) 内可以认为语音信号是平稳时不变的。由此构成了语音信号的 “短时分析技术”。<br>在短时分析中，将语音信号分为一段一段的语音帧，每一帧一般取 10-30ms，我们的研究就建立在每一帧的语音特征分析上。<br>提取的不同的语音特征参数对应着不同的语音信号分析方法：时域分析、频域分析、倒谱域分析… 由于语音信号最重要的感知特性反映在功率谱上，而相位变化只起到很小的作用，所有语音频域分析更加重要。</p>
-<h2 id="预加重" class="heading-control"><a href="#预加重" class="headerlink" title="预加重"></a>预加重<a class="heading-anchor" href="#预加重" aria-hidden="true"></a></h2><p>预增强以帧为单位进行，目的在于加强高频。去除口唇辐射的影响，增加语音的高频分辨率。因为高频端大约在 800Hz 以上按 6dB/oct (倍频程) 衰减，频率越高相应的成分越小，为此要在对语音信号进行分析之前对其高频部分加以提升，也可以改善高频信噪比。k 是预增强系数，常用 0.97。</p>
-<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">pre_emphasis = <span class="number">0.97</span></span><br><span class="line">emphasized_signal = np.append(audio[<span class="number">0</span>], audio[<span class="number">1</span>:] - pre_emphasis * audio[:<span class="number">-1</span>])</span><br><span class="line">plt.plot(np.arange(emphasized_signal.shape[<span class="number">0</span>]),emphasized_signal)</span><br><span class="line">plt.show()</span><br></pre></td></tr></tbody></table></figure>
-<p><img src="https://i.loli.net/2019/09/10/hycELdZWD5qo2AH.png" alt></p>
-<h2 id="分帧" class="heading-control"><a href="#分帧" class="headerlink" title="分帧"></a>分帧<a class="heading-anchor" href="#分帧" aria-hidden="true"></a></h2><p>分帧是将不定长的音频切分成固定长度的小段。为了避免窗边界对信号的遗漏，因此对帧做偏移时候，帧间要有帧移 (帧与帧之间需要重叠一部分)，帧长 (wlen) = 重叠 (overlap)+ 帧移 (inc)。inc 为帧移，表示后一帧第前一帧的偏移量，fs 表示采样率，fn 表示一段语音信号的分帧数。</p>
-<script type="math/tex; mode=display">\frac{N-overlap}{inc}=\frac{N-wlen+inc}{inc}</script><p>通常的选择是帧长 25ms（下图绿色），帧移为 10ms（下图黄色）。接下来的操作是对单帧进行的。要分帧是因为语音信号是快速变化的，而傅里叶变换适用于分析平稳的信号。帧和帧之间的时间差常常取为 10ms，这样帧与帧之间会有重叠（下图红色），否则，由于帧与帧连接处的信号会因为加窗而被弱化，这部分的信息就丢失了。<br><img src="https://i.loli.net/2019/09/10/QA89CdDfL3qibS6.png" alt></p>
-<h2 id="语音信号的短时频域处理" class="heading-control"><a href="#语音信号的短时频域处理" class="headerlink" title="语音信号的短时频域处理"></a>语音信号的短时频域处理<a class="heading-anchor" href="#语音信号的短时频域处理" aria-hidden="true"></a></h2><p>在语音信号处理中，在语音信号处理中，信号在频域或其他变换域上的分析处理占重要的位置，在频域上研究语音可以使信号在时域上无法表现出来的某些特征变得十分明显，一个音频信号的本质是由其频率内容决定的，将时域信号转换为频域信号一般对语音进行<strong>短时傅里叶变换</strong>。</p>
-<h2 id="python-speech-features" class="heading-control"><a href="#python-speech-features" class="headerlink" title="python_speech_features"></a>python_speech_features<a class="heading-anchor" href="#python-speech-features" aria-hidden="true"></a></h2><p>python_speech_features 的比较好用的地方就是自带预加重参数，只需要设定 preemph 的值，就可以对语音信号进行预加重，增强高频信号。<br>python_speech_features 模块提供的函数主要包括两个：MFCC 和 FBank。API 定义如下：</p>
-<blockquote>
-<p>python_speech_features.base.fbank(signal, samplerate=16000, winlen=0.025, winstep=0.01, nfilt=26, nfft=512, lowfreq=0, highfreq=None, preemph=0.97, winfunc=<function <lambda>>)</function></p>
-</blockquote>
-<p>从一个音频信号中计算梅尔滤波器能量特征，返回：2 个值。第一个是一个包含着特征的大小为 nfilt 的 numpy 数组，每一行都有一个特征向量。第二个返回值是每一帧的能量。</p>
-<blockquote>
-<p>python_speech_features.base.logfbank(signal, samplerate=16000, winlen=0.025, winstep=0.01, nfilt=26, nfft=512, lowfreq=0, highfreq=None, preemph=0.97)</p>
-</blockquote>
-<p>从一个音频信号中计算梅尔滤波器能量特征的对数，返回： 一个包含特征的大小为 nfilt 的 numpy 数组，每一行都有一个特征向量</p>
-<p>参数<br></p><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">参数：</span><br><span class="line"></span><br><span class="line">signal - 需要用来计算特征的音频信号，应该是一个N*<span class="number">1</span>的数组</span><br><span class="line"></span><br><span class="line">samplerate - 我们用来工作的信号的采样率</span><br><span class="line"></span><br><span class="line">winlen - 分析窗口的长度，按秒计，默认<span class="number">0.025</span>s(<span class="number">25</span>ms)</span><br><span class="line"></span><br><span class="line">winstep - 连续窗口之间的步长，按秒计，默认<span class="number">0.01</span>s（<span class="number">10</span>ms）</span><br><span class="line"></span><br><span class="line">numcep - 倒频谱返回的数量，默认<span class="number">13</span></span><br><span class="line"></span><br><span class="line">nfilt - 滤波器组的滤波器数量，默认<span class="number">26</span></span><br><span class="line"></span><br><span class="line">nfft - FFT的大小，默认<span class="number">512</span></span><br><span class="line"></span><br><span class="line">lowfreq - 梅尔滤波器的最低边缘，单位赫兹，默认为<span class="number">0</span></span><br><span class="line"></span><br><span class="line">highfreq - 梅尔滤波器的最高边缘，单位赫兹，默认为采样率/<span class="number">2</span></span><br><span class="line"></span><br><span class="line">preemph - 应用预加重过滤器和预加重过滤器的系数，<span class="number">0</span>表示没有过滤器，默认<span class="number">0.97</span></span><br><span class="line"></span><br><span class="line">ceplifter - 将升降器应用于最终的倒谱系数。 <span class="number">0</span>没有升降机。默认值为<span class="number">22</span>。</span><br><span class="line"></span><br><span class="line">appendEnergy - 如果是true，则将第<span class="number">0</span>个倒谱系数替换为总帧能量的对数。</span><br><span class="line"></span><br><span class="line">winfunc - 分析窗口应用于每个框架。 默认情况下不应用任何窗口。 你可以在这里使用numpy窗口函数 例如：winfunc=numpy.hamming</span><br></pre></td></tr></tbody></table></figure><p></p>
-<h2 id="MFCC特征和过滤器特征" class="heading-control"><a href="#MFCC特征和过滤器特征" class="headerlink" title="MFCC特征和过滤器特征"></a>MFCC 特征和过滤器特征<a class="heading-anchor" href="#MFCC特征和过滤器特征" aria-hidden="true"></a></h2><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> python_speech_features <span class="keyword">import</span> mfcc, logfbank</span><br><span class="line"></span><br><span class="line"><span class="comment">#提取MFCC特征和过滤器特征</span></span><br><span class="line">mfcc_features = mfcc(audio, samplimg_freq)</span><br><span class="line">filterbank_features = logfbank(audio, samplimg_freq)</span><br><span class="line"></span><br><span class="line"><span class="comment">#打印参数，查看可生成多少个窗体：</span></span><br><span class="line">print(<span class="string">'\nMFCC:\nNumber of windows ='</span>, mfcc_features.shape[<span class="number">0</span>])</span><br><span class="line">print(<span class="string">'Length of each feature ='</span>, mfcc_features.shape[<span class="number">1</span>])</span><br><span class="line">print(<span class="string">'\nFilter bank:\nNumber of windows='</span>, filterbank_features.shape[<span class="number">0</span>])</span><br><span class="line">print(<span class="string">'Length of each feature ='</span>, filterbank_features.shape[<span class="number">1</span>])</span><br><span class="line"></span><br><span class="line"><span class="comment">#将MFCC特征可视化。转置矩阵，使得时域是水平的。</span></span><br><span class="line">mfcc_features = mfcc_features.T</span><br><span class="line">plt.matshow(mfcc_features)</span><br><span class="line">plt.title(<span class="string">'MFCC'</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">#将滤波器组特征可视化。转置矩阵，使得时域是水平的。</span></span><br><span class="line">filterbank_features = filterbank_features.T</span><br><span class="line">plt.matshow(filterbank_features)</span><br><span class="line">plt.title(<span class="string">'Filter bank'</span>)</span><br><span class="line">plt.show()</span><br></pre></td></tr></tbody></table></figure>
-<p>输出如下：<br></p><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">MFCC:</span><br><span class="line">Number of windows = <span class="number">42</span></span><br><span class="line">Length of each feature = <span class="number">13</span></span><br><span class="line"></span><br><span class="line">Filter bank:</span><br><span class="line">Number of windows= <span class="number">42</span></span><br><span class="line">Length of each feature = <span class="number">26</span></span><br></pre></td></tr></tbody></table></figure><br><img src="https://i.loli.net/2019/09/10/9PzrY5gIXxTiM7U.png" alt><br><img src="https://i.loli.net/2019/09/10/rEyK4ZjAeOLDmC6.png" alt><p></p>
-<h2 id="触发词检测" class="heading-control"><a href="#触发词检测" class="headerlink" title="触发词检测"></a>触发词检测<a class="heading-anchor" href="#触发词检测" aria-hidden="true"></a></h2><p><img src="https://s2.ax1x.com/2019/09/26/unhpCt.png" alt="unhpCt.png"></p>
-<h2 id="Reference" class="heading-control"><a href="#Reference" class="headerlink" title="Reference"></a>Reference<a class="heading-anchor" href="#Reference" aria-hidden="true"></a></h2><ul>
-<li><a href="https://jingyan.baidu.com/article/1709ad804e575b4634c4f0b1.html">https://jingyan.baidu.com/article/1709ad804e575b4634c4f0b1.html</a></li>
-<li><a href="https://zhuanlan.zhihu.com/p/57004884">https://zhuanlan.zhihu.com/p/57004884</a></li>
-<li><a href="https://python-speech-features.readthedocs.io/en/latest/">https://python-speech-features.readthedocs.io/en/latest/</a></li>
-<li><a href="https://www.meiwen.com.cn/subject/ahyxuqtx.html">https://www.meiwen.com.cn/subject/ahyxuqtx.html</a></li>
-<li><a href="https://haythamfayek.com/2016/04/21/speech-processing-for-machine-learning.html">https://haythamfayek.com/2016/04/21/speech-processing-for-machine-learning.html</a></li>
-<li><a href="https://www.cnblogs.com/LXP-Never/p/10078200.html#%E9%9F%B3%E9%A2%91%E4%BF%A1%E5%8F%B7%E7%9A%84%E8%AF%BB%E5%86%99%E3%80%81%E6%92%AD%E6%94%BE%E5%8F%8A%E5%BD%95%E9%9F%B3">https://www.cnblogs.com/LXP-Never/p/10078200.html#%E9%9F%B3%E9%A2%91%E4%BF%A1%E5%8F%B7%E7%9A%84%E8%AF%BB%E5%86%99%E3%80%81%E6%92%AD%E6%94%BE%E5%8F%8A%E5%BD%95%E9%9F%B3</a></li>
-<li><a href="https://github.com/majianjia/nnom/tree/master/examples/keyword_spotting">https://github.com/majianjia/nnom/tree/master/examples/keyword_spotting</a></li>
-</ul>
-</body></html>]]></content>
-      <tags>
-        <tag>Python</tag>
-        <tag>音频信号处理</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Python 高级语法</title>
     <url>/post/33390.html</url>
     <content><![CDATA[<html><head><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script></head><body><p><iframe src="https://trinket.io/embed/python/b970f02d2e" width="100%" height="356" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe></p>
@@ -1638,6 +1586,58 @@ Number=(Features+Output\_dim) x Output\_dim+Output\_dim
       <tags>
         <tag>Python</tag>
         <tag>语法</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Python 音频信号处理</title>
+    <url>/post/20005.html</url>
+    <content><![CDATA[<html><head><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script></head><body><blockquote>
+<p>本文主要是对网上的一些文章的总结，参考的文章在文末已经列出</p>
+</blockquote>
+<p>音频信号是模拟信号，我们需要将其保存为数字信号，才能对语音进行算法操作，WAV 是 Microsoft 开发的一种声音文件格式，通常被用来保存未压缩的声音数据。</p>
+<p>语音信号有三个重要的参数：<strong>声道数</strong>、<strong>取样频率</strong>和<strong>量化位数</strong>。</p>
+<ul>
+<li><strong>声道数</strong>：可以是单声道或者是双声道</li>
+<li><strong>采样频率</strong>：一秒内对声音信号的采集次数，44100Hz 采样频率意味着每秒钟信号被分解成 44100 份，如果采样率高，那么媒体播放音频时会感觉信号是连续的。</li>
+<li><strong>量化位数</strong>：用多少 bit 表达一次采样所采集的数据，通常有 8bit、16bit、24bit 和 32bit 等几种</li>
+</ul>
+<p>如果你需要自己录制和编辑声音文件，推荐使用 Audacity (<a href="http://audacity.sourceforge.net)，">http://audacity.sourceforge.net)，</a> 它是一款开源的、跨平台、多声道的录音编辑软件。</p>
+<a id="more"></a>
+<h2 id="音频信号读取" class="heading-control"><a href="#音频信号读取" class="headerlink" title="音频信号读取"></a>音频信号读取<a class="heading-anchor" href="#音频信号读取" aria-hidden="true"></a></h2><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> scipy.io <span class="keyword">import</span> wavfile</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> matplotlib.pylab <span class="keyword">as</span> plt</span><br><span class="line">samplimg_freq, audio = wavfile.read(<span class="string">"data/input_freq.wav"</span>)</span><br><span class="line">plt.plot(np.arange(audio.shape[<span class="number">0</span>]),audio)</span><br><span class="line">plt.show()</span><br></pre></td></tr></tbody></table></figure>
+<p>音频的时域信号波形：<br><img src="https://i.loli.net/2019/09/10/taJsWjAQe21xb6g.png" alt></p>
+<p>语音信号是一个非平稳的时变信号，但语音信号是由声门的激励脉冲通过声道形成的，而声道 (人的口腔、鼻腔) 的肌肉运动是缓慢的，所以 “短时间”(10-30ms) 内可以认为语音信号是平稳时不变的。由此构成了语音信号的 “短时分析技术”。<br>在短时分析中，将语音信号分为一段一段的语音帧，每一帧一般取 10-30ms，我们的研究就建立在每一帧的语音特征分析上。<br>提取的不同的语音特征参数对应着不同的语音信号分析方法：时域分析、频域分析、倒谱域分析… 由于语音信号最重要的感知特性反映在功率谱上，而相位变化只起到很小的作用，所有语音频域分析更加重要。</p>
+<h2 id="预加重" class="heading-control"><a href="#预加重" class="headerlink" title="预加重"></a>预加重<a class="heading-anchor" href="#预加重" aria-hidden="true"></a></h2><p>预增强以帧为单位进行，目的在于加强高频。去除口唇辐射的影响，增加语音的高频分辨率。因为高频端大约在 800Hz 以上按 6dB/oct (倍频程) 衰减，频率越高相应的成分越小，为此要在对语音信号进行分析之前对其高频部分加以提升，也可以改善高频信噪比。k 是预增强系数，常用 0.97。</p>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">pre_emphasis = <span class="number">0.97</span></span><br><span class="line">emphasized_signal = np.append(audio[<span class="number">0</span>], audio[<span class="number">1</span>:] - pre_emphasis * audio[:<span class="number">-1</span>])</span><br><span class="line">plt.plot(np.arange(emphasized_signal.shape[<span class="number">0</span>]),emphasized_signal)</span><br><span class="line">plt.show()</span><br></pre></td></tr></tbody></table></figure>
+<p><img src="https://i.loli.net/2019/09/10/hycELdZWD5qo2AH.png" alt></p>
+<h2 id="分帧" class="heading-control"><a href="#分帧" class="headerlink" title="分帧"></a>分帧<a class="heading-anchor" href="#分帧" aria-hidden="true"></a></h2><p>分帧是将不定长的音频切分成固定长度的小段。为了避免窗边界对信号的遗漏，因此对帧做偏移时候，帧间要有帧移 (帧与帧之间需要重叠一部分)，帧长 (wlen) = 重叠 (overlap)+ 帧移 (inc)。inc 为帧移，表示后一帧第前一帧的偏移量，fs 表示采样率，fn 表示一段语音信号的分帧数。</p>
+<script type="math/tex; mode=display">\frac{N-overlap}{inc}=\frac{N-wlen+inc}{inc}</script><p>通常的选择是帧长 25ms（下图绿色），帧移为 10ms（下图黄色）。接下来的操作是对单帧进行的。要分帧是因为语音信号是快速变化的，而傅里叶变换适用于分析平稳的信号。帧和帧之间的时间差常常取为 10ms，这样帧与帧之间会有重叠（下图红色），否则，由于帧与帧连接处的信号会因为加窗而被弱化，这部分的信息就丢失了。<br><img src="https://i.loli.net/2019/09/10/QA89CdDfL3qibS6.png" alt></p>
+<h2 id="语音信号的短时频域处理" class="heading-control"><a href="#语音信号的短时频域处理" class="headerlink" title="语音信号的短时频域处理"></a>语音信号的短时频域处理<a class="heading-anchor" href="#语音信号的短时频域处理" aria-hidden="true"></a></h2><p>在语音信号处理中，在语音信号处理中，信号在频域或其他变换域上的分析处理占重要的位置，在频域上研究语音可以使信号在时域上无法表现出来的某些特征变得十分明显，一个音频信号的本质是由其频率内容决定的，将时域信号转换为频域信号一般对语音进行<strong>短时傅里叶变换</strong>。</p>
+<h2 id="python-speech-features" class="heading-control"><a href="#python-speech-features" class="headerlink" title="python_speech_features"></a>python_speech_features<a class="heading-anchor" href="#python-speech-features" aria-hidden="true"></a></h2><p>python_speech_features 的比较好用的地方就是自带预加重参数，只需要设定 preemph 的值，就可以对语音信号进行预加重，增强高频信号。<br>python_speech_features 模块提供的函数主要包括两个：MFCC 和 FBank。API 定义如下：</p>
+<blockquote>
+<p>python_speech_features.base.fbank(signal, samplerate=16000, winlen=0.025, winstep=0.01, nfilt=26, nfft=512, lowfreq=0, highfreq=None, preemph=0.97, winfunc=<function <lambda>>)</function></p>
+</blockquote>
+<p>从一个音频信号中计算梅尔滤波器能量特征，返回：2 个值。第一个是一个包含着特征的大小为 nfilt 的 numpy 数组，每一行都有一个特征向量。第二个返回值是每一帧的能量。</p>
+<blockquote>
+<p>python_speech_features.base.logfbank(signal, samplerate=16000, winlen=0.025, winstep=0.01, nfilt=26, nfft=512, lowfreq=0, highfreq=None, preemph=0.97)</p>
+</blockquote>
+<p>从一个音频信号中计算梅尔滤波器能量特征的对数，返回： 一个包含特征的大小为 nfilt 的 numpy 数组，每一行都有一个特征向量</p>
+<p>参数<br></p><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">参数：</span><br><span class="line"></span><br><span class="line">signal - 需要用来计算特征的音频信号，应该是一个N*<span class="number">1</span>的数组</span><br><span class="line"></span><br><span class="line">samplerate - 我们用来工作的信号的采样率</span><br><span class="line"></span><br><span class="line">winlen - 分析窗口的长度，按秒计，默认<span class="number">0.025</span>s(<span class="number">25</span>ms)</span><br><span class="line"></span><br><span class="line">winstep - 连续窗口之间的步长，按秒计，默认<span class="number">0.01</span>s（<span class="number">10</span>ms）</span><br><span class="line"></span><br><span class="line">numcep - 倒频谱返回的数量，默认<span class="number">13</span></span><br><span class="line"></span><br><span class="line">nfilt - 滤波器组的滤波器数量，默认<span class="number">26</span></span><br><span class="line"></span><br><span class="line">nfft - FFT的大小，默认<span class="number">512</span></span><br><span class="line"></span><br><span class="line">lowfreq - 梅尔滤波器的最低边缘，单位赫兹，默认为<span class="number">0</span></span><br><span class="line"></span><br><span class="line">highfreq - 梅尔滤波器的最高边缘，单位赫兹，默认为采样率/<span class="number">2</span></span><br><span class="line"></span><br><span class="line">preemph - 应用预加重过滤器和预加重过滤器的系数，<span class="number">0</span>表示没有过滤器，默认<span class="number">0.97</span></span><br><span class="line"></span><br><span class="line">ceplifter - 将升降器应用于最终的倒谱系数。 <span class="number">0</span>没有升降机。默认值为<span class="number">22</span>。</span><br><span class="line"></span><br><span class="line">appendEnergy - 如果是true，则将第<span class="number">0</span>个倒谱系数替换为总帧能量的对数。</span><br><span class="line"></span><br><span class="line">winfunc - 分析窗口应用于每个框架。 默认情况下不应用任何窗口。 你可以在这里使用numpy窗口函数 例如：winfunc=numpy.hamming</span><br></pre></td></tr></tbody></table></figure><p></p>
+<h2 id="MFCC特征和过滤器特征" class="heading-control"><a href="#MFCC特征和过滤器特征" class="headerlink" title="MFCC特征和过滤器特征"></a>MFCC 特征和过滤器特征<a class="heading-anchor" href="#MFCC特征和过滤器特征" aria-hidden="true"></a></h2><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> python_speech_features <span class="keyword">import</span> mfcc, logfbank</span><br><span class="line"></span><br><span class="line"><span class="comment">#提取MFCC特征和过滤器特征</span></span><br><span class="line">mfcc_features = mfcc(audio, samplimg_freq)</span><br><span class="line">filterbank_features = logfbank(audio, samplimg_freq)</span><br><span class="line"></span><br><span class="line"><span class="comment">#打印参数，查看可生成多少个窗体：</span></span><br><span class="line">print(<span class="string">'\nMFCC:\nNumber of windows ='</span>, mfcc_features.shape[<span class="number">0</span>])</span><br><span class="line">print(<span class="string">'Length of each feature ='</span>, mfcc_features.shape[<span class="number">1</span>])</span><br><span class="line">print(<span class="string">'\nFilter bank:\nNumber of windows='</span>, filterbank_features.shape[<span class="number">0</span>])</span><br><span class="line">print(<span class="string">'Length of each feature ='</span>, filterbank_features.shape[<span class="number">1</span>])</span><br><span class="line"></span><br><span class="line"><span class="comment">#将MFCC特征可视化。转置矩阵，使得时域是水平的。</span></span><br><span class="line">mfcc_features = mfcc_features.T</span><br><span class="line">plt.matshow(mfcc_features)</span><br><span class="line">plt.title(<span class="string">'MFCC'</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">#将滤波器组特征可视化。转置矩阵，使得时域是水平的。</span></span><br><span class="line">filterbank_features = filterbank_features.T</span><br><span class="line">plt.matshow(filterbank_features)</span><br><span class="line">plt.title(<span class="string">'Filter bank'</span>)</span><br><span class="line">plt.show()</span><br></pre></td></tr></tbody></table></figure>
+<p>输出如下：<br></p><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">MFCC:</span><br><span class="line">Number of windows = <span class="number">42</span></span><br><span class="line">Length of each feature = <span class="number">13</span></span><br><span class="line"></span><br><span class="line">Filter bank:</span><br><span class="line">Number of windows= <span class="number">42</span></span><br><span class="line">Length of each feature = <span class="number">26</span></span><br></pre></td></tr></tbody></table></figure><br><img src="https://i.loli.net/2019/09/10/9PzrY5gIXxTiM7U.png" alt><br><img src="https://i.loli.net/2019/09/10/rEyK4ZjAeOLDmC6.png" alt><p></p>
+<h2 id="触发词检测" class="heading-control"><a href="#触发词检测" class="headerlink" title="触发词检测"></a>触发词检测<a class="heading-anchor" href="#触发词检测" aria-hidden="true"></a></h2><p><img src="https://s2.ax1x.com/2019/09/26/unhpCt.png" alt="unhpCt.png"></p>
+<h2 id="Reference" class="heading-control"><a href="#Reference" class="headerlink" title="Reference"></a>Reference<a class="heading-anchor" href="#Reference" aria-hidden="true"></a></h2><ul>
+<li><a href="https://jingyan.baidu.com/article/1709ad804e575b4634c4f0b1.html">https://jingyan.baidu.com/article/1709ad804e575b4634c4f0b1.html</a></li>
+<li><a href="https://zhuanlan.zhihu.com/p/57004884">https://zhuanlan.zhihu.com/p/57004884</a></li>
+<li><a href="https://python-speech-features.readthedocs.io/en/latest/">https://python-speech-features.readthedocs.io/en/latest/</a></li>
+<li><a href="https://www.meiwen.com.cn/subject/ahyxuqtx.html">https://www.meiwen.com.cn/subject/ahyxuqtx.html</a></li>
+<li><a href="https://haythamfayek.com/2016/04/21/speech-processing-for-machine-learning.html">https://haythamfayek.com/2016/04/21/speech-processing-for-machine-learning.html</a></li>
+<li><a href="https://www.cnblogs.com/LXP-Never/p/10078200.html#%E9%9F%B3%E9%A2%91%E4%BF%A1%E5%8F%B7%E7%9A%84%E8%AF%BB%E5%86%99%E3%80%81%E6%92%AD%E6%94%BE%E5%8F%8A%E5%BD%95%E9%9F%B3">https://www.cnblogs.com/LXP-Never/p/10078200.html#%E9%9F%B3%E9%A2%91%E4%BF%A1%E5%8F%B7%E7%9A%84%E8%AF%BB%E5%86%99%E3%80%81%E6%92%AD%E6%94%BE%E5%8F%8A%E5%BD%95%E9%9F%B3</a></li>
+<li><a href="https://github.com/majianjia/nnom/tree/master/examples/keyword_spotting">https://github.com/majianjia/nnom/tree/master/examples/keyword_spotting</a></li>
+</ul>
+</body></html>]]></content>
+      <tags>
+        <tag>Python</tag>
+        <tag>音频信号处理</tag>
       </tags>
   </entry>
   <entry>
@@ -2029,16 +2029,6 @@ F 1=\frac{2 \times \text {Precision} \times \text {Recall}}{\text {Precision}+\t
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script>]]></content>
   </entry>
   <entry>
-    <title>Tqdm 实时显示 Loss 和 Acc</title>
-    <url>/post/61076.html</url>
-    <content><![CDATA[<html><head><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script></head><body><h3 id="代码示例" class="heading-control"><a href="#代码示例" class="headerlink" title="代码示例"></a>代码示例<a class="heading-anchor" href="#代码示例" aria-hidden="true"></a></h3><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> random <span class="keyword">import</span> random</span><br><span class="line"><span class="keyword">from</span> time <span class="keyword">import</span> sleep</span><br><span class="line"><span class="keyword">from</span> tqdm <span class="keyword">import</span> tqdm</span><br><span class="line"></span><br><span class="line">epochs = <span class="number">2</span></span><br><span class="line">train_data_num = <span class="number">10</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(epochs):</span><br><span class="line">    <span class="keyword">with</span> tqdm(total=train_data_num) <span class="keyword">as</span> t:</span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> range(<span class="number">10</span>):</span><br><span class="line">            <span class="comment"># Description will be displayed on the left</span></span><br><span class="line">            t.set_description(<span class="string">'Epoch %i'</span> % i)</span><br><span class="line">            <span class="comment"># Postfix will be displayed on the right,</span></span><br><span class="line">            <span class="comment"># formatted automatically based on argument's datatype</span></span><br><span class="line">            t.set_postfix(loss=random(),acc=random())</span><br><span class="line">            sleep(<span class="number">0.1</span>)</span><br><span class="line">            t.update(<span class="number">1</span>)</span><br></pre></td></tr></tbody></table></figure>
-<p>输出结果：<br></p><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">Epoch <span class="number">0</span>: <span class="number">100</span>%|██████████| <span class="number">10</span>/<span class="number">10</span> [<span class="number">00</span>:<span class="number">01</span><<span class="number">00</span>:<span class="number">00</span>,  <span class="number">9.94</span>it/s, acc=<span class="number">0.0863</span>, loss=<span class="number">0.999</span>]</span><br><span class="line">Epoch <span class="number">1</span>: <span class="number">100</span>%|██████████| <span class="number">10</span>/<span class="number">10</span> [<span class="number">00</span>:<span class="number">01</span><<span class="number">00</span>:<span class="number">00</span>,  <span class="number">9.93</span>it/s, acc=<span class="number">0.459</span>, loss=<span class="number">0.921</span>]</span><br></pre></td></tr></tbody></table></figure><p></p>
-</body></html>]]></content>
-      <tags>
-        <tag>Tqdm</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Tensorflow Object_Detection</title>
     <url>/post/43522.html</url>
     <content><![CDATA[<html><head><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script></head><body><p><img src="https://i.loli.net/2018/10/28/5bd5c32f8f6ef.png" alt="下载 (1).png"></p>
@@ -2071,6 +2061,16 @@ Reference：<a href="https://blog.csdn.net/why19940926/article/details/78580067"
       </categories>
       <tags>
         <tag>目标检测</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Tqdm 实时显示 Loss 和 Acc</title>
+    <url>/post/61076.html</url>
+    <content><![CDATA[<html><head><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script></head><body><h3 id="代码示例" class="heading-control"><a href="#代码示例" class="headerlink" title="代码示例"></a>代码示例<a class="heading-anchor" href="#代码示例" aria-hidden="true"></a></h3><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> random <span class="keyword">import</span> random</span><br><span class="line"><span class="keyword">from</span> time <span class="keyword">import</span> sleep</span><br><span class="line"><span class="keyword">from</span> tqdm <span class="keyword">import</span> tqdm</span><br><span class="line"></span><br><span class="line">epochs = <span class="number">2</span></span><br><span class="line">train_data_num = <span class="number">10</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(epochs):</span><br><span class="line">    <span class="keyword">with</span> tqdm(total=train_data_num) <span class="keyword">as</span> t:</span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> range(<span class="number">10</span>):</span><br><span class="line">            <span class="comment"># Description will be displayed on the left</span></span><br><span class="line">            t.set_description(<span class="string">'Epoch %i'</span> % i)</span><br><span class="line">            <span class="comment"># Postfix will be displayed on the right,</span></span><br><span class="line">            <span class="comment"># formatted automatically based on argument's datatype</span></span><br><span class="line">            t.set_postfix(loss=random(),acc=random())</span><br><span class="line">            sleep(<span class="number">0.1</span>)</span><br><span class="line">            t.update(<span class="number">1</span>)</span><br></pre></td></tr></tbody></table></figure>
+<p>输出结果：<br></p><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">Epoch <span class="number">0</span>: <span class="number">100</span>%|██████████| <span class="number">10</span>/<span class="number">10</span> [<span class="number">00</span>:<span class="number">01</span><<span class="number">00</span>:<span class="number">00</span>,  <span class="number">9.94</span>it/s, acc=<span class="number">0.0863</span>, loss=<span class="number">0.999</span>]</span><br><span class="line">Epoch <span class="number">1</span>: <span class="number">100</span>%|██████████| <span class="number">10</span>/<span class="number">10</span> [<span class="number">00</span>:<span class="number">01</span><<span class="number">00</span>:<span class="number">00</span>,  <span class="number">9.93</span>it/s, acc=<span class="number">0.459</span>, loss=<span class="number">0.921</span>]</span><br></pre></td></tr></tbody></table></figure><p></p>
+</body></html>]]></content>
+      <tags>
+        <tag>Tqdm</tag>
       </tags>
   </entry>
   <entry>
@@ -2183,18 +2183,6 @@ Reference：<a href="https://blog.csdn.net/why19940926/article/details/78580067"
       </tags>
   </entry>
   <entry>
-    <title>nvidia-smi 指令报错</title>
-    <url>/post/19880.html</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><p>最近装深度学习环境的时候遇见 nvidia-smi 指令报错：<code>Failed to initialize NVML: Driver</code>，主要原因是旧的显卡驱动没卸载。<br>首先需要卸载驱动<br></p><figure class="highlight shell"><table><tbody><tr><td class="code"><pre><span class="line">sudo apt-get purge nvidia*</span><br></pre></td></tr></tbody></table></figure><br>然后重新安装新的驱动即可。<br>参考文章：<a href="https://www.zhihu.com/people/sun-yan-90-29">https://www.zhihu.com/people/sun-yan-90-29</a><p></p>
-]]></content>
-      <categories>
-        <category>笔记</category>
-      </categories>
-      <tags>
-        <tag>bug</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>nohup 详解</title>
     <url>/post/48347.html</url>
     <content><![CDATA[<html><head><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script></head><body><p>功能：使程序在后台运行，当连接服务器终端时，程序还在运行</p>
@@ -2204,6 +2192,18 @@ Reference：<a href="https://blog.csdn.net/why19940926/article/details/78580067"
 <h3 id="查看运行输出" class="heading-control"><a href="#查看运行输出" class="headerlink" title="查看运行输出"></a>查看运行输出<a class="heading-anchor" href="#查看运行输出" aria-hidden="true"></a></h3><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment">#实时查看</span></span><br><span class="line">tailf result.out</span><br><span class="line"><span class="comment">#查看几行</span></span><br><span class="line">head <span class="number">10</span> result.out <span class="comment">#查看文件的前面10行</span></span><br><span class="line">tail <span class="number">10</span> result.out <span class="comment"># 查看文件的后面10行</span></span><br></pre></td></tr></tbody></table></figure></body></html>]]></content>
       <tags>
         <tag>nohup</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>nvidia-smi 指令报错</title>
+    <url>/post/19880.html</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><p>最近装深度学习环境的时候遇见 nvidia-smi 指令报错：<code>Failed to initialize NVML: Driver</code>，主要原因是旧的显卡驱动没卸载。<br>首先需要卸载驱动<br></p><figure class="highlight shell"><table><tbody><tr><td class="code"><pre><span class="line">sudo apt-get purge nvidia*</span><br></pre></td></tr></tbody></table></figure><br>然后重新安装新的驱动即可。<br>参考文章：<a href="https://www.zhihu.com/people/sun-yan-90-29">https://www.zhihu.com/people/sun-yan-90-29</a><p></p>
+]]></content>
+      <categories>
+        <category>笔记</category>
+      </categories>
+      <tags>
+        <tag>bug</tag>
       </tags>
   </entry>
   <entry>
@@ -2295,6 +2295,22 @@ Reference：<a href="https://blog.csdn.net/why19940926/article/details/78580067"
       </tags>
   </entry>
   <entry>
+    <title>一些面试的经验帖子</title>
+    <url>/post/38161.html</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><p><img src="https://i.loli.net/2020/09/01/c7XbUfRHptE3ZyG.png" alt="bg.png"><br><a id="more"></a></p>
+<ul>
+<li><a href="https://www.nowcoder.com/discuss/487035?type=2&amp;channel=666&amp;source_id=discuss_center_discuss_jinghua">小米算法面经</a></li>
+<li><a href="https://www.nowcoder.com/discuss/464485?source_id=profile_create&amp;channel=1009">猿辅导算法面经</a></li>
+</ul>
+]]></content>
+      <categories>
+        <category>面试</category>
+      </categories>
+      <tags>
+        <tag>面试</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>中文分词算法总结</title>
     <url>/post/44202.html</url>
     <content><![CDATA[<html><head><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script></head><body><h2 id="最大匹配算法" class="heading-control"><a href="#最大匹配算法" class="headerlink" title="最大匹配算法"></a>最大匹配算法<a class="heading-anchor" href="#最大匹配算法" aria-hidden="true"></a></h2><p>基于词典的双向匹配算法的中文分词算法的实现。<br>例子：[我们经常有意见分歧]<br>词典：[我们，经常，有，有意见，意见，分歧]</p>
@@ -2308,6 +2324,16 @@ Reference：<a href="https://blog.csdn.net/why19940926/article/details/78580067"
 </body></html>]]></content>
       <tags>
         <tag>中文分词</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>中秋</title>
+    <url>/post/13085.html</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><p>2019 年的夏天很快的过去了。今天是中秋，在古代诗歌中中秋都是思念的代名词，虽然逢人便道中秋快乐，但是自己却快乐不起来呢。<br>从 6 月底到现在陆陆续续找了快 3 个月的工作，属实有点累了。每逢一个休息日都想要静静的躺着。这段时间焦虑，等待，兴奋以及各种失败，其实蛮痛苦的。希望自己能挺过这段时间，有个好的结尾吧。<br>晚上没吃月饼，心里好怀念小时候的五仁月饼，但是也不想故意去买个吃了，就让这段时间安静的溜走吧，仿佛从来没有来过一样。</p>
+<p><img src="https://i.loli.net/2019/09/13/L6RsEIFqrgcVknB.png" alt=""></p>
+]]></content>
+      <tags>
+        <tag>中秋</tag>
       </tags>
   </entry>
   <entry>
@@ -2337,32 +2363,6 @@ Reference：<a href="https://blog.csdn.net/why19940926/article/details/78580067"
 \frac{\partial L}{\partial y_{j}}=-\sum_{j} \frac{\hat{y}_{j}}{y_{j}}</script></body></html>]]></content>
       <tags>
         <tag>AI历史</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>一些面试的经验帖子</title>
-    <url>/post/38161.html</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><p><img src="https://i.loli.net/2020/09/01/c7XbUfRHptE3ZyG.png" alt="bg.png"><br><a id="more"></a></p>
-<ul>
-<li><a href="https://www.nowcoder.com/discuss/487035?type=2&amp;channel=666&amp;source_id=discuss_center_discuss_jinghua">小米算法面经</a></li>
-<li><a href="https://www.nowcoder.com/discuss/464485?source_id=profile_create&amp;channel=1009">猿辅导算法面经</a></li>
-</ul>
-]]></content>
-      <categories>
-        <category>面试</category>
-      </categories>
-      <tags>
-        <tag>面试</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>中秋</title>
-    <url>/post/13085.html</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><p>2019 年的夏天很快的过去了。今天是中秋，在古代诗歌中中秋都是思念的代名词，虽然逢人便道中秋快乐，但是自己却快乐不起来呢。<br>从 6 月底到现在陆陆续续找了快 3 个月的工作，属实有点累了。每逢一个休息日都想要静静的躺着。这段时间焦虑，等待，兴奋以及各种失败，其实蛮痛苦的。希望自己能挺过这段时间，有个好的结尾吧。<br>晚上没吃月饼，心里好怀念小时候的五仁月饼，但是也不想故意去买个吃了，就让这段时间安静的溜走吧，仿佛从来没有来过一样。</p>
-<p><img src="https://i.loli.net/2019/09/13/L6RsEIFqrgcVknB.png" alt=""></p>
-]]></content>
-      <tags>
-        <tag>中秋</tag>
       </tags>
   </entry>
   <entry>
@@ -2432,6 +2432,45 @@ N 个人，互相交换礼物，每个人不能拿到自己的礼物。设计一
       </tags>
   </entry>
   <entry>
+    <title>动态规划</title>
+    <url>/post/55046.html</url>
+    <content><![CDATA[<html><head><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script></head><body><h2 id="从青蛙跳台阶说起" class="heading-control"><a href="#从青蛙跳台阶说起" class="headerlink" title="从青蛙跳台阶说起"></a>从青蛙跳台阶说起<a class="heading-anchor" href="#从青蛙跳台阶说起" aria-hidden="true"></a></h2><p>这个问题和斐波纳契数字问题是一样的。题目描述如下：</p>
+<blockquote>
+<p>一只青蛙一次可以跳上 1 级台阶，也可以跳上 2 级。求该青蛙跳上一个 n 级的台阶总共有多少种跳法（先后次序不同算不同的结果）。</p>
+</blockquote>
+<h3 id="考虑递归" class="heading-control"><a href="#考虑递归" class="headerlink" title="考虑递归"></a>考虑递归<a class="heading-anchor" href="#考虑递归" aria-hidden="true"></a></h3><p>首先用递归的思路来考虑。递归是倒着分析的。</p>
+<p>假如只差一步就能走完整个台阶，要分为几种情况？因为每一步能走一级或者两级台阶，所以有如下两种情况：</p>
+<ul>
+<li>最后一步走 2 级台阶，也就是从 n-2 级到 n 级</li>
+<li>最后一步走 1 级台阶，也就是从 n-1 级到 n 级</li>
+</ul>
+<p>所以第 n 步的走法由两种方法的和构成。如果定义 F (n) 为第 n 步的走法，那么 F (n)=F (n-1)+F (n-2)。这个公式称之为<strong>递推公式</strong>。<br>当只有 1 级台阶和 2 级台阶时走法很明显，即 F (1)=1、F (2)=2。称之为<strong>边界条件</strong>。<br>两部分具备之后，很容易可以写出代码：<br></p><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">fun</span>(<span class="params">n</span>):</span></span><br><span class="line">    <span class="keyword">if</span> n==<span class="number">2</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="number">2</span></span><br><span class="line">    <span class="keyword">if</span> n==<span class="number">1</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span></span><br><span class="line">    <span class="keyword">return</span> fun(n<span class="number">-1</span>)+fun(n<span class="number">-2</span>)</span><br></pre></td></tr></tbody></table></figure><br>验证的时候会发现一个问题，如果n比较大，那么会导致计算机栈的溢出，即便是n=100的时候也需要相当长的计算时间。那么问题出在哪里呢？<p></p>
+<h2 id="重叠子问题" class="heading-control"><a href="#重叠子问题" class="headerlink" title="重叠子问题"></a>重叠子问题<a class="heading-anchor" href="#重叠子问题" aria-hidden="true"></a></h2><p>我们不妨把上面的递归式子以树的形式表示出来，结果如下：<br></p><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">                       F(<span class="number">5</span>)</span><br><span class="line">                  /             \</span><br><span class="line">             F(<span class="number">4</span>)                  F(<span class="number">3</span>)</span><br><span class="line">          /      \                /     \</span><br><span class="line">      F(<span class="number">3</span>)       F(<span class="number">2</span>)         F(<span class="number">2</span>)     F(<span class="number">1</span>)</span><br><span class="line">     /     \     /    \       /    \</span><br><span class="line">   F(<span class="number">2</span>)   F(<span class="number">1</span>) F(<span class="number">1</span>)  F(<span class="number">0</span>)  F(<span class="number">1</span>)   F(<span class="number">0</span>)</span><br><span class="line">  /    \</span><br><span class="line">F(<span class="number">1</span>)  F(<span class="number">0</span>)</span><br></pre></td></tr></tbody></table></figure><br>可以看到这其中有很多重复求解部分，称之为重叠子问题。<br>一种想到的改进方法是我们可不可以把递归计算中某些计算过的结果存起来，来避免这个问题。下面介绍记忆化搜索和LRU 缓存策略实现这种改进方法。<p></p>
+<h3 id="记忆化搜索" class="heading-control"><a href="#记忆化搜索" class="headerlink" title="记忆化搜索"></a>记忆化搜索<a class="heading-anchor" href="#记忆化搜索" aria-hidden="true"></a></h3><p>记忆化搜索的思路如下：每当我们需要解决子问题时，我们首先查找查找表。如果预先计算的值存在，那么我们返回该值，否则我们计算值，并将结果放在查找表中，以便以后可以重复使用。<br></p><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">lookup = [<span class="number">0</span>,<span class="number">1</span>,<span class="number">2</span>]+[<span class="number">0</span>]*<span class="number">100</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">fun</span>(<span class="params">n</span>):</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> lookup[n] == <span class="number">0</span>:</span><br><span class="line">        lookup[n] = fun(n<span class="number">-1</span>)+fun(n<span class="number">-2</span>)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> lookup[n]</span><br></pre></td></tr></tbody></table></figure><p></p>
+<h3 id="LRU缓存" class="heading-control"><a href="#LRU缓存" class="headerlink" title="LRU缓存"></a>LRU 缓存<a class="heading-anchor" href="#LRU缓存" aria-hidden="true"></a></h3><p>LRU（Least recently used，最近最少使用），其核心思想是 “如果数据最近被访问过，那么将来被访问的几率也更高”。对于本题目，如果是高频出现的计算函数的结果会被放到缓存中，再次出现只需要在缓存中读取即可，和记忆化搜索类似。python 有 LRU 的内置函数：<br></p><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> functools <span class="keyword">import</span> lru_cache</span><br><span class="line"><span class="meta">@lru_cache(None)</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">fun</span>(<span class="params">n</span>):</span></span><br><span class="line">    <span class="keyword">if</span> n==<span class="number">2</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="number">2</span></span><br><span class="line">    <span class="keyword">if</span> n==<span class="number">1</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span></span><br><span class="line">    <span class="keyword">return</span> fun(n<span class="number">-1</span>)+fun(n<span class="number">-2</span>)</span><br></pre></td></tr></tbody></table></figure><p></p>
+<p>有了上诉方法，n=100 已经可以计算了。但是虽然有这两个缓解的方法，但是仍存在问题。当 n=1000 的时候仍然会存在堆栈溢出的问题。</p>
+<h2 id="一维动态规划" class="heading-control"><a href="#一维动态规划" class="headerlink" title="一维动态规划"></a>一维动态规划<a class="heading-anchor" href="#一维动态规划" aria-hidden="true"></a></h2><p>上面的思考都是基于递归的，即自顶而下的计算方法。如果我们换个思路，自底而上呢？</p>
+<p>其实和上面的记忆化搜索很像了。首选记录 n=1 的情况和 n=2 的情况，然后依次向上计算，每次计算都存表即可。</p>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">N = <span class="number">10</span></span><br><span class="line"></span><br><span class="line">dp  = [<span class="number">0</span>]*(N+<span class="number">1</span>)</span><br><span class="line">dp[<span class="number">1</span>] = <span class="number">1</span></span><br><span class="line">dp[<span class="number">2</span>] = <span class="number">2</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">fun</span>(<span class="params">n</span>):</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(n+<span class="number">1</span>):</span><br><span class="line">        <span class="keyword">if</span> i><span class="number">2</span>:</span><br><span class="line">            dp[i] = dp[i<span class="number">-1</span>] + dp[i<span class="number">-2</span>]</span><br><span class="line">    <span class="keyword">return</span> dp[<span class="number">-1</span>]    </span><br></pre></td></tr></tbody></table></figure>
+<p>这种方法存的表称之为 DP Table, 这种解决思路称之为动态规划。本题目的 DP Table 是一维的，所以称之为一维动态规划。</p>
+<p>当然针对这个问题，对空间还可以进一步优化：<br></p><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">fun</span>(<span class="params">n</span>):</span></span><br><span class="line">    <span class="keyword">if</span> n == <span class="number">1</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span></span><br><span class="line">    <span class="keyword">if</span> n == <span class="number">2</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="number">2</span></span><br><span class="line">    pre,prepre = <span class="number">2</span>,<span class="number">1</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(n - <span class="number">2</span>):</span><br><span class="line">         prepre, pre = pre, pre + prepre</span><br><span class="line">    <span class="keyword">return</span> pre</span><br></pre></td></tr></tbody></table></figure><p></p>
+<h3 id="动态规划和递归" class="heading-control"><a href="#动态规划和递归" class="headerlink" title="动态规划和递归"></a>动态规划和递归<a class="heading-anchor" href="#动态规划和递归" aria-hidden="true"></a></h3><p>上面我们已经见到过了：递归采用的是 “由上而下” 的解题策略并带有可能的” 子问题 “重复调用，时间复杂度自然高，而且容易造成堆栈的溢出。</p>
+<h3 id="动态规划和分治" class="heading-control"><a href="#动态规划和分治" class="headerlink" title="动态规划和分治"></a>动态规划和分治<a class="heading-anchor" href="#动态规划和分治" aria-hidden="true"></a></h3><p>两者的区别在于：动态规划的下一个子阶段的求解是建立在上一个子阶段的解的基础上，进行进一步的求解。</p>
+<h3 id="动态规划和贪心" class="heading-control"><a href="#动态规划和贪心" class="headerlink" title="动态规划和贪心"></a>动态规划和贪心<a class="heading-anchor" href="#动态规划和贪心" aria-hidden="true"></a></h3><p>贪心算法每走一步都是不可撤回的，而动态规划是在一个问题的多种策略中寻找最优策略，所以动态规划中前一种策略可能会被后一种策略推翻。</p>
+<h3 id="一维动态规划Leetcode题目" class="heading-control"><a href="#一维动态规划Leetcode题目" class="headerlink" title="一维动态规划Leetcode题目"></a>一维动态规划 Leetcode 题目<a class="heading-anchor" href="#一维动态规划Leetcode题目" aria-hidden="true"></a></h3><ul>
+<li><a href="http://oj.leetcode.com/problems/climbing-stairs/">Climbing Stairs</a></li>
+<li><a href="http://oj.leetcode.com/problems/decode-ways/">Decode Ways</a></li>
+<li><a href="http://oj.leetcode.com/problems/unique-binary-search-trees/">Unique Binary Search Trees</a></li>
+<li><a href="http://oj.leetcode.com/problems/maximum-subarray/">Maximum Subarray</a></li>
+<li><a href="https://leetcode.com/problems/maximum-product-subarray/">Maximum Product Subarray</a></li>
+<li><a href="http://oj.leetcode.com/problems/best-time-to-buy-and-sell-stock/">Best Time to Buy and Sell Stock</a></li>
+</ul>
+<h2 id="二维动态规划" class="heading-control"><a href="#二维动态规划" class="headerlink" title="二维动态规划"></a>二维动态规划<a class="heading-anchor" href="#二维动态规划" aria-hidden="true"></a></h2></body></html>]]></content>
+      <tags>
+        <tag>DP</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>卷积神经网络复习</title>
     <url>/post/48895.html</url>
     <content><![CDATA[<html><head><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script></head><body><p><img src="https://i.loli.net/2019/01/19/5c42b8b0d6f16.png" alt></p>
@@ -2491,45 +2530,6 @@ N 个人，互相交换礼物，每个人不能拿到自己的礼物。设计一
       </categories>
       <tags>
         <tag>CNN</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>动态规划</title>
-    <url>/post/55046.html</url>
-    <content><![CDATA[<html><head><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script></head><body><h2 id="从青蛙跳台阶说起" class="heading-control"><a href="#从青蛙跳台阶说起" class="headerlink" title="从青蛙跳台阶说起"></a>从青蛙跳台阶说起<a class="heading-anchor" href="#从青蛙跳台阶说起" aria-hidden="true"></a></h2><p>这个问题和斐波纳契数字问题是一样的。题目描述如下：</p>
-<blockquote>
-<p>一只青蛙一次可以跳上 1 级台阶，也可以跳上 2 级。求该青蛙跳上一个 n 级的台阶总共有多少种跳法（先后次序不同算不同的结果）。</p>
-</blockquote>
-<h3 id="考虑递归" class="heading-control"><a href="#考虑递归" class="headerlink" title="考虑递归"></a>考虑递归<a class="heading-anchor" href="#考虑递归" aria-hidden="true"></a></h3><p>首先用递归的思路来考虑。递归是倒着分析的。</p>
-<p>假如只差一步就能走完整个台阶，要分为几种情况？因为每一步能走一级或者两级台阶，所以有如下两种情况：</p>
-<ul>
-<li>最后一步走 2 级台阶，也就是从 n-2 级到 n 级</li>
-<li>最后一步走 1 级台阶，也就是从 n-1 级到 n 级</li>
-</ul>
-<p>所以第 n 步的走法由两种方法的和构成。如果定义 F (n) 为第 n 步的走法，那么 F (n)=F (n-1)+F (n-2)。这个公式称之为<strong>递推公式</strong>。<br>当只有 1 级台阶和 2 级台阶时走法很明显，即 F (1)=1、F (2)=2。称之为<strong>边界条件</strong>。<br>两部分具备之后，很容易可以写出代码：<br></p><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">fun</span>(<span class="params">n</span>):</span></span><br><span class="line">    <span class="keyword">if</span> n==<span class="number">2</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="number">2</span></span><br><span class="line">    <span class="keyword">if</span> n==<span class="number">1</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span></span><br><span class="line">    <span class="keyword">return</span> fun(n<span class="number">-1</span>)+fun(n<span class="number">-2</span>)</span><br></pre></td></tr></tbody></table></figure><br>验证的时候会发现一个问题，如果n比较大，那么会导致计算机栈的溢出，即便是n=100的时候也需要相当长的计算时间。那么问题出在哪里呢？<p></p>
-<h2 id="重叠子问题" class="heading-control"><a href="#重叠子问题" class="headerlink" title="重叠子问题"></a>重叠子问题<a class="heading-anchor" href="#重叠子问题" aria-hidden="true"></a></h2><p>我们不妨把上面的递归式子以树的形式表示出来，结果如下：<br></p><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">                       F(<span class="number">5</span>)</span><br><span class="line">                  /             \</span><br><span class="line">             F(<span class="number">4</span>)                  F(<span class="number">3</span>)</span><br><span class="line">          /      \                /     \</span><br><span class="line">      F(<span class="number">3</span>)       F(<span class="number">2</span>)         F(<span class="number">2</span>)     F(<span class="number">1</span>)</span><br><span class="line">     /     \     /    \       /    \</span><br><span class="line">   F(<span class="number">2</span>)   F(<span class="number">1</span>) F(<span class="number">1</span>)  F(<span class="number">0</span>)  F(<span class="number">1</span>)   F(<span class="number">0</span>)</span><br><span class="line">  /    \</span><br><span class="line">F(<span class="number">1</span>)  F(<span class="number">0</span>)</span><br></pre></td></tr></tbody></table></figure><br>可以看到这其中有很多重复求解部分，称之为重叠子问题。<br>一种想到的改进方法是我们可不可以把递归计算中某些计算过的结果存起来，来避免这个问题。下面介绍记忆化搜索和LRU 缓存策略实现这种改进方法。<p></p>
-<h3 id="记忆化搜索" class="heading-control"><a href="#记忆化搜索" class="headerlink" title="记忆化搜索"></a>记忆化搜索<a class="heading-anchor" href="#记忆化搜索" aria-hidden="true"></a></h3><p>记忆化搜索的思路如下：每当我们需要解决子问题时，我们首先查找查找表。如果预先计算的值存在，那么我们返回该值，否则我们计算值，并将结果放在查找表中，以便以后可以重复使用。<br></p><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">lookup = [<span class="number">0</span>,<span class="number">1</span>,<span class="number">2</span>]+[<span class="number">0</span>]*<span class="number">100</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">fun</span>(<span class="params">n</span>):</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> lookup[n] == <span class="number">0</span>:</span><br><span class="line">        lookup[n] = fun(n<span class="number">-1</span>)+fun(n<span class="number">-2</span>)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> lookup[n]</span><br></pre></td></tr></tbody></table></figure><p></p>
-<h3 id="LRU缓存" class="heading-control"><a href="#LRU缓存" class="headerlink" title="LRU缓存"></a>LRU 缓存<a class="heading-anchor" href="#LRU缓存" aria-hidden="true"></a></h3><p>LRU（Least recently used，最近最少使用），其核心思想是 “如果数据最近被访问过，那么将来被访问的几率也更高”。对于本题目，如果是高频出现的计算函数的结果会被放到缓存中，再次出现只需要在缓存中读取即可，和记忆化搜索类似。python 有 LRU 的内置函数：<br></p><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> functools <span class="keyword">import</span> lru_cache</span><br><span class="line"><span class="meta">@lru_cache(None)</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">fun</span>(<span class="params">n</span>):</span></span><br><span class="line">    <span class="keyword">if</span> n==<span class="number">2</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="number">2</span></span><br><span class="line">    <span class="keyword">if</span> n==<span class="number">1</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span></span><br><span class="line">    <span class="keyword">return</span> fun(n<span class="number">-1</span>)+fun(n<span class="number">-2</span>)</span><br></pre></td></tr></tbody></table></figure><p></p>
-<p>有了上诉方法，n=100 已经可以计算了。但是虽然有这两个缓解的方法，但是仍存在问题。当 n=1000 的时候仍然会存在堆栈溢出的问题。</p>
-<h2 id="一维动态规划" class="heading-control"><a href="#一维动态规划" class="headerlink" title="一维动态规划"></a>一维动态规划<a class="heading-anchor" href="#一维动态规划" aria-hidden="true"></a></h2><p>上面的思考都是基于递归的，即自顶而下的计算方法。如果我们换个思路，自底而上呢？</p>
-<p>其实和上面的记忆化搜索很像了。首选记录 n=1 的情况和 n=2 的情况，然后依次向上计算，每次计算都存表即可。</p>
-<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">N = <span class="number">10</span></span><br><span class="line"></span><br><span class="line">dp  = [<span class="number">0</span>]*(N+<span class="number">1</span>)</span><br><span class="line">dp[<span class="number">1</span>] = <span class="number">1</span></span><br><span class="line">dp[<span class="number">2</span>] = <span class="number">2</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">fun</span>(<span class="params">n</span>):</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(n+<span class="number">1</span>):</span><br><span class="line">        <span class="keyword">if</span> i><span class="number">2</span>:</span><br><span class="line">            dp[i] = dp[i<span class="number">-1</span>] + dp[i<span class="number">-2</span>]</span><br><span class="line">    <span class="keyword">return</span> dp[<span class="number">-1</span>]    </span><br></pre></td></tr></tbody></table></figure>
-<p>这种方法存的表称之为 DP Table, 这种解决思路称之为动态规划。本题目的 DP Table 是一维的，所以称之为一维动态规划。</p>
-<p>当然针对这个问题，对空间还可以进一步优化：<br></p><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">fun</span>(<span class="params">n</span>):</span></span><br><span class="line">    <span class="keyword">if</span> n == <span class="number">1</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span></span><br><span class="line">    <span class="keyword">if</span> n == <span class="number">2</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="number">2</span></span><br><span class="line">    pre,prepre = <span class="number">2</span>,<span class="number">1</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(n - <span class="number">2</span>):</span><br><span class="line">         prepre, pre = pre, pre + prepre</span><br><span class="line">    <span class="keyword">return</span> pre</span><br></pre></td></tr></tbody></table></figure><p></p>
-<h3 id="动态规划和递归" class="heading-control"><a href="#动态规划和递归" class="headerlink" title="动态规划和递归"></a>动态规划和递归<a class="heading-anchor" href="#动态规划和递归" aria-hidden="true"></a></h3><p>上面我们已经见到过了：递归采用的是 “由上而下” 的解题策略并带有可能的” 子问题 “重复调用，时间复杂度自然高，而且容易造成堆栈的溢出。</p>
-<h3 id="动态规划和分治" class="heading-control"><a href="#动态规划和分治" class="headerlink" title="动态规划和分治"></a>动态规划和分治<a class="heading-anchor" href="#动态规划和分治" aria-hidden="true"></a></h3><p>两者的区别在于：动态规划的下一个子阶段的求解是建立在上一个子阶段的解的基础上，进行进一步的求解。</p>
-<h3 id="动态规划和贪心" class="heading-control"><a href="#动态规划和贪心" class="headerlink" title="动态规划和贪心"></a>动态规划和贪心<a class="heading-anchor" href="#动态规划和贪心" aria-hidden="true"></a></h3><p>贪心算法每走一步都是不可撤回的，而动态规划是在一个问题的多种策略中寻找最优策略，所以动态规划中前一种策略可能会被后一种策略推翻。</p>
-<h3 id="一维动态规划Leetcode题目" class="heading-control"><a href="#一维动态规划Leetcode题目" class="headerlink" title="一维动态规划Leetcode题目"></a>一维动态规划 Leetcode 题目<a class="heading-anchor" href="#一维动态规划Leetcode题目" aria-hidden="true"></a></h3><ul>
-<li><a href="http://oj.leetcode.com/problems/climbing-stairs/">Climbing Stairs</a></li>
-<li><a href="http://oj.leetcode.com/problems/decode-ways/">Decode Ways</a></li>
-<li><a href="http://oj.leetcode.com/problems/unique-binary-search-trees/">Unique Binary Search Trees</a></li>
-<li><a href="http://oj.leetcode.com/problems/maximum-subarray/">Maximum Subarray</a></li>
-<li><a href="https://leetcode.com/problems/maximum-product-subarray/">Maximum Product Subarray</a></li>
-<li><a href="http://oj.leetcode.com/problems/best-time-to-buy-and-sell-stock/">Best Time to Buy and Sell Stock</a></li>
-</ul>
-<h2 id="二维动态规划" class="heading-control"><a href="#二维动态规划" class="headerlink" title="二维动态规划"></a>二维动态规划<a class="heading-anchor" href="#二维动态规划" aria-hidden="true"></a></h2></body></html>]]></content>
-      <tags>
-        <tag>DP</tag>
       </tags>
   </entry>
   <entry>
@@ -2990,12 +2990,6 @@ N 个人，互相交换礼物，每个人不能拿到自己的礼物。设计一
       </tags>
   </entry>
   <entry>
-    <title>数值计算</title>
-    <url>/post/58802.html</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><p>数值分析是研究科学计算中各种数学问题求解的数值计算方法。</p>
-]]></content>
-  </entry>
-  <entry>
     <title>推荐系统召回算法</title>
     <url>/post/64078.html</url>
     <content><![CDATA[<html><head><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script></head><body><h2 id="推荐系统整体流程" class="heading-control"><a href="#推荐系统整体流程" class="headerlink" title="推荐系统整体流程"></a>推荐系统整体流程<a class="heading-anchor" href="#推荐系统整体流程" aria-hidden="true"></a></h2><p><img src="https://i.loli.net/2020/08/31/FqeHsBKXUCgu8fJ.jpg" alt="img"></p>
@@ -3060,6 +3054,12 @@ N 个人，互相交换礼物，每个人不能拿到自己的礼物。设计一
       <tags>
         <tag>召回</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>数值计算</title>
+    <url>/post/58802.html</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><p>数值分析是研究科学计算中各种数学问题求解的数值计算方法。</p>
+]]></content>
   </entry>
   <entry>
     <title>文本分词和去停止词的一次优化</title>
@@ -3263,40 +3263,6 @@ N 个人，互相交换礼物，每个人不能拿到自己的礼物。设计一
       </tags>
   </entry>
   <entry>
-    <title>机器学习 - 白板推导系列</title>
-    <url>/post/19678.html</url>
-    <content><![CDATA[<html><head><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script></head><body><h2 id="课程介绍" class="heading-control"><a href="#课程介绍" class="headerlink" title="课程介绍"></a>课程介绍<a class="heading-anchor" href="#课程介绍" aria-hidden="true"></a></h2><p><img src="https://i.loli.net/2019/09/24/ga1PjFQG3WLnk8O.png" alt><br>B 站视频：<a href="https://www.bilibili.com/video/av31950221">https://www.bilibili.com/video/av31950221</a><br>观看次序: <a href="https://github.com/shuhuai007/Machine-Learning-Session">https://github.com/shuhuai007/Machine-Learning-Session</a></p>
-<a id="more"></a>
-<h2 id="Lecture-1：开篇" class="heading-control"><a href="#Lecture-1：开篇" class="headerlink" title="Lecture 1：开篇"></a>Lecture 1：开篇<a class="heading-anchor" href="#Lecture-1：开篇" aria-hidden="true"></a></h2><p>主要介绍频率派和贝叶斯派的区别以及一些推荐书籍和视频</p>
-<h3 id="频率派和贝叶斯派" class="heading-control"><a href="#频率派和贝叶斯派" class="headerlink" title="频率派和贝叶斯派"></a>频率派和贝叶斯派<a class="heading-anchor" href="#频率派和贝叶斯派" aria-hidden="true"></a></h3><ul>
-<li>频率派，Maximum Likelihood Estimation (MLE，最大似然估计)，把需要推断的参数 θ 看做是固定的未知常数，即概率虽然是未知的，但最起码是确定的一个值，同时，样本 X 是随机的，所以频率派重点研究样本空间，大部分的概率计算都是针对样本 X 的分布；</li>
-<li>贝叶斯派，Bayesian - Maximum A Posteriori (MAP，最大后验估计)，的观点则截然相反，他们认为参数是随机变量，而样本 X 是固定的，由于样本是固定的，所以他们重点研究的是参数的分布。</li>
-</ul>
-<p>随着数据量的增加，参数分布会越来越向数据靠拢，先验的影响力会越来越小如果先验是 uniform distribution，则贝叶斯方法等价于频率方法。因为直观上来讲，先验是 uniform distribution 本质上表示对事物没有任何预判。</p>
-<h3 id="推荐书籍" class="heading-control"><a href="#推荐书籍" class="headerlink" title="推荐书籍"></a>推荐书籍<a class="heading-anchor" href="#推荐书籍" aria-hidden="true"></a></h3><p>频率派 ———— 统计机器学习<br>贝叶斯派 ———— 概率图模型</p>
-<p><strong>BOOK</strong>：</p>
-<ul>
-<li>李航 机器学习方法：感 K 朴决逻，支提 E 隐条</li>
-<li>周志华：西瓜书</li>
-<li> PRML </li>
-<li>MLAPP</li>
-<li>ESL</li>
-<li>Deep Learning</li>
-</ul>
-<p><strong>视频</strong>：</p>
-<ul>
-<li>台大林轩田：机器学习基石和机器学习技法</li>
-<li>张志华：机器学习导论，统计机器学习</li>
-<li> Ng:CS229 </li>
-<li>徐亦达 </li>
-<li>李宏毅</li>
-</ul>
-<h2 id="Lecture-2：数学基础" class="heading-control"><a href="#Lecture-2：数学基础" class="headerlink" title="Lecture 2：数学基础"></a>Lecture 2：数学基础<a class="heading-anchor" href="#Lecture-2：数学基础" aria-hidden="true"></a></h2><h2 id="Lecture-3：线性分类" class="heading-control"><a href="#Lecture-3：线性分类" class="headerlink" title="Lecture 3：线性分类"></a>Lecture 3：线性分类<a class="heading-anchor" href="#Lecture-3：线性分类" aria-hidden="true"></a></h2><h2 id="Lecture-3：降维" class="heading-control"><a href="#Lecture-3：降维" class="headerlink" title="Lecture 3：降维"></a>Lecture 3：降维<a class="heading-anchor" href="#Lecture-3：降维" aria-hidden="true"></a></h2><h2 id="Lecture-4：支持向量机-SVM" class="heading-control"><a href="#Lecture-4：支持向量机-SVM" class="headerlink" title="Lecture 4：支持向量机(SVM)"></a>Lecture 4：支持向量机 (SVM)<a class="heading-anchor" href="#Lecture-4：支持向量机-SVM" aria-hidden="true"></a></h2><h2 id="Lecture-5：核方法-Kernel-Method" class="heading-control"><a href="#Lecture-5：核方法-Kernel-Method" class="headerlink" title="Lecture 5：核方法(Kernel Method)"></a>Lecture 5：核方法 (Kernel Method)<a class="heading-anchor" href="#Lecture-5：核方法-Kernel-Method" aria-hidden="true"></a></h2><h2 id="Lecture-6：指数族分布" class="heading-control"><a href="#Lecture-6：指数族分布" class="headerlink" title="Lecture 6：指数族分布"></a>Lecture 6：指数族分布<a class="heading-anchor" href="#Lecture-6：指数族分布" aria-hidden="true"></a></h2><h2 id="Lecture-7：概率图模型" class="heading-control"><a href="#Lecture-7：概率图模型" class="headerlink" title="Lecture 7：概率图模型"></a>Lecture 7：概率图模型<a class="heading-anchor" href="#Lecture-7：概率图模型" aria-hidden="true"></a></h2><h2 id="Lecture-8：EM算法" class="heading-control"><a href="#Lecture-8：EM算法" class="headerlink" title="Lecture 8：EM算法"></a>Lecture 8：EM 算法<a class="heading-anchor" href="#Lecture-8：EM算法" aria-hidden="true"></a></h2><h2 id="Lecture-9：高斯混合模型-GMM" class="heading-control"><a href="#Lecture-9：高斯混合模型-GMM" class="headerlink" title="Lecture 9：高斯混合模型(GMM)"></a>Lecture 9：高斯混合模型 (GMM)<a class="heading-anchor" href="#Lecture-9：高斯混合模型-GMM" aria-hidden="true"></a></h2><h2 id="Lecture-10：变分推断" class="heading-control"><a href="#Lecture-10：变分推断" class="headerlink" title="Lecture 10：变分推断"></a>Lecture 10：变分推断<a class="heading-anchor" href="#Lecture-10：变分推断" aria-hidden="true"></a></h2><h2 id="Lecture-11：MCMC" class="heading-control"><a href="#Lecture-11：MCMC" class="headerlink" title="Lecture 11：MCMC"></a>Lecture 11：MCMC<a class="heading-anchor" href="#Lecture-11：MCMC" aria-hidden="true"></a></h2><h2 id="Lecture-12：隐马尔可夫模型" class="heading-control"><a href="#Lecture-12：隐马尔可夫模型" class="headerlink" title="Lecture 12：隐马尔可夫模型"></a>Lecture 12：隐马尔可夫模型<a class="heading-anchor" href="#Lecture-12：隐马尔可夫模型" aria-hidden="true"></a></h2><h2 id="Lecture-13：线性动态系统-卡曼滤波" class="heading-control"><a href="#Lecture-13：线性动态系统-卡曼滤波" class="headerlink" title="Lecture 13：线性动态系统-卡曼滤波"></a>Lecture 13：线性动态系统 - 卡曼滤波<a class="heading-anchor" href="#Lecture-13：线性动态系统-卡曼滤波" aria-hidden="true"></a></h2><h2 id="Lecture-14：非线性动态系统-粒子滤波" class="heading-control"><a href="#Lecture-14：非线性动态系统-粒子滤波" class="headerlink" title="Lecture 14：非线性动态系统-粒子滤波"></a>Lecture 14：非线性动态系统 - 粒子滤波<a class="heading-anchor" href="#Lecture-14：非线性动态系统-粒子滤波" aria-hidden="true"></a></h2><h2 id="Lecture-15：条件随机场" class="heading-control"><a href="#Lecture-15：条件随机场" class="headerlink" title="Lecture 15：条件随机场"></a>Lecture 15：条件随机场<a class="heading-anchor" href="#Lecture-15：条件随机场" aria-hidden="true"></a></h2><h2 id="Lecture-16：高斯网络" class="heading-control"><a href="#Lecture-16：高斯网络" class="headerlink" title="Lecture 16：高斯网络"></a>Lecture 16：高斯网络<a class="heading-anchor" href="#Lecture-16：高斯网络" aria-hidden="true"></a></h2><h2 id="Lecture-17：贝叶斯线性回归" class="heading-control"><a href="#Lecture-17：贝叶斯线性回归" class="headerlink" title="Lecture 17：贝叶斯线性回归"></a>Lecture 17：贝叶斯线性回归<a class="heading-anchor" href="#Lecture-17：贝叶斯线性回归" aria-hidden="true"></a></h2><h2 id="Lecture-18：高斯过程回归" class="heading-control"><a href="#Lecture-18：高斯过程回归" class="headerlink" title="Lecture 18：高斯过程回归"></a>Lecture 18：高斯过程回归<a class="heading-anchor" href="#Lecture-18：高斯过程回归" aria-hidden="true"></a></h2><h2 id="Lecture-19：受限玻尔兹曼机" class="heading-control"><a href="#Lecture-19：受限玻尔兹曼机" class="headerlink" title="Lecture 19：受限玻尔兹曼机"></a>Lecture 19：受限玻尔兹曼机<a class="heading-anchor" href="#Lecture-19：受限玻尔兹曼机" aria-hidden="true"></a></h2></body></html>]]></content>
-      <tags>
-        <tag>白板推导</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>朴素贝叶斯</title>
     <url>/post/58683.html</url>
     <content><![CDATA[<html><head><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script></head><body><p>首先要明确的一点是朴素贝叶斯属于生成式模型，指导思想是贝叶斯公式。</p>
@@ -3344,6 +3310,40 @@ c_{N B}=\underset{c \in C}{\operatorname{largmax}} \log P(c)+\sum_{i \in \text {
       </tags>
   </entry>
   <entry>
+    <title>机器学习 - 白板推导系列</title>
+    <url>/post/19678.html</url>
+    <content><![CDATA[<html><head><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script></head><body><h2 id="课程介绍" class="heading-control"><a href="#课程介绍" class="headerlink" title="课程介绍"></a>课程介绍<a class="heading-anchor" href="#课程介绍" aria-hidden="true"></a></h2><p><img src="https://i.loli.net/2019/09/24/ga1PjFQG3WLnk8O.png" alt><br>B 站视频：<a href="https://www.bilibili.com/video/av31950221">https://www.bilibili.com/video/av31950221</a><br>观看次序: <a href="https://github.com/shuhuai007/Machine-Learning-Session">https://github.com/shuhuai007/Machine-Learning-Session</a></p>
+<a id="more"></a>
+<h2 id="Lecture-1：开篇" class="heading-control"><a href="#Lecture-1：开篇" class="headerlink" title="Lecture 1：开篇"></a>Lecture 1：开篇<a class="heading-anchor" href="#Lecture-1：开篇" aria-hidden="true"></a></h2><p>主要介绍频率派和贝叶斯派的区别以及一些推荐书籍和视频</p>
+<h3 id="频率派和贝叶斯派" class="heading-control"><a href="#频率派和贝叶斯派" class="headerlink" title="频率派和贝叶斯派"></a>频率派和贝叶斯派<a class="heading-anchor" href="#频率派和贝叶斯派" aria-hidden="true"></a></h3><ul>
+<li>频率派，Maximum Likelihood Estimation (MLE，最大似然估计)，把需要推断的参数 θ 看做是固定的未知常数，即概率虽然是未知的，但最起码是确定的一个值，同时，样本 X 是随机的，所以频率派重点研究样本空间，大部分的概率计算都是针对样本 X 的分布；</li>
+<li>贝叶斯派，Bayesian - Maximum A Posteriori (MAP，最大后验估计)，的观点则截然相反，他们认为参数是随机变量，而样本 X 是固定的，由于样本是固定的，所以他们重点研究的是参数的分布。</li>
+</ul>
+<p>随着数据量的增加，参数分布会越来越向数据靠拢，先验的影响力会越来越小如果先验是 uniform distribution，则贝叶斯方法等价于频率方法。因为直观上来讲，先验是 uniform distribution 本质上表示对事物没有任何预判。</p>
+<h3 id="推荐书籍" class="heading-control"><a href="#推荐书籍" class="headerlink" title="推荐书籍"></a>推荐书籍<a class="heading-anchor" href="#推荐书籍" aria-hidden="true"></a></h3><p>频率派 ———— 统计机器学习<br>贝叶斯派 ———— 概率图模型</p>
+<p><strong>BOOK</strong>：</p>
+<ul>
+<li>李航 机器学习方法：感 K 朴决逻，支提 E 隐条</li>
+<li>周志华：西瓜书</li>
+<li> PRML </li>
+<li>MLAPP</li>
+<li>ESL</li>
+<li>Deep Learning</li>
+</ul>
+<p><strong>视频</strong>：</p>
+<ul>
+<li>台大林轩田：机器学习基石和机器学习技法</li>
+<li>张志华：机器学习导论，统计机器学习</li>
+<li> Ng:CS229 </li>
+<li>徐亦达 </li>
+<li>李宏毅</li>
+</ul>
+<h2 id="Lecture-2：数学基础" class="heading-control"><a href="#Lecture-2：数学基础" class="headerlink" title="Lecture 2：数学基础"></a>Lecture 2：数学基础<a class="heading-anchor" href="#Lecture-2：数学基础" aria-hidden="true"></a></h2><h2 id="Lecture-3：线性分类" class="heading-control"><a href="#Lecture-3：线性分类" class="headerlink" title="Lecture 3：线性分类"></a>Lecture 3：线性分类<a class="heading-anchor" href="#Lecture-3：线性分类" aria-hidden="true"></a></h2><h2 id="Lecture-3：降维" class="heading-control"><a href="#Lecture-3：降维" class="headerlink" title="Lecture 3：降维"></a>Lecture 3：降维<a class="heading-anchor" href="#Lecture-3：降维" aria-hidden="true"></a></h2><h2 id="Lecture-4：支持向量机-SVM" class="heading-control"><a href="#Lecture-4：支持向量机-SVM" class="headerlink" title="Lecture 4：支持向量机(SVM)"></a>Lecture 4：支持向量机 (SVM)<a class="heading-anchor" href="#Lecture-4：支持向量机-SVM" aria-hidden="true"></a></h2><h2 id="Lecture-5：核方法-Kernel-Method" class="heading-control"><a href="#Lecture-5：核方法-Kernel-Method" class="headerlink" title="Lecture 5：核方法(Kernel Method)"></a>Lecture 5：核方法 (Kernel Method)<a class="heading-anchor" href="#Lecture-5：核方法-Kernel-Method" aria-hidden="true"></a></h2><h2 id="Lecture-6：指数族分布" class="heading-control"><a href="#Lecture-6：指数族分布" class="headerlink" title="Lecture 6：指数族分布"></a>Lecture 6：指数族分布<a class="heading-anchor" href="#Lecture-6：指数族分布" aria-hidden="true"></a></h2><h2 id="Lecture-7：概率图模型" class="heading-control"><a href="#Lecture-7：概率图模型" class="headerlink" title="Lecture 7：概率图模型"></a>Lecture 7：概率图模型<a class="heading-anchor" href="#Lecture-7：概率图模型" aria-hidden="true"></a></h2><h2 id="Lecture-8：EM算法" class="heading-control"><a href="#Lecture-8：EM算法" class="headerlink" title="Lecture 8：EM算法"></a>Lecture 8：EM 算法<a class="heading-anchor" href="#Lecture-8：EM算法" aria-hidden="true"></a></h2><h2 id="Lecture-9：高斯混合模型-GMM" class="heading-control"><a href="#Lecture-9：高斯混合模型-GMM" class="headerlink" title="Lecture 9：高斯混合模型(GMM)"></a>Lecture 9：高斯混合模型 (GMM)<a class="heading-anchor" href="#Lecture-9：高斯混合模型-GMM" aria-hidden="true"></a></h2><h2 id="Lecture-10：变分推断" class="heading-control"><a href="#Lecture-10：变分推断" class="headerlink" title="Lecture 10：变分推断"></a>Lecture 10：变分推断<a class="heading-anchor" href="#Lecture-10：变分推断" aria-hidden="true"></a></h2><h2 id="Lecture-11：MCMC" class="heading-control"><a href="#Lecture-11：MCMC" class="headerlink" title="Lecture 11：MCMC"></a>Lecture 11：MCMC<a class="heading-anchor" href="#Lecture-11：MCMC" aria-hidden="true"></a></h2><h2 id="Lecture-12：隐马尔可夫模型" class="heading-control"><a href="#Lecture-12：隐马尔可夫模型" class="headerlink" title="Lecture 12：隐马尔可夫模型"></a>Lecture 12：隐马尔可夫模型<a class="heading-anchor" href="#Lecture-12：隐马尔可夫模型" aria-hidden="true"></a></h2><h2 id="Lecture-13：线性动态系统-卡曼滤波" class="heading-control"><a href="#Lecture-13：线性动态系统-卡曼滤波" class="headerlink" title="Lecture 13：线性动态系统-卡曼滤波"></a>Lecture 13：线性动态系统 - 卡曼滤波<a class="heading-anchor" href="#Lecture-13：线性动态系统-卡曼滤波" aria-hidden="true"></a></h2><h2 id="Lecture-14：非线性动态系统-粒子滤波" class="heading-control"><a href="#Lecture-14：非线性动态系统-粒子滤波" class="headerlink" title="Lecture 14：非线性动态系统-粒子滤波"></a>Lecture 14：非线性动态系统 - 粒子滤波<a class="heading-anchor" href="#Lecture-14：非线性动态系统-粒子滤波" aria-hidden="true"></a></h2><h2 id="Lecture-15：条件随机场" class="heading-control"><a href="#Lecture-15：条件随机场" class="headerlink" title="Lecture 15：条件随机场"></a>Lecture 15：条件随机场<a class="heading-anchor" href="#Lecture-15：条件随机场" aria-hidden="true"></a></h2><h2 id="Lecture-16：高斯网络" class="heading-control"><a href="#Lecture-16：高斯网络" class="headerlink" title="Lecture 16：高斯网络"></a>Lecture 16：高斯网络<a class="heading-anchor" href="#Lecture-16：高斯网络" aria-hidden="true"></a></h2><h2 id="Lecture-17：贝叶斯线性回归" class="heading-control"><a href="#Lecture-17：贝叶斯线性回归" class="headerlink" title="Lecture 17：贝叶斯线性回归"></a>Lecture 17：贝叶斯线性回归<a class="heading-anchor" href="#Lecture-17：贝叶斯线性回归" aria-hidden="true"></a></h2><h2 id="Lecture-18：高斯过程回归" class="heading-control"><a href="#Lecture-18：高斯过程回归" class="headerlink" title="Lecture 18：高斯过程回归"></a>Lecture 18：高斯过程回归<a class="heading-anchor" href="#Lecture-18：高斯过程回归" aria-hidden="true"></a></h2><h2 id="Lecture-19：受限玻尔兹曼机" class="heading-control"><a href="#Lecture-19：受限玻尔兹曼机" class="headerlink" title="Lecture 19：受限玻尔兹曼机"></a>Lecture 19：受限玻尔兹曼机<a class="heading-anchor" href="#Lecture-19：受限玻尔兹曼机" aria-hidden="true"></a></h2></body></html>]]></content>
+      <tags>
+        <tag>白板推导</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>校招笔试题目</title>
     <url>/post/44950.html</url>
     <content><![CDATA[<html><head><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script></head><body><h2 id="互娱模拟笔试" class="heading-control"><a href="#互娱模拟笔试" class="headerlink" title="互娱模拟笔试"></a>互娱模拟笔试<a class="heading-anchor" href="#互娱模拟笔试" aria-hidden="true"></a></h2><h4 id="个税征缴" class="heading-control"><a href="#个税征缴" class="headerlink" title="个税征缴"></a>个税征缴<a class="heading-anchor" href="#个税征缴" aria-hidden="true"></a></h4><p><img src="https://i.loli.net/2019/08/04/Rxiw6QHvKYTr8tB.png" alt><br><img src="https://i.loli.net/2019/08/04/7b45cCrzgojEaXD.png" alt><br><img src="https://i.loli.net/2019/08/04/iMvLtYcwTNOhR17.png" alt></p>
@@ -3356,24 +3356,6 @@ c_{N B}=\underset{c \in C}{\operatorname{largmax}} \log P(c)+\sum_{i \in \text {
 </body></html>]]></content>
       <tags>
         <tag>笔试</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>标签页测试</title>
-    <url>/post/5213c80b.html</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><p>我爱你中国。</p>
-<ol>
-<li>爱你</li>
-<li>爱你爱你</li>
-</ol>
-<p>我爱你中国。</p>
-<ul>
-<li>爱你</li>
-<li>爱你爱你</li>
-</ul>
-]]></content>
-      <tags>
-        <tag>测试</tag>
       </tags>
   </entry>
   <entry>
@@ -3407,26 +3389,6 @@ c_{N B}=\underset{c \in C}{\operatorname{largmax}} \log P(c)+\sum_{i \in \text {
       </tags>
   </entry>
   <entry>
-    <title>深度学习 NLP 的一些思考</title>
-    <url>/post/48416.html</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><p><img src="https://i.loli.net/2018/10/30/5bd7b7b675daa.png" alt="NLP.png"></p>
-<ol>
-<li><p>Ebedding 代表什么？<br>我们需要搞清楚的是是否 NLP 的一切都需要 Ebedding。比如陌生的符号、变量、数字、未登录词等。</p>
-</li>
-<li><p>Ebedding 的形式是否是” 向量”？<br>词可以 Ebedding 为向量，但是句子文章也这样表示就显得太单薄了，有没有更好的结构？</p>
-<a id="more"></a></li>
-<li><p>语言理解的生物启发模型是什么？<br>CNN 来自于视觉神经系统，但是 RNN 感觉并不像是生物模型。</p>
-</li>
-<li><p>NLP 的数据集都太小<br>NLP 的 ImageNet 什么时候出现？</p>
-</li>
-<li><p>cv 与 nlp 的区别？<br>1.cv 是对连续而具体的，nlp 是离散而抽象的<br>2.cv 是对二维信号的采样，nlp 是对一维信号的采样，对比而言，cv 携带的信息量比较大。</p>
-</li>
-<li><p>QA 系统的结果应该返回什么？<br>显然，结果不应该仅仅是文字、链接，结果应该更加丰富。</p>
-</li>
-</ol>
-]]></content>
-  </entry>
-  <entry>
     <title>海量数据相似度 —— 局部敏感哈希 (LSH)</title>
     <url>/post/54839.html</url>
     <content><![CDATA[<html><head><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script></head><body><h2 id="场景" class="heading-control"><a href="#场景" class="headerlink" title="场景"></a>场景<a class="heading-anchor" href="#场景" aria-hidden="true"></a></h2><p><strong>海量高维数据查找与某个数据最相似的一个或者多个数据。</strong>与其它基于 Tree 的数据结构，诸如 KD-Tree、SR-Tree 相比，它较好地克服了 Curse of Dimension，能够将 KNN 的时间复杂度缩减到 sub-linear。LSH 多被用于文本、多媒体（图像、音频）的相似性判断。</p>
@@ -3451,6 +3413,49 @@ c_{N B}=\underset{c \in C}{\operatorname{largmax}} \log P(c)+\sum_{i \in \text {
 </body></html>]]></content>
       <tags>
         <tag>局部敏感哈希</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>深度学习 NLP 的一些思考</title>
+    <url>/post/48416.html</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><p><img src="https://i.loli.net/2018/10/30/5bd7b7b675daa.png" alt="NLP.png"></p>
+<ol>
+<li><p>Ebedding 代表什么？<br>我们需要搞清楚的是是否 NLP 的一切都需要 Ebedding。比如陌生的符号、变量、数字、未登录词等。</p>
+</li>
+<li><p>Ebedding 的形式是否是” 向量”？<br>词可以 Ebedding 为向量，但是句子文章也这样表示就显得太单薄了，有没有更好的结构？</p>
+<a id="more"></a></li>
+<li><p>语言理解的生物启发模型是什么？<br>CNN 来自于视觉神经系统，但是 RNN 感觉并不像是生物模型。</p>
+</li>
+<li><p>NLP 的数据集都太小<br>NLP 的 ImageNet 什么时候出现？</p>
+</li>
+<li><p>cv 与 nlp 的区别？<br>1.cv 是对连续而具体的，nlp 是离散而抽象的<br>2.cv 是对二维信号的采样，nlp 是对一维信号的采样，对比而言，cv 携带的信息量比较大。</p>
+</li>
+<li><p>QA 系统的结果应该返回什么？<br>显然，结果不应该仅仅是文字、链接，结果应该更加丰富。</p>
+</li>
+</ol>
+]]></content>
+  </entry>
+  <entry>
+    <title>理解 Keras LSTM 中的参数 return_sequences 和 return_state</title>
+    <url>/post/24110.html</url>
+    <content><![CDATA[<html><head><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script></head><body><p><img src="https://i.loli.net/2018/11/14/5bebd5524bc47.png" alt><br>今天才注意到 LSTM 的 output 和 hidden_state 是同一个东西！下面分情况讨论参数的设置问题。<br><a id="more"></a></p>
+<h3 id="return-sequences-False-amp-amp-return-state-False" class="heading-control"><a href="#return-sequences-False-amp-amp-return-state-False" class="headerlink" title="return_sequences=False && return_state=False"></a>return_sequences=False && return_state=False<a class="heading-anchor" href="#return-sequences-False-amp-amp-return-state-False" aria-hidden="true"></a></h3><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">h = LSTM(X)</span><br></pre></td></tr></tbody></table></figure>
+<p>Keras API 中，return_sequences 和 return_state 默认就是 false。此时只会返回最后一个 LSTM 的 hidden state 值。</p>
+<h3 id="return-sequences-True-amp-amp-return-state-False" class="heading-control"><a href="#return-sequences-True-amp-amp-return-state-False" class="headerlink" title="return_sequences=True && return_state=False"></a>return_sequences=True && return_state=False<a class="heading-anchor" href="#return-sequences-True-amp-amp-return-state-False" aria-hidden="true"></a></h3><p>输出全部时间步 LSTM 的 hidden state 结果。</p>
+<h3 id="return-sequences-False-amp-amp-return-state-True" class="heading-control"><a href="#return-sequences-False-amp-amp-return-state-True" class="headerlink" title="return_sequences=False && return_state=True"></a>return_sequences=False && return_state=True<a class="heading-anchor" href="#return-sequences-False-amp-amp-return-state-True" aria-hidden="true"></a></h3><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">lstm1, state_h, state_c = LSTM(<span class="number">1</span>, return_state=<span class="literal">True</span>)</span><br></pre></td></tr></tbody></table></figure>
+<p>stm1 和 state_h 结果都是 hidden state。在这种参数设定下，它们俩的值相同。都是最后一个时间步的 hidden state。 state_c 是最后一个时间步 cell state 结果。</p>
+<h3 id="return-sequences-True-amp-amp-return-state-True" class="heading-control"><a href="#return-sequences-True-amp-amp-return-state-True" class="headerlink" title="return_sequences=True && return_state=True"></a>return_sequences=True && return_state=True<a class="heading-anchor" href="#return-sequences-True-amp-amp-return-state-True" aria-hidden="true"></a></h3><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">lstm1, state_h, state_c = LSTM(<span class="number">1</span>, return_sequences=<span class="literal">True</span>, return_state=<span class="literal">True</span>)</span><br></pre></td></tr></tbody></table></figure>
+<p>此时，我们既要输出全部时间步的 hidden state ，又要输出 cell state。lstm1 存放的就是全部时间步的 hidden state。state_h 存放的是最后一个时间步的 hidden state,state_c 存放的是最后一个时间步的 cell state<br>举一个输出例子，假设我们输入的时间步 time step=3：<br></p><figure class="highlight shell"><table><tbody><tr><td class="code"><pre><span class="line">[array([[[-0.02145359],</span><br><span class="line">        [-0.0540871 ],</span><br><span class="line">        [-0.09228823]]], dtype=float32),</span><br><span class="line"> array([[-0.09228823]], dtype=float32),</span><br><span class="line"> array([[-0.19803026]], dtype=float32)]</span><br></pre></td></tr></tbody></table></figure><br>可以看到state_h 的值和lstm1的最后一个时间步的值相同。<p></p>
+<h3 id="Reference" class="heading-control"><a href="#Reference" class="headerlink" title="Reference"></a>Reference<a class="heading-anchor" href="#Reference" aria-hidden="true"></a></h3><ol>
+<li><a href="https://blog.csdn.net/u011327333/article/details/78501054">https://blog.csdn.net/u011327333/article/details/78501054</a></li>
+<li><a href="https://machinelearningmastery.com/return-sequences-and-return-states-for-lstms-in-keras/">Understand the Difference Between Return Sequences and Return States for LSTMs in Keras</a></li>
+</ol>
+</body></html>]]></content>
+      <categories>
+        <category>笔记</category>
+      </categories>
+      <tags>
+        <tag>Keras</tag>
       </tags>
   </entry>
   <entry>
@@ -3488,29 +3493,6 @@ c_{N B}=\underset{c \in C}{\operatorname{largmax}} \log P(c)+\sum_{i \in \text {
 </body></html>]]></content>
       <tags>
         <tag>机器学习</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>理解 Keras LSTM 中的参数 return_sequences 和 return_state</title>
-    <url>/post/24110.html</url>
-    <content><![CDATA[<html><head><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script></head><body><p><img src="https://i.loli.net/2018/11/14/5bebd5524bc47.png" alt><br>今天才注意到 LSTM 的 output 和 hidden_state 是同一个东西！下面分情况讨论参数的设置问题。<br><a id="more"></a></p>
-<h3 id="return-sequences-False-amp-amp-return-state-False" class="heading-control"><a href="#return-sequences-False-amp-amp-return-state-False" class="headerlink" title="return_sequences=False && return_state=False"></a>return_sequences=False && return_state=False<a class="heading-anchor" href="#return-sequences-False-amp-amp-return-state-False" aria-hidden="true"></a></h3><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">h = LSTM(X)</span><br></pre></td></tr></tbody></table></figure>
-<p>Keras API 中，return_sequences 和 return_state 默认就是 false。此时只会返回最后一个 LSTM 的 hidden state 值。</p>
-<h3 id="return-sequences-True-amp-amp-return-state-False" class="heading-control"><a href="#return-sequences-True-amp-amp-return-state-False" class="headerlink" title="return_sequences=True && return_state=False"></a>return_sequences=True && return_state=False<a class="heading-anchor" href="#return-sequences-True-amp-amp-return-state-False" aria-hidden="true"></a></h3><p>输出全部时间步 LSTM 的 hidden state 结果。</p>
-<h3 id="return-sequences-False-amp-amp-return-state-True" class="heading-control"><a href="#return-sequences-False-amp-amp-return-state-True" class="headerlink" title="return_sequences=False && return_state=True"></a>return_sequences=False && return_state=True<a class="heading-anchor" href="#return-sequences-False-amp-amp-return-state-True" aria-hidden="true"></a></h3><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">lstm1, state_h, state_c = LSTM(<span class="number">1</span>, return_state=<span class="literal">True</span>)</span><br></pre></td></tr></tbody></table></figure>
-<p>stm1 和 state_h 结果都是 hidden state。在这种参数设定下，它们俩的值相同。都是最后一个时间步的 hidden state。 state_c 是最后一个时间步 cell state 结果。</p>
-<h3 id="return-sequences-True-amp-amp-return-state-True" class="heading-control"><a href="#return-sequences-True-amp-amp-return-state-True" class="headerlink" title="return_sequences=True && return_state=True"></a>return_sequences=True && return_state=True<a class="heading-anchor" href="#return-sequences-True-amp-amp-return-state-True" aria-hidden="true"></a></h3><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">lstm1, state_h, state_c = LSTM(<span class="number">1</span>, return_sequences=<span class="literal">True</span>, return_state=<span class="literal">True</span>)</span><br></pre></td></tr></tbody></table></figure>
-<p>此时，我们既要输出全部时间步的 hidden state ，又要输出 cell state。lstm1 存放的就是全部时间步的 hidden state。state_h 存放的是最后一个时间步的 hidden state,state_c 存放的是最后一个时间步的 cell state<br>举一个输出例子，假设我们输入的时间步 time step=3：<br></p><figure class="highlight shell"><table><tbody><tr><td class="code"><pre><span class="line">[array([[[-0.02145359],</span><br><span class="line">        [-0.0540871 ],</span><br><span class="line">        [-0.09228823]]], dtype=float32),</span><br><span class="line"> array([[-0.09228823]], dtype=float32),</span><br><span class="line"> array([[-0.19803026]], dtype=float32)]</span><br></pre></td></tr></tbody></table></figure><br>可以看到state_h 的值和lstm1的最后一个时间步的值相同。<p></p>
-<h3 id="Reference" class="heading-control"><a href="#Reference" class="headerlink" title="Reference"></a>Reference<a class="heading-anchor" href="#Reference" aria-hidden="true"></a></h3><ol>
-<li><a href="https://blog.csdn.net/u011327333/article/details/78501054">https://blog.csdn.net/u011327333/article/details/78501054</a></li>
-<li><a href="https://machinelearningmastery.com/return-sequences-and-return-states-for-lstms-in-keras/">Understand the Difference Between Return Sequences and Return States for LSTMs in Keras</a></li>
-</ol>
-</body></html>]]></content>
-      <categories>
-        <category>笔记</category>
-      </categories>
-      <tags>
-        <tag>Keras</tag>
       </tags>
   </entry>
   <entry>
@@ -3749,102 +3731,6 @@ p\left(t_{1}, t_{2}, \ldots, t_{N}\right)=\prod_{k=1}^{N} p\left(t_{k} | t_{k+1}
       </tags>
   </entry>
   <entry>
-    <title>过拟合现象及解决方案</title>
-    <url>/post/20184.html</url>
-    <content><![CDATA[<html><head><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script></head><body><h2 id="过拟合" class="heading-control"><a href="#过拟合" class="headerlink" title="过拟合"></a>过拟合<a class="heading-anchor" href="#过拟合" aria-hidden="true"></a></h2><p>每迭代几次就对模型进行检查它在验证集上的工作情况，并保存每个比以前所有迭代时都要好的模型。此外，还设置最大迭代次数这个限制，超过此值时停止学习。<br><img src="https://i.loli.net/2019/07/23/5d367c0ac0f3d17413.png" alt></p>
-<a id="more"></a>
-<h2 id="交叉验证" class="heading-control"><a href="#交叉验证" class="headerlink" title="交叉验证"></a>交叉验证<a class="heading-anchor" href="#交叉验证" aria-hidden="true"></a></h2><p>交叉验证的原理为在给定的建模样本中，拿出大部分样本进行建模型，留小部分样本用于建立的模型进行预报，并求这小部分样本的预报误差，记录它们的平方加和。一般有三种常见形式：简单交叉验证 (Holdout 验证)；K 折交叉验证 (K-fold cross-validation)；留一验证 (leave-one-out cross validation)。其中 K 折交叉验证又是最常用的一种。</p>
-<p><img src="https://i.loli.net/2019/07/23/5d367c009c80128818.png" alt></p>
-<p>如果交叉验证的结果比单次训练的结果精度下降，就证明了单次分割测试集与训练集出来的结果确实存在过拟合的现象。但缺点也非常明显，速度慢，此外，交叉检验只能起到检验过拟合的作用，并不能抑制过拟合。</p>
-<h2 id="增加数据" class="heading-control"><a href="#增加数据" class="headerlink" title="增加数据"></a>增加数据<a class="heading-anchor" href="#增加数据" aria-hidden="true"></a></h2><p>一种是增加训练样本，第二种是数据增强。</p>
-<ul>
-<li>在计算机视觉领域中，增广的方式是对图像旋转，缩放，剪切，添加噪声等。</li>
-<li>在自然语言处理领域中，可以做同义词替换扩充数据集。</li>
-<li>语音识别中可以对样本数据添加随机的噪声。</li>
-</ul>
-<h2 id="L1和L2正则化" class="heading-control"><a href="#L1和L2正则化" class="headerlink" title="L1和L2正则化"></a>L1 和 L2 正则化<a class="heading-anchor" href="#L1和L2正则化" aria-hidden="true"></a></h2><p>从贝叶斯角度理解最为合理。</p>
-<p><img src="https://i.loli.net/2019/07/23/5d367bf5c24c777152.png" alt></p>
-<h2 id="Dropout" class="heading-control"><a href="#Dropout" class="headerlink" title="Dropout"></a>Dropout<a class="heading-anchor" href="#Dropout" aria-hidden="true"></a></h2><p>神经网络的每个单元（属于输出层的那些单元）都被赋予在计算中被暂时忽略的概率 p。超参数 p 称为丢失率，通常将其默认值设置为 0.5。然后，在每次迭代中，根据指定的概率随机选择丢弃的神经元。测试的时候输出乘以概率 p，保证和训练的时候期望一样。<br><img src="https://i.loli.net/2019/07/23/5d367c048857384281.png" alt></p>
-<h2 id="提前停止（early-stopping）" class="heading-control"><a href="#提前停止（early-stopping）" class="headerlink" title="提前停止（early stopping）"></a>提前停止（early stopping）<a class="heading-anchor" href="#提前停止（early-stopping）" aria-hidden="true"></a></h2><p>每迭代几次就对模型进行检查它在验证集上的工作情况，并保存每个比以前所有迭代时都要好的模型。此外，还设置最大迭代次数这个限制，超过此值时停止学习。缺点在于需要额外的空间，而且不好和其他的参数一起调。</p>
-<h2 id="结合多种模型" class="heading-control"><a href="#结合多种模型" class="headerlink" title="结合多种模型"></a>结合多种模型<a class="heading-anchor" href="#结合多种模型" aria-hidden="true"></a></h2><p>训练多个模型，以每个模型的平均输出作为结果。</p>
-<ol>
-<li>Bagging：多个强模型的输出平均，是并行的</li>
-<li> Boosting：多个弱模型的递进学习，增加前面学习器没有学习好的样本的权重，是串行的</li>
-</ol>
-<h2 id="剪枝" class="heading-control"><a href="#剪枝" class="headerlink" title="剪枝"></a>剪枝<a class="heading-anchor" href="#剪枝" aria-hidden="true"></a></h2><p>剪枝是决策树类算法防止过拟合的方法。如果决策树的结构过于复杂，可能会导致过拟合问题，此时需要对树进行剪枝，消掉某些节点让它变得更简单。剪枝的关键问题是确定减掉哪些树节点以及减掉它们之后如何进行节点合并。决策树的剪枝算法可以分为两类，分别称为预剪枝和后剪枝。</p>
-<ul>
-<li>预剪枝在树的训练过程中通过停止分裂对树的规模进行限制</li>
-<li>后剪枝先构造出一棵完整的树，然后通过某种规则消除掉部分节点，用叶子节点替代。</li>
-</ul>
-<h2 id="多任务学习" class="heading-control"><a href="#多任务学习" class="headerlink" title="多任务学习"></a>多任务学习<a class="heading-anchor" href="#多任务学习" aria-hidden="true"></a></h2><p>深度学习中两种多任务学习模式：隐层参数的硬共享和软共享</p>
-<ul>
-<li>硬共享机制是指在所有任务中共享隐藏层，同时保留几个特定任务的输出层来实现。硬共享机制降低了过拟合的风险。多个任务同时学习，模型就越能捕捉到多个任务的同一表示，从而导致模型在原始任务上的过拟合风险越小。</li>
-<li>软共享机制是指每个任务有自己的模型，自己的参数。模型参数之间的距离是正则化的，以便保障参数相似性。</li>
-<li>特征选择，减少特征数或使用较少的特征组合</li>
-<li>交叉检验，通过交叉检验得到较优的模型参数</li>
-</ul>
-<h2 id="BN" class="heading-control"><a href="#BN" class="headerlink" title="BN"></a>BN<a class="heading-anchor" href="#BN" aria-hidden="true"></a></h2><p>比较有争议。按照<a href="https://arxiv.org/pdf/1611.03530.pdf">这篇文章</a>说的，可能在一些情况下有抑制作用，使得 overfitting 再更多的 training epoch 后出现，但并不能阻止。</p>
-<p>Batch Normalization（以下称 BN）的主要作用是加快网络的训练速度。</p>
-<p>硬要说是防止过拟合，可以这样理解：BN 每次的 mini-batch 的数据都不一样，但是每次的 mini-batch 的数据都会对 moving mean 和 moving variance 产生作用，可以认为是引入了噪声，这就可以认为是进行了 data augmentation，而 data augmentation 被认为是防止过拟合的一种方法。因此，可以认为用 BN 可以防止过拟合。</p>
-</body></html>]]></content>
-  </entry>
-  <entry>
-    <title>轻量终端打印工具:wasabi</title>
-    <url>/post/23212.html</url>
-    <content><![CDATA[<html><head><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script></head><body><p><img src="https://i.loli.net/2018/11/29/5bffea4e6ae22.png" alt><br>可以用于终端打印一些信息<br><a id="more"></a></p>
-<h2 id="安装" class="heading-control"><a href="#安装" class="headerlink" title="安装"></a>安装<a class="heading-anchor" href="#安装" aria-hidden="true"></a></h2><figure class="highlight shell"><table><tbody><tr><td class="code"><pre><span class="line">pip install wasabi</span><br></pre></td></tr></tbody></table></figure>
-<h2 id="代码以及对应的执行效果" class="heading-control"><a href="#代码以及对应的执行效果" class="headerlink" title="代码以及对应的执行效果"></a>代码以及对应的执行效果<a class="heading-anchor" href="#代码以及对应的执行效果" aria-hidden="true"></a></h2><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> wasabi <span class="keyword">import</span> Printer</span><br><span class="line"></span><br><span class="line">msg = Printer()</span><br><span class="line">msg.text(<span class="string">"Hello world!"</span>)</span><br><span class="line"></span><br><span class="line">msg.good(<span class="string">"Success"</span>)</span><br><span class="line">msg.fail(<span class="string">"Error"</span>)</span><br><span class="line">msg.warn(<span class="string">"Warning"</span>)</span><br><span class="line">msg.info(<span class="string">"Info"</span>)</span><br><span class="line"></span><br><span class="line">msg.divider(<span class="string">"Heading"</span>,char=<span class="string">'-'</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"><span class="keyword">with</span> msg.loading(<span class="string">"Loading..."</span>):</span><br><span class="line">    <span class="comment"># Do something here that takes longer</span></span><br><span class="line">    time.sleep(<span class="number">3</span>)</span><br><span class="line">msg.good(<span class="string">"Successfully loaded something!"</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> wasabi <span class="keyword">import</span> color</span><br><span class="line"></span><br><span class="line">formatted = color(<span class="string">"This is a text"</span>, fg=<span class="string">"white"</span>, bg=<span class="string">"green"</span>, bold=<span class="literal">True</span>)</span><br><span class="line">print(formatted)</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> wasabi <span class="keyword">import</span> wrap</span><br><span class="line"></span><br><span class="line">wrapped = wrap(<span class="string">"Hello world, this is a text."</span>, indent=<span class="number">2</span>)</span><br><span class="line">print(wrapped)</span><br></pre></td></tr></tbody></table></figure>
-<p><img src="https://i.loli.net/2018/11/29/5bffea4e6ae22.png" alt></p>
-</body></html>]]></content>
-      <categories>
-        <category>工具</category>
-      </categories>
-      <tags>
-        <tag>wasabi</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>逻辑回归</title>
-    <url>/post/60504.html</url>
-    <content><![CDATA[<html><head><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script></head><body><h2 id="逻辑回归模型" class="heading-control"><a href="#逻辑回归模型" class="headerlink" title="逻辑回归模型"></a>逻辑回归模型<a class="heading-anchor" href="#逻辑回归模型" aria-hidden="true"></a></h2><p>模型的假设：数据服从伯努利分布。</p>
-<script type="math/tex; mode=display">
-y=\sigma(f(\boldsymbol{x}))=\sigma\left(\boldsymbol{w}^{T} \boldsymbol{x}\right)=\frac{1}{1+e^{-\boldsymbol{w}^{T} \boldsymbol{x}}}</script><a id="more"></a>
-<h2 id="损失函数" class="heading-control"><a href="#损失函数" class="headerlink" title="损失函数"></a>损失函数<a class="heading-anchor" href="#损失函数" aria-hidden="true"></a></h2><script type="math/tex; mode=display">
-P(y | \boldsymbol{x})=\left\{\begin{array}{c}{p, y=1} \\ {1-p, y=0}\end{array}\right.</script><p>等价于：</p>
-<script type="math/tex; mode=display">
-P\left(y_{i} | \boldsymbol{x}_{i}\right)=p^{y_{i}}(1-p)^{1-y_{i}}</script><p>如果我们采集到了一组数据一共 N 个，总概率为：</p>
-<script type="math/tex; mode=display">
-P =\prod_{n=1}^{N} p^{y_{n}}(1-p)^{1-y_{n}}</script><p>最大化这个概率即最小化负 Log 损失函数：</p>
-<script type="math/tex; mode=display">
-\begin{array}{l}{L=\sum_{n=1}^{N} \ln \left(p^{y_{n}}(1-p)^{1-y_{n}}\right)} \\ {=\sum_{n=1}^{N}\left(y_{n} \ln (p)+\left(1-y_{n}\right) \ln (1-p)\right)}\end{array}</script><h2 id="梯度计算" class="heading-control"><a href="#梯度计算" class="headerlink" title="梯度计算"></a>梯度计算<a class="heading-anchor" href="#梯度计算" aria-hidden="true"></a></h2><p>上面式子中的 p 的公式如下：</p>
-<script type="math/tex; mode=display">
-p=\frac{1}{1+e^{-\boldsymbol{w}^{T} \boldsymbol{x}}}</script><p>1-p 的公式：</p>
-<script type="math/tex; mode=display">
-1-p=\frac{e^{-\boldsymbol{w}^{T} \boldsymbol{x}}}{1+e^{-\boldsymbol{w}^{T} \boldsymbol{x}}}</script><p>p 的导数如下：</p>
-<script type="math/tex; mode=display">
-p^{\prime}=p(1-p) \boldsymbol{x}</script><p>1-p 的导数如下：</p>
-<script type="math/tex; mode=display">
-(1-p)^{\prime}=-p(1-p) \boldsymbol{x}</script><p>所以损失函数的梯度如下：</p>
-<script type="math/tex; mode=display">
-\begin{aligned} \nabla F(\boldsymbol{w}) &=\nabla\left(\sum_{n=1}^{N}\left(y_{n} \ln (p)+\left(1-y_{n}\right) \ln (1-p)\right)\right) \\ &=\sum\left(y_{n} \ln ^{\prime}(p)+\left(1-y_{n}\right) \ln ^{\prime}(1-p)\right) \\ &=\sum\left(\left(y_{n} \frac{1}{p} p^{\prime}\right)+\left(1-y_{n}\right) \frac{1}{1-p}(1-p)^{\prime}\right) \\ &=\sum_{N}\left(y_{n}(1-p) \boldsymbol{x}_{n}-\left(1-y_{n}\right) p \boldsymbol{x}_{n}\right) \\ &=\sum_{n=1}^{N}\left(y_{n}-p\right) \boldsymbol{x}_{n} \end{aligned}</script><h2 id="逻辑回归的决策边界" class="heading-control"><a href="#逻辑回归的决策边界" class="headerlink" title="逻辑回归的决策边界"></a>逻辑回归的决策边界<a class="heading-anchor" href="#逻辑回归的决策边界" aria-hidden="true"></a></h2><p>逻辑回归的决策边界如下：</p>
-<script type="math/tex; mode=display">
-\frac{1}{1+e^{-\boldsymbol{w}^{T} \boldsymbol{x}}}=0.5</script><p>简一下上面的曲线公式，得到：</p>
-<script type="math/tex; mode=display">
-e^{-\boldsymbol{w}^{T} \boldsymbol{x}}=1=e^{0}</script><p>如下图所示，所以决策边界是线性的。</p>
-<script type="math/tex; mode=display">
--\boldsymbol{w}^{T} \boldsymbol{x}=0</script><p><img src="https://s2.ax1x.com/2019/07/23/ekKRw4.md.png" alt></p>
-<h2 id="代码" class="heading-control"><a href="#代码" class="headerlink" title="代码"></a>代码<a class="heading-anchor" href="#代码" aria-hidden="true"></a></h2><p>逻辑回归 + L2 范数正则化代码<br></p><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">LogisticRegression</span>():</span></span><br><span class="line">    <span class="string">""" A simple logistic regression model with L2 regularization (zero-mean</span></span><br><span class="line"><span class="string">    Gaussian priors on parameters). """</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self, x_train=None, y_train=None, x_test=None, y_test=None,</span></span></span><br><span class="line"><span class="function"><span class="params">                 alpha=<span class="number">.1</span>, synthetic=False</span>):</span></span><br><span class="line">        <span class="comment"># Set L2 regularization strength</span></span><br><span class="line">        self.alpha = alpha</span><br><span class="line">        <span class="comment"># Set the data.</span></span><br><span class="line">        self.set_data(x_train, y_train, x_test, y_test)</span><br><span class="line">        <span class="comment"># Initialize parameters to zero, for lack of a better choice.</span></span><br><span class="line">        self.betas = np.zeros(self.x_train.shape[<span class="number">1</span>])</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">negative_lik</span>(<span class="params">self, betas</span>):</span></span><br><span class="line">        <span class="keyword">return</span> <span class="number">-1</span> * self.lik(betas)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">lik</span>(<span class="params">self, betas</span>):</span></span><br><span class="line">        <span class="string">""" Likelihood of the data under the current settings of parameters. """</span></span><br><span class="line">        <span class="comment"># Data likelihood</span></span><br><span class="line">        l = <span class="number">0</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(self.n):</span><br><span class="line">            l += log(sigmoid(self.y_train[i] * </span><br><span class="line">                             np.dot(betas, self.x_train[i,:])))</span><br><span class="line">        <span class="comment"># Prior likelihood</span></span><br><span class="line">        <span class="keyword">for</span> k <span class="keyword">in</span> range(<span class="number">1</span>, self.x_train.shape[<span class="number">1</span>]):</span><br><span class="line">            l -= (self.alpha / <span class="number">2.0</span>) * self.betas[k]**<span class="number">2</span></span><br><span class="line">        <span class="keyword">return</span> l</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">train</span>(<span class="params">self</span>):</span></span><br><span class="line">        <span class="string">""" Define the gradient and hand it off to a scipy gradient-based</span></span><br><span class="line"><span class="string">        optimizer. """</span></span><br><span class="line">        <span class="comment"># Define the derivative of the likelihood with respect to beta_k.</span></span><br><span class="line">        <span class="comment"># Need to multiply by -1 because we will be minimizing.</span></span><br><span class="line">        dB_k = <span class="keyword">lambda</span> B, k : (k > <span class="number">0</span>) * self.alpha * B[k] - np.sum([</span><br><span class="line">            self.y_train[i] * self.x_train[i, k] * </span><br><span class="line">            sigmoid(-self.y_train[i] * np.dot(B, self.x_train[i,:])) </span><br><span class="line">            <span class="keyword">for</span> i <span class="keyword">in</span> range(self.n)])</span><br><span class="line"></span><br><span class="line">        <span class="comment"># The full gradient is just an array of componentwise derivatives</span></span><br><span class="line">        dB = <span class="keyword">lambda</span> B : np.array([dB_k(B, k) </span><br><span class="line">                                  <span class="keyword">for</span> k <span class="keyword">in</span> range(self.x_train.shape[<span class="number">1</span>])])</span><br><span class="line">        <span class="comment"># Optimize</span></span><br><span class="line">        self.betas = fmin_bfgs(self.negative_lik, self.betas, fprime=dB)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">set_data</span>(<span class="params">self, x_train, y_train, x_test, y_test</span>):</span></span><br><span class="line">        <span class="string">""" Take data that's already been generated. """</span></span><br><span class="line">        self.x_train = x_train</span><br><span class="line">        self.y_train = y_train</span><br><span class="line">        self.x_test = x_test</span><br><span class="line">        self.y_test = y_test</span><br><span class="line">        self.n = y_train.shape[<span class="number">0</span>]</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">training_reconstruction</span>(<span class="params">self</span>):</span></span><br><span class="line">        p_y1 = np.zeros(self.n)</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(self.n):</span><br><span class="line">            p_y1[i] = sigmoid(np.dot(self.betas, self.x_train[i,:]))</span><br><span class="line">        <span class="keyword">return</span> p_y1</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">test_predictions</span>(<span class="params">self</span>):</span></span><br><span class="line">        p_y1 = np.zeros(self.n)</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(self.n):</span><br><span class="line">            p_y1[i] = sigmoid(np.dot(self.betas, self.x_test[i,:]))</span><br><span class="line">        <span class="keyword">return</span> p_y1</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">plot_training_reconstruction</span>(<span class="params">self</span>):</span></span><br><span class="line">        plot(np.arange(self.n), <span class="number">.5</span> + <span class="number">.5</span> * self.y_train, <span class="string">'bo'</span>)</span><br><span class="line">        plot(np.arange(self.n), self.training_reconstruction(), <span class="string">'rx'</span>)</span><br><span class="line">        ylim([<span class="number">-.1</span>, <span class="number">1.1</span>])</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">plot_test_predictions</span>(<span class="params">self</span>):</span></span><br><span class="line">        plot(np.arange(self.n), <span class="number">.5</span> + <span class="number">.5</span> * self.y_test, <span class="string">'yo'</span>)</span><br><span class="line">        plot(np.arange(self.n), self.test_predictions(), <span class="string">'rx'</span>)</span><br><span class="line">        ylim([<span class="number">-.1</span>, <span class="number">1.1</span>])</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</span><br><span class="line">    <span class="keyword">from</span> pylab <span class="keyword">import</span> *</span><br><span class="line">    <span class="comment"># Create 20 dimensional data set with 25 points -- this will be</span></span><br><span class="line">    <span class="comment"># susceptible to overfitting.</span></span><br><span class="line">    data = SyntheticClassifierData(<span class="number">25</span>, <span class="number">20</span>)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># Run for a variety of regularization strengths</span></span><br><span class="line">    alphas = [<span class="number">0</span>, <span class="number">.001</span>, <span class="number">.01</span>, <span class="number">.1</span>]</span><br><span class="line">    <span class="keyword">for</span> j, a <span class="keyword">in</span> enumerate(alphas):</span><br><span class="line">        <span class="comment"># Create a new learner, but use the same data for each run</span></span><br><span class="line">        lr = LogisticRegression(x_train=data.X_train, y_train=data.Y_train,</span><br><span class="line">                                x_test=data.X_test, y_test=data.Y_test, alpha=a)</span><br><span class="line"></span><br><span class="line">        <span class="keyword">print</span> <span class="string">"Initial likelihood:"</span></span><br><span class="line">        <span class="keyword">print</span> lr.lik(lr.betas)</span><br><span class="line">        </span><br><span class="line">        <span class="comment"># Train the model</span></span><br><span class="line">        lr.train()</span><br><span class="line"></span><br><span class="line">        <span class="comment"># Display execution info</span></span><br><span class="line">        <span class="keyword">print</span> <span class="string">"Final betas:"</span></span><br><span class="line">        <span class="keyword">print</span> lr.betas</span><br><span class="line">        <span class="keyword">print</span> <span class="string">"Final lik:"</span></span><br><span class="line">        <span class="keyword">print</span> lr.lik(lr.betas)</span><br><span class="line"></span><br><span class="line">        <span class="comment"># Plot the results</span></span><br><span class="line">        subplot(len(alphas), <span class="number">2</span>, <span class="number">2</span>*j + <span class="number">1</span>)</span><br><span class="line">        lr.plot_training_reconstruction()</span><br><span class="line">        ylabel(<span class="string">"Alpha=%s"</span> % a)</span><br><span class="line">        <span class="keyword">if</span> j == <span class="number">0</span>:</span><br><span class="line">            title(<span class="string">"Training set reconstructions"</span>)</span><br><span class="line"></span><br><span class="line">        subplot(len(alphas), <span class="number">2</span>, <span class="number">2</span>*j + <span class="number">2</span>)</span><br><span class="line">        lr.plot_test_predictions()</span><br><span class="line">        <span class="keyword">if</span> j == <span class="number">0</span>:</span><br><span class="line">            title(<span class="string">"Test set predictions"</span>)</span><br><span class="line">    show()</span><br></pre></td></tr></tbody></table></figure><p></p>
-<h3 id="逻辑回归中为什么使用对数损失而不用平方损失" class="heading-control"><a href="#逻辑回归中为什么使用对数损失而不用平方损失" class="headerlink" title="逻辑回归中为什么使用对数损失而不用平方损失"></a>逻辑回归中为什么使用对数损失而不用平方损失<a class="heading-anchor" href="#逻辑回归中为什么使用对数损失而不用平方损失" aria-hidden="true"></a></h3><p>对于逻辑回归，这里所说的对数损失和极大似然是相同的。 不使用平方损失的原因是，在使用 Sigmoid 函数作为正样本的概率时，同时将平方损失作为损失函数，这时所构造出来的损失函数是非凸的，不容易求解，容易得到其局部最优解。 而如果使用极大似然，其目标函数就是对数似然函数，该损失函数是关于未知参数的高阶连续可导的凸函数，便于求其全局最优解。</p>
-<h2 id="Softmax" class="heading-control"><a href="#Softmax" class="headerlink" title="Softmax"></a>Softmax<a class="heading-anchor" href="#Softmax" aria-hidden="true"></a></h2><script type="math/tex; mode=display">
-h_{\theta}(x)=\left[\begin{array}{c}{P(y=1 | x ; \theta)} \\ {P(y=2 | x ; \theta)} \\ {\vdots} \\ {P(y=K | x ; \theta)}\end{array}\right]=\frac{1}{\sum_{j=1}^{K} \exp \left(\theta_{j}^{T} x\right)}\left[\begin{array}{c}{\exp \left(\theta_{1}^{T} x\right)} \\ {\exp \left(\theta_{2}^{T} x\right)} \\ {\vdots} \\ {\exp \left(\theta_{K}^{T} x\right)}\end{array}\right]</script><p>代价函数：</p>
-<script type="math/tex; mode=display">
-J(\theta)=-\left[\sum_{i=1}^{n} \sum_{k=1}^{K} \mathbf{1}\left\{y^{(i)}=k\right\} \ln \frac{\exp \left(\theta_{k}^{T} x_{i}\right)}{\sum_{j=1}^{K} \exp \left(\theta_{j}^{T} x_{i}\right)}\right]</script><p>其中，1${x}$ 是指示函数，x 为真时取 1 否则取 0。</p>
-</body></html>]]></content>
-      <tags>
-        <tag>机器学习</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>词向量的新进展</title>
     <url>/post/56232.html</url>
     <content><![CDATA[<html><head><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script></head><body><p><img src="https://i.loli.net/2018/11/29/5bffec15b6522.jpeg" alt="pexels-photo-1627276.jpeg"><br>最近谷歌研究人员通过新的 BERT 模型在 11 项 NLP 任务中夺得 STOA 结果，这在自然语言处理学界以及工业界都引起了不小的热议。作者通过在 33 亿文本的语料上训练语言模型，再分别在不同的下游任务上微调，这样的模型在不同的任务均得到了目前为止最好的结果，并且有一些结果相比此前的最佳成绩得到了幅度不小的提升。借此契机，我们回顾一下词表示方向的这两年的一些新进展，希望能发现一些规律和新的 idea。基本的介绍路线如下：</p>
@@ -3931,6 +3817,102 @@ J(\theta)=-\left[\sum_{i=1}^{n} \sum_{k=1}^{K} \mathbf{1}\left\{y^{(i)}=k\right\
       </tags>
   </entry>
   <entry>
+    <title>轻量终端打印工具:wasabi</title>
+    <url>/post/23212.html</url>
+    <content><![CDATA[<html><head><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script></head><body><p><img src="https://i.loli.net/2018/11/29/5bffea4e6ae22.png" alt><br>可以用于终端打印一些信息<br><a id="more"></a></p>
+<h2 id="安装" class="heading-control"><a href="#安装" class="headerlink" title="安装"></a>安装<a class="heading-anchor" href="#安装" aria-hidden="true"></a></h2><figure class="highlight shell"><table><tbody><tr><td class="code"><pre><span class="line">pip install wasabi</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="代码以及对应的执行效果" class="heading-control"><a href="#代码以及对应的执行效果" class="headerlink" title="代码以及对应的执行效果"></a>代码以及对应的执行效果<a class="heading-anchor" href="#代码以及对应的执行效果" aria-hidden="true"></a></h2><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> wasabi <span class="keyword">import</span> Printer</span><br><span class="line"></span><br><span class="line">msg = Printer()</span><br><span class="line">msg.text(<span class="string">"Hello world!"</span>)</span><br><span class="line"></span><br><span class="line">msg.good(<span class="string">"Success"</span>)</span><br><span class="line">msg.fail(<span class="string">"Error"</span>)</span><br><span class="line">msg.warn(<span class="string">"Warning"</span>)</span><br><span class="line">msg.info(<span class="string">"Info"</span>)</span><br><span class="line"></span><br><span class="line">msg.divider(<span class="string">"Heading"</span>,char=<span class="string">'-'</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"><span class="keyword">with</span> msg.loading(<span class="string">"Loading..."</span>):</span><br><span class="line">    <span class="comment"># Do something here that takes longer</span></span><br><span class="line">    time.sleep(<span class="number">3</span>)</span><br><span class="line">msg.good(<span class="string">"Successfully loaded something!"</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> wasabi <span class="keyword">import</span> color</span><br><span class="line"></span><br><span class="line">formatted = color(<span class="string">"This is a text"</span>, fg=<span class="string">"white"</span>, bg=<span class="string">"green"</span>, bold=<span class="literal">True</span>)</span><br><span class="line">print(formatted)</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> wasabi <span class="keyword">import</span> wrap</span><br><span class="line"></span><br><span class="line">wrapped = wrap(<span class="string">"Hello world, this is a text."</span>, indent=<span class="number">2</span>)</span><br><span class="line">print(wrapped)</span><br></pre></td></tr></tbody></table></figure>
+<p><img src="https://i.loli.net/2018/11/29/5bffea4e6ae22.png" alt></p>
+</body></html>]]></content>
+      <categories>
+        <category>工具</category>
+      </categories>
+      <tags>
+        <tag>wasabi</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>过拟合现象及解决方案</title>
+    <url>/post/20184.html</url>
+    <content><![CDATA[<html><head><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script></head><body><h2 id="过拟合" class="heading-control"><a href="#过拟合" class="headerlink" title="过拟合"></a>过拟合<a class="heading-anchor" href="#过拟合" aria-hidden="true"></a></h2><p>每迭代几次就对模型进行检查它在验证集上的工作情况，并保存每个比以前所有迭代时都要好的模型。此外，还设置最大迭代次数这个限制，超过此值时停止学习。<br><img src="https://i.loli.net/2019/07/23/5d367c0ac0f3d17413.png" alt></p>
+<a id="more"></a>
+<h2 id="交叉验证" class="heading-control"><a href="#交叉验证" class="headerlink" title="交叉验证"></a>交叉验证<a class="heading-anchor" href="#交叉验证" aria-hidden="true"></a></h2><p>交叉验证的原理为在给定的建模样本中，拿出大部分样本进行建模型，留小部分样本用于建立的模型进行预报，并求这小部分样本的预报误差，记录它们的平方加和。一般有三种常见形式：简单交叉验证 (Holdout 验证)；K 折交叉验证 (K-fold cross-validation)；留一验证 (leave-one-out cross validation)。其中 K 折交叉验证又是最常用的一种。</p>
+<p><img src="https://i.loli.net/2019/07/23/5d367c009c80128818.png" alt></p>
+<p>如果交叉验证的结果比单次训练的结果精度下降，就证明了单次分割测试集与训练集出来的结果确实存在过拟合的现象。但缺点也非常明显，速度慢，此外，交叉检验只能起到检验过拟合的作用，并不能抑制过拟合。</p>
+<h2 id="增加数据" class="heading-control"><a href="#增加数据" class="headerlink" title="增加数据"></a>增加数据<a class="heading-anchor" href="#增加数据" aria-hidden="true"></a></h2><p>一种是增加训练样本，第二种是数据增强。</p>
+<ul>
+<li>在计算机视觉领域中，增广的方式是对图像旋转，缩放，剪切，添加噪声等。</li>
+<li>在自然语言处理领域中，可以做同义词替换扩充数据集。</li>
+<li>语音识别中可以对样本数据添加随机的噪声。</li>
+</ul>
+<h2 id="L1和L2正则化" class="heading-control"><a href="#L1和L2正则化" class="headerlink" title="L1和L2正则化"></a>L1 和 L2 正则化<a class="heading-anchor" href="#L1和L2正则化" aria-hidden="true"></a></h2><p>从贝叶斯角度理解最为合理。</p>
+<p><img src="https://i.loli.net/2019/07/23/5d367bf5c24c777152.png" alt></p>
+<h2 id="Dropout" class="heading-control"><a href="#Dropout" class="headerlink" title="Dropout"></a>Dropout<a class="heading-anchor" href="#Dropout" aria-hidden="true"></a></h2><p>神经网络的每个单元（属于输出层的那些单元）都被赋予在计算中被暂时忽略的概率 p。超参数 p 称为丢失率，通常将其默认值设置为 0.5。然后，在每次迭代中，根据指定的概率随机选择丢弃的神经元。测试的时候输出乘以概率 p，保证和训练的时候期望一样。<br><img src="https://i.loli.net/2019/07/23/5d367c048857384281.png" alt></p>
+<h2 id="提前停止（early-stopping）" class="heading-control"><a href="#提前停止（early-stopping）" class="headerlink" title="提前停止（early stopping）"></a>提前停止（early stopping）<a class="heading-anchor" href="#提前停止（early-stopping）" aria-hidden="true"></a></h2><p>每迭代几次就对模型进行检查它在验证集上的工作情况，并保存每个比以前所有迭代时都要好的模型。此外，还设置最大迭代次数这个限制，超过此值时停止学习。缺点在于需要额外的空间，而且不好和其他的参数一起调。</p>
+<h2 id="结合多种模型" class="heading-control"><a href="#结合多种模型" class="headerlink" title="结合多种模型"></a>结合多种模型<a class="heading-anchor" href="#结合多种模型" aria-hidden="true"></a></h2><p>训练多个模型，以每个模型的平均输出作为结果。</p>
+<ol>
+<li>Bagging：多个强模型的输出平均，是并行的</li>
+<li> Boosting：多个弱模型的递进学习，增加前面学习器没有学习好的样本的权重，是串行的</li>
+</ol>
+<h2 id="剪枝" class="heading-control"><a href="#剪枝" class="headerlink" title="剪枝"></a>剪枝<a class="heading-anchor" href="#剪枝" aria-hidden="true"></a></h2><p>剪枝是决策树类算法防止过拟合的方法。如果决策树的结构过于复杂，可能会导致过拟合问题，此时需要对树进行剪枝，消掉某些节点让它变得更简单。剪枝的关键问题是确定减掉哪些树节点以及减掉它们之后如何进行节点合并。决策树的剪枝算法可以分为两类，分别称为预剪枝和后剪枝。</p>
+<ul>
+<li>预剪枝在树的训练过程中通过停止分裂对树的规模进行限制</li>
+<li>后剪枝先构造出一棵完整的树，然后通过某种规则消除掉部分节点，用叶子节点替代。</li>
+</ul>
+<h2 id="多任务学习" class="heading-control"><a href="#多任务学习" class="headerlink" title="多任务学习"></a>多任务学习<a class="heading-anchor" href="#多任务学习" aria-hidden="true"></a></h2><p>深度学习中两种多任务学习模式：隐层参数的硬共享和软共享</p>
+<ul>
+<li>硬共享机制是指在所有任务中共享隐藏层，同时保留几个特定任务的输出层来实现。硬共享机制降低了过拟合的风险。多个任务同时学习，模型就越能捕捉到多个任务的同一表示，从而导致模型在原始任务上的过拟合风险越小。</li>
+<li>软共享机制是指每个任务有自己的模型，自己的参数。模型参数之间的距离是正则化的，以便保障参数相似性。</li>
+<li>特征选择，减少特征数或使用较少的特征组合</li>
+<li>交叉检验，通过交叉检验得到较优的模型参数</li>
+</ul>
+<h2 id="BN" class="heading-control"><a href="#BN" class="headerlink" title="BN"></a>BN<a class="heading-anchor" href="#BN" aria-hidden="true"></a></h2><p>比较有争议。按照<a href="https://arxiv.org/pdf/1611.03530.pdf">这篇文章</a>说的，可能在一些情况下有抑制作用，使得 overfitting 再更多的 training epoch 后出现，但并不能阻止。</p>
+<p>Batch Normalization（以下称 BN）的主要作用是加快网络的训练速度。</p>
+<p>硬要说是防止过拟合，可以这样理解：BN 每次的 mini-batch 的数据都不一样，但是每次的 mini-batch 的数据都会对 moving mean 和 moving variance 产生作用，可以认为是引入了噪声，这就可以认为是进行了 data augmentation，而 data augmentation 被认为是防止过拟合的一种方法。因此，可以认为用 BN 可以防止过拟合。</p>
+</body></html>]]></content>
+  </entry>
+  <entry>
+    <title>逻辑回归</title>
+    <url>/post/60504.html</url>
+    <content><![CDATA[<html><head><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script></head><body><h2 id="逻辑回归模型" class="heading-control"><a href="#逻辑回归模型" class="headerlink" title="逻辑回归模型"></a>逻辑回归模型<a class="heading-anchor" href="#逻辑回归模型" aria-hidden="true"></a></h2><p>模型的假设：数据服从伯努利分布。</p>
+<script type="math/tex; mode=display">
+y=\sigma(f(\boldsymbol{x}))=\sigma\left(\boldsymbol{w}^{T} \boldsymbol{x}\right)=\frac{1}{1+e^{-\boldsymbol{w}^{T} \boldsymbol{x}}}</script><a id="more"></a>
+<h2 id="损失函数" class="heading-control"><a href="#损失函数" class="headerlink" title="损失函数"></a>损失函数<a class="heading-anchor" href="#损失函数" aria-hidden="true"></a></h2><script type="math/tex; mode=display">
+P(y | \boldsymbol{x})=\left\{\begin{array}{c}{p, y=1} \\ {1-p, y=0}\end{array}\right.</script><p>等价于：</p>
+<script type="math/tex; mode=display">
+P\left(y_{i} | \boldsymbol{x}_{i}\right)=p^{y_{i}}(1-p)^{1-y_{i}}</script><p>如果我们采集到了一组数据一共 N 个，总概率为：</p>
+<script type="math/tex; mode=display">
+P =\prod_{n=1}^{N} p^{y_{n}}(1-p)^{1-y_{n}}</script><p>最大化这个概率即最小化负 Log 损失函数：</p>
+<script type="math/tex; mode=display">
+\begin{array}{l}{L=\sum_{n=1}^{N} \ln \left(p^{y_{n}}(1-p)^{1-y_{n}}\right)} \\ {=\sum_{n=1}^{N}\left(y_{n} \ln (p)+\left(1-y_{n}\right) \ln (1-p)\right)}\end{array}</script><h2 id="梯度计算" class="heading-control"><a href="#梯度计算" class="headerlink" title="梯度计算"></a>梯度计算<a class="heading-anchor" href="#梯度计算" aria-hidden="true"></a></h2><p>上面式子中的 p 的公式如下：</p>
+<script type="math/tex; mode=display">
+p=\frac{1}{1+e^{-\boldsymbol{w}^{T} \boldsymbol{x}}}</script><p>1-p 的公式：</p>
+<script type="math/tex; mode=display">
+1-p=\frac{e^{-\boldsymbol{w}^{T} \boldsymbol{x}}}{1+e^{-\boldsymbol{w}^{T} \boldsymbol{x}}}</script><p>p 的导数如下：</p>
+<script type="math/tex; mode=display">
+p^{\prime}=p(1-p) \boldsymbol{x}</script><p>1-p 的导数如下：</p>
+<script type="math/tex; mode=display">
+(1-p)^{\prime}=-p(1-p) \boldsymbol{x}</script><p>所以损失函数的梯度如下：</p>
+<script type="math/tex; mode=display">
+\begin{aligned} \nabla F(\boldsymbol{w}) &=\nabla\left(\sum_{n=1}^{N}\left(y_{n} \ln (p)+\left(1-y_{n}\right) \ln (1-p)\right)\right) \\ &=\sum\left(y_{n} \ln ^{\prime}(p)+\left(1-y_{n}\right) \ln ^{\prime}(1-p)\right) \\ &=\sum\left(\left(y_{n} \frac{1}{p} p^{\prime}\right)+\left(1-y_{n}\right) \frac{1}{1-p}(1-p)^{\prime}\right) \\ &=\sum_{N}\left(y_{n}(1-p) \boldsymbol{x}_{n}-\left(1-y_{n}\right) p \boldsymbol{x}_{n}\right) \\ &=\sum_{n=1}^{N}\left(y_{n}-p\right) \boldsymbol{x}_{n} \end{aligned}</script><h2 id="逻辑回归的决策边界" class="heading-control"><a href="#逻辑回归的决策边界" class="headerlink" title="逻辑回归的决策边界"></a>逻辑回归的决策边界<a class="heading-anchor" href="#逻辑回归的决策边界" aria-hidden="true"></a></h2><p>逻辑回归的决策边界如下：</p>
+<script type="math/tex; mode=display">
+\frac{1}{1+e^{-\boldsymbol{w}^{T} \boldsymbol{x}}}=0.5</script><p>简一下上面的曲线公式，得到：</p>
+<script type="math/tex; mode=display">
+e^{-\boldsymbol{w}^{T} \boldsymbol{x}}=1=e^{0}</script><p>如下图所示，所以决策边界是线性的。</p>
+<script type="math/tex; mode=display">
+-\boldsymbol{w}^{T} \boldsymbol{x}=0</script><p><img src="https://s2.ax1x.com/2019/07/23/ekKRw4.md.png" alt></p>
+<h2 id="代码" class="heading-control"><a href="#代码" class="headerlink" title="代码"></a>代码<a class="heading-anchor" href="#代码" aria-hidden="true"></a></h2><p>逻辑回归 + L2 范数正则化代码<br></p><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">LogisticRegression</span>():</span></span><br><span class="line">    <span class="string">""" A simple logistic regression model with L2 regularization (zero-mean</span></span><br><span class="line"><span class="string">    Gaussian priors on parameters). """</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self, x_train=None, y_train=None, x_test=None, y_test=None,</span></span></span><br><span class="line"><span class="function"><span class="params">                 alpha=<span class="number">.1</span>, synthetic=False</span>):</span></span><br><span class="line">        <span class="comment"># Set L2 regularization strength</span></span><br><span class="line">        self.alpha = alpha</span><br><span class="line">        <span class="comment"># Set the data.</span></span><br><span class="line">        self.set_data(x_train, y_train, x_test, y_test)</span><br><span class="line">        <span class="comment"># Initialize parameters to zero, for lack of a better choice.</span></span><br><span class="line">        self.betas = np.zeros(self.x_train.shape[<span class="number">1</span>])</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">negative_lik</span>(<span class="params">self, betas</span>):</span></span><br><span class="line">        <span class="keyword">return</span> <span class="number">-1</span> * self.lik(betas)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">lik</span>(<span class="params">self, betas</span>):</span></span><br><span class="line">        <span class="string">""" Likelihood of the data under the current settings of parameters. """</span></span><br><span class="line">        <span class="comment"># Data likelihood</span></span><br><span class="line">        l = <span class="number">0</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(self.n):</span><br><span class="line">            l += log(sigmoid(self.y_train[i] * </span><br><span class="line">                             np.dot(betas, self.x_train[i,:])))</span><br><span class="line">        <span class="comment"># Prior likelihood</span></span><br><span class="line">        <span class="keyword">for</span> k <span class="keyword">in</span> range(<span class="number">1</span>, self.x_train.shape[<span class="number">1</span>]):</span><br><span class="line">            l -= (self.alpha / <span class="number">2.0</span>) * self.betas[k]**<span class="number">2</span></span><br><span class="line">        <span class="keyword">return</span> l</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">train</span>(<span class="params">self</span>):</span></span><br><span class="line">        <span class="string">""" Define the gradient and hand it off to a scipy gradient-based</span></span><br><span class="line"><span class="string">        optimizer. """</span></span><br><span class="line">        <span class="comment"># Define the derivative of the likelihood with respect to beta_k.</span></span><br><span class="line">        <span class="comment"># Need to multiply by -1 because we will be minimizing.</span></span><br><span class="line">        dB_k = <span class="keyword">lambda</span> B, k : (k > <span class="number">0</span>) * self.alpha * B[k] - np.sum([</span><br><span class="line">            self.y_train[i] * self.x_train[i, k] * </span><br><span class="line">            sigmoid(-self.y_train[i] * np.dot(B, self.x_train[i,:])) </span><br><span class="line">            <span class="keyword">for</span> i <span class="keyword">in</span> range(self.n)])</span><br><span class="line"></span><br><span class="line">        <span class="comment"># The full gradient is just an array of componentwise derivatives</span></span><br><span class="line">        dB = <span class="keyword">lambda</span> B : np.array([dB_k(B, k) </span><br><span class="line">                                  <span class="keyword">for</span> k <span class="keyword">in</span> range(self.x_train.shape[<span class="number">1</span>])])</span><br><span class="line">        <span class="comment"># Optimize</span></span><br><span class="line">        self.betas = fmin_bfgs(self.negative_lik, self.betas, fprime=dB)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">set_data</span>(<span class="params">self, x_train, y_train, x_test, y_test</span>):</span></span><br><span class="line">        <span class="string">""" Take data that's already been generated. """</span></span><br><span class="line">        self.x_train = x_train</span><br><span class="line">        self.y_train = y_train</span><br><span class="line">        self.x_test = x_test</span><br><span class="line">        self.y_test = y_test</span><br><span class="line">        self.n = y_train.shape[<span class="number">0</span>]</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">training_reconstruction</span>(<span class="params">self</span>):</span></span><br><span class="line">        p_y1 = np.zeros(self.n)</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(self.n):</span><br><span class="line">            p_y1[i] = sigmoid(np.dot(self.betas, self.x_train[i,:]))</span><br><span class="line">        <span class="keyword">return</span> p_y1</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">test_predictions</span>(<span class="params">self</span>):</span></span><br><span class="line">        p_y1 = np.zeros(self.n)</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(self.n):</span><br><span class="line">            p_y1[i] = sigmoid(np.dot(self.betas, self.x_test[i,:]))</span><br><span class="line">        <span class="keyword">return</span> p_y1</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">plot_training_reconstruction</span>(<span class="params">self</span>):</span></span><br><span class="line">        plot(np.arange(self.n), <span class="number">.5</span> + <span class="number">.5</span> * self.y_train, <span class="string">'bo'</span>)</span><br><span class="line">        plot(np.arange(self.n), self.training_reconstruction(), <span class="string">'rx'</span>)</span><br><span class="line">        ylim([<span class="number">-.1</span>, <span class="number">1.1</span>])</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">plot_test_predictions</span>(<span class="params">self</span>):</span></span><br><span class="line">        plot(np.arange(self.n), <span class="number">.5</span> + <span class="number">.5</span> * self.y_test, <span class="string">'yo'</span>)</span><br><span class="line">        plot(np.arange(self.n), self.test_predictions(), <span class="string">'rx'</span>)</span><br><span class="line">        ylim([<span class="number">-.1</span>, <span class="number">1.1</span>])</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</span><br><span class="line">    <span class="keyword">from</span> pylab <span class="keyword">import</span> *</span><br><span class="line">    <span class="comment"># Create 20 dimensional data set with 25 points -- this will be</span></span><br><span class="line">    <span class="comment"># susceptible to overfitting.</span></span><br><span class="line">    data = SyntheticClassifierData(<span class="number">25</span>, <span class="number">20</span>)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># Run for a variety of regularization strengths</span></span><br><span class="line">    alphas = [<span class="number">0</span>, <span class="number">.001</span>, <span class="number">.01</span>, <span class="number">.1</span>]</span><br><span class="line">    <span class="keyword">for</span> j, a <span class="keyword">in</span> enumerate(alphas):</span><br><span class="line">        <span class="comment"># Create a new learner, but use the same data for each run</span></span><br><span class="line">        lr = LogisticRegression(x_train=data.X_train, y_train=data.Y_train,</span><br><span class="line">                                x_test=data.X_test, y_test=data.Y_test, alpha=a)</span><br><span class="line"></span><br><span class="line">        <span class="keyword">print</span> <span class="string">"Initial likelihood:"</span></span><br><span class="line">        <span class="keyword">print</span> lr.lik(lr.betas)</span><br><span class="line">        </span><br><span class="line">        <span class="comment"># Train the model</span></span><br><span class="line">        lr.train()</span><br><span class="line"></span><br><span class="line">        <span class="comment"># Display execution info</span></span><br><span class="line">        <span class="keyword">print</span> <span class="string">"Final betas:"</span></span><br><span class="line">        <span class="keyword">print</span> lr.betas</span><br><span class="line">        <span class="keyword">print</span> <span class="string">"Final lik:"</span></span><br><span class="line">        <span class="keyword">print</span> lr.lik(lr.betas)</span><br><span class="line"></span><br><span class="line">        <span class="comment"># Plot the results</span></span><br><span class="line">        subplot(len(alphas), <span class="number">2</span>, <span class="number">2</span>*j + <span class="number">1</span>)</span><br><span class="line">        lr.plot_training_reconstruction()</span><br><span class="line">        ylabel(<span class="string">"Alpha=%s"</span> % a)</span><br><span class="line">        <span class="keyword">if</span> j == <span class="number">0</span>:</span><br><span class="line">            title(<span class="string">"Training set reconstructions"</span>)</span><br><span class="line"></span><br><span class="line">        subplot(len(alphas), <span class="number">2</span>, <span class="number">2</span>*j + <span class="number">2</span>)</span><br><span class="line">        lr.plot_test_predictions()</span><br><span class="line">        <span class="keyword">if</span> j == <span class="number">0</span>:</span><br><span class="line">            title(<span class="string">"Test set predictions"</span>)</span><br><span class="line">    show()</span><br></pre></td></tr></tbody></table></figure><p></p>
+<h3 id="逻辑回归中为什么使用对数损失而不用平方损失" class="heading-control"><a href="#逻辑回归中为什么使用对数损失而不用平方损失" class="headerlink" title="逻辑回归中为什么使用对数损失而不用平方损失"></a>逻辑回归中为什么使用对数损失而不用平方损失<a class="heading-anchor" href="#逻辑回归中为什么使用对数损失而不用平方损失" aria-hidden="true"></a></h3><p>对于逻辑回归，这里所说的对数损失和极大似然是相同的。 不使用平方损失的原因是，在使用 Sigmoid 函数作为正样本的概率时，同时将平方损失作为损失函数，这时所构造出来的损失函数是非凸的，不容易求解，容易得到其局部最优解。 而如果使用极大似然，其目标函数就是对数似然函数，该损失函数是关于未知参数的高阶连续可导的凸函数，便于求其全局最优解。</p>
+<h2 id="Softmax" class="heading-control"><a href="#Softmax" class="headerlink" title="Softmax"></a>Softmax<a class="heading-anchor" href="#Softmax" aria-hidden="true"></a></h2><script type="math/tex; mode=display">
+h_{\theta}(x)=\left[\begin{array}{c}{P(y=1 | x ; \theta)} \\ {P(y=2 | x ; \theta)} \\ {\vdots} \\ {P(y=K | x ; \theta)}\end{array}\right]=\frac{1}{\sum_{j=1}^{K} \exp \left(\theta_{j}^{T} x\right)}\left[\begin{array}{c}{\exp \left(\theta_{1}^{T} x\right)} \\ {\exp \left(\theta_{2}^{T} x\right)} \\ {\vdots} \\ {\exp \left(\theta_{K}^{T} x\right)}\end{array}\right]</script><p>代价函数：</p>
+<script type="math/tex; mode=display">
+J(\theta)=-\left[\sum_{i=1}^{n} \sum_{k=1}^{K} \mathbf{1}\left\{y^{(i)}=k\right\} \ln \frac{\exp \left(\theta_{k}^{T} x_{i}\right)}{\sum_{j=1}^{K} \exp \left(\theta_{j}^{T} x_{i}\right)}\right]</script><p>其中，1${x}$ 是指示函数，x 为真时取 1 否则取 0。</p>
+</body></html>]]></content>
+      <tags>
+        <tag>机器学习</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>配置 CentOS7 GPU 环境</title>
     <url>/post/47363.html</url>
     <content><![CDATA[<html><head><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script></head><body><p><img src="https://i.loli.net/2018/11/07/5be2c0ba79f37.png" alt></p>
@@ -4011,6 +3993,17 @@ J(\theta)=-\left[\sum_{i=1}^{n} \sum_{k=1}^{K} \mathbf{1}\left\{y^{(i)}=k\right\
       </tags>
   </entry>
   <entry>
+    <title>基于文档的限定领域对话式问答系统设计说明</title>
+    <url>/post/5681.html</url>
+    <content><![CDATA[<html><head><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script></head><body><h2 id="引言" class="heading-control"><a href="#引言" class="headerlink" title="引言"></a>引言<a class="heading-anchor" href="#引言" aria-hidden="true"></a></h2><h3 id="编写目的" class="heading-control"><a href="#编写目的" class="headerlink" title="编写目的"></a>编写目的<a class="heading-anchor" href="#编写目的" aria-hidden="true"></a></h3><p>为了从整体上描述基于文档的限定领域对话式问答系统要实现的功能，使用户能够对本系统有一个全面正确的认识，同时给程序开发者一个关于系统的使用，系统的功能模块，以及系统的各种技术解决方案一个详细的说明。</p>
+<h3 id="背景" class="heading-control"><a href="#背景" class="headerlink" title="背景"></a>背景<a class="heading-anchor" href="#背景" aria-hidden="true"></a></h3><p>问答系统 (Question Answering System, QA) 是信息检索系统的一种高级形式，它能用准确、简洁的自然语言回答用户用自然语言提出的问题。其研究兴起的主要原因是人们对快速、准确地获取信息的需求。问答系统是目前人工智能和自然语言处理领域中一个倍受关注并具有广泛发展前景的研究方向。<br>不同的应用需要不同形式的问答系统，其所采用的语料和技术也不尽相同。从涉及的应用领域进行分类，可将问答系统分为限定域问答系统和开放域问答系统。<br>限定域问答系统是指系统所能处理的问题只限定于某个领域或者某个内容范围，比如只限定于医学、化学或者某企业的业务领域等。由于系统要解决的问题限定于某个领域或者范围，因此如果把系统所需要的全部领域知识都按照统一的方式表示成内部的结构化格式，则回答问题时就能比较容易地产生答案。<br><img src="/针对文档的问答系统设计说明/20191017082302115.png" alt><br>开放域问答系统不同于限定域问答系统，这类系统可回答的问题不限定于某个特定领域。在回答开放领域的问题时，需要一定的常识知识或者世界知识并具有语义词典。<br>按支持问答系统产生答案的文档库、知识库，以及实现的技术分类，可分为自然语言的数据库问答系统、对话式问答系统、阅读理解系统、基于常用问题集的问答系统、基于知识库的问答系统，以及基于大规模文档集的问答系统。<br>目前国内的大多数问答系统都是针对开放领域的对话式问答系统，在限定领域特别是基于文档的对话式问答系统很少，且功能均不够完善。本文设计了一种使用最先进的深度学习自然语言技术的基于文档的限定领域对话式问答系统设计说明。基本步骤包括处理文档数据、构造训练数据集、模型训练和优化、模型部署等，使用时输入用户需要查询的问题，系统可以自动匹配与问题最相关的段落，并由模型给出问题的答案。此外模型有完整的日志系统以及在线训练和离线训练模块。</p>
+<h2 id="概要设计" class="heading-control"><a href="#概要设计" class="headerlink" title="概要设计"></a>概要设计<a class="heading-anchor" href="#概要设计" aria-hidden="true"></a></h2><h3 id="系统总体设计" class="heading-control"><a href="#系统总体设计" class="headerlink" title="系统总体设计"></a>系统总体设计<a class="heading-anchor" href="#系统总体设计" aria-hidden="true"></a></h3><p>系统的整体编程语言使用 Python 进行开发，使用的深度学习框架为 TensorFlow。基于机器阅读理解模型的问答流程如下图所示：<br><img src="/针对文档的问答系统设计说明/20191017084213733.png" alt></p>
+<h3 id="系统模块功能" class="heading-control"><a href="#系统模块功能" class="headerlink" title="系统模块功能"></a>系统模块功能<a class="heading-anchor" href="#系统模块功能" aria-hidden="true"></a></h3><h4 id="文档数据识别和处理模块" class="heading-control"><a href="#文档数据识别和处理模块" class="headerlink" title="文档数据识别和处理模块"></a>文档数据识别和处理模块<a class="heading-anchor" href="#文档数据识别和处理模块" aria-hidden="true"></a></h4><p>常见的办公文档多数为 txt 文档，word 文档，excel 表格或者 pdf 文档。针对不同的文档需要设计不同的数据读取方式并进行读取后数据的存储。</p>
+<h4 id="模型训练数据的构建模块" class="heading-control"><a href="#模型训练数据的构建模块" class="headerlink" title="模型训练数据的构建模块"></a>模型训练数据的构建模块<a class="heading-anchor" href="#模型训练数据的构建模块" aria-hidden="true"></a></h4><p>SQuAD 示例：<br>内容：阿波罗计划于 1962 至 1972 年间进行，期间得到了同期的双子座计划（1962 年 - 1966 年）的支持。双子座计划为阿波罗计划成功必需的一些太空旅行技术做了铺垫。阿波罗计划使用土星系列火箭作为运载工具来发射飞船。这些火箭还被用于阿波罗应用计划，包括 1973 年到 1974 年间支持了三个载人飞行任务的空间站 Skylab，以及 1975 年和前苏联合作的联合地球轨道任务阿波罗联盟测试计划。<br>问题：哪一个空间站于 1973 到 1974 年间承载了三项载人飞行任务？<br>答案：Skylab 空间站</p>
+<h4 id="基于深度学习的阅读理解模型" class="heading-control"><a href="#基于深度学习的阅读理解模型" class="headerlink" title="基于深度学习的阅读理解模型"></a>基于深度学习的阅读理解模型<a class="heading-anchor" href="#基于深度学习的阅读理解模型" aria-hidden="true"></a></h4><p>YESNO 问题类型的处理方式<br>在第一阶段使用的是分类的方法，我后来考虑同样的问题可能在不同原文中可能是不同的回答，所以我就把 YESNO 作为原文进行训练。具体做法就是在原文后边拼接 YESNO 字符串，然后将之前的答案索引修改为 YESNO 对应的索引。这样在训练过程中就可以学到答案跟原文之间的关系，而不像之前只关注问题直接得出答案，实验证明这种方法确实能提高成绩，大概提高了 3 个百分点。2. 不能回答的问题的处理方式在 BERT 的源码中，对于不能回答的问题有一套处理方式，就是根据预测结果得出的 nbest 和答案为空的概率进行对比，如果答案为空的概率最高就把空作为答案。我使用与处理 YESNO 问题的方式去试了一下，就是将 NULL 拼接到原文后，将对应的答案索引改为 NULL 的索引，实验效果证明能提升， 但是只能提升百分之零点几，anyway，有点提升就用起来吧。</p>
+<h4 id="模型导出和部署模块" class="heading-control"><a href="#模型导出和部署模块" class="headerlink" title="模型导出和部署模块"></a>模型导出和部署模块<a class="heading-anchor" href="#模型导出和部署模块" aria-hidden="true"></a></h4><h4 id="针对问题段落匹配的信息检索模块" class="heading-control"><a href="#针对问题段落匹配的信息检索模块" class="headerlink" title="针对问题段落匹配的信息检索模块"></a>针对问题段落匹配的信息检索模块<a class="heading-anchor" href="#针对问题段落匹配的信息检索模块" aria-hidden="true"></a></h4></body></html>]]></content>
+  </entry>
+  <entry>
     <title>长文本分类</title>
     <url>/post/35349.html</url>
     <content><![CDATA[<html><head><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script></head><body><p>在 NLP 领域中，文本分类舆情分析等任务相较于文本抽取，和摘要等任务更容易获得大量标注数据。因此在文本分类领域中深度学习相较于传统方法更容易获得比较好的效果。<br>文本分类领域比较重要的的深度学习模型主要有 FastText，TextCNN，HAN，DPCNN。</p>
@@ -4027,17 +4020,6 @@ J(\theta)=-\left[\sum_{i=1}^{n} \sum_{k=1}^{K} \mathbf{1}\left\{y^{(i)}=k\right\
         <tag>NLP</tag>
         <tag>分类</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>基于文档的限定领域对话式问答系统设计说明</title>
-    <url>/post/5681.html</url>
-    <content><![CDATA[<html><head><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script></head><body><h2 id="引言" class="heading-control"><a href="#引言" class="headerlink" title="引言"></a>引言<a class="heading-anchor" href="#引言" aria-hidden="true"></a></h2><h3 id="编写目的" class="heading-control"><a href="#编写目的" class="headerlink" title="编写目的"></a>编写目的<a class="heading-anchor" href="#编写目的" aria-hidden="true"></a></h3><p>为了从整体上描述基于文档的限定领域对话式问答系统要实现的功能，使用户能够对本系统有一个全面正确的认识，同时给程序开发者一个关于系统的使用，系统的功能模块，以及系统的各种技术解决方案一个详细的说明。</p>
-<h3 id="背景" class="heading-control"><a href="#背景" class="headerlink" title="背景"></a>背景<a class="heading-anchor" href="#背景" aria-hidden="true"></a></h3><p>问答系统 (Question Answering System, QA) 是信息检索系统的一种高级形式，它能用准确、简洁的自然语言回答用户用自然语言提出的问题。其研究兴起的主要原因是人们对快速、准确地获取信息的需求。问答系统是目前人工智能和自然语言处理领域中一个倍受关注并具有广泛发展前景的研究方向。<br>不同的应用需要不同形式的问答系统，其所采用的语料和技术也不尽相同。从涉及的应用领域进行分类，可将问答系统分为限定域问答系统和开放域问答系统。<br>限定域问答系统是指系统所能处理的问题只限定于某个领域或者某个内容范围，比如只限定于医学、化学或者某企业的业务领域等。由于系统要解决的问题限定于某个领域或者范围，因此如果把系统所需要的全部领域知识都按照统一的方式表示成内部的结构化格式，则回答问题时就能比较容易地产生答案。<br><img src="/针对文档的问答系统设计说明/20191017082302115.png" alt><br>开放域问答系统不同于限定域问答系统，这类系统可回答的问题不限定于某个特定领域。在回答开放领域的问题时，需要一定的常识知识或者世界知识并具有语义词典。<br>按支持问答系统产生答案的文档库、知识库，以及实现的技术分类，可分为自然语言的数据库问答系统、对话式问答系统、阅读理解系统、基于常用问题集的问答系统、基于知识库的问答系统，以及基于大规模文档集的问答系统。<br>目前国内的大多数问答系统都是针对开放领域的对话式问答系统，在限定领域特别是基于文档的对话式问答系统很少，且功能均不够完善。本文设计了一种使用最先进的深度学习自然语言技术的基于文档的限定领域对话式问答系统设计说明。基本步骤包括处理文档数据、构造训练数据集、模型训练和优化、模型部署等，使用时输入用户需要查询的问题，系统可以自动匹配与问题最相关的段落，并由模型给出问题的答案。此外模型有完整的日志系统以及在线训练和离线训练模块。</p>
-<h2 id="概要设计" class="heading-control"><a href="#概要设计" class="headerlink" title="概要设计"></a>概要设计<a class="heading-anchor" href="#概要设计" aria-hidden="true"></a></h2><h3 id="系统总体设计" class="heading-control"><a href="#系统总体设计" class="headerlink" title="系统总体设计"></a>系统总体设计<a class="heading-anchor" href="#系统总体设计" aria-hidden="true"></a></h3><p>系统的整体编程语言使用 Python 进行开发，使用的深度学习框架为 TensorFlow。基于机器阅读理解模型的问答流程如下图所示：<br><img src="/针对文档的问答系统设计说明/20191017084213733.png" alt></p>
-<h3 id="系统模块功能" class="heading-control"><a href="#系统模块功能" class="headerlink" title="系统模块功能"></a>系统模块功能<a class="heading-anchor" href="#系统模块功能" aria-hidden="true"></a></h3><h4 id="文档数据识别和处理模块" class="heading-control"><a href="#文档数据识别和处理模块" class="headerlink" title="文档数据识别和处理模块"></a>文档数据识别和处理模块<a class="heading-anchor" href="#文档数据识别和处理模块" aria-hidden="true"></a></h4><p>常见的办公文档多数为 txt 文档，word 文档，excel 表格或者 pdf 文档。针对不同的文档需要设计不同的数据读取方式并进行读取后数据的存储。</p>
-<h4 id="模型训练数据的构建模块" class="heading-control"><a href="#模型训练数据的构建模块" class="headerlink" title="模型训练数据的构建模块"></a>模型训练数据的构建模块<a class="heading-anchor" href="#模型训练数据的构建模块" aria-hidden="true"></a></h4><p>SQuAD 示例：<br>内容：阿波罗计划于 1962 至 1972 年间进行，期间得到了同期的双子座计划（1962 年 - 1966 年）的支持。双子座计划为阿波罗计划成功必需的一些太空旅行技术做了铺垫。阿波罗计划使用土星系列火箭作为运载工具来发射飞船。这些火箭还被用于阿波罗应用计划，包括 1973 年到 1974 年间支持了三个载人飞行任务的空间站 Skylab，以及 1975 年和前苏联合作的联合地球轨道任务阿波罗联盟测试计划。<br>问题：哪一个空间站于 1973 到 1974 年间承载了三项载人飞行任务？<br>答案：Skylab 空间站</p>
-<h4 id="基于深度学习的阅读理解模型" class="heading-control"><a href="#基于深度学习的阅读理解模型" class="headerlink" title="基于深度学习的阅读理解模型"></a>基于深度学习的阅读理解模型<a class="heading-anchor" href="#基于深度学习的阅读理解模型" aria-hidden="true"></a></h4><p>YESNO 问题类型的处理方式<br>在第一阶段使用的是分类的方法，我后来考虑同样的问题可能在不同原文中可能是不同的回答，所以我就把 YESNO 作为原文进行训练。具体做法就是在原文后边拼接 YESNO 字符串，然后将之前的答案索引修改为 YESNO 对应的索引。这样在训练过程中就可以学到答案跟原文之间的关系，而不像之前只关注问题直接得出答案，实验证明这种方法确实能提高成绩，大概提高了 3 个百分点。2. 不能回答的问题的处理方式在 BERT 的源码中，对于不能回答的问题有一套处理方式，就是根据预测结果得出的 nbest 和答案为空的概率进行对比，如果答案为空的概率最高就把空作为答案。我使用与处理 YESNO 问题的方式去试了一下，就是将 NULL 拼接到原文后，将对应的答案索引改为 NULL 的索引，实验效果证明能提升， 但是只能提升百分之零点几，anyway，有点提升就用起来吧。</p>
-<h4 id="模型导出和部署模块" class="heading-control"><a href="#模型导出和部署模块" class="headerlink" title="模型导出和部署模块"></a>模型导出和部署模块<a class="heading-anchor" href="#模型导出和部署模块" aria-hidden="true"></a></h4><h4 id="针对问题段落匹配的信息检索模块" class="heading-control"><a href="#针对问题段落匹配的信息检索模块" class="headerlink" title="针对问题段落匹配的信息检索模块"></a>针对问题段落匹配的信息检索模块<a class="heading-anchor" href="#针对问题段落匹配的信息检索模块" aria-hidden="true"></a></h4></body></html>]]></content>
   </entry>
   <entry>
     <title>最大似然估计和最大后验估计</title>
