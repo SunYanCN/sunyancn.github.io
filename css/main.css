@@ -1037,7 +1037,7 @@ pre .javascript .function {
 }
 .site-subtitle {
   color: #ddd;
-  font-size: 0.8125em;
+  font-size: 0.95em;
   margin: 10px 0;
 }
 .use-motion .brand {
@@ -1245,7 +1245,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #66914d;
+  background: #1bff05;
   border-radius: 50%;
   content: ' ';
   display: inline-block;

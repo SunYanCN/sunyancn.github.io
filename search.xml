@@ -1925,6 +1925,20 @@ F 1=\frac{2 \times \text {Precision} \times \text {Recall}}{\text {Precision}+\t
       </tags>
   </entry>
   <entry>
+    <title>TFIDF 做文档检索</title>
+    <url>/post/50690.html</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><p>一个简单的 TFIDF 做文档检索，还可以继续加一些功能：</p>
+<ul>
+<li>[ ] 增加评估指标</li>
+<li> [ ] 增加新的模型，例如 BM25</li>
+</ul>
+<p>实现效果：<br><img src="https://i.loli.net/2020/08/29/6QkVe9hKGjo8Hx5.png" alt="image-20200829163450810"><br><a id="more"></a><br></p><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">TF_IDF_Model</span>(<span class="params">object</span>):</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self, documents_list</span>):</span></span><br><span class="line">        self.documents_list = documents_list</span><br><span class="line">        self.token_documents_list = [jieba.lcut(doc) <span class="keyword">for</span> doc <span class="keyword">in</span> document_list]</span><br><span class="line">        <span class="comment"># 文本总个数</span></span><br><span class="line">        self.documents_number = len(self.token_documents_list)</span><br><span class="line">        <span class="comment"># 存储每个文本中没个词的词频</span></span><br><span class="line">        self.tf = []</span><br><span class="line">        <span class="comment"># 存储每个词汇的逆文档频率</span></span><br><span class="line">        self.idf = {}</span><br><span class="line">        <span class="comment"># 类初始化</span></span><br><span class="line">        self.init()</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">init</span>(<span class="params">self</span>):</span></span><br><span class="line">        df = {}</span><br><span class="line">        <span class="keyword">for</span> document <span class="keyword">in</span> self.token_documents_list:</span><br><span class="line">            temp = {}</span><br><span class="line">            <span class="keyword">for</span> word <span class="keyword">in</span> document:</span><br><span class="line">                <span class="comment"># 存储每个文档中每个词的词频</span></span><br><span class="line">                temp[word] = temp.get(word, <span class="number">0</span>) + <span class="number">1</span> / len(document)</span><br><span class="line">            self.tf.append(temp)</span><br><span class="line">            <span class="keyword">for</span> key <span class="keyword">in</span> temp.keys():</span><br><span class="line">                df[key] = df.get(key, <span class="number">0</span>) + <span class="number">1</span></span><br><span class="line">        <span class="keyword">for</span> key, value <span class="keyword">in</span> df.items():</span><br><span class="line">            <span class="comment"># 每个词的逆文档频率</span></span><br><span class="line">            self.idf[key] = np.log(self.documents_number / (value + <span class="number">1</span>))</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">get_score</span>(<span class="params">self, index, query</span>):</span></span><br><span class="line">        score = <span class="number">0.0</span></span><br><span class="line">        <span class="keyword">for</span> q <span class="keyword">in</span> query:</span><br><span class="line">            <span class="keyword">if</span> q <span class="keyword">not</span> <span class="keyword">in</span> self.tf[index]:</span><br><span class="line">                <span class="keyword">continue</span></span><br><span class="line">            score += self.tf[index][q] * self.idf[q]</span><br><span class="line">        <span class="keyword">return</span> score</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">get_documents_score</span>(<span class="params">self, query</span>):</span></span><br><span class="line">        score_list = []</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(self.documents_number):</span><br><span class="line">            score_list.append(self.get_score(i, query))</span><br><span class="line">        <span class="keyword">return</span> score_list</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">get_rank_documents</span>(<span class="params">self, query</span>):</span></span><br><span class="line">        query = jieba.lcut(query)</span><br><span class="line">        score_list = []</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(self.documents_number):</span><br><span class="line">            score_list.append(self.get_score(i, query))</span><br><span class="line">        rank_score = list(np.sort(score_list))</span><br><span class="line">        rank_index = np.argsort(score_list)</span><br><span class="line">        rank_documents = [self.documents_list[i] <span class="keyword">for</span> i <span class="keyword">in</span> rank_index]</span><br><span class="line">        <span class="keyword">return</span> list(zip(rank_documents, rank_score))[::<span class="number">-1</span>]</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    <span class="keyword">import</span> jieba_fast <span class="keyword">as</span> jieba  <span class="comment"># 使用jieba cpython 版本, 加快分词速度</span></span><br><span class="line">    <span class="keyword">from</span> pprint <span class="keyword">import</span> pprint</span><br><span class="line">    <span class="keyword">import</span> logging</span><br><span class="line"></span><br><span class="line">    jieba.setLogLevel(logging.INFO)  <span class="comment"># 关闭jieba分词log</span></span><br><span class="line"></span><br><span class="line">    document_list = [<span class="string">"行政机关强行解除行政协议造成损失，如何索取赔偿？"</span>,</span><br><span class="line">                     <span class="string">"借钱给朋友到期不还得什么时候可以起诉？怎么起诉？"</span>,</span><br><span class="line">                     <span class="string">"我在微信上被骗了，请问被骗多少钱才可以立案？"</span>,</span><br><span class="line">                     <span class="string">"公民对于选举委员会对选民的资格申诉的处理决定不服，能不能去法院起诉吗？"</span>,</span><br><span class="line">                     <span class="string">"有人走私两万元，怎么处置他？"</span>,</span><br><span class="line">                     <span class="string">"法律上餐具、饮具集中消毒服务单位的责任是不是对消毒餐具、饮具进行检验？"</span>]</span><br><span class="line">    tf_idf_model = TF_IDF_Model(document_list)</span><br><span class="line"></span><br><span class="line">    query = <span class="string">"走私了两万元，在法律上应该怎么量刑？"</span></span><br><span class="line">    scores = tf_idf_model.get_documents_score(query)</span><br><span class="line">    print(<span class="string">"query: "</span>, query)</span><br><span class="line">    print(<span class="string">"score: "</span>, scores)</span><br><span class="line">    rank_result = tf_idf_model.get_rank_documents(query)</span><br><span class="line">    pprint(rank_result)</span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure><p></p>
+]]></content>
+      <tags>
+        <tag>TFIDF</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>THU 深圳研究院：大数据机器学习</title>
     <url>/post/64988.html</url>
     <content><![CDATA[<html><head><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script></head><body><h2 id="课程介绍" class="heading-control"><a href="#课程介绍" class="headerlink" title="课程介绍"></a>课程介绍<a class="heading-anchor" href="#课程介绍" aria-hidden="true"></a></h2><p><img src="https://i.loli.net/2019/09/24/RAgXiHG8ZdlDSek.png" alt><br>B 站视频：<a href="https://www.bilibili.com/video/av67224054">https://www.bilibili.com/video/av67224054</a><br><a id="more"></a></p>
@@ -1970,20 +1984,6 @@ F 1=\frac{2 \times \text {Precision} \times \text {Recall}}{\text {Precision}+\t
       </tags>
   </entry>
   <entry>
-    <title>TFIDF 做文档检索</title>
-    <url>/post/50690.html</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><p>一个简单的 TFIDF 做文档检索，还可以继续加一些功能：</p>
-<ul>
-<li>[ ] 增加评估指标</li>
-<li> [ ] 增加新的模型，例如 BM25</li>
-</ul>
-<p>实现效果：<br><img src="https://i.loli.net/2020/08/29/6QkVe9hKGjo8Hx5.png" alt="image-20200829163450810"><br><a id="more"></a><br></p><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">TF_IDF_Model</span>(<span class="params">object</span>):</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self, documents_list</span>):</span></span><br><span class="line">        self.documents_list = documents_list</span><br><span class="line">        self.token_documents_list = [jieba.lcut(doc) <span class="keyword">for</span> doc <span class="keyword">in</span> document_list]</span><br><span class="line">        <span class="comment"># 文本总个数</span></span><br><span class="line">        self.documents_number = len(self.token_documents_list)</span><br><span class="line">        <span class="comment"># 存储每个文本中没个词的词频</span></span><br><span class="line">        self.tf = []</span><br><span class="line">        <span class="comment"># 存储每个词汇的逆文档频率</span></span><br><span class="line">        self.idf = {}</span><br><span class="line">        <span class="comment"># 类初始化</span></span><br><span class="line">        self.init()</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">init</span>(<span class="params">self</span>):</span></span><br><span class="line">        df = {}</span><br><span class="line">        <span class="keyword">for</span> document <span class="keyword">in</span> self.token_documents_list:</span><br><span class="line">            temp = {}</span><br><span class="line">            <span class="keyword">for</span> word <span class="keyword">in</span> document:</span><br><span class="line">                <span class="comment"># 存储每个文档中每个词的词频</span></span><br><span class="line">                temp[word] = temp.get(word, <span class="number">0</span>) + <span class="number">1</span> / len(document)</span><br><span class="line">            self.tf.append(temp)</span><br><span class="line">            <span class="keyword">for</span> key <span class="keyword">in</span> temp.keys():</span><br><span class="line">                df[key] = df.get(key, <span class="number">0</span>) + <span class="number">1</span></span><br><span class="line">        <span class="keyword">for</span> key, value <span class="keyword">in</span> df.items():</span><br><span class="line">            <span class="comment"># 每个词的逆文档频率</span></span><br><span class="line">            self.idf[key] = np.log(self.documents_number / (value + <span class="number">1</span>))</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">get_score</span>(<span class="params">self, index, query</span>):</span></span><br><span class="line">        score = <span class="number">0.0</span></span><br><span class="line">        <span class="keyword">for</span> q <span class="keyword">in</span> query:</span><br><span class="line">            <span class="keyword">if</span> q <span class="keyword">not</span> <span class="keyword">in</span> self.tf[index]:</span><br><span class="line">                <span class="keyword">continue</span></span><br><span class="line">            score += self.tf[index][q] * self.idf[q]</span><br><span class="line">        <span class="keyword">return</span> score</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">get_documents_score</span>(<span class="params">self, query</span>):</span></span><br><span class="line">        score_list = []</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(self.documents_number):</span><br><span class="line">            score_list.append(self.get_score(i, query))</span><br><span class="line">        <span class="keyword">return</span> score_list</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">get_rank_documents</span>(<span class="params">self, query</span>):</span></span><br><span class="line">        query = jieba.lcut(query)</span><br><span class="line">        score_list = []</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(self.documents_number):</span><br><span class="line">            score_list.append(self.get_score(i, query))</span><br><span class="line">        rank_score = list(np.sort(score_list))</span><br><span class="line">        rank_index = np.argsort(score_list)</span><br><span class="line">        rank_documents = [self.documents_list[i] <span class="keyword">for</span> i <span class="keyword">in</span> rank_index]</span><br><span class="line">        <span class="keyword">return</span> list(zip(rank_documents, rank_score))[::<span class="number">-1</span>]</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    <span class="keyword">import</span> jieba_fast <span class="keyword">as</span> jieba  <span class="comment"># 使用jieba cpython 版本, 加快分词速度</span></span><br><span class="line">    <span class="keyword">from</span> pprint <span class="keyword">import</span> pprint</span><br><span class="line">    <span class="keyword">import</span> logging</span><br><span class="line"></span><br><span class="line">    jieba.setLogLevel(logging.INFO)  <span class="comment"># 关闭jieba分词log</span></span><br><span class="line"></span><br><span class="line">    document_list = [<span class="string">"行政机关强行解除行政协议造成损失，如何索取赔偿？"</span>,</span><br><span class="line">                     <span class="string">"借钱给朋友到期不还得什么时候可以起诉？怎么起诉？"</span>,</span><br><span class="line">                     <span class="string">"我在微信上被骗了，请问被骗多少钱才可以立案？"</span>,</span><br><span class="line">                     <span class="string">"公民对于选举委员会对选民的资格申诉的处理决定不服，能不能去法院起诉吗？"</span>,</span><br><span class="line">                     <span class="string">"有人走私两万元，怎么处置他？"</span>,</span><br><span class="line">                     <span class="string">"法律上餐具、饮具集中消毒服务单位的责任是不是对消毒餐具、饮具进行检验？"</span>]</span><br><span class="line">    tf_idf_model = TF_IDF_Model(document_list)</span><br><span class="line"></span><br><span class="line">    query = <span class="string">"走私了两万元，在法律上应该怎么量刑？"</span></span><br><span class="line">    scores = tf_idf_model.get_documents_score(query)</span><br><span class="line">    print(<span class="string">"query: "</span>, query)</span><br><span class="line">    print(<span class="string">"score: "</span>, scores)</span><br><span class="line">    rank_result = tf_idf_model.get_rank_documents(query)</span><br><span class="line">    pprint(rank_result)</span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure><p></p>
-]]></content>
-      <tags>
-        <tag>TFIDF</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>TensorFlow 2.0 Question Answering</title>
     <url>/post/24791.html</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><ol>
@@ -1995,6 +1995,11 @@ F 1=\frac{2 \times \text {Precision} \times \text {Recall}}{\text {Precision}+\t
       <tags>
         <tag>学习</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>20190730180327</title>
+    <url>/post/35857.html</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script>]]></content>
   </entry>
   <entry>
     <title>TensorFlow 内核剖析</title>
@@ -2022,11 +2027,6 @@ F 1=\frac{2 \times \text {Precision} \times \text {Recall}}{\text {Precision}+\t
       <tags>
         <tag>Tensorflow</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>20190730180327</title>
-    <url>/post/35857.html</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script>]]></content>
   </entry>
   <entry>
     <title>Tensorflow Object_Detection</title>
@@ -2183,18 +2183,6 @@ Reference：<a href="https://blog.csdn.net/why19940926/article/details/78580067"
       </tags>
   </entry>
   <entry>
-    <title>nvidia-smi 指令报错</title>
-    <url>/post/19880.html</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><p>最近装深度学习环境的时候遇见 nvidia-smi 指令报错：<code>Failed to initialize NVML: Driver</code>，主要原因是旧的显卡驱动没卸载。<br>首先需要卸载驱动<br></p><figure class="highlight shell"><table><tbody><tr><td class="code"><pre><span class="line">sudo apt-get purge nvidia*</span><br></pre></td></tr></tbody></table></figure><br>然后重新安装新的驱动即可。<br>参考文章：<a href="https://www.zhihu.com/people/sun-yan-90-29">https://www.zhihu.com/people/sun-yan-90-29</a><p></p>
-]]></content>
-      <categories>
-        <category>笔记</category>
-      </categories>
-      <tags>
-        <tag>bug</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>nohup 详解</title>
     <url>/post/48347.html</url>
     <content><![CDATA[<html><head><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script></head><body><p>功能：使程序在后台运行，当连接服务器终端时，程序还在运行</p>
@@ -2204,6 +2192,18 @@ Reference：<a href="https://blog.csdn.net/why19940926/article/details/78580067"
 <h3 id="查看运行输出" class="heading-control"><a href="#查看运行输出" class="headerlink" title="查看运行输出"></a>查看运行输出<a class="heading-anchor" href="#查看运行输出" aria-hidden="true"></a></h3><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment">#实时查看</span></span><br><span class="line">tailf result.out</span><br><span class="line"><span class="comment">#查看几行</span></span><br><span class="line">head <span class="number">10</span> result.out <span class="comment">#查看文件的前面10行</span></span><br><span class="line">tail <span class="number">10</span> result.out <span class="comment"># 查看文件的后面10行</span></span><br></pre></td></tr></tbody></table></figure></body></html>]]></content>
       <tags>
         <tag>nohup</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>nvidia-smi 指令报错</title>
+    <url>/post/19880.html</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><p>最近装深度学习环境的时候遇见 nvidia-smi 指令报错：<code>Failed to initialize NVML: Driver</code>，主要原因是旧的显卡驱动没卸载。<br>首先需要卸载驱动<br></p><figure class="highlight shell"><table><tbody><tr><td class="code"><pre><span class="line">sudo apt-get purge nvidia*</span><br></pre></td></tr></tbody></table></figure><br>然后重新安装新的驱动即可。<br>参考文章：<a href="https://www.zhihu.com/people/sun-yan-90-29">https://www.zhihu.com/people/sun-yan-90-29</a><p></p>
+]]></content>
+      <categories>
+        <category>笔记</category>
+      </categories>
+      <tags>
+        <tag>bug</tag>
       </tags>
   </entry>
   <entry>
@@ -2399,45 +2399,6 @@ p_{\mathrm{t}}=\left\{\begin{array}{ll}{p} & {\text { if } y=1} \\ {1-p} & {\tex
       </tags>
   </entry>
   <entry>
-    <title>动态规划</title>
-    <url>/post/55046.html</url>
-    <content><![CDATA[<html><head><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script></head><body><h2 id="从青蛙跳台阶说起" class="heading-control"><a href="#从青蛙跳台阶说起" class="headerlink" title="从青蛙跳台阶说起"></a>从青蛙跳台阶说起<a class="heading-anchor" href="#从青蛙跳台阶说起" aria-hidden="true"></a></h2><p>这个问题和斐波纳契数字问题是一样的。题目描述如下：</p>
-<blockquote>
-<p>一只青蛙一次可以跳上 1 级台阶，也可以跳上 2 级。求该青蛙跳上一个 n 级的台阶总共有多少种跳法（先后次序不同算不同的结果）。</p>
-</blockquote>
-<h3 id="考虑递归" class="heading-control"><a href="#考虑递归" class="headerlink" title="考虑递归"></a>考虑递归<a class="heading-anchor" href="#考虑递归" aria-hidden="true"></a></h3><p>首先用递归的思路来考虑。递归是倒着分析的。</p>
-<p>假如只差一步就能走完整个台阶，要分为几种情况？因为每一步能走一级或者两级台阶，所以有如下两种情况：</p>
-<ul>
-<li>最后一步走 2 级台阶，也就是从 n-2 级到 n 级</li>
-<li>最后一步走 1 级台阶，也就是从 n-1 级到 n 级</li>
-</ul>
-<p>所以第 n 步的走法由两种方法的和构成。如果定义 F (n) 为第 n 步的走法，那么 F (n)=F (n-1)+F (n-2)。这个公式称之为<strong>递推公式</strong>。<br>当只有 1 级台阶和 2 级台阶时走法很明显，即 F (1)=1、F (2)=2。称之为<strong>边界条件</strong>。<br>两部分具备之后，很容易可以写出代码：<br></p><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">fun</span>(<span class="params">n</span>):</span></span><br><span class="line">    <span class="keyword">if</span> n==<span class="number">2</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="number">2</span></span><br><span class="line">    <span class="keyword">if</span> n==<span class="number">1</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span></span><br><span class="line">    <span class="keyword">return</span> fun(n<span class="number">-1</span>)+fun(n<span class="number">-2</span>)</span><br></pre></td></tr></tbody></table></figure><br>验证的时候会发现一个问题，如果n比较大，那么会导致计算机栈的溢出，即便是n=100的时候也需要相当长的计算时间。那么问题出在哪里呢？<p></p>
-<h2 id="重叠子问题" class="heading-control"><a href="#重叠子问题" class="headerlink" title="重叠子问题"></a>重叠子问题<a class="heading-anchor" href="#重叠子问题" aria-hidden="true"></a></h2><p>我们不妨把上面的递归式子以树的形式表示出来，结果如下：<br></p><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">                       F(<span class="number">5</span>)</span><br><span class="line">                  /             \</span><br><span class="line">             F(<span class="number">4</span>)                  F(<span class="number">3</span>)</span><br><span class="line">          /      \                /     \</span><br><span class="line">      F(<span class="number">3</span>)       F(<span class="number">2</span>)         F(<span class="number">2</span>)     F(<span class="number">1</span>)</span><br><span class="line">     /     \     /    \       /    \</span><br><span class="line">   F(<span class="number">2</span>)   F(<span class="number">1</span>) F(<span class="number">1</span>)  F(<span class="number">0</span>)  F(<span class="number">1</span>)   F(<span class="number">0</span>)</span><br><span class="line">  /    \</span><br><span class="line">F(<span class="number">1</span>)  F(<span class="number">0</span>)</span><br></pre></td></tr></tbody></table></figure><br>可以看到这其中有很多重复求解部分，称之为重叠子问题。<br>一种想到的改进方法是我们可不可以把递归计算中某些计算过的结果存起来，来避免这个问题。下面介绍记忆化搜索和LRU 缓存策略实现这种改进方法。<p></p>
-<h3 id="记忆化搜索" class="heading-control"><a href="#记忆化搜索" class="headerlink" title="记忆化搜索"></a>记忆化搜索<a class="heading-anchor" href="#记忆化搜索" aria-hidden="true"></a></h3><p>记忆化搜索的思路如下：每当我们需要解决子问题时，我们首先查找查找表。如果预先计算的值存在，那么我们返回该值，否则我们计算值，并将结果放在查找表中，以便以后可以重复使用。<br></p><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">lookup = [<span class="number">0</span>,<span class="number">1</span>,<span class="number">2</span>]+[<span class="number">0</span>]*<span class="number">100</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">fun</span>(<span class="params">n</span>):</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> lookup[n] == <span class="number">0</span>:</span><br><span class="line">        lookup[n] = fun(n<span class="number">-1</span>)+fun(n<span class="number">-2</span>)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> lookup[n]</span><br></pre></td></tr></tbody></table></figure><p></p>
-<h3 id="LRU缓存" class="heading-control"><a href="#LRU缓存" class="headerlink" title="LRU缓存"></a>LRU 缓存<a class="heading-anchor" href="#LRU缓存" aria-hidden="true"></a></h3><p>LRU（Least recently used，最近最少使用），其核心思想是 “如果数据最近被访问过，那么将来被访问的几率也更高”。对于本题目，如果是高频出现的计算函数的结果会被放到缓存中，再次出现只需要在缓存中读取即可，和记忆化搜索类似。python 有 LRU 的内置函数：<br></p><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> functools <span class="keyword">import</span> lru_cache</span><br><span class="line"><span class="meta">@lru_cache(None)</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">fun</span>(<span class="params">n</span>):</span></span><br><span class="line">    <span class="keyword">if</span> n==<span class="number">2</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="number">2</span></span><br><span class="line">    <span class="keyword">if</span> n==<span class="number">1</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span></span><br><span class="line">    <span class="keyword">return</span> fun(n<span class="number">-1</span>)+fun(n<span class="number">-2</span>)</span><br></pre></td></tr></tbody></table></figure><p></p>
-<p>有了上诉方法，n=100 已经可以计算了。但是虽然有这两个缓解的方法，但是仍存在问题。当 n=1000 的时候仍然会存在堆栈溢出的问题。</p>
-<h2 id="一维动态规划" class="heading-control"><a href="#一维动态规划" class="headerlink" title="一维动态规划"></a>一维动态规划<a class="heading-anchor" href="#一维动态规划" aria-hidden="true"></a></h2><p>上面的思考都是基于递归的，即自顶而下的计算方法。如果我们换个思路，自底而上呢？</p>
-<p>其实和上面的记忆化搜索很像了。首选记录 n=1 的情况和 n=2 的情况，然后依次向上计算，每次计算都存表即可。</p>
-<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">N = <span class="number">10</span></span><br><span class="line"></span><br><span class="line">dp  = [<span class="number">0</span>]*(N+<span class="number">1</span>)</span><br><span class="line">dp[<span class="number">1</span>] = <span class="number">1</span></span><br><span class="line">dp[<span class="number">2</span>] = <span class="number">2</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">fun</span>(<span class="params">n</span>):</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(n+<span class="number">1</span>):</span><br><span class="line">        <span class="keyword">if</span> i><span class="number">2</span>:</span><br><span class="line">            dp[i] = dp[i<span class="number">-1</span>] + dp[i<span class="number">-2</span>]</span><br><span class="line">    <span class="keyword">return</span> dp[<span class="number">-1</span>]    </span><br></pre></td></tr></tbody></table></figure>
-<p>这种方法存的表称之为 DP Table, 这种解决思路称之为动态规划。本题目的 DP Table 是一维的，所以称之为一维动态规划。</p>
-<p>当然针对这个问题，对空间还可以进一步优化：<br></p><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">fun</span>(<span class="params">n</span>):</span></span><br><span class="line">    <span class="keyword">if</span> n == <span class="number">1</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span></span><br><span class="line">    <span class="keyword">if</span> n == <span class="number">2</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="number">2</span></span><br><span class="line">    pre,prepre = <span class="number">2</span>,<span class="number">1</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(n - <span class="number">2</span>):</span><br><span class="line">         prepre, pre = pre, pre + prepre</span><br><span class="line">    <span class="keyword">return</span> pre</span><br></pre></td></tr></tbody></table></figure><p></p>
-<h3 id="动态规划和递归" class="heading-control"><a href="#动态规划和递归" class="headerlink" title="动态规划和递归"></a>动态规划和递归<a class="heading-anchor" href="#动态规划和递归" aria-hidden="true"></a></h3><p>上面我们已经见到过了：递归采用的是 “由上而下” 的解题策略并带有可能的” 子问题 “重复调用，时间复杂度自然高，而且容易造成堆栈的溢出。</p>
-<h3 id="动态规划和分治" class="heading-control"><a href="#动态规划和分治" class="headerlink" title="动态规划和分治"></a>动态规划和分治<a class="heading-anchor" href="#动态规划和分治" aria-hidden="true"></a></h3><p>两者的区别在于：动态规划的下一个子阶段的求解是建立在上一个子阶段的解的基础上，进行进一步的求解。</p>
-<h3 id="动态规划和贪心" class="heading-control"><a href="#动态规划和贪心" class="headerlink" title="动态规划和贪心"></a>动态规划和贪心<a class="heading-anchor" href="#动态规划和贪心" aria-hidden="true"></a></h3><p>贪心算法每走一步都是不可撤回的，而动态规划是在一个问题的多种策略中寻找最优策略，所以动态规划中前一种策略可能会被后一种策略推翻。</p>
-<h3 id="一维动态规划Leetcode题目" class="heading-control"><a href="#一维动态规划Leetcode题目" class="headerlink" title="一维动态规划Leetcode题目"></a>一维动态规划 Leetcode 题目<a class="heading-anchor" href="#一维动态规划Leetcode题目" aria-hidden="true"></a></h3><ul>
-<li><a href="http://oj.leetcode.com/problems/climbing-stairs/">Climbing Stairs</a></li>
-<li><a href="http://oj.leetcode.com/problems/decode-ways/">Decode Ways</a></li>
-<li><a href="http://oj.leetcode.com/problems/unique-binary-search-trees/">Unique Binary Search Trees</a></li>
-<li><a href="http://oj.leetcode.com/problems/maximum-subarray/">Maximum Subarray</a></li>
-<li><a href="https://leetcode.com/problems/maximum-product-subarray/">Maximum Product Subarray</a></li>
-<li><a href="http://oj.leetcode.com/problems/best-time-to-buy-and-sell-stock/">Best Time to Buy and Sell Stock</a></li>
-</ul>
-<h2 id="二维动态规划" class="heading-control"><a href="#二维动态规划" class="headerlink" title="二维动态规划"></a>二维动态规划<a class="heading-anchor" href="#二维动态规划" aria-hidden="true"></a></h2></body></html>]]></content>
-      <tags>
-        <tag>DP</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>刷题日记</title>
     <url>/post/38454.html</url>
     <content><![CDATA[<html><head><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script></head><body><h2 id="赛马问题" class="heading-control"><a href="#赛马问题" class="headerlink" title="赛马问题"></a>赛马问题<a class="heading-anchor" href="#赛马问题" aria-hidden="true"></a></h2><p></p><div class="tip">
@@ -2530,6 +2491,45 @@ N 个人，互相交换礼物，每个人不能拿到自己的礼物。设计一
       </categories>
       <tags>
         <tag>CNN</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>动态规划</title>
+    <url>/post/55046.html</url>
+    <content><![CDATA[<html><head><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script></head><body><h2 id="从青蛙跳台阶说起" class="heading-control"><a href="#从青蛙跳台阶说起" class="headerlink" title="从青蛙跳台阶说起"></a>从青蛙跳台阶说起<a class="heading-anchor" href="#从青蛙跳台阶说起" aria-hidden="true"></a></h2><p>这个问题和斐波纳契数字问题是一样的。题目描述如下：</p>
+<blockquote>
+<p>一只青蛙一次可以跳上 1 级台阶，也可以跳上 2 级。求该青蛙跳上一个 n 级的台阶总共有多少种跳法（先后次序不同算不同的结果）。</p>
+</blockquote>
+<h3 id="考虑递归" class="heading-control"><a href="#考虑递归" class="headerlink" title="考虑递归"></a>考虑递归<a class="heading-anchor" href="#考虑递归" aria-hidden="true"></a></h3><p>首先用递归的思路来考虑。递归是倒着分析的。</p>
+<p>假如只差一步就能走完整个台阶，要分为几种情况？因为每一步能走一级或者两级台阶，所以有如下两种情况：</p>
+<ul>
+<li>最后一步走 2 级台阶，也就是从 n-2 级到 n 级</li>
+<li>最后一步走 1 级台阶，也就是从 n-1 级到 n 级</li>
+</ul>
+<p>所以第 n 步的走法由两种方法的和构成。如果定义 F (n) 为第 n 步的走法，那么 F (n)=F (n-1)+F (n-2)。这个公式称之为<strong>递推公式</strong>。<br>当只有 1 级台阶和 2 级台阶时走法很明显，即 F (1)=1、F (2)=2。称之为<strong>边界条件</strong>。<br>两部分具备之后，很容易可以写出代码：<br></p><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">fun</span>(<span class="params">n</span>):</span></span><br><span class="line">    <span class="keyword">if</span> n==<span class="number">2</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="number">2</span></span><br><span class="line">    <span class="keyword">if</span> n==<span class="number">1</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span></span><br><span class="line">    <span class="keyword">return</span> fun(n<span class="number">-1</span>)+fun(n<span class="number">-2</span>)</span><br></pre></td></tr></tbody></table></figure><br>验证的时候会发现一个问题，如果n比较大，那么会导致计算机栈的溢出，即便是n=100的时候也需要相当长的计算时间。那么问题出在哪里呢？<p></p>
+<h2 id="重叠子问题" class="heading-control"><a href="#重叠子问题" class="headerlink" title="重叠子问题"></a>重叠子问题<a class="heading-anchor" href="#重叠子问题" aria-hidden="true"></a></h2><p>我们不妨把上面的递归式子以树的形式表示出来，结果如下：<br></p><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">                       F(<span class="number">5</span>)</span><br><span class="line">                  /             \</span><br><span class="line">             F(<span class="number">4</span>)                  F(<span class="number">3</span>)</span><br><span class="line">          /      \                /     \</span><br><span class="line">      F(<span class="number">3</span>)       F(<span class="number">2</span>)         F(<span class="number">2</span>)     F(<span class="number">1</span>)</span><br><span class="line">     /     \     /    \       /    \</span><br><span class="line">   F(<span class="number">2</span>)   F(<span class="number">1</span>) F(<span class="number">1</span>)  F(<span class="number">0</span>)  F(<span class="number">1</span>)   F(<span class="number">0</span>)</span><br><span class="line">  /    \</span><br><span class="line">F(<span class="number">1</span>)  F(<span class="number">0</span>)</span><br></pre></td></tr></tbody></table></figure><br>可以看到这其中有很多重复求解部分，称之为重叠子问题。<br>一种想到的改进方法是我们可不可以把递归计算中某些计算过的结果存起来，来避免这个问题。下面介绍记忆化搜索和LRU 缓存策略实现这种改进方法。<p></p>
+<h3 id="记忆化搜索" class="heading-control"><a href="#记忆化搜索" class="headerlink" title="记忆化搜索"></a>记忆化搜索<a class="heading-anchor" href="#记忆化搜索" aria-hidden="true"></a></h3><p>记忆化搜索的思路如下：每当我们需要解决子问题时，我们首先查找查找表。如果预先计算的值存在，那么我们返回该值，否则我们计算值，并将结果放在查找表中，以便以后可以重复使用。<br></p><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">lookup = [<span class="number">0</span>,<span class="number">1</span>,<span class="number">2</span>]+[<span class="number">0</span>]*<span class="number">100</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">fun</span>(<span class="params">n</span>):</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> lookup[n] == <span class="number">0</span>:</span><br><span class="line">        lookup[n] = fun(n<span class="number">-1</span>)+fun(n<span class="number">-2</span>)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> lookup[n]</span><br></pre></td></tr></tbody></table></figure><p></p>
+<h3 id="LRU缓存" class="heading-control"><a href="#LRU缓存" class="headerlink" title="LRU缓存"></a>LRU 缓存<a class="heading-anchor" href="#LRU缓存" aria-hidden="true"></a></h3><p>LRU（Least recently used，最近最少使用），其核心思想是 “如果数据最近被访问过，那么将来被访问的几率也更高”。对于本题目，如果是高频出现的计算函数的结果会被放到缓存中，再次出现只需要在缓存中读取即可，和记忆化搜索类似。python 有 LRU 的内置函数：<br></p><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> functools <span class="keyword">import</span> lru_cache</span><br><span class="line"><span class="meta">@lru_cache(None)</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">fun</span>(<span class="params">n</span>):</span></span><br><span class="line">    <span class="keyword">if</span> n==<span class="number">2</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="number">2</span></span><br><span class="line">    <span class="keyword">if</span> n==<span class="number">1</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span></span><br><span class="line">    <span class="keyword">return</span> fun(n<span class="number">-1</span>)+fun(n<span class="number">-2</span>)</span><br></pre></td></tr></tbody></table></figure><p></p>
+<p>有了上诉方法，n=100 已经可以计算了。但是虽然有这两个缓解的方法，但是仍存在问题。当 n=1000 的时候仍然会存在堆栈溢出的问题。</p>
+<h2 id="一维动态规划" class="heading-control"><a href="#一维动态规划" class="headerlink" title="一维动态规划"></a>一维动态规划<a class="heading-anchor" href="#一维动态规划" aria-hidden="true"></a></h2><p>上面的思考都是基于递归的，即自顶而下的计算方法。如果我们换个思路，自底而上呢？</p>
+<p>其实和上面的记忆化搜索很像了。首选记录 n=1 的情况和 n=2 的情况，然后依次向上计算，每次计算都存表即可。</p>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">N = <span class="number">10</span></span><br><span class="line"></span><br><span class="line">dp  = [<span class="number">0</span>]*(N+<span class="number">1</span>)</span><br><span class="line">dp[<span class="number">1</span>] = <span class="number">1</span></span><br><span class="line">dp[<span class="number">2</span>] = <span class="number">2</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">fun</span>(<span class="params">n</span>):</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(n+<span class="number">1</span>):</span><br><span class="line">        <span class="keyword">if</span> i><span class="number">2</span>:</span><br><span class="line">            dp[i] = dp[i<span class="number">-1</span>] + dp[i<span class="number">-2</span>]</span><br><span class="line">    <span class="keyword">return</span> dp[<span class="number">-1</span>]    </span><br></pre></td></tr></tbody></table></figure>
+<p>这种方法存的表称之为 DP Table, 这种解决思路称之为动态规划。本题目的 DP Table 是一维的，所以称之为一维动态规划。</p>
+<p>当然针对这个问题，对空间还可以进一步优化：<br></p><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">fun</span>(<span class="params">n</span>):</span></span><br><span class="line">    <span class="keyword">if</span> n == <span class="number">1</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span></span><br><span class="line">    <span class="keyword">if</span> n == <span class="number">2</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="number">2</span></span><br><span class="line">    pre,prepre = <span class="number">2</span>,<span class="number">1</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(n - <span class="number">2</span>):</span><br><span class="line">         prepre, pre = pre, pre + prepre</span><br><span class="line">    <span class="keyword">return</span> pre</span><br></pre></td></tr></tbody></table></figure><p></p>
+<h3 id="动态规划和递归" class="heading-control"><a href="#动态规划和递归" class="headerlink" title="动态规划和递归"></a>动态规划和递归<a class="heading-anchor" href="#动态规划和递归" aria-hidden="true"></a></h3><p>上面我们已经见到过了：递归采用的是 “由上而下” 的解题策略并带有可能的” 子问题 “重复调用，时间复杂度自然高，而且容易造成堆栈的溢出。</p>
+<h3 id="动态规划和分治" class="heading-control"><a href="#动态规划和分治" class="headerlink" title="动态规划和分治"></a>动态规划和分治<a class="heading-anchor" href="#动态规划和分治" aria-hidden="true"></a></h3><p>两者的区别在于：动态规划的下一个子阶段的求解是建立在上一个子阶段的解的基础上，进行进一步的求解。</p>
+<h3 id="动态规划和贪心" class="heading-control"><a href="#动态规划和贪心" class="headerlink" title="动态规划和贪心"></a>动态规划和贪心<a class="heading-anchor" href="#动态规划和贪心" aria-hidden="true"></a></h3><p>贪心算法每走一步都是不可撤回的，而动态规划是在一个问题的多种策略中寻找最优策略，所以动态规划中前一种策略可能会被后一种策略推翻。</p>
+<h3 id="一维动态规划Leetcode题目" class="heading-control"><a href="#一维动态规划Leetcode题目" class="headerlink" title="一维动态规划Leetcode题目"></a>一维动态规划 Leetcode 题目<a class="heading-anchor" href="#一维动态规划Leetcode题目" aria-hidden="true"></a></h3><ul>
+<li><a href="http://oj.leetcode.com/problems/climbing-stairs/">Climbing Stairs</a></li>
+<li><a href="http://oj.leetcode.com/problems/decode-ways/">Decode Ways</a></li>
+<li><a href="http://oj.leetcode.com/problems/unique-binary-search-trees/">Unique Binary Search Trees</a></li>
+<li><a href="http://oj.leetcode.com/problems/maximum-subarray/">Maximum Subarray</a></li>
+<li><a href="https://leetcode.com/problems/maximum-product-subarray/">Maximum Product Subarray</a></li>
+<li><a href="http://oj.leetcode.com/problems/best-time-to-buy-and-sell-stock/">Best Time to Buy and Sell Stock</a></li>
+</ul>
+<h2 id="二维动态规划" class="heading-control"><a href="#二维动态规划" class="headerlink" title="二维动态规划"></a>二维动态规划<a class="heading-anchor" href="#二维动态规划" aria-hidden="true"></a></h2></body></html>]]></content>
+      <tags>
+        <tag>DP</tag>
       </tags>
   </entry>
   <entry>
@@ -2930,20 +2930,6 @@ N 个人，互相交换礼物，每个人不能拿到自己的礼物。设计一
       </tags>
   </entry>
   <entry>
-    <title>寻找最大的 K 个数</title>
-    <url>/post/18004.html</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><ul>
-<li>方法一：常规解法，先排序 (时间复杂度为 O (N*logN))</li>
-<li> 方法二：利用快速排序原理 (时间复杂度 O (N*logK)</li>
-<li> 方法三：利用最小堆的原理 (时间复杂度为 O (N*logK))</li>
-<li> 方法四：计数排序，用空间换取时间的方法，不适合浮点数</li>
-</ul>
-]]></content>
-      <tags>
-        <tag>Topk</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>工作</title>
     <url>/post/60913.html</url>
     <content><![CDATA[<html><head><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script></head><body><h2 id="招聘" class="heading-control"><a href="#招聘" class="headerlink" title="招聘"></a>招聘<a class="heading-anchor" href="#招聘" aria-hidden="true"></a></h2><p><a href="http://www.qhvss.com/about/2.html">陕西庆华汽车安全系统有限公司</a>是中国兵器工业集团所属特种能源集团直管单位，是集科研、生产、销售为一体的高新技术企业，是国内最大的汽车安全系统用火工品制造商，具有年产点火具 3000 万发，微型气体发生器 770 万发，产气药 500 吨的能力。</p>
@@ -3056,6 +3042,20 @@ N 个人，互相交换礼物，每个人不能拿到自己的礼物。设计一
       </tags>
   </entry>
   <entry>
+    <title>寻找最大的 K 个数</title>
+    <url>/post/18004.html</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><ul>
+<li>方法一：常规解法，先排序 (时间复杂度为 O (N*logN))</li>
+<li> 方法二：利用快速排序原理 (时间复杂度 O (N*logK)</li>
+<li> 方法三：利用最小堆的原理 (时间复杂度为 O (N*logK))</li>
+<li> 方法四：计数排序，用空间换取时间的方法，不适合浮点数</li>
+</ul>
+]]></content>
+      <tags>
+        <tag>Topk</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>数值计算</title>
     <url>/post/58802.html</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><p>数值分析是研究科学计算中各种数学问题求解的数值计算方法。</p>
@@ -3135,28 +3135,6 @@ N 个人，互相交换礼物，每个人不能拿到自己的礼物。设计一
       </tags>
   </entry>
   <entry>
-    <title>日常 bug</title>
-    <url>/post/52747.html</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><ol>
-<li><code>TensorFlow报错FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated</code>, 解决方案：<code>pip install numpy==1.16.0</code></li>
-<li>国内镜像 ustc 稳定性大于 tuna, 配置<code>.bashrc</code> 如下:<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">channels:</span><br><span class="line">  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main/</span><br><span class="line">  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/</span><br><span class="line">  - https://mirrors.ustc.edu.cn/anaconda/cloud/menpo/</span><br><span class="line">  - https://mirrors.ustc.edu.cn/anaconda/cloud/bioconda/</span><br><span class="line">  - https://mirrors.ustc.edu.cn/anaconda/cloud/msys2/</span><br><span class="line">  - https://mirrors.ustc.edu.cn/anaconda/cloud/conda-forge/</span><br><span class="line">  - https://mirrors.ustc.edu.cn/anaconda/pkgs/free/</span><br><span class="line">  - https://mirrors.ustc.edu.cn/anaconda/pkgs/main/</span><br><span class="line">  - defaults</span><br><span class="line">show_channel_urls: <span class="literal">true</span></span><br></pre></td></tr></tbody></table></figure></li>
-<li>删除虚拟环境：<code>conda remove -n your_env_name --all</code></li>
-<li>nohup 查看运行的后台进程 <code>jobs -l</code></li>
-<li>Anaconda 导出环境 / 从外部安装环境，导出已有环境：<code>conda env export &gt; environment.yaml</code>, 当我们想再次创建该环境，或根据别人提供的.yaml 文件复现环境时，可以：<code>conda env create -f environment.yaml</code></li>
-<li>.tar.bz2 文件解压命令，从网络上下载到的源码包，最常见的是.tar.gz 包，还有一部分是.tar.bz2 包<br>.tar.gz 格式解压为 <code>tar   -zxvf   xx.tar.gz</code><br>.tar.bz2 格式解压为 <code>tar   -jxvf    xx.tar.bz2</code></li>
-<li>Python 忽略警告信息:<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> warnings</span><br><span class="line">warnings.filterwarnings(<span class="string">"ignore"</span>)</span><br></pre></td></tr></tbody></table></figure></li>
-<li><p>python 命令生成 requestment.txt 文件，<code>pip freeze &gt; requirements.txt</code>, 安装：<code>pip install -r requirements.txt</code></p>
-</li>
-<li><p>run <code>nvidia-smi</code> ，遇见 <code>Failed to initialize NVML: Driver/library version mismatch</code> 的错误。参考下面的解决方案：</p>
-<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">I had reinstalled nvidia driver: run these commands <span class="keyword">in</span> root mode:</span><br><span class="line">1. systemctl isolate multi-user.target</span><br><span class="line">2. modprobe -r nvidia-drm</span><br><span class="line">3. Reinstall Nvidia driver: chmod +x NVIDIA-Linux-x86_64–410.57.run</span><br><span class="line">4. systemctl start graphical.target</span><br><span class="line">and finally check nvidia-smi</span><br></pre></td></tr></tbody></table></figure>
-</li>
-</ol>
-]]></content>
-      <tags>
-        <tag>bug</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>智慧海洋建设比赛</title>
     <url>/post/20868.html</url>
     <content><![CDATA[<html><head><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script></head><body><p>这个比赛算是我第一个做的数值类特征的比赛，主要以学习为主。学习的内容包括：</p>
@@ -3192,6 +3170,66 @@ N 个人，互相交换礼物，每个人不能拿到自己的礼物。设计一
       </tags>
   </entry>
   <entry>
+    <title>日常 bug</title>
+    <url>/post/52747.html</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><ol>
+<li><code>TensorFlow报错FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated</code>, 解决方案：<code>pip install numpy==1.16.0</code></li>
+<li>国内镜像 ustc 稳定性大于 tuna, 配置<code>.bashrc</code> 如下:<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">channels:</span><br><span class="line">  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main/</span><br><span class="line">  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/</span><br><span class="line">  - https://mirrors.ustc.edu.cn/anaconda/cloud/menpo/</span><br><span class="line">  - https://mirrors.ustc.edu.cn/anaconda/cloud/bioconda/</span><br><span class="line">  - https://mirrors.ustc.edu.cn/anaconda/cloud/msys2/</span><br><span class="line">  - https://mirrors.ustc.edu.cn/anaconda/cloud/conda-forge/</span><br><span class="line">  - https://mirrors.ustc.edu.cn/anaconda/pkgs/free/</span><br><span class="line">  - https://mirrors.ustc.edu.cn/anaconda/pkgs/main/</span><br><span class="line">  - defaults</span><br><span class="line">show_channel_urls: <span class="literal">true</span></span><br></pre></td></tr></tbody></table></figure></li>
+<li>删除虚拟环境：<code>conda remove -n your_env_name --all</code></li>
+<li>nohup 查看运行的后台进程 <code>jobs -l</code></li>
+<li>Anaconda 导出环境 / 从外部安装环境，导出已有环境：<code>conda env export &gt; environment.yaml</code>, 当我们想再次创建该环境，或根据别人提供的.yaml 文件复现环境时，可以：<code>conda env create -f environment.yaml</code></li>
+<li>.tar.bz2 文件解压命令，从网络上下载到的源码包，最常见的是.tar.gz 包，还有一部分是.tar.bz2 包<br>.tar.gz 格式解压为 <code>tar   -zxvf   xx.tar.gz</code><br>.tar.bz2 格式解压为 <code>tar   -jxvf    xx.tar.bz2</code></li>
+<li>Python 忽略警告信息:<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> warnings</span><br><span class="line">warnings.filterwarnings(<span class="string">"ignore"</span>)</span><br></pre></td></tr></tbody></table></figure></li>
+<li><p>python 命令生成 requestment.txt 文件，<code>pip freeze &gt; requirements.txt</code>, 安装：<code>pip install -r requirements.txt</code></p>
+</li>
+<li><p>run <code>nvidia-smi</code> ，遇见 <code>Failed to initialize NVML: Driver/library version mismatch</code> 的错误。参考下面的解决方案：</p>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">I had reinstalled nvidia driver: run these commands <span class="keyword">in</span> root mode:</span><br><span class="line">1. systemctl isolate multi-user.target</span><br><span class="line">2. modprobe -r nvidia-drm</span><br><span class="line">3. Reinstall Nvidia driver: chmod +x NVIDIA-Linux-x86_64–410.57.run</span><br><span class="line">4. systemctl start graphical.target</span><br><span class="line">and finally check nvidia-smi</span><br></pre></td></tr></tbody></table></figure>
+</li>
+</ol>
+]]></content>
+      <tags>
+        <tag>bug</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>服务器环境配置命令</title>
+    <url>/post/55264.html</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><ol>
+<li><p>conda 检查和 clone 环境</p>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">codna info -e</span><br><span class="line">conda create -n tf20 --<span class="built_in">clone</span> tf13 <span class="comment">#创建tf20环境</span></span><br></pre></td></tr></tbody></table></figure>
+</li>
+<li><p>pip 使用阿里云的源<br>Linux、Mac 下<br>修改～/.pip/pip.conf（不存在就创建一个），加入如下配置：</p>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">[global]</span><br><span class="line">index-url = http://mirrors.aliyun.com/pypi/simple/</span><br><span class="line">[install]</span><br><span class="line">trusted-host=mirrors.aliyun.com</span><br></pre></td></tr></tbody></table></figure>
+<p> windows 下，在当前用户目录下创建一个 pip 目录，即 C:\Users\ 用户名 \pip。在 pip 目录内新增一个 pip.ini 文件。加入如下配置：</p>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">[global]</span><br><span class="line">index-url = http://mirrors.aliyun.com/pypi/simple/</span><br><span class="line">[install]</span><br><span class="line">trusted-host=mirrors.aliyun.com</span><br></pre></td></tr></tbody></table></figure>
+</li>
+<li><p>安装 tf20 和 pytorch</p>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">pip install tensorflow-gpu</span><br><span class="line">pip install torch torchvision</span><br></pre></td></tr></tbody></table></figure></li>
+</ol>
+]]></content>
+      <tags>
+        <tag>服务器</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>服务器守护进程</title>
+    <url>/post/46515.html</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><ul>
+<li>首先把进程放到后台 <figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">nohup python main.py &amp;</span><br></pre></td></tr></tbody></table></figure></li>
+<li>然后保持退出终端继续运行 <figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">ctrl-z</span><br><span class="line"><span class="built_in">bg</span></span><br></pre></td></tr></tbody></table></figure></li>
+<li>输出在 <code>nohup.out</code> 里面</li>
+<li>输入 fg，可以把任务调到前台并取消</li>
+<li>输入 <code>jobs</code> 显示后台进程</li>
+</ul>
+]]></content>
+      <categories>
+        <category>项目</category>
+      </categories>
+      <tags>
+        <tag>服务器</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>有趣的网站</title>
     <url>/post/35391.html</url>
     <content><![CDATA[<html><head><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script></head><body><h2 id="📻音乐" class="heading-control"><a href="#📻音乐" class="headerlink" title="📻音乐"></a>📻音乐<a class="heading-anchor" href="#📻音乐" aria-hidden="true"></a></h2><ul>
@@ -3222,44 +3260,6 @@ N 个人，互相交换礼物，每个人不能拿到自己的礼物。设计一
       </categories>
       <tags>
         <tag>网站</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>服务器守护进程</title>
-    <url>/post/46515.html</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><ul>
-<li>首先把进程放到后台 <figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">nohup python main.py &amp;</span><br></pre></td></tr></tbody></table></figure></li>
-<li>然后保持退出终端继续运行 <figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">ctrl-z</span><br><span class="line"><span class="built_in">bg</span></span><br></pre></td></tr></tbody></table></figure></li>
-<li>输出在 <code>nohup.out</code> 里面</li>
-<li>输入 fg，可以把任务调到前台并取消</li>
-<li>输入 <code>jobs</code> 显示后台进程</li>
-</ul>
-]]></content>
-      <categories>
-        <category>项目</category>
-      </categories>
-      <tags>
-        <tag>服务器</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>服务器环境配置命令</title>
-    <url>/post/55264.html</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><ol>
-<li><p>conda 检查和 clone 环境</p>
-<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">codna info -e</span><br><span class="line">conda create -n tf20 --<span class="built_in">clone</span> tf13 <span class="comment">#创建tf20环境</span></span><br></pre></td></tr></tbody></table></figure>
-</li>
-<li><p>pip 使用阿里云的源<br>Linux、Mac 下<br>修改～/.pip/pip.conf（不存在就创建一个），加入如下配置：</p>
-<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">[global]</span><br><span class="line">index-url = http://mirrors.aliyun.com/pypi/simple/</span><br><span class="line">[install]</span><br><span class="line">trusted-host=mirrors.aliyun.com</span><br></pre></td></tr></tbody></table></figure>
-<p> windows 下，在当前用户目录下创建一个 pip 目录，即 C:\Users\ 用户名 \pip。在 pip 目录内新增一个 pip.ini 文件。加入如下配置：</p>
-<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">[global]</span><br><span class="line">index-url = http://mirrors.aliyun.com/pypi/simple/</span><br><span class="line">[install]</span><br><span class="line">trusted-host=mirrors.aliyun.com</span><br></pre></td></tr></tbody></table></figure>
-</li>
-<li><p>安装 tf20 和 pytorch</p>
-<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">pip install tensorflow-gpu</span><br><span class="line">pip install torch torchvision</span><br></pre></td></tr></tbody></table></figure></li>
-</ol>
-]]></content>
-      <tags>
-        <tag>服务器</tag>
       </tags>
   </entry>
   <entry>
@@ -3307,6 +3307,27 @@ c_{N B}=\underset{c \in C}{\operatorname{largmax}} \log P(c)+\sum_{i \in \text {
 </body></html>]]></content>
       <tags>
         <tag>机器学习</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>每周论文</title>
+    <url>/post/7053.html</url>
+    <content><![CDATA[<html><head><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script></head><body><p><img src="https://i.loli.net/2018/11/29/5bffec15c0d38.jpeg" alt="pexels-photo-933964.jpeg"><br><a id="more"></a></p>
+<h2 id="第一周" class="heading-control"><a href="#第一周" class="headerlink" title="第一周"></a>第一周<a class="heading-anchor" href="#第一周" aria-hidden="true"></a></h2><ol>
+<li><p><a href="https://www.paperweekly.site/papers/2520">An Introductory Survey on Attention Mechanisms in NLP Problems</a><br><strong>标签</strong>：Attention 综述<br>本文来自佐治亚理工学院，这是一篇 Attention 机制在自然语言处理方面的综述文章，包括基本概念和 Attention 在不同 NLP 任务上的模型变种。</p>
+</li>
+<li><p><a href="https://www.paperweekly.site/papers/2524">LiveBot: Generating Live Video Comments Based on Visual and Textual Contexts</a><br><strong>标签</strong>：弹幕生成<br>本文是北京大学孙栩老师组和微软亚洲研究院发表在 AAAI 2019 上的工作。文章介绍了 “弹幕生成” 任务，根据一定时间范围内的视频帧和评论文本进行弹幕评论的生成，并且构建了基于 B 站的数据集。<br>通过对数据集的分析发现：弹幕评论长度较短；相邻时间间隔的评论具有较高的关联度。基于此，文章先是利用传统的 Seq2Seq 架构，设计了 Video Encoder 和 Text Encoder 进行图像和文字信息的融合，再交由 Comment Decoder 进行生成；进一步地，利用 Transformer 替代 RNN Encoder，提出了一个 Unified Transformer Model。<br>并且，为了更好的评估模型的性能，文章提出了一个基于生成概率对候选评论进行排序的指标，对比之前的 Seq2Seq 模型，文章提出的两个模型能够取得更好的效果。</p>
+</li>
+<li><a href="https://www.paperweekly.site/papers/2519">Contextual String Embeddings for Sequence Labeling</a><br><strong>标签</strong>：Word Embeddings<br><strong>源码</strong>:<a href="https://github.com/zalandoresearch/flair">https://github.com/zalandoresearch/flair</a><br>本文是 Zalando Research 发表于 COLING 2018 的工作，论文提出了一种全新产生 embedding 的 BiLSTM 模型结构，模型特点：<br>模型以 character 为原子单位，在网络中，每个 character 都有一个对应的 hidden state。这个特点对需要多一步分词的中文来说可能有避免因为分词错误导致下游 function 继续错误的弊端；<br>输出以 word 为单位的 embedding，这个 embedding 由前向 LSTM 中，该词最后一个字母的 hidden state 和反向 LSTM 中该词第一个字母的 hidden state 拼接组成，这样就能够兼顾上下文信息。<br>这种动态 embedding 的方法在序列标注上取得了良好效果，特别值得一提的是，在 NER 上的表现甚至超越了 BERT，但训练成本只是一个 GPU 一周，训练数据在十亿个词量，与 BERT 相比对硬件的要求极大降低，训练成本的大幅减少却仍有性能上的提升，动态 embedding 的思路值得借鉴和尝试。</li>
+<li><a href="https://www.paperweekly.site/papers/2545">Discriminative Deep Dyna-Q: Robust Planning for Dialogue Policy Learning</a><br><strong>标签</strong>：Dialog Systems<br><strong>源码</strong>：<a href="https://github.com/MiuLab/DDQ">https://github.com/MiuLab/DDQ</a><br>本文是微软和台湾大学发表于 ACL 2018 的工作，论文提出了一种针对任务型对话系统的学习方式 ——Deep Dyna-Q，在仅使用少量真实用户交互数据的前提下，基于集成规划的方法进行对话策略学习。作者将 world model 引入对话 agent，模仿真实的用户响应并不断学习生成模拟的用户对话，利用真实和模拟的对话经验对 agent 进行优化。</li>
+<li><a href="https://www.paperweekly.site/papers/2522">Learning Personalized End-to-End Goal-Oriented Dialog</a><br><strong>标签</strong>：Goal-Oriented Dialog<br>本文是微软亚洲研究院和北京大学孙栩组共同完成即将发表在 AAAI 2019 的工作。为对话系统引入个性化是今年对话领域最为火热的研究方向之一。此前有一些工作研究在开放式对话（chitchat）中引入个性化，使得对话生成中可以包含一定的对话者身份的信息，使对话质量更高。而本文关注在鲜有人研究且更加困难的任务型对话领域，探索如何能针对用户的不同身份采取不同的对话策略，提高任务完成率和用户满意度。<br>本文提出了 Personalized MemN2N 模型，引入 profile embedding，并在对话模型和 KB 之间建立联系，有效地提升了对话系统质量，达到任务型对话个性化数据集上新的 state-of-the-art。在针对任务型研究较少的环境下，这一工作具有非常高的参考价值。</li>
+</ol>
+</body></html>]]></content>
+      <categories>
+        <category>论文</category>
+      </categories>
+      <tags>
+        <tag>论文</tag>
       </tags>
   </entry>
   <entry>
@@ -3368,27 +3389,6 @@ c_{N B}=\underset{c \in C}{\operatorname{largmax}} \log P(c)+\sum_{i \in \text {
       </tags>
   </entry>
   <entry>
-    <title>每周论文</title>
-    <url>/post/7053.html</url>
-    <content><![CDATA[<html><head><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script></head><body><p><img src="https://i.loli.net/2018/11/29/5bffec15c0d38.jpeg" alt="pexels-photo-933964.jpeg"><br><a id="more"></a></p>
-<h2 id="第一周" class="heading-control"><a href="#第一周" class="headerlink" title="第一周"></a>第一周<a class="heading-anchor" href="#第一周" aria-hidden="true"></a></h2><ol>
-<li><p><a href="https://www.paperweekly.site/papers/2520">An Introductory Survey on Attention Mechanisms in NLP Problems</a><br><strong>标签</strong>：Attention 综述<br>本文来自佐治亚理工学院，这是一篇 Attention 机制在自然语言处理方面的综述文章，包括基本概念和 Attention 在不同 NLP 任务上的模型变种。</p>
-</li>
-<li><p><a href="https://www.paperweekly.site/papers/2524">LiveBot: Generating Live Video Comments Based on Visual and Textual Contexts</a><br><strong>标签</strong>：弹幕生成<br>本文是北京大学孙栩老师组和微软亚洲研究院发表在 AAAI 2019 上的工作。文章介绍了 “弹幕生成” 任务，根据一定时间范围内的视频帧和评论文本进行弹幕评论的生成，并且构建了基于 B 站的数据集。<br>通过对数据集的分析发现：弹幕评论长度较短；相邻时间间隔的评论具有较高的关联度。基于此，文章先是利用传统的 Seq2Seq 架构，设计了 Video Encoder 和 Text Encoder 进行图像和文字信息的融合，再交由 Comment Decoder 进行生成；进一步地，利用 Transformer 替代 RNN Encoder，提出了一个 Unified Transformer Model。<br>并且，为了更好的评估模型的性能，文章提出了一个基于生成概率对候选评论进行排序的指标，对比之前的 Seq2Seq 模型，文章提出的两个模型能够取得更好的效果。</p>
-</li>
-<li><a href="https://www.paperweekly.site/papers/2519">Contextual String Embeddings for Sequence Labeling</a><br><strong>标签</strong>：Word Embeddings<br><strong>源码</strong>:<a href="https://github.com/zalandoresearch/flair">https://github.com/zalandoresearch/flair</a><br>本文是 Zalando Research 发表于 COLING 2018 的工作，论文提出了一种全新产生 embedding 的 BiLSTM 模型结构，模型特点：<br>模型以 character 为原子单位，在网络中，每个 character 都有一个对应的 hidden state。这个特点对需要多一步分词的中文来说可能有避免因为分词错误导致下游 function 继续错误的弊端；<br>输出以 word 为单位的 embedding，这个 embedding 由前向 LSTM 中，该词最后一个字母的 hidden state 和反向 LSTM 中该词第一个字母的 hidden state 拼接组成，这样就能够兼顾上下文信息。<br>这种动态 embedding 的方法在序列标注上取得了良好效果，特别值得一提的是，在 NER 上的表现甚至超越了 BERT，但训练成本只是一个 GPU 一周，训练数据在十亿个词量，与 BERT 相比对硬件的要求极大降低，训练成本的大幅减少却仍有性能上的提升，动态 embedding 的思路值得借鉴和尝试。</li>
-<li><a href="https://www.paperweekly.site/papers/2545">Discriminative Deep Dyna-Q: Robust Planning for Dialogue Policy Learning</a><br><strong>标签</strong>：Dialog Systems<br><strong>源码</strong>：<a href="https://github.com/MiuLab/DDQ">https://github.com/MiuLab/DDQ</a><br>本文是微软和台湾大学发表于 ACL 2018 的工作，论文提出了一种针对任务型对话系统的学习方式 ——Deep Dyna-Q，在仅使用少量真实用户交互数据的前提下，基于集成规划的方法进行对话策略学习。作者将 world model 引入对话 agent，模仿真实的用户响应并不断学习生成模拟的用户对话，利用真实和模拟的对话经验对 agent 进行优化。</li>
-<li><a href="https://www.paperweekly.site/papers/2522">Learning Personalized End-to-End Goal-Oriented Dialog</a><br><strong>标签</strong>：Goal-Oriented Dialog<br>本文是微软亚洲研究院和北京大学孙栩组共同完成即将发表在 AAAI 2019 的工作。为对话系统引入个性化是今年对话领域最为火热的研究方向之一。此前有一些工作研究在开放式对话（chitchat）中引入个性化，使得对话生成中可以包含一定的对话者身份的信息，使对话质量更高。而本文关注在鲜有人研究且更加困难的任务型对话领域，探索如何能针对用户的不同身份采取不同的对话策略，提高任务完成率和用户满意度。<br>本文提出了 Personalized MemN2N 模型，引入 profile embedding，并在对话模型和 KB 之间建立联系，有效地提升了对话系统质量，达到任务型对话个性化数据集上新的 state-of-the-art。在针对任务型研究较少的环境下，这一工作具有非常高的参考价值。</li>
-</ol>
-</body></html>]]></content>
-      <categories>
-        <category>论文</category>
-      </categories>
-      <tags>
-        <tag>论文</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>海量数据相似度 —— 局部敏感哈希 (LSH)</title>
     <url>/post/54839.html</url>
     <content><![CDATA[<html><head><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script></head><body><h2 id="场景" class="heading-control"><a href="#场景" class="headerlink" title="场景"></a>场景<a class="heading-anchor" href="#场景" aria-hidden="true"></a></h2><p><strong>海量高维数据查找与某个数据最相似的一个或者多个数据。</strong>与其它基于 Tree 的数据结构，诸如 KD-Tree、SR-Tree 相比，它较好地克服了 Curse of Dimension，能够将 KNN 的时间复杂度缩减到 sub-linear。LSH 多被用于文本、多媒体（图像、音频）的相似性判断。</p>
@@ -3434,29 +3434,6 @@ c_{N B}=\underset{c \in C}{\operatorname{largmax}} \log P(c)+\sum_{i \in \text {
 </li>
 </ol>
 ]]></content>
-  </entry>
-  <entry>
-    <title>理解 Keras LSTM 中的参数 return_sequences 和 return_state</title>
-    <url>/post/24110.html</url>
-    <content><![CDATA[<html><head><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script></head><body><p><img src="https://i.loli.net/2018/11/14/5bebd5524bc47.png" alt><br>今天才注意到 LSTM 的 output 和 hidden_state 是同一个东西！下面分情况讨论参数的设置问题。<br><a id="more"></a></p>
-<h3 id="return-sequences-False-amp-amp-return-state-False" class="heading-control"><a href="#return-sequences-False-amp-amp-return-state-False" class="headerlink" title="return_sequences=False && return_state=False"></a>return_sequences=False && return_state=False<a class="heading-anchor" href="#return-sequences-False-amp-amp-return-state-False" aria-hidden="true"></a></h3><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">h = LSTM(X)</span><br></pre></td></tr></tbody></table></figure>
-<p>Keras API 中，return_sequences 和 return_state 默认就是 false。此时只会返回最后一个 LSTM 的 hidden state 值。</p>
-<h3 id="return-sequences-True-amp-amp-return-state-False" class="heading-control"><a href="#return-sequences-True-amp-amp-return-state-False" class="headerlink" title="return_sequences=True && return_state=False"></a>return_sequences=True && return_state=False<a class="heading-anchor" href="#return-sequences-True-amp-amp-return-state-False" aria-hidden="true"></a></h3><p>输出全部时间步 LSTM 的 hidden state 结果。</p>
-<h3 id="return-sequences-False-amp-amp-return-state-True" class="heading-control"><a href="#return-sequences-False-amp-amp-return-state-True" class="headerlink" title="return_sequences=False && return_state=True"></a>return_sequences=False && return_state=True<a class="heading-anchor" href="#return-sequences-False-amp-amp-return-state-True" aria-hidden="true"></a></h3><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">lstm1, state_h, state_c = LSTM(<span class="number">1</span>, return_state=<span class="literal">True</span>)</span><br></pre></td></tr></tbody></table></figure>
-<p>stm1 和 state_h 结果都是 hidden state。在这种参数设定下，它们俩的值相同。都是最后一个时间步的 hidden state。 state_c 是最后一个时间步 cell state 结果。</p>
-<h3 id="return-sequences-True-amp-amp-return-state-True" class="heading-control"><a href="#return-sequences-True-amp-amp-return-state-True" class="headerlink" title="return_sequences=True && return_state=True"></a>return_sequences=True && return_state=True<a class="heading-anchor" href="#return-sequences-True-amp-amp-return-state-True" aria-hidden="true"></a></h3><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">lstm1, state_h, state_c = LSTM(<span class="number">1</span>, return_sequences=<span class="literal">True</span>, return_state=<span class="literal">True</span>)</span><br></pre></td></tr></tbody></table></figure>
-<p>此时，我们既要输出全部时间步的 hidden state ，又要输出 cell state。lstm1 存放的就是全部时间步的 hidden state。state_h 存放的是最后一个时间步的 hidden state,state_c 存放的是最后一个时间步的 cell state<br>举一个输出例子，假设我们输入的时间步 time step=3：<br></p><figure class="highlight shell"><table><tbody><tr><td class="code"><pre><span class="line">[array([[[-0.02145359],</span><br><span class="line">        [-0.0540871 ],</span><br><span class="line">        [-0.09228823]]], dtype=float32),</span><br><span class="line"> array([[-0.09228823]], dtype=float32),</span><br><span class="line"> array([[-0.19803026]], dtype=float32)]</span><br></pre></td></tr></tbody></table></figure><br>可以看到state_h 的值和lstm1的最后一个时间步的值相同。<p></p>
-<h3 id="Reference" class="heading-control"><a href="#Reference" class="headerlink" title="Reference"></a>Reference<a class="heading-anchor" href="#Reference" aria-hidden="true"></a></h3><ol>
-<li><a href="https://blog.csdn.net/u011327333/article/details/78501054">https://blog.csdn.net/u011327333/article/details/78501054</a></li>
-<li><a href="https://machinelearningmastery.com/return-sequences-and-return-states-for-lstms-in-keras/">Understand the Difference Between Return Sequences and Return States for LSTMs in Keras</a></li>
-</ol>
-</body></html>]]></content>
-      <categories>
-        <category>笔记</category>
-      </categories>
-      <tags>
-        <tag>Keras</tag>
-      </tags>
   </entry>
   <entry>
     <title>生成模型和判别模型</title>
@@ -3543,6 +3520,29 @@ c_{N B}=\underset{c \in C}{\operatorname{largmax}} \log P(c)+\sum_{i \in \text {
       </tags>
   </entry>
   <entry>
+    <title>理解 Keras LSTM 中的参数 return_sequences 和 return_state</title>
+    <url>/post/24110.html</url>
+    <content><![CDATA[<html><head><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script></head><body><p><img src="https://i.loli.net/2018/11/14/5bebd5524bc47.png" alt><br>今天才注意到 LSTM 的 output 和 hidden_state 是同一个东西！下面分情况讨论参数的设置问题。<br><a id="more"></a></p>
+<h3 id="return-sequences-False-amp-amp-return-state-False" class="heading-control"><a href="#return-sequences-False-amp-amp-return-state-False" class="headerlink" title="return_sequences=False && return_state=False"></a>return_sequences=False && return_state=False<a class="heading-anchor" href="#return-sequences-False-amp-amp-return-state-False" aria-hidden="true"></a></h3><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">h = LSTM(X)</span><br></pre></td></tr></tbody></table></figure>
+<p>Keras API 中，return_sequences 和 return_state 默认就是 false。此时只会返回最后一个 LSTM 的 hidden state 值。</p>
+<h3 id="return-sequences-True-amp-amp-return-state-False" class="heading-control"><a href="#return-sequences-True-amp-amp-return-state-False" class="headerlink" title="return_sequences=True && return_state=False"></a>return_sequences=True && return_state=False<a class="heading-anchor" href="#return-sequences-True-amp-amp-return-state-False" aria-hidden="true"></a></h3><p>输出全部时间步 LSTM 的 hidden state 结果。</p>
+<h3 id="return-sequences-False-amp-amp-return-state-True" class="heading-control"><a href="#return-sequences-False-amp-amp-return-state-True" class="headerlink" title="return_sequences=False && return_state=True"></a>return_sequences=False && return_state=True<a class="heading-anchor" href="#return-sequences-False-amp-amp-return-state-True" aria-hidden="true"></a></h3><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">lstm1, state_h, state_c = LSTM(<span class="number">1</span>, return_state=<span class="literal">True</span>)</span><br></pre></td></tr></tbody></table></figure>
+<p>stm1 和 state_h 结果都是 hidden state。在这种参数设定下，它们俩的值相同。都是最后一个时间步的 hidden state。 state_c 是最后一个时间步 cell state 结果。</p>
+<h3 id="return-sequences-True-amp-amp-return-state-True" class="heading-control"><a href="#return-sequences-True-amp-amp-return-state-True" class="headerlink" title="return_sequences=True && return_state=True"></a>return_sequences=True && return_state=True<a class="heading-anchor" href="#return-sequences-True-amp-amp-return-state-True" aria-hidden="true"></a></h3><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">lstm1, state_h, state_c = LSTM(<span class="number">1</span>, return_sequences=<span class="literal">True</span>, return_state=<span class="literal">True</span>)</span><br></pre></td></tr></tbody></table></figure>
+<p>此时，我们既要输出全部时间步的 hidden state ，又要输出 cell state。lstm1 存放的就是全部时间步的 hidden state。state_h 存放的是最后一个时间步的 hidden state,state_c 存放的是最后一个时间步的 cell state<br>举一个输出例子，假设我们输入的时间步 time step=3：<br></p><figure class="highlight shell"><table><tbody><tr><td class="code"><pre><span class="line">[array([[[-0.02145359],</span><br><span class="line">        [-0.0540871 ],</span><br><span class="line">        [-0.09228823]]], dtype=float32),</span><br><span class="line"> array([[-0.09228823]], dtype=float32),</span><br><span class="line"> array([[-0.19803026]], dtype=float32)]</span><br></pre></td></tr></tbody></table></figure><br>可以看到state_h 的值和lstm1的最后一个时间步的值相同。<p></p>
+<h3 id="Reference" class="heading-control"><a href="#Reference" class="headerlink" title="Reference"></a>Reference<a class="heading-anchor" href="#Reference" aria-hidden="true"></a></h3><ol>
+<li><a href="https://blog.csdn.net/u011327333/article/details/78501054">https://blog.csdn.net/u011327333/article/details/78501054</a></li>
+<li><a href="https://machinelearningmastery.com/return-sequences-and-return-states-for-lstms-in-keras/">Understand the Difference Between Return Sequences and Return States for LSTMs in Keras</a></li>
+</ol>
+</body></html>]]></content>
+      <categories>
+        <category>笔记</category>
+      </categories>
+      <tags>
+        <tag>Keras</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>算法</title>
     <url>/post/54150.html</url>
     <content><![CDATA[<html><head><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script></head><body><p>秋招算法复习</p>
@@ -3610,6 +3610,21 @@ c_{N B}=\underset{c \in C}{\operatorname{largmax}} \log P(c)+\sum_{i \in \text {
       </tags>
   </entry>
   <entry>
+    <title>最近调代码两个的 bug</title>
+    <url>/post/19186.html</url>
+    <content><![CDATA[<html><head><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script></head><body><h3 id="标签错误" class="heading-control"><a href="#标签错误" class="headerlink" title="标签错误"></a>标签错误<a class="heading-anchor" href="#标签错误" aria-hidden="true"></a></h3><p>错误 log:<br></p><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">RuntimeError: cuda runtime error (59) :device-side assert triggered</span><br></pre></td></tr></tbody></table></figure><br>一般是标签出错，检查两点：<p></p>
+<ul>
+<li>标签中是否有 - 1</li>
+<li> 标签个数和分类的个数是否匹配（检查模型最后的分类个数）</li>
+</ul>
+<h3 id="Shell脚本dos2unix" class="heading-control"><a href="#Shell脚本dos2unix" class="headerlink" title="Shell脚本dos2unix"></a>Shell 脚本 dos2unix<a class="heading-anchor" href="#Shell脚本dos2unix" aria-hidden="true"></a></h3><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">Shell脚本出现$<span class="string">'\r'</span>: <span class="built_in">command</span> not found</span><br></pre></td></tr></tbody></table></figure>
+<p>这是因为脚本文件可能在 window 弄过，有 window 下的空行，把他转换成 unix 格式的就行。<br></p><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">yum install dos2unix</span><br><span class="line">dos2unix run.sh</span><br></pre></td></tr></tbody></table></figure><p></p>
+</body></html>]]></content>
+      <tags>
+        <tag>bug</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>腾讯广告部门一面 - 自然语言处理方向</title>
     <url>/post/6306.html</url>
     <content><![CDATA[<html><head><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script></head><body><p>今天上午 10 点突然接到面试的电话，面完之后感觉不怎么好，还是总结一下吧。</p>
@@ -3631,21 +3646,6 @@ p\left(t_{1}, t_{2}, \ldots, t_{N}\right)=\prod_{k=1}^{N} p\left(t_{k} | t_{k+1}
       </categories>
       <tags>
         <tag>面试</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>最近调代码两个的 bug</title>
-    <url>/post/19186.html</url>
-    <content><![CDATA[<html><head><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script></head><body><h3 id="标签错误" class="heading-control"><a href="#标签错误" class="headerlink" title="标签错误"></a>标签错误<a class="heading-anchor" href="#标签错误" aria-hidden="true"></a></h3><p>错误 log:<br></p><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">RuntimeError: cuda runtime error (59) :device-side assert triggered</span><br></pre></td></tr></tbody></table></figure><br>一般是标签出错，检查两点：<p></p>
-<ul>
-<li>标签中是否有 - 1</li>
-<li> 标签个数和分类的个数是否匹配（检查模型最后的分类个数）</li>
-</ul>
-<h3 id="Shell脚本dos2unix" class="heading-control"><a href="#Shell脚本dos2unix" class="headerlink" title="Shell脚本dos2unix"></a>Shell 脚本 dos2unix<a class="heading-anchor" href="#Shell脚本dos2unix" aria-hidden="true"></a></h3><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">Shell脚本出现$<span class="string">'\r'</span>: <span class="built_in">command</span> not found</span><br></pre></td></tr></tbody></table></figure>
-<p>这是因为脚本文件可能在 window 弄过，有 window 下的空行，把他转换成 unix 格式的就行。<br></p><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">yum install dos2unix</span><br><span class="line">dos2unix run.sh</span><br></pre></td></tr></tbody></table></figure><p></p>
-</body></html>]]></content>
-      <tags>
-        <tag>bug</tag>
       </tags>
   </entry>
   <entry>
@@ -3993,17 +3993,6 @@ J(\theta)=-\left[\sum_{i=1}^{n} \sum_{k=1}^{K} \mathbf{1}\left\{y^{(i)}=k\right\
       </tags>
   </entry>
   <entry>
-    <title>基于文档的限定领域对话式问答系统设计说明</title>
-    <url>/post/5681.html</url>
-    <content><![CDATA[<html><head><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script></head><body><h2 id="引言" class="heading-control"><a href="#引言" class="headerlink" title="引言"></a>引言<a class="heading-anchor" href="#引言" aria-hidden="true"></a></h2><h3 id="编写目的" class="heading-control"><a href="#编写目的" class="headerlink" title="编写目的"></a>编写目的<a class="heading-anchor" href="#编写目的" aria-hidden="true"></a></h3><p>为了从整体上描述基于文档的限定领域对话式问答系统要实现的功能，使用户能够对本系统有一个全面正确的认识，同时给程序开发者一个关于系统的使用，系统的功能模块，以及系统的各种技术解决方案一个详细的说明。</p>
-<h3 id="背景" class="heading-control"><a href="#背景" class="headerlink" title="背景"></a>背景<a class="heading-anchor" href="#背景" aria-hidden="true"></a></h3><p>问答系统 (Question Answering System, QA) 是信息检索系统的一种高级形式，它能用准确、简洁的自然语言回答用户用自然语言提出的问题。其研究兴起的主要原因是人们对快速、准确地获取信息的需求。问答系统是目前人工智能和自然语言处理领域中一个倍受关注并具有广泛发展前景的研究方向。<br>不同的应用需要不同形式的问答系统，其所采用的语料和技术也不尽相同。从涉及的应用领域进行分类，可将问答系统分为限定域问答系统和开放域问答系统。<br>限定域问答系统是指系统所能处理的问题只限定于某个领域或者某个内容范围，比如只限定于医学、化学或者某企业的业务领域等。由于系统要解决的问题限定于某个领域或者范围，因此如果把系统所需要的全部领域知识都按照统一的方式表示成内部的结构化格式，则回答问题时就能比较容易地产生答案。<br><img src="/针对文档的问答系统设计说明/20191017082302115.png" alt><br>开放域问答系统不同于限定域问答系统，这类系统可回答的问题不限定于某个特定领域。在回答开放领域的问题时，需要一定的常识知识或者世界知识并具有语义词典。<br>按支持问答系统产生答案的文档库、知识库，以及实现的技术分类，可分为自然语言的数据库问答系统、对话式问答系统、阅读理解系统、基于常用问题集的问答系统、基于知识库的问答系统，以及基于大规模文档集的问答系统。<br>目前国内的大多数问答系统都是针对开放领域的对话式问答系统，在限定领域特别是基于文档的对话式问答系统很少，且功能均不够完善。本文设计了一种使用最先进的深度学习自然语言技术的基于文档的限定领域对话式问答系统设计说明。基本步骤包括处理文档数据、构造训练数据集、模型训练和优化、模型部署等，使用时输入用户需要查询的问题，系统可以自动匹配与问题最相关的段落，并由模型给出问题的答案。此外模型有完整的日志系统以及在线训练和离线训练模块。</p>
-<h2 id="概要设计" class="heading-control"><a href="#概要设计" class="headerlink" title="概要设计"></a>概要设计<a class="heading-anchor" href="#概要设计" aria-hidden="true"></a></h2><h3 id="系统总体设计" class="heading-control"><a href="#系统总体设计" class="headerlink" title="系统总体设计"></a>系统总体设计<a class="heading-anchor" href="#系统总体设计" aria-hidden="true"></a></h3><p>系统的整体编程语言使用 Python 进行开发，使用的深度学习框架为 TensorFlow。基于机器阅读理解模型的问答流程如下图所示：<br><img src="/针对文档的问答系统设计说明/20191017084213733.png" alt></p>
-<h3 id="系统模块功能" class="heading-control"><a href="#系统模块功能" class="headerlink" title="系统模块功能"></a>系统模块功能<a class="heading-anchor" href="#系统模块功能" aria-hidden="true"></a></h3><h4 id="文档数据识别和处理模块" class="heading-control"><a href="#文档数据识别和处理模块" class="headerlink" title="文档数据识别和处理模块"></a>文档数据识别和处理模块<a class="heading-anchor" href="#文档数据识别和处理模块" aria-hidden="true"></a></h4><p>常见的办公文档多数为 txt 文档，word 文档，excel 表格或者 pdf 文档。针对不同的文档需要设计不同的数据读取方式并进行读取后数据的存储。</p>
-<h4 id="模型训练数据的构建模块" class="heading-control"><a href="#模型训练数据的构建模块" class="headerlink" title="模型训练数据的构建模块"></a>模型训练数据的构建模块<a class="heading-anchor" href="#模型训练数据的构建模块" aria-hidden="true"></a></h4><p>SQuAD 示例：<br>内容：阿波罗计划于 1962 至 1972 年间进行，期间得到了同期的双子座计划（1962 年 - 1966 年）的支持。双子座计划为阿波罗计划成功必需的一些太空旅行技术做了铺垫。阿波罗计划使用土星系列火箭作为运载工具来发射飞船。这些火箭还被用于阿波罗应用计划，包括 1973 年到 1974 年间支持了三个载人飞行任务的空间站 Skylab，以及 1975 年和前苏联合作的联合地球轨道任务阿波罗联盟测试计划。<br>问题：哪一个空间站于 1973 到 1974 年间承载了三项载人飞行任务？<br>答案：Skylab 空间站</p>
-<h4 id="基于深度学习的阅读理解模型" class="heading-control"><a href="#基于深度学习的阅读理解模型" class="headerlink" title="基于深度学习的阅读理解模型"></a>基于深度学习的阅读理解模型<a class="heading-anchor" href="#基于深度学习的阅读理解模型" aria-hidden="true"></a></h4><p>YESNO 问题类型的处理方式<br>在第一阶段使用的是分类的方法，我后来考虑同样的问题可能在不同原文中可能是不同的回答，所以我就把 YESNO 作为原文进行训练。具体做法就是在原文后边拼接 YESNO 字符串，然后将之前的答案索引修改为 YESNO 对应的索引。这样在训练过程中就可以学到答案跟原文之间的关系，而不像之前只关注问题直接得出答案，实验证明这种方法确实能提高成绩，大概提高了 3 个百分点。2. 不能回答的问题的处理方式在 BERT 的源码中，对于不能回答的问题有一套处理方式，就是根据预测结果得出的 nbest 和答案为空的概率进行对比，如果答案为空的概率最高就把空作为答案。我使用与处理 YESNO 问题的方式去试了一下，就是将 NULL 拼接到原文后，将对应的答案索引改为 NULL 的索引，实验效果证明能提升， 但是只能提升百分之零点几，anyway，有点提升就用起来吧。</p>
-<h4 id="模型导出和部署模块" class="heading-control"><a href="#模型导出和部署模块" class="headerlink" title="模型导出和部署模块"></a>模型导出和部署模块<a class="heading-anchor" href="#模型导出和部署模块" aria-hidden="true"></a></h4><h4 id="针对问题段落匹配的信息检索模块" class="heading-control"><a href="#针对问题段落匹配的信息检索模块" class="headerlink" title="针对问题段落匹配的信息检索模块"></a>针对问题段落匹配的信息检索模块<a class="heading-anchor" href="#针对问题段落匹配的信息检索模块" aria-hidden="true"></a></h4></body></html>]]></content>
-  </entry>
-  <entry>
     <title>长文本分类</title>
     <url>/post/35349.html</url>
     <content><![CDATA[<html><head><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script></head><body><p>在 NLP 领域中，文本分类舆情分析等任务相较于文本抽取，和摘要等任务更容易获得大量标注数据。因此在文本分类领域中深度学习相较于传统方法更容易获得比较好的效果。<br>文本分类领域比较重要的的深度学习模型主要有 FastText，TextCNN，HAN，DPCNN。</p>
@@ -4070,6 +4059,17 @@ P\left(\theta\right)=\frac{1}{\sqrt{2 a}} e^{\frac{-\left|\theta\right|}{a}}</sc
       <tags>
         <tag>机器学习</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>基于文档的限定领域对话式问答系统设计说明</title>
+    <url>/post/5681.html</url>
+    <content><![CDATA[<html><head><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script></head><body><h2 id="引言" class="heading-control"><a href="#引言" class="headerlink" title="引言"></a>引言<a class="heading-anchor" href="#引言" aria-hidden="true"></a></h2><h3 id="编写目的" class="heading-control"><a href="#编写目的" class="headerlink" title="编写目的"></a>编写目的<a class="heading-anchor" href="#编写目的" aria-hidden="true"></a></h3><p>为了从整体上描述基于文档的限定领域对话式问答系统要实现的功能，使用户能够对本系统有一个全面正确的认识，同时给程序开发者一个关于系统的使用，系统的功能模块，以及系统的各种技术解决方案一个详细的说明。</p>
+<h3 id="背景" class="heading-control"><a href="#背景" class="headerlink" title="背景"></a>背景<a class="heading-anchor" href="#背景" aria-hidden="true"></a></h3><p>问答系统 (Question Answering System, QA) 是信息检索系统的一种高级形式，它能用准确、简洁的自然语言回答用户用自然语言提出的问题。其研究兴起的主要原因是人们对快速、准确地获取信息的需求。问答系统是目前人工智能和自然语言处理领域中一个倍受关注并具有广泛发展前景的研究方向。<br>不同的应用需要不同形式的问答系统，其所采用的语料和技术也不尽相同。从涉及的应用领域进行分类，可将问答系统分为限定域问答系统和开放域问答系统。<br>限定域问答系统是指系统所能处理的问题只限定于某个领域或者某个内容范围，比如只限定于医学、化学或者某企业的业务领域等。由于系统要解决的问题限定于某个领域或者范围，因此如果把系统所需要的全部领域知识都按照统一的方式表示成内部的结构化格式，则回答问题时就能比较容易地产生答案。<br><img src="/针对文档的问答系统设计说明/20191017082302115.png" alt><br>开放域问答系统不同于限定域问答系统，这类系统可回答的问题不限定于某个特定领域。在回答开放领域的问题时，需要一定的常识知识或者世界知识并具有语义词典。<br>按支持问答系统产生答案的文档库、知识库，以及实现的技术分类，可分为自然语言的数据库问答系统、对话式问答系统、阅读理解系统、基于常用问题集的问答系统、基于知识库的问答系统，以及基于大规模文档集的问答系统。<br>目前国内的大多数问答系统都是针对开放领域的对话式问答系统，在限定领域特别是基于文档的对话式问答系统很少，且功能均不够完善。本文设计了一种使用最先进的深度学习自然语言技术的基于文档的限定领域对话式问答系统设计说明。基本步骤包括处理文档数据、构造训练数据集、模型训练和优化、模型部署等，使用时输入用户需要查询的问题，系统可以自动匹配与问题最相关的段落，并由模型给出问题的答案。此外模型有完整的日志系统以及在线训练和离线训练模块。</p>
+<h2 id="概要设计" class="heading-control"><a href="#概要设计" class="headerlink" title="概要设计"></a>概要设计<a class="heading-anchor" href="#概要设计" aria-hidden="true"></a></h2><h3 id="系统总体设计" class="heading-control"><a href="#系统总体设计" class="headerlink" title="系统总体设计"></a>系统总体设计<a class="heading-anchor" href="#系统总体设计" aria-hidden="true"></a></h3><p>系统的整体编程语言使用 Python 进行开发，使用的深度学习框架为 TensorFlow。基于机器阅读理解模型的问答流程如下图所示：<br><img src="/针对文档的问答系统设计说明/20191017084213733.png" alt></p>
+<h3 id="系统模块功能" class="heading-control"><a href="#系统模块功能" class="headerlink" title="系统模块功能"></a>系统模块功能<a class="heading-anchor" href="#系统模块功能" aria-hidden="true"></a></h3><h4 id="文档数据识别和处理模块" class="heading-control"><a href="#文档数据识别和处理模块" class="headerlink" title="文档数据识别和处理模块"></a>文档数据识别和处理模块<a class="heading-anchor" href="#文档数据识别和处理模块" aria-hidden="true"></a></h4><p>常见的办公文档多数为 txt 文档，word 文档，excel 表格或者 pdf 文档。针对不同的文档需要设计不同的数据读取方式并进行读取后数据的存储。</p>
+<h4 id="模型训练数据的构建模块" class="heading-control"><a href="#模型训练数据的构建模块" class="headerlink" title="模型训练数据的构建模块"></a>模型训练数据的构建模块<a class="heading-anchor" href="#模型训练数据的构建模块" aria-hidden="true"></a></h4><p>SQuAD 示例：<br>内容：阿波罗计划于 1962 至 1972 年间进行，期间得到了同期的双子座计划（1962 年 - 1966 年）的支持。双子座计划为阿波罗计划成功必需的一些太空旅行技术做了铺垫。阿波罗计划使用土星系列火箭作为运载工具来发射飞船。这些火箭还被用于阿波罗应用计划，包括 1973 年到 1974 年间支持了三个载人飞行任务的空间站 Skylab，以及 1975 年和前苏联合作的联合地球轨道任务阿波罗联盟测试计划。<br>问题：哪一个空间站于 1973 到 1974 年间承载了三项载人飞行任务？<br>答案：Skylab 空间站</p>
+<h4 id="基于深度学习的阅读理解模型" class="heading-control"><a href="#基于深度学习的阅读理解模型" class="headerlink" title="基于深度学习的阅读理解模型"></a>基于深度学习的阅读理解模型<a class="heading-anchor" href="#基于深度学习的阅读理解模型" aria-hidden="true"></a></h4><p>YESNO 问题类型的处理方式<br>在第一阶段使用的是分类的方法，我后来考虑同样的问题可能在不同原文中可能是不同的回答，所以我就把 YESNO 作为原文进行训练。具体做法就是在原文后边拼接 YESNO 字符串，然后将之前的答案索引修改为 YESNO 对应的索引。这样在训练过程中就可以学到答案跟原文之间的关系，而不像之前只关注问题直接得出答案，实验证明这种方法确实能提高成绩，大概提高了 3 个百分点。2. 不能回答的问题的处理方式在 BERT 的源码中，对于不能回答的问题有一套处理方式，就是根据预测结果得出的 nbest 和答案为空的概率进行对比，如果答案为空的概率最高就把空作为答案。我使用与处理 YESNO 问题的方式去试了一下，就是将 NULL 拼接到原文后，将对应的答案索引改为 NULL 的索引，实验效果证明能提升， 但是只能提升百分之零点几，anyway，有点提升就用起来吧。</p>
+<h4 id="模型导出和部署模块" class="heading-control"><a href="#模型导出和部署模块" class="headerlink" title="模型导出和部署模块"></a>模型导出和部署模块<a class="heading-anchor" href="#模型导出和部署模块" aria-hidden="true"></a></h4><h4 id="针对问题段落匹配的信息检索模块" class="heading-control"><a href="#针对问题段落匹配的信息检索模块" class="headerlink" title="针对问题段落匹配的信息检索模块"></a>针对问题段落匹配的信息检索模块<a class="heading-anchor" href="#针对问题段落匹配的信息检索模块" aria-hidden="true"></a></h4></body></html>]]></content>
   </entry>
   <entry>
     <title>Dureader 数据集</title>
