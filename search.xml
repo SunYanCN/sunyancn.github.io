@@ -72,39 +72,6 @@
 </body></html>]]></content>
   </entry>
   <entry>
-    <title>20200224210643</title>
-    <url>/post/6222.html</url>
-    <content><![CDATA[<html><head><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script></head><body><h3 id="nodejs更新" class="heading-control"><a href="#nodejs更新" class="headerlink" title="nodejs更新"></a>nodejs 更新<a class="heading-anchor" href="#nodejs更新" aria-hidden="true"></a></h3><ol>
-<li><p>`npm install -g n 对 n 模块进行全局安装</p>
-</li>
-<li><p>使用 n 命令进行更新<br>n stable // 更新到稳定版<br>n latest // 更新到最新版</p>
-</li>
-<li><p>使用 node -v 看是否已经更新完成了</p>
-</li>
-</ol>
-<h3 id="查看文件的状态" class="heading-control"><a href="#查看文件的状态" class="headerlink" title="查看文件的状态"></a>查看文件的状态<a class="heading-anchor" href="#查看文件的状态" aria-hidden="true"></a></h3><p>在 Linux 下，一个文件有三种时间，分别是访问时间（Access）、修改时间（Modify）、状态改变时间（Change）。可以通过 stat 命令查看文件的状态<br>stat file<br>example: stat A.py</p>
-<h3 id="模型性能通常会随着时间而下降" class="heading-control"><a href="#模型性能通常会随着时间而下降" class="headerlink" title="模型性能通常会随着时间而下降"></a>模型性能通常会随着时间而下降<a class="heading-anchor" href="#模型性能通常会随着时间而下降" aria-hidden="true"></a></h3><p>观点：模型性能通常会随着时间而下降<br>因为新的数据在不断产生，俗话说学如逆水行舟，不进则退</p>
-<h3 id="两个github库" class="heading-control"><a href="#两个github库" class="headerlink" title="两个github库"></a>两个 github 库<a class="heading-anchor" href="#两个github库" aria-hidden="true"></a></h3><ul>
-<li>streamlit：可视化构建应用<br><a href="https://mlwhiz.com/blog/2019/12/07/streamlit/">https://mlwhiz.com/blog/2019/12/07/streamlit/</a></li>
-<li>ELI5：模型解释性</li>
-</ul>
-<h3 id="对象检测和实例分割" class="heading-control"><a href="#对象检测和实例分割" class="headerlink" title="对象检测和实例分割"></a>对象检测和实例分割<a class="heading-anchor" href="#对象检测和实例分割" aria-hidden="true"></a></h3><ul>
-<li><a href="https://mlwhiz.com/blog/2019/12/06/weapons/">https://mlwhiz.com/blog/2019/12/06/weapons/</a></li>
-<li><a href="https://mlwhiz.com/blog/2019/12/05/od/">https://mlwhiz.com/blog/2019/12/05/od/</a><br>-<a href="https://mlwhiz.com/blog/2019/11/08/interpret_models/">https://mlwhiz.com/blog/2019/11/08/interpret_models/</a></li>
-</ul>
-</body></html>]]></content>
-  </entry>
-  <entry>
-    <title>ACL2020 paper 相关论文</title>
-    <url>/post/58505.html</url>
-    <content><![CDATA[<html><head><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script></head><body><h3 id="数据集" class="heading-control"><a href="#数据集" class="headerlink" title="数据集"></a>数据集<a class="heading-anchor" href="#数据集" aria-hidden="true"></a></h3><p><a href="https://arxiv.xilesou.top/pdf/1810.07366.pdf">CMRC2018</a><br><a href="https://arxiv.xilesou.top/ftp/arxiv/papers/1806/1806.00920.pdf">DRCD</a></p>
-<h3 id="Rank" class="heading-control"><a href="#Rank" class="headerlink" title="Rank"></a>Rank<a class="heading-anchor" href="#Rank" aria-hidden="true"></a></h3><p><a href="https://arxiv.xilesou.top/pdf/1901.04085.pdf">Passage Re-ranking with BERT</a></p>
-</body></html>]]></content>
-      <tags>
-        <tag>论文</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Attention,BiLSTM 以及 Transform</title>
     <url>/post/50119.html</url>
     <content><![CDATA[<html><head><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script></head><body><h2 id="Attention" class="heading-control"><a href="#Attention" class="headerlink" title="Attention"></a>Attention<a class="heading-anchor" href="#Attention" aria-hidden="true"></a></h2><div id="dplayer0" class="dplayer hexo-tag-dplayer-mark" style="margin-bottom: 20px;"></div><script>(function(){var player = new DPlayer({"container":document.getElementById("dplayer0"),"theme":"#FADFA3","loop":true,"video":{"url":"https://jalammar.github.io/images/attention_process.mp4"},"danmaku":{"api":"https://api.prprpr.me/dplayer/","token":"tokendemo"}});window.dplayers||(window.dplayers=[]);window.dplayers.push(player);})()</script>
@@ -140,6 +107,39 @@
       <tags>
         <tag>NLP</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>ACL2020 paper 相关论文</title>
+    <url>/post/58505.html</url>
+    <content><![CDATA[<html><head><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script></head><body><h3 id="数据集" class="heading-control"><a href="#数据集" class="headerlink" title="数据集"></a>数据集<a class="heading-anchor" href="#数据集" aria-hidden="true"></a></h3><p><a href="https://arxiv.xilesou.top/pdf/1810.07366.pdf">CMRC2018</a><br><a href="https://arxiv.xilesou.top/ftp/arxiv/papers/1806/1806.00920.pdf">DRCD</a></p>
+<h3 id="Rank" class="heading-control"><a href="#Rank" class="headerlink" title="Rank"></a>Rank<a class="heading-anchor" href="#Rank" aria-hidden="true"></a></h3><p><a href="https://arxiv.xilesou.top/pdf/1901.04085.pdf">Passage Re-ranking with BERT</a></p>
+</body></html>]]></content>
+      <tags>
+        <tag>论文</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>20200224210643</title>
+    <url>/post/6222.html</url>
+    <content><![CDATA[<html><head><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script></head><body><h3 id="nodejs更新" class="heading-control"><a href="#nodejs更新" class="headerlink" title="nodejs更新"></a>nodejs 更新<a class="heading-anchor" href="#nodejs更新" aria-hidden="true"></a></h3><ol>
+<li><p>`npm install -g n 对 n 模块进行全局安装</p>
+</li>
+<li><p>使用 n 命令进行更新<br>n stable // 更新到稳定版<br>n latest // 更新到最新版</p>
+</li>
+<li><p>使用 node -v 看是否已经更新完成了</p>
+</li>
+</ol>
+<h3 id="查看文件的状态" class="heading-control"><a href="#查看文件的状态" class="headerlink" title="查看文件的状态"></a>查看文件的状态<a class="heading-anchor" href="#查看文件的状态" aria-hidden="true"></a></h3><p>在 Linux 下，一个文件有三种时间，分别是访问时间（Access）、修改时间（Modify）、状态改变时间（Change）。可以通过 stat 命令查看文件的状态<br>stat file<br>example: stat A.py</p>
+<h3 id="模型性能通常会随着时间而下降" class="heading-control"><a href="#模型性能通常会随着时间而下降" class="headerlink" title="模型性能通常会随着时间而下降"></a>模型性能通常会随着时间而下降<a class="heading-anchor" href="#模型性能通常会随着时间而下降" aria-hidden="true"></a></h3><p>观点：模型性能通常会随着时间而下降<br>因为新的数据在不断产生，俗话说学如逆水行舟，不进则退</p>
+<h3 id="两个github库" class="heading-control"><a href="#两个github库" class="headerlink" title="两个github库"></a>两个 github 库<a class="heading-anchor" href="#两个github库" aria-hidden="true"></a></h3><ul>
+<li>streamlit：可视化构建应用<br><a href="https://mlwhiz.com/blog/2019/12/07/streamlit/">https://mlwhiz.com/blog/2019/12/07/streamlit/</a></li>
+<li>ELI5：模型解释性</li>
+</ul>
+<h3 id="对象检测和实例分割" class="heading-control"><a href="#对象检测和实例分割" class="headerlink" title="对象检测和实例分割"></a>对象检测和实例分割<a class="heading-anchor" href="#对象检测和实例分割" aria-hidden="true"></a></h3><ul>
+<li><a href="https://mlwhiz.com/blog/2019/12/06/weapons/">https://mlwhiz.com/blog/2019/12/06/weapons/</a></li>
+<li><a href="https://mlwhiz.com/blog/2019/12/05/od/">https://mlwhiz.com/blog/2019/12/05/od/</a><br>-<a href="https://mlwhiz.com/blog/2019/11/08/interpret_models/">https://mlwhiz.com/blog/2019/11/08/interpret_models/</a></li>
+</ul>
+</body></html>]]></content>
   </entry>
   <entry>
     <title>CNN+BLSTM+CTC 的验证码识别从训练到部署</title>
@@ -1721,6 +1721,33 @@ Number=(Features+Output\_dim) x Output\_dim+Output\_dim
       </tags>
   </entry>
   <entry>
+    <title>ReadDocs</title>
+    <url>/post/41605.html</url>
+    <content><![CDATA[<html><head><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script></head><body><p><img src="https://i.loli.net/2018/08/18/5b777783c90fb.png" alt></p>
+<h2 id="搭建工具" class="heading-control"><a href="#搭建工具" class="headerlink" title="搭建工具"></a>搭建工具<a class="heading-anchor" href="#搭建工具" aria-hidden="true"></a></h2><p>Sphinx 是一个基于 Python 的文档生成工具，最早只是用来生成 Python 官方文档，随着工具的完善，越来越多的知名的项目也用他来生成文档，甚至完全可以用他来写书。例如我最近看到 tensorly 等库都有包括 Github 主页，Jupyter Notebook, 以及 Read the Docs 代码 API 说明。<br><a id="more"></a> </p>
+<h2 id="搭建步骤" class="heading-control"><a href="#搭建步骤" class="headerlink" title="搭建步骤"></a>搭建步骤<a class="heading-anchor" href="#搭建步骤" aria-hidden="true"></a></h2><ol>
+<li><code>pip install sphinx sphinx-autobuild sphinx_rtd_theme</code> </li>
+<li>新建一个 Github 仓库，并拉到本地，仓库名设为项目名。 </li>
+<li>命令行进入仓库本地目录，输入 <code>sphinx-quickstart</code>   <img src="https://i.loli.net/2018/08/18/5b7779ccd6682.png" alt>   这个是项目的配置文件，这里要改动的是项目名，版本，以及语言。其他的默认即可。生成下面目录结构。   <img src="https://i.loli.net/2018/08/18/5b777a3abcaba.png" alt> </li>
+<li>进入目录下面的 conf.py，可以看到我们刚才的配置的内容就是在配置这个文件。下面继续修改。   首先把源文件改为使用习惯的 Markdown 文件，<code>source_suffix = \'.md\'</code>   然后把主题换了，<code>html_theme = \'sphinx_rtd_theme\'。</code>   最后把 LaTeX 内容配置一下。   <img src="https://i.loli.net/2018/08/18/5b777b951d64b.png" alt> </li>
+<li>进入命令行 make html   <img src="https://i.loli.net/2018/08/18/5b777bdb70e1a.png" alt> </li>
+<li>提交目录到 Github。 </li>
+<li>打开 Read the Docs, 并使用 Github 注册，导入项目并点击阅读文档即可。   也可以在 GitHub 里选择仓库，然后依次点击 Setting => Webhooks & Service => Add service => ReadTheDocs, 激活这个选项。</li>
+</ol>
+<h2 id="参考文章" class="heading-control"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章<a class="heading-anchor" href="#参考文章" aria-hidden="true"></a></h2><ol>
+<li><a href="https://zh-sphinx-doc.readthedocs.io/en/latest/contents.html">sphinx 中文翻译手册</a> </li>
+<li><a href="http://dwz.cn/wEwYNed3">http://dwz.cn/wEwYNed3</a> </li>
+<li><a href="https://www.jianshu.com/p/78e9e1b8553a">https://www.jianshu.com/p/78e9e1b8553a</a></li>
+</ol>
+</body></html>]]></content>
+      <categories>
+        <category>工具</category>
+      </categories>
+      <tags>
+        <tag>ReadDocs</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>《Retrieve-and-Read,Multi-task Learning of Information Retrieval and Reading Comprehension》的 References 和 Citations 梳理</title>
     <url>/post/37274.html</url>
     <content><![CDATA[<html><head><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script></head><body><h3 id="Citations" class="heading-control"><a href="#Citations" class="headerlink" title="Citations"></a>Citations<a class="heading-anchor" href="#Citations" aria-hidden="true"></a></h3><ol>
@@ -1785,33 +1812,6 @@ F 1=\frac{2 \times \text {Precision} \times \text {Recall}}{\text {Precision}+\t
 </body></html>]]></content>
       <tags>
         <tag>论文阅读</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>ReadDocs</title>
-    <url>/post/41605.html</url>
-    <content><![CDATA[<html><head><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script></head><body><p><img src="https://i.loli.net/2018/08/18/5b777783c90fb.png" alt></p>
-<h2 id="搭建工具" class="heading-control"><a href="#搭建工具" class="headerlink" title="搭建工具"></a>搭建工具<a class="heading-anchor" href="#搭建工具" aria-hidden="true"></a></h2><p>Sphinx 是一个基于 Python 的文档生成工具，最早只是用来生成 Python 官方文档，随着工具的完善，越来越多的知名的项目也用他来生成文档，甚至完全可以用他来写书。例如我最近看到 tensorly 等库都有包括 Github 主页，Jupyter Notebook, 以及 Read the Docs 代码 API 说明。<br><a id="more"></a> </p>
-<h2 id="搭建步骤" class="heading-control"><a href="#搭建步骤" class="headerlink" title="搭建步骤"></a>搭建步骤<a class="heading-anchor" href="#搭建步骤" aria-hidden="true"></a></h2><ol>
-<li><code>pip install sphinx sphinx-autobuild sphinx_rtd_theme</code> </li>
-<li>新建一个 Github 仓库，并拉到本地，仓库名设为项目名。 </li>
-<li>命令行进入仓库本地目录，输入 <code>sphinx-quickstart</code>   <img src="https://i.loli.net/2018/08/18/5b7779ccd6682.png" alt>   这个是项目的配置文件，这里要改动的是项目名，版本，以及语言。其他的默认即可。生成下面目录结构。   <img src="https://i.loli.net/2018/08/18/5b777a3abcaba.png" alt> </li>
-<li>进入目录下面的 conf.py，可以看到我们刚才的配置的内容就是在配置这个文件。下面继续修改。   首先把源文件改为使用习惯的 Markdown 文件，<code>source_suffix = \'.md\'</code>   然后把主题换了，<code>html_theme = \'sphinx_rtd_theme\'。</code>   最后把 LaTeX 内容配置一下。   <img src="https://i.loli.net/2018/08/18/5b777b951d64b.png" alt> </li>
-<li>进入命令行 make html   <img src="https://i.loli.net/2018/08/18/5b777bdb70e1a.png" alt> </li>
-<li>提交目录到 Github。 </li>
-<li>打开 Read the Docs, 并使用 Github 注册，导入项目并点击阅读文档即可。   也可以在 GitHub 里选择仓库，然后依次点击 Setting => Webhooks & Service => Add service => ReadTheDocs, 激活这个选项。</li>
-</ol>
-<h2 id="参考文章" class="heading-control"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章<a class="heading-anchor" href="#参考文章" aria-hidden="true"></a></h2><ol>
-<li><a href="https://zh-sphinx-doc.readthedocs.io/en/latest/contents.html">sphinx 中文翻译手册</a> </li>
-<li><a href="http://dwz.cn/wEwYNed3">http://dwz.cn/wEwYNed3</a> </li>
-<li><a href="https://www.jianshu.com/p/78e9e1b8553a">https://www.jianshu.com/p/78e9e1b8553a</a></li>
-</ol>
-</body></html>]]></content>
-      <categories>
-        <category>工具</category>
-      </categories>
-      <tags>
-        <tag>ReadDocs</tag>
       </tags>
   </entry>
   <entry>
@@ -1984,6 +1984,19 @@ F 1=\frac{2 \times \text {Precision} \times \text {Recall}}{\text {Precision}+\t
       </tags>
   </entry>
   <entry>
+    <title>TensorFlow 2.0 Question Answering</title>
+    <url>/post/24791.html</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><ol>
+<li><strong>GPT-2 and BERT Pretrained Weights (pytorch)</strong><br>You can find weights for BERT and GPT-2 models (pytorch), ready to be used with HuggingFace’s Transformers or your own models：<br> <a href="https://www.kaggle.com/abhishek/bert-pytorch">https://www.kaggle.com/abhishek/bert-pytorch</a><br> <a href="https://www.kaggle.com/abhishek/gpt2-pytorch">https://www.kaggle.com/abhishek/gpt2-pytorch</a></li>
+<li><strong> 一个 NLP 数据增广的库</strong>：<a href="https://github.com/makcedward/nlpaug">nlpaug</a></li>
+<li><strong>One of the best collection of papers about BERT</strong><br><a href="https://github.com/thunlp/PLMpapers">https://github.com/thunlp/PLMpapers</a></li>
+</ol>
+]]></content>
+      <tags>
+        <tag>学习</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>TensorFlow 内核剖析</title>
     <url>/post/36490.html</url>
     <content><![CDATA[<html><head><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script></head><body><p>这是我找的一个 Tensorflow 的书，作者是<a href="https://www.jianshu.com/p/fda4ae1e2547">刘光聪</a>。书写的非常不错，我也借此机会学习一波。书中的 TensorFlow 使用的是 1.2 版本，目前来说算是很新的。<br>作者在前言里面写到：</p>
@@ -2011,22 +2024,19 @@ F 1=\frac{2 \times \text {Precision} \times \text {Recall}}{\text {Precision}+\t
       </tags>
   </entry>
   <entry>
-    <title>TensorFlow 2.0 Question Answering</title>
-    <url>/post/24791.html</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><ol>
-<li><strong>GPT-2 and BERT Pretrained Weights (pytorch)</strong><br>You can find weights for BERT and GPT-2 models (pytorch), ready to be used with HuggingFace’s Transformers or your own models：<br> <a href="https://www.kaggle.com/abhishek/bert-pytorch">https://www.kaggle.com/abhishek/bert-pytorch</a><br> <a href="https://www.kaggle.com/abhishek/gpt2-pytorch">https://www.kaggle.com/abhishek/gpt2-pytorch</a></li>
-<li><strong> 一个 NLP 数据增广的库</strong>：<a href="https://github.com/makcedward/nlpaug">nlpaug</a></li>
-<li><strong>One of the best collection of papers about BERT</strong><br><a href="https://github.com/thunlp/PLMpapers">https://github.com/thunlp/PLMpapers</a></li>
-</ol>
-]]></content>
-      <tags>
-        <tag>学习</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>20190730180327</title>
     <url>/post/35857.html</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script>]]></content>
+  </entry>
+  <entry>
+    <title>Tqdm 实时显示 Loss 和 Acc</title>
+    <url>/post/61076.html</url>
+    <content><![CDATA[<html><head><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script></head><body><h3 id="代码示例" class="heading-control"><a href="#代码示例" class="headerlink" title="代码示例"></a>代码示例<a class="heading-anchor" href="#代码示例" aria-hidden="true"></a></h3><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> random <span class="keyword">import</span> random</span><br><span class="line"><span class="keyword">from</span> time <span class="keyword">import</span> sleep</span><br><span class="line"><span class="keyword">from</span> tqdm <span class="keyword">import</span> tqdm</span><br><span class="line"></span><br><span class="line">epochs = <span class="number">2</span></span><br><span class="line">train_data_num = <span class="number">10</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(epochs):</span><br><span class="line">    <span class="keyword">with</span> tqdm(total=train_data_num) <span class="keyword">as</span> t:</span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> range(<span class="number">10</span>):</span><br><span class="line">            <span class="comment"># Description will be displayed on the left</span></span><br><span class="line">            t.set_description(<span class="string">'Epoch %i'</span> % i)</span><br><span class="line">            <span class="comment"># Postfix will be displayed on the right,</span></span><br><span class="line">            <span class="comment"># formatted automatically based on argument's datatype</span></span><br><span class="line">            t.set_postfix(loss=random(),acc=random())</span><br><span class="line">            sleep(<span class="number">0.1</span>)</span><br><span class="line">            t.update(<span class="number">1</span>)</span><br></pre></td></tr></tbody></table></figure>
+<p>输出结果：<br></p><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">Epoch <span class="number">0</span>: <span class="number">100</span>%|██████████| <span class="number">10</span>/<span class="number">10</span> [<span class="number">00</span>:<span class="number">01</span><<span class="number">00</span>:<span class="number">00</span>,  <span class="number">9.94</span>it/s, acc=<span class="number">0.0863</span>, loss=<span class="number">0.999</span>]</span><br><span class="line">Epoch <span class="number">1</span>: <span class="number">100</span>%|██████████| <span class="number">10</span>/<span class="number">10</span> [<span class="number">00</span>:<span class="number">01</span><<span class="number">00</span>:<span class="number">00</span>,  <span class="number">9.93</span>it/s, acc=<span class="number">0.459</span>, loss=<span class="number">0.921</span>]</span><br></pre></td></tr></tbody></table></figure><p></p>
+</body></html>]]></content>
+      <tags>
+        <tag>Tqdm</tag>
+      </tags>
   </entry>
   <entry>
     <title>Tensorflow Object_Detection</title>
@@ -2064,14 +2074,9 @@ Reference：<a href="https://blog.csdn.net/why19940926/article/details/78580067"
       </tags>
   </entry>
   <entry>
-    <title>Tqdm 实时显示 Loss 和 Acc</title>
-    <url>/post/61076.html</url>
-    <content><![CDATA[<html><head><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script></head><body><h3 id="代码示例" class="heading-control"><a href="#代码示例" class="headerlink" title="代码示例"></a>代码示例<a class="heading-anchor" href="#代码示例" aria-hidden="true"></a></h3><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> random <span class="keyword">import</span> random</span><br><span class="line"><span class="keyword">from</span> time <span class="keyword">import</span> sleep</span><br><span class="line"><span class="keyword">from</span> tqdm <span class="keyword">import</span> tqdm</span><br><span class="line"></span><br><span class="line">epochs = <span class="number">2</span></span><br><span class="line">train_data_num = <span class="number">10</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(epochs):</span><br><span class="line">    <span class="keyword">with</span> tqdm(total=train_data_num) <span class="keyword">as</span> t:</span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> range(<span class="number">10</span>):</span><br><span class="line">            <span class="comment"># Description will be displayed on the left</span></span><br><span class="line">            t.set_description(<span class="string">'Epoch %i'</span> % i)</span><br><span class="line">            <span class="comment"># Postfix will be displayed on the right,</span></span><br><span class="line">            <span class="comment"># formatted automatically based on argument's datatype</span></span><br><span class="line">            t.set_postfix(loss=random(),acc=random())</span><br><span class="line">            sleep(<span class="number">0.1</span>)</span><br><span class="line">            t.update(<span class="number">1</span>)</span><br></pre></td></tr></tbody></table></figure>
-<p>输出结果：<br></p><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">Epoch <span class="number">0</span>: <span class="number">100</span>%|██████████| <span class="number">10</span>/<span class="number">10</span> [<span class="number">00</span>:<span class="number">01</span><<span class="number">00</span>:<span class="number">00</span>,  <span class="number">9.94</span>it/s, acc=<span class="number">0.0863</span>, loss=<span class="number">0.999</span>]</span><br><span class="line">Epoch <span class="number">1</span>: <span class="number">100</span>%|██████████| <span class="number">10</span>/<span class="number">10</span> [<span class="number">00</span>:<span class="number">01</span><<span class="number">00</span>:<span class="number">00</span>,  <span class="number">9.93</span>it/s, acc=<span class="number">0.459</span>, loss=<span class="number">0.921</span>]</span><br></pre></td></tr></tbody></table></figure><p></p>
-</body></html>]]></content>
-      <tags>
-        <tag>Tqdm</tag>
-      </tags>
+    <title>ULMFiT 进行文本分类</title>
+    <url>/post/61903.html</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script>]]></content>
   </entry>
   <entry>
     <title>VSCode 配置远程开发</title>
@@ -2133,11 +2138,6 @@ Reference：<a href="https://blog.csdn.net/why19940926/article/details/78580067"
       </tags>
   </entry>
   <entry>
-    <title>ULMFiT 进行文本分类</title>
-    <url>/post/61903.html</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script>]]></content>
-  </entry>
-  <entry>
     <title>cdqa 使用方法</title>
     <url>/post/37942.html</url>
     <content><![CDATA[<html><head><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script></head><body><p>文档：<a href="https://github.com/cdqa-suite/cdQA">Closed Domain Question Answering</a></p>
@@ -2183,6 +2183,18 @@ Reference：<a href="https://blog.csdn.net/why19940926/article/details/78580067"
       </tags>
   </entry>
   <entry>
+    <title>nvidia-smi 指令报错</title>
+    <url>/post/19880.html</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><p>最近装深度学习环境的时候遇见 nvidia-smi 指令报错：<code>Failed to initialize NVML: Driver</code>，主要原因是旧的显卡驱动没卸载。<br>首先需要卸载驱动<br></p><figure class="highlight shell"><table><tbody><tr><td class="code"><pre><span class="line">sudo apt-get purge nvidia*</span><br></pre></td></tr></tbody></table></figure><br>然后重新安装新的驱动即可。<br>参考文章：<a href="https://www.zhihu.com/people/sun-yan-90-29">https://www.zhihu.com/people/sun-yan-90-29</a><p></p>
+]]></content>
+      <categories>
+        <category>笔记</category>
+      </categories>
+      <tags>
+        <tag>bug</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>nohup 详解</title>
     <url>/post/48347.html</url>
     <content><![CDATA[<html><head><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script></head><body><p>功能：使程序在后台运行，当连接服务器终端时，程序还在运行</p>
@@ -2201,18 +2213,6 @@ Reference：<a href="https://blog.csdn.net/why19940926/article/details/78580067"
 ]]></content>
       <tags>
         <tag>二分</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>nvidia-smi 指令报错</title>
-    <url>/post/19880.html</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><p>最近装深度学习环境的时候遇见 nvidia-smi 指令报错：<code>Failed to initialize NVML: Driver</code>，主要原因是旧的显卡驱动没卸载。<br>首先需要卸载驱动<br></p><figure class="highlight shell"><table><tbody><tr><td class="code"><pre><span class="line">sudo apt-get purge nvidia*</span><br></pre></td></tr></tbody></table></figure><br>然后重新安装新的驱动即可。<br>参考文章：<a href="https://www.zhihu.com/people/sun-yan-90-29">https://www.zhihu.com/people/sun-yan-90-29</a><p></p>
-]]></content>
-      <categories>
-        <category>笔记</category>
-      </categories>
-      <tags>
-        <tag>bug</tag>
       </tags>
   </entry>
   <entry>
@@ -2295,22 +2295,6 @@ Reference：<a href="https://blog.csdn.net/why19940926/article/details/78580067"
       </tags>
   </entry>
   <entry>
-    <title>一些面试的经验帖子</title>
-    <url>/post/38161.html</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><p><img src="https://i.loli.net/2020/09/01/c7XbUfRHptE3ZyG.png" alt="bg.png"><br><a id="more"></a></p>
-<ul>
-<li><a href="https://www.nowcoder.com/discuss/487035?type=2&amp;channel=666&amp;source_id=discuss_center_discuss_jinghua">小米算法面经</a></li>
-<li><a href="https://www.nowcoder.com/discuss/464485?source_id=profile_create&amp;channel=1009">猿辅导算法面经</a></li>
-</ul>
-]]></content>
-      <categories>
-        <category>面试</category>
-      </categories>
-      <tags>
-        <tag>面试</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>中文分词算法总结</title>
     <url>/post/44202.html</url>
     <content><![CDATA[<html><head><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script></head><body><h2 id="最大匹配算法" class="heading-control"><a href="#最大匹配算法" class="headerlink" title="最大匹配算法"></a>最大匹配算法<a class="heading-anchor" href="#最大匹配算法" aria-hidden="true"></a></h2><p>基于词典的双向匹配算法的中文分词算法的实现。<br>例子：[我们经常有意见分歧]<br>词典：[我们，经常，有，有意见，意见，分歧]</p>
@@ -2324,16 +2308,6 @@ Reference：<a href="https://blog.csdn.net/why19940926/article/details/78580067"
 </body></html>]]></content>
       <tags>
         <tag>中文分词</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>中秋</title>
-    <url>/post/13085.html</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><p>2019 年的夏天很快的过去了。今天是中秋，在古代诗歌中中秋都是思念的代名词，虽然逢人便道中秋快乐，但是自己却快乐不起来呢。<br>从 6 月底到现在陆陆续续找了快 3 个月的工作，属实有点累了。每逢一个休息日都想要静静的躺着。这段时间焦虑，等待，兴奋以及各种失败，其实蛮痛苦的。希望自己能挺过这段时间，有个好的结尾吧。<br>晚上没吃月饼，心里好怀念小时候的五仁月饼，但是也不想故意去买个吃了，就让这段时间安静的溜走吧，仿佛从来没有来过一样。</p>
-<p><img src="https://i.loli.net/2019/09/13/L6RsEIFqrgcVknB.png" alt=""></p>
-]]></content>
-      <tags>
-        <tag>中秋</tag>
       </tags>
   </entry>
   <entry>
@@ -2366,6 +2340,32 @@ Reference：<a href="https://blog.csdn.net/why19940926/article/details/78580067"
       </tags>
   </entry>
   <entry>
+    <title>一些面试的经验帖子</title>
+    <url>/post/38161.html</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><p><img src="https://i.loli.net/2020/09/01/c7XbUfRHptE3ZyG.png" alt="bg.png"><br><a id="more"></a></p>
+<ul>
+<li><a href="https://www.nowcoder.com/discuss/487035?type=2&amp;channel=666&amp;source_id=discuss_center_discuss_jinghua">小米算法面经</a></li>
+<li><a href="https://www.nowcoder.com/discuss/464485?source_id=profile_create&amp;channel=1009">猿辅导算法面经</a></li>
+</ul>
+]]></content>
+      <categories>
+        <category>面试</category>
+      </categories>
+      <tags>
+        <tag>面试</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>中秋</title>
+    <url>/post/13085.html</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><p>2019 年的夏天很快的过去了。今天是中秋，在古代诗歌中中秋都是思念的代名词，虽然逢人便道中秋快乐，但是自己却快乐不起来呢。<br>从 6 月底到现在陆陆续续找了快 3 个月的工作，属实有点累了。每逢一个休息日都想要静静的躺着。这段时间焦虑，等待，兴奋以及各种失败，其实蛮痛苦的。希望自己能挺过这段时间，有个好的结尾吧。<br>晚上没吃月饼，心里好怀念小时候的五仁月饼，但是也不想故意去买个吃了，就让这段时间安静的溜走吧，仿佛从来没有来过一样。</p>
+<p><img src="https://i.loli.net/2019/09/13/L6RsEIFqrgcVknB.png" alt=""></p>
+]]></content>
+      <tags>
+        <tag>中秋</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>关于读书</title>
     <url>/post/60043.html</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><p>记得有一幅漫画我看见过几次，漫画上画的是三个人：第一个人在凡间地上鸟语花香，第二个人站在一摞书上，伸入云霄看见满世界压抑的乌云，第三个人则站在更高的一摞书上，看到了九霄层云之上的灿烂千阳。<br>不读书的人，无所得无所失，反正就那样凑合着过；开始读书的人，可能会感受到繁杂阴暗的痛苦；而咬牙读下去的人，终能圆融贯通，看到金光乍现。</p>
@@ -2373,6 +2373,29 @@ Reference：<a href="https://blog.csdn.net/why19940926/article/details/78580067"
 ]]></content>
       <tags>
         <tag>生活</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>分类样本不均衡的解决方案</title>
+    <url>/post/5534.html</url>
+    <content><![CDATA[<html><head><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script></head><body><p><img src="https://s2.ax1x.com/2019/07/23/eknXuD.md.png" alt><br><a id="more"></a></p>
+<h2 id="更改评价指标" class="heading-control"><a href="#更改评价指标" class="headerlink" title="更改评价指标"></a>更改评价指标<a class="heading-anchor" href="#更改评价指标" aria-hidden="true"></a></h2><p>准确率肯定是不行的，一般会选择 F1 值或者 AUC_ROC 来作为评价指标</p>
+<h2 id="数据层面" class="heading-control"><a href="#数据层面" class="headerlink" title="数据层面"></a>数据层面<a class="heading-anchor" href="#数据层面" aria-hidden="true"></a></h2><p>数据的采样，过采样或者欠采样</p>
+<ul>
+<li>过采样是从少数类样本集 Smin 中随机重复抽取样本（ 有放回）</li>
+<li>欠采样是从多数类样本集 Smaj 中随机选取较少的样本（ 有放回或无放回）</li>
+</ul>
+<p>直接的随机采样虽然可以使样本集变得均衡，但会带来一些问题，比如，过采样对少数类样本进行了多次复制，扩大了数据规模，增加了模型训练的复杂度，同时也容易造成过拟合； 欠采样会丢弃一些样本，可能会损失部分有用信息， 造成模型只学到了整体模式的一部分。</p>
+<h2 id="模型方法" class="heading-control"><a href="#模型方法" class="headerlink" title="模型方法"></a>模型方法<a class="heading-anchor" href="#模型方法" aria-hidden="true"></a></h2><p>更改损失函数，例如类别加权损失或者 Focal Loss<br>Focal loss 主要是为了解决 one-stage 目标检测中正负样本比例严重失衡的问题。该损失函数降低了大量简单负样本在训练中所占的权重。<br>回顾二分类交叉上损失：<br><img src="https://i.loli.net/2019/07/23/5d36aab50d2ce67048.png" alt><br>普通的交叉熵对于正样本而言，输出概率越大损失越小。对于负样本而言，输出概率越小则损失越小。<br>现在记：</p>
+<script type="math/tex; mode=display">
+p_{\mathrm{t}}=\left\{\begin{array}{ll}{p} & {\text { if } y=1} \\ {1-p} & {\text { otherwise }}\end{array}\right.</script><p>这样 $p_t$ 实际上就是反映了 p 与 y 的接近程度。$p_t$ 越大，说明分类越好。交叉熵损失函数的最终形式为： </p>
+<script type="math/tex; mode=display">
+\operatorname{CE}(p, y)=\operatorname{CE}\left(p_{\mathrm{t}}\right)=-\log \left(p_{\mathrm{t}}\right)</script><p>通过实验发现，即使是 easy examples，由于它们数量很多，它的 loss 也很高，如下图蓝线。这些 loss 会主导梯度下降的方向，淹没少量的正样本的影响。$p_t$ 越大，FL 越小，总体 Loss 越小。增加了误分类的重要性。<br><img src="https://i.loli.net/2019/07/23/5d36aae36f66e92180.png" alt></p>
+<p>参数为 0 的时候，Focal Loss 退化为交叉熵 CE。从图中我们可以很直观地看到，</p>
+<h2 id="集成方法" class="heading-control"><a href="#集成方法" class="headerlink" title="集成方法"></a>集成方法<a class="heading-anchor" href="#集成方法" aria-hidden="true"></a></h2><p>每次生成训练集时使用所有分类中的小样本量，同时从分类中的大样本量中随机抽取数据来与小样本量合并构成训练集，这样反复多次会得到很多训练集和训练模型。最后在应用时，使用组合方法（例如投票、加权投票等）产生分类预测结果。<br>这种解决问题的思路类似于随机森林。在随机森林中，虽然每个小决策树的分类能力很弱，但是通过大量的 “小树” 组合形成的 “森林” 具有良好的模型预测能力。</p>
+</body></html>]]></content>
+      <tags>
+        <tag>机器学习</tag>
       </tags>
   </entry>
   <entry>
@@ -2409,26 +2432,65 @@ N 个人，互相交换礼物，每个人不能拿到自己的礼物。设计一
       </tags>
   </entry>
   <entry>
-    <title>分类样本不均衡的解决方案</title>
-    <url>/post/5534.html</url>
-    <content><![CDATA[<html><head><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script></head><body><p><img src="https://s2.ax1x.com/2019/07/23/eknXuD.md.png" alt><br><a id="more"></a></p>
-<h2 id="更改评价指标" class="heading-control"><a href="#更改评价指标" class="headerlink" title="更改评价指标"></a>更改评价指标<a class="heading-anchor" href="#更改评价指标" aria-hidden="true"></a></h2><p>准确率肯定是不行的，一般会选择 F1 值或者 AUC_ROC 来作为评价指标</p>
-<h2 id="数据层面" class="heading-control"><a href="#数据层面" class="headerlink" title="数据层面"></a>数据层面<a class="heading-anchor" href="#数据层面" aria-hidden="true"></a></h2><p>数据的采样，过采样或者欠采样</p>
+    <title>卷积神经网络复习</title>
+    <url>/post/48895.html</url>
+    <content><![CDATA[<html><head><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script></head><body><p><img src="https://i.loli.net/2019/01/19/5c42b8b0d6f16.png" alt></p>
+<h2 id="卷积神经网络" class="heading-control"><a href="#卷积神经网络" class="headerlink" title="卷积神经网络"></a>卷积神经网络<a class="heading-anchor" href="#卷积神经网络" aria-hidden="true"></a></h2><p>卷积神经网络主要包括 3 层，即：卷积层、池化层以及全连接层。本文讲分别细致介绍这三层的作用和计算来复习一下卷积神经网络。本文采用简单的 LeNet 来讨论这些问题，模型的结构如下。<br><img src="https://i.loli.net/2018/10/25/5bd1c482c424a.png" alt><br><a id="more"></a></p>
+<h2 id="卷积层" class="heading-control"><a href="#卷积层" class="headerlink" title="卷积层"></a>卷积层<a class="heading-anchor" href="#卷积层" aria-hidden="true"></a></h2><p>卷积层的功能是特征提取。我们先设定下面的符号：</p>
 <ul>
-<li>过采样是从少数类样本集 Smin 中随机重复抽取样本（ 有放回）</li>
-<li>欠采样是从多数类样本集 Smaj 中随机选取较少的样本（ 有放回或无放回）</li>
+<li>H：图片高度；</li>
+<li>W：图片宽度；</li>
+<li>D：原始图片通道数，也是卷积核个数；</li>
+<li>F：卷积核高宽大小；</li>
+<li>P：图像边扩充大小；</li>
+<li>S：滑动步长</li>
+<li> K：卷积核的个数</li>
 </ul>
-<p>直接的随机采样虽然可以使样本集变得均衡，但会带来一些问题，比如，过采样对少数类样本进行了多次复制，扩大了数据规模，增加了模型训练的复杂度，同时也容易造成过拟合； 欠采样会丢弃一些样本，可能会损失部分有用信息， 造成模型只学到了整体模式的一部分。</p>
-<h2 id="模型方法" class="heading-control"><a href="#模型方法" class="headerlink" title="模型方法"></a>模型方法<a class="heading-anchor" href="#模型方法" aria-hidden="true"></a></h2><p>更改损失函数，例如类别加权损失或者 Focal Loss<br>Focal loss 主要是为了解决 one-stage 目标检测中正负样本比例严重失衡的问题。该损失函数降低了大量简单负样本在训练中所占的权重。<br>回顾二分类交叉上损失：<br><img src="https://i.loli.net/2019/07/23/5d36aab50d2ce67048.png" alt><br>普通的交叉熵对于正样本而言，输出概率越大损失越小。对于负样本而言，输出概率越小则损失越小。<br>现在记：</p>
-<script type="math/tex; mode=display">
-p_{\mathrm{t}}=\left\{\begin{array}{ll}{p} & {\text { if } y=1} \\ {1-p} & {\text { otherwise }}\end{array}\right.</script><p>这样 $p_t$ 实际上就是反映了 p 与 y 的接近程度。$p_t$ 越大，说明分类越好。交叉熵损失函数的最终形式为： </p>
-<script type="math/tex; mode=display">
-\operatorname{CE}(p, y)=\operatorname{CE}\left(p_{\mathrm{t}}\right)=-\log \left(p_{\mathrm{t}}\right)</script><p>通过实验发现，即使是 easy examples，由于它们数量很多，它的 loss 也很高，如下图蓝线。这些 loss 会主导梯度下降的方向，淹没少量的正样本的影响。$p_t$ 越大，FL 越小，总体 Loss 越小。增加了误分类的重要性。<br><img src="https://i.loli.net/2019/07/23/5d36aae36f66e92180.png" alt></p>
-<p>参数为 0 的时候，Focal Loss 退化为交叉熵 CE。从图中我们可以很直观地看到，</p>
-<h2 id="集成方法" class="heading-control"><a href="#集成方法" class="headerlink" title="集成方法"></a>集成方法<a class="heading-anchor" href="#集成方法" aria-hidden="true"></a></h2><p>每次生成训练集时使用所有分类中的小样本量，同时从分类中的大样本量中随机抽取数据来与小样本量合并构成训练集，这样反复多次会得到很多训练集和训练模型。最后在应用时，使用组合方法（例如投票、加权投票等）产生分类预测结果。<br>这种解决问题的思路类似于随机森林。在随机森林中，虽然每个小决策树的分类能力很弱，但是通过大量的 “小树” 组合形成的 “森林” 具有良好的模型预测能力。</p>
+<p>在卷积操作中卷积核是可学习的参数，每层卷积的参数大小为 D×F×F×K。这样看来卷积层的参数还是比较少的，主要原因是采用了两个重要的特性：局部连接和权值共享。</p>
+<ul>
+<li>局部连接<br>从神经网络连接结构的角度，CNN 的底层与隐藏不再是全连接，而是局部区域的成块连接:<br><img src="https://i.loli.net/2018/11/14/5bec277000545.png" alt="Untitled-28.png"><br>成块连接后，那些小块，还能在上层聚集成更大的块:<br><img src="https://i.loli.net/2018/11/14/5bec27d86614a.png" alt="Untitled-29.png"></li>
+<li>权值共享<br>给一张输入图片，用一个 filter 去扫这张图，filter 里面的数就叫权重，这张图每个位置就是被同样的 filter 扫的，所以权重是一样的，也就是共享。</li>
+</ul>
+<h2 id="池化层" class="heading-control"><a href="#池化层" class="headerlink" title="池化层"></a>池化层<a class="heading-anchor" href="#池化层" aria-hidden="true"></a></h2><p>如果用上面的方法堆砌 CNN 网络，隐藏层的参数还是太多了，不是吗？每个相邻块都要在上层生成一个大的块。所以有时我们为了减少参数复杂度，不严格把相邻的块都至少聚合成一个上层块，我们可以把下层块分一些区域，在这些区域中聚合:<br><img src="https://i.loli.net/2018/11/14/5bec281a938de.png" alt="Untitled-30.png"><br>所以池化层的功能主要是对输入的特征图进行压缩，一方面使特征图变小，简化网络计算复杂度；另一方面进行特征压缩，提取主要特征。<br>最常见的池化操作为平均池化 mean pooling 和最大池化 max pooling：</p>
+<ul>
+<li>平均池化：计算图像区域的平均值作为该区域池化后的值。 </li>
+<li>最大池化：选图像区域的最大值作为该区域池化后的值。</li>
+</ul>
+<p>3D 的卷积和池化如图所示：<br><img src="https://i.loli.net/2018/11/14/5bec287a44825.png" alt="Untitled-34.png"></p>
+<h2 id="全连接层" class="heading-control"><a href="#全连接层" class="headerlink" title="全连接层"></a>全连接层<a class="heading-anchor" href="#全连接层" aria-hidden="true"></a></h2><p>卷积取的是局部特征，全连接就是把以前的局部特征重新通过权值矩阵组装成完整的图，将输出值送给分类器（如 softmax 分类器）。</p>
+<h2 id="LeNet" class="heading-control"><a href="#LeNet" class="headerlink" title="LeNet"></a>LeNet<a class="heading-anchor" href="#LeNet" aria-hidden="true"></a></h2><h3 id="第一层，卷积层" class="heading-control"><a href="#第一层，卷积层" class="headerlink" title="第一层，卷积层"></a>第一层，卷积层<a class="heading-anchor" href="#第一层，卷积层" aria-hidden="true"></a></h3><p>输入图像的大小 32x32x1, 卷积核尺寸为 5x5，深度为 6，不使用全 0 填充，步长为 1。所以这一层的输出：28x28x6，卷积层共有 5x5x1x6+6=156 个参数。</p>
+<h3 id="第二层，池化层" class="heading-control"><a href="#第二层，池化层" class="headerlink" title="第二层，池化层"></a>第二层，池化层<a class="heading-anchor" href="#第二层，池化层" aria-hidden="true"></a></h3><p>这一层的输入为第一层的输出，是一个 28x28x6 的节点矩阵。本层采用的过滤器大小为 2x2，长和宽的步长均为 2，所以本层的输出矩阵大小为 14x14x6。</p>
+<h3 id="第三层，卷积层" class="heading-control"><a href="#第三层，卷积层" class="headerlink" title="第三层，卷积层"></a>第三层，卷积层<a class="heading-anchor" href="#第三层，卷积层" aria-hidden="true"></a></h3><p>本层的输入矩阵大小为 14x14x6，使用的过滤器大小为 5x5，深度为 16. 本层不使用全 0 填充，步长为 1。本层的输出矩阵大小为 10x10x16。本层有 5x5x6x16+16=2416 个参数。</p>
+<h3 id="第四层，池化层" class="heading-control"><a href="#第四层，池化层" class="headerlink" title="第四层，池化层"></a>第四层，池化层<a class="heading-anchor" href="#第四层，池化层" aria-hidden="true"></a></h3><p>本层的输入矩阵大小 10x10x16。本层采用的过滤器大小为 2x2，长和宽的步长均为 2，所以本层的输出矩阵大小为 5x5x16。</p>
+<h3 id="第五层，全连接层" class="heading-control"><a href="#第五层，全连接层" class="headerlink" title="第五层，全连接层"></a>第五层，全连接层<a class="heading-anchor" href="#第五层，全连接层" aria-hidden="true"></a></h3><p>本层的输入矩阵大小为 5x5x16，在 LeNet-5 论文中将这一层成为卷积层，但是因为过滤器的大小就是 5x5，所以和全连接层没有区别。如果将 5x5x16 矩阵中的节点拉成一个向量，那么这一层和全连接层就一样了。本层的输出节点个数为 120，总共有 5x5x16x120+120=48120 个参数。</p>
+<h3 id="第六层，全连接层" class="heading-control"><a href="#第六层，全连接层" class="headerlink" title="第六层，全连接层"></a>第六层，全连接层<a class="heading-anchor" href="#第六层，全连接层" aria-hidden="true"></a></h3><p>本层的输入节点个数为 120 个，输出节点个数为 84 个，总共参数为 120x84+84=10164 个。</p>
+<h3 id="第七层，全连接层" class="heading-control"><a href="#第七层，全连接层" class="headerlink" title="第七层，全连接层"></a>第七层，全连接层<a class="heading-anchor" href="#第七层，全连接层" aria-hidden="true"></a></h3><p>本层的输入节点个数为 84 个，输出节点个数为 10 个，总共参数为 84x10+10=850</p>
+<h2 id="一些有用的代码" class="heading-control"><a href="#一些有用的代码" class="headerlink" title="一些有用的代码"></a>一些有用的代码<a class="heading-anchor" href="#一些有用的代码" aria-hidden="true"></a></h2><h3 id="在NoteBook里面显示训练用到的图片" class="heading-control"><a href="#在NoteBook里面显示训练用到的图片" class="headerlink" title="在NoteBook里面显示训练用到的图片"></a>在 NoteBook 里面显示训练用到的图片<a class="heading-anchor" href="#在NoteBook里面显示训练用到的图片" aria-hidden="true"></a></h3><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">%matplotlib inline</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="keyword">import</span> matplotlib.image <span class="keyword">as</span> mpimg</span><br><span class="line"><span class="comment"># Parameters for our graph; we'll output images in a 4x4 configuration</span></span><br><span class="line">nrows = <span class="number">4</span></span><br><span class="line">ncols = <span class="number">4</span></span><br><span class="line"><span class="comment"># Index for iterating over images</span></span><br><span class="line">pic_index = <span class="number">0</span></span><br><span class="line"><span class="comment"># Set up matplotlib fig, and size it to fit 4x4 pics</span></span><br><span class="line">fig = plt.gcf()</span><br><span class="line">fig.set_size_inches(ncols * <span class="number">4</span>, nrows * <span class="number">4</span>)</span><br><span class="line">pic_index += <span class="number">8</span></span><br><span class="line">next_cat_pix = [os.path.join(train_cats_dir, fname) </span><br><span class="line">                <span class="keyword">for</span> fname <span class="keyword">in</span> train_cat_fnames[pic_index<span class="number">-8</span>:pic_index]]</span><br><span class="line">next_dog_pix = [os.path.join(train_dogs_dir, fname) </span><br><span class="line">                <span class="keyword">for</span> fname <span class="keyword">in</span> train_dog_fnames[pic_index<span class="number">-8</span>:pic_index]]</span><br><span class="line"><span class="keyword">for</span> i, img_path <span class="keyword">in</span> enumerate(next_cat_pix+next_dog_pix):</span><br><span class="line">  <span class="comment"># Set up subplot; subplot indices start at 1</span></span><br><span class="line">  sp = plt.subplot(nrows, ncols, i + <span class="number">1</span>)</span><br><span class="line">  sp.axis(<span class="string">'Off'</span>) <span class="comment"># Don't show axes (or gridlines)</span></span><br><span class="line">  img = mpimg.imread(img_path)</span><br><span class="line">  plt.imshow(img)</span><br><span class="line">plt.show()</span><br></pre></td></tr></tbody></table></figure>
+<p>主要使用 matplotlib 画一个 4x4 的图，代码效果如下：<br><img src="/卷积神经网络复习/20190119015827918.png" alt></p>
+<h3 id="Keras图像增强" class="heading-control"><a href="#Keras图像增强" class="headerlink" title="Keras图像增强"></a>Keras 图像增强<a class="heading-anchor" href="#Keras图像增强" aria-hidden="true"></a></h3><p>通过对现有图像执行随机变换来人为地增加训练样例的多样性和数量，以创建一组新变体。当原始训练数据集相对较小时，数据增加特别有用。<br></p><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> tensorflow.keras.preprocessing.image <span class="keyword">import</span> ImageDataGenerator</span><br><span class="line"></span><br><span class="line"><span class="comment"># All images will be rescaled by 1./255</span></span><br><span class="line">train_datagen = ImageDataGenerator(rescale=<span class="number">1.</span>/<span class="number">255</span>)</span><br><span class="line">test_datagen = ImageDataGenerator(rescale=<span class="number">1.</span>/<span class="number">255</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># datagen = ImageDataGenerator(</span></span><br><span class="line"><span class="comment">#       rotation_range=40,</span></span><br><span class="line"><span class="comment">#       width_shift_range=0.2,</span></span><br><span class="line"><span class="comment">#       height_shift_range=0.2,</span></span><br><span class="line"><span class="comment">#       shear_range=0.2,</span></span><br><span class="line"><span class="comment">#       zoom_range=0.2,</span></span><br><span class="line"><span class="comment">#       horizontal_flip=True,</span></span><br><span class="line"><span class="comment">#       fill_mode='nearest')</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Flow training images in batches of 20 using train_datagen generator</span></span><br><span class="line">train_generator = train_datagen.flow_from_directory(</span><br><span class="line">        train_dir,  <span class="comment"># This is the source directory for training images</span></span><br><span class="line">        target_size=(<span class="number">150</span>, <span class="number">150</span>),  <span class="comment"># All images will be resized to 150x150</span></span><br><span class="line">        batch_size=<span class="number">20</span>,</span><br><span class="line">        <span class="comment"># Since we use binary_crossentropy loss, we need binary labels</span></span><br><span class="line">        class_mode=<span class="string">'binary'</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Flow validation images in batches of 20 using test_datagen generator</span></span><br><span class="line">validation_generator = test_datagen.flow_from_directory(</span><br><span class="line">        validation_dir,</span><br><span class="line">        target_size=(<span class="number">150</span>, <span class="number">150</span>),</span><br><span class="line">        batch_size=<span class="number">20</span>,</span><br><span class="line">        class_mode=<span class="string">'binary'</span>)</span><br><span class="line">history = model.fit_generator(</span><br><span class="line">      train_generator,</span><br><span class="line">      steps_per_epoch=<span class="number">100</span>,  <span class="comment"># 2000 images = batch_size * steps</span></span><br><span class="line">      epochs=<span class="number">15</span>,</span><br><span class="line">      validation_data=validation_generator,</span><br><span class="line">      validation_steps=<span class="number">50</span>,  <span class="comment"># 1000 images = batch_size * steps</span></span><br><span class="line">      verbose=<span class="number">2</span>)</span><br></pre></td></tr></tbody></table></figure><br>ImageDataGenerator的一些参数介绍：<p></p>
+<ul>
+<li>rotation_range is a value in degrees (0–180), a range within which to randomly rotate pictures.</li>
+<li>width_shift and height_shift are ranges (as a fraction of total width or height) within which to randomly translate pictures vertically or horizontally.</li>
+<li>shear_range is for randomly applying shearing transformations.</li>
+<li>zoom_range is for randomly zooming inside pictures.</li>
+<li>horizontal_flip is for randomly flipping half of the images horizontally. This is relevant when there are no assumptions of horizontal assymmetry (e.g. real-world pictures).</li>
+<li>fill_mode is the strategy used for filling in newly created pixels, which can appear after a rotation or a width/height shift.</li>
+</ul>
+<p><img src="/卷积神经网络复习/20190119020156227.png" alt></p>
+<h3 id="可视化中间层" class="heading-control"><a href="#可视化中间层" class="headerlink" title="可视化中间层"></a>可视化中间层<a class="heading-anchor" href="#可视化中间层" aria-hidden="true"></a></h3><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> random</span><br><span class="line"><span class="keyword">from</span> tensorflow.keras.preprocessing.image <span class="keyword">import</span> img_to_array, load_img</span><br><span class="line"></span><br><span class="line"><span class="comment"># Let's define a new Model that will take an image as input, and will output</span></span><br><span class="line"><span class="comment"># intermediate representations for all layers in the previous model after</span></span><br><span class="line"><span class="comment"># the first.</span></span><br><span class="line">successive_outputs = [layer.output <span class="keyword">for</span> layer <span class="keyword">in</span> model.layers[<span class="number">1</span>:]]</span><br><span class="line">visualization_model = Model(img_input, successive_outputs)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Let's prepare a random input image of a cat or dog from the training set.</span></span><br><span class="line">cat_img_files = [os.path.join(train_cats_dir, f) <span class="keyword">for</span> f <span class="keyword">in</span> train_cat_fnames]</span><br><span class="line">dog_img_files = [os.path.join(train_dogs_dir, f) <span class="keyword">for</span> f <span class="keyword">in</span> train_dog_fnames]</span><br><span class="line">img_path = random.choice(cat_img_files + dog_img_files)</span><br><span class="line"></span><br><span class="line">img = load_img(img_path, target_size=(<span class="number">150</span>, <span class="number">150</span>))  <span class="comment"># this is a PIL image</span></span><br><span class="line">x = img_to_array(img)  <span class="comment"># Numpy array with shape (150, 150, 3)</span></span><br><span class="line">x = x.reshape((<span class="number">1</span>,) + x.shape)  <span class="comment"># Numpy array with shape (1, 150, 150, 3)</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Rescale by 1/255</span></span><br><span class="line">x /= <span class="number">255</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Let's run our image through our network, thus obtaining all</span></span><br><span class="line"><span class="comment"># intermediate representations for this image.</span></span><br><span class="line">successive_feature_maps = visualization_model.predict(x)</span><br><span class="line"></span><br><span class="line"><span class="comment"># These are the names of the layers, so can have them as part of our plot</span></span><br><span class="line">layer_names = [layer.name <span class="keyword">for</span> layer <span class="keyword">in</span> model.layers]</span><br><span class="line"></span><br><span class="line"><span class="comment"># Now let's display our representations</span></span><br><span class="line"><span class="keyword">for</span> layer_name, feature_map <span class="keyword">in</span> zip(layer_names, successive_feature_maps):</span><br><span class="line">  <span class="keyword">if</span> len(feature_map.shape) == <span class="number">4</span>:</span><br><span class="line">    <span class="comment"># Just do this for the conv / maxpool layers, not the fully-connected layers</span></span><br><span class="line">    n_features = feature_map.shape[<span class="number">-1</span>]  <span class="comment"># number of features in feature map</span></span><br><span class="line">    <span class="comment"># The feature map has shape (1, size, size, n_features)</span></span><br><span class="line">    size = feature_map.shape[<span class="number">1</span>]</span><br><span class="line">    <span class="comment"># We will tile our images in this matrix</span></span><br><span class="line">    display_grid = np.zeros((size, size * n_features))</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(n_features):</span><br><span class="line">      <span class="comment"># Postprocess the feature to make it visually palatable</span></span><br><span class="line">      x = feature_map[<span class="number">0</span>, :, :, i]</span><br><span class="line">      x -= x.mean()</span><br><span class="line">      x /= x.std()</span><br><span class="line">      x *= <span class="number">64</span></span><br><span class="line">      x += <span class="number">128</span></span><br><span class="line">      x = np.clip(x, <span class="number">0</span>, <span class="number">255</span>).astype(<span class="string">'uint8'</span>)</span><br><span class="line">      <span class="comment"># We'll tile each filter into this big horizontal grid</span></span><br><span class="line">      display_grid[:, i * size : (i + <span class="number">1</span>) * size] = x</span><br><span class="line">    <span class="comment"># Display the grid</span></span><br><span class="line">    scale = <span class="number">20.</span> / n_features</span><br><span class="line">    plt.figure(figsize=(scale * n_features, scale))</span><br><span class="line">    plt.title(layer_name)</span><br><span class="line">    plt.grid(<span class="literal">False</span>)</span><br><span class="line">    plt.imshow(display_grid, aspect=<span class="string">'auto'</span>, cmap=<span class="string">'viridis'</span>)</span><br></pre></td></tr></tbody></table></figure>
+<p><img src="/卷积神经网络复习/20190119020442527.png" alt><br>可以看出，从浅到深模型学习到的特征越来越抽象，图像的原始像素的信息越来越少，但是关于图像类别的信息越来越精细。</p>
+<h3 id="Loss和Acc可视化" class="heading-control"><a href="#Loss和Acc可视化" class="headerlink" title="Loss和Acc可视化"></a>Loss 和 Acc 可视化<a class="heading-anchor" href="#Loss和Acc可视化" aria-hidden="true"></a></h3><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># Retrieve a list of accuracy results on training and test data</span></span><br><span class="line"><span class="comment"># sets for each training epoch</span></span><br><span class="line">acc = history.history[<span class="string">'acc'</span>]</span><br><span class="line">val_acc = history.history[<span class="string">'val_acc'</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment"># Retrieve a list of list results on training and test data</span></span><br><span class="line"><span class="comment"># sets for each training epoch</span></span><br><span class="line">loss = history.history[<span class="string">'loss'</span>]</span><br><span class="line">val_loss = history.history[<span class="string">'val_loss'</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment"># Get number of epochs</span></span><br><span class="line">epochs = range(len(acc))</span><br><span class="line"></span><br><span class="line"><span class="comment"># Plot training and validation accuracy per epoch</span></span><br><span class="line">plt.plot(epochs, acc)</span><br><span class="line">plt.plot(epochs, val_acc)</span><br><span class="line">plt.title(<span class="string">'Training and validation accuracy'</span>)</span><br><span class="line"></span><br><span class="line">plt.figure()</span><br><span class="line"></span><br><span class="line"><span class="comment"># Plot training and validation loss per epoch</span></span><br><span class="line">plt.plot(epochs, loss)</span><br><span class="line">plt.plot(epochs, val_loss)</span><br><span class="line">plt.title(<span class="string">'Training and validation loss'</span>)</span><br></pre></td></tr></tbody></table></figure>
+<p><img src="/卷积神经网络复习/20190119020805093.png" alt><br>上图表示模型过拟合了，简单来说就是训练集和验证集上模型表现不一致。主要原因的数据集太小，一些示例太少，导致模型学习到的知识推广不到新的数据集上，即当模型开始用不相关的特征进行预测的时候就会发生过拟合。例如，如果你作为人类，只能看到三个伐木工人的图像，以及三个水手人的图像，其中唯一一个戴帽子的人是伐木工人，你可能会开始认为戴着帽子是一名伐木工人而不是水手的标志。然后你会做一个非常差的伐木工人 / 水手分类器。</p>
+<h2 id="Reference" class="heading-control"><a href="#Reference" class="headerlink" title="Reference"></a>Reference<a class="heading-anchor" href="#Reference" aria-hidden="true"></a></h2><ul>
+<li><a href="https://developers.google.cn/machine-learning/practica/image-classification/">https://developers.google.cn/machine-learning/practica/image-classification/</a></li>
+<li><a href="https://mp.weixin.qq.com/s?__biz=MzA3NDIyMjM1NA==&mid=2649029512&idx=1&sn=a46fc10de7daba25694bda75a916aa91&chksm=871345f5b064cce3c16ab3b7c671f9e93c838836e20d0aa91bc83f7879915d0c8318bcd9d187&token=1879088111&lang=zh_CN#rd">从 LeNet 到 VGG，看卷积 + 池化串联的网络结构</a></li>
+</ul>
 </body></html>]]></content>
+      <categories>
+        <category>笔记</category>
+      </categories>
       <tags>
-        <tag>机器学习</tag>
+        <tag>CNN</tag>
       </tags>
   </entry>
   <entry>
@@ -2492,68 +2554,6 @@ p_{\mathrm{t}}=\left\{\begin{array}{ll}{p} & {\text { if } y=1} \\ {1-p} & {\tex
       </categories>
       <tags>
         <tag>pypi</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>卷积神经网络复习</title>
-    <url>/post/48895.html</url>
-    <content><![CDATA[<html><head><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script></head><body><p><img src="https://i.loli.net/2019/01/19/5c42b8b0d6f16.png" alt></p>
-<h2 id="卷积神经网络" class="heading-control"><a href="#卷积神经网络" class="headerlink" title="卷积神经网络"></a>卷积神经网络<a class="heading-anchor" href="#卷积神经网络" aria-hidden="true"></a></h2><p>卷积神经网络主要包括 3 层，即：卷积层、池化层以及全连接层。本文讲分别细致介绍这三层的作用和计算来复习一下卷积神经网络。本文采用简单的 LeNet 来讨论这些问题，模型的结构如下。<br><img src="https://i.loli.net/2018/10/25/5bd1c482c424a.png" alt><br><a id="more"></a></p>
-<h2 id="卷积层" class="heading-control"><a href="#卷积层" class="headerlink" title="卷积层"></a>卷积层<a class="heading-anchor" href="#卷积层" aria-hidden="true"></a></h2><p>卷积层的功能是特征提取。我们先设定下面的符号：</p>
-<ul>
-<li>H：图片高度；</li>
-<li>W：图片宽度；</li>
-<li>D：原始图片通道数，也是卷积核个数；</li>
-<li>F：卷积核高宽大小；</li>
-<li>P：图像边扩充大小；</li>
-<li>S：滑动步长</li>
-<li> K：卷积核的个数</li>
-</ul>
-<p>在卷积操作中卷积核是可学习的参数，每层卷积的参数大小为 D×F×F×K。这样看来卷积层的参数还是比较少的，主要原因是采用了两个重要的特性：局部连接和权值共享。</p>
-<ul>
-<li>局部连接<br>从神经网络连接结构的角度，CNN 的底层与隐藏不再是全连接，而是局部区域的成块连接:<br><img src="https://i.loli.net/2018/11/14/5bec277000545.png" alt="Untitled-28.png"><br>成块连接后，那些小块，还能在上层聚集成更大的块:<br><img src="https://i.loli.net/2018/11/14/5bec27d86614a.png" alt="Untitled-29.png"></li>
-<li>权值共享<br>给一张输入图片，用一个 filter 去扫这张图，filter 里面的数就叫权重，这张图每个位置就是被同样的 filter 扫的，所以权重是一样的，也就是共享。</li>
-</ul>
-<h2 id="池化层" class="heading-control"><a href="#池化层" class="headerlink" title="池化层"></a>池化层<a class="heading-anchor" href="#池化层" aria-hidden="true"></a></h2><p>如果用上面的方法堆砌 CNN 网络，隐藏层的参数还是太多了，不是吗？每个相邻块都要在上层生成一个大的块。所以有时我们为了减少参数复杂度，不严格把相邻的块都至少聚合成一个上层块，我们可以把下层块分一些区域，在这些区域中聚合:<br><img src="https://i.loli.net/2018/11/14/5bec281a938de.png" alt="Untitled-30.png"><br>所以池化层的功能主要是对输入的特征图进行压缩，一方面使特征图变小，简化网络计算复杂度；另一方面进行特征压缩，提取主要特征。<br>最常见的池化操作为平均池化 mean pooling 和最大池化 max pooling：</p>
-<ul>
-<li>平均池化：计算图像区域的平均值作为该区域池化后的值。 </li>
-<li>最大池化：选图像区域的最大值作为该区域池化后的值。</li>
-</ul>
-<p>3D 的卷积和池化如图所示：<br><img src="https://i.loli.net/2018/11/14/5bec287a44825.png" alt="Untitled-34.png"></p>
-<h2 id="全连接层" class="heading-control"><a href="#全连接层" class="headerlink" title="全连接层"></a>全连接层<a class="heading-anchor" href="#全连接层" aria-hidden="true"></a></h2><p>卷积取的是局部特征，全连接就是把以前的局部特征重新通过权值矩阵组装成完整的图，将输出值送给分类器（如 softmax 分类器）。</p>
-<h2 id="LeNet" class="heading-control"><a href="#LeNet" class="headerlink" title="LeNet"></a>LeNet<a class="heading-anchor" href="#LeNet" aria-hidden="true"></a></h2><h3 id="第一层，卷积层" class="heading-control"><a href="#第一层，卷积层" class="headerlink" title="第一层，卷积层"></a>第一层，卷积层<a class="heading-anchor" href="#第一层，卷积层" aria-hidden="true"></a></h3><p>输入图像的大小 32x32x1, 卷积核尺寸为 5x5，深度为 6，不使用全 0 填充，步长为 1。所以这一层的输出：28x28x6，卷积层共有 5x5x1x6+6=156 个参数。</p>
-<h3 id="第二层，池化层" class="heading-control"><a href="#第二层，池化层" class="headerlink" title="第二层，池化层"></a>第二层，池化层<a class="heading-anchor" href="#第二层，池化层" aria-hidden="true"></a></h3><p>这一层的输入为第一层的输出，是一个 28x28x6 的节点矩阵。本层采用的过滤器大小为 2x2，长和宽的步长均为 2，所以本层的输出矩阵大小为 14x14x6。</p>
-<h3 id="第三层，卷积层" class="heading-control"><a href="#第三层，卷积层" class="headerlink" title="第三层，卷积层"></a>第三层，卷积层<a class="heading-anchor" href="#第三层，卷积层" aria-hidden="true"></a></h3><p>本层的输入矩阵大小为 14x14x6，使用的过滤器大小为 5x5，深度为 16. 本层不使用全 0 填充，步长为 1。本层的输出矩阵大小为 10x10x16。本层有 5x5x6x16+16=2416 个参数。</p>
-<h3 id="第四层，池化层" class="heading-control"><a href="#第四层，池化层" class="headerlink" title="第四层，池化层"></a>第四层，池化层<a class="heading-anchor" href="#第四层，池化层" aria-hidden="true"></a></h3><p>本层的输入矩阵大小 10x10x16。本层采用的过滤器大小为 2x2，长和宽的步长均为 2，所以本层的输出矩阵大小为 5x5x16。</p>
-<h3 id="第五层，全连接层" class="heading-control"><a href="#第五层，全连接层" class="headerlink" title="第五层，全连接层"></a>第五层，全连接层<a class="heading-anchor" href="#第五层，全连接层" aria-hidden="true"></a></h3><p>本层的输入矩阵大小为 5x5x16，在 LeNet-5 论文中将这一层成为卷积层，但是因为过滤器的大小就是 5x5，所以和全连接层没有区别。如果将 5x5x16 矩阵中的节点拉成一个向量，那么这一层和全连接层就一样了。本层的输出节点个数为 120，总共有 5x5x16x120+120=48120 个参数。</p>
-<h3 id="第六层，全连接层" class="heading-control"><a href="#第六层，全连接层" class="headerlink" title="第六层，全连接层"></a>第六层，全连接层<a class="heading-anchor" href="#第六层，全连接层" aria-hidden="true"></a></h3><p>本层的输入节点个数为 120 个，输出节点个数为 84 个，总共参数为 120x84+84=10164 个。</p>
-<h3 id="第七层，全连接层" class="heading-control"><a href="#第七层，全连接层" class="headerlink" title="第七层，全连接层"></a>第七层，全连接层<a class="heading-anchor" href="#第七层，全连接层" aria-hidden="true"></a></h3><p>本层的输入节点个数为 84 个，输出节点个数为 10 个，总共参数为 84x10+10=850</p>
-<h2 id="一些有用的代码" class="heading-control"><a href="#一些有用的代码" class="headerlink" title="一些有用的代码"></a>一些有用的代码<a class="heading-anchor" href="#一些有用的代码" aria-hidden="true"></a></h2><h3 id="在NoteBook里面显示训练用到的图片" class="heading-control"><a href="#在NoteBook里面显示训练用到的图片" class="headerlink" title="在NoteBook里面显示训练用到的图片"></a>在 NoteBook 里面显示训练用到的图片<a class="heading-anchor" href="#在NoteBook里面显示训练用到的图片" aria-hidden="true"></a></h3><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">%matplotlib inline</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="keyword">import</span> matplotlib.image <span class="keyword">as</span> mpimg</span><br><span class="line"><span class="comment"># Parameters for our graph; we'll output images in a 4x4 configuration</span></span><br><span class="line">nrows = <span class="number">4</span></span><br><span class="line">ncols = <span class="number">4</span></span><br><span class="line"><span class="comment"># Index for iterating over images</span></span><br><span class="line">pic_index = <span class="number">0</span></span><br><span class="line"><span class="comment"># Set up matplotlib fig, and size it to fit 4x4 pics</span></span><br><span class="line">fig = plt.gcf()</span><br><span class="line">fig.set_size_inches(ncols * <span class="number">4</span>, nrows * <span class="number">4</span>)</span><br><span class="line">pic_index += <span class="number">8</span></span><br><span class="line">next_cat_pix = [os.path.join(train_cats_dir, fname) </span><br><span class="line">                <span class="keyword">for</span> fname <span class="keyword">in</span> train_cat_fnames[pic_index<span class="number">-8</span>:pic_index]]</span><br><span class="line">next_dog_pix = [os.path.join(train_dogs_dir, fname) </span><br><span class="line">                <span class="keyword">for</span> fname <span class="keyword">in</span> train_dog_fnames[pic_index<span class="number">-8</span>:pic_index]]</span><br><span class="line"><span class="keyword">for</span> i, img_path <span class="keyword">in</span> enumerate(next_cat_pix+next_dog_pix):</span><br><span class="line">  <span class="comment"># Set up subplot; subplot indices start at 1</span></span><br><span class="line">  sp = plt.subplot(nrows, ncols, i + <span class="number">1</span>)</span><br><span class="line">  sp.axis(<span class="string">'Off'</span>) <span class="comment"># Don't show axes (or gridlines)</span></span><br><span class="line">  img = mpimg.imread(img_path)</span><br><span class="line">  plt.imshow(img)</span><br><span class="line">plt.show()</span><br></pre></td></tr></tbody></table></figure>
-<p>主要使用 matplotlib 画一个 4x4 的图，代码效果如下：<br><img src="/卷积神经网络复习/20190119015827918.png" alt></p>
-<h3 id="Keras图像增强" class="heading-control"><a href="#Keras图像增强" class="headerlink" title="Keras图像增强"></a>Keras 图像增强<a class="heading-anchor" href="#Keras图像增强" aria-hidden="true"></a></h3><p>通过对现有图像执行随机变换来人为地增加训练样例的多样性和数量，以创建一组新变体。当原始训练数据集相对较小时，数据增加特别有用。<br></p><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> tensorflow.keras.preprocessing.image <span class="keyword">import</span> ImageDataGenerator</span><br><span class="line"></span><br><span class="line"><span class="comment"># All images will be rescaled by 1./255</span></span><br><span class="line">train_datagen = ImageDataGenerator(rescale=<span class="number">1.</span>/<span class="number">255</span>)</span><br><span class="line">test_datagen = ImageDataGenerator(rescale=<span class="number">1.</span>/<span class="number">255</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># datagen = ImageDataGenerator(</span></span><br><span class="line"><span class="comment">#       rotation_range=40,</span></span><br><span class="line"><span class="comment">#       width_shift_range=0.2,</span></span><br><span class="line"><span class="comment">#       height_shift_range=0.2,</span></span><br><span class="line"><span class="comment">#       shear_range=0.2,</span></span><br><span class="line"><span class="comment">#       zoom_range=0.2,</span></span><br><span class="line"><span class="comment">#       horizontal_flip=True,</span></span><br><span class="line"><span class="comment">#       fill_mode='nearest')</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Flow training images in batches of 20 using train_datagen generator</span></span><br><span class="line">train_generator = train_datagen.flow_from_directory(</span><br><span class="line">        train_dir,  <span class="comment"># This is the source directory for training images</span></span><br><span class="line">        target_size=(<span class="number">150</span>, <span class="number">150</span>),  <span class="comment"># All images will be resized to 150x150</span></span><br><span class="line">        batch_size=<span class="number">20</span>,</span><br><span class="line">        <span class="comment"># Since we use binary_crossentropy loss, we need binary labels</span></span><br><span class="line">        class_mode=<span class="string">'binary'</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Flow validation images in batches of 20 using test_datagen generator</span></span><br><span class="line">validation_generator = test_datagen.flow_from_directory(</span><br><span class="line">        validation_dir,</span><br><span class="line">        target_size=(<span class="number">150</span>, <span class="number">150</span>),</span><br><span class="line">        batch_size=<span class="number">20</span>,</span><br><span class="line">        class_mode=<span class="string">'binary'</span>)</span><br><span class="line">history = model.fit_generator(</span><br><span class="line">      train_generator,</span><br><span class="line">      steps_per_epoch=<span class="number">100</span>,  <span class="comment"># 2000 images = batch_size * steps</span></span><br><span class="line">      epochs=<span class="number">15</span>,</span><br><span class="line">      validation_data=validation_generator,</span><br><span class="line">      validation_steps=<span class="number">50</span>,  <span class="comment"># 1000 images = batch_size * steps</span></span><br><span class="line">      verbose=<span class="number">2</span>)</span><br></pre></td></tr></tbody></table></figure><br>ImageDataGenerator的一些参数介绍：<p></p>
-<ul>
-<li>rotation_range is a value in degrees (0–180), a range within which to randomly rotate pictures.</li>
-<li>width_shift and height_shift are ranges (as a fraction of total width or height) within which to randomly translate pictures vertically or horizontally.</li>
-<li>shear_range is for randomly applying shearing transformations.</li>
-<li>zoom_range is for randomly zooming inside pictures.</li>
-<li>horizontal_flip is for randomly flipping half of the images horizontally. This is relevant when there are no assumptions of horizontal assymmetry (e.g. real-world pictures).</li>
-<li>fill_mode is the strategy used for filling in newly created pixels, which can appear after a rotation or a width/height shift.</li>
-</ul>
-<p><img src="/卷积神经网络复习/20190119020156227.png" alt></p>
-<h3 id="可视化中间层" class="heading-control"><a href="#可视化中间层" class="headerlink" title="可视化中间层"></a>可视化中间层<a class="heading-anchor" href="#可视化中间层" aria-hidden="true"></a></h3><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> random</span><br><span class="line"><span class="keyword">from</span> tensorflow.keras.preprocessing.image <span class="keyword">import</span> img_to_array, load_img</span><br><span class="line"></span><br><span class="line"><span class="comment"># Let's define a new Model that will take an image as input, and will output</span></span><br><span class="line"><span class="comment"># intermediate representations for all layers in the previous model after</span></span><br><span class="line"><span class="comment"># the first.</span></span><br><span class="line">successive_outputs = [layer.output <span class="keyword">for</span> layer <span class="keyword">in</span> model.layers[<span class="number">1</span>:]]</span><br><span class="line">visualization_model = Model(img_input, successive_outputs)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Let's prepare a random input image of a cat or dog from the training set.</span></span><br><span class="line">cat_img_files = [os.path.join(train_cats_dir, f) <span class="keyword">for</span> f <span class="keyword">in</span> train_cat_fnames]</span><br><span class="line">dog_img_files = [os.path.join(train_dogs_dir, f) <span class="keyword">for</span> f <span class="keyword">in</span> train_dog_fnames]</span><br><span class="line">img_path = random.choice(cat_img_files + dog_img_files)</span><br><span class="line"></span><br><span class="line">img = load_img(img_path, target_size=(<span class="number">150</span>, <span class="number">150</span>))  <span class="comment"># this is a PIL image</span></span><br><span class="line">x = img_to_array(img)  <span class="comment"># Numpy array with shape (150, 150, 3)</span></span><br><span class="line">x = x.reshape((<span class="number">1</span>,) + x.shape)  <span class="comment"># Numpy array with shape (1, 150, 150, 3)</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Rescale by 1/255</span></span><br><span class="line">x /= <span class="number">255</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Let's run our image through our network, thus obtaining all</span></span><br><span class="line"><span class="comment"># intermediate representations for this image.</span></span><br><span class="line">successive_feature_maps = visualization_model.predict(x)</span><br><span class="line"></span><br><span class="line"><span class="comment"># These are the names of the layers, so can have them as part of our plot</span></span><br><span class="line">layer_names = [layer.name <span class="keyword">for</span> layer <span class="keyword">in</span> model.layers]</span><br><span class="line"></span><br><span class="line"><span class="comment"># Now let's display our representations</span></span><br><span class="line"><span class="keyword">for</span> layer_name, feature_map <span class="keyword">in</span> zip(layer_names, successive_feature_maps):</span><br><span class="line">  <span class="keyword">if</span> len(feature_map.shape) == <span class="number">4</span>:</span><br><span class="line">    <span class="comment"># Just do this for the conv / maxpool layers, not the fully-connected layers</span></span><br><span class="line">    n_features = feature_map.shape[<span class="number">-1</span>]  <span class="comment"># number of features in feature map</span></span><br><span class="line">    <span class="comment"># The feature map has shape (1, size, size, n_features)</span></span><br><span class="line">    size = feature_map.shape[<span class="number">1</span>]</span><br><span class="line">    <span class="comment"># We will tile our images in this matrix</span></span><br><span class="line">    display_grid = np.zeros((size, size * n_features))</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(n_features):</span><br><span class="line">      <span class="comment"># Postprocess the feature to make it visually palatable</span></span><br><span class="line">      x = feature_map[<span class="number">0</span>, :, :, i]</span><br><span class="line">      x -= x.mean()</span><br><span class="line">      x /= x.std()</span><br><span class="line">      x *= <span class="number">64</span></span><br><span class="line">      x += <span class="number">128</span></span><br><span class="line">      x = np.clip(x, <span class="number">0</span>, <span class="number">255</span>).astype(<span class="string">'uint8'</span>)</span><br><span class="line">      <span class="comment"># We'll tile each filter into this big horizontal grid</span></span><br><span class="line">      display_grid[:, i * size : (i + <span class="number">1</span>) * size] = x</span><br><span class="line">    <span class="comment"># Display the grid</span></span><br><span class="line">    scale = <span class="number">20.</span> / n_features</span><br><span class="line">    plt.figure(figsize=(scale * n_features, scale))</span><br><span class="line">    plt.title(layer_name)</span><br><span class="line">    plt.grid(<span class="literal">False</span>)</span><br><span class="line">    plt.imshow(display_grid, aspect=<span class="string">'auto'</span>, cmap=<span class="string">'viridis'</span>)</span><br></pre></td></tr></tbody></table></figure>
-<p><img src="/卷积神经网络复习/20190119020442527.png" alt><br>可以看出，从浅到深模型学习到的特征越来越抽象，图像的原始像素的信息越来越少，但是关于图像类别的信息越来越精细。</p>
-<h3 id="Loss和Acc可视化" class="heading-control"><a href="#Loss和Acc可视化" class="headerlink" title="Loss和Acc可视化"></a>Loss 和 Acc 可视化<a class="heading-anchor" href="#Loss和Acc可视化" aria-hidden="true"></a></h3><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># Retrieve a list of accuracy results on training and test data</span></span><br><span class="line"><span class="comment"># sets for each training epoch</span></span><br><span class="line">acc = history.history[<span class="string">'acc'</span>]</span><br><span class="line">val_acc = history.history[<span class="string">'val_acc'</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment"># Retrieve a list of list results on training and test data</span></span><br><span class="line"><span class="comment"># sets for each training epoch</span></span><br><span class="line">loss = history.history[<span class="string">'loss'</span>]</span><br><span class="line">val_loss = history.history[<span class="string">'val_loss'</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment"># Get number of epochs</span></span><br><span class="line">epochs = range(len(acc))</span><br><span class="line"></span><br><span class="line"><span class="comment"># Plot training and validation accuracy per epoch</span></span><br><span class="line">plt.plot(epochs, acc)</span><br><span class="line">plt.plot(epochs, val_acc)</span><br><span class="line">plt.title(<span class="string">'Training and validation accuracy'</span>)</span><br><span class="line"></span><br><span class="line">plt.figure()</span><br><span class="line"></span><br><span class="line"><span class="comment"># Plot training and validation loss per epoch</span></span><br><span class="line">plt.plot(epochs, loss)</span><br><span class="line">plt.plot(epochs, val_loss)</span><br><span class="line">plt.title(<span class="string">'Training and validation loss'</span>)</span><br></pre></td></tr></tbody></table></figure>
-<p><img src="/卷积神经网络复习/20190119020805093.png" alt><br>上图表示模型过拟合了，简单来说就是训练集和验证集上模型表现不一致。主要原因的数据集太小，一些示例太少，导致模型学习到的知识推广不到新的数据集上，即当模型开始用不相关的特征进行预测的时候就会发生过拟合。例如，如果你作为人类，只能看到三个伐木工人的图像，以及三个水手人的图像，其中唯一一个戴帽子的人是伐木工人，你可能会开始认为戴着帽子是一名伐木工人而不是水手的标志。然后你会做一个非常差的伐木工人 / 水手分类器。</p>
-<h2 id="Reference" class="heading-control"><a href="#Reference" class="headerlink" title="Reference"></a>Reference<a class="heading-anchor" href="#Reference" aria-hidden="true"></a></h2><ul>
-<li><a href="https://developers.google.cn/machine-learning/practica/image-classification/">https://developers.google.cn/machine-learning/practica/image-classification/</a></li>
-<li><a href="https://mp.weixin.qq.com/s?__biz=MzA3NDIyMjM1NA==&mid=2649029512&idx=1&sn=a46fc10de7daba25694bda75a916aa91&chksm=871345f5b064cce3c16ab3b7c671f9e93c838836e20d0aa91bc83f7879915d0c8318bcd9d187&token=1879088111&lang=zh_CN#rd">从 LeNet 到 VGG，看卷积 + 池化串联的网络结构</a></li>
-</ul>
-</body></html>]]></content>
-      <categories>
-        <category>笔记</category>
-      </categories>
-      <tags>
-        <tag>CNN</tag>
       </tags>
   </entry>
   <entry>
@@ -2990,6 +2990,12 @@ p_{\mathrm{t}}=\left\{\begin{array}{ll}{p} & {\text { if } y=1} \\ {1-p} & {\tex
       </tags>
   </entry>
   <entry>
+    <title>数值计算</title>
+    <url>/post/58802.html</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><p>数值分析是研究科学计算中各种数学问题求解的数值计算方法。</p>
+]]></content>
+  </entry>
+  <entry>
     <title>推荐系统召回算法</title>
     <url>/post/64078.html</url>
     <content><![CDATA[<html><head><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script></head><body><h2 id="推荐系统整体流程" class="heading-control"><a href="#推荐系统整体流程" class="headerlink" title="推荐系统整体流程"></a>推荐系统整体流程<a class="heading-anchor" href="#推荐系统整体流程" aria-hidden="true"></a></h2><p><img src="https://i.loli.net/2020/08/31/FqeHsBKXUCgu8fJ.jpg" alt="img"></p>
@@ -3054,12 +3060,6 @@ p_{\mathrm{t}}=\left\{\begin{array}{ll}{p} & {\text { if } y=1} \\ {1-p} & {\tex
       <tags>
         <tag>召回</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>数值计算</title>
-    <url>/post/58802.html</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><p>数值分析是研究科学计算中各种数学问题求解的数值计算方法。</p>
-]]></content>
   </entry>
   <entry>
     <title>文本分词和去停止词的一次优化</title>
@@ -3157,39 +3157,6 @@ p_{\mathrm{t}}=\left\{\begin{array}{ll}{p} & {\text { if } y=1} \\ {1-p} & {\tex
       </tags>
   </entry>
   <entry>
-    <title>有趣的网站</title>
-    <url>/post/35391.html</url>
-    <content><![CDATA[<html><head><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script></head><body><h2 id="📻音乐" class="heading-control"><a href="#📻音乐" class="headerlink" title="📻音乐"></a>📻音乐<a class="heading-anchor" href="#📻音乐" aria-hidden="true"></a></h2><ul>
-<li><a href="http://music.qkhhyiu.cn/">音乐搜索器</a>: 多站合一音乐搜索解决方案</li>
-<li><a href="http://guozhivip.com/yinyue/">果汁音乐</a></li>
-</ul>
-<h2 id="🔮搜索" class="heading-control"><a href="#🔮搜索" class="headerlink" title="🔮搜索"></a>🔮搜索<a class="heading-anchor" href="#🔮搜索" aria-hidden="true"></a></h2><ul>
-<li><a href="https://scholar.chongbuluo.com/">虫部落</a></li>
-<li><a href="http://guozhivip.com/so/">果汁搜索</a></li>
-<li><a href="https://jikipedia.com/">小鸡词典</a>：网络流行语 </li>
-<li><a href="https://zh.wikihow.com/%E9%A6%96%E9%A1%B5">wikihow</a>：生活维基百科</li>
-</ul>
-<a id="more"></a>
-<h2 id="📜排行榜" class="heading-control"><a href="#📜排行榜" class="headerlink" title="📜排行榜"></a>📜排行榜<a class="heading-anchor" href="#📜排行榜" aria-hidden="true"></a></h2><ul>
-<li><a href="http://guozhivip.com/rank/">果汁排行榜</a></li>
-<li><a href="https://tophub.today/">今日热榜</a></li>
-</ul>
-<h2 id="📚-其他" class="heading-control"><a href="#📚-其他" class="headerlink" title="📚 其他"></a>📚 其他<a class="heading-anchor" href="#📚-其他" aria-hidden="true"></a></h2><ul>
-<li><a href="http://guozhivip.com/eat/">今天吃啥呀</a></li>
-<li><a href="http://www.underseacat.com/fan">云风扇</a>：心静自然凉 </li>
-<li><a href="https://fonts.safe.360.cn/">360 查字体</a> ：你的字体能商用吗</li>
-<li><a href="https://www.gaoding.com/koutu">搞定抠图</a></li>
-<li><a href="http://www.nows.fun/">毒鸡汤</a></li>
-</ul>
-</body></html>]]></content>
-      <categories>
-        <category>网站</category>
-      </categories>
-      <tags>
-        <tag>网站</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>智慧海洋建设比赛</title>
     <url>/post/20868.html</url>
     <content><![CDATA[<html><head><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script></head><body><p>这个比赛算是我第一个做的数值类特征的比赛，主要以学习为主。学习的内容包括：</p>
@@ -3222,6 +3189,39 @@ p_{\mathrm{t}}=\left\{\begin{array}{ll}{p} & {\text { if } y=1} \\ {1-p} & {\tex
 </body></html>]]></content>
       <tags>
         <tag>比赛</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>有趣的网站</title>
+    <url>/post/35391.html</url>
+    <content><![CDATA[<html><head><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script></head><body><h2 id="📻音乐" class="heading-control"><a href="#📻音乐" class="headerlink" title="📻音乐"></a>📻音乐<a class="heading-anchor" href="#📻音乐" aria-hidden="true"></a></h2><ul>
+<li><a href="http://music.qkhhyiu.cn/">音乐搜索器</a>: 多站合一音乐搜索解决方案</li>
+<li><a href="http://guozhivip.com/yinyue/">果汁音乐</a></li>
+</ul>
+<h2 id="🔮搜索" class="heading-control"><a href="#🔮搜索" class="headerlink" title="🔮搜索"></a>🔮搜索<a class="heading-anchor" href="#🔮搜索" aria-hidden="true"></a></h2><ul>
+<li><a href="https://scholar.chongbuluo.com/">虫部落</a></li>
+<li><a href="http://guozhivip.com/so/">果汁搜索</a></li>
+<li><a href="https://jikipedia.com/">小鸡词典</a>：网络流行语 </li>
+<li><a href="https://zh.wikihow.com/%E9%A6%96%E9%A1%B5">wikihow</a>：生活维基百科</li>
+</ul>
+<a id="more"></a>
+<h2 id="📜排行榜" class="heading-control"><a href="#📜排行榜" class="headerlink" title="📜排行榜"></a>📜排行榜<a class="heading-anchor" href="#📜排行榜" aria-hidden="true"></a></h2><ul>
+<li><a href="http://guozhivip.com/rank/">果汁排行榜</a></li>
+<li><a href="https://tophub.today/">今日热榜</a></li>
+</ul>
+<h2 id="📚-其他" class="heading-control"><a href="#📚-其他" class="headerlink" title="📚 其他"></a>📚 其他<a class="heading-anchor" href="#📚-其他" aria-hidden="true"></a></h2><ul>
+<li><a href="http://guozhivip.com/eat/">今天吃啥呀</a></li>
+<li><a href="http://www.underseacat.com/fan">云风扇</a>：心静自然凉 </li>
+<li><a href="https://fonts.safe.360.cn/">360 查字体</a> ：你的字体能商用吗</li>
+<li><a href="https://www.gaoding.com/koutu">搞定抠图</a></li>
+<li><a href="http://www.nows.fun/">毒鸡汤</a></li>
+</ul>
+</body></html>]]></content>
+      <categories>
+        <category>网站</category>
+      </categories>
+      <tags>
+        <tag>网站</tag>
       </tags>
   </entry>
   <entry>
@@ -3260,6 +3260,40 @@ p_{\mathrm{t}}=\left\{\begin{array}{ll}{p} & {\text { if } y=1} \\ {1-p} & {\tex
 ]]></content>
       <tags>
         <tag>服务器</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>机器学习 - 白板推导系列</title>
+    <url>/post/19678.html</url>
+    <content><![CDATA[<html><head><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script></head><body><h2 id="课程介绍" class="heading-control"><a href="#课程介绍" class="headerlink" title="课程介绍"></a>课程介绍<a class="heading-anchor" href="#课程介绍" aria-hidden="true"></a></h2><p><img src="https://i.loli.net/2019/09/24/ga1PjFQG3WLnk8O.png" alt><br>B 站视频：<a href="https://www.bilibili.com/video/av31950221">https://www.bilibili.com/video/av31950221</a><br>观看次序: <a href="https://github.com/shuhuai007/Machine-Learning-Session">https://github.com/shuhuai007/Machine-Learning-Session</a></p>
+<a id="more"></a>
+<h2 id="Lecture-1：开篇" class="heading-control"><a href="#Lecture-1：开篇" class="headerlink" title="Lecture 1：开篇"></a>Lecture 1：开篇<a class="heading-anchor" href="#Lecture-1：开篇" aria-hidden="true"></a></h2><p>主要介绍频率派和贝叶斯派的区别以及一些推荐书籍和视频</p>
+<h3 id="频率派和贝叶斯派" class="heading-control"><a href="#频率派和贝叶斯派" class="headerlink" title="频率派和贝叶斯派"></a>频率派和贝叶斯派<a class="heading-anchor" href="#频率派和贝叶斯派" aria-hidden="true"></a></h3><ul>
+<li>频率派，Maximum Likelihood Estimation (MLE，最大似然估计)，把需要推断的参数 θ 看做是固定的未知常数，即概率虽然是未知的，但最起码是确定的一个值，同时，样本 X 是随机的，所以频率派重点研究样本空间，大部分的概率计算都是针对样本 X 的分布；</li>
+<li>贝叶斯派，Bayesian - Maximum A Posteriori (MAP，最大后验估计)，的观点则截然相反，他们认为参数是随机变量，而样本 X 是固定的，由于样本是固定的，所以他们重点研究的是参数的分布。</li>
+</ul>
+<p>随着数据量的增加，参数分布会越来越向数据靠拢，先验的影响力会越来越小如果先验是 uniform distribution，则贝叶斯方法等价于频率方法。因为直观上来讲，先验是 uniform distribution 本质上表示对事物没有任何预判。</p>
+<h3 id="推荐书籍" class="heading-control"><a href="#推荐书籍" class="headerlink" title="推荐书籍"></a>推荐书籍<a class="heading-anchor" href="#推荐书籍" aria-hidden="true"></a></h3><p>频率派 ———— 统计机器学习<br>贝叶斯派 ———— 概率图模型</p>
+<p><strong>BOOK</strong>：</p>
+<ul>
+<li>李航 机器学习方法：感 K 朴决逻，支提 E 隐条</li>
+<li>周志华：西瓜书</li>
+<li> PRML </li>
+<li>MLAPP</li>
+<li>ESL</li>
+<li>Deep Learning</li>
+</ul>
+<p><strong>视频</strong>：</p>
+<ul>
+<li>台大林轩田：机器学习基石和机器学习技法</li>
+<li>张志华：机器学习导论，统计机器学习</li>
+<li> Ng:CS229 </li>
+<li>徐亦达 </li>
+<li>李宏毅</li>
+</ul>
+<h2 id="Lecture-2：数学基础" class="heading-control"><a href="#Lecture-2：数学基础" class="headerlink" title="Lecture 2：数学基础"></a>Lecture 2：数学基础<a class="heading-anchor" href="#Lecture-2：数学基础" aria-hidden="true"></a></h2><h2 id="Lecture-3：线性分类" class="heading-control"><a href="#Lecture-3：线性分类" class="headerlink" title="Lecture 3：线性分类"></a>Lecture 3：线性分类<a class="heading-anchor" href="#Lecture-3：线性分类" aria-hidden="true"></a></h2><h2 id="Lecture-3：降维" class="heading-control"><a href="#Lecture-3：降维" class="headerlink" title="Lecture 3：降维"></a>Lecture 3：降维<a class="heading-anchor" href="#Lecture-3：降维" aria-hidden="true"></a></h2><h2 id="Lecture-4：支持向量机-SVM" class="heading-control"><a href="#Lecture-4：支持向量机-SVM" class="headerlink" title="Lecture 4：支持向量机(SVM)"></a>Lecture 4：支持向量机 (SVM)<a class="heading-anchor" href="#Lecture-4：支持向量机-SVM" aria-hidden="true"></a></h2><h2 id="Lecture-5：核方法-Kernel-Method" class="heading-control"><a href="#Lecture-5：核方法-Kernel-Method" class="headerlink" title="Lecture 5：核方法(Kernel Method)"></a>Lecture 5：核方法 (Kernel Method)<a class="heading-anchor" href="#Lecture-5：核方法-Kernel-Method" aria-hidden="true"></a></h2><h2 id="Lecture-6：指数族分布" class="heading-control"><a href="#Lecture-6：指数族分布" class="headerlink" title="Lecture 6：指数族分布"></a>Lecture 6：指数族分布<a class="heading-anchor" href="#Lecture-6：指数族分布" aria-hidden="true"></a></h2><h2 id="Lecture-7：概率图模型" class="heading-control"><a href="#Lecture-7：概率图模型" class="headerlink" title="Lecture 7：概率图模型"></a>Lecture 7：概率图模型<a class="heading-anchor" href="#Lecture-7：概率图模型" aria-hidden="true"></a></h2><h2 id="Lecture-8：EM算法" class="heading-control"><a href="#Lecture-8：EM算法" class="headerlink" title="Lecture 8：EM算法"></a>Lecture 8：EM 算法<a class="heading-anchor" href="#Lecture-8：EM算法" aria-hidden="true"></a></h2><h2 id="Lecture-9：高斯混合模型-GMM" class="heading-control"><a href="#Lecture-9：高斯混合模型-GMM" class="headerlink" title="Lecture 9：高斯混合模型(GMM)"></a>Lecture 9：高斯混合模型 (GMM)<a class="heading-anchor" href="#Lecture-9：高斯混合模型-GMM" aria-hidden="true"></a></h2><h2 id="Lecture-10：变分推断" class="heading-control"><a href="#Lecture-10：变分推断" class="headerlink" title="Lecture 10：变分推断"></a>Lecture 10：变分推断<a class="heading-anchor" href="#Lecture-10：变分推断" aria-hidden="true"></a></h2><h2 id="Lecture-11：MCMC" class="heading-control"><a href="#Lecture-11：MCMC" class="headerlink" title="Lecture 11：MCMC"></a>Lecture 11：MCMC<a class="heading-anchor" href="#Lecture-11：MCMC" aria-hidden="true"></a></h2><h2 id="Lecture-12：隐马尔可夫模型" class="heading-control"><a href="#Lecture-12：隐马尔可夫模型" class="headerlink" title="Lecture 12：隐马尔可夫模型"></a>Lecture 12：隐马尔可夫模型<a class="heading-anchor" href="#Lecture-12：隐马尔可夫模型" aria-hidden="true"></a></h2><h2 id="Lecture-13：线性动态系统-卡曼滤波" class="heading-control"><a href="#Lecture-13：线性动态系统-卡曼滤波" class="headerlink" title="Lecture 13：线性动态系统-卡曼滤波"></a>Lecture 13：线性动态系统 - 卡曼滤波<a class="heading-anchor" href="#Lecture-13：线性动态系统-卡曼滤波" aria-hidden="true"></a></h2><h2 id="Lecture-14：非线性动态系统-粒子滤波" class="heading-control"><a href="#Lecture-14：非线性动态系统-粒子滤波" class="headerlink" title="Lecture 14：非线性动态系统-粒子滤波"></a>Lecture 14：非线性动态系统 - 粒子滤波<a class="heading-anchor" href="#Lecture-14：非线性动态系统-粒子滤波" aria-hidden="true"></a></h2><h2 id="Lecture-15：条件随机场" class="heading-control"><a href="#Lecture-15：条件随机场" class="headerlink" title="Lecture 15：条件随机场"></a>Lecture 15：条件随机场<a class="heading-anchor" href="#Lecture-15：条件随机场" aria-hidden="true"></a></h2><h2 id="Lecture-16：高斯网络" class="heading-control"><a href="#Lecture-16：高斯网络" class="headerlink" title="Lecture 16：高斯网络"></a>Lecture 16：高斯网络<a class="heading-anchor" href="#Lecture-16：高斯网络" aria-hidden="true"></a></h2><h2 id="Lecture-17：贝叶斯线性回归" class="heading-control"><a href="#Lecture-17：贝叶斯线性回归" class="headerlink" title="Lecture 17：贝叶斯线性回归"></a>Lecture 17：贝叶斯线性回归<a class="heading-anchor" href="#Lecture-17：贝叶斯线性回归" aria-hidden="true"></a></h2><h2 id="Lecture-18：高斯过程回归" class="heading-control"><a href="#Lecture-18：高斯过程回归" class="headerlink" title="Lecture 18：高斯过程回归"></a>Lecture 18：高斯过程回归<a class="heading-anchor" href="#Lecture-18：高斯过程回归" aria-hidden="true"></a></h2><h2 id="Lecture-19：受限玻尔兹曼机" class="heading-control"><a href="#Lecture-19：受限玻尔兹曼机" class="headerlink" title="Lecture 19：受限玻尔兹曼机"></a>Lecture 19：受限玻尔兹曼机<a class="heading-anchor" href="#Lecture-19：受限玻尔兹曼机" aria-hidden="true"></a></h2></body></html>]]></content>
+      <tags>
+        <tag>白板推导</tag>
       </tags>
   </entry>
   <entry>
@@ -3310,40 +3344,6 @@ c_{N B}=\underset{c \in C}{\operatorname{largmax}} \log P(c)+\sum_{i \in \text {
       </tags>
   </entry>
   <entry>
-    <title>机器学习 - 白板推导系列</title>
-    <url>/post/19678.html</url>
-    <content><![CDATA[<html><head><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script></head><body><h2 id="课程介绍" class="heading-control"><a href="#课程介绍" class="headerlink" title="课程介绍"></a>课程介绍<a class="heading-anchor" href="#课程介绍" aria-hidden="true"></a></h2><p><img src="https://i.loli.net/2019/09/24/ga1PjFQG3WLnk8O.png" alt><br>B 站视频：<a href="https://www.bilibili.com/video/av31950221">https://www.bilibili.com/video/av31950221</a><br>观看次序: <a href="https://github.com/shuhuai007/Machine-Learning-Session">https://github.com/shuhuai007/Machine-Learning-Session</a></p>
-<a id="more"></a>
-<h2 id="Lecture-1：开篇" class="heading-control"><a href="#Lecture-1：开篇" class="headerlink" title="Lecture 1：开篇"></a>Lecture 1：开篇<a class="heading-anchor" href="#Lecture-1：开篇" aria-hidden="true"></a></h2><p>主要介绍频率派和贝叶斯派的区别以及一些推荐书籍和视频</p>
-<h3 id="频率派和贝叶斯派" class="heading-control"><a href="#频率派和贝叶斯派" class="headerlink" title="频率派和贝叶斯派"></a>频率派和贝叶斯派<a class="heading-anchor" href="#频率派和贝叶斯派" aria-hidden="true"></a></h3><ul>
-<li>频率派，Maximum Likelihood Estimation (MLE，最大似然估计)，把需要推断的参数 θ 看做是固定的未知常数，即概率虽然是未知的，但最起码是确定的一个值，同时，样本 X 是随机的，所以频率派重点研究样本空间，大部分的概率计算都是针对样本 X 的分布；</li>
-<li>贝叶斯派，Bayesian - Maximum A Posteriori (MAP，最大后验估计)，的观点则截然相反，他们认为参数是随机变量，而样本 X 是固定的，由于样本是固定的，所以他们重点研究的是参数的分布。</li>
-</ul>
-<p>随着数据量的增加，参数分布会越来越向数据靠拢，先验的影响力会越来越小如果先验是 uniform distribution，则贝叶斯方法等价于频率方法。因为直观上来讲，先验是 uniform distribution 本质上表示对事物没有任何预判。</p>
-<h3 id="推荐书籍" class="heading-control"><a href="#推荐书籍" class="headerlink" title="推荐书籍"></a>推荐书籍<a class="heading-anchor" href="#推荐书籍" aria-hidden="true"></a></h3><p>频率派 ———— 统计机器学习<br>贝叶斯派 ———— 概率图模型</p>
-<p><strong>BOOK</strong>：</p>
-<ul>
-<li>李航 机器学习方法：感 K 朴决逻，支提 E 隐条</li>
-<li>周志华：西瓜书</li>
-<li> PRML </li>
-<li>MLAPP</li>
-<li>ESL</li>
-<li>Deep Learning</li>
-</ul>
-<p><strong>视频</strong>：</p>
-<ul>
-<li>台大林轩田：机器学习基石和机器学习技法</li>
-<li>张志华：机器学习导论，统计机器学习</li>
-<li> Ng:CS229 </li>
-<li>徐亦达 </li>
-<li>李宏毅</li>
-</ul>
-<h2 id="Lecture-2：数学基础" class="heading-control"><a href="#Lecture-2：数学基础" class="headerlink" title="Lecture 2：数学基础"></a>Lecture 2：数学基础<a class="heading-anchor" href="#Lecture-2：数学基础" aria-hidden="true"></a></h2><h2 id="Lecture-3：线性分类" class="heading-control"><a href="#Lecture-3：线性分类" class="headerlink" title="Lecture 3：线性分类"></a>Lecture 3：线性分类<a class="heading-anchor" href="#Lecture-3：线性分类" aria-hidden="true"></a></h2><h2 id="Lecture-3：降维" class="heading-control"><a href="#Lecture-3：降维" class="headerlink" title="Lecture 3：降维"></a>Lecture 3：降维<a class="heading-anchor" href="#Lecture-3：降维" aria-hidden="true"></a></h2><h2 id="Lecture-4：支持向量机-SVM" class="heading-control"><a href="#Lecture-4：支持向量机-SVM" class="headerlink" title="Lecture 4：支持向量机(SVM)"></a>Lecture 4：支持向量机 (SVM)<a class="heading-anchor" href="#Lecture-4：支持向量机-SVM" aria-hidden="true"></a></h2><h2 id="Lecture-5：核方法-Kernel-Method" class="heading-control"><a href="#Lecture-5：核方法-Kernel-Method" class="headerlink" title="Lecture 5：核方法(Kernel Method)"></a>Lecture 5：核方法 (Kernel Method)<a class="heading-anchor" href="#Lecture-5：核方法-Kernel-Method" aria-hidden="true"></a></h2><h2 id="Lecture-6：指数族分布" class="heading-control"><a href="#Lecture-6：指数族分布" class="headerlink" title="Lecture 6：指数族分布"></a>Lecture 6：指数族分布<a class="heading-anchor" href="#Lecture-6：指数族分布" aria-hidden="true"></a></h2><h2 id="Lecture-7：概率图模型" class="heading-control"><a href="#Lecture-7：概率图模型" class="headerlink" title="Lecture 7：概率图模型"></a>Lecture 7：概率图模型<a class="heading-anchor" href="#Lecture-7：概率图模型" aria-hidden="true"></a></h2><h2 id="Lecture-8：EM算法" class="heading-control"><a href="#Lecture-8：EM算法" class="headerlink" title="Lecture 8：EM算法"></a>Lecture 8：EM 算法<a class="heading-anchor" href="#Lecture-8：EM算法" aria-hidden="true"></a></h2><h2 id="Lecture-9：高斯混合模型-GMM" class="heading-control"><a href="#Lecture-9：高斯混合模型-GMM" class="headerlink" title="Lecture 9：高斯混合模型(GMM)"></a>Lecture 9：高斯混合模型 (GMM)<a class="heading-anchor" href="#Lecture-9：高斯混合模型-GMM" aria-hidden="true"></a></h2><h2 id="Lecture-10：变分推断" class="heading-control"><a href="#Lecture-10：变分推断" class="headerlink" title="Lecture 10：变分推断"></a>Lecture 10：变分推断<a class="heading-anchor" href="#Lecture-10：变分推断" aria-hidden="true"></a></h2><h2 id="Lecture-11：MCMC" class="heading-control"><a href="#Lecture-11：MCMC" class="headerlink" title="Lecture 11：MCMC"></a>Lecture 11：MCMC<a class="heading-anchor" href="#Lecture-11：MCMC" aria-hidden="true"></a></h2><h2 id="Lecture-12：隐马尔可夫模型" class="heading-control"><a href="#Lecture-12：隐马尔可夫模型" class="headerlink" title="Lecture 12：隐马尔可夫模型"></a>Lecture 12：隐马尔可夫模型<a class="heading-anchor" href="#Lecture-12：隐马尔可夫模型" aria-hidden="true"></a></h2><h2 id="Lecture-13：线性动态系统-卡曼滤波" class="heading-control"><a href="#Lecture-13：线性动态系统-卡曼滤波" class="headerlink" title="Lecture 13：线性动态系统-卡曼滤波"></a>Lecture 13：线性动态系统 - 卡曼滤波<a class="heading-anchor" href="#Lecture-13：线性动态系统-卡曼滤波" aria-hidden="true"></a></h2><h2 id="Lecture-14：非线性动态系统-粒子滤波" class="heading-control"><a href="#Lecture-14：非线性动态系统-粒子滤波" class="headerlink" title="Lecture 14：非线性动态系统-粒子滤波"></a>Lecture 14：非线性动态系统 - 粒子滤波<a class="heading-anchor" href="#Lecture-14：非线性动态系统-粒子滤波" aria-hidden="true"></a></h2><h2 id="Lecture-15：条件随机场" class="heading-control"><a href="#Lecture-15：条件随机场" class="headerlink" title="Lecture 15：条件随机场"></a>Lecture 15：条件随机场<a class="heading-anchor" href="#Lecture-15：条件随机场" aria-hidden="true"></a></h2><h2 id="Lecture-16：高斯网络" class="heading-control"><a href="#Lecture-16：高斯网络" class="headerlink" title="Lecture 16：高斯网络"></a>Lecture 16：高斯网络<a class="heading-anchor" href="#Lecture-16：高斯网络" aria-hidden="true"></a></h2><h2 id="Lecture-17：贝叶斯线性回归" class="heading-control"><a href="#Lecture-17：贝叶斯线性回归" class="headerlink" title="Lecture 17：贝叶斯线性回归"></a>Lecture 17：贝叶斯线性回归<a class="heading-anchor" href="#Lecture-17：贝叶斯线性回归" aria-hidden="true"></a></h2><h2 id="Lecture-18：高斯过程回归" class="heading-control"><a href="#Lecture-18：高斯过程回归" class="headerlink" title="Lecture 18：高斯过程回归"></a>Lecture 18：高斯过程回归<a class="heading-anchor" href="#Lecture-18：高斯过程回归" aria-hidden="true"></a></h2><h2 id="Lecture-19：受限玻尔兹曼机" class="heading-control"><a href="#Lecture-19：受限玻尔兹曼机" class="headerlink" title="Lecture 19：受限玻尔兹曼机"></a>Lecture 19：受限玻尔兹曼机<a class="heading-anchor" href="#Lecture-19：受限玻尔兹曼机" aria-hidden="true"></a></h2></body></html>]]></content>
-      <tags>
-        <tag>白板推导</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>校招笔试题目</title>
     <url>/post/44950.html</url>
     <content><![CDATA[<html><head><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script></head><body><h2 id="互娱模拟笔试" class="heading-control"><a href="#互娱模拟笔试" class="headerlink" title="互娱模拟笔试"></a>互娱模拟笔试<a class="heading-anchor" href="#互娱模拟笔试" aria-hidden="true"></a></h2><h4 id="个税征缴" class="heading-control"><a href="#个税征缴" class="headerlink" title="个税征缴"></a>个税征缴<a class="heading-anchor" href="#个税征缴" aria-hidden="true"></a></h4><p><img src="https://i.loli.net/2019/08/04/Rxiw6QHvKYTr8tB.png" alt><br><img src="https://i.loli.net/2019/08/04/7b45cCrzgojEaXD.png" alt><br><img src="https://i.loli.net/2019/08/04/iMvLtYcwTNOhR17.png" alt></p>
@@ -3356,6 +3356,24 @@ c_{N B}=\underset{c \in C}{\operatorname{largmax}} \log P(c)+\sum_{i \in \text {
 </body></html>]]></content>
       <tags>
         <tag>笔试</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>标签页测试</title>
+    <url>/post/5213c80b.html</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><p>我爱你中国。</p>
+<ol>
+<li>爱你</li>
+<li>爱你爱你</li>
+</ol>
+<p>我爱你中国。</p>
+<ul>
+<li>爱你</li>
+<li>爱你爱你</li>
+</ul>
+]]></content>
+      <tags>
+        <tag>测试</tag>
       </tags>
   </entry>
   <entry>
@@ -3389,6 +3407,26 @@ c_{N B}=\underset{c \in C}{\operatorname{largmax}} \log P(c)+\sum_{i \in \text {
       </tags>
   </entry>
   <entry>
+    <title>深度学习 NLP 的一些思考</title>
+    <url>/post/48416.html</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><p><img src="https://i.loli.net/2018/10/30/5bd7b7b675daa.png" alt="NLP.png"></p>
+<ol>
+<li><p>Ebedding 代表什么？<br>我们需要搞清楚的是是否 NLP 的一切都需要 Ebedding。比如陌生的符号、变量、数字、未登录词等。</p>
+</li>
+<li><p>Ebedding 的形式是否是” 向量”？<br>词可以 Ebedding 为向量，但是句子文章也这样表示就显得太单薄了，有没有更好的结构？</p>
+<a id="more"></a></li>
+<li><p>语言理解的生物启发模型是什么？<br>CNN 来自于视觉神经系统，但是 RNN 感觉并不像是生物模型。</p>
+</li>
+<li><p>NLP 的数据集都太小<br>NLP 的 ImageNet 什么时候出现？</p>
+</li>
+<li><p>cv 与 nlp 的区别？<br>1.cv 是对连续而具体的，nlp 是离散而抽象的<br>2.cv 是对二维信号的采样，nlp 是对一维信号的采样，对比而言，cv 携带的信息量比较大。</p>
+</li>
+<li><p>QA 系统的结果应该返回什么？<br>显然，结果不应该仅仅是文字、链接，结果应该更加丰富。</p>
+</li>
+</ol>
+]]></content>
+  </entry>
+  <entry>
     <title>海量数据相似度 —— 局部敏感哈希 (LSH)</title>
     <url>/post/54839.html</url>
     <content><![CDATA[<html><head><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script></head><body><h2 id="场景" class="heading-control"><a href="#场景" class="headerlink" title="场景"></a>场景<a class="heading-anchor" href="#场景" aria-hidden="true"></a></h2><p><strong>海量高维数据查找与某个数据最相似的一个或者多个数据。</strong>与其它基于 Tree 的数据结构，诸如 KD-Tree、SR-Tree 相比，它较好地克服了 Curse of Dimension，能够将 KNN 的时间复杂度缩减到 sub-linear。LSH 多被用于文本、多媒体（图像、音频）的相似性判断。</p>
@@ -3413,49 +3451,6 @@ c_{N B}=\underset{c \in C}{\operatorname{largmax}} \log P(c)+\sum_{i \in \text {
 </body></html>]]></content>
       <tags>
         <tag>局部敏感哈希</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>深度学习 NLP 的一些思考</title>
-    <url>/post/48416.html</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><p><img src="https://i.loli.net/2018/10/30/5bd7b7b675daa.png" alt="NLP.png"></p>
-<ol>
-<li><p>Ebedding 代表什么？<br>我们需要搞清楚的是是否 NLP 的一切都需要 Ebedding。比如陌生的符号、变量、数字、未登录词等。</p>
-</li>
-<li><p>Ebedding 的形式是否是” 向量”？<br>词可以 Ebedding 为向量，但是句子文章也这样表示就显得太单薄了，有没有更好的结构？</p>
-<a id="more"></a></li>
-<li><p>语言理解的生物启发模型是什么？<br>CNN 来自于视觉神经系统，但是 RNN 感觉并不像是生物模型。</p>
-</li>
-<li><p>NLP 的数据集都太小<br>NLP 的 ImageNet 什么时候出现？</p>
-</li>
-<li><p>cv 与 nlp 的区别？<br>1.cv 是对连续而具体的，nlp 是离散而抽象的<br>2.cv 是对二维信号的采样，nlp 是对一维信号的采样，对比而言，cv 携带的信息量比较大。</p>
-</li>
-<li><p>QA 系统的结果应该返回什么？<br>显然，结果不应该仅仅是文字、链接，结果应该更加丰富。</p>
-</li>
-</ol>
-]]></content>
-  </entry>
-  <entry>
-    <title>理解 Keras LSTM 中的参数 return_sequences 和 return_state</title>
-    <url>/post/24110.html</url>
-    <content><![CDATA[<html><head><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script></head><body><p><img src="https://i.loli.net/2018/11/14/5bebd5524bc47.png" alt><br>今天才注意到 LSTM 的 output 和 hidden_state 是同一个东西！下面分情况讨论参数的设置问题。<br><a id="more"></a></p>
-<h3 id="return-sequences-False-amp-amp-return-state-False" class="heading-control"><a href="#return-sequences-False-amp-amp-return-state-False" class="headerlink" title="return_sequences=False && return_state=False"></a>return_sequences=False && return_state=False<a class="heading-anchor" href="#return-sequences-False-amp-amp-return-state-False" aria-hidden="true"></a></h3><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">h = LSTM(X)</span><br></pre></td></tr></tbody></table></figure>
-<p>Keras API 中，return_sequences 和 return_state 默认就是 false。此时只会返回最后一个 LSTM 的 hidden state 值。</p>
-<h3 id="return-sequences-True-amp-amp-return-state-False" class="heading-control"><a href="#return-sequences-True-amp-amp-return-state-False" class="headerlink" title="return_sequences=True && return_state=False"></a>return_sequences=True && return_state=False<a class="heading-anchor" href="#return-sequences-True-amp-amp-return-state-False" aria-hidden="true"></a></h3><p>输出全部时间步 LSTM 的 hidden state 结果。</p>
-<h3 id="return-sequences-False-amp-amp-return-state-True" class="heading-control"><a href="#return-sequences-False-amp-amp-return-state-True" class="headerlink" title="return_sequences=False && return_state=True"></a>return_sequences=False && return_state=True<a class="heading-anchor" href="#return-sequences-False-amp-amp-return-state-True" aria-hidden="true"></a></h3><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">lstm1, state_h, state_c = LSTM(<span class="number">1</span>, return_state=<span class="literal">True</span>)</span><br></pre></td></tr></tbody></table></figure>
-<p>stm1 和 state_h 结果都是 hidden state。在这种参数设定下，它们俩的值相同。都是最后一个时间步的 hidden state。 state_c 是最后一个时间步 cell state 结果。</p>
-<h3 id="return-sequences-True-amp-amp-return-state-True" class="heading-control"><a href="#return-sequences-True-amp-amp-return-state-True" class="headerlink" title="return_sequences=True && return_state=True"></a>return_sequences=True && return_state=True<a class="heading-anchor" href="#return-sequences-True-amp-amp-return-state-True" aria-hidden="true"></a></h3><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">lstm1, state_h, state_c = LSTM(<span class="number">1</span>, return_sequences=<span class="literal">True</span>, return_state=<span class="literal">True</span>)</span><br></pre></td></tr></tbody></table></figure>
-<p>此时，我们既要输出全部时间步的 hidden state ，又要输出 cell state。lstm1 存放的就是全部时间步的 hidden state。state_h 存放的是最后一个时间步的 hidden state,state_c 存放的是最后一个时间步的 cell state<br>举一个输出例子，假设我们输入的时间步 time step=3：<br></p><figure class="highlight shell"><table><tbody><tr><td class="code"><pre><span class="line">[array([[[-0.02145359],</span><br><span class="line">        [-0.0540871 ],</span><br><span class="line">        [-0.09228823]]], dtype=float32),</span><br><span class="line"> array([[-0.09228823]], dtype=float32),</span><br><span class="line"> array([[-0.19803026]], dtype=float32)]</span><br></pre></td></tr></tbody></table></figure><br>可以看到state_h 的值和lstm1的最后一个时间步的值相同。<p></p>
-<h3 id="Reference" class="heading-control"><a href="#Reference" class="headerlink" title="Reference"></a>Reference<a class="heading-anchor" href="#Reference" aria-hidden="true"></a></h3><ol>
-<li><a href="https://blog.csdn.net/u011327333/article/details/78501054">https://blog.csdn.net/u011327333/article/details/78501054</a></li>
-<li><a href="https://machinelearningmastery.com/return-sequences-and-return-states-for-lstms-in-keras/">Understand the Difference Between Return Sequences and Return States for LSTMs in Keras</a></li>
-</ol>
-</body></html>]]></content>
-      <categories>
-        <category>笔记</category>
-      </categories>
-      <tags>
-        <tag>Keras</tag>
       </tags>
   </entry>
   <entry>
@@ -3493,6 +3488,29 @@ c_{N B}=\underset{c \in C}{\operatorname{largmax}} \log P(c)+\sum_{i \in \text {
 </body></html>]]></content>
       <tags>
         <tag>机器学习</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>理解 Keras LSTM 中的参数 return_sequences 和 return_state</title>
+    <url>/post/24110.html</url>
+    <content><![CDATA[<html><head><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script></head><body><p><img src="https://i.loli.net/2018/11/14/5bebd5524bc47.png" alt><br>今天才注意到 LSTM 的 output 和 hidden_state 是同一个东西！下面分情况讨论参数的设置问题。<br><a id="more"></a></p>
+<h3 id="return-sequences-False-amp-amp-return-state-False" class="heading-control"><a href="#return-sequences-False-amp-amp-return-state-False" class="headerlink" title="return_sequences=False && return_state=False"></a>return_sequences=False && return_state=False<a class="heading-anchor" href="#return-sequences-False-amp-amp-return-state-False" aria-hidden="true"></a></h3><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">h = LSTM(X)</span><br></pre></td></tr></tbody></table></figure>
+<p>Keras API 中，return_sequences 和 return_state 默认就是 false。此时只会返回最后一个 LSTM 的 hidden state 值。</p>
+<h3 id="return-sequences-True-amp-amp-return-state-False" class="heading-control"><a href="#return-sequences-True-amp-amp-return-state-False" class="headerlink" title="return_sequences=True && return_state=False"></a>return_sequences=True && return_state=False<a class="heading-anchor" href="#return-sequences-True-amp-amp-return-state-False" aria-hidden="true"></a></h3><p>输出全部时间步 LSTM 的 hidden state 结果。</p>
+<h3 id="return-sequences-False-amp-amp-return-state-True" class="heading-control"><a href="#return-sequences-False-amp-amp-return-state-True" class="headerlink" title="return_sequences=False && return_state=True"></a>return_sequences=False && return_state=True<a class="heading-anchor" href="#return-sequences-False-amp-amp-return-state-True" aria-hidden="true"></a></h3><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">lstm1, state_h, state_c = LSTM(<span class="number">1</span>, return_state=<span class="literal">True</span>)</span><br></pre></td></tr></tbody></table></figure>
+<p>stm1 和 state_h 结果都是 hidden state。在这种参数设定下，它们俩的值相同。都是最后一个时间步的 hidden state。 state_c 是最后一个时间步 cell state 结果。</p>
+<h3 id="return-sequences-True-amp-amp-return-state-True" class="heading-control"><a href="#return-sequences-True-amp-amp-return-state-True" class="headerlink" title="return_sequences=True && return_state=True"></a>return_sequences=True && return_state=True<a class="heading-anchor" href="#return-sequences-True-amp-amp-return-state-True" aria-hidden="true"></a></h3><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">lstm1, state_h, state_c = LSTM(<span class="number">1</span>, return_sequences=<span class="literal">True</span>, return_state=<span class="literal">True</span>)</span><br></pre></td></tr></tbody></table></figure>
+<p>此时，我们既要输出全部时间步的 hidden state ，又要输出 cell state。lstm1 存放的就是全部时间步的 hidden state。state_h 存放的是最后一个时间步的 hidden state,state_c 存放的是最后一个时间步的 cell state<br>举一个输出例子，假设我们输入的时间步 time step=3：<br></p><figure class="highlight shell"><table><tbody><tr><td class="code"><pre><span class="line">[array([[[-0.02145359],</span><br><span class="line">        [-0.0540871 ],</span><br><span class="line">        [-0.09228823]]], dtype=float32),</span><br><span class="line"> array([[-0.09228823]], dtype=float32),</span><br><span class="line"> array([[-0.19803026]], dtype=float32)]</span><br></pre></td></tr></tbody></table></figure><br>可以看到state_h 的值和lstm1的最后一个时间步的值相同。<p></p>
+<h3 id="Reference" class="heading-control"><a href="#Reference" class="headerlink" title="Reference"></a>Reference<a class="heading-anchor" href="#Reference" aria-hidden="true"></a></h3><ol>
+<li><a href="https://blog.csdn.net/u011327333/article/details/78501054">https://blog.csdn.net/u011327333/article/details/78501054</a></li>
+<li><a href="https://machinelearningmastery.com/return-sequences-and-return-states-for-lstms-in-keras/">Understand the Difference Between Return Sequences and Return States for LSTMs in Keras</a></li>
+</ol>
+</body></html>]]></content>
+      <categories>
+        <category>笔记</category>
+      </categories>
+      <tags>
+        <tag>Keras</tag>
       </tags>
   </entry>
   <entry>
@@ -3731,6 +3749,102 @@ p\left(t_{1}, t_{2}, \ldots, t_{N}\right)=\prod_{k=1}^{N} p\left(t_{k} | t_{k+1}
       </tags>
   </entry>
   <entry>
+    <title>过拟合现象及解决方案</title>
+    <url>/post/20184.html</url>
+    <content><![CDATA[<html><head><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script></head><body><h2 id="过拟合" class="heading-control"><a href="#过拟合" class="headerlink" title="过拟合"></a>过拟合<a class="heading-anchor" href="#过拟合" aria-hidden="true"></a></h2><p>每迭代几次就对模型进行检查它在验证集上的工作情况，并保存每个比以前所有迭代时都要好的模型。此外，还设置最大迭代次数这个限制，超过此值时停止学习。<br><img src="https://i.loli.net/2019/07/23/5d367c0ac0f3d17413.png" alt></p>
+<a id="more"></a>
+<h2 id="交叉验证" class="heading-control"><a href="#交叉验证" class="headerlink" title="交叉验证"></a>交叉验证<a class="heading-anchor" href="#交叉验证" aria-hidden="true"></a></h2><p>交叉验证的原理为在给定的建模样本中，拿出大部分样本进行建模型，留小部分样本用于建立的模型进行预报，并求这小部分样本的预报误差，记录它们的平方加和。一般有三种常见形式：简单交叉验证 (Holdout 验证)；K 折交叉验证 (K-fold cross-validation)；留一验证 (leave-one-out cross validation)。其中 K 折交叉验证又是最常用的一种。</p>
+<p><img src="https://i.loli.net/2019/07/23/5d367c009c80128818.png" alt></p>
+<p>如果交叉验证的结果比单次训练的结果精度下降，就证明了单次分割测试集与训练集出来的结果确实存在过拟合的现象。但缺点也非常明显，速度慢，此外，交叉检验只能起到检验过拟合的作用，并不能抑制过拟合。</p>
+<h2 id="增加数据" class="heading-control"><a href="#增加数据" class="headerlink" title="增加数据"></a>增加数据<a class="heading-anchor" href="#增加数据" aria-hidden="true"></a></h2><p>一种是增加训练样本，第二种是数据增强。</p>
+<ul>
+<li>在计算机视觉领域中，增广的方式是对图像旋转，缩放，剪切，添加噪声等。</li>
+<li>在自然语言处理领域中，可以做同义词替换扩充数据集。</li>
+<li>语音识别中可以对样本数据添加随机的噪声。</li>
+</ul>
+<h2 id="L1和L2正则化" class="heading-control"><a href="#L1和L2正则化" class="headerlink" title="L1和L2正则化"></a>L1 和 L2 正则化<a class="heading-anchor" href="#L1和L2正则化" aria-hidden="true"></a></h2><p>从贝叶斯角度理解最为合理。</p>
+<p><img src="https://i.loli.net/2019/07/23/5d367bf5c24c777152.png" alt></p>
+<h2 id="Dropout" class="heading-control"><a href="#Dropout" class="headerlink" title="Dropout"></a>Dropout<a class="heading-anchor" href="#Dropout" aria-hidden="true"></a></h2><p>神经网络的每个单元（属于输出层的那些单元）都被赋予在计算中被暂时忽略的概率 p。超参数 p 称为丢失率，通常将其默认值设置为 0.5。然后，在每次迭代中，根据指定的概率随机选择丢弃的神经元。测试的时候输出乘以概率 p，保证和训练的时候期望一样。<br><img src="https://i.loli.net/2019/07/23/5d367c048857384281.png" alt></p>
+<h2 id="提前停止（early-stopping）" class="heading-control"><a href="#提前停止（early-stopping）" class="headerlink" title="提前停止（early stopping）"></a>提前停止（early stopping）<a class="heading-anchor" href="#提前停止（early-stopping）" aria-hidden="true"></a></h2><p>每迭代几次就对模型进行检查它在验证集上的工作情况，并保存每个比以前所有迭代时都要好的模型。此外，还设置最大迭代次数这个限制，超过此值时停止学习。缺点在于需要额外的空间，而且不好和其他的参数一起调。</p>
+<h2 id="结合多种模型" class="heading-control"><a href="#结合多种模型" class="headerlink" title="结合多种模型"></a>结合多种模型<a class="heading-anchor" href="#结合多种模型" aria-hidden="true"></a></h2><p>训练多个模型，以每个模型的平均输出作为结果。</p>
+<ol>
+<li>Bagging：多个强模型的输出平均，是并行的</li>
+<li> Boosting：多个弱模型的递进学习，增加前面学习器没有学习好的样本的权重，是串行的</li>
+</ol>
+<h2 id="剪枝" class="heading-control"><a href="#剪枝" class="headerlink" title="剪枝"></a>剪枝<a class="heading-anchor" href="#剪枝" aria-hidden="true"></a></h2><p>剪枝是决策树类算法防止过拟合的方法。如果决策树的结构过于复杂，可能会导致过拟合问题，此时需要对树进行剪枝，消掉某些节点让它变得更简单。剪枝的关键问题是确定减掉哪些树节点以及减掉它们之后如何进行节点合并。决策树的剪枝算法可以分为两类，分别称为预剪枝和后剪枝。</p>
+<ul>
+<li>预剪枝在树的训练过程中通过停止分裂对树的规模进行限制</li>
+<li>后剪枝先构造出一棵完整的树，然后通过某种规则消除掉部分节点，用叶子节点替代。</li>
+</ul>
+<h2 id="多任务学习" class="heading-control"><a href="#多任务学习" class="headerlink" title="多任务学习"></a>多任务学习<a class="heading-anchor" href="#多任务学习" aria-hidden="true"></a></h2><p>深度学习中两种多任务学习模式：隐层参数的硬共享和软共享</p>
+<ul>
+<li>硬共享机制是指在所有任务中共享隐藏层，同时保留几个特定任务的输出层来实现。硬共享机制降低了过拟合的风险。多个任务同时学习，模型就越能捕捉到多个任务的同一表示，从而导致模型在原始任务上的过拟合风险越小。</li>
+<li>软共享机制是指每个任务有自己的模型，自己的参数。模型参数之间的距离是正则化的，以便保障参数相似性。</li>
+<li>特征选择，减少特征数或使用较少的特征组合</li>
+<li>交叉检验，通过交叉检验得到较优的模型参数</li>
+</ul>
+<h2 id="BN" class="heading-control"><a href="#BN" class="headerlink" title="BN"></a>BN<a class="heading-anchor" href="#BN" aria-hidden="true"></a></h2><p>比较有争议。按照<a href="https://arxiv.org/pdf/1611.03530.pdf">这篇文章</a>说的，可能在一些情况下有抑制作用，使得 overfitting 再更多的 training epoch 后出现，但并不能阻止。</p>
+<p>Batch Normalization（以下称 BN）的主要作用是加快网络的训练速度。</p>
+<p>硬要说是防止过拟合，可以这样理解：BN 每次的 mini-batch 的数据都不一样，但是每次的 mini-batch 的数据都会对 moving mean 和 moving variance 产生作用，可以认为是引入了噪声，这就可以认为是进行了 data augmentation，而 data augmentation 被认为是防止过拟合的一种方法。因此，可以认为用 BN 可以防止过拟合。</p>
+</body></html>]]></content>
+  </entry>
+  <entry>
+    <title>轻量终端打印工具:wasabi</title>
+    <url>/post/23212.html</url>
+    <content><![CDATA[<html><head><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script></head><body><p><img src="https://i.loli.net/2018/11/29/5bffea4e6ae22.png" alt><br>可以用于终端打印一些信息<br><a id="more"></a></p>
+<h2 id="安装" class="heading-control"><a href="#安装" class="headerlink" title="安装"></a>安装<a class="heading-anchor" href="#安装" aria-hidden="true"></a></h2><figure class="highlight shell"><table><tbody><tr><td class="code"><pre><span class="line">pip install wasabi</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="代码以及对应的执行效果" class="heading-control"><a href="#代码以及对应的执行效果" class="headerlink" title="代码以及对应的执行效果"></a>代码以及对应的执行效果<a class="heading-anchor" href="#代码以及对应的执行效果" aria-hidden="true"></a></h2><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> wasabi <span class="keyword">import</span> Printer</span><br><span class="line"></span><br><span class="line">msg = Printer()</span><br><span class="line">msg.text(<span class="string">"Hello world!"</span>)</span><br><span class="line"></span><br><span class="line">msg.good(<span class="string">"Success"</span>)</span><br><span class="line">msg.fail(<span class="string">"Error"</span>)</span><br><span class="line">msg.warn(<span class="string">"Warning"</span>)</span><br><span class="line">msg.info(<span class="string">"Info"</span>)</span><br><span class="line"></span><br><span class="line">msg.divider(<span class="string">"Heading"</span>,char=<span class="string">'-'</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"><span class="keyword">with</span> msg.loading(<span class="string">"Loading..."</span>):</span><br><span class="line">    <span class="comment"># Do something here that takes longer</span></span><br><span class="line">    time.sleep(<span class="number">3</span>)</span><br><span class="line">msg.good(<span class="string">"Successfully loaded something!"</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> wasabi <span class="keyword">import</span> color</span><br><span class="line"></span><br><span class="line">formatted = color(<span class="string">"This is a text"</span>, fg=<span class="string">"white"</span>, bg=<span class="string">"green"</span>, bold=<span class="literal">True</span>)</span><br><span class="line">print(formatted)</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> wasabi <span class="keyword">import</span> wrap</span><br><span class="line"></span><br><span class="line">wrapped = wrap(<span class="string">"Hello world, this is a text."</span>, indent=<span class="number">2</span>)</span><br><span class="line">print(wrapped)</span><br></pre></td></tr></tbody></table></figure>
+<p><img src="https://i.loli.net/2018/11/29/5bffea4e6ae22.png" alt></p>
+</body></html>]]></content>
+      <categories>
+        <category>工具</category>
+      </categories>
+      <tags>
+        <tag>wasabi</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>逻辑回归</title>
+    <url>/post/60504.html</url>
+    <content><![CDATA[<html><head><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script></head><body><h2 id="逻辑回归模型" class="heading-control"><a href="#逻辑回归模型" class="headerlink" title="逻辑回归模型"></a>逻辑回归模型<a class="heading-anchor" href="#逻辑回归模型" aria-hidden="true"></a></h2><p>模型的假设：数据服从伯努利分布。</p>
+<script type="math/tex; mode=display">
+y=\sigma(f(\boldsymbol{x}))=\sigma\left(\boldsymbol{w}^{T} \boldsymbol{x}\right)=\frac{1}{1+e^{-\boldsymbol{w}^{T} \boldsymbol{x}}}</script><a id="more"></a>
+<h2 id="损失函数" class="heading-control"><a href="#损失函数" class="headerlink" title="损失函数"></a>损失函数<a class="heading-anchor" href="#损失函数" aria-hidden="true"></a></h2><script type="math/tex; mode=display">
+P(y | \boldsymbol{x})=\left\{\begin{array}{c}{p, y=1} \\ {1-p, y=0}\end{array}\right.</script><p>等价于：</p>
+<script type="math/tex; mode=display">
+P\left(y_{i} | \boldsymbol{x}_{i}\right)=p^{y_{i}}(1-p)^{1-y_{i}}</script><p>如果我们采集到了一组数据一共 N 个，总概率为：</p>
+<script type="math/tex; mode=display">
+P =\prod_{n=1}^{N} p^{y_{n}}(1-p)^{1-y_{n}}</script><p>最大化这个概率即最小化负 Log 损失函数：</p>
+<script type="math/tex; mode=display">
+\begin{array}{l}{L=\sum_{n=1}^{N} \ln \left(p^{y_{n}}(1-p)^{1-y_{n}}\right)} \\ {=\sum_{n=1}^{N}\left(y_{n} \ln (p)+\left(1-y_{n}\right) \ln (1-p)\right)}\end{array}</script><h2 id="梯度计算" class="heading-control"><a href="#梯度计算" class="headerlink" title="梯度计算"></a>梯度计算<a class="heading-anchor" href="#梯度计算" aria-hidden="true"></a></h2><p>上面式子中的 p 的公式如下：</p>
+<script type="math/tex; mode=display">
+p=\frac{1}{1+e^{-\boldsymbol{w}^{T} \boldsymbol{x}}}</script><p>1-p 的公式：</p>
+<script type="math/tex; mode=display">
+1-p=\frac{e^{-\boldsymbol{w}^{T} \boldsymbol{x}}}{1+e^{-\boldsymbol{w}^{T} \boldsymbol{x}}}</script><p>p 的导数如下：</p>
+<script type="math/tex; mode=display">
+p^{\prime}=p(1-p) \boldsymbol{x}</script><p>1-p 的导数如下：</p>
+<script type="math/tex; mode=display">
+(1-p)^{\prime}=-p(1-p) \boldsymbol{x}</script><p>所以损失函数的梯度如下：</p>
+<script type="math/tex; mode=display">
+\begin{aligned} \nabla F(\boldsymbol{w}) &=\nabla\left(\sum_{n=1}^{N}\left(y_{n} \ln (p)+\left(1-y_{n}\right) \ln (1-p)\right)\right) \\ &=\sum\left(y_{n} \ln ^{\prime}(p)+\left(1-y_{n}\right) \ln ^{\prime}(1-p)\right) \\ &=\sum\left(\left(y_{n} \frac{1}{p} p^{\prime}\right)+\left(1-y_{n}\right) \frac{1}{1-p}(1-p)^{\prime}\right) \\ &=\sum_{N}\left(y_{n}(1-p) \boldsymbol{x}_{n}-\left(1-y_{n}\right) p \boldsymbol{x}_{n}\right) \\ &=\sum_{n=1}^{N}\left(y_{n}-p\right) \boldsymbol{x}_{n} \end{aligned}</script><h2 id="逻辑回归的决策边界" class="heading-control"><a href="#逻辑回归的决策边界" class="headerlink" title="逻辑回归的决策边界"></a>逻辑回归的决策边界<a class="heading-anchor" href="#逻辑回归的决策边界" aria-hidden="true"></a></h2><p>逻辑回归的决策边界如下：</p>
+<script type="math/tex; mode=display">
+\frac{1}{1+e^{-\boldsymbol{w}^{T} \boldsymbol{x}}}=0.5</script><p>简一下上面的曲线公式，得到：</p>
+<script type="math/tex; mode=display">
+e^{-\boldsymbol{w}^{T} \boldsymbol{x}}=1=e^{0}</script><p>如下图所示，所以决策边界是线性的。</p>
+<script type="math/tex; mode=display">
+-\boldsymbol{w}^{T} \boldsymbol{x}=0</script><p><img src="https://s2.ax1x.com/2019/07/23/ekKRw4.md.png" alt></p>
+<h2 id="代码" class="heading-control"><a href="#代码" class="headerlink" title="代码"></a>代码<a class="heading-anchor" href="#代码" aria-hidden="true"></a></h2><p>逻辑回归 + L2 范数正则化代码<br></p><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">LogisticRegression</span>():</span></span><br><span class="line">    <span class="string">""" A simple logistic regression model with L2 regularization (zero-mean</span></span><br><span class="line"><span class="string">    Gaussian priors on parameters). """</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self, x_train=None, y_train=None, x_test=None, y_test=None,</span></span></span><br><span class="line"><span class="function"><span class="params">                 alpha=<span class="number">.1</span>, synthetic=False</span>):</span></span><br><span class="line">        <span class="comment"># Set L2 regularization strength</span></span><br><span class="line">        self.alpha = alpha</span><br><span class="line">        <span class="comment"># Set the data.</span></span><br><span class="line">        self.set_data(x_train, y_train, x_test, y_test)</span><br><span class="line">        <span class="comment"># Initialize parameters to zero, for lack of a better choice.</span></span><br><span class="line">        self.betas = np.zeros(self.x_train.shape[<span class="number">1</span>])</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">negative_lik</span>(<span class="params">self, betas</span>):</span></span><br><span class="line">        <span class="keyword">return</span> <span class="number">-1</span> * self.lik(betas)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">lik</span>(<span class="params">self, betas</span>):</span></span><br><span class="line">        <span class="string">""" Likelihood of the data under the current settings of parameters. """</span></span><br><span class="line">        <span class="comment"># Data likelihood</span></span><br><span class="line">        l = <span class="number">0</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(self.n):</span><br><span class="line">            l += log(sigmoid(self.y_train[i] * </span><br><span class="line">                             np.dot(betas, self.x_train[i,:])))</span><br><span class="line">        <span class="comment"># Prior likelihood</span></span><br><span class="line">        <span class="keyword">for</span> k <span class="keyword">in</span> range(<span class="number">1</span>, self.x_train.shape[<span class="number">1</span>]):</span><br><span class="line">            l -= (self.alpha / <span class="number">2.0</span>) * self.betas[k]**<span class="number">2</span></span><br><span class="line">        <span class="keyword">return</span> l</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">train</span>(<span class="params">self</span>):</span></span><br><span class="line">        <span class="string">""" Define the gradient and hand it off to a scipy gradient-based</span></span><br><span class="line"><span class="string">        optimizer. """</span></span><br><span class="line">        <span class="comment"># Define the derivative of the likelihood with respect to beta_k.</span></span><br><span class="line">        <span class="comment"># Need to multiply by -1 because we will be minimizing.</span></span><br><span class="line">        dB_k = <span class="keyword">lambda</span> B, k : (k > <span class="number">0</span>) * self.alpha * B[k] - np.sum([</span><br><span class="line">            self.y_train[i] * self.x_train[i, k] * </span><br><span class="line">            sigmoid(-self.y_train[i] * np.dot(B, self.x_train[i,:])) </span><br><span class="line">            <span class="keyword">for</span> i <span class="keyword">in</span> range(self.n)])</span><br><span class="line"></span><br><span class="line">        <span class="comment"># The full gradient is just an array of componentwise derivatives</span></span><br><span class="line">        dB = <span class="keyword">lambda</span> B : np.array([dB_k(B, k) </span><br><span class="line">                                  <span class="keyword">for</span> k <span class="keyword">in</span> range(self.x_train.shape[<span class="number">1</span>])])</span><br><span class="line">        <span class="comment"># Optimize</span></span><br><span class="line">        self.betas = fmin_bfgs(self.negative_lik, self.betas, fprime=dB)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">set_data</span>(<span class="params">self, x_train, y_train, x_test, y_test</span>):</span></span><br><span class="line">        <span class="string">""" Take data that's already been generated. """</span></span><br><span class="line">        self.x_train = x_train</span><br><span class="line">        self.y_train = y_train</span><br><span class="line">        self.x_test = x_test</span><br><span class="line">        self.y_test = y_test</span><br><span class="line">        self.n = y_train.shape[<span class="number">0</span>]</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">training_reconstruction</span>(<span class="params">self</span>):</span></span><br><span class="line">        p_y1 = np.zeros(self.n)</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(self.n):</span><br><span class="line">            p_y1[i] = sigmoid(np.dot(self.betas, self.x_train[i,:]))</span><br><span class="line">        <span class="keyword">return</span> p_y1</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">test_predictions</span>(<span class="params">self</span>):</span></span><br><span class="line">        p_y1 = np.zeros(self.n)</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(self.n):</span><br><span class="line">            p_y1[i] = sigmoid(np.dot(self.betas, self.x_test[i,:]))</span><br><span class="line">        <span class="keyword">return</span> p_y1</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">plot_training_reconstruction</span>(<span class="params">self</span>):</span></span><br><span class="line">        plot(np.arange(self.n), <span class="number">.5</span> + <span class="number">.5</span> * self.y_train, <span class="string">'bo'</span>)</span><br><span class="line">        plot(np.arange(self.n), self.training_reconstruction(), <span class="string">'rx'</span>)</span><br><span class="line">        ylim([<span class="number">-.1</span>, <span class="number">1.1</span>])</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">plot_test_predictions</span>(<span class="params">self</span>):</span></span><br><span class="line">        plot(np.arange(self.n), <span class="number">.5</span> + <span class="number">.5</span> * self.y_test, <span class="string">'yo'</span>)</span><br><span class="line">        plot(np.arange(self.n), self.test_predictions(), <span class="string">'rx'</span>)</span><br><span class="line">        ylim([<span class="number">-.1</span>, <span class="number">1.1</span>])</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</span><br><span class="line">    <span class="keyword">from</span> pylab <span class="keyword">import</span> *</span><br><span class="line">    <span class="comment"># Create 20 dimensional data set with 25 points -- this will be</span></span><br><span class="line">    <span class="comment"># susceptible to overfitting.</span></span><br><span class="line">    data = SyntheticClassifierData(<span class="number">25</span>, <span class="number">20</span>)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># Run for a variety of regularization strengths</span></span><br><span class="line">    alphas = [<span class="number">0</span>, <span class="number">.001</span>, <span class="number">.01</span>, <span class="number">.1</span>]</span><br><span class="line">    <span class="keyword">for</span> j, a <span class="keyword">in</span> enumerate(alphas):</span><br><span class="line">        <span class="comment"># Create a new learner, but use the same data for each run</span></span><br><span class="line">        lr = LogisticRegression(x_train=data.X_train, y_train=data.Y_train,</span><br><span class="line">                                x_test=data.X_test, y_test=data.Y_test, alpha=a)</span><br><span class="line"></span><br><span class="line">        <span class="keyword">print</span> <span class="string">"Initial likelihood:"</span></span><br><span class="line">        <span class="keyword">print</span> lr.lik(lr.betas)</span><br><span class="line">        </span><br><span class="line">        <span class="comment"># Train the model</span></span><br><span class="line">        lr.train()</span><br><span class="line"></span><br><span class="line">        <span class="comment"># Display execution info</span></span><br><span class="line">        <span class="keyword">print</span> <span class="string">"Final betas:"</span></span><br><span class="line">        <span class="keyword">print</span> lr.betas</span><br><span class="line">        <span class="keyword">print</span> <span class="string">"Final lik:"</span></span><br><span class="line">        <span class="keyword">print</span> lr.lik(lr.betas)</span><br><span class="line"></span><br><span class="line">        <span class="comment"># Plot the results</span></span><br><span class="line">        subplot(len(alphas), <span class="number">2</span>, <span class="number">2</span>*j + <span class="number">1</span>)</span><br><span class="line">        lr.plot_training_reconstruction()</span><br><span class="line">        ylabel(<span class="string">"Alpha=%s"</span> % a)</span><br><span class="line">        <span class="keyword">if</span> j == <span class="number">0</span>:</span><br><span class="line">            title(<span class="string">"Training set reconstructions"</span>)</span><br><span class="line"></span><br><span class="line">        subplot(len(alphas), <span class="number">2</span>, <span class="number">2</span>*j + <span class="number">2</span>)</span><br><span class="line">        lr.plot_test_predictions()</span><br><span class="line">        <span class="keyword">if</span> j == <span class="number">0</span>:</span><br><span class="line">            title(<span class="string">"Test set predictions"</span>)</span><br><span class="line">    show()</span><br></pre></td></tr></tbody></table></figure><p></p>
+<h3 id="逻辑回归中为什么使用对数损失而不用平方损失" class="heading-control"><a href="#逻辑回归中为什么使用对数损失而不用平方损失" class="headerlink" title="逻辑回归中为什么使用对数损失而不用平方损失"></a>逻辑回归中为什么使用对数损失而不用平方损失<a class="heading-anchor" href="#逻辑回归中为什么使用对数损失而不用平方损失" aria-hidden="true"></a></h3><p>对于逻辑回归，这里所说的对数损失和极大似然是相同的。 不使用平方损失的原因是，在使用 Sigmoid 函数作为正样本的概率时，同时将平方损失作为损失函数，这时所构造出来的损失函数是非凸的，不容易求解，容易得到其局部最优解。 而如果使用极大似然，其目标函数就是对数似然函数，该损失函数是关于未知参数的高阶连续可导的凸函数，便于求其全局最优解。</p>
+<h2 id="Softmax" class="heading-control"><a href="#Softmax" class="headerlink" title="Softmax"></a>Softmax<a class="heading-anchor" href="#Softmax" aria-hidden="true"></a></h2><script type="math/tex; mode=display">
+h_{\theta}(x)=\left[\begin{array}{c}{P(y=1 | x ; \theta)} \\ {P(y=2 | x ; \theta)} \\ {\vdots} \\ {P(y=K | x ; \theta)}\end{array}\right]=\frac{1}{\sum_{j=1}^{K} \exp \left(\theta_{j}^{T} x\right)}\left[\begin{array}{c}{\exp \left(\theta_{1}^{T} x\right)} \\ {\exp \left(\theta_{2}^{T} x\right)} \\ {\vdots} \\ {\exp \left(\theta_{K}^{T} x\right)}\end{array}\right]</script><p>代价函数：</p>
+<script type="math/tex; mode=display">
+J(\theta)=-\left[\sum_{i=1}^{n} \sum_{k=1}^{K} \mathbf{1}\left\{y^{(i)}=k\right\} \ln \frac{\exp \left(\theta_{k}^{T} x_{i}\right)}{\sum_{j=1}^{K} \exp \left(\theta_{j}^{T} x_{i}\right)}\right]</script><p>其中，1${x}$ 是指示函数，x 为真时取 1 否则取 0。</p>
+</body></html>]]></content>
+      <tags>
+        <tag>机器学习</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>词向量的新进展</title>
     <url>/post/56232.html</url>
     <content><![CDATA[<html><head><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script></head><body><p><img src="https://i.loli.net/2018/11/29/5bffec15b6522.jpeg" alt="pexels-photo-1627276.jpeg"><br>最近谷歌研究人员通过新的 BERT 模型在 11 项 NLP 任务中夺得 STOA 结果，这在自然语言处理学界以及工业界都引起了不小的热议。作者通过在 33 亿文本的语料上训练语言模型，再分别在不同的下游任务上微调，这样的模型在不同的任务均得到了目前为止最好的结果，并且有一些结果相比此前的最佳成绩得到了幅度不小的提升。借此契机，我们回顾一下词表示方向的这两年的一些新进展，希望能发现一些规律和新的 idea。基本的介绍路线如下：</p>
@@ -3814,102 +3928,6 @@ p\left(t_{1}, t_{2}, \ldots, t_{N}\right)=\prod_{k=1}^{N} p\left(t_{k} | t_{k+1}
       </categories>
       <tags>
         <tag>词向量</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>轻量终端打印工具:wasabi</title>
-    <url>/post/23212.html</url>
-    <content><![CDATA[<html><head><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script></head><body><p><img src="https://i.loli.net/2018/11/29/5bffea4e6ae22.png" alt><br>可以用于终端打印一些信息<br><a id="more"></a></p>
-<h2 id="安装" class="heading-control"><a href="#安装" class="headerlink" title="安装"></a>安装<a class="heading-anchor" href="#安装" aria-hidden="true"></a></h2><figure class="highlight shell"><table><tbody><tr><td class="code"><pre><span class="line">pip install wasabi</span><br></pre></td></tr></tbody></table></figure>
-<h2 id="代码以及对应的执行效果" class="heading-control"><a href="#代码以及对应的执行效果" class="headerlink" title="代码以及对应的执行效果"></a>代码以及对应的执行效果<a class="heading-anchor" href="#代码以及对应的执行效果" aria-hidden="true"></a></h2><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> wasabi <span class="keyword">import</span> Printer</span><br><span class="line"></span><br><span class="line">msg = Printer()</span><br><span class="line">msg.text(<span class="string">"Hello world!"</span>)</span><br><span class="line"></span><br><span class="line">msg.good(<span class="string">"Success"</span>)</span><br><span class="line">msg.fail(<span class="string">"Error"</span>)</span><br><span class="line">msg.warn(<span class="string">"Warning"</span>)</span><br><span class="line">msg.info(<span class="string">"Info"</span>)</span><br><span class="line"></span><br><span class="line">msg.divider(<span class="string">"Heading"</span>,char=<span class="string">'-'</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"><span class="keyword">with</span> msg.loading(<span class="string">"Loading..."</span>):</span><br><span class="line">    <span class="comment"># Do something here that takes longer</span></span><br><span class="line">    time.sleep(<span class="number">3</span>)</span><br><span class="line">msg.good(<span class="string">"Successfully loaded something!"</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> wasabi <span class="keyword">import</span> color</span><br><span class="line"></span><br><span class="line">formatted = color(<span class="string">"This is a text"</span>, fg=<span class="string">"white"</span>, bg=<span class="string">"green"</span>, bold=<span class="literal">True</span>)</span><br><span class="line">print(formatted)</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> wasabi <span class="keyword">import</span> wrap</span><br><span class="line"></span><br><span class="line">wrapped = wrap(<span class="string">"Hello world, this is a text."</span>, indent=<span class="number">2</span>)</span><br><span class="line">print(wrapped)</span><br></pre></td></tr></tbody></table></figure>
-<p><img src="https://i.loli.net/2018/11/29/5bffea4e6ae22.png" alt></p>
-</body></html>]]></content>
-      <categories>
-        <category>工具</category>
-      </categories>
-      <tags>
-        <tag>wasabi</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>过拟合现象及解决方案</title>
-    <url>/post/20184.html</url>
-    <content><![CDATA[<html><head><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script></head><body><h2 id="过拟合" class="heading-control"><a href="#过拟合" class="headerlink" title="过拟合"></a>过拟合<a class="heading-anchor" href="#过拟合" aria-hidden="true"></a></h2><p>每迭代几次就对模型进行检查它在验证集上的工作情况，并保存每个比以前所有迭代时都要好的模型。此外，还设置最大迭代次数这个限制，超过此值时停止学习。<br><img src="https://i.loli.net/2019/07/23/5d367c0ac0f3d17413.png" alt></p>
-<a id="more"></a>
-<h2 id="交叉验证" class="heading-control"><a href="#交叉验证" class="headerlink" title="交叉验证"></a>交叉验证<a class="heading-anchor" href="#交叉验证" aria-hidden="true"></a></h2><p>交叉验证的原理为在给定的建模样本中，拿出大部分样本进行建模型，留小部分样本用于建立的模型进行预报，并求这小部分样本的预报误差，记录它们的平方加和。一般有三种常见形式：简单交叉验证 (Holdout 验证)；K 折交叉验证 (K-fold cross-validation)；留一验证 (leave-one-out cross validation)。其中 K 折交叉验证又是最常用的一种。</p>
-<p><img src="https://i.loli.net/2019/07/23/5d367c009c80128818.png" alt></p>
-<p>如果交叉验证的结果比单次训练的结果精度下降，就证明了单次分割测试集与训练集出来的结果确实存在过拟合的现象。但缺点也非常明显，速度慢，此外，交叉检验只能起到检验过拟合的作用，并不能抑制过拟合。</p>
-<h2 id="增加数据" class="heading-control"><a href="#增加数据" class="headerlink" title="增加数据"></a>增加数据<a class="heading-anchor" href="#增加数据" aria-hidden="true"></a></h2><p>一种是增加训练样本，第二种是数据增强。</p>
-<ul>
-<li>在计算机视觉领域中，增广的方式是对图像旋转，缩放，剪切，添加噪声等。</li>
-<li>在自然语言处理领域中，可以做同义词替换扩充数据集。</li>
-<li>语音识别中可以对样本数据添加随机的噪声。</li>
-</ul>
-<h2 id="L1和L2正则化" class="heading-control"><a href="#L1和L2正则化" class="headerlink" title="L1和L2正则化"></a>L1 和 L2 正则化<a class="heading-anchor" href="#L1和L2正则化" aria-hidden="true"></a></h2><p>从贝叶斯角度理解最为合理。</p>
-<p><img src="https://i.loli.net/2019/07/23/5d367bf5c24c777152.png" alt></p>
-<h2 id="Dropout" class="heading-control"><a href="#Dropout" class="headerlink" title="Dropout"></a>Dropout<a class="heading-anchor" href="#Dropout" aria-hidden="true"></a></h2><p>神经网络的每个单元（属于输出层的那些单元）都被赋予在计算中被暂时忽略的概率 p。超参数 p 称为丢失率，通常将其默认值设置为 0.5。然后，在每次迭代中，根据指定的概率随机选择丢弃的神经元。测试的时候输出乘以概率 p，保证和训练的时候期望一样。<br><img src="https://i.loli.net/2019/07/23/5d367c048857384281.png" alt></p>
-<h2 id="提前停止（early-stopping）" class="heading-control"><a href="#提前停止（early-stopping）" class="headerlink" title="提前停止（early stopping）"></a>提前停止（early stopping）<a class="heading-anchor" href="#提前停止（early-stopping）" aria-hidden="true"></a></h2><p>每迭代几次就对模型进行检查它在验证集上的工作情况，并保存每个比以前所有迭代时都要好的模型。此外，还设置最大迭代次数这个限制，超过此值时停止学习。缺点在于需要额外的空间，而且不好和其他的参数一起调。</p>
-<h2 id="结合多种模型" class="heading-control"><a href="#结合多种模型" class="headerlink" title="结合多种模型"></a>结合多种模型<a class="heading-anchor" href="#结合多种模型" aria-hidden="true"></a></h2><p>训练多个模型，以每个模型的平均输出作为结果。</p>
-<ol>
-<li>Bagging：多个强模型的输出平均，是并行的</li>
-<li> Boosting：多个弱模型的递进学习，增加前面学习器没有学习好的样本的权重，是串行的</li>
-</ol>
-<h2 id="剪枝" class="heading-control"><a href="#剪枝" class="headerlink" title="剪枝"></a>剪枝<a class="heading-anchor" href="#剪枝" aria-hidden="true"></a></h2><p>剪枝是决策树类算法防止过拟合的方法。如果决策树的结构过于复杂，可能会导致过拟合问题，此时需要对树进行剪枝，消掉某些节点让它变得更简单。剪枝的关键问题是确定减掉哪些树节点以及减掉它们之后如何进行节点合并。决策树的剪枝算法可以分为两类，分别称为预剪枝和后剪枝。</p>
-<ul>
-<li>预剪枝在树的训练过程中通过停止分裂对树的规模进行限制</li>
-<li>后剪枝先构造出一棵完整的树，然后通过某种规则消除掉部分节点，用叶子节点替代。</li>
-</ul>
-<h2 id="多任务学习" class="heading-control"><a href="#多任务学习" class="headerlink" title="多任务学习"></a>多任务学习<a class="heading-anchor" href="#多任务学习" aria-hidden="true"></a></h2><p>深度学习中两种多任务学习模式：隐层参数的硬共享和软共享</p>
-<ul>
-<li>硬共享机制是指在所有任务中共享隐藏层，同时保留几个特定任务的输出层来实现。硬共享机制降低了过拟合的风险。多个任务同时学习，模型就越能捕捉到多个任务的同一表示，从而导致模型在原始任务上的过拟合风险越小。</li>
-<li>软共享机制是指每个任务有自己的模型，自己的参数。模型参数之间的距离是正则化的，以便保障参数相似性。</li>
-<li>特征选择，减少特征数或使用较少的特征组合</li>
-<li>交叉检验，通过交叉检验得到较优的模型参数</li>
-</ul>
-<h2 id="BN" class="heading-control"><a href="#BN" class="headerlink" title="BN"></a>BN<a class="heading-anchor" href="#BN" aria-hidden="true"></a></h2><p>比较有争议。按照<a href="https://arxiv.org/pdf/1611.03530.pdf">这篇文章</a>说的，可能在一些情况下有抑制作用，使得 overfitting 再更多的 training epoch 后出现，但并不能阻止。</p>
-<p>Batch Normalization（以下称 BN）的主要作用是加快网络的训练速度。</p>
-<p>硬要说是防止过拟合，可以这样理解：BN 每次的 mini-batch 的数据都不一样，但是每次的 mini-batch 的数据都会对 moving mean 和 moving variance 产生作用，可以认为是引入了噪声，这就可以认为是进行了 data augmentation，而 data augmentation 被认为是防止过拟合的一种方法。因此，可以认为用 BN 可以防止过拟合。</p>
-</body></html>]]></content>
-  </entry>
-  <entry>
-    <title>逻辑回归</title>
-    <url>/post/60504.html</url>
-    <content><![CDATA[<html><head><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script></head><body><h2 id="逻辑回归模型" class="heading-control"><a href="#逻辑回归模型" class="headerlink" title="逻辑回归模型"></a>逻辑回归模型<a class="heading-anchor" href="#逻辑回归模型" aria-hidden="true"></a></h2><p>模型的假设：数据服从伯努利分布。</p>
-<script type="math/tex; mode=display">
-y=\sigma(f(\boldsymbol{x}))=\sigma\left(\boldsymbol{w}^{T} \boldsymbol{x}\right)=\frac{1}{1+e^{-\boldsymbol{w}^{T} \boldsymbol{x}}}</script><a id="more"></a>
-<h2 id="损失函数" class="heading-control"><a href="#损失函数" class="headerlink" title="损失函数"></a>损失函数<a class="heading-anchor" href="#损失函数" aria-hidden="true"></a></h2><script type="math/tex; mode=display">
-P(y | \boldsymbol{x})=\left\{\begin{array}{c}{p, y=1} \\ {1-p, y=0}\end{array}\right.</script><p>等价于：</p>
-<script type="math/tex; mode=display">
-P\left(y_{i} | \boldsymbol{x}_{i}\right)=p^{y_{i}}(1-p)^{1-y_{i}}</script><p>如果我们采集到了一组数据一共 N 个，总概率为：</p>
-<script type="math/tex; mode=display">
-P =\prod_{n=1}^{N} p^{y_{n}}(1-p)^{1-y_{n}}</script><p>最大化这个概率即最小化负 Log 损失函数：</p>
-<script type="math/tex; mode=display">
-\begin{array}{l}{L=\sum_{n=1}^{N} \ln \left(p^{y_{n}}(1-p)^{1-y_{n}}\right)} \\ {=\sum_{n=1}^{N}\left(y_{n} \ln (p)+\left(1-y_{n}\right) \ln (1-p)\right)}\end{array}</script><h2 id="梯度计算" class="heading-control"><a href="#梯度计算" class="headerlink" title="梯度计算"></a>梯度计算<a class="heading-anchor" href="#梯度计算" aria-hidden="true"></a></h2><p>上面式子中的 p 的公式如下：</p>
-<script type="math/tex; mode=display">
-p=\frac{1}{1+e^{-\boldsymbol{w}^{T} \boldsymbol{x}}}</script><p>1-p 的公式：</p>
-<script type="math/tex; mode=display">
-1-p=\frac{e^{-\boldsymbol{w}^{T} \boldsymbol{x}}}{1+e^{-\boldsymbol{w}^{T} \boldsymbol{x}}}</script><p>p 的导数如下：</p>
-<script type="math/tex; mode=display">
-p^{\prime}=p(1-p) \boldsymbol{x}</script><p>1-p 的导数如下：</p>
-<script type="math/tex; mode=display">
-(1-p)^{\prime}=-p(1-p) \boldsymbol{x}</script><p>所以损失函数的梯度如下：</p>
-<script type="math/tex; mode=display">
-\begin{aligned} \nabla F(\boldsymbol{w}) &=\nabla\left(\sum_{n=1}^{N}\left(y_{n} \ln (p)+\left(1-y_{n}\right) \ln (1-p)\right)\right) \\ &=\sum\left(y_{n} \ln ^{\prime}(p)+\left(1-y_{n}\right) \ln ^{\prime}(1-p)\right) \\ &=\sum\left(\left(y_{n} \frac{1}{p} p^{\prime}\right)+\left(1-y_{n}\right) \frac{1}{1-p}(1-p)^{\prime}\right) \\ &=\sum_{N}\left(y_{n}(1-p) \boldsymbol{x}_{n}-\left(1-y_{n}\right) p \boldsymbol{x}_{n}\right) \\ &=\sum_{n=1}^{N}\left(y_{n}-p\right) \boldsymbol{x}_{n} \end{aligned}</script><h2 id="逻辑回归的决策边界" class="heading-control"><a href="#逻辑回归的决策边界" class="headerlink" title="逻辑回归的决策边界"></a>逻辑回归的决策边界<a class="heading-anchor" href="#逻辑回归的决策边界" aria-hidden="true"></a></h2><p>逻辑回归的决策边界如下：</p>
-<script type="math/tex; mode=display">
-\frac{1}{1+e^{-\boldsymbol{w}^{T} \boldsymbol{x}}}=0.5</script><p>简一下上面的曲线公式，得到：</p>
-<script type="math/tex; mode=display">
-e^{-\boldsymbol{w}^{T} \boldsymbol{x}}=1=e^{0}</script><p>如下图所示，所以决策边界是线性的。</p>
-<script type="math/tex; mode=display">
--\boldsymbol{w}^{T} \boldsymbol{x}=0</script><p><img src="https://s2.ax1x.com/2019/07/23/ekKRw4.md.png" alt></p>
-<h2 id="代码" class="heading-control"><a href="#代码" class="headerlink" title="代码"></a>代码<a class="heading-anchor" href="#代码" aria-hidden="true"></a></h2><p>逻辑回归 + L2 范数正则化代码<br></p><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">LogisticRegression</span>():</span></span><br><span class="line">    <span class="string">""" A simple logistic regression model with L2 regularization (zero-mean</span></span><br><span class="line"><span class="string">    Gaussian priors on parameters). """</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self, x_train=None, y_train=None, x_test=None, y_test=None,</span></span></span><br><span class="line"><span class="function"><span class="params">                 alpha=<span class="number">.1</span>, synthetic=False</span>):</span></span><br><span class="line">        <span class="comment"># Set L2 regularization strength</span></span><br><span class="line">        self.alpha = alpha</span><br><span class="line">        <span class="comment"># Set the data.</span></span><br><span class="line">        self.set_data(x_train, y_train, x_test, y_test)</span><br><span class="line">        <span class="comment"># Initialize parameters to zero, for lack of a better choice.</span></span><br><span class="line">        self.betas = np.zeros(self.x_train.shape[<span class="number">1</span>])</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">negative_lik</span>(<span class="params">self, betas</span>):</span></span><br><span class="line">        <span class="keyword">return</span> <span class="number">-1</span> * self.lik(betas)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">lik</span>(<span class="params">self, betas</span>):</span></span><br><span class="line">        <span class="string">""" Likelihood of the data under the current settings of parameters. """</span></span><br><span class="line">        <span class="comment"># Data likelihood</span></span><br><span class="line">        l = <span class="number">0</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(self.n):</span><br><span class="line">            l += log(sigmoid(self.y_train[i] * </span><br><span class="line">                             np.dot(betas, self.x_train[i,:])))</span><br><span class="line">        <span class="comment"># Prior likelihood</span></span><br><span class="line">        <span class="keyword">for</span> k <span class="keyword">in</span> range(<span class="number">1</span>, self.x_train.shape[<span class="number">1</span>]):</span><br><span class="line">            l -= (self.alpha / <span class="number">2.0</span>) * self.betas[k]**<span class="number">2</span></span><br><span class="line">        <span class="keyword">return</span> l</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">train</span>(<span class="params">self</span>):</span></span><br><span class="line">        <span class="string">""" Define the gradient and hand it off to a scipy gradient-based</span></span><br><span class="line"><span class="string">        optimizer. """</span></span><br><span class="line">        <span class="comment"># Define the derivative of the likelihood with respect to beta_k.</span></span><br><span class="line">        <span class="comment"># Need to multiply by -1 because we will be minimizing.</span></span><br><span class="line">        dB_k = <span class="keyword">lambda</span> B, k : (k > <span class="number">0</span>) * self.alpha * B[k] - np.sum([</span><br><span class="line">            self.y_train[i] * self.x_train[i, k] * </span><br><span class="line">            sigmoid(-self.y_train[i] * np.dot(B, self.x_train[i,:])) </span><br><span class="line">            <span class="keyword">for</span> i <span class="keyword">in</span> range(self.n)])</span><br><span class="line"></span><br><span class="line">        <span class="comment"># The full gradient is just an array of componentwise derivatives</span></span><br><span class="line">        dB = <span class="keyword">lambda</span> B : np.array([dB_k(B, k) </span><br><span class="line">                                  <span class="keyword">for</span> k <span class="keyword">in</span> range(self.x_train.shape[<span class="number">1</span>])])</span><br><span class="line">        <span class="comment"># Optimize</span></span><br><span class="line">        self.betas = fmin_bfgs(self.negative_lik, self.betas, fprime=dB)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">set_data</span>(<span class="params">self, x_train, y_train, x_test, y_test</span>):</span></span><br><span class="line">        <span class="string">""" Take data that's already been generated. """</span></span><br><span class="line">        self.x_train = x_train</span><br><span class="line">        self.y_train = y_train</span><br><span class="line">        self.x_test = x_test</span><br><span class="line">        self.y_test = y_test</span><br><span class="line">        self.n = y_train.shape[<span class="number">0</span>]</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">training_reconstruction</span>(<span class="params">self</span>):</span></span><br><span class="line">        p_y1 = np.zeros(self.n)</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(self.n):</span><br><span class="line">            p_y1[i] = sigmoid(np.dot(self.betas, self.x_train[i,:]))</span><br><span class="line">        <span class="keyword">return</span> p_y1</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">test_predictions</span>(<span class="params">self</span>):</span></span><br><span class="line">        p_y1 = np.zeros(self.n)</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(self.n):</span><br><span class="line">            p_y1[i] = sigmoid(np.dot(self.betas, self.x_test[i,:]))</span><br><span class="line">        <span class="keyword">return</span> p_y1</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">plot_training_reconstruction</span>(<span class="params">self</span>):</span></span><br><span class="line">        plot(np.arange(self.n), <span class="number">.5</span> + <span class="number">.5</span> * self.y_train, <span class="string">'bo'</span>)</span><br><span class="line">        plot(np.arange(self.n), self.training_reconstruction(), <span class="string">'rx'</span>)</span><br><span class="line">        ylim([<span class="number">-.1</span>, <span class="number">1.1</span>])</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">plot_test_predictions</span>(<span class="params">self</span>):</span></span><br><span class="line">        plot(np.arange(self.n), <span class="number">.5</span> + <span class="number">.5</span> * self.y_test, <span class="string">'yo'</span>)</span><br><span class="line">        plot(np.arange(self.n), self.test_predictions(), <span class="string">'rx'</span>)</span><br><span class="line">        ylim([<span class="number">-.1</span>, <span class="number">1.1</span>])</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</span><br><span class="line">    <span class="keyword">from</span> pylab <span class="keyword">import</span> *</span><br><span class="line">    <span class="comment"># Create 20 dimensional data set with 25 points -- this will be</span></span><br><span class="line">    <span class="comment"># susceptible to overfitting.</span></span><br><span class="line">    data = SyntheticClassifierData(<span class="number">25</span>, <span class="number">20</span>)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># Run for a variety of regularization strengths</span></span><br><span class="line">    alphas = [<span class="number">0</span>, <span class="number">.001</span>, <span class="number">.01</span>, <span class="number">.1</span>]</span><br><span class="line">    <span class="keyword">for</span> j, a <span class="keyword">in</span> enumerate(alphas):</span><br><span class="line">        <span class="comment"># Create a new learner, but use the same data for each run</span></span><br><span class="line">        lr = LogisticRegression(x_train=data.X_train, y_train=data.Y_train,</span><br><span class="line">                                x_test=data.X_test, y_test=data.Y_test, alpha=a)</span><br><span class="line"></span><br><span class="line">        <span class="keyword">print</span> <span class="string">"Initial likelihood:"</span></span><br><span class="line">        <span class="keyword">print</span> lr.lik(lr.betas)</span><br><span class="line">        </span><br><span class="line">        <span class="comment"># Train the model</span></span><br><span class="line">        lr.train()</span><br><span class="line"></span><br><span class="line">        <span class="comment"># Display execution info</span></span><br><span class="line">        <span class="keyword">print</span> <span class="string">"Final betas:"</span></span><br><span class="line">        <span class="keyword">print</span> lr.betas</span><br><span class="line">        <span class="keyword">print</span> <span class="string">"Final lik:"</span></span><br><span class="line">        <span class="keyword">print</span> lr.lik(lr.betas)</span><br><span class="line"></span><br><span class="line">        <span class="comment"># Plot the results</span></span><br><span class="line">        subplot(len(alphas), <span class="number">2</span>, <span class="number">2</span>*j + <span class="number">1</span>)</span><br><span class="line">        lr.plot_training_reconstruction()</span><br><span class="line">        ylabel(<span class="string">"Alpha=%s"</span> % a)</span><br><span class="line">        <span class="keyword">if</span> j == <span class="number">0</span>:</span><br><span class="line">            title(<span class="string">"Training set reconstructions"</span>)</span><br><span class="line"></span><br><span class="line">        subplot(len(alphas), <span class="number">2</span>, <span class="number">2</span>*j + <span class="number">2</span>)</span><br><span class="line">        lr.plot_test_predictions()</span><br><span class="line">        <span class="keyword">if</span> j == <span class="number">0</span>:</span><br><span class="line">            title(<span class="string">"Test set predictions"</span>)</span><br><span class="line">    show()</span><br></pre></td></tr></tbody></table></figure><p></p>
-<h3 id="逻辑回归中为什么使用对数损失而不用平方损失" class="heading-control"><a href="#逻辑回归中为什么使用对数损失而不用平方损失" class="headerlink" title="逻辑回归中为什么使用对数损失而不用平方损失"></a>逻辑回归中为什么使用对数损失而不用平方损失<a class="heading-anchor" href="#逻辑回归中为什么使用对数损失而不用平方损失" aria-hidden="true"></a></h3><p>对于逻辑回归，这里所说的对数损失和极大似然是相同的。 不使用平方损失的原因是，在使用 Sigmoid 函数作为正样本的概率时，同时将平方损失作为损失函数，这时所构造出来的损失函数是非凸的，不容易求解，容易得到其局部最优解。 而如果使用极大似然，其目标函数就是对数似然函数，该损失函数是关于未知参数的高阶连续可导的凸函数，便于求其全局最优解。</p>
-<h2 id="Softmax" class="heading-control"><a href="#Softmax" class="headerlink" title="Softmax"></a>Softmax<a class="heading-anchor" href="#Softmax" aria-hidden="true"></a></h2><script type="math/tex; mode=display">
-h_{\theta}(x)=\left[\begin{array}{c}{P(y=1 | x ; \theta)} \\ {P(y=2 | x ; \theta)} \\ {\vdots} \\ {P(y=K | x ; \theta)}\end{array}\right]=\frac{1}{\sum_{j=1}^{K} \exp \left(\theta_{j}^{T} x\right)}\left[\begin{array}{c}{\exp \left(\theta_{1}^{T} x\right)} \\ {\exp \left(\theta_{2}^{T} x\right)} \\ {\vdots} \\ {\exp \left(\theta_{K}^{T} x\right)}\end{array}\right]</script><p>代价函数：</p>
-<script type="math/tex; mode=display">
-J(\theta)=-\left[\sum_{i=1}^{n} \sum_{k=1}^{K} \mathbf{1}\left\{y^{(i)}=k\right\} \ln \frac{\exp \left(\theta_{k}^{T} x_{i}\right)}{\sum_{j=1}^{K} \exp \left(\theta_{j}^{T} x_{i}\right)}\right]</script><p>其中，1${x}$ 是指示函数，x 为真时取 1 否则取 0。</p>
-</body></html>]]></content>
-      <tags>
-        <tag>机器学习</tag>
       </tags>
   </entry>
   <entry>
@@ -4401,24 +4419,6 @@ P=N*C*3*3
       </categories>
       <tags>
         <tag>新冠疫情</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>标签页测试</title>
-    <url>/post/5213c80b.html</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><p>我爱你中国。</p>
-<ol>
-<li>爱你</li>
-<li>爱你爱你</li>
-</ol>
-<p>我爱你中国。</p>
-<ul>
-<li>爱你</li>
-<li>爱你爱你</li>
-</ul>
-]]></content>
-      <tags>
-        <tag>测试</tag>
       </tags>
   </entry>
 </search>
