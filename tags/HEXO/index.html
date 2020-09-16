@@ -22,13 +22,13 @@
 
   <meta property="og:type" content="website">
 <meta property="og:title" content="故事尾音">
-<meta property="og:url" content="http://sunyancn.github.io/tags/Hexo/index.html">
+<meta property="og:url" content="http://sunyancn.github.io/tags/HEXO/index.html">
 <meta property="og:site_name" content="故事尾音">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:author" content="Sun Yan">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://sunyancn.github.io/tags/Hexo/">
+<link rel="canonical" href="http://sunyancn.github.io/tags/HEXO/">
 
 
 <script id="page-configurations">
@@ -54,7 +54,7 @@
   padding: 0 10px 0 14px;
 }
 </style>
-  <title>标签: Hexo | 故事尾音</title>
+  <title>标签: HEXO | 故事尾音</title>
   
 
 
@@ -222,7 +222,7 @@
   <div class="post-block">
     <div class="posts-collapse">
       <div class="collection-title">
-        <h2 class="collection-header">Hexo
+        <h2 class="collection-header">HEXO
           <small>标签</small>
         </h2>
       </div>
@@ -237,58 +237,15 @@
 
       <div class="post-meta">
         <time itemprop="dateCreated"
-              datetime="2019-09-12T16:41:25+08:00"
-              content="2019-09-12">
-          09-12
+              datetime="2019-11-02T14:19:36+08:00"
+              content="2019-11-02">
+          11-02
         </time>
       </div>
 
       <div class="post-title">
-          <a class="post-title-link" href="/post/28311.html" itemprop="url">
-            <span itemprop="name">Hexo 优化和 Github 插件</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-    <div class="collection-year">
-      <span class="collection-header">2018</span>
-    </div>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2018-11-14T20:45:32+08:00"
-              content="2018-11-14">
-          11-14
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/post/58604.html" itemprop="url">
-            <span itemprop="name">Hexo 解决公式渲染问题</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2018-10-28T13:09:07+08:00"
-              content="2018-10-28">
-          10-28
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/post/64470.html" itemprop="url">
-            <span itemprop="name">Hexo Customization</span>
+          <a class="post-title-link" href="/post/27014.html" itemprop="url">
+            <span itemprop="name">HEXO 博客迁移的步骤</span>
           </a>
       </div>
 
@@ -598,6 +555,41 @@ darkmode.showWidget();
         flOptions.iconStyle = "box";
         flOptions.boxForm = "horizontal";
         flOptions.position = "middleRight";
+        flOptions.networks = "Weibo,Wechat,Douban,QQZone,Twitter,Facebook";
+      new needShareButton('#needsharebutton-float', flOptions);
+  </script>
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('https://cdn.jsdelivr.net/gh//AshinWang/SimpleValine/SimpleValine.min.js', () => {
+    var GUEST = ['nick', 'mail', 'link'];
+    var guest = 'nick,mail';
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
+    });
+    new Valine({
+      el         : '#valine-comments',
+      verify     : false,
+      notify     : false,
+      appId      : 'IAIsNxUL4BLqJ2c4nTn8HlLv-gzGzoHsz',
+      appKey     : '73p5IVTPonVrJhOylbVtJffi',
+      placeholder: "(๑•́ ₃ •̀๑) 留言时填写您的邮箱可以邮件收到博主的回复噢~",
+      avatar     : 'wavatar',
+      meta       : guest,
+      pageSize   : '10' || 10,
+      visitor    : false,
+      lang       : '' || 'zh-cn',
+      path       : location.pathname,
+      recordIP   : true,
+      serverURLs : ''
+    });
+  }, window.Valine);
+});
+</script>
+
+</body>
+</html>
+ flOptions.position = "middleRight";
         flOptions.networks = "Weibo,Wechat,Douban,QQZone,Twitter,Facebook";
       new needShareButton('#needsharebutton-float', flOptions);
   </script>
