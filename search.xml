@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>20200203123847</title>
+    <url>/post/30365.html</url>
+    <content><![CDATA[<html><head><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script></head><body><h2 id="0x01-Python好用的格式化" class="heading-control"><a href="#0x01-Python好用的格式化" class="headerlink" title="0x01 Python好用的格式化"></a>0x01 Python 好用的格式化<a class="heading-anchor" href="#0x01-Python好用的格式化" aria-hidden="true"></a></h2><p>来自文章<a href>《Write Better Python Code Today》</a>，从 Python 3.6 开始，f-string 是格式化字符串的一种很好的新方法。与其他格式化方式相比，它们不仅更易读，更简洁，不易出错，而且速度更快。<br>下面是一个简单例子 (注意大写的 F 也是有效的)：<br></p><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">name = <span class="string">"Eric"</span></span><br><span class="line">age = <span class="number">74</span></span><br><span class="line"><span class="string">f"Hello, <span class="subst">{name}</span>. You are <span class="subst">{age}</span>."</span></span><br><span class="line"><span class="comment">#or F"Hello, {name}. You are {age}."</span></span><br><span class="line"><span class="comment"># 输出</span></span><br><span class="line"><span class="string">'Hello, Eric. You are 74.'</span></span><br></pre></td></tr></tbody></table></figure><p></p>
+</body></html>]]></content>
+  </entry>
+  <entry>
     <title>2019 面试</title>
     <url>/post/55675.html</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><div class="table-container">
@@ -64,12 +70,6 @@
 <li>超级简历一个月会员激活码：guluvlogs</li>
 </ul>
 ]]></content>
-  </entry>
-  <entry>
-    <title>20200203123847</title>
-    <url>/post/30365.html</url>
-    <content><![CDATA[<html><head><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script></head><body><h2 id="0x01-Python好用的格式化" class="heading-control"><a href="#0x01-Python好用的格式化" class="headerlink" title="0x01 Python好用的格式化"></a>0x01 Python 好用的格式化<a class="heading-anchor" href="#0x01-Python好用的格式化" aria-hidden="true"></a></h2><p>来自文章<a href>《Write Better Python Code Today》</a>，从 Python 3.6 开始，f-string 是格式化字符串的一种很好的新方法。与其他格式化方式相比，它们不仅更易读，更简洁，不易出错，而且速度更快。<br>下面是一个简单例子 (注意大写的 F 也是有效的)：<br></p><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">name = <span class="string">"Eric"</span></span><br><span class="line">age = <span class="number">74</span></span><br><span class="line"><span class="string">f"Hello, <span class="subst">{name}</span>. You are <span class="subst">{age}</span>."</span></span><br><span class="line"><span class="comment">#or F"Hello, {name}. You are {age}."</span></span><br><span class="line"><span class="comment"># 输出</span></span><br><span class="line"><span class="string">'Hello, Eric. You are 74.'</span></span><br></pre></td></tr></tbody></table></figure><p></p>
-</body></html>]]></content>
   </entry>
   <entry>
     <title>20200224210643</title>
@@ -221,21 +221,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Docker 部署深度学习模型</title>
-    <url>/post/1488.html</url>
-    <content><![CDATA[<html><head><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script></head><body><h2 id="Docker安装" class="heading-control"><a href="#Docker安装" class="headerlink" title="Docker安装"></a>Docker 安装<a class="heading-anchor" href="#Docker安装" aria-hidden="true"></a></h2><p>参考链接：<a href="https://docs.docker.com/install/linux/docker-ce/centos/">https://docs.docker.com/install/linux/docker-ce/centos/</a><br>运行到 <code>sudo docker run hello-world</code> 正常输出即可<br><a id="more"></a></p>
-<h2 id="Docker国内加速" class="heading-control"><a href="#Docker国内加速" class="headerlink" title="Docker国内加速"></a>Docker 国内加速<a class="heading-anchor" href="#Docker国内加速" aria-hidden="true"></a></h2><p><strong>操作步骤</strong></p>
-<ul>
-<li>编辑文件 <code>/etc/docker/daemon.json</code>，没有就新建。加入以下项目：<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">{</span><br><span class="line">    <span class="string">"registry-mirrors"</span>: [<span class="string">"https://registry.docker-cn.com"</span>,<span class="string">"http://hub-mirror.c.163.com"</span>]</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure></li>
-<li>重启 docker daemon : <code>systemctl restart docker</code></li>
-</ul>
-<p>也可以写一个脚本<br></p><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line">cat>/etc/docker/daemon.json<<EOF</span><br><span class="line">{</span><br><span class="line">  <span class="string">"registry-mirrors"</span>: [<span class="string">"https://registry.docker-cn.com"</span>,<span class="string">"http://hub-mirror.c.163.com"</span>]</span><br><span class="line">}</span><br><span class="line">EOF</span><br><span class="line">systemctl restart docker</span><br></pre></td></tr></tbody></table></figure><p></p>
-<h2 id="拉取tensorflow-serving" class="heading-control"><a href="#拉取tensorflow-serving" class="headerlink" title="拉取tensorflow serving"></a>拉取 tensorflow serving<a class="heading-anchor" href="#拉取tensorflow-serving" aria-hidden="true"></a></h2></body></html>]]></content>
-      <tags>
-        <tag>docker</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Docker 入手</title>
     <url>/post/20925.html</url>
     <content><![CDATA[<html><head><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script></head><body><p><img src="https://i.loli.net/2018/11/30/5c013a3895a19.png" alt="下载.png"></p>
@@ -301,6 +286,21 @@ DuReader 数据集的样本可用一个四维数组表示：{q, t, D, A}，其�
       </categories>
       <tags>
         <tag>DuReader</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Docker 部署深度学习模型</title>
+    <url>/post/1488.html</url>
+    <content><![CDATA[<html><head><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script></head><body><h2 id="Docker安装" class="heading-control"><a href="#Docker安装" class="headerlink" title="Docker安装"></a>Docker 安装<a class="heading-anchor" href="#Docker安装" aria-hidden="true"></a></h2><p>参考链接：<a href="https://docs.docker.com/install/linux/docker-ce/centos/">https://docs.docker.com/install/linux/docker-ce/centos/</a><br>运行到 <code>sudo docker run hello-world</code> 正常输出即可<br><a id="more"></a></p>
+<h2 id="Docker国内加速" class="heading-control"><a href="#Docker国内加速" class="headerlink" title="Docker国内加速"></a>Docker 国内加速<a class="heading-anchor" href="#Docker国内加速" aria-hidden="true"></a></h2><p><strong>操作步骤</strong></p>
+<ul>
+<li>编辑文件 <code>/etc/docker/daemon.json</code>，没有就新建。加入以下项目：<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">{</span><br><span class="line">    <span class="string">"registry-mirrors"</span>: [<span class="string">"https://registry.docker-cn.com"</span>,<span class="string">"http://hub-mirror.c.163.com"</span>]</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure></li>
+<li>重启 docker daemon : <code>systemctl restart docker</code></li>
+</ul>
+<p>也可以写一个脚本<br></p><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line">cat>/etc/docker/daemon.json<<EOF</span><br><span class="line">{</span><br><span class="line">  <span class="string">"registry-mirrors"</span>: [<span class="string">"https://registry.docker-cn.com"</span>,<span class="string">"http://hub-mirror.c.163.com"</span>]</span><br><span class="line">}</span><br><span class="line">EOF</span><br><span class="line">systemctl restart docker</span><br></pre></td></tr></tbody></table></figure><p></p>
+<h2 id="拉取tensorflow-serving" class="heading-control"><a href="#拉取tensorflow-serving" class="headerlink" title="拉取tensorflow serving"></a>拉取 tensorflow serving<a class="heading-anchor" href="#拉取tensorflow-serving" aria-hidden="true"></a></h2></body></html>]]></content>
+      <tags>
+        <tag>docker</tag>
       </tags>
   </entry>
   <entry>
@@ -562,6 +562,31 @@ DuReader 数据集的样本可用一个四维数组表示：{q, t, D, A}，其�
       </tags>
   </entry>
   <entry>
+    <title>Hexo 优化和 Github 插件</title>
+    <url>/post/28311.html</url>
+    <content><![CDATA[<html><head><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script></head><body><h2 id="Hexo-Next主题优化" class="heading-control"><a href="#Hexo-Next主题优化" class="headerlink" title="Hexo Next主题优化"></a>Hexo Next 主题优化<a class="heading-anchor" href="#Hexo-Next主题优化" aria-hidden="true"></a></h2><p>记录一些 Hexo Next 博客优化的文章：</p>
+<ul>
+<li><a href="https://aoenian.github.io/2018/08/09/next-theme-customized-2/">代码块优化</a></li>
+<li><a href="https://crayonnew.github.io/2018/11/05/Hexo-NexT%E4%B8%BB%E9%A2%98-%E8%AE%BE%E7%BD%AE%E5%9C%86%E5%BD%A2%E5%A4%B4%E5%83%8F%E5%B9%B6%E6%97%8B%E8%BD%AC/">设置圆形头像并旋转</a></li>
+<li><a href="https://www.andyvj.com/2019/02/26/190226-02/">hexo 数学公式</a></li>
+<li><a href="https://www.andyvj.com/2019/02/12/190213-01/">hexo 中插入视频音频</a></li>
+<li><a href="https://www.anmou.me/20181017-Private_Setting_to_Next/">主题个性化配置</a></li>
+<li><a href="https://blog.diqigan.cn/posts/add-background-picture-for-next.html">hexo 背景修改</a></li>
+<li><a href="https://sjq597.github.io/2018/05/18/Hexo-%E4%BD%BF%E7%94%A8Gitment%E8%AF%84%E8%AE%BA%E5%8A%9F%E8%83%BD/">hexo gitment 配置</a></li>
+</ul>
+<a id="more"></a>
+<h2 id="Github-Chrome插件" class="heading-control"><a href="#Github-Chrome插件" class="headerlink" title="Github Chrome插件"></a>Github Chrome 插件<a class="heading-anchor" href="#Github-Chrome插件" aria-hidden="true"></a></h2><ul>
+<li>SourceGraph 插件</li>
+<li> GitZip 插件：下载仓库中部分代码</li>
+<li> Enhanced GitHub 插件</li>
+</ul>
+</body></html>]]></content>
+      <tags>
+        <tag>Github</tag>
+        <tag>Hexo</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Hexo Customization</title>
     <url>/post/64470.html</url>
     <content><![CDATA[<html><head><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script></head><body><h3 id="bilibili插件" class="heading-control"><a href="#bilibili插件" class="headerlink" title="bilibili插件"></a>bilibili 插件<a class="heading-anchor" href="#bilibili插件" aria-hidden="true"></a></h3><p><a href="https://github.com/Z4Tech/hexo-tag-bilibili">bilibili</a></p>
@@ -595,31 +620,6 @@ DuReader 数据集的样本可用一个四维数组表示：{q, t, D, A}，其�
         <category>工具</category>
       </categories>
       <tags>
-        <tag>Hexo</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Hexo 优化和 Github 插件</title>
-    <url>/post/28311.html</url>
-    <content><![CDATA[<html><head><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script></head><body><h2 id="Hexo-Next主题优化" class="heading-control"><a href="#Hexo-Next主题优化" class="headerlink" title="Hexo Next主题优化"></a>Hexo Next 主题优化<a class="heading-anchor" href="#Hexo-Next主题优化" aria-hidden="true"></a></h2><p>记录一些 Hexo Next 博客优化的文章：</p>
-<ul>
-<li><a href="https://aoenian.github.io/2018/08/09/next-theme-customized-2/">代码块优化</a></li>
-<li><a href="https://crayonnew.github.io/2018/11/05/Hexo-NexT%E4%B8%BB%E9%A2%98-%E8%AE%BE%E7%BD%AE%E5%9C%86%E5%BD%A2%E5%A4%B4%E5%83%8F%E5%B9%B6%E6%97%8B%E8%BD%AC/">设置圆形头像并旋转</a></li>
-<li><a href="https://www.andyvj.com/2019/02/26/190226-02/">hexo 数学公式</a></li>
-<li><a href="https://www.andyvj.com/2019/02/12/190213-01/">hexo 中插入视频音频</a></li>
-<li><a href="https://www.anmou.me/20181017-Private_Setting_to_Next/">主题个性化配置</a></li>
-<li><a href="https://blog.diqigan.cn/posts/add-background-picture-for-next.html">hexo 背景修改</a></li>
-<li><a href="https://sjq597.github.io/2018/05/18/Hexo-%E4%BD%BF%E7%94%A8Gitment%E8%AF%84%E8%AE%BA%E5%8A%9F%E8%83%BD/">hexo gitment 配置</a></li>
-</ul>
-<a id="more"></a>
-<h2 id="Github-Chrome插件" class="heading-control"><a href="#Github-Chrome插件" class="headerlink" title="Github Chrome插件"></a>Github Chrome 插件<a class="heading-anchor" href="#Github-Chrome插件" aria-hidden="true"></a></h2><ul>
-<li>SourceGraph 插件</li>
-<li> GitZip 插件：下载仓库中部分代码</li>
-<li> Enhanced GitHub 插件</li>
-</ul>
-</body></html>]]></content>
-      <tags>
-        <tag>Github</tag>
         <tag>Hexo</tag>
       </tags>
   </entry>
@@ -1171,6 +1171,69 @@ Number=(Features+Output\_dim) x Output\_dim+Output\_dim
       </tags>
   </entry>
   <entry>
+    <title>Network In Network</title>
+    <url>/post/27176.html</url>
+    <content><![CDATA[<html><head><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script></head><body><p>论文 <a href="https://arxiv.org/abs/1312.4400">Network In Network</a>(Min Lin, ICLR2014).</p>
+<h2 id="论文的主要贡献" class="heading-control"><a href="#论文的主要贡献" class="headerlink" title="论文的主要贡献"></a>论文的主要贡献<a class="heading-anchor" href="#论文的主要贡献" aria-hidden="true"></a></h2><ol>
+<li>采用 mlpcon 的结构来代替 traditional 卷积层</li>
+<li>采用 global average pooling 层代替卷积神经网络最后的全连接层</li>
+</ol>
+<a id="more"></a>
+<h2 id="NIN" class="heading-control"><a href="#NIN" class="headerlink" title="NIN"></a>NIN<a class="heading-anchor" href="#NIN" aria-hidden="true"></a></h2><p>传统 cnn 网络中的卷积层其实就是用线性滤波器对图像进行内积运算，在每个局部输出后面跟着一个非线性的激活函数，最终得到的叫作特征图。而这种卷积滤波器是一种广义线性模型。所以用 CNN 进行特征提取时，其实就隐含地假设了特征是线性可分的，可实际问题往往是难以线性可分的。</p>
+<p>什么样的模型抽象水平更高呢。当然是比线性模型更有表达能力的非线性函数近似器了（比如 MLP 多层感知神经网络）。</p>
+<p><img src="https://i.loli.net/2019/01/19/5c43055c40b1d.png" alt></p>
+<p>MLP 的优点： </p>
+<ol>
+<li>非常有效的通用函数近似器 </li>
+<li>可用 BP 算法训练，可以完美地融合进 CNN </li>
+<li>其本身也是一种深度模型，可以特征再利用</li>
+</ol>
+<h2 id="NIN和1x1卷积的关系" class="heading-control"><a href="#NIN和1x1卷积的关系" class="headerlink" title="NIN和1x1卷积的关系"></a>NIN 和 1x1 卷积的关系<a class="heading-anchor" href="#NIN和1x1卷积的关系" aria-hidden="true"></a></h2><p>因为 NIN 中的 MLP 层可以用两层 1×1 卷积核来代替，比如当前这一层是 54×54×96 的图像层，然后过一个 1×1×96 的卷积核，还是一个 54×54×96 的卷积层，然后再过一个 1×1×96 的卷积核，还是一个 54×54×96 的卷积层。 但是这样但看最开始那个 96 个特征层的图像同一个位置不同层之间的像素点，相当于过了一个 96×96×96 的 MLP 网络 。</p>
+<p><img src="https://i.loli.net/2019/01/19/5c4306c0ca21e.png" alt="20160117131304843.png"></p>
+<h2 id="1x1卷积" class="heading-control"><a href="#1x1卷积" class="headerlink" title="1x1卷积"></a>1x1 卷积<a class="heading-anchor" href="#1x1卷积" aria-hidden="true"></a></h2><p><img src="https://i.loli.net/2019/01/19/5c4302ace8ca9.png" alt></p>
+<p> 如果卷积的输出输入都只是一个平面，那么 1x1 卷积核并没有什么意义，它是完全不考虑像素与周边其他像素关系。 但卷积的输出输入是长方体，所以 1x1 卷积实际上是对每个像素点，在不同的 channels 上进行线性组合（信息整合），且保留了图片的原有平面结构，调控 depth，从而完成升维或降维的功能。</p>
+<p>比如 3x3 卷积或者 5x5 卷积在几百个 filter 的卷积层上做卷积操作时相当耗时，所以 1x1 卷积在 3x3 卷积或者 5x5 卷积计算之前先降低维度。比如，一张 500×500 且厚度 depth 为 100 的图片在 20 个 filter 上做 1×1 的卷积，那么结果的大小为 500×500×20。然后再进行 3x3 卷积或者 5x5 卷积就可以了。</p>
+<p><strong>总结一下</strong>：</p>
+<ol>
+<li>相当于输入每个元素对应的所有通道分别进行了全连接运算，输出即为 filters 的数量。</li>
+<li>池化层可以压缩高度和宽度，1×1 卷积可以压缩或增加通道数。</li>
+<li>加入非线性。卷积层之后经过激励层，1×1 的卷积在前一层的学习表示上添加了非线性激励（ non-linear activation ），提升网络的表达能力</li>
+</ol>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center"> 3x3 卷积</th>
+<th style="text-align:center"> 1x1 卷积</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><img src="https://i.loli.net/2019/01/19/5c43004513776.gif" alt="full_padding_no_strides_transposed.gif"></td>
+<td style="text-align:center"><img src="https://i.loli.net/2019/01/19/5c43009b6369c.gif" alt="full_padding_no_strides_transposed_small.gif"></td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 id="Global-Average-Pooling" class="heading-control"><a href="#Global-Average-Pooling" class="headerlink" title="Global Average Pooling"></a>Global Average Pooling<a class="heading-anchor" href="#Global-Average-Pooling" aria-hidden="true"></a></h2><p>传统的 cnn 是在较低层使用卷积，如分类任务中，最后的卷积层所得 feature map 被矢量化进行全连接层，然后使用 softmax 回归进行分类。一般来说，在卷积的末端完成的卷积与传统分类器的桥接。全连接阶段易于过拟合，妨碍整个网络的泛化能力，一般应有一些规则方法来处理过拟合。</p>
+<p>在传统 CNN 中很难解释最后的全连接层输出的类别信息的误差怎么传递给前边的卷积层。而 global average pooling 更容易解释。另外，全连接层容易过拟合，往往依赖于 dropout 等正则化手段.</p>
+<p>global average pooling 的概念非常简单，分类任务有多少个类别，就控制最终产生多少个 feature map. 对每个 feature map 的数值求平均作为某类别的置信度，类似 FC 层输出的特征向量，再经过 softmax 分类。其优点有:</p>
+<ol>
+<li>参数数量减少，减轻过拟合 (应用于 AlexNet, 模型 230MB->29MB);</li>
+<li> 更符合卷积网络的结构，使 feature map 和类别信息直接映射；</li>
+<li>求和取平均操作综合了空间信息，使得对输入的空间变换更鲁棒 (与卷积层相连的 FC 按顺序对特征进行了重新编排 (flatten), 可能破坏了特征的位置信息).</li>
+<li>FC 层输入的大小须固定，这限制了网络输入的图像大小</li>
+</ol>
+<p><img src="https://i.loli.net/2019/01/19/5c43064d59f83.png" alt></p>
+</body></html>]]></content>
+      <categories>
+        <category>CNN</category>
+      </categories>
+      <tags>
+        <tag>CNN</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>NLP 面试</title>
     <url>/post/62924.html</url>
     <content><![CDATA[<html><head><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script></head><body><p><img src="https://i.loli.net/2020/09/02/jY67e5ovS8ApkD2.jpg" alt="v2-4ce31ce804e18089a463534fb58657de_r.jpg"><br><a id="more"></a></p>
@@ -1352,144 +1415,6 @@ Number=(Features+Output\_dim) x Output\_dim+Output\_dim
       </tags>
   </entry>
   <entry>
-    <title>NLP 面试比较重要的知识点</title>
-    <url>/post/21849.html</url>
-    <content><![CDATA[<html><head><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script></head><body><p><img src="https://s2.ax1x.com/2019/07/22/ei2rqS.png" alt="ei2rqS.png"><br><a id="more"></a></p>
-<h2 id="基础" class="heading-control"><a href="#基础" class="headerlink" title="基础"></a>基础<a class="heading-anchor" href="#基础" aria-hidden="true"></a></h2><p>Python 内存管理的方式  <a href="http://kkpattern.github.io/2015/06/20/python-memory-optimization-zh.html">参考答案</a></p>
-<h2 id="机器学习" class="heading-control"><a href="#机器学习" class="headerlink" title="机器学习"></a>机器学习<a class="heading-anchor" href="#机器学习" aria-hidden="true"></a></h2><ol>
-<li>逻辑回归完整推导过程</li>
-<li>逻辑回归属于线性分类器还是非线性分类器？(同属于广义线性模型)</li>
-<li> 朴素贝叶斯为什么朴素？（假设特征之间相互独立）</li>
-<li>介绍一下 SVM 核函数</li>
-<li> MLP 和 MAP 的区别（MAP 加入了先验信息）</li>
-<li>svm 如何处理多分类（一对多法设计 k 个分类器，一对一法设计 k (k-1)/2 个分类器）</li>
-<li>svm 对缺失数据敏感吗，为什么，决策树呢。（svm 没有处理缺失数据的方法，决策树有）</li>
-<li>为什么 svm 采用最大间隔（最大间隔得到决策边界是唯一的，具有鲁棒性）</li>
-<li>聚类了解哪些？基于密度的聚类了解哪些？（<strong>原型聚类</strong>：KMeans, 高斯混合聚类，<strong>密度聚类</strong>：DBSCAN、Mean-Shift，<strong>层次聚类</strong>：AGNES、BIRCH，<strong>谱聚类</strong>）</li>
-</ol>
-<h2 id="深度学习基础" class="heading-control"><a href="#深度学习基础" class="headerlink" title="深度学习基础"></a>深度学习基础<a class="heading-anchor" href="#深度学习基础" aria-hidden="true"></a></h2><ol>
-<li>L1、L2 正则（贝叶斯角度分析，加入了先验信息）</li>
-<li>怎样判断过拟合？过拟合怎么解决？（1. <strong>交叉验证</strong>的结果比单次的结果下，2. 通过<strong>学习曲线</strong> Learning Curves 判断，3. 实际的话也可以通过<strong>观察</strong>训练误差很小，而预测误差很大的模型通常过拟合）</li>
-<li>梯度消失和梯度爆炸的原因，为什么 rnn 比 cnn 和全连接层神经网络更容易发生梯度消失或爆炸（RNN 在梯度的反向传播中只有连乘，LSTM 和 GRU 加入了门机制，梯度的计算中同时还有 $h_t$ 的加法）</li>
-<li>说一下 dropout 的训练和测试过程（在训练过程中以一定的概率 p 的使神经元失活，测试过程不需要 dropout，对层的输出乘以 p）</li>
-<li>说一下 BN 和 LN，有什么区别，BN 为什么可以提升效果 ()</li>
-<li>CNN 的旋转不变性怎么理解 (CNN 具有平移不变性)</li>
-</ol>
-<h2 id="自然语言处理基础" class="heading-control"><a href="#自然语言处理基础" class="headerlink" title="自然语言处理基础"></a>自然语言处理基础<a class="heading-anchor" href="#自然语言处理基础" aria-hidden="true"></a></h2><p>输入补全可以用哪个数据结构来做？（字典树）<br>假如有 10 亿条搜索请求，怎么找出最热的前 10 条？<br>讲一下 LDA，讲一下隐狄利克雷分布，里面有个辛普森采样了解吗<br>pointwise、pairwise 、listwise 的区别<br>word2vec 是有监督的还是无监督的<br>word2vec 的损失函数形式<br>分层 softmax 和负采样原理<br>Glove 的思想以及和 word2vec 的区别<br>Fasttext 和 word2vec 的区别<br>Fasttext 哈希规则，怎么把语义相近的词哈希到一个桶里<br>RNN、LSTM、GRU 公式。<br>RNN、LSTM、GRU 参数大小<br>Attention 机制的原理，有哪些变种<br>sigmoid 用作激活函数时，分类为什么要用交叉熵损失，而不用均方损失？</p>
-<h2 id="文本分类" class="heading-control"><a href="#文本分类" class="headerlink" title="文本分类"></a>文本分类<a class="heading-anchor" href="#文本分类" aria-hidden="true"></a></h2><p>精确率，召回率，F1 值<br><img src="https://i.loli.net/2019/07/22/5d35bda25c13e20464.png" alt><br>AUC 和 ROC<br><img src="https://i.loli.net/2019/07/22/5d35beceefac074363.png" alt></p>
-<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">Precision：P=TP/(TP+FP)</span><br><span class="line">Recall：R=TP/(TP+FN)</span><br><span class="line">F1-score：2/(1/P+1/R)</span><br><span class="line">ROC/AUC：TPR=TP/(TP+FN), FPR=FP/(FP+TN)</span><br></pre></td></tr></tbody></table></figure>
-<p>讲一下 Textcnn 的过程<br>Fasttext 怎么做分类的<br>CNN 和 LSTM 都可以用于分类，两者用于分类有什么区别？<br>样本不均衡的处理方法</p>
-<h3 id="Sequence-Label" class="heading-control"><a href="#Sequence-Label" class="headerlink" title="Sequence Label"></a>Sequence Label<a class="heading-anchor" href="#Sequence-Label" aria-hidden="true"></a></h3><p>有了 BILSTM 为什么还要用 CRF？<br>BILSTM+CRF 的训练目标？状态转移矩阵是 joint learn 的吗？维度是多少？<br>维特比算法的时间复杂度<br>HMM 和 CRF 的区别<br>CRF、HMM 原理 公式、维特比算法的公式<br>HMM 做了哪些独立性假设<br>CRF 的训练目标是什么？<br>CRF 和深度学习的结合还知道哪些？<br>为什么 Transformer self-attention 可以替代 seq2seq</p>
-<h3 id="文本生成" class="heading-control"><a href="#文本生成" class="headerlink" title="文本生成"></a>文本生成<a class="heading-anchor" href="#文本生成" aria-hidden="true"></a></h3><p>生成式问答解决生成句子多样性的方法<br>怎么评价生成效果的好坏<br>讲一下 BLEU</p>
-<h3 id="思考题" class="heading-control"><a href="#思考题" class="headerlink" title="思考题"></a>思考题<a class="heading-anchor" href="#思考题" aria-hidden="true"></a></h3><ol>
-<li>一个村子里重男轻女，生了女孩就继续生，直到生出男孩为止，试想在 N 年之后该村子的男女比例。答案：1:1</li>
-<li> 有 A（红）B（蓝）两瓶墨水，从 A 中取一勺倒到 B 中，混匀后，再从 B 中取等量墨水，倒到 A 中。问，是 A 中蓝墨水多还是 B 中红墨水多？</li>
-<li>一枚硬币，正反分布均匀，掷硬币，问至少多少次可以把这枚硬币的正面和反面都掷出来？</li>
-<li>一根绳子，允许你剪两刀，试问，剪完之后的绳子能构成三角形的概率是多少</li>
-</ol>
-<h3 id="算法" class="heading-control"><a href="#算法" class="headerlink" title="算法"></a>算法<a class="heading-anchor" href="#算法" aria-hidden="true"></a></h3><ol>
-<li>稳定和非稳定的排序算法有哪些</li>
-<li>快速排序的最好，最坏，平均以及空间复杂度</li>
-<li>二分查找递归和非递归的时间和空间复杂度</li>
-<li>用两个栈实现一个队列操作，实现 push、pop、len 操作</li>
-<li>给定字符串 s ，求与 s 编辑距离为 2 的字符串集合。</li>
-<li>一个圆被分成 M 个扇形，一共有 N 种颜色，相邻扇形不同色，一共有几种涂法？</li>
-<li>有 n 枚硬币，每次从左边或右边拿一枚，一共拿 m 次，求能拿到的最高价值</li>
-<li>二叉搜索树转有序双向链表，要求不能创建新的节点</li>
-<li>统计一个十进制数字的二进制表示中有多少个一，用位运算写</li>
-<li>滑动窗口里的最大数</li>
-<li>给定一个乱序不重复数组，找到所有的三个数的集合，每个集合中 a + b + c == 0</li>
-<li> 排序数组中绝对值不相等的元素个数，算法复杂度（M+N）</li>
-<li>搜索有序二维矩阵，复杂度</li>
-<li>层次遍历二叉树</li>
-<li>字符串的最长公共子串</li>
-<li>写一个函数判断一个字符串是否为回文串</li>
-<li>求一个字符串中的最长回文子串<h4 id="归并排序" class="heading-control"><a href="#归并排序" class="headerlink" title="归并排序"></a>归并排序<a class="heading-anchor" href="#归并排序" aria-hidden="true"></a></h4><img src="https://s2.ax1x.com/2019/07/22/eiNXFS.md.png" alt><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">merge</span>(<span class="params">a, b</span>):</span></span><br><span class="line">    c = []</span><br><span class="line">    h = j = <span class="number">0</span></span><br><span class="line">    <span class="keyword">while</span> j < len(a) <span class="keyword">and</span> h < len(b):</span><br><span class="line">        <span class="keyword">if</span> a[j] < b[h]:</span><br><span class="line">            c.append(a[j])</span><br><span class="line">            j += <span class="number">1</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            c.append(b[h])</span><br><span class="line">            h += <span class="number">1</span></span><br><span class="line">    <span class="keyword">if</span> j == len(a):</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> b[h:]:</span><br><span class="line">            c.append(i)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> a[j:]:</span><br><span class="line">            c.append(i)</span><br><span class="line">    <span class="keyword">return</span> c</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">merge_sort</span>(<span class="params">lists</span>):</span></span><br><span class="line">    <span class="keyword">if</span> len(lists) <= <span class="number">1</span>:</span><br><span class="line">        <span class="keyword">return</span> lists</span><br><span class="line">    middle = len(lists)//<span class="number">2</span></span><br><span class="line">    left = merge_sort(lists[:middle])</span><br><span class="line">    right = merge_sort(lists[middle:])</span><br><span class="line">    <span class="keyword">return</span> merge(left, right)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    a = [<span class="number">14</span>, <span class="number">2</span>, <span class="number">34</span>, <span class="number">43</span>, <span class="number">21</span>, <span class="number">19</span>]</span><br><span class="line">    <span class="keyword">print</span> (merge_sort(a))</span><br></pre></td></tr></tbody></table></figure>
-</li>
-</ol>
-</body></html>]]></content>
-      <tags>
-        <tag>面试</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Network In Network</title>
-    <url>/post/27176.html</url>
-    <content><![CDATA[<html><head><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script></head><body><p>论文 <a href="https://arxiv.org/abs/1312.4400">Network In Network</a>(Min Lin, ICLR2014).</p>
-<h2 id="论文的主要贡献" class="heading-control"><a href="#论文的主要贡献" class="headerlink" title="论文的主要贡献"></a>论文的主要贡献<a class="heading-anchor" href="#论文的主要贡献" aria-hidden="true"></a></h2><ol>
-<li>采用 mlpcon 的结构来代替 traditional 卷积层</li>
-<li>采用 global average pooling 层代替卷积神经网络最后的全连接层</li>
-</ol>
-<a id="more"></a>
-<h2 id="NIN" class="heading-control"><a href="#NIN" class="headerlink" title="NIN"></a>NIN<a class="heading-anchor" href="#NIN" aria-hidden="true"></a></h2><p>传统 cnn 网络中的卷积层其实就是用线性滤波器对图像进行内积运算，在每个局部输出后面跟着一个非线性的激活函数，最终得到的叫作特征图。而这种卷积滤波器是一种广义线性模型。所以用 CNN 进行特征提取时，其实就隐含地假设了特征是线性可分的，可实际问题往往是难以线性可分的。</p>
-<p>什么样的模型抽象水平更高呢。当然是比线性模型更有表达能力的非线性函数近似器了（比如 MLP 多层感知神经网络）。</p>
-<p><img src="https://i.loli.net/2019/01/19/5c43055c40b1d.png" alt></p>
-<p>MLP 的优点： </p>
-<ol>
-<li>非常有效的通用函数近似器 </li>
-<li>可用 BP 算法训练，可以完美地融合进 CNN </li>
-<li>其本身也是一种深度模型，可以特征再利用</li>
-</ol>
-<h2 id="NIN和1x1卷积的关系" class="heading-control"><a href="#NIN和1x1卷积的关系" class="headerlink" title="NIN和1x1卷积的关系"></a>NIN 和 1x1 卷积的关系<a class="heading-anchor" href="#NIN和1x1卷积的关系" aria-hidden="true"></a></h2><p>因为 NIN 中的 MLP 层可以用两层 1×1 卷积核来代替，比如当前这一层是 54×54×96 的图像层，然后过一个 1×1×96 的卷积核，还是一个 54×54×96 的卷积层，然后再过一个 1×1×96 的卷积核，还是一个 54×54×96 的卷积层。 但是这样但看最开始那个 96 个特征层的图像同一个位置不同层之间的像素点，相当于过了一个 96×96×96 的 MLP 网络 。</p>
-<p><img src="https://i.loli.net/2019/01/19/5c4306c0ca21e.png" alt="20160117131304843.png"></p>
-<h2 id="1x1卷积" class="heading-control"><a href="#1x1卷积" class="headerlink" title="1x1卷积"></a>1x1 卷积<a class="heading-anchor" href="#1x1卷积" aria-hidden="true"></a></h2><p><img src="https://i.loli.net/2019/01/19/5c4302ace8ca9.png" alt></p>
-<p> 如果卷积的输出输入都只是一个平面，那么 1x1 卷积核并没有什么意义，它是完全不考虑像素与周边其他像素关系。 但卷积的输出输入是长方体，所以 1x1 卷积实际上是对每个像素点，在不同的 channels 上进行线性组合（信息整合），且保留了图片的原有平面结构，调控 depth，从而完成升维或降维的功能。</p>
-<p>比如 3x3 卷积或者 5x5 卷积在几百个 filter 的卷积层上做卷积操作时相当耗时，所以 1x1 卷积在 3x3 卷积或者 5x5 卷积计算之前先降低维度。比如，一张 500×500 且厚度 depth 为 100 的图片在 20 个 filter 上做 1×1 的卷积，那么结果的大小为 500×500×20。然后再进行 3x3 卷积或者 5x5 卷积就可以了。</p>
-<p><strong>总结一下</strong>：</p>
-<ol>
-<li>相当于输入每个元素对应的所有通道分别进行了全连接运算，输出即为 filters 的数量。</li>
-<li>池化层可以压缩高度和宽度，1×1 卷积可以压缩或增加通道数。</li>
-<li>加入非线性。卷积层之后经过激励层，1×1 的卷积在前一层的学习表示上添加了非线性激励（ non-linear activation ），提升网络的表达能力</li>
-</ol>
-<div class="table-container">
-<table>
-<thead>
-<tr>
-<th style="text-align:center"> 3x3 卷积</th>
-<th style="text-align:center"> 1x1 卷积</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center"><img src="https://i.loli.net/2019/01/19/5c43004513776.gif" alt="full_padding_no_strides_transposed.gif"></td>
-<td style="text-align:center"><img src="https://i.loli.net/2019/01/19/5c43009b6369c.gif" alt="full_padding_no_strides_transposed_small.gif"></td>
-</tr>
-</tbody>
-</table>
-</div>
-<h2 id="Global-Average-Pooling" class="heading-control"><a href="#Global-Average-Pooling" class="headerlink" title="Global Average Pooling"></a>Global Average Pooling<a class="heading-anchor" href="#Global-Average-Pooling" aria-hidden="true"></a></h2><p>传统的 cnn 是在较低层使用卷积，如分类任务中，最后的卷积层所得 feature map 被矢量化进行全连接层，然后使用 softmax 回归进行分类。一般来说，在卷积的末端完成的卷积与传统分类器的桥接。全连接阶段易于过拟合，妨碍整个网络的泛化能力，一般应有一些规则方法来处理过拟合。</p>
-<p>在传统 CNN 中很难解释最后的全连接层输出的类别信息的误差怎么传递给前边的卷积层。而 global average pooling 更容易解释。另外，全连接层容易过拟合，往往依赖于 dropout 等正则化手段.</p>
-<p>global average pooling 的概念非常简单，分类任务有多少个类别，就控制最终产生多少个 feature map. 对每个 feature map 的数值求平均作为某类别的置信度，类似 FC 层输出的特征向量，再经过 softmax 分类。其优点有:</p>
-<ol>
-<li>参数数量减少，减轻过拟合 (应用于 AlexNet, 模型 230MB->29MB);</li>
-<li> 更符合卷积网络的结构，使 feature map 和类别信息直接映射；</li>
-<li>求和取平均操作综合了空间信息，使得对输入的空间变换更鲁棒 (与卷积层相连的 FC 按顺序对特征进行了重新编排 (flatten), 可能破坏了特征的位置信息).</li>
-<li>FC 层输入的大小须固定，这限制了网络输入的图像大小</li>
-</ol>
-<p><img src="https://i.loli.net/2019/01/19/5c43064d59f83.png" alt></p>
-</body></html>]]></content>
-      <categories>
-        <category>CNN</category>
-      </categories>
-      <tags>
-        <tag>CNN</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>PaddleHub 使用示例</title>
-    <url>/post/945.html</url>
-    <content><![CDATA[<html><head><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script></head><body><p>最近用了一下 PaddleHub，感觉还挺好用的。这里两个使用 PaddleHub 的示例。<br><a id="more"></a></p>
-<h2 id="分词" class="heading-control"><a href="#分词" class="headerlink" title="分词"></a>分词<a class="heading-anchor" href="#分词" aria-hidden="true"></a></h2><p>这个分词和官网的分词效果一样，觉得比 jieba 之类的要好。<br></p><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># pip install pyahocorasick</span></span><br><span class="line"><span class="comment"># https://www.paddlepaddle.org.cn/hubdetail?name=lac&en_category=LexicalAnalysis</span></span><br><span class="line"><span class="keyword">import</span> paddlehub <span class="keyword">as</span> hub</span><br><span class="line"></span><br><span class="line">temp_user_dict = [</span><br><span class="line">    dict(word=<span class="string">'自然'</span>, tag=<span class="string">'n'</span>, freq=<span class="string">'10000'</span>)</span><br><span class="line">]</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">make_dict</span>(<span class="params">user_dicts</span>):</span></span><br><span class="line">    <span class="keyword">with</span> open(<span class="string">'user.dict'</span>, <span class="string">'w'</span>) <span class="keyword">as</span> f:</span><br><span class="line">        <span class="keyword">for</span> user_dict <span class="keyword">in</span> user_dicts:</span><br><span class="line">            f.write(user_dict[<span class="string">'word'</span>] + <span class="string">'\t'</span> +</span><br><span class="line">                    user_dict[<span class="string">'tag'</span>] + <span class="string">'\t'</span> +</span><br><span class="line">                    user_dict[<span class="string">'freq'</span>] + <span class="string">'\n'</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">make_dict(temp_user_dict)</span><br><span class="line"></span><br><span class="line">lac = hub.Module(name=<span class="string">'lac'</span>)</span><br><span class="line">lac.set_user_dict(dict_path=<span class="string">'user.dict'</span>)</span><br><span class="line">results = lac.lexical_analysis(texts=[<span class="string">'我爱自然语言处理'</span>],</span><br><span class="line">                               use_gpu=<span class="literal">False</span>,</span><br><span class="line">                               batch_size=<span class="number">1</span>,</span><br><span class="line">                               return_tag=<span class="literal">True</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> result <span class="keyword">in</span> results:</span><br><span class="line">    print(result[<span class="string">"word"</span>])</span><br><span class="line">    print(result[<span class="string">"tag"</span>])</span><br></pre></td></tr></tbody></table></figure><p></p>
-<h2 id="阅读理解" class="heading-control"><a href="#阅读理解" class="headerlink" title="阅读理解"></a>阅读理解<a class="heading-anchor" href="#阅读理解" aria-hidden="true"></a></h2><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> paddlehub <span class="keyword">as</span> hub</span><br><span class="line"></span><br><span class="line">module = hub.Module(name=<span class="string">"roberta_wwm_ext_chinese_L-24_H-1024_A-16"</span>)</span><br><span class="line">inputs, outputs, program = module.context(trainable=<span class="literal">True</span>, max_seq_len=<span class="number">384</span>)</span><br><span class="line">dataset = hub.dataset.CMRC2018()</span><br><span class="line"></span><br><span class="line">reader = hub.reader.ReadingComprehensionReader(</span><br><span class="line">    dataset=dataset,</span><br><span class="line">    vocab_path=module.get_vocab_path(),</span><br><span class="line">    max_seq_len=<span class="number">384</span>)</span><br><span class="line"></span><br><span class="line">strategy = hub.AdamWeightDecayStrategy(</span><br><span class="line">    learning_rate=<span class="number">5e-5</span>,</span><br><span class="line">    weight_decay=<span class="number">0.01</span>,</span><br><span class="line">    warmup_proportion=<span class="number">0.1</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">config = hub.RunConfig(use_cuda=<span class="literal">False</span>, num_epoch=<span class="number">2</span>, batch_size=<span class="number">12</span>, strategy=strategy)</span><br><span class="line">seq_output = outputs[<span class="string">"sequence_output"</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment"># feed_list的Tensor顺序不可以调整</span></span><br><span class="line">feed_list = [</span><br><span class="line">    inputs[<span class="string">"input_ids"</span>].name,</span><br><span class="line">    inputs[<span class="string">"position_ids"</span>].name,</span><br><span class="line">    inputs[<span class="string">"segment_ids"</span>].name,</span><br><span class="line">    inputs[<span class="string">"input_mask"</span>].name,</span><br><span class="line">]</span><br><span class="line"></span><br><span class="line">reading_comprehension_task = hub.ReadingComprehensionTask(</span><br><span class="line">    data_reader=reader,</span><br><span class="line">    feature=seq_output,</span><br><span class="line">    feed_list=feed_list,</span><br><span class="line">    config=config,</span><br><span class="line">    sub_task=<span class="string">"cmrc2018"</span>)</span><br><span class="line"></span><br><span class="line">reading_comprehension_task.finetune_and_eval()</span><br></pre></td></tr></tbody></table></figure>
-</body></html>]]></content>
-      <categories>
-        <category>笔记</category>
-      </categories>
-      <tags>
-        <tag>PaddleHub</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Progressive learning:Learn Python the Hard Way</title>
     <url>/post/2054.html</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><p><a href="https://learnpythonthehardway.org/book/">Learn Python the Hard Way</a></p>
@@ -1551,6 +1476,161 @@ Number=(Features+Output\_dim) x Output\_dim+Output\_dim
       <tags>
         <tag>Python</tag>
         <tag>音频信号处理</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>PaddleHub 使用示例</title>
+    <url>/post/945.html</url>
+    <content><![CDATA[<html><head><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script></head><body><p>最近用了一下 PaddleHub，感觉还挺好用的。这里两个使用 PaddleHub 的示例。<br><a id="more"></a></p>
+<h2 id="分词" class="heading-control"><a href="#分词" class="headerlink" title="分词"></a>分词<a class="heading-anchor" href="#分词" aria-hidden="true"></a></h2><p>这个分词和官网的分词效果一样，觉得比 jieba 之类的要好。<br></p><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># pip install pyahocorasick</span></span><br><span class="line"><span class="comment"># https://www.paddlepaddle.org.cn/hubdetail?name=lac&en_category=LexicalAnalysis</span></span><br><span class="line"><span class="keyword">import</span> paddlehub <span class="keyword">as</span> hub</span><br><span class="line"></span><br><span class="line">temp_user_dict = [</span><br><span class="line">    dict(word=<span class="string">'自然'</span>, tag=<span class="string">'n'</span>, freq=<span class="string">'10000'</span>)</span><br><span class="line">]</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">make_dict</span>(<span class="params">user_dicts</span>):</span></span><br><span class="line">    <span class="keyword">with</span> open(<span class="string">'user.dict'</span>, <span class="string">'w'</span>) <span class="keyword">as</span> f:</span><br><span class="line">        <span class="keyword">for</span> user_dict <span class="keyword">in</span> user_dicts:</span><br><span class="line">            f.write(user_dict[<span class="string">'word'</span>] + <span class="string">'\t'</span> +</span><br><span class="line">                    user_dict[<span class="string">'tag'</span>] + <span class="string">'\t'</span> +</span><br><span class="line">                    user_dict[<span class="string">'freq'</span>] + <span class="string">'\n'</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">make_dict(temp_user_dict)</span><br><span class="line"></span><br><span class="line">lac = hub.Module(name=<span class="string">'lac'</span>)</span><br><span class="line">lac.set_user_dict(dict_path=<span class="string">'user.dict'</span>)</span><br><span class="line">results = lac.lexical_analysis(texts=[<span class="string">'我爱自然语言处理'</span>],</span><br><span class="line">                               use_gpu=<span class="literal">False</span>,</span><br><span class="line">                               batch_size=<span class="number">1</span>,</span><br><span class="line">                               return_tag=<span class="literal">True</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> result <span class="keyword">in</span> results:</span><br><span class="line">    print(result[<span class="string">"word"</span>])</span><br><span class="line">    print(result[<span class="string">"tag"</span>])</span><br></pre></td></tr></tbody></table></figure><p></p>
+<h2 id="阅读理解" class="heading-control"><a href="#阅读理解" class="headerlink" title="阅读理解"></a>阅读理解<a class="heading-anchor" href="#阅读理解" aria-hidden="true"></a></h2><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> paddlehub <span class="keyword">as</span> hub</span><br><span class="line"></span><br><span class="line">module = hub.Module(name=<span class="string">"roberta_wwm_ext_chinese_L-24_H-1024_A-16"</span>)</span><br><span class="line">inputs, outputs, program = module.context(trainable=<span class="literal">True</span>, max_seq_len=<span class="number">384</span>)</span><br><span class="line">dataset = hub.dataset.CMRC2018()</span><br><span class="line"></span><br><span class="line">reader = hub.reader.ReadingComprehensionReader(</span><br><span class="line">    dataset=dataset,</span><br><span class="line">    vocab_path=module.get_vocab_path(),</span><br><span class="line">    max_seq_len=<span class="number">384</span>)</span><br><span class="line"></span><br><span class="line">strategy = hub.AdamWeightDecayStrategy(</span><br><span class="line">    learning_rate=<span class="number">5e-5</span>,</span><br><span class="line">    weight_decay=<span class="number">0.01</span>,</span><br><span class="line">    warmup_proportion=<span class="number">0.1</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">config = hub.RunConfig(use_cuda=<span class="literal">False</span>, num_epoch=<span class="number">2</span>, batch_size=<span class="number">12</span>, strategy=strategy)</span><br><span class="line">seq_output = outputs[<span class="string">"sequence_output"</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment"># feed_list的Tensor顺序不可以调整</span></span><br><span class="line">feed_list = [</span><br><span class="line">    inputs[<span class="string">"input_ids"</span>].name,</span><br><span class="line">    inputs[<span class="string">"position_ids"</span>].name,</span><br><span class="line">    inputs[<span class="string">"segment_ids"</span>].name,</span><br><span class="line">    inputs[<span class="string">"input_mask"</span>].name,</span><br><span class="line">]</span><br><span class="line"></span><br><span class="line">reading_comprehension_task = hub.ReadingComprehensionTask(</span><br><span class="line">    data_reader=reader,</span><br><span class="line">    feature=seq_output,</span><br><span class="line">    feed_list=feed_list,</span><br><span class="line">    config=config,</span><br><span class="line">    sub_task=<span class="string">"cmrc2018"</span>)</span><br><span class="line"></span><br><span class="line">reading_comprehension_task.finetune_and_eval()</span><br></pre></td></tr></tbody></table></figure>
+</body></html>]]></content>
+      <categories>
+        <category>笔记</category>
+      </categories>
+      <tags>
+        <tag>PaddleHub</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>NLP 面试比较重要的知识点</title>
+    <url>/post/21849.html</url>
+    <content><![CDATA[<html><head><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script></head><body><p><img src="https://s2.ax1x.com/2019/07/22/ei2rqS.png" alt="ei2rqS.png"><br><a id="more"></a></p>
+<h2 id="基础" class="heading-control"><a href="#基础" class="headerlink" title="基础"></a>基础<a class="heading-anchor" href="#基础" aria-hidden="true"></a></h2><p>Python 内存管理的方式  <a href="http://kkpattern.github.io/2015/06/20/python-memory-optimization-zh.html">参考答案</a></p>
+<h2 id="机器学习" class="heading-control"><a href="#机器学习" class="headerlink" title="机器学习"></a>机器学习<a class="heading-anchor" href="#机器学习" aria-hidden="true"></a></h2><ol>
+<li>逻辑回归完整推导过程</li>
+<li>逻辑回归属于线性分类器还是非线性分类器？(同属于广义线性模型)</li>
+<li> 朴素贝叶斯为什么朴素？（假设特征之间相互独立）</li>
+<li>介绍一下 SVM 核函数</li>
+<li> MLP 和 MAP 的区别（MAP 加入了先验信息）</li>
+<li>svm 如何处理多分类（一对多法设计 k 个分类器，一对一法设计 k (k-1)/2 个分类器）</li>
+<li>svm 对缺失数据敏感吗，为什么，决策树呢。（svm 没有处理缺失数据的方法，决策树有）</li>
+<li>为什么 svm 采用最大间隔（最大间隔得到决策边界是唯一的，具有鲁棒性）</li>
+<li>聚类了解哪些？基于密度的聚类了解哪些？（<strong>原型聚类</strong>：KMeans, 高斯混合聚类，<strong>密度聚类</strong>：DBSCAN、Mean-Shift，<strong>层次聚类</strong>：AGNES、BIRCH，<strong>谱聚类</strong>）</li>
+</ol>
+<h2 id="深度学习基础" class="heading-control"><a href="#深度学习基础" class="headerlink" title="深度学习基础"></a>深度学习基础<a class="heading-anchor" href="#深度学习基础" aria-hidden="true"></a></h2><ol>
+<li>L1、L2 正则（贝叶斯角度分析，加入了先验信息）</li>
+<li>怎样判断过拟合？过拟合怎么解决？（1. <strong>交叉验证</strong>的结果比单次的结果下，2. 通过<strong>学习曲线</strong> Learning Curves 判断，3. 实际的话也可以通过<strong>观察</strong>训练误差很小，而预测误差很大的模型通常过拟合）</li>
+<li>梯度消失和梯度爆炸的原因，为什么 rnn 比 cnn 和全连接层神经网络更容易发生梯度消失或爆炸（RNN 在梯度的反向传播中只有连乘，LSTM 和 GRU 加入了门机制，梯度的计算中同时还有 $h_t$ 的加法）</li>
+<li>说一下 dropout 的训练和测试过程（在训练过程中以一定的概率 p 的使神经元失活，测试过程不需要 dropout，对层的输出乘以 p）</li>
+<li>说一下 BN 和 LN，有什么区别，BN 为什么可以提升效果 ()</li>
+<li>CNN 的旋转不变性怎么理解 (CNN 具有平移不变性)</li>
+</ol>
+<h2 id="自然语言处理基础" class="heading-control"><a href="#自然语言处理基础" class="headerlink" title="自然语言处理基础"></a>自然语言处理基础<a class="heading-anchor" href="#自然语言处理基础" aria-hidden="true"></a></h2><p>输入补全可以用哪个数据结构来做？（字典树）<br>假如有 10 亿条搜索请求，怎么找出最热的前 10 条？<br>讲一下 LDA，讲一下隐狄利克雷分布，里面有个辛普森采样了解吗<br>pointwise、pairwise 、listwise 的区别<br>word2vec 是有监督的还是无监督的<br>word2vec 的损失函数形式<br>分层 softmax 和负采样原理<br>Glove 的思想以及和 word2vec 的区别<br>Fasttext 和 word2vec 的区别<br>Fasttext 哈希规则，怎么把语义相近的词哈希到一个桶里<br>RNN、LSTM、GRU 公式。<br>RNN、LSTM、GRU 参数大小<br>Attention 机制的原理，有哪些变种<br>sigmoid 用作激活函数时，分类为什么要用交叉熵损失，而不用均方损失？</p>
+<h2 id="文本分类" class="heading-control"><a href="#文本分类" class="headerlink" title="文本分类"></a>文本分类<a class="heading-anchor" href="#文本分类" aria-hidden="true"></a></h2><p>精确率，召回率，F1 值<br><img src="https://i.loli.net/2019/07/22/5d35bda25c13e20464.png" alt><br>AUC 和 ROC<br><img src="https://i.loli.net/2019/07/22/5d35beceefac074363.png" alt></p>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">Precision：P=TP/(TP+FP)</span><br><span class="line">Recall：R=TP/(TP+FN)</span><br><span class="line">F1-score：2/(1/P+1/R)</span><br><span class="line">ROC/AUC：TPR=TP/(TP+FN), FPR=FP/(FP+TN)</span><br></pre></td></tr></tbody></table></figure>
+<p>讲一下 Textcnn 的过程<br>Fasttext 怎么做分类的<br>CNN 和 LSTM 都可以用于分类，两者用于分类有什么区别？<br>样本不均衡的处理方法</p>
+<h3 id="Sequence-Label" class="heading-control"><a href="#Sequence-Label" class="headerlink" title="Sequence Label"></a>Sequence Label<a class="heading-anchor" href="#Sequence-Label" aria-hidden="true"></a></h3><p>有了 BILSTM 为什么还要用 CRF？<br>BILSTM+CRF 的训练目标？状态转移矩阵是 joint learn 的吗？维度是多少？<br>维特比算法的时间复杂度<br>HMM 和 CRF 的区别<br>CRF、HMM 原理 公式、维特比算法的公式<br>HMM 做了哪些独立性假设<br>CRF 的训练目标是什么？<br>CRF 和深度学习的结合还知道哪些？<br>为什么 Transformer self-attention 可以替代 seq2seq</p>
+<h3 id="文本生成" class="heading-control"><a href="#文本生成" class="headerlink" title="文本生成"></a>文本生成<a class="heading-anchor" href="#文本生成" aria-hidden="true"></a></h3><p>生成式问答解决生成句子多样性的方法<br>怎么评价生成效果的好坏<br>讲一下 BLEU</p>
+<h3 id="思考题" class="heading-control"><a href="#思考题" class="headerlink" title="思考题"></a>思考题<a class="heading-anchor" href="#思考题" aria-hidden="true"></a></h3><ol>
+<li>一个村子里重男轻女，生了女孩就继续生，直到生出男孩为止，试想在 N 年之后该村子的男女比例。答案：1:1</li>
+<li> 有 A（红）B（蓝）两瓶墨水，从 A 中取一勺倒到 B 中，混匀后，再从 B 中取等量墨水，倒到 A 中。问，是 A 中蓝墨水多还是 B 中红墨水多？</li>
+<li>一枚硬币，正反分布均匀，掷硬币，问至少多少次可以把这枚硬币的正面和反面都掷出来？</li>
+<li>一根绳子，允许你剪两刀，试问，剪完之后的绳子能构成三角形的概率是多少</li>
+</ol>
+<h3 id="算法" class="heading-control"><a href="#算法" class="headerlink" title="算法"></a>算法<a class="heading-anchor" href="#算法" aria-hidden="true"></a></h3><ol>
+<li>稳定和非稳定的排序算法有哪些</li>
+<li>快速排序的最好，最坏，平均以及空间复杂度</li>
+<li>二分查找递归和非递归的时间和空间复杂度</li>
+<li>用两个栈实现一个队列操作，实现 push、pop、len 操作</li>
+<li>给定字符串 s ，求与 s 编辑距离为 2 的字符串集合。</li>
+<li>一个圆被分成 M 个扇形，一共有 N 种颜色，相邻扇形不同色，一共有几种涂法？</li>
+<li>有 n 枚硬币，每次从左边或右边拿一枚，一共拿 m 次，求能拿到的最高价值</li>
+<li>二叉搜索树转有序双向链表，要求不能创建新的节点</li>
+<li>统计一个十进制数字的二进制表示中有多少个一，用位运算写</li>
+<li>滑动窗口里的最大数</li>
+<li>给定一个乱序不重复数组，找到所有的三个数的集合，每个集合中 a + b + c == 0</li>
+<li> 排序数组中绝对值不相等的元素个数，算法复杂度（M+N）</li>
+<li>搜索有序二维矩阵，复杂度</li>
+<li>层次遍历二叉树</li>
+<li>字符串的最长公共子串</li>
+<li>写一个函数判断一个字符串是否为回文串</li>
+<li>求一个字符串中的最长回文子串<h4 id="归并排序" class="heading-control"><a href="#归并排序" class="headerlink" title="归并排序"></a>归并排序<a class="heading-anchor" href="#归并排序" aria-hidden="true"></a></h4><img src="https://s2.ax1x.com/2019/07/22/eiNXFS.md.png" alt><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">merge</span>(<span class="params">a, b</span>):</span></span><br><span class="line">    c = []</span><br><span class="line">    h = j = <span class="number">0</span></span><br><span class="line">    <span class="keyword">while</span> j < len(a) <span class="keyword">and</span> h < len(b):</span><br><span class="line">        <span class="keyword">if</span> a[j] < b[h]:</span><br><span class="line">            c.append(a[j])</span><br><span class="line">            j += <span class="number">1</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            c.append(b[h])</span><br><span class="line">            h += <span class="number">1</span></span><br><span class="line">    <span class="keyword">if</span> j == len(a):</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> b[h:]:</span><br><span class="line">            c.append(i)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> a[j:]:</span><br><span class="line">            c.append(i)</span><br><span class="line">    <span class="keyword">return</span> c</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">merge_sort</span>(<span class="params">lists</span>):</span></span><br><span class="line">    <span class="keyword">if</span> len(lists) <= <span class="number">1</span>:</span><br><span class="line">        <span class="keyword">return</span> lists</span><br><span class="line">    middle = len(lists)//<span class="number">2</span></span><br><span class="line">    left = merge_sort(lists[:middle])</span><br><span class="line">    right = merge_sort(lists[middle:])</span><br><span class="line">    <span class="keyword">return</span> merge(left, right)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    a = [<span class="number">14</span>, <span class="number">2</span>, <span class="number">34</span>, <span class="number">43</span>, <span class="number">21</span>, <span class="number">19</span>]</span><br><span class="line">    <span class="keyword">print</span> (merge_sort(a))</span><br></pre></td></tr></tbody></table></figure>
+</li>
+</ol>
+</body></html>]]></content>
+      <tags>
+        <tag>面试</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>QA 综述</title>
+    <url>/post/6322.html</url>
+    <content><![CDATA[<html><head><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script></head><body><h2 id="Memory-Networks" class="heading-control"><a href="#Memory-Networks" class="headerlink" title="Memory Networks"></a>Memory Networks<a class="heading-anchor" href="#Memory-Networks" aria-hidden="true"></a></h2><h3 id="论文简介" class="heading-control"><a href="#论文简介" class="headerlink" title="论文简介"></a>论文简介<a class="heading-anchor" href="#论文简介" aria-hidden="true"></a></h3><ol>
+<li><a href="http://arxiv.org/pdf/1410.3916v11.pdf">Memory Networks</a> ，<strong>ICLR 2015</strong>，Facebook AI Research</li>
+<li><a href="http://cs224d.stanford.edu/reports/KapashiDarshan.pdf">Answering Reading Comprehension Using Memory Networks</a>，Stanford</li>
+</ol>
+<p>(2018 年 12 月 3 日补充：第二篇不是论文，应该是斯坦福写的一个类似教程之类的东西，但是写的太像论文了 (ˇˍˇ)，我都搞混了 )</p>
+<p>看名字就知道第一篇是原论文，第二篇是第一篇的实现。（这里必须吐槽一下，第一篇论文一个图都没有，让我这种看论文先看图的人瞬间丧失好感。第二篇就人性化的多，简单的一个模型架构图就能瞬间让人领悟许多。）</p>
+<ul>
+<li><strong>起因</strong>：作者认为 RNN、Attention 机制把很长的语句编码为定长向量 (Context Vector) 作为模型的记忆，会带来很大的信息压缩损失</li>
+<li><strong>想法</strong>:   既然是因为向量太小带来的问题，那就直接加一个外部记忆模块，称之为 Memory</li>
+<li><strong> 评价</strong>：开山之作，但是模型比较简单，也没有特别具体的说明。</li>
+</ul>
+<p>在第二篇论文里面的引言部分有一些比较精辟的话，我也摘录出来，不妨作为 NLP 的部分真理以供参考。</p>
+<ol>
+<li>QA 是最容易评估 AI 的标准。(这个容易理解，图灵测试不就是这样吗？)</li>
+<li>AI 要想很好的完成 QA 任务，要在两个方面得到提高：检索和推理。</li>
+<li>单纯的记忆是不够的，他们需要一些知识去检索。(人不也经常使用浏览器吗？)</li>
+</ol>
+<a id="more"></a>
+<h3 id="具体实现" class="heading-control"><a href="#具体实现" class="headerlink" title="具体实现"></a>具体实现<a class="heading-anchor" href="#具体实现" aria-hidden="true"></a></h3><p>看下面这个图就很清楚，这个模型主要包括五个部分：Memory 单元和 I、G、O、R。</p>
+<ul>
+<li>Input 模块：输入的文本经过 Input 模块编码成特征向量 (各种方式都可以，最简单就是 wordvec)。</li>
+<li>Generalization 模块：根据特征向量对 Memory 单元进行读写操作，即更新记忆。</li>
+<li>Output 模块：根据 Question（也会进过 Input 模块进行编码）对 Memory 单元进行组合（比如加权），得到编码的输出向量</li>
+<li> Response 模块：根据输出向量编码生成一个自然语言的答案出来。</li>
+</ul>
+<p><img src="https://i.loli.net/2018/12/03/5c050e6481611.png" alt></p>
+<p>举个例子。假设有下面一段文字，针对文字可以提出几个问题，然后让模型去回答：</p>
+<p><img src="https://i.loli.net/2018/12/03/5c05183c3962f.png" alt></p>
+<p>这里我们首先使用 Input 模块对文档进行编码，Generalization 模块存储编码结果，然后使用 Input 对问题 where is the milk now？进行编码，Output 模块根据问题编码后的向量从 Memory 单元中选出最相关的一句话：Joe left the milk，然后再对剩下的记忆进行评分，找出与 where is the milk now？和 Joe left the milk 最相关的 memory。我们发现是 Joe travelled to the office。这样我们就找到了最相关的记忆，接下来使用 R 模块对所有的单词进行评分找到得分最高的单词作为答案即可。</p>
+<h3 id="代码复现" class="heading-control"><a href="#代码复现" class="headerlink" title="代码复现"></a>代码复现<a class="heading-anchor" href="#代码复现" aria-hidden="true"></a></h3><ol>
+<li><a href="https://github.com/pararthshah/qa-memnn/blob/master/memnn_theano_v3.py">Theano 版本的代码</a></li>
+</ol>
+<h2 id="End-To-End-Memory-Networks" class="heading-control"><a href="#End-To-End-Memory-Networks" class="headerlink" title="End-To-End Memory Networks"></a>End-To-End Memory Networks<a class="heading-anchor" href="#End-To-End-Memory-Networks" aria-hidden="true"></a></h2><h3 id="论文简介-1" class="heading-control"><a href="#论文简介-1" class="headerlink" title="论文简介"></a>论文简介<a class="heading-anchor" href="#论文简介-1" aria-hidden="true"></a></h3><ul>
+<li><a href="https://arxiv.org/pdf/1503.08895v5.pdf">End-To-End Memory Networks</a>，Facebook AI Research</li>
+</ul>
+<p>这是 Facebook AI 在 Memory networks 后的续作。上文记忆网络介绍模型并非端到端的 QA 训练，该论文 End-To-End Memory Networks 就在上文的基础上进行端到端的模型构建，减少生成答案时需要事实依据的监督项，在实际应用中应用意义更大。</p>
+<p><strong>End to end</strong>：一端输入我的原始数据，一端输出我想得到的结果。只关心输入和输出，中间的步骤全部都不管。</p>
+<h3 id="具体实现-1" class="heading-control"><a href="#具体实现-1" class="headerlink" title="具体实现"></a>具体实现<a class="heading-anchor" href="#具体实现-1" aria-hidden="true"></a></h3><p><img src="https://i.loli.net/2018/12/03/5c051a6d2d277.png" alt></p>
+<p>这一篇文章提到一个更加具体但是复杂一点的模型如上图所示。</p>
+<p>模型主要的参数包括 A,B,C,W 四个矩阵，其中 A,B,C 三个矩阵就是 embedding 矩阵，主要是将输入文本和 Question 编码成词向量，W 是最终的输出矩阵。从上图可以看出，对于输入的句子 s 分别会使用 A 和 C 进行编码得到 Input 和 Output 的记忆模块，Input 用来跟 Question 编码得到的向量相乘得到每句话跟 q 的相关性，Output 则与该相关性进行加权求和得到输出向量。然后再加上 q 并传入最终的输出层。</p>
+<h4 id="输入输出模块" class="heading-control"><a href="#输入输出模块" class="headerlink" title="输入输出模块"></a>输入输出模块<a class="heading-anchor" href="#输入输出模块" aria-hidden="true"></a></h4><p>通过把每句话压缩成一个向量对应到 memory 中的一个 slot（上图中的蓝色或者黄色竖条），将输入的文本转化成向量并保存在 memory 中 (通过词向量得到句向量)。论文中提出了两种编码方式，BoW 和位置编码：</p>
+<ul>
+<li>BoW：直接把词向量加起来，会丢失位置关系。</li>
+<li>位置编码：认为不同位置的单词的权重是不一样的，然后对各个单词的词向量按照不同位置权重进行加权求和得到句子表示。</li>
+</ul>
+<p>输入模块把输入文本编码为向量，保存在 Input 和 Output 两个模块中，Input 模块用于跟 Question 相互作用得到各个 memory slot 与问题的相关程度，使用 Output 模块的信息产生输出。</p>
+<ul>
+<li>Input 模块：将 Question 经过输入模块编码成一个向量 u，与 $m<em>{i}$ 维度相同，然后将其与每个 $m</em>{i}$ 点积得到两个向量的相似度，在通过一个 softmax 函数进行归一化得到 $p<em>{i}$，$p</em>{i}$ 就是 q 与 $m_{i}$ 的相关性指标。</li>
+<li>Output 模块：对其中各个记忆 ci 按照 pi 进行加权求和即可得到模型的输出向量 o。</li>
+</ul>
+<h4 id="Response模块" class="heading-control"><a href="#Response模块" class="headerlink" title="Response模块"></a>Response 模块<a class="heading-anchor" href="#Response模块" aria-hidden="true"></a></h4><p>Response 模块主要是根据输出向量 o 和问题向量 q 产生最终的答案。其结合 o 和 q 两个向量的和与 W 相乘在经过一个 softmax 函数产生各个单词是答案的概率，值最高的单词就是答案。并且使用交叉熵损失函数最为目标函数进行训练。</p>
+<h4 id="多层模型" class="heading-control"><a href="#多层模型" class="headerlink" title="多层模型"></a>多层模型<a class="heading-anchor" href="#多层模型" aria-hidden="true"></a></h4><p>将多个单层模型进行 stack 在一块，结构图如下所示：</p>
+<p><img src="https://i.loli.net/2018/12/03/5c052a23169f2.png" alt></p>
+<p>上面几层的输入就是下层 o 和 u 的和。至于各层的参数选择，论文中提出了两种方法（主要是为了减少参数量，如果每层参数都不同的话会导致参数很多难以训练）。</p>
+<ul>
+<li><strong>Adjacent</strong>：这种方法让相邻层之间的 A=C。也就是说 $A {k}+1=C_{k}$，此外 W 等于顶层的 C，B 等于底层的 A，这样就减少了一半的参数量。</li>
+<li><strong>Layer-wise（RNN-like)</strong>：与 RNN 相似，采用完全共享参数的方法，即各层之间参数均相等。由于这样会大大的减少参数量导致模型效果变差，所以提出一种改进方法，即令 $u<em>{k+1}=u</em>{k}+o_{k}$，也就是在每一层之间加一个线性映射矩阵 H。</li>
+</ul>
+<h4 id="论文公式" class="heading-control"><a href="#论文公式" class="headerlink" title="论文公式"></a>论文公式<a class="heading-anchor" href="#论文公式" aria-hidden="true"></a></h4><p>具体的公式如下：</p>
+<p><img src="https://i.loli.net/2018/12/03/5c051dd1571df.png" alt></p>
+<h3 id="代码实现" class="heading-control"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现<a class="heading-anchor" href="#代码实现" aria-hidden="true"></a></h3><ol>
+<li><a href="https://github.com/domluna/memn2n">End-To-End Memory Network using Tensorflow</a></li>
+</ol>
+<h2 id="Dynamic-Memory-Networks" class="heading-control"><a href="#Dynamic-Memory-Networks" class="headerlink" title="Dynamic Memory Networks"></a>Dynamic Memory Networks<a class="heading-anchor" href="#Dynamic-Memory-Networks" aria-hidden="true"></a></h2><h3 id="论文简介-2" class="heading-control"><a href="#论文简介-2" class="headerlink" title="论文简介"></a>论文简介<a class="heading-anchor" href="#论文简介-2" aria-hidden="true"></a></h3><ul>
+<li><a href="https://arxiv.org/pdf/1506.07285v3.pdf">Ask Me Anything: Dynamic Memory Networks for Natural Language Processing</a></li>
+</ul>
+<p>论文中说 NLP 中很多任务都可以归结为 QA 问题，所以本文的 DMN 模型以 QA 为基础进行训练，但是可以扩展到很多别的任务中，包括序列标注、分类、翻译等等。</p>
+<h3 id="具体实现-2" class="heading-control"><a href="#具体实现-2" class="headerlink" title="具体实现"></a>具体实现<a class="heading-anchor" href="#具体实现-2" aria-hidden="true"></a></h3><p><img src="https://i.loli.net/2018/12/03/5c0531196f1d0.png" alt></p>
+</body></html>]]></content>
+      <categories>
+        <category>项目</category>
+      </categories>
+      <tags>
+        <tag>NLP</tag>
+        <tag>QA</tag>
       </tags>
   </entry>
   <entry>
@@ -1638,86 +1718,6 @@ Number=(Features+Output\_dim) x Output\_dim+Output\_dim
       <tags>
         <tag>Python</tag>
         <tag>语法</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>QA 综述</title>
-    <url>/post/6322.html</url>
-    <content><![CDATA[<html><head><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script></head><body><h2 id="Memory-Networks" class="heading-control"><a href="#Memory-Networks" class="headerlink" title="Memory Networks"></a>Memory Networks<a class="heading-anchor" href="#Memory-Networks" aria-hidden="true"></a></h2><h3 id="论文简介" class="heading-control"><a href="#论文简介" class="headerlink" title="论文简介"></a>论文简介<a class="heading-anchor" href="#论文简介" aria-hidden="true"></a></h3><ol>
-<li><a href="http://arxiv.org/pdf/1410.3916v11.pdf">Memory Networks</a> ，<strong>ICLR 2015</strong>，Facebook AI Research</li>
-<li><a href="http://cs224d.stanford.edu/reports/KapashiDarshan.pdf">Answering Reading Comprehension Using Memory Networks</a>，Stanford</li>
-</ol>
-<p>(2018 年 12 月 3 日补充：第二篇不是论文，应该是斯坦福写的一个类似教程之类的东西，但是写的太像论文了 (ˇˍˇ)，我都搞混了 )</p>
-<p>看名字就知道第一篇是原论文，第二篇是第一篇的实现。（这里必须吐槽一下，第一篇论文一个图都没有，让我这种看论文先看图的人瞬间丧失好感。第二篇就人性化的多，简单的一个模型架构图就能瞬间让人领悟许多。）</p>
-<ul>
-<li><strong>起因</strong>：作者认为 RNN、Attention 机制把很长的语句编码为定长向量 (Context Vector) 作为模型的记忆，会带来很大的信息压缩损失</li>
-<li><strong>想法</strong>:   既然是因为向量太小带来的问题，那就直接加一个外部记忆模块，称之为 Memory</li>
-<li><strong> 评价</strong>：开山之作，但是模型比较简单，也没有特别具体的说明。</li>
-</ul>
-<p>在第二篇论文里面的引言部分有一些比较精辟的话，我也摘录出来，不妨作为 NLP 的部分真理以供参考。</p>
-<ol>
-<li>QA 是最容易评估 AI 的标准。(这个容易理解，图灵测试不就是这样吗？)</li>
-<li>AI 要想很好的完成 QA 任务，要在两个方面得到提高：检索和推理。</li>
-<li>单纯的记忆是不够的，他们需要一些知识去检索。(人不也经常使用浏览器吗？)</li>
-</ol>
-<a id="more"></a>
-<h3 id="具体实现" class="heading-control"><a href="#具体实现" class="headerlink" title="具体实现"></a>具体实现<a class="heading-anchor" href="#具体实现" aria-hidden="true"></a></h3><p>看下面这个图就很清楚，这个模型主要包括五个部分：Memory 单元和 I、G、O、R。</p>
-<ul>
-<li>Input 模块：输入的文本经过 Input 模块编码成特征向量 (各种方式都可以，最简单就是 wordvec)。</li>
-<li>Generalization 模块：根据特征向量对 Memory 单元进行读写操作，即更新记忆。</li>
-<li>Output 模块：根据 Question（也会进过 Input 模块进行编码）对 Memory 单元进行组合（比如加权），得到编码的输出向量</li>
-<li> Response 模块：根据输出向量编码生成一个自然语言的答案出来。</li>
-</ul>
-<p><img src="https://i.loli.net/2018/12/03/5c050e6481611.png" alt></p>
-<p>举个例子。假设有下面一段文字，针对文字可以提出几个问题，然后让模型去回答：</p>
-<p><img src="https://i.loli.net/2018/12/03/5c05183c3962f.png" alt></p>
-<p>这里我们首先使用 Input 模块对文档进行编码，Generalization 模块存储编码结果，然后使用 Input 对问题 where is the milk now？进行编码，Output 模块根据问题编码后的向量从 Memory 单元中选出最相关的一句话：Joe left the milk，然后再对剩下的记忆进行评分，找出与 where is the milk now？和 Joe left the milk 最相关的 memory。我们发现是 Joe travelled to the office。这样我们就找到了最相关的记忆，接下来使用 R 模块对所有的单词进行评分找到得分最高的单词作为答案即可。</p>
-<h3 id="代码复现" class="heading-control"><a href="#代码复现" class="headerlink" title="代码复现"></a>代码复现<a class="heading-anchor" href="#代码复现" aria-hidden="true"></a></h3><ol>
-<li><a href="https://github.com/pararthshah/qa-memnn/blob/master/memnn_theano_v3.py">Theano 版本的代码</a></li>
-</ol>
-<h2 id="End-To-End-Memory-Networks" class="heading-control"><a href="#End-To-End-Memory-Networks" class="headerlink" title="End-To-End Memory Networks"></a>End-To-End Memory Networks<a class="heading-anchor" href="#End-To-End-Memory-Networks" aria-hidden="true"></a></h2><h3 id="论文简介-1" class="heading-control"><a href="#论文简介-1" class="headerlink" title="论文简介"></a>论文简介<a class="heading-anchor" href="#论文简介-1" aria-hidden="true"></a></h3><ul>
-<li><a href="https://arxiv.org/pdf/1503.08895v5.pdf">End-To-End Memory Networks</a>，Facebook AI Research</li>
-</ul>
-<p>这是 Facebook AI 在 Memory networks 后的续作。上文记忆网络介绍模型并非端到端的 QA 训练，该论文 End-To-End Memory Networks 就在上文的基础上进行端到端的模型构建，减少生成答案时需要事实依据的监督项，在实际应用中应用意义更大。</p>
-<p><strong>End to end</strong>：一端输入我的原始数据，一端输出我想得到的结果。只关心输入和输出，中间的步骤全部都不管。</p>
-<h3 id="具体实现-1" class="heading-control"><a href="#具体实现-1" class="headerlink" title="具体实现"></a>具体实现<a class="heading-anchor" href="#具体实现-1" aria-hidden="true"></a></h3><p><img src="https://i.loli.net/2018/12/03/5c051a6d2d277.png" alt></p>
-<p>这一篇文章提到一个更加具体但是复杂一点的模型如上图所示。</p>
-<p>模型主要的参数包括 A,B,C,W 四个矩阵，其中 A,B,C 三个矩阵就是 embedding 矩阵，主要是将输入文本和 Question 编码成词向量，W 是最终的输出矩阵。从上图可以看出，对于输入的句子 s 分别会使用 A 和 C 进行编码得到 Input 和 Output 的记忆模块，Input 用来跟 Question 编码得到的向量相乘得到每句话跟 q 的相关性，Output 则与该相关性进行加权求和得到输出向量。然后再加上 q 并传入最终的输出层。</p>
-<h4 id="输入输出模块" class="heading-control"><a href="#输入输出模块" class="headerlink" title="输入输出模块"></a>输入输出模块<a class="heading-anchor" href="#输入输出模块" aria-hidden="true"></a></h4><p>通过把每句话压缩成一个向量对应到 memory 中的一个 slot（上图中的蓝色或者黄色竖条），将输入的文本转化成向量并保存在 memory 中 (通过词向量得到句向量)。论文中提出了两种编码方式，BoW 和位置编码：</p>
-<ul>
-<li>BoW：直接把词向量加起来，会丢失位置关系。</li>
-<li>位置编码：认为不同位置的单词的权重是不一样的，然后对各个单词的词向量按照不同位置权重进行加权求和得到句子表示。</li>
-</ul>
-<p>输入模块把输入文本编码为向量，保存在 Input 和 Output 两个模块中，Input 模块用于跟 Question 相互作用得到各个 memory slot 与问题的相关程度，使用 Output 模块的信息产生输出。</p>
-<ul>
-<li>Input 模块：将 Question 经过输入模块编码成一个向量 u，与 $m<em>{i}$ 维度相同，然后将其与每个 $m</em>{i}$ 点积得到两个向量的相似度，在通过一个 softmax 函数进行归一化得到 $p<em>{i}$，$p</em>{i}$ 就是 q 与 $m_{i}$ 的相关性指标。</li>
-<li>Output 模块：对其中各个记忆 ci 按照 pi 进行加权求和即可得到模型的输出向量 o。</li>
-</ul>
-<h4 id="Response模块" class="heading-control"><a href="#Response模块" class="headerlink" title="Response模块"></a>Response 模块<a class="heading-anchor" href="#Response模块" aria-hidden="true"></a></h4><p>Response 模块主要是根据输出向量 o 和问题向量 q 产生最终的答案。其结合 o 和 q 两个向量的和与 W 相乘在经过一个 softmax 函数产生各个单词是答案的概率，值最高的单词就是答案。并且使用交叉熵损失函数最为目标函数进行训练。</p>
-<h4 id="多层模型" class="heading-control"><a href="#多层模型" class="headerlink" title="多层模型"></a>多层模型<a class="heading-anchor" href="#多层模型" aria-hidden="true"></a></h4><p>将多个单层模型进行 stack 在一块，结构图如下所示：</p>
-<p><img src="https://i.loli.net/2018/12/03/5c052a23169f2.png" alt></p>
-<p>上面几层的输入就是下层 o 和 u 的和。至于各层的参数选择，论文中提出了两种方法（主要是为了减少参数量，如果每层参数都不同的话会导致参数很多难以训练）。</p>
-<ul>
-<li><strong>Adjacent</strong>：这种方法让相邻层之间的 A=C。也就是说 $A {k}+1=C_{k}$，此外 W 等于顶层的 C，B 等于底层的 A，这样就减少了一半的参数量。</li>
-<li><strong>Layer-wise（RNN-like)</strong>：与 RNN 相似，采用完全共享参数的方法，即各层之间参数均相等。由于这样会大大的减少参数量导致模型效果变差，所以提出一种改进方法，即令 $u<em>{k+1}=u</em>{k}+o_{k}$，也就是在每一层之间加一个线性映射矩阵 H。</li>
-</ul>
-<h4 id="论文公式" class="heading-control"><a href="#论文公式" class="headerlink" title="论文公式"></a>论文公式<a class="heading-anchor" href="#论文公式" aria-hidden="true"></a></h4><p>具体的公式如下：</p>
-<p><img src="https://i.loli.net/2018/12/03/5c051dd1571df.png" alt></p>
-<h3 id="代码实现" class="heading-control"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现<a class="heading-anchor" href="#代码实现" aria-hidden="true"></a></h3><ol>
-<li><a href="https://github.com/domluna/memn2n">End-To-End Memory Network using Tensorflow</a></li>
-</ol>
-<h2 id="Dynamic-Memory-Networks" class="heading-control"><a href="#Dynamic-Memory-Networks" class="headerlink" title="Dynamic Memory Networks"></a>Dynamic Memory Networks<a class="heading-anchor" href="#Dynamic-Memory-Networks" aria-hidden="true"></a></h2><h3 id="论文简介-2" class="heading-control"><a href="#论文简介-2" class="headerlink" title="论文简介"></a>论文简介<a class="heading-anchor" href="#论文简介-2" aria-hidden="true"></a></h3><ul>
-<li><a href="https://arxiv.org/pdf/1506.07285v3.pdf">Ask Me Anything: Dynamic Memory Networks for Natural Language Processing</a></li>
-</ul>
-<p>论文中说 NLP 中很多任务都可以归结为 QA 问题，所以本文的 DMN 模型以 QA 为基础进行训练，但是可以扩展到很多别的任务中，包括序列标注、分类、翻译等等。</p>
-<h3 id="具体实现-2" class="heading-control"><a href="#具体实现-2" class="headerlink" title="具体实现"></a>具体实现<a class="heading-anchor" href="#具体实现-2" aria-hidden="true"></a></h3><p><img src="https://i.loli.net/2018/12/03/5c0531196f1d0.png" alt></p>
-</body></html>]]></content>
-      <categories>
-        <category>项目</category>
-      </categories>
-      <tags>
-        <tag>NLP</tag>
-        <tag>QA</tag>
       </tags>
   </entry>
   <entry>
@@ -1939,6 +1939,24 @@ F 1=\frac{2 \times \text {Precision} \times \text {Recall}}{\text {Precision}+\t
       </tags>
   </entry>
   <entry>
+    <title>20190730180327</title>
+    <url>/post/35857.html</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script>]]></content>
+  </entry>
+  <entry>
+    <title>TensorFlow 2.0 Question Answering</title>
+    <url>/post/24791.html</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><ol>
+<li><strong>GPT-2 and BERT Pretrained Weights (pytorch)</strong><br>You can find weights for BERT and GPT-2 models (pytorch), ready to be used with HuggingFace’s Transformers or your own models：<br> <a href="https://www.kaggle.com/abhishek/bert-pytorch">https://www.kaggle.com/abhishek/bert-pytorch</a><br> <a href="https://www.kaggle.com/abhishek/gpt2-pytorch">https://www.kaggle.com/abhishek/gpt2-pytorch</a></li>
+<li><strong> 一个 NLP 数据增广的库</strong>：<a href="https://github.com/makcedward/nlpaug">nlpaug</a></li>
+<li><strong>One of the best collection of papers about BERT</strong><br><a href="https://github.com/thunlp/PLMpapers">https://github.com/thunlp/PLMpapers</a></li>
+</ol>
+]]></content>
+      <tags>
+        <tag>学习</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>THU 深圳研究院：大数据机器学习</title>
     <url>/post/64988.html</url>
     <content><![CDATA[<html><head><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script></head><body><h2 id="课程介绍" class="heading-control"><a href="#课程介绍" class="headerlink" title="课程介绍"></a>课程介绍<a class="heading-anchor" href="#课程介绍" aria-hidden="true"></a></h2><p><img src="https://i.loli.net/2019/09/24/RAgXiHG8ZdlDSek.png" alt><br>B 站视频：<a href="https://www.bilibili.com/video/av67224054">https://www.bilibili.com/video/av67224054</a><br><a id="more"></a></p>
@@ -1984,19 +2002,6 @@ F 1=\frac{2 \times \text {Precision} \times \text {Recall}}{\text {Precision}+\t
       </tags>
   </entry>
   <entry>
-    <title>TensorFlow 2.0 Question Answering</title>
-    <url>/post/24791.html</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><ol>
-<li><strong>GPT-2 and BERT Pretrained Weights (pytorch)</strong><br>You can find weights for BERT and GPT-2 models (pytorch), ready to be used with HuggingFace’s Transformers or your own models：<br> <a href="https://www.kaggle.com/abhishek/bert-pytorch">https://www.kaggle.com/abhishek/bert-pytorch</a><br> <a href="https://www.kaggle.com/abhishek/gpt2-pytorch">https://www.kaggle.com/abhishek/gpt2-pytorch</a></li>
-<li><strong> 一个 NLP 数据增广的库</strong>：<a href="https://github.com/makcedward/nlpaug">nlpaug</a></li>
-<li><strong>One of the best collection of papers about BERT</strong><br><a href="https://github.com/thunlp/PLMpapers">https://github.com/thunlp/PLMpapers</a></li>
-</ol>
-]]></content>
-      <tags>
-        <tag>学习</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>TensorFlow 内核剖析</title>
     <url>/post/36490.html</url>
     <content><![CDATA[<html><head><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script></head><body><p>这是我找的一个 Tensorflow 的书，作者是<a href="https://www.jianshu.com/p/fda4ae1e2547">刘光聪</a>。书写的非常不错，我也借此机会学习一波。书中的 TensorFlow 使用的是 1.2 版本，目前来说算是很新的。<br>作者在前言里面写到：</p>
@@ -2022,11 +2027,6 @@ F 1=\frac{2 \times \text {Precision} \times \text {Recall}}{\text {Precision}+\t
       <tags>
         <tag>Tensorflow</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>20190730180327</title>
-    <url>/post/35857.html</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script>]]></content>
   </entry>
   <entry>
     <title>Tensorflow Object_Detection</title>
@@ -2195,6 +2195,15 @@ Reference：<a href="https://blog.csdn.net/why19940926/article/details/78580067"
       </tags>
   </entry>
   <entry>
+    <title>python 的二分查找库：bisect</title>
+    <url>/post/9806.html</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><p>具体参考 <a href="http://kuanghy.github.io/2016/06/14/python-bisect">文章</a><br></p><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> bisect</span><br><span class="line"></span><br><span class="line"><span class="comment">#查找指定区间中包含的元素个数</span></span><br><span class="line">A = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">2.5</span>,<span class="number">3</span>,<span class="number">3.5</span>,<span class="number">4</span>,<span class="number">5</span>]</span><br><span class="line">lindex = bisect.bisect_left(A,<span class="number">2.5</span>)</span><br><span class="line">rindex = bisect.bisect_right(A,<span class="number">3.5</span>)</span><br><span class="line">print(lindex, rindex, rindex-lindex)</span><br><span class="line"></span><br><span class="line"><span class="comment">#分数等级</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">grade</span>(<span class="params">score,breakpoints=[<span class="number">60</span>, <span class="number">70</span>, <span class="number">80</span>, <span class="number">90</span>], grades=<span class="string">'FDCBA'</span></span>):</span></span><br><span class="line">    i = bisect.bisect(breakpoints, score)</span><br><span class="line">    <span class="keyword">return</span> grades[i]</span><br><span class="line"></span><br><span class="line">print([grade(score) <span class="keyword">for</span> score <span class="keyword">in</span> [<span class="number">33</span>, <span class="number">99</span>, <span class="number">77</span>, <span class="number">70</span>, <span class="number">89</span>, <span class="number">90</span>, <span class="number">100</span>]])</span><br><span class="line"></span><br><span class="line"><span class="comment">#二分查找</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">binary_search_bisect</span>(<span class="params">lst, x</span>):</span></span><br><span class="line">    <span class="keyword">from</span> bisect <span class="keyword">import</span> bisect_left</span><br><span class="line">    i = bisect_left(lst, x)</span><br><span class="line">    <span class="keyword">if</span> i != len(lst) <span class="keyword">and</span> lst[i] == x:</span><br><span class="line">        <span class="keyword">return</span> i</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">None</span></span><br><span class="line"></span><br><span class="line">print(binary_search_bisect(A,<span class="number">4</span>))</span><br></pre></td></tr></tbody></table></figure><p></p>
+]]></content>
+      <tags>
+        <tag>二分</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>nvidia-smi 指令报错</title>
     <url>/post/19880.html</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><p>最近装深度学习环境的时候遇见 nvidia-smi 指令报错：<code>Failed to initialize NVML: Driver</code>，主要原因是旧的显卡驱动没卸载。<br>首先需要卸载驱动<br></p><figure class="highlight shell"><table><tbody><tr><td class="code"><pre><span class="line">sudo apt-get purge nvidia*</span><br></pre></td></tr></tbody></table></figure><br>然后重新安装新的驱动即可。<br>参考文章：<a href="https://www.zhihu.com/people/sun-yan-90-29">https://www.zhihu.com/people/sun-yan-90-29</a><p></p>
@@ -2204,15 +2213,6 @@ Reference：<a href="https://blog.csdn.net/why19940926/article/details/78580067"
       </categories>
       <tags>
         <tag>bug</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>python 的二分查找库：bisect</title>
-    <url>/post/9806.html</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><p>具体参考 <a href="http://kuanghy.github.io/2016/06/14/python-bisect">文章</a><br></p><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> bisect</span><br><span class="line"></span><br><span class="line"><span class="comment">#查找指定区间中包含的元素个数</span></span><br><span class="line">A = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">2.5</span>,<span class="number">3</span>,<span class="number">3.5</span>,<span class="number">4</span>,<span class="number">5</span>]</span><br><span class="line">lindex = bisect.bisect_left(A,<span class="number">2.5</span>)</span><br><span class="line">rindex = bisect.bisect_right(A,<span class="number">3.5</span>)</span><br><span class="line">print(lindex, rindex, rindex-lindex)</span><br><span class="line"></span><br><span class="line"><span class="comment">#分数等级</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">grade</span>(<span class="params">score,breakpoints=[<span class="number">60</span>, <span class="number">70</span>, <span class="number">80</span>, <span class="number">90</span>], grades=<span class="string">'FDCBA'</span></span>):</span></span><br><span class="line">    i = bisect.bisect(breakpoints, score)</span><br><span class="line">    <span class="keyword">return</span> grades[i]</span><br><span class="line"></span><br><span class="line">print([grade(score) <span class="keyword">for</span> score <span class="keyword">in</span> [<span class="number">33</span>, <span class="number">99</span>, <span class="number">77</span>, <span class="number">70</span>, <span class="number">89</span>, <span class="number">90</span>, <span class="number">100</span>]])</span><br><span class="line"></span><br><span class="line"><span class="comment">#二分查找</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">binary_search_bisect</span>(<span class="params">lst, x</span>):</span></span><br><span class="line">    <span class="keyword">from</span> bisect <span class="keyword">import</span> bisect_left</span><br><span class="line">    i = bisect_left(lst, x)</span><br><span class="line">    <span class="keyword">if</span> i != len(lst) <span class="keyword">and</span> lst[i] == x:</span><br><span class="line">        <span class="keyword">return</span> i</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">None</span></span><br><span class="line"></span><br><span class="line">print(binary_search_bisect(A,<span class="number">4</span>))</span><br></pre></td></tr></tbody></table></figure><p></p>
-]]></content>
-      <tags>
-        <tag>二分</tag>
       </tags>
   </entry>
   <entry>
@@ -2311,6 +2311,16 @@ Reference：<a href="https://blog.csdn.net/why19940926/article/details/78580067"
       </tags>
   </entry>
   <entry>
+    <title>中秋</title>
+    <url>/post/13085.html</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><p>2019 年的夏天很快的过去了。今天是中秋，在古代诗歌中中秋都是思念的代名词，虽然逢人便道中秋快乐，但是自己却快乐不起来呢。<br>从 6 月底到现在陆陆续续找了快 3 个月的工作，属实有点累了。每逢一个休息日都想要静静的躺着。这段时间焦虑，等待，兴奋以及各种失败，其实蛮痛苦的。希望自己能挺过这段时间，有个好的结尾吧。<br>晚上没吃月饼，心里好怀念小时候的五仁月饼，但是也不想故意去买个吃了，就让这段时间安静的溜走吧，仿佛从来没有来过一样。</p>
+<p><img src="https://i.loli.net/2019/09/13/L6RsEIFqrgcVknB.png" alt=""></p>
+]]></content>
+      <tags>
+        <tag>中秋</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>中文分词算法总结</title>
     <url>/post/44202.html</url>
     <content><![CDATA[<html><head><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script></head><body><h2 id="最大匹配算法" class="heading-control"><a href="#最大匹配算法" class="headerlink" title="最大匹配算法"></a>最大匹配算法<a class="heading-anchor" href="#最大匹配算法" aria-hidden="true"></a></h2><p>基于词典的双向匹配算法的中文分词算法的实现。<br>例子：[我们经常有意见分歧]<br>词典：[我们，经常，有，有意见，意见，分歧]</p>
@@ -2324,16 +2334,6 @@ Reference：<a href="https://blog.csdn.net/why19940926/article/details/78580067"
 </body></html>]]></content>
       <tags>
         <tag>中文分词</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>中秋</title>
-    <url>/post/13085.html</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><p>2019 年的夏天很快的过去了。今天是中秋，在古代诗歌中中秋都是思念的代名词，虽然逢人便道中秋快乐，但是自己却快乐不起来呢。<br>从 6 月底到现在陆陆续续找了快 3 个月的工作，属实有点累了。每逢一个休息日都想要静静的躺着。这段时间焦虑，等待，兴奋以及各种失败，其实蛮痛苦的。希望自己能挺过这段时间，有个好的结尾吧。<br>晚上没吃月饼，心里好怀念小时候的五仁月饼，但是也不想故意去买个吃了，就让这段时间安静的溜走吧，仿佛从来没有来过一样。</p>
-<p><img src="https://i.loli.net/2019/09/13/L6RsEIFqrgcVknB.png" alt=""></p>
-]]></content>
-      <tags>
-        <tag>中秋</tag>
       </tags>
   </entry>
   <entry>
@@ -2432,6 +2432,45 @@ N 个人，互相交换礼物，每个人不能拿到自己的礼物。设计一
       </tags>
   </entry>
   <entry>
+    <title>动态规划</title>
+    <url>/post/55046.html</url>
+    <content><![CDATA[<html><head><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script></head><body><h2 id="从青蛙跳台阶说起" class="heading-control"><a href="#从青蛙跳台阶说起" class="headerlink" title="从青蛙跳台阶说起"></a>从青蛙跳台阶说起<a class="heading-anchor" href="#从青蛙跳台阶说起" aria-hidden="true"></a></h2><p>这个问题和斐波纳契数字问题是一样的。题目描述如下：</p>
+<blockquote>
+<p>一只青蛙一次可以跳上 1 级台阶，也可以跳上 2 级。求该青蛙跳上一个 n 级的台阶总共有多少种跳法（先后次序不同算不同的结果）。</p>
+</blockquote>
+<h3 id="考虑递归" class="heading-control"><a href="#考虑递归" class="headerlink" title="考虑递归"></a>考虑递归<a class="heading-anchor" href="#考虑递归" aria-hidden="true"></a></h3><p>首先用递归的思路来考虑。递归是倒着分析的。</p>
+<p>假如只差一步就能走完整个台阶，要分为几种情况？因为每一步能走一级或者两级台阶，所以有如下两种情况：</p>
+<ul>
+<li>最后一步走 2 级台阶，也就是从 n-2 级到 n 级</li>
+<li>最后一步走 1 级台阶，也就是从 n-1 级到 n 级</li>
+</ul>
+<p>所以第 n 步的走法由两种方法的和构成。如果定义 F (n) 为第 n 步的走法，那么 F (n)=F (n-1)+F (n-2)。这个公式称之为<strong>递推公式</strong>。<br>当只有 1 级台阶和 2 级台阶时走法很明显，即 F (1)=1、F (2)=2。称之为<strong>边界条件</strong>。<br>两部分具备之后，很容易可以写出代码：<br></p><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">fun</span>(<span class="params">n</span>):</span></span><br><span class="line">    <span class="keyword">if</span> n==<span class="number">2</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="number">2</span></span><br><span class="line">    <span class="keyword">if</span> n==<span class="number">1</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span></span><br><span class="line">    <span class="keyword">return</span> fun(n<span class="number">-1</span>)+fun(n<span class="number">-2</span>)</span><br></pre></td></tr></tbody></table></figure><br>验证的时候会发现一个问题，如果n比较大，那么会导致计算机栈的溢出，即便是n=100的时候也需要相当长的计算时间。那么问题出在哪里呢？<p></p>
+<h2 id="重叠子问题" class="heading-control"><a href="#重叠子问题" class="headerlink" title="重叠子问题"></a>重叠子问题<a class="heading-anchor" href="#重叠子问题" aria-hidden="true"></a></h2><p>我们不妨把上面的递归式子以树的形式表示出来，结果如下：<br></p><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">                       F(<span class="number">5</span>)</span><br><span class="line">                  /             \</span><br><span class="line">             F(<span class="number">4</span>)                  F(<span class="number">3</span>)</span><br><span class="line">          /      \                /     \</span><br><span class="line">      F(<span class="number">3</span>)       F(<span class="number">2</span>)         F(<span class="number">2</span>)     F(<span class="number">1</span>)</span><br><span class="line">     /     \     /    \       /    \</span><br><span class="line">   F(<span class="number">2</span>)   F(<span class="number">1</span>) F(<span class="number">1</span>)  F(<span class="number">0</span>)  F(<span class="number">1</span>)   F(<span class="number">0</span>)</span><br><span class="line">  /    \</span><br><span class="line">F(<span class="number">1</span>)  F(<span class="number">0</span>)</span><br></pre></td></tr></tbody></table></figure><br>可以看到这其中有很多重复求解部分，称之为重叠子问题。<br>一种想到的改进方法是我们可不可以把递归计算中某些计算过的结果存起来，来避免这个问题。下面介绍记忆化搜索和LRU 缓存策略实现这种改进方法。<p></p>
+<h3 id="记忆化搜索" class="heading-control"><a href="#记忆化搜索" class="headerlink" title="记忆化搜索"></a>记忆化搜索<a class="heading-anchor" href="#记忆化搜索" aria-hidden="true"></a></h3><p>记忆化搜索的思路如下：每当我们需要解决子问题时，我们首先查找查找表。如果预先计算的值存在，那么我们返回该值，否则我们计算值，并将结果放在查找表中，以便以后可以重复使用。<br></p><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">lookup = [<span class="number">0</span>,<span class="number">1</span>,<span class="number">2</span>]+[<span class="number">0</span>]*<span class="number">100</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">fun</span>(<span class="params">n</span>):</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> lookup[n] == <span class="number">0</span>:</span><br><span class="line">        lookup[n] = fun(n<span class="number">-1</span>)+fun(n<span class="number">-2</span>)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> lookup[n]</span><br></pre></td></tr></tbody></table></figure><p></p>
+<h3 id="LRU缓存" class="heading-control"><a href="#LRU缓存" class="headerlink" title="LRU缓存"></a>LRU 缓存<a class="heading-anchor" href="#LRU缓存" aria-hidden="true"></a></h3><p>LRU（Least recently used，最近最少使用），其核心思想是 “如果数据最近被访问过，那么将来被访问的几率也更高”。对于本题目，如果是高频出现的计算函数的结果会被放到缓存中，再次出现只需要在缓存中读取即可，和记忆化搜索类似。python 有 LRU 的内置函数：<br></p><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> functools <span class="keyword">import</span> lru_cache</span><br><span class="line"><span class="meta">@lru_cache(None)</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">fun</span>(<span class="params">n</span>):</span></span><br><span class="line">    <span class="keyword">if</span> n==<span class="number">2</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="number">2</span></span><br><span class="line">    <span class="keyword">if</span> n==<span class="number">1</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span></span><br><span class="line">    <span class="keyword">return</span> fun(n<span class="number">-1</span>)+fun(n<span class="number">-2</span>)</span><br></pre></td></tr></tbody></table></figure><p></p>
+<p>有了上诉方法，n=100 已经可以计算了。但是虽然有这两个缓解的方法，但是仍存在问题。当 n=1000 的时候仍然会存在堆栈溢出的问题。</p>
+<h2 id="一维动态规划" class="heading-control"><a href="#一维动态规划" class="headerlink" title="一维动态规划"></a>一维动态规划<a class="heading-anchor" href="#一维动态规划" aria-hidden="true"></a></h2><p>上面的思考都是基于递归的，即自顶而下的计算方法。如果我们换个思路，自底而上呢？</p>
+<p>其实和上面的记忆化搜索很像了。首选记录 n=1 的情况和 n=2 的情况，然后依次向上计算，每次计算都存表即可。</p>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">N = <span class="number">10</span></span><br><span class="line"></span><br><span class="line">dp  = [<span class="number">0</span>]*(N+<span class="number">1</span>)</span><br><span class="line">dp[<span class="number">1</span>] = <span class="number">1</span></span><br><span class="line">dp[<span class="number">2</span>] = <span class="number">2</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">fun</span>(<span class="params">n</span>):</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(n+<span class="number">1</span>):</span><br><span class="line">        <span class="keyword">if</span> i><span class="number">2</span>:</span><br><span class="line">            dp[i] = dp[i<span class="number">-1</span>] + dp[i<span class="number">-2</span>]</span><br><span class="line">    <span class="keyword">return</span> dp[<span class="number">-1</span>]    </span><br></pre></td></tr></tbody></table></figure>
+<p>这种方法存的表称之为 DP Table, 这种解决思路称之为动态规划。本题目的 DP Table 是一维的，所以称之为一维动态规划。</p>
+<p>当然针对这个问题，对空间还可以进一步优化：<br></p><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">fun</span>(<span class="params">n</span>):</span></span><br><span class="line">    <span class="keyword">if</span> n == <span class="number">1</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span></span><br><span class="line">    <span class="keyword">if</span> n == <span class="number">2</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="number">2</span></span><br><span class="line">    pre,prepre = <span class="number">2</span>,<span class="number">1</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(n - <span class="number">2</span>):</span><br><span class="line">         prepre, pre = pre, pre + prepre</span><br><span class="line">    <span class="keyword">return</span> pre</span><br></pre></td></tr></tbody></table></figure><p></p>
+<h3 id="动态规划和递归" class="heading-control"><a href="#动态规划和递归" class="headerlink" title="动态规划和递归"></a>动态规划和递归<a class="heading-anchor" href="#动态规划和递归" aria-hidden="true"></a></h3><p>上面我们已经见到过了：递归采用的是 “由上而下” 的解题策略并带有可能的” 子问题 “重复调用，时间复杂度自然高，而且容易造成堆栈的溢出。</p>
+<h3 id="动态规划和分治" class="heading-control"><a href="#动态规划和分治" class="headerlink" title="动态规划和分治"></a>动态规划和分治<a class="heading-anchor" href="#动态规划和分治" aria-hidden="true"></a></h3><p>两者的区别在于：动态规划的下一个子阶段的求解是建立在上一个子阶段的解的基础上，进行进一步的求解。</p>
+<h3 id="动态规划和贪心" class="heading-control"><a href="#动态规划和贪心" class="headerlink" title="动态规划和贪心"></a>动态规划和贪心<a class="heading-anchor" href="#动态规划和贪心" aria-hidden="true"></a></h3><p>贪心算法每走一步都是不可撤回的，而动态规划是在一个问题的多种策略中寻找最优策略，所以动态规划中前一种策略可能会被后一种策略推翻。</p>
+<h3 id="一维动态规划Leetcode题目" class="heading-control"><a href="#一维动态规划Leetcode题目" class="headerlink" title="一维动态规划Leetcode题目"></a>一维动态规划 Leetcode 题目<a class="heading-anchor" href="#一维动态规划Leetcode题目" aria-hidden="true"></a></h3><ul>
+<li><a href="http://oj.leetcode.com/problems/climbing-stairs/">Climbing Stairs</a></li>
+<li><a href="http://oj.leetcode.com/problems/decode-ways/">Decode Ways</a></li>
+<li><a href="http://oj.leetcode.com/problems/unique-binary-search-trees/">Unique Binary Search Trees</a></li>
+<li><a href="http://oj.leetcode.com/problems/maximum-subarray/">Maximum Subarray</a></li>
+<li><a href="https://leetcode.com/problems/maximum-product-subarray/">Maximum Product Subarray</a></li>
+<li><a href="http://oj.leetcode.com/problems/best-time-to-buy-and-sell-stock/">Best Time to Buy and Sell Stock</a></li>
+</ul>
+<h2 id="二维动态规划" class="heading-control"><a href="#二维动态规划" class="headerlink" title="二维动态规划"></a>二维动态规划<a class="heading-anchor" href="#二维动态规划" aria-hidden="true"></a></h2></body></html>]]></content>
+      <tags>
+        <tag>DP</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>卷积神经网络复习</title>
     <url>/post/48895.html</url>
     <content><![CDATA[<html><head><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script></head><body><p><img src="https://i.loli.net/2019/01/19/5c42b8b0d6f16.png" alt></p>
@@ -2491,45 +2530,6 @@ N 个人，互相交换礼物，每个人不能拿到自己的礼物。设计一
       </categories>
       <tags>
         <tag>CNN</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>动态规划</title>
-    <url>/post/55046.html</url>
-    <content><![CDATA[<html><head><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script></head><body><h2 id="从青蛙跳台阶说起" class="heading-control"><a href="#从青蛙跳台阶说起" class="headerlink" title="从青蛙跳台阶说起"></a>从青蛙跳台阶说起<a class="heading-anchor" href="#从青蛙跳台阶说起" aria-hidden="true"></a></h2><p>这个问题和斐波纳契数字问题是一样的。题目描述如下：</p>
-<blockquote>
-<p>一只青蛙一次可以跳上 1 级台阶，也可以跳上 2 级。求该青蛙跳上一个 n 级的台阶总共有多少种跳法（先后次序不同算不同的结果）。</p>
-</blockquote>
-<h3 id="考虑递归" class="heading-control"><a href="#考虑递归" class="headerlink" title="考虑递归"></a>考虑递归<a class="heading-anchor" href="#考虑递归" aria-hidden="true"></a></h3><p>首先用递归的思路来考虑。递归是倒着分析的。</p>
-<p>假如只差一步就能走完整个台阶，要分为几种情况？因为每一步能走一级或者两级台阶，所以有如下两种情况：</p>
-<ul>
-<li>最后一步走 2 级台阶，也就是从 n-2 级到 n 级</li>
-<li>最后一步走 1 级台阶，也就是从 n-1 级到 n 级</li>
-</ul>
-<p>所以第 n 步的走法由两种方法的和构成。如果定义 F (n) 为第 n 步的走法，那么 F (n)=F (n-1)+F (n-2)。这个公式称之为<strong>递推公式</strong>。<br>当只有 1 级台阶和 2 级台阶时走法很明显，即 F (1)=1、F (2)=2。称之为<strong>边界条件</strong>。<br>两部分具备之后，很容易可以写出代码：<br></p><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">fun</span>(<span class="params">n</span>):</span></span><br><span class="line">    <span class="keyword">if</span> n==<span class="number">2</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="number">2</span></span><br><span class="line">    <span class="keyword">if</span> n==<span class="number">1</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span></span><br><span class="line">    <span class="keyword">return</span> fun(n<span class="number">-1</span>)+fun(n<span class="number">-2</span>)</span><br></pre></td></tr></tbody></table></figure><br>验证的时候会发现一个问题，如果n比较大，那么会导致计算机栈的溢出，即便是n=100的时候也需要相当长的计算时间。那么问题出在哪里呢？<p></p>
-<h2 id="重叠子问题" class="heading-control"><a href="#重叠子问题" class="headerlink" title="重叠子问题"></a>重叠子问题<a class="heading-anchor" href="#重叠子问题" aria-hidden="true"></a></h2><p>我们不妨把上面的递归式子以树的形式表示出来，结果如下：<br></p><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">                       F(<span class="number">5</span>)</span><br><span class="line">                  /             \</span><br><span class="line">             F(<span class="number">4</span>)                  F(<span class="number">3</span>)</span><br><span class="line">          /      \                /     \</span><br><span class="line">      F(<span class="number">3</span>)       F(<span class="number">2</span>)         F(<span class="number">2</span>)     F(<span class="number">1</span>)</span><br><span class="line">     /     \     /    \       /    \</span><br><span class="line">   F(<span class="number">2</span>)   F(<span class="number">1</span>) F(<span class="number">1</span>)  F(<span class="number">0</span>)  F(<span class="number">1</span>)   F(<span class="number">0</span>)</span><br><span class="line">  /    \</span><br><span class="line">F(<span class="number">1</span>)  F(<span class="number">0</span>)</span><br></pre></td></tr></tbody></table></figure><br>可以看到这其中有很多重复求解部分，称之为重叠子问题。<br>一种想到的改进方法是我们可不可以把递归计算中某些计算过的结果存起来，来避免这个问题。下面介绍记忆化搜索和LRU 缓存策略实现这种改进方法。<p></p>
-<h3 id="记忆化搜索" class="heading-control"><a href="#记忆化搜索" class="headerlink" title="记忆化搜索"></a>记忆化搜索<a class="heading-anchor" href="#记忆化搜索" aria-hidden="true"></a></h3><p>记忆化搜索的思路如下：每当我们需要解决子问题时，我们首先查找查找表。如果预先计算的值存在，那么我们返回该值，否则我们计算值，并将结果放在查找表中，以便以后可以重复使用。<br></p><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">lookup = [<span class="number">0</span>,<span class="number">1</span>,<span class="number">2</span>]+[<span class="number">0</span>]*<span class="number">100</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">fun</span>(<span class="params">n</span>):</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> lookup[n] == <span class="number">0</span>:</span><br><span class="line">        lookup[n] = fun(n<span class="number">-1</span>)+fun(n<span class="number">-2</span>)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> lookup[n]</span><br></pre></td></tr></tbody></table></figure><p></p>
-<h3 id="LRU缓存" class="heading-control"><a href="#LRU缓存" class="headerlink" title="LRU缓存"></a>LRU 缓存<a class="heading-anchor" href="#LRU缓存" aria-hidden="true"></a></h3><p>LRU（Least recently used，最近最少使用），其核心思想是 “如果数据最近被访问过，那么将来被访问的几率也更高”。对于本题目，如果是高频出现的计算函数的结果会被放到缓存中，再次出现只需要在缓存中读取即可，和记忆化搜索类似。python 有 LRU 的内置函数：<br></p><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> functools <span class="keyword">import</span> lru_cache</span><br><span class="line"><span class="meta">@lru_cache(None)</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">fun</span>(<span class="params">n</span>):</span></span><br><span class="line">    <span class="keyword">if</span> n==<span class="number">2</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="number">2</span></span><br><span class="line">    <span class="keyword">if</span> n==<span class="number">1</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span></span><br><span class="line">    <span class="keyword">return</span> fun(n<span class="number">-1</span>)+fun(n<span class="number">-2</span>)</span><br></pre></td></tr></tbody></table></figure><p></p>
-<p>有了上诉方法，n=100 已经可以计算了。但是虽然有这两个缓解的方法，但是仍存在问题。当 n=1000 的时候仍然会存在堆栈溢出的问题。</p>
-<h2 id="一维动态规划" class="heading-control"><a href="#一维动态规划" class="headerlink" title="一维动态规划"></a>一维动态规划<a class="heading-anchor" href="#一维动态规划" aria-hidden="true"></a></h2><p>上面的思考都是基于递归的，即自顶而下的计算方法。如果我们换个思路，自底而上呢？</p>
-<p>其实和上面的记忆化搜索很像了。首选记录 n=1 的情况和 n=2 的情况，然后依次向上计算，每次计算都存表即可。</p>
-<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">N = <span class="number">10</span></span><br><span class="line"></span><br><span class="line">dp  = [<span class="number">0</span>]*(N+<span class="number">1</span>)</span><br><span class="line">dp[<span class="number">1</span>] = <span class="number">1</span></span><br><span class="line">dp[<span class="number">2</span>] = <span class="number">2</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">fun</span>(<span class="params">n</span>):</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(n+<span class="number">1</span>):</span><br><span class="line">        <span class="keyword">if</span> i><span class="number">2</span>:</span><br><span class="line">            dp[i] = dp[i<span class="number">-1</span>] + dp[i<span class="number">-2</span>]</span><br><span class="line">    <span class="keyword">return</span> dp[<span class="number">-1</span>]    </span><br></pre></td></tr></tbody></table></figure>
-<p>这种方法存的表称之为 DP Table, 这种解决思路称之为动态规划。本题目的 DP Table 是一维的，所以称之为一维动态规划。</p>
-<p>当然针对这个问题，对空间还可以进一步优化：<br></p><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">fun</span>(<span class="params">n</span>):</span></span><br><span class="line">    <span class="keyword">if</span> n == <span class="number">1</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span></span><br><span class="line">    <span class="keyword">if</span> n == <span class="number">2</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="number">2</span></span><br><span class="line">    pre,prepre = <span class="number">2</span>,<span class="number">1</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(n - <span class="number">2</span>):</span><br><span class="line">         prepre, pre = pre, pre + prepre</span><br><span class="line">    <span class="keyword">return</span> pre</span><br></pre></td></tr></tbody></table></figure><p></p>
-<h3 id="动态规划和递归" class="heading-control"><a href="#动态规划和递归" class="headerlink" title="动态规划和递归"></a>动态规划和递归<a class="heading-anchor" href="#动态规划和递归" aria-hidden="true"></a></h3><p>上面我们已经见到过了：递归采用的是 “由上而下” 的解题策略并带有可能的” 子问题 “重复调用，时间复杂度自然高，而且容易造成堆栈的溢出。</p>
-<h3 id="动态规划和分治" class="heading-control"><a href="#动态规划和分治" class="headerlink" title="动态规划和分治"></a>动态规划和分治<a class="heading-anchor" href="#动态规划和分治" aria-hidden="true"></a></h3><p>两者的区别在于：动态规划的下一个子阶段的求解是建立在上一个子阶段的解的基础上，进行进一步的求解。</p>
-<h3 id="动态规划和贪心" class="heading-control"><a href="#动态规划和贪心" class="headerlink" title="动态规划和贪心"></a>动态规划和贪心<a class="heading-anchor" href="#动态规划和贪心" aria-hidden="true"></a></h3><p>贪心算法每走一步都是不可撤回的，而动态规划是在一个问题的多种策略中寻找最优策略，所以动态规划中前一种策略可能会被后一种策略推翻。</p>
-<h3 id="一维动态规划Leetcode题目" class="heading-control"><a href="#一维动态规划Leetcode题目" class="headerlink" title="一维动态规划Leetcode题目"></a>一维动态规划 Leetcode 题目<a class="heading-anchor" href="#一维动态规划Leetcode题目" aria-hidden="true"></a></h3><ul>
-<li><a href="http://oj.leetcode.com/problems/climbing-stairs/">Climbing Stairs</a></li>
-<li><a href="http://oj.leetcode.com/problems/decode-ways/">Decode Ways</a></li>
-<li><a href="http://oj.leetcode.com/problems/unique-binary-search-trees/">Unique Binary Search Trees</a></li>
-<li><a href="http://oj.leetcode.com/problems/maximum-subarray/">Maximum Subarray</a></li>
-<li><a href="https://leetcode.com/problems/maximum-product-subarray/">Maximum Product Subarray</a></li>
-<li><a href="http://oj.leetcode.com/problems/best-time-to-buy-and-sell-stock/">Best Time to Buy and Sell Stock</a></li>
-</ul>
-<h2 id="二维动态规划" class="heading-control"><a href="#二维动态规划" class="headerlink" title="二维动态规划"></a>二维动态规划<a class="heading-anchor" href="#二维动态规划" aria-hidden="true"></a></h2></body></html>]]></content>
-      <tags>
-        <tag>DP</tag>
       </tags>
   </entry>
   <entry>
@@ -2930,6 +2930,66 @@ N 个人，互相交换礼物，每个人不能拿到自己的礼物。设计一
       </tags>
   </entry>
   <entry>
+    <title>寻找最大的 K 个数</title>
+    <url>/post/18004.html</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><ul>
+<li>方法一：常规解法，先排序 (时间复杂度为 O (N*logN))</li>
+<li> 方法二：利用快速排序原理 (时间复杂度 O (N*logK)</li>
+<li> 方法三：利用最小堆的原理 (时间复杂度为 O (N*logK))</li>
+<li> 方法四：计数排序，用空间换取时间的方法，不适合浮点数</li>
+</ul>
+]]></content>
+      <tags>
+        <tag>Topk</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>工作</title>
+    <url>/post/60913.html</url>
+    <content><![CDATA[<html><head><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script></head><body><h2 id="招聘" class="heading-control"><a href="#招聘" class="headerlink" title="招聘"></a>招聘<a class="heading-anchor" href="#招聘" aria-hidden="true"></a></h2><p><a href="http://www.qhvss.com/about/2.html">陕西庆华汽车安全系统有限公司</a>是中国兵器工业集团所属特种能源集团直管单位，是集科研、生产、销售为一体的高新技术企业，是国内最大的汽车安全系统用火工品制造商，具有年产点火具 3000 万发，微型气体发生器 770 万发，产气药 500 吨的能力。</p>
+<a id="more"></a>
+<p>公司 2006 年 11 月成立，位于西安市灞桥区田洪正街 1 号。公司于 2009 年通过 ISO/16949 质量体系认证，达到美国 USCAR 标准；2014 年通过 ISO/14001 环境管理体系认证和 OHSMS 职业健康安全管理体系认证；2015 年通过 AK-LV16 认证；2016 年通过 IATF/16949 质量体系认证。</p>
+<p>公司依托原西安北方庆华机电集团有限公司 50 多年的火工品研发、生产及试验优势，在汽车安全气囊用点火具和微型气体发生器等技术方面填补了国内空白，公司取得国家专利 17 项，其中发明专利 2 项，实用新型专利 15 项。目前，公司拥有点火具、微型气体发生器、产气药三大系列 100 多个品种的产品。产品配套与国际主流车型，凭借安全、可靠的性能和价格优势远销欧洲、美国、日本等国际市场，深受国内外用户欢迎。</p>
+<p>为进一步加大公司国际化经营战略布局，公司成功引入华域汽车系统股份有限公司战略投资，在泾渭工业园兵器工业科技产业基地火工生产园建设经开分厂。2018 年投产后，公司生产能力在现有基础上增加一倍。</p>
+<p>我公司现有职工 700 余人，其中管理技术人员 150 余人，公司有特能级科技带头人 1 人，公司级科技带头人 1 人，公司级关键技能带头人 1 人，公司级科技骨干 4 人，公司级技能骨干 7 人，中级及中级以上职称 40 余人。公司坚持科技发展，人才先行的人才战略，为员工建立了职业生涯规划，将员工的发展与企业的发展结合在一起，以实现员工与企业的双赢。</p>
+<p>面对国内外市场的旺盛需求和对产品安全性能的严格要求，公司坚持技术一流、引领发展的科技理念，并秉承德才兼备、精业多能的人才理念。为给公司配备优秀的管理技术人员，特向社会各界广纳贤才，我们期望与您共同携手，将公司建设成为现代化管理、国际化经营的全球最具价值的点火具 MGG 独立供应商。</p>
+<p>一、  招聘专业</p>
+<p>化学工程与工艺：2 名</p>
+<p>二、招聘条件</p>
+<p>1、学历：本科及以上学历；</p>
+<p>2、须通过英语四级；</p>
+<p>3、2019 年应届毕业生；</p>
+<p>4、身心健康。</p>
+<p>三、福利待遇</p>
+<p>1、工作时间：8 小时工作制，一周双休。按规定可享受年休假、婚假、产假、探亲假等带薪假期。</p>
+<p>2、工资：见习期 1 年，见习期工资平均不低于 4000 元 / 月，见习期结束后，工资按照公司岗位绩效工资制度发放，年终根据公司经营情况发放年终奖励，转正定级后工资 6-10 万 / 年。新入司学生第 1 年享受安家费本科生 3000 元，研究生 5000 元。</p>
+<p>3、社保待遇：签订劳动合同当月起开始享受五险一金（养老、工伤、失业、医疗、生育保险和住房公积金）待遇，公积金按照西安市单位最高标准 12%、个人最低标准 5% 缴纳。</p>
+<p>4、公司提供单身公寓，单身公寓配有空调、电扇、暖气等设施。</p>
+<p>5、每年发放一套工服，每季度发放劳保用品（洗衣粉肥皂），享受降温费、取暖费等福利待遇。</p>
+<p>6、报名者经公司审查和面试合格后，新入司员工科享受免费体检及带薪培训。</p>
+<p>四、报名应聘者提供以下相关资料：</p>
+<p>1、本人简历。</p>
+<p>2、本人有效身份证原件及复印件。</p>
+<p>3、提供学校就业推荐证明，大学期间成绩单复印件。</p>
+<p>五、报名时间：2018 年 11 月 1 日 - 2018 年 11 月 15 日</p>
+<p>六、报名地点：西安市灞桥区田洪正街 1 号陕西庆华汽车安全系统有限公司人力资源部</p>
+<p>联系人：宋  成             </p>
+<p>电  话：029-62825341</p>
+<p>投简历邮箱：songcheng@qhvss.com</p>
+<p>网  址：www.qhvss.com</p>
+<h2 id="位置" class="heading-control"><a href="#位置" class="headerlink" title="位置"></a>位置<a class="heading-anchor" href="#位置" aria-hidden="true"></a></h2><p><img src="https://i.loli.net/2018/12/06/5c090839d4569.png" alt></p>
+<h2 id="其他" class="heading-control"><a href="#其他" class="headerlink" title="其他"></a>其他<a class="heading-anchor" href="#其他" aria-hidden="true"></a></h2><ul>
+<li>江西国泰民爆集团股份有限公司招聘</li>
+</ul>
+</body></html>]]></content>
+      <categories>
+        <category>工作</category>
+      </categories>
+      <tags>
+        <tag>工作</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>推荐系统召回算法</title>
     <url>/post/64078.html</url>
     <content><![CDATA[<html><head><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script></head><body><h2 id="推荐系统整体流程" class="heading-control"><a href="#推荐系统整体流程" class="headerlink" title="推荐系统整体流程"></a>推荐系统整体流程<a class="heading-anchor" href="#推荐系统整体流程" aria-hidden="true"></a></h2><p><img src="https://i.loli.net/2020/08/31/FqeHsBKXUCgu8fJ.jpg" alt="img"></p>
@@ -2993,66 +3053,6 @@ N 个人，互相交换礼物，每个人不能拿到自己的礼物。设计一
       </categories>
       <tags>
         <tag>召回</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>寻找最大的 K 个数</title>
-    <url>/post/18004.html</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><ul>
-<li>方法一：常规解法，先排序 (时间复杂度为 O (N*logN))</li>
-<li> 方法二：利用快速排序原理 (时间复杂度 O (N*logK)</li>
-<li> 方法三：利用最小堆的原理 (时间复杂度为 O (N*logK))</li>
-<li> 方法四：计数排序，用空间换取时间的方法，不适合浮点数</li>
-</ul>
-]]></content>
-      <tags>
-        <tag>Topk</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>工作</title>
-    <url>/post/60913.html</url>
-    <content><![CDATA[<html><head><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script></head><body><h2 id="招聘" class="heading-control"><a href="#招聘" class="headerlink" title="招聘"></a>招聘<a class="heading-anchor" href="#招聘" aria-hidden="true"></a></h2><p><a href="http://www.qhvss.com/about/2.html">陕西庆华汽车安全系统有限公司</a>是中国兵器工业集团所属特种能源集团直管单位，是集科研、生产、销售为一体的高新技术企业，是国内最大的汽车安全系统用火工品制造商，具有年产点火具 3000 万发，微型气体发生器 770 万发，产气药 500 吨的能力。</p>
-<a id="more"></a>
-<p>公司 2006 年 11 月成立，位于西安市灞桥区田洪正街 1 号。公司于 2009 年通过 ISO/16949 质量体系认证，达到美国 USCAR 标准；2014 年通过 ISO/14001 环境管理体系认证和 OHSMS 职业健康安全管理体系认证；2015 年通过 AK-LV16 认证；2016 年通过 IATF/16949 质量体系认证。</p>
-<p>公司依托原西安北方庆华机电集团有限公司 50 多年的火工品研发、生产及试验优势，在汽车安全气囊用点火具和微型气体发生器等技术方面填补了国内空白，公司取得国家专利 17 项，其中发明专利 2 项，实用新型专利 15 项。目前，公司拥有点火具、微型气体发生器、产气药三大系列 100 多个品种的产品。产品配套与国际主流车型，凭借安全、可靠的性能和价格优势远销欧洲、美国、日本等国际市场，深受国内外用户欢迎。</p>
-<p>为进一步加大公司国际化经营战略布局，公司成功引入华域汽车系统股份有限公司战略投资，在泾渭工业园兵器工业科技产业基地火工生产园建设经开分厂。2018 年投产后，公司生产能力在现有基础上增加一倍。</p>
-<p>我公司现有职工 700 余人，其中管理技术人员 150 余人，公司有特能级科技带头人 1 人，公司级科技带头人 1 人，公司级关键技能带头人 1 人，公司级科技骨干 4 人，公司级技能骨干 7 人，中级及中级以上职称 40 余人。公司坚持科技发展，人才先行的人才战略，为员工建立了职业生涯规划，将员工的发展与企业的发展结合在一起，以实现员工与企业的双赢。</p>
-<p>面对国内外市场的旺盛需求和对产品安全性能的严格要求，公司坚持技术一流、引领发展的科技理念，并秉承德才兼备、精业多能的人才理念。为给公司配备优秀的管理技术人员，特向社会各界广纳贤才，我们期望与您共同携手，将公司建设成为现代化管理、国际化经营的全球最具价值的点火具 MGG 独立供应商。</p>
-<p>一、  招聘专业</p>
-<p>化学工程与工艺：2 名</p>
-<p>二、招聘条件</p>
-<p>1、学历：本科及以上学历；</p>
-<p>2、须通过英语四级；</p>
-<p>3、2019 年应届毕业生；</p>
-<p>4、身心健康。</p>
-<p>三、福利待遇</p>
-<p>1、工作时间：8 小时工作制，一周双休。按规定可享受年休假、婚假、产假、探亲假等带薪假期。</p>
-<p>2、工资：见习期 1 年，见习期工资平均不低于 4000 元 / 月，见习期结束后，工资按照公司岗位绩效工资制度发放，年终根据公司经营情况发放年终奖励，转正定级后工资 6-10 万 / 年。新入司学生第 1 年享受安家费本科生 3000 元，研究生 5000 元。</p>
-<p>3、社保待遇：签订劳动合同当月起开始享受五险一金（养老、工伤、失业、医疗、生育保险和住房公积金）待遇，公积金按照西安市单位最高标准 12%、个人最低标准 5% 缴纳。</p>
-<p>4、公司提供单身公寓，单身公寓配有空调、电扇、暖气等设施。</p>
-<p>5、每年发放一套工服，每季度发放劳保用品（洗衣粉肥皂），享受降温费、取暖费等福利待遇。</p>
-<p>6、报名者经公司审查和面试合格后，新入司员工科享受免费体检及带薪培训。</p>
-<p>四、报名应聘者提供以下相关资料：</p>
-<p>1、本人简历。</p>
-<p>2、本人有效身份证原件及复印件。</p>
-<p>3、提供学校就业推荐证明，大学期间成绩单复印件。</p>
-<p>五、报名时间：2018 年 11 月 1 日 - 2018 年 11 月 15 日</p>
-<p>六、报名地点：西安市灞桥区田洪正街 1 号陕西庆华汽车安全系统有限公司人力资源部</p>
-<p>联系人：宋  成             </p>
-<p>电  话：029-62825341</p>
-<p>投简历邮箱：songcheng@qhvss.com</p>
-<p>网  址：www.qhvss.com</p>
-<h2 id="位置" class="heading-control"><a href="#位置" class="headerlink" title="位置"></a>位置<a class="heading-anchor" href="#位置" aria-hidden="true"></a></h2><p><img src="https://i.loli.net/2018/12/06/5c090839d4569.png" alt></p>
-<h2 id="其他" class="heading-control"><a href="#其他" class="headerlink" title="其他"></a>其他<a class="heading-anchor" href="#其他" aria-hidden="true"></a></h2><ul>
-<li>江西国泰民爆集团股份有限公司招聘</li>
-</ul>
-</body></html>]]></content>
-      <categories>
-        <category>工作</category>
-      </categories>
-      <tags>
-        <tag>工作</tag>
       </tags>
   </entry>
   <entry>
@@ -3157,39 +3157,6 @@ N 个人，互相交换礼物，每个人不能拿到自己的礼物。设计一
       </tags>
   </entry>
   <entry>
-    <title>有趣的网站</title>
-    <url>/post/35391.html</url>
-    <content><![CDATA[<html><head><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script></head><body><h2 id="📻音乐" class="heading-control"><a href="#📻音乐" class="headerlink" title="📻音乐"></a>📻音乐<a class="heading-anchor" href="#📻音乐" aria-hidden="true"></a></h2><ul>
-<li><a href="http://music.qkhhyiu.cn/">音乐搜索器</a>: 多站合一音乐搜索解决方案</li>
-<li><a href="http://guozhivip.com/yinyue/">果汁音乐</a></li>
-</ul>
-<h2 id="🔮搜索" class="heading-control"><a href="#🔮搜索" class="headerlink" title="🔮搜索"></a>🔮搜索<a class="heading-anchor" href="#🔮搜索" aria-hidden="true"></a></h2><ul>
-<li><a href="https://scholar.chongbuluo.com/">虫部落</a></li>
-<li><a href="http://guozhivip.com/so/">果汁搜索</a></li>
-<li><a href="https://jikipedia.com/">小鸡词典</a>：网络流行语 </li>
-<li><a href="https://zh.wikihow.com/%E9%A6%96%E9%A1%B5">wikihow</a>：生活维基百科</li>
-</ul>
-<a id="more"></a>
-<h2 id="📜排行榜" class="heading-control"><a href="#📜排行榜" class="headerlink" title="📜排行榜"></a>📜排行榜<a class="heading-anchor" href="#📜排行榜" aria-hidden="true"></a></h2><ul>
-<li><a href="http://guozhivip.com/rank/">果汁排行榜</a></li>
-<li><a href="https://tophub.today/">今日热榜</a></li>
-</ul>
-<h2 id="📚-其他" class="heading-control"><a href="#📚-其他" class="headerlink" title="📚 其他"></a>📚 其他<a class="heading-anchor" href="#📚-其他" aria-hidden="true"></a></h2><ul>
-<li><a href="http://guozhivip.com/eat/">今天吃啥呀</a></li>
-<li><a href="http://www.underseacat.com/fan">云风扇</a>：心静自然凉 </li>
-<li><a href="https://fonts.safe.360.cn/">360 查字体</a> ：你的字体能商用吗</li>
-<li><a href="https://www.gaoding.com/koutu">搞定抠图</a></li>
-<li><a href="http://www.nows.fun/">毒鸡汤</a></li>
-</ul>
-</body></html>]]></content>
-      <categories>
-        <category>网站</category>
-      </categories>
-      <tags>
-        <tag>网站</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>智慧海洋建设比赛</title>
     <url>/post/20868.html</url>
     <content><![CDATA[<html><head><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script></head><body><p>这个比赛算是我第一个做的数值类特征的比赛，主要以学习为主。学习的内容包括：</p>
@@ -3225,6 +3192,39 @@ N 个人，互相交换礼物，每个人不能拿到自己的礼物。设计一
       </tags>
   </entry>
   <entry>
+    <title>有趣的网站</title>
+    <url>/post/35391.html</url>
+    <content><![CDATA[<html><head><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script></head><body><h2 id="📻音乐" class="heading-control"><a href="#📻音乐" class="headerlink" title="📻音乐"></a>📻音乐<a class="heading-anchor" href="#📻音乐" aria-hidden="true"></a></h2><ul>
+<li><a href="http://music.qkhhyiu.cn/">音乐搜索器</a>: 多站合一音乐搜索解决方案</li>
+<li><a href="http://guozhivip.com/yinyue/">果汁音乐</a></li>
+</ul>
+<h2 id="🔮搜索" class="heading-control"><a href="#🔮搜索" class="headerlink" title="🔮搜索"></a>🔮搜索<a class="heading-anchor" href="#🔮搜索" aria-hidden="true"></a></h2><ul>
+<li><a href="https://scholar.chongbuluo.com/">虫部落</a></li>
+<li><a href="http://guozhivip.com/so/">果汁搜索</a></li>
+<li><a href="https://jikipedia.com/">小鸡词典</a>：网络流行语 </li>
+<li><a href="https://zh.wikihow.com/%E9%A6%96%E9%A1%B5">wikihow</a>：生活维基百科</li>
+</ul>
+<a id="more"></a>
+<h2 id="📜排行榜" class="heading-control"><a href="#📜排行榜" class="headerlink" title="📜排行榜"></a>📜排行榜<a class="heading-anchor" href="#📜排行榜" aria-hidden="true"></a></h2><ul>
+<li><a href="http://guozhivip.com/rank/">果汁排行榜</a></li>
+<li><a href="https://tophub.today/">今日热榜</a></li>
+</ul>
+<h2 id="📚-其他" class="heading-control"><a href="#📚-其他" class="headerlink" title="📚 其他"></a>📚 其他<a class="heading-anchor" href="#📚-其他" aria-hidden="true"></a></h2><ul>
+<li><a href="http://guozhivip.com/eat/">今天吃啥呀</a></li>
+<li><a href="http://www.underseacat.com/fan">云风扇</a>：心静自然凉 </li>
+<li><a href="https://fonts.safe.360.cn/">360 查字体</a> ：你的字体能商用吗</li>
+<li><a href="https://www.gaoding.com/koutu">搞定抠图</a></li>
+<li><a href="http://www.nows.fun/">毒鸡汤</a></li>
+</ul>
+</body></html>]]></content>
+      <categories>
+        <category>网站</category>
+      </categories>
+      <tags>
+        <tag>网站</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>服务器守护进程</title>
     <url>/post/46515.html</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><ul>
@@ -3240,53 +3240,6 @@ N 个人，互相交换礼物，每个人不能拿到自己的礼物。设计一
       </categories>
       <tags>
         <tag>服务器</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>朴素贝叶斯</title>
-    <url>/post/58683.html</url>
-    <content><![CDATA[<html><head><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script></head><body><p>首先要明确的一点是朴素贝叶斯属于生成式模型，指导思想是贝叶斯公式。</p>
-<h2 id="文本分类" class="heading-control"><a href="#文本分类" class="headerlink" title="文本分类"></a>文本分类<a class="heading-anchor" href="#文本分类" aria-hidden="true"></a></h2><p>假设现在有一些评论数据，需要识别出这篇文本属于正向评论还是负面评论，也就是对文本进行分类。用数学语言描述就是：<br>假设已经有分好类的 N 篇文档：(d1,c1)、(d2,c2)、(d3,c3)……(dn,cn)，di 表示第 i 篇文档，ci 表示第 i 个类别。目标是：寻找一个分类器，这个分类器能够：当丢给它一篇新文档 d，它就输出 d（最有可能）属于哪个类别 c。</p>
-<a id="more"></a>
-<h2 id="词袋模型" class="heading-control"><a href="#词袋模型" class="headerlink" title="词袋模型"></a>词袋模型<a class="heading-anchor" href="#词袋模型" aria-hidden="true"></a></h2><p>文本分类需要寻找文本的特征。而词袋模型就是表示文本特征的一种方式。词袋模型只考虑一篇文档中单词出现的频率 (次数)，用每个单词出现的频率作为文档的特征。<br><img src="https://s2.ax1x.com/2019/07/22/eCyJtP.png" alt="eCyJtP.png"></p>
-<h2 id="朴素贝叶斯分类器" class="heading-control"><a href="#朴素贝叶斯分类器" class="headerlink" title="朴素贝叶斯分类器"></a>朴素贝叶斯分类器<a class="heading-anchor" href="#朴素贝叶斯分类器" aria-hidden="true"></a></h2><p>朴素贝叶斯分类器是一个概率分类器。假设现有的类别 C={c1，c2，……cm}。给定一篇文档 d，文档 d 最有可能属于哪个类呢？这个问题用数学公式表示如下：</p>
-<script type="math/tex; mode=display">
-\hat{c}=\underset{c \in C}{\operatorname{argmax}} P(c | d)</script><p>c^ 就是：在所有的类别 C={c1，c2，……cm} 中，使得：条件概率 P (c|d) 取最大值的类别。使用贝叶斯公式，将上式转换成如下形式：</p>
-<script type="math/tex; mode=display">
-\hat{c}=\underset{c \in C}{\operatorname{argmax}} P(c | d)=\underset{c \in C}{\operatorname{argmax}} \frac{P(d | c) P(c)}{P(d)}</script><p>对类别 C 中的每个类型，计算 (p (d|c)* p (c))/p (d) 的值，然后选取最大值对应的那个类型 ci ，该 ci 就是最优解 c^，因此，可以忽略掉分母 p (d)，可以变成如下形式：</p>
-<script type="math/tex; mode=display">
-\hat{c}=\underset{c \in C}{\operatorname{argmax}} P(c | d)=\underset{c \in C}{\operatorname{argmax}} P(d | c) P(c)</script><p>这个公式由两部分组成，前面那部分 P (d|c) 称为似然函数，后面那部分 P (c) 称为先验概率。<br>前面提到使用词袋模型来表示 文档 d，文档 d 的每个特征表示为：d={f1,f2,f3……fn}，那么这里的特征 fi 其实就是单词 wi 出现的频率（次数），因此可以转化成如下形式：</p>
-<script type="math/tex; mode=display">
-\hat{c}=\underset{c \in C}{\operatorname{argmax}} \overbrace{P\left(f_{1}, f_{2}, \ldots, f_{n} | c\right)}^{\text { likelihood }} \overbrace{P(c)}^{\text { prior }}</script><p>对文档 d 做个假设：假设各个特征之间是相互独立的。那么 p (f1,f2……fn|c)=p (f1|c)<em> p(f2|c) </em> …… * p (fn|c)，转化成如下形式：</p>
-<script type="math/tex; mode=display">
-c_{N B}=\underset{c \in C}{\operatorname{argmax}} P(c) \prod_{f \in F} P(f | c)</script><p>由于每个概率值很小（比如 0.0001）若干个很小的概率值直接相乘，得到的结果会越来越小。为了避免计算过程出现下溢 (underflower)，引入对数函数 Log，在 log space 中进行计算。然后使用词袋模型的每个单词 wi 出现频率作为特征，得到如下公式：</p>
-<script type="math/tex; mode=display">
-c_{N B}=\underset{c \in C}{\operatorname{largmax}} \log P(c)+\sum_{i \in \text {positions}} \log P\left(w_{i} | c\right)</script><h2 id="训练朴素贝叶斯分类器" class="heading-control"><a href="#训练朴素贝叶斯分类器" class="headerlink" title="训练朴素贝叶斯分类器"></a>训练朴素贝叶斯分类器<a class="heading-anchor" href="#训练朴素贝叶斯分类器" aria-hidden="true"></a></h2><p>训练朴素贝叶斯的过程其实就是计算先验概率和似然函数的过程。<br>①先验概率 P (c) 的计算<br>P (c) 的意思是：在所有的文档中，类别为 c 的文档出现的概率有多大？假设训练数据中一共有 Ndoc 篇文档，只要数一下类别 c 的文档有多少个就能计算 p (c) 了，类别 c 的文档共有 Nc 篇，先验概率的计算公式如下：</p>
-<script type="math/tex; mode=display">
-\hat{P}(c)=\frac{N_{c}}{N_{d o c}}</script><p>先验概率其实就是准备干一件事情时，目前已经掌握了哪些信息了。<br>②似然函数 P (wi|c) 的计算<br>由于是用词袋模型表示一篇文档 d，对于文档 d 中的每个单词 wi，找到训练数据集中所有类别为 c 的文档，数一数 单词 wi 在这些文档（类别为 c）中出现的次数：count (wi,c)，<br>然后，再数一数训练数据集中类别为 c 的文档一共有多少个单词，计算二者之间的比值，就是似然函数的值。似然函数计算公式如下：</p>
-<script type="math/tex; mode=display">
-\hat{P}\left(w_{i} | c\right)=\frac{\operatorname{count}\left(w_{i}, c\right)}{\sum_{w \in V} \operatorname{count}(w, c)}</script><p>其中 V，就是词库。（有些单词在词库中，但是不属于类别 C，那么 count (w,c)=0）</p>
-<h2 id="unknow-words的情形" class="heading-control"><a href="#unknow-words的情形" class="headerlink" title="unknow words的情形"></a>unknow words 的情形<a class="heading-anchor" href="#unknow-words的情形" aria-hidden="true"></a></h2><p>假设只考虑文本二分类：将文档分成 positve 类别，或者 negative 类别，C={positive, negative}。<br>在训练数据集中，类别为 positive 的所有文档 都没有 包含 单词 wi = fantastic（fantastic 可能出现在类别为 negative 的文档中）那么 count (wi=fantastic，ci=positive)=0 。那么：</p>
-<p>而注意到前面公式五中的累乘，整篇文档的似然函数值为 0，也就是说：如果文档 d 中有个单词 fantastic 在类别为 c 的训练数据集文档中从未出现过，那文档 d 被分类到类别 c 的概率为 0，尽管文档 d 中还有一些其他单词（特征），而这些单词所代表的特征认为文档 d 应该被分类到类别 c 中。<br>解决方案就是 add-one smoothing。似然函数公式变成如下形式：</p>
-<script type="math/tex; mode=display">
-\hat{P}\left(w_{i} | c\right)=\frac{\operatorname{count}\left(w_{i}, c\right)+1}{\sum_{w \in V}(\operatorname{count}(w, c)+1)}=\frac{\operatorname{count}\left(w_{i}, c\right)+1}{\left(\sum_{w \in V} \operatorname{count}(w, c)\right)+|V|}</script><h2 id="朴素贝叶斯分类示例" class="heading-control"><a href="#朴素贝叶斯分类示例" class="headerlink" title="朴素贝叶斯分类示例"></a>朴素贝叶斯分类示例<a class="heading-anchor" href="#朴素贝叶斯分类示例" aria-hidden="true"></a></h2><p>假设训练数据集有五篇文档，其中 Negative 类别的文档有三篇，用符号 ‘-‘ 标识；Positive 类别的文档有二篇，用符号 ‘+’ 标识，它们的内容如下：<br></p><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">-  just plain boring</span><br><span class="line">-  entirely predictable and lacks energy</span><br><span class="line">-  no surprises and very few laughs</span><br><span class="line">+  very powerful</span><br><span class="line">+  the most fun film of the summer</span><br></pre></td></tr></tbody></table></figure><br>测试数据集T 有一篇文档dt，内容如下：<br><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">predictable with no fun</span><br></pre></td></tr></tbody></table></figure><br>朴素贝叶斯分类器会把“predictable with no fun”归为哪个类呢？根据训练朴素贝叶斯分类器的过程，需要计算先验概率和似然函数。<p></p>
-<p>由于训练数据集中一共有 5 篇文档，其中类别 ‘+’ 的文档有 2 篇，类别为 ‘-‘ 的文档有 3 篇，因此先验概率：P (c)=P (‘-‘)=Nc/Ndoc=3/5=0.6   </p>
-<p>类别为’+’ 的文档有 2 篇，故 P (c)=P (‘+’)=Nc/Ndoc=2/5=0.4</p>
-<p>对测试数据集文档 dt 中的每个单词，似然函数采用 “add-one smoothing” 处理，计算相应的似然概率：</p>
-<p>首先单词 predictable 在训练数据集中 类别为’-‘的文档中只出现了 1 次，类别为’-‘的文档一共有 14 个单词，训练数据集中两种类型的文档加起来一共有 23 个单词，但是有三个单词 (and、</p>
-<p>very、the) 重复出现了两次，故词库 V 的大小为 20。因此单词 predictable 对应的似然概率如下：</p>
-<p>p(predictable|’-‘)=(1+1)/(14+20)=2/34</p>
-<p>同理：p (predictable|’+’)=(0+1)/(9+20)=1/29   （predictable 没有在类别为’+’的训练数据集中出现过）</p>
-<p>类似地：p (no|’-‘)=(1+1)/(14+20)        p (no|’+’)=(0+1)/(9+20)</p>
-<p>p(fun|’-‘)=(0+1)/(14+20)                    p(fun|’+’)=(1+1)/(9+20)</p>
-<p>因此，测试集中的文档 d 归类为 ‘-‘ 的概率为：0.6 <em> （2</em>2<em>1）/343 = 6.1</em>10-5</p>
-<p>测试集中的文档 d 归类为 ‘+’ 的概率为：0.4<em>（1</em>1<em>2）/293 =3.2</em>10-5</p>
-<p> 比较上面两个概率的大小，就可以知道将 “predictable with no fun” 归为 ‘-‘ 类别。</p>
-<h2 id="代码实现" class="heading-control"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现<a class="heading-anchor" href="#代码实现" aria-hidden="true"></a></h2><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">loaddata</span>():</span></span><br><span class="line">    <span class="string">"""</span></span><br><span class="line"><span class="string">    :return: 文本数据集 和 对应的 label</span></span><br><span class="line"><span class="string">    """</span></span><br><span class="line">    text=[[<span class="string">'just'</span>,<span class="string">'plain'</span>,<span class="string">'boring'</span>],</span><br><span class="line"></span><br><span class="line">    [<span class="string">'entirely'</span>,<span class="string">'predictable'</span>,<span class="string">'and'</span>,<span class="string">'lacks'</span>,<span class="string">'energy'</span>],</span><br><span class="line"></span><br><span class="line">    [<span class="string">'no'</span>,<span class="string">'surprises'</span>,<span class="string">'and'</span>,<span class="string">'very'</span>,<span class="string">'few'</span>,<span class="string">'laughs'</span>],</span><br><span class="line"></span><br><span class="line">    [<span class="string">'very'</span>,<span class="string">'powerful'</span>],</span><br><span class="line"></span><br><span class="line">    [<span class="string">'the'</span> ,<span class="string">'most'</span>, <span class="string">'fun'</span> ,<span class="string">'film'</span> ,<span class="string">'of'</span> ,<span class="string">'the'</span>, <span class="string">'summer'</span>]]</span><br><span class="line"></span><br><span class="line">    label=[<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">1</span>]</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> text,label</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">createVocabList</span>(<span class="params">text</span>):</span></span><br><span class="line">    <span class="string">"""</span></span><br><span class="line"><span class="string">    :param text: 文本数据集</span></span><br><span class="line"><span class="string">    :return: 词语表</span></span><br><span class="line"><span class="string">    """</span></span><br><span class="line">    vocabSet=set([])</span><br><span class="line">    <span class="keyword">for</span> document <span class="keyword">in</span> text:</span><br><span class="line">        vocabSet=vocabSet|set(document)</span><br><span class="line">    <span class="keyword">return</span> list(vocabSet)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">bag_words_vec</span>(<span class="params">vocab, text</span>):</span></span><br><span class="line">    <span class="string">"""</span></span><br><span class="line"><span class="string">    :param vocab: 词表</span></span><br><span class="line"><span class="string">    :param text: 文本数据集</span></span><br><span class="line"><span class="string">    :return: 通过词袋模型转换后的向量</span></span><br><span class="line"><span class="string">    """</span></span><br><span class="line">    data = []</span><br><span class="line">    <span class="keyword">for</span> t <span class="keyword">in</span> text:</span><br><span class="line">        vec = [<span class="number">0</span>]*len(vocab)</span><br><span class="line">        <span class="keyword">for</span> word <span class="keyword">in</span> t:</span><br><span class="line">            <span class="keyword">if</span> word <span class="keyword">in</span> vocab:</span><br><span class="line">                vec[vocab.index(word)]+=<span class="number">1</span></span><br><span class="line">        data.append(vec)</span><br><span class="line">    <span class="keyword">return</span> data</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">NB</span>():</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self,vocab</span>):</span></span><br><span class="line">        self.data = <span class="literal">None</span></span><br><span class="line">        self.label = <span class="literal">None</span></span><br><span class="line">        self.vocab = vocab</span><br><span class="line">        self.vocab_len = len(self.vocab)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">fit</span>(<span class="params">self,data,label</span>):</span></span><br><span class="line">        self.data = data</span><br><span class="line">        self.label = label</span><br><span class="line"></span><br><span class="line">        <span class="comment"># 计算每个类别的先验概率</span></span><br><span class="line">        self.pc0 = label.count(<span class="number">0</span>)/len(label) </span><br><span class="line">        self.pc1 = label.count(<span class="number">1</span>)/len(label)</span><br><span class="line"></span><br><span class="line">        <span class="comment"># 分出不同类别的数据</span></span><br><span class="line">        self.data0 = [data[i] <span class="keyword">for</span> i,c <span class="keyword">in</span> enumerate(label) <span class="keyword">if</span> c==<span class="number">0</span>] </span><br><span class="line">        self.data1 = [data[i] <span class="keyword">for</span> i,c <span class="keyword">in</span> enumerate(label) <span class="keyword">if</span> c==<span class="number">1</span>]</span><br><span class="line"></span><br><span class="line">        <span class="comment"># 计算每个类别中单词的数量，注意如果是len(),就不考虑重复元素，sum()考虑重复元素</span></span><br><span class="line">        self.word_num_0 = sum([i <span class="keyword">for</span> t <span class="keyword">in</span> self.data0 <span class="keyword">for</span> i <span class="keyword">in</span> t <span class="keyword">if</span> i!=<span class="number">0</span>]) </span><br><span class="line">        self.word_num_1 = sum([i <span class="keyword">for</span> t <span class="keyword">in</span> self.data1 <span class="keyword">for</span> i <span class="keyword">in</span> t <span class="keyword">if</span> i!=<span class="number">0</span>])</span><br><span class="line">        </span><br><span class="line">        <span class="comment">#打印不同类别的单词个数和词表长度</span></span><br><span class="line">        print(<span class="string">"类别0的单词个数：{},类别1的单词个数：{},总词表长度：{}"</span>.format(self.word_num_0,self.word_num_1,self.vocab_len))</span><br><span class="line"></span><br><span class="line">        self.word_freq_0 = np.sum(self.data0, axis = <span class="number">0</span>) <span class="comment">#计算每个类别中单词的频率</span></span><br><span class="line">        self.word_freq_1 = np.sum(self.data1, axis = <span class="number">0</span>)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">pridict</span>(<span class="params">self, text</span>):</span></span><br><span class="line">        <span class="comment"># 预测过程</span></span><br><span class="line">        </span><br><span class="line">        pred = []</span><br><span class="line">        </span><br><span class="line">        <span class="comment"># 对于预测集的每一个文本</span></span><br><span class="line">        <span class="keyword">for</span> t <span class="keyword">in</span> text:</span><br><span class="line">            </span><br><span class="line">            <span class="comment"># 计算属于class 0的概率</span></span><br><span class="line">            p0 = []</span><br><span class="line">            <span class="keyword">for</span> w <span class="keyword">in</span> t:</span><br><span class="line">                <span class="comment"># 不在词表中的不计算</span></span><br><span class="line">                <span class="keyword">if</span> w <span class="keyword">in</span> vocab:</span><br><span class="line">                    p0.append((self.word_freq_0[self.vocab.index(w)] + <span class="number">1</span>)/(self.word_num_0+ self.vocab_len))</span><br><span class="line">            </span><br><span class="line">            <span class="comment"># 计算属于class 0的概率</span></span><br><span class="line">            p1 = []</span><br><span class="line">            <span class="keyword">for</span> w <span class="keyword">in</span> t:</span><br><span class="line">                <span class="comment"># 不在词表中的不计算</span></span><br><span class="line">                <span class="keyword">if</span> w <span class="keyword">in</span> vocab:</span><br><span class="line">                    p1.append((self.word_freq_1[self.vocab.index(w)] + <span class="number">1</span>)/(self.word_num_1+self.vocab_len))</span><br><span class="line">            </span><br><span class="line">            print(p0)</span><br><span class="line">            print(p1)</span><br><span class="line"></span><br><span class="line">            print(self.pc0*np.prod(p0))</span><br><span class="line">            print(self.pc1*np.prod(p1))</span><br><span class="line"></span><br><span class="line">            <span class="keyword">if</span> self.pc0*np.prod(p0)> self.pc1*np.prod(p1):</span><br><span class="line">                pred.append(<span class="number">0</span>)</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                pred.append(<span class="number">1</span>)</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> pred</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line"></span><br><span class="line">    text,label = loaddata()</span><br><span class="line">    vocab = createVocabList(text)</span><br><span class="line">    data = bag_words_vec(vocab, text)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    pred_text = [[<span class="string">"predictable"</span>,<span class="string">"with"</span>,<span class="string">"no"</span>,<span class="string">"fun"</span>]]</span><br><span class="line"></span><br><span class="line">    model = NB(vocab)</span><br><span class="line">    model.fit(data,label)</span><br><span class="line">    result = model.pridict(pred_text)</span><br><span class="line">    print(result)</span><br></pre></td></tr></tbody></table></figure>
-<p>输出结果：<br></p><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">类别<span class="number">0</span>的单词个数：<span class="number">14</span>,类别<span class="number">1</span>的单词个数：<span class="number">9</span>,总词表长度：<span class="number">20</span></span><br><span class="line">[<span class="number">0.058823529411764705</span>, <span class="number">0.058823529411764705</span>, <span class="number">0.029411764705882353</span>]</span><br><span class="line">[<span class="number">0.034482758620689655</span>, <span class="number">0.034482758620689655</span>, <span class="number">0.06896551724137931</span>]</span><br><span class="line"><span class="number">6.106248727864848e-05</span></span><br><span class="line"><span class="number">3.280167288531715e-05</span></span><br><span class="line">[<span class="number">0</span>]</span><br></pre></td></tr></tbody></table></figure><p></p>
-</body></html>]]></content>
-      <tags>
-        <tag>机器学习</tag>
       </tags>
   </entry>
   <entry>
@@ -3344,6 +3297,53 @@ c_{N B}=\underset{c \in C}{\operatorname{largmax}} \log P(c)+\sum_{i \in \text {
       </tags>
   </entry>
   <entry>
+    <title>朴素贝叶斯</title>
+    <url>/post/58683.html</url>
+    <content><![CDATA[<html><head><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script></head><body><p>首先要明确的一点是朴素贝叶斯属于生成式模型，指导思想是贝叶斯公式。</p>
+<h2 id="文本分类" class="heading-control"><a href="#文本分类" class="headerlink" title="文本分类"></a>文本分类<a class="heading-anchor" href="#文本分类" aria-hidden="true"></a></h2><p>假设现在有一些评论数据，需要识别出这篇文本属于正向评论还是负面评论，也就是对文本进行分类。用数学语言描述就是：<br>假设已经有分好类的 N 篇文档：(d1,c1)、(d2,c2)、(d3,c3)……(dn,cn)，di 表示第 i 篇文档，ci 表示第 i 个类别。目标是：寻找一个分类器，这个分类器能够：当丢给它一篇新文档 d，它就输出 d（最有可能）属于哪个类别 c。</p>
+<a id="more"></a>
+<h2 id="词袋模型" class="heading-control"><a href="#词袋模型" class="headerlink" title="词袋模型"></a>词袋模型<a class="heading-anchor" href="#词袋模型" aria-hidden="true"></a></h2><p>文本分类需要寻找文本的特征。而词袋模型就是表示文本特征的一种方式。词袋模型只考虑一篇文档中单词出现的频率 (次数)，用每个单词出现的频率作为文档的特征。<br><img src="https://s2.ax1x.com/2019/07/22/eCyJtP.png" alt="eCyJtP.png"></p>
+<h2 id="朴素贝叶斯分类器" class="heading-control"><a href="#朴素贝叶斯分类器" class="headerlink" title="朴素贝叶斯分类器"></a>朴素贝叶斯分类器<a class="heading-anchor" href="#朴素贝叶斯分类器" aria-hidden="true"></a></h2><p>朴素贝叶斯分类器是一个概率分类器。假设现有的类别 C={c1，c2，……cm}。给定一篇文档 d，文档 d 最有可能属于哪个类呢？这个问题用数学公式表示如下：</p>
+<script type="math/tex; mode=display">
+\hat{c}=\underset{c \in C}{\operatorname{argmax}} P(c | d)</script><p>c^ 就是：在所有的类别 C={c1，c2，……cm} 中，使得：条件概率 P (c|d) 取最大值的类别。使用贝叶斯公式，将上式转换成如下形式：</p>
+<script type="math/tex; mode=display">
+\hat{c}=\underset{c \in C}{\operatorname{argmax}} P(c | d)=\underset{c \in C}{\operatorname{argmax}} \frac{P(d | c) P(c)}{P(d)}</script><p>对类别 C 中的每个类型，计算 (p (d|c)* p (c))/p (d) 的值，然后选取最大值对应的那个类型 ci ，该 ci 就是最优解 c^，因此，可以忽略掉分母 p (d)，可以变成如下形式：</p>
+<script type="math/tex; mode=display">
+\hat{c}=\underset{c \in C}{\operatorname{argmax}} P(c | d)=\underset{c \in C}{\operatorname{argmax}} P(d | c) P(c)</script><p>这个公式由两部分组成，前面那部分 P (d|c) 称为似然函数，后面那部分 P (c) 称为先验概率。<br>前面提到使用词袋模型来表示 文档 d，文档 d 的每个特征表示为：d={f1,f2,f3……fn}，那么这里的特征 fi 其实就是单词 wi 出现的频率（次数），因此可以转化成如下形式：</p>
+<script type="math/tex; mode=display">
+\hat{c}=\underset{c \in C}{\operatorname{argmax}} \overbrace{P\left(f_{1}, f_{2}, \ldots, f_{n} | c\right)}^{\text { likelihood }} \overbrace{P(c)}^{\text { prior }}</script><p>对文档 d 做个假设：假设各个特征之间是相互独立的。那么 p (f1,f2……fn|c)=p (f1|c)<em> p(f2|c) </em> …… * p (fn|c)，转化成如下形式：</p>
+<script type="math/tex; mode=display">
+c_{N B}=\underset{c \in C}{\operatorname{argmax}} P(c) \prod_{f \in F} P(f | c)</script><p>由于每个概率值很小（比如 0.0001）若干个很小的概率值直接相乘，得到的结果会越来越小。为了避免计算过程出现下溢 (underflower)，引入对数函数 Log，在 log space 中进行计算。然后使用词袋模型的每个单词 wi 出现频率作为特征，得到如下公式：</p>
+<script type="math/tex; mode=display">
+c_{N B}=\underset{c \in C}{\operatorname{largmax}} \log P(c)+\sum_{i \in \text {positions}} \log P\left(w_{i} | c\right)</script><h2 id="训练朴素贝叶斯分类器" class="heading-control"><a href="#训练朴素贝叶斯分类器" class="headerlink" title="训练朴素贝叶斯分类器"></a>训练朴素贝叶斯分类器<a class="heading-anchor" href="#训练朴素贝叶斯分类器" aria-hidden="true"></a></h2><p>训练朴素贝叶斯的过程其实就是计算先验概率和似然函数的过程。<br>①先验概率 P (c) 的计算<br>P (c) 的意思是：在所有的文档中，类别为 c 的文档出现的概率有多大？假设训练数据中一共有 Ndoc 篇文档，只要数一下类别 c 的文档有多少个就能计算 p (c) 了，类别 c 的文档共有 Nc 篇，先验概率的计算公式如下：</p>
+<script type="math/tex; mode=display">
+\hat{P}(c)=\frac{N_{c}}{N_{d o c}}</script><p>先验概率其实就是准备干一件事情时，目前已经掌握了哪些信息了。<br>②似然函数 P (wi|c) 的计算<br>由于是用词袋模型表示一篇文档 d，对于文档 d 中的每个单词 wi，找到训练数据集中所有类别为 c 的文档，数一数 单词 wi 在这些文档（类别为 c）中出现的次数：count (wi,c)，<br>然后，再数一数训练数据集中类别为 c 的文档一共有多少个单词，计算二者之间的比值，就是似然函数的值。似然函数计算公式如下：</p>
+<script type="math/tex; mode=display">
+\hat{P}\left(w_{i} | c\right)=\frac{\operatorname{count}\left(w_{i}, c\right)}{\sum_{w \in V} \operatorname{count}(w, c)}</script><p>其中 V，就是词库。（有些单词在词库中，但是不属于类别 C，那么 count (w,c)=0）</p>
+<h2 id="unknow-words的情形" class="heading-control"><a href="#unknow-words的情形" class="headerlink" title="unknow words的情形"></a>unknow words 的情形<a class="heading-anchor" href="#unknow-words的情形" aria-hidden="true"></a></h2><p>假设只考虑文本二分类：将文档分成 positve 类别，或者 negative 类别，C={positive, negative}。<br>在训练数据集中，类别为 positive 的所有文档 都没有 包含 单词 wi = fantastic（fantastic 可能出现在类别为 negative 的文档中）那么 count (wi=fantastic，ci=positive)=0 。那么：</p>
+<p>而注意到前面公式五中的累乘，整篇文档的似然函数值为 0，也就是说：如果文档 d 中有个单词 fantastic 在类别为 c 的训练数据集文档中从未出现过，那文档 d 被分类到类别 c 的概率为 0，尽管文档 d 中还有一些其他单词（特征），而这些单词所代表的特征认为文档 d 应该被分类到类别 c 中。<br>解决方案就是 add-one smoothing。似然函数公式变成如下形式：</p>
+<script type="math/tex; mode=display">
+\hat{P}\left(w_{i} | c\right)=\frac{\operatorname{count}\left(w_{i}, c\right)+1}{\sum_{w \in V}(\operatorname{count}(w, c)+1)}=\frac{\operatorname{count}\left(w_{i}, c\right)+1}{\left(\sum_{w \in V} \operatorname{count}(w, c)\right)+|V|}</script><h2 id="朴素贝叶斯分类示例" class="heading-control"><a href="#朴素贝叶斯分类示例" class="headerlink" title="朴素贝叶斯分类示例"></a>朴素贝叶斯分类示例<a class="heading-anchor" href="#朴素贝叶斯分类示例" aria-hidden="true"></a></h2><p>假设训练数据集有五篇文档，其中 Negative 类别的文档有三篇，用符号 ‘-‘ 标识；Positive 类别的文档有二篇，用符号 ‘+’ 标识，它们的内容如下：<br></p><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">-  just plain boring</span><br><span class="line">-  entirely predictable and lacks energy</span><br><span class="line">-  no surprises and very few laughs</span><br><span class="line">+  very powerful</span><br><span class="line">+  the most fun film of the summer</span><br></pre></td></tr></tbody></table></figure><br>测试数据集T 有一篇文档dt，内容如下：<br><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">predictable with no fun</span><br></pre></td></tr></tbody></table></figure><br>朴素贝叶斯分类器会把“predictable with no fun”归为哪个类呢？根据训练朴素贝叶斯分类器的过程，需要计算先验概率和似然函数。<p></p>
+<p>由于训练数据集中一共有 5 篇文档，其中类别 ‘+’ 的文档有 2 篇，类别为 ‘-‘ 的文档有 3 篇，因此先验概率：P (c)=P (‘-‘)=Nc/Ndoc=3/5=0.6   </p>
+<p>类别为’+’ 的文档有 2 篇，故 P (c)=P (‘+’)=Nc/Ndoc=2/5=0.4</p>
+<p>对测试数据集文档 dt 中的每个单词，似然函数采用 “add-one smoothing” 处理，计算相应的似然概率：</p>
+<p>首先单词 predictable 在训练数据集中 类别为’-‘的文档中只出现了 1 次，类别为’-‘的文档一共有 14 个单词，训练数据集中两种类型的文档加起来一共有 23 个单词，但是有三个单词 (and、</p>
+<p>very、the) 重复出现了两次，故词库 V 的大小为 20。因此单词 predictable 对应的似然概率如下：</p>
+<p>p(predictable|’-‘)=(1+1)/(14+20)=2/34</p>
+<p>同理：p (predictable|’+’)=(0+1)/(9+20)=1/29   （predictable 没有在类别为’+’的训练数据集中出现过）</p>
+<p>类似地：p (no|’-‘)=(1+1)/(14+20)        p (no|’+’)=(0+1)/(9+20)</p>
+<p>p(fun|’-‘)=(0+1)/(14+20)                    p(fun|’+’)=(1+1)/(9+20)</p>
+<p>因此，测试集中的文档 d 归类为 ‘-‘ 的概率为：0.6 <em> （2</em>2<em>1）/343 = 6.1</em>10-5</p>
+<p>测试集中的文档 d 归类为 ‘+’ 的概率为：0.4<em>（1</em>1<em>2）/293 =3.2</em>10-5</p>
+<p> 比较上面两个概率的大小，就可以知道将 “predictable with no fun” 归为 ‘-‘ 类别。</p>
+<h2 id="代码实现" class="heading-control"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现<a class="heading-anchor" href="#代码实现" aria-hidden="true"></a></h2><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">loaddata</span>():</span></span><br><span class="line">    <span class="string">"""</span></span><br><span class="line"><span class="string">    :return: 文本数据集 和 对应的 label</span></span><br><span class="line"><span class="string">    """</span></span><br><span class="line">    text=[[<span class="string">'just'</span>,<span class="string">'plain'</span>,<span class="string">'boring'</span>],</span><br><span class="line"></span><br><span class="line">    [<span class="string">'entirely'</span>,<span class="string">'predictable'</span>,<span class="string">'and'</span>,<span class="string">'lacks'</span>,<span class="string">'energy'</span>],</span><br><span class="line"></span><br><span class="line">    [<span class="string">'no'</span>,<span class="string">'surprises'</span>,<span class="string">'and'</span>,<span class="string">'very'</span>,<span class="string">'few'</span>,<span class="string">'laughs'</span>],</span><br><span class="line"></span><br><span class="line">    [<span class="string">'very'</span>,<span class="string">'powerful'</span>],</span><br><span class="line"></span><br><span class="line">    [<span class="string">'the'</span> ,<span class="string">'most'</span>, <span class="string">'fun'</span> ,<span class="string">'film'</span> ,<span class="string">'of'</span> ,<span class="string">'the'</span>, <span class="string">'summer'</span>]]</span><br><span class="line"></span><br><span class="line">    label=[<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">1</span>]</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> text,label</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">createVocabList</span>(<span class="params">text</span>):</span></span><br><span class="line">    <span class="string">"""</span></span><br><span class="line"><span class="string">    :param text: 文本数据集</span></span><br><span class="line"><span class="string">    :return: 词语表</span></span><br><span class="line"><span class="string">    """</span></span><br><span class="line">    vocabSet=set([])</span><br><span class="line">    <span class="keyword">for</span> document <span class="keyword">in</span> text:</span><br><span class="line">        vocabSet=vocabSet|set(document)</span><br><span class="line">    <span class="keyword">return</span> list(vocabSet)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">bag_words_vec</span>(<span class="params">vocab, text</span>):</span></span><br><span class="line">    <span class="string">"""</span></span><br><span class="line"><span class="string">    :param vocab: 词表</span></span><br><span class="line"><span class="string">    :param text: 文本数据集</span></span><br><span class="line"><span class="string">    :return: 通过词袋模型转换后的向量</span></span><br><span class="line"><span class="string">    """</span></span><br><span class="line">    data = []</span><br><span class="line">    <span class="keyword">for</span> t <span class="keyword">in</span> text:</span><br><span class="line">        vec = [<span class="number">0</span>]*len(vocab)</span><br><span class="line">        <span class="keyword">for</span> word <span class="keyword">in</span> t:</span><br><span class="line">            <span class="keyword">if</span> word <span class="keyword">in</span> vocab:</span><br><span class="line">                vec[vocab.index(word)]+=<span class="number">1</span></span><br><span class="line">        data.append(vec)</span><br><span class="line">    <span class="keyword">return</span> data</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">NB</span>():</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self,vocab</span>):</span></span><br><span class="line">        self.data = <span class="literal">None</span></span><br><span class="line">        self.label = <span class="literal">None</span></span><br><span class="line">        self.vocab = vocab</span><br><span class="line">        self.vocab_len = len(self.vocab)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">fit</span>(<span class="params">self,data,label</span>):</span></span><br><span class="line">        self.data = data</span><br><span class="line">        self.label = label</span><br><span class="line"></span><br><span class="line">        <span class="comment"># 计算每个类别的先验概率</span></span><br><span class="line">        self.pc0 = label.count(<span class="number">0</span>)/len(label) </span><br><span class="line">        self.pc1 = label.count(<span class="number">1</span>)/len(label)</span><br><span class="line"></span><br><span class="line">        <span class="comment"># 分出不同类别的数据</span></span><br><span class="line">        self.data0 = [data[i] <span class="keyword">for</span> i,c <span class="keyword">in</span> enumerate(label) <span class="keyword">if</span> c==<span class="number">0</span>] </span><br><span class="line">        self.data1 = [data[i] <span class="keyword">for</span> i,c <span class="keyword">in</span> enumerate(label) <span class="keyword">if</span> c==<span class="number">1</span>]</span><br><span class="line"></span><br><span class="line">        <span class="comment"># 计算每个类别中单词的数量，注意如果是len(),就不考虑重复元素，sum()考虑重复元素</span></span><br><span class="line">        self.word_num_0 = sum([i <span class="keyword">for</span> t <span class="keyword">in</span> self.data0 <span class="keyword">for</span> i <span class="keyword">in</span> t <span class="keyword">if</span> i!=<span class="number">0</span>]) </span><br><span class="line">        self.word_num_1 = sum([i <span class="keyword">for</span> t <span class="keyword">in</span> self.data1 <span class="keyword">for</span> i <span class="keyword">in</span> t <span class="keyword">if</span> i!=<span class="number">0</span>])</span><br><span class="line">        </span><br><span class="line">        <span class="comment">#打印不同类别的单词个数和词表长度</span></span><br><span class="line">        print(<span class="string">"类别0的单词个数：{},类别1的单词个数：{},总词表长度：{}"</span>.format(self.word_num_0,self.word_num_1,self.vocab_len))</span><br><span class="line"></span><br><span class="line">        self.word_freq_0 = np.sum(self.data0, axis = <span class="number">0</span>) <span class="comment">#计算每个类别中单词的频率</span></span><br><span class="line">        self.word_freq_1 = np.sum(self.data1, axis = <span class="number">0</span>)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">pridict</span>(<span class="params">self, text</span>):</span></span><br><span class="line">        <span class="comment"># 预测过程</span></span><br><span class="line">        </span><br><span class="line">        pred = []</span><br><span class="line">        </span><br><span class="line">        <span class="comment"># 对于预测集的每一个文本</span></span><br><span class="line">        <span class="keyword">for</span> t <span class="keyword">in</span> text:</span><br><span class="line">            </span><br><span class="line">            <span class="comment"># 计算属于class 0的概率</span></span><br><span class="line">            p0 = []</span><br><span class="line">            <span class="keyword">for</span> w <span class="keyword">in</span> t:</span><br><span class="line">                <span class="comment"># 不在词表中的不计算</span></span><br><span class="line">                <span class="keyword">if</span> w <span class="keyword">in</span> vocab:</span><br><span class="line">                    p0.append((self.word_freq_0[self.vocab.index(w)] + <span class="number">1</span>)/(self.word_num_0+ self.vocab_len))</span><br><span class="line">            </span><br><span class="line">            <span class="comment"># 计算属于class 0的概率</span></span><br><span class="line">            p1 = []</span><br><span class="line">            <span class="keyword">for</span> w <span class="keyword">in</span> t:</span><br><span class="line">                <span class="comment"># 不在词表中的不计算</span></span><br><span class="line">                <span class="keyword">if</span> w <span class="keyword">in</span> vocab:</span><br><span class="line">                    p1.append((self.word_freq_1[self.vocab.index(w)] + <span class="number">1</span>)/(self.word_num_1+self.vocab_len))</span><br><span class="line">            </span><br><span class="line">            print(p0)</span><br><span class="line">            print(p1)</span><br><span class="line"></span><br><span class="line">            print(self.pc0*np.prod(p0))</span><br><span class="line">            print(self.pc1*np.prod(p1))</span><br><span class="line"></span><br><span class="line">            <span class="keyword">if</span> self.pc0*np.prod(p0)> self.pc1*np.prod(p1):</span><br><span class="line">                pred.append(<span class="number">0</span>)</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                pred.append(<span class="number">1</span>)</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> pred</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line"></span><br><span class="line">    text,label = loaddata()</span><br><span class="line">    vocab = createVocabList(text)</span><br><span class="line">    data = bag_words_vec(vocab, text)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    pred_text = [[<span class="string">"predictable"</span>,<span class="string">"with"</span>,<span class="string">"no"</span>,<span class="string">"fun"</span>]]</span><br><span class="line"></span><br><span class="line">    model = NB(vocab)</span><br><span class="line">    model.fit(data,label)</span><br><span class="line">    result = model.pridict(pred_text)</span><br><span class="line">    print(result)</span><br></pre></td></tr></tbody></table></figure>
+<p>输出结果：<br></p><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">类别<span class="number">0</span>的单词个数：<span class="number">14</span>,类别<span class="number">1</span>的单词个数：<span class="number">9</span>,总词表长度：<span class="number">20</span></span><br><span class="line">[<span class="number">0.058823529411764705</span>, <span class="number">0.058823529411764705</span>, <span class="number">0.029411764705882353</span>]</span><br><span class="line">[<span class="number">0.034482758620689655</span>, <span class="number">0.034482758620689655</span>, <span class="number">0.06896551724137931</span>]</span><br><span class="line"><span class="number">6.106248727864848e-05</span></span><br><span class="line"><span class="number">3.280167288531715e-05</span></span><br><span class="line">[<span class="number">0</span>]</span><br></pre></td></tr></tbody></table></figure><p></p>
+</body></html>]]></content>
+      <tags>
+        <tag>机器学习</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>校招笔试题目</title>
     <url>/post/44950.html</url>
     <content><![CDATA[<html><head><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script></head><body><h2 id="互娱模拟笔试" class="heading-control"><a href="#互娱模拟笔试" class="headerlink" title="互娱模拟笔试"></a>互娱模拟笔试<a class="heading-anchor" href="#互娱模拟笔试" aria-hidden="true"></a></h2><h4 id="个税征缴" class="heading-control"><a href="#个税征缴" class="headerlink" title="个税征缴"></a>个税征缴<a class="heading-anchor" href="#个税征缴" aria-hidden="true"></a></h4><p><img src="https://i.loli.net/2019/08/04/Rxiw6QHvKYTr8tB.png" alt><br><img src="https://i.loli.net/2019/08/04/7b45cCrzgojEaXD.png" alt><br><img src="https://i.loli.net/2019/08/04/iMvLtYcwTNOhR17.png" alt></p>
@@ -3389,26 +3389,6 @@ c_{N B}=\underset{c \in C}{\operatorname{largmax}} \log P(c)+\sum_{i \in \text {
       </tags>
   </entry>
   <entry>
-    <title>深度学习 NLP 的一些思考</title>
-    <url>/post/48416.html</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><p><img src="https://i.loli.net/2018/10/30/5bd7b7b675daa.png" alt="NLP.png"></p>
-<ol>
-<li><p>Ebedding 代表什么？<br>我们需要搞清楚的是是否 NLP 的一切都需要 Ebedding。比如陌生的符号、变量、数字、未登录词等。</p>
-</li>
-<li><p>Ebedding 的形式是否是” 向量”？<br>词可以 Ebedding 为向量，但是句子文章也这样表示就显得太单薄了，有没有更好的结构？</p>
-<a id="more"></a></li>
-<li><p>语言理解的生物启发模型是什么？<br>CNN 来自于视觉神经系统，但是 RNN 感觉并不像是生物模型。</p>
-</li>
-<li><p>NLP 的数据集都太小<br>NLP 的 ImageNet 什么时候出现？</p>
-</li>
-<li><p>cv 与 nlp 的区别？<br>1.cv 是对连续而具体的，nlp 是离散而抽象的<br>2.cv 是对二维信号的采样，nlp 是对一维信号的采样，对比而言，cv 携带的信息量比较大。</p>
-</li>
-<li><p>QA 系统的结果应该返回什么？<br>显然，结果不应该仅仅是文字、链接，结果应该更加丰富。</p>
-</li>
-</ol>
-]]></content>
-  </entry>
-  <entry>
     <title>海量数据相似度 —— 局部敏感哈希 (LSH)</title>
     <url>/post/54839.html</url>
     <content><![CDATA[<html><head><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script></head><body><h2 id="场景" class="heading-control"><a href="#场景" class="headerlink" title="场景"></a>场景<a class="heading-anchor" href="#场景" aria-hidden="true"></a></h2><p><strong>海量高维数据查找与某个数据最相似的一个或者多个数据。</strong>与其它基于 Tree 的数据结构，诸如 KD-Tree、SR-Tree 相比，它较好地克服了 Curse of Dimension，能够将 KNN 的时间复杂度缩减到 sub-linear。LSH 多被用于文本、多媒体（图像、音频）的相似性判断。</p>
@@ -3436,26 +3416,60 @@ c_{N B}=\underset{c \in C}{\operatorname{largmax}} \log P(c)+\sum_{i \in \text {
       </tags>
   </entry>
   <entry>
-    <title>理解 Keras LSTM 中的参数 return_sequences 和 return_state</title>
-    <url>/post/24110.html</url>
-    <content><![CDATA[<html><head><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script></head><body><p><img src="https://i.loli.net/2018/11/14/5bebd5524bc47.png" alt><br>今天才注意到 LSTM 的 output 和 hidden_state 是同一个东西！下面分情况讨论参数的设置问题。<br><a id="more"></a></p>
-<h3 id="return-sequences-False-amp-amp-return-state-False" class="heading-control"><a href="#return-sequences-False-amp-amp-return-state-False" class="headerlink" title="return_sequences=False && return_state=False"></a>return_sequences=False && return_state=False<a class="heading-anchor" href="#return-sequences-False-amp-amp-return-state-False" aria-hidden="true"></a></h3><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">h = LSTM(X)</span><br></pre></td></tr></tbody></table></figure>
-<p>Keras API 中，return_sequences 和 return_state 默认就是 false。此时只会返回最后一个 LSTM 的 hidden state 值。</p>
-<h3 id="return-sequences-True-amp-amp-return-state-False" class="heading-control"><a href="#return-sequences-True-amp-amp-return-state-False" class="headerlink" title="return_sequences=True && return_state=False"></a>return_sequences=True && return_state=False<a class="heading-anchor" href="#return-sequences-True-amp-amp-return-state-False" aria-hidden="true"></a></h3><p>输出全部时间步 LSTM 的 hidden state 结果。</p>
-<h3 id="return-sequences-False-amp-amp-return-state-True" class="heading-control"><a href="#return-sequences-False-amp-amp-return-state-True" class="headerlink" title="return_sequences=False && return_state=True"></a>return_sequences=False && return_state=True<a class="heading-anchor" href="#return-sequences-False-amp-amp-return-state-True" aria-hidden="true"></a></h3><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">lstm1, state_h, state_c = LSTM(<span class="number">1</span>, return_state=<span class="literal">True</span>)</span><br></pre></td></tr></tbody></table></figure>
-<p>stm1 和 state_h 结果都是 hidden state。在这种参数设定下，它们俩的值相同。都是最后一个时间步的 hidden state。 state_c 是最后一个时间步 cell state 结果。</p>
-<h3 id="return-sequences-True-amp-amp-return-state-True" class="heading-control"><a href="#return-sequences-True-amp-amp-return-state-True" class="headerlink" title="return_sequences=True && return_state=True"></a>return_sequences=True && return_state=True<a class="heading-anchor" href="#return-sequences-True-amp-amp-return-state-True" aria-hidden="true"></a></h3><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">lstm1, state_h, state_c = LSTM(<span class="number">1</span>, return_sequences=<span class="literal">True</span>, return_state=<span class="literal">True</span>)</span><br></pre></td></tr></tbody></table></figure>
-<p>此时，我们既要输出全部时间步的 hidden state ，又要输出 cell state。lstm1 存放的就是全部时间步的 hidden state。state_h 存放的是最后一个时间步的 hidden state,state_c 存放的是最后一个时间步的 cell state<br>举一个输出例子，假设我们输入的时间步 time step=3：<br></p><figure class="highlight shell"><table><tbody><tr><td class="code"><pre><span class="line">[array([[[-0.02145359],</span><br><span class="line">        [-0.0540871 ],</span><br><span class="line">        [-0.09228823]]], dtype=float32),</span><br><span class="line"> array([[-0.09228823]], dtype=float32),</span><br><span class="line"> array([[-0.19803026]], dtype=float32)]</span><br></pre></td></tr></tbody></table></figure><br>可以看到state_h 的值和lstm1的最后一个时间步的值相同。<p></p>
-<h3 id="Reference" class="heading-control"><a href="#Reference" class="headerlink" title="Reference"></a>Reference<a class="heading-anchor" href="#Reference" aria-hidden="true"></a></h3><ol>
-<li><a href="https://blog.csdn.net/u011327333/article/details/78501054">https://blog.csdn.net/u011327333/article/details/78501054</a></li>
-<li><a href="https://machinelearningmastery.com/return-sequences-and-return-states-for-lstms-in-keras/">Understand the Difference Between Return Sequences and Return States for LSTMs in Keras</a></li>
+    <title>深度学习 NLP 的一些思考</title>
+    <url>/post/48416.html</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><p><img src="https://i.loli.net/2018/10/30/5bd7b7b675daa.png" alt="NLP.png"></p>
+<ol>
+<li><p>Ebedding 代表什么？<br>我们需要搞清楚的是是否 NLP 的一切都需要 Ebedding。比如陌生的符号、变量、数字、未登录词等。</p>
+</li>
+<li><p>Ebedding 的形式是否是” 向量”？<br>词可以 Ebedding 为向量，但是句子文章也这样表示就显得太单薄了，有没有更好的结构？</p>
+<a id="more"></a></li>
+<li><p>语言理解的生物启发模型是什么？<br>CNN 来自于视觉神经系统，但是 RNN 感觉并不像是生物模型。</p>
+</li>
+<li><p>NLP 的数据集都太小<br>NLP 的 ImageNet 什么时候出现？</p>
+</li>
+<li><p>cv 与 nlp 的区别？<br>1.cv 是对连续而具体的，nlp 是离散而抽象的<br>2.cv 是对二维信号的采样，nlp 是对一维信号的采样，对比而言，cv 携带的信息量比较大。</p>
+</li>
+<li><p>QA 系统的结果应该返回什么？<br>显然，结果不应该仅仅是文字、链接，结果应该更加丰富。</p>
+</li>
 </ol>
+]]></content>
+  </entry>
+  <entry>
+    <title>生成模型和判别模型</title>
+    <url>/post/6742.html</url>
+    <content><![CDATA[<html><head><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script></head><body><p><img src="https://s2.ax1x.com/2019/07/22/ePCNdg.png" alt="ePCNdg.png"></p>
+<ul>
+<li>生成模型可以产生数据，判别模型只能根据数据做判断。</li>
+<li>生成模型的指导思想是贝叶斯，判别模型的指导思想是频率学派<a id="more"></a>
+</li>
+</ul>
+<h2 id="生成模型" class="heading-control"><a href="#生成模型" class="headerlink" title="生成模型"></a>生成模型<a class="heading-anchor" href="#生成模型" aria-hidden="true"></a></h2><p><strong>生成模型</strong>（Generaive Model）一般以概率的方式描述了数据的产生方式，通过对模型采样就可以产生数据。<br>一个简单例子：给定平面上一系列点，我可以认为这些点是根据一个二维高斯分布产生的，这就是一个生成模型，它可以产生数据。我可以用最大似然方法，根据已有的样本估计出模型的参数，再对这个模型进行采样，就可以得到更多的样本，这些样本和之前的样本在空间分布上可能差不多。</p>
+<p>对于分类来说：生成模型观察 x 与 c 的整体分布，通过对每一个 c 建模，最终选择能使结果最优的 c 作为最终分布 P (x,c)。训练完模型后，每新来一个数据，就根据所得到的 P (x,c) 与 x 的特征，来判断 c。</p>
+<h2 id="判别模型" class="heading-control"><a href="#判别模型" class="headerlink" title="判别模型"></a>判别模型<a class="heading-anchor" href="#判别模型" aria-hidden="true"></a></h2><p><strong>判别模型</strong>（Discriminative Model）对数据之间的映射关系建模，而不考虑数据本身是如何生成的。判别模型可以根据给定的数据 预测对应的 （回归），或根据不同的映射结果来区分（discriminate）给定的数据 （分类）。但模型自身并不能产生数据 。</p>
+<p>对于分类来说：判别模型直接根据 x 的特征，来对 c 建模，划定一个整体判别边界。训练完模型后，每新来一个数据，就根据这个边界来判断它应该属于哪一类。</p>
+<h2 id="常见模型的分类" class="heading-control"><a href="#常见模型的分类" class="headerlink" title="常见模型的分类"></a>常见模型的分类<a class="heading-anchor" href="#常见模型的分类" aria-hidden="true"></a></h2><p><strong>生成模型</strong></p>
+<ul>
+<li>高斯混合模型（和其他类型的混合模型）</li>
+<li>隐马尔可夫模型</li>
+<li>贝叶斯网络（例如 Naive bayes，Autoregressive 模型）</li>
+<li>LDA</li>
+<li> 玻尔兹曼机器（例如受限玻尔兹曼机器，深信念网络）</li>
+<li>变分自动编码器</li>
+<li>生成对抗性网络</li>
+</ul>
+<p><strong>判别模型</strong></p>
+<ul>
+<li>k - 最近邻算法</li>
+<li>逻辑回归</li>
+<li>支持向量机</li>
+<li>最大熵马尔可夫模型</li>
+<li>条件随机场</li>
+<li>神经网络</li>
+</ul>
 </body></html>]]></content>
-      <categories>
-        <category>笔记</category>
-      </categories>
       <tags>
-        <tag>Keras</tag>
+        <tag>机器学习</tag>
       </tags>
   </entry>
   <entry>
@@ -3506,57 +3520,6 @@ c_{N B}=\underset{c \in C}{\operatorname{largmax}} \log P(c)+\sum_{i \in \text {
       </tags>
   </entry>
   <entry>
-    <title>生成模型和判别模型</title>
-    <url>/post/6742.html</url>
-    <content><![CDATA[<html><head><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script></head><body><p><img src="https://s2.ax1x.com/2019/07/22/ePCNdg.png" alt="ePCNdg.png"></p>
-<ul>
-<li>生成模型可以产生数据，判别模型只能根据数据做判断。</li>
-<li>生成模型的指导思想是贝叶斯，判别模型的指导思想是频率学派<a id="more"></a>
-</li>
-</ul>
-<h2 id="生成模型" class="heading-control"><a href="#生成模型" class="headerlink" title="生成模型"></a>生成模型<a class="heading-anchor" href="#生成模型" aria-hidden="true"></a></h2><p><strong>生成模型</strong>（Generaive Model）一般以概率的方式描述了数据的产生方式，通过对模型采样就可以产生数据。<br>一个简单例子：给定平面上一系列点，我可以认为这些点是根据一个二维高斯分布产生的，这就是一个生成模型，它可以产生数据。我可以用最大似然方法，根据已有的样本估计出模型的参数，再对这个模型进行采样，就可以得到更多的样本，这些样本和之前的样本在空间分布上可能差不多。</p>
-<p>对于分类来说：生成模型观察 x 与 c 的整体分布，通过对每一个 c 建模，最终选择能使结果最优的 c 作为最终分布 P (x,c)。训练完模型后，每新来一个数据，就根据所得到的 P (x,c) 与 x 的特征，来判断 c。</p>
-<h2 id="判别模型" class="heading-control"><a href="#判别模型" class="headerlink" title="判别模型"></a>判别模型<a class="heading-anchor" href="#判别模型" aria-hidden="true"></a></h2><p><strong>判别模型</strong>（Discriminative Model）对数据之间的映射关系建模，而不考虑数据本身是如何生成的。判别模型可以根据给定的数据 预测对应的 （回归），或根据不同的映射结果来区分（discriminate）给定的数据 （分类）。但模型自身并不能产生数据 。</p>
-<p>对于分类来说：判别模型直接根据 x 的特征，来对 c 建模，划定一个整体判别边界。训练完模型后，每新来一个数据，就根据这个边界来判断它应该属于哪一类。</p>
-<h2 id="常见模型的分类" class="heading-control"><a href="#常见模型的分类" class="headerlink" title="常见模型的分类"></a>常见模型的分类<a class="heading-anchor" href="#常见模型的分类" aria-hidden="true"></a></h2><p><strong>生成模型</strong></p>
-<ul>
-<li>高斯混合模型（和其他类型的混合模型）</li>
-<li>隐马尔可夫模型</li>
-<li>贝叶斯网络（例如 Naive bayes，Autoregressive 模型）</li>
-<li>LDA</li>
-<li> 玻尔兹曼机器（例如受限玻尔兹曼机器，深信念网络）</li>
-<li>变分自动编码器</li>
-<li>生成对抗性网络</li>
-</ul>
-<p><strong>判别模型</strong></p>
-<ul>
-<li>k - 最近邻算法</li>
-<li>逻辑回归</li>
-<li>支持向量机</li>
-<li>最大熵马尔可夫模型</li>
-<li>条件随机场</li>
-<li>神经网络</li>
-</ul>
-</body></html>]]></content>
-      <tags>
-        <tag>机器学习</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>算法和开发哪个更累</title>
-    <url>/post/1215.html</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><p>来自知乎，觉得很有道理。<a href="https://www.zhihu.com/question/353534822/answer/878932462">原文</a></p>
-<ul>
-<li>在做开发的时候，主要是体力和精神紧绷，做不完的需求和紧迫的 deadline，没完没了的加班。体力上会更累一些，精神上虽然紧绷，但大部分的时候不慌。</li>
-<li>在做算法的时候，主要就是精神压力了。大量的不确定性，导致没有办法保证这次做的事情会不会有产出，没有产出就没有办法生存，会主动的做尝试很多 idea。不确定性带来的心理压力，是做开发的时候没有的，心累。</li>
-</ul>
-<p>我的博客即将同步至腾讯云 + 社区，邀请大家一同入驻：<a href="https://cloud.tencent.com/developer/support-plan?invite_code=33juwuyf1pa8c">https://cloud.tencent.com/developer/support-plan?invite_code=33juwuyf1pa8c</a></p>
-]]></content>
-      <tags>
-        <tag>工作</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>算法</title>
     <url>/post/54150.html</url>
     <content><![CDATA[<html><head><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script></head><body><p>秋招算法复习</p>
@@ -3589,27 +3552,40 @@ c_{N B}=\underset{c \in C}{\operatorname{largmax}} \log P(c)+\sum_{i \in \text {
       </tags>
   </entry>
   <entry>
-    <title>腾讯广告部门一面 - 自然语言处理方向</title>
-    <url>/post/6306.html</url>
-    <content><![CDATA[<html><head><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script></head><body><p>今天上午 10 点突然接到面试的电话，面完之后感觉不怎么好，还是总结一下吧。</p>
-<h2 id="Pool的作用" class="heading-control"><a href="#Pool的作用" class="headerlink" title="Pool的作用"></a>Pool 的作用<a class="heading-anchor" href="#Pool的作用" aria-hidden="true"></a></h2><p>池化层是一个采样的过程。<br><img src="https://s2.ax1x.com/2019/07/11/Z24iUU.png" alt="Z24iUU.png"><br><img src="https://s2.ax1x.com/2019/07/11/Z24QUO.png" alt="Z24QUO.png"></p>
-<h2 id="Word2Vec的损失函数" class="heading-control"><a href="#Word2Vec的损失函数" class="headerlink" title="Word2Vec的损失函数"></a>Word2Vec 的损失函数<a class="heading-anchor" href="#Word2Vec的损失函数" aria-hidden="true"></a></h2><h2 id="ElMo的损失函数" class="heading-control"><a href="#ElMo的损失函数" class="headerlink" title="ElMo的损失函数"></a>ElMo 的损失函数<a class="heading-anchor" href="#ElMo的损失函数" aria-hidden="true"></a></h2><h3 id="预训练部分" class="heading-control"><a href="#预训练部分" class="headerlink" title="预训练部分"></a>预训练部分<a class="heading-anchor" href="#预训练部分" aria-hidden="true"></a></h3><p>在 EMLo 中，他们使用的是一个双向的 LSTM 语言模型，由一个前向和一个后向语言<br>模型构成，目标函数就是取这两个方向语言模型的最大似然。<br>前向部分</p>
-<script type="math/tex; mode=display">
-p\left(t_{1}, t_{2}, \ldots, t_{N}\right)=\prod_{k=1}^{N} p\left(t_{k} | t_{1}, t_{2}, \ldots, t_{k-1}\right)</script><p>反向部分</p>
-<script type="math/tex; mode=display">
-p\left(t_{1}, t_{2}, \ldots, t_{N}\right)=\prod_{k=1}^{N} p\left(t_{k} | t_{k+1}, t_{k+2}, \ldots, t_{N}\right)</script><p>合起来部分如下，也就是损失函数</p>
-<script type="math/tex; mode=display">
-\begin{array}{l}{\sum_{k=1}^{N}\left(\log p\left(t_{k} | t_{1}, \ldots, t_{k-1} ; \Theta_{x}, \vec{\Theta}_{LSTM}, 
-\Theta_{s}\right)\right.} \\ {\quad+\log p\left(t_{k} | t_{k+1}, \ldots, t_{N} ; \Theta_{x}, \widetilde{\Theta}_{LSTM}, \Theta_{s}\right) )}\end{array}</script><h3 id="微调部分（用于下游任务）" class="heading-control"><a href="#微调部分（用于下游任务）" class="headerlink" title="微调部分（用于下游任务）"></a>微调部分（用于下游任务）<a class="heading-anchor" href="#微调部分（用于下游任务）" aria-hidden="true"></a></h3><p>在进行有监督的 NLP 任务时，可以将 ELMo 直接当做特征拼接到具体任务模型的<br>词向量输入，具体来说就是把这个双向语言模型的每一中间层进行一个求和得到动态的词向量表示。<br>提取词向量的过程如下：对于第 K 个 Token, 使用 L 层的双向 ELMo 可以得到的表示如下：</p>
-<script type="math/tex; mode=display">
-\begin{aligned} R_{k} &=\left\{\mathbf{x}_{k}^{L M}, \overrightarrow{\mathbf{h}}_{k, j}^{L M}, \widetilde{\mathbf{h}}_{k, j}^{L M} | j=1, \ldots, L\right\} \\ &=\left\{\mathbf{h}_{k, j}^{L M} | j=0, \ldots, L\right\} \end{aligned}</script><p>对于下游任务来说，得到表示就是各层双向 LSTM 的表示的加权和</p>
-<script type="math/tex; mode=display">
-\mathbf{E} \mathbf{L} \mathbf{M} \mathbf{o}_{k}^{\text {task}}=E\left(R_{k} ; \Theta^{\text {task}}\right)=\gamma^{\text {task}} \sum_{j=0}^{L} s_{j}^{\text {task}} \mathbf{h}_{k, j}^{L M}</script><h2 id="快速排序的复杂度计算" class="heading-control"><a href="#快速排序的复杂度计算" class="headerlink" title="快速排序的复杂度计算"></a>快速排序的复杂度计算<a class="heading-anchor" href="#快速排序的复杂度计算" aria-hidden="true"></a></h2></body></html>]]></content>
+    <title>算法和开发哪个更累</title>
+    <url>/post/1215.html</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><p>来自知乎，觉得很有道理。<a href="https://www.zhihu.com/question/353534822/answer/878932462">原文</a></p>
+<ul>
+<li>在做开发的时候，主要是体力和精神紧绷，做不完的需求和紧迫的 deadline，没完没了的加班。体力上会更累一些，精神上虽然紧绷，但大部分的时候不慌。</li>
+<li>在做算法的时候，主要就是精神压力了。大量的不确定性，导致没有办法保证这次做的事情会不会有产出，没有产出就没有办法生存，会主动的做尝试很多 idea。不确定性带来的心理压力，是做开发的时候没有的，心累。</li>
+</ul>
+<p>我的博客即将同步至腾讯云 + 社区，邀请大家一同入驻：<a href="https://cloud.tencent.com/developer/support-plan?invite_code=33juwuyf1pa8c">https://cloud.tencent.com/developer/support-plan?invite_code=33juwuyf1pa8c</a></p>
+]]></content>
+      <tags>
+        <tag>工作</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>理解 Keras LSTM 中的参数 return_sequences 和 return_state</title>
+    <url>/post/24110.html</url>
+    <content><![CDATA[<html><head><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script></head><body><p><img src="https://i.loli.net/2018/11/14/5bebd5524bc47.png" alt><br>今天才注意到 LSTM 的 output 和 hidden_state 是同一个东西！下面分情况讨论参数的设置问题。<br><a id="more"></a></p>
+<h3 id="return-sequences-False-amp-amp-return-state-False" class="heading-control"><a href="#return-sequences-False-amp-amp-return-state-False" class="headerlink" title="return_sequences=False && return_state=False"></a>return_sequences=False && return_state=False<a class="heading-anchor" href="#return-sequences-False-amp-amp-return-state-False" aria-hidden="true"></a></h3><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">h = LSTM(X)</span><br></pre></td></tr></tbody></table></figure>
+<p>Keras API 中，return_sequences 和 return_state 默认就是 false。此时只会返回最后一个 LSTM 的 hidden state 值。</p>
+<h3 id="return-sequences-True-amp-amp-return-state-False" class="heading-control"><a href="#return-sequences-True-amp-amp-return-state-False" class="headerlink" title="return_sequences=True && return_state=False"></a>return_sequences=True && return_state=False<a class="heading-anchor" href="#return-sequences-True-amp-amp-return-state-False" aria-hidden="true"></a></h3><p>输出全部时间步 LSTM 的 hidden state 结果。</p>
+<h3 id="return-sequences-False-amp-amp-return-state-True" class="heading-control"><a href="#return-sequences-False-amp-amp-return-state-True" class="headerlink" title="return_sequences=False && return_state=True"></a>return_sequences=False && return_state=True<a class="heading-anchor" href="#return-sequences-False-amp-amp-return-state-True" aria-hidden="true"></a></h3><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">lstm1, state_h, state_c = LSTM(<span class="number">1</span>, return_state=<span class="literal">True</span>)</span><br></pre></td></tr></tbody></table></figure>
+<p>stm1 和 state_h 结果都是 hidden state。在这种参数设定下，它们俩的值相同。都是最后一个时间步的 hidden state。 state_c 是最后一个时间步 cell state 结果。</p>
+<h3 id="return-sequences-True-amp-amp-return-state-True" class="heading-control"><a href="#return-sequences-True-amp-amp-return-state-True" class="headerlink" title="return_sequences=True && return_state=True"></a>return_sequences=True && return_state=True<a class="heading-anchor" href="#return-sequences-True-amp-amp-return-state-True" aria-hidden="true"></a></h3><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">lstm1, state_h, state_c = LSTM(<span class="number">1</span>, return_sequences=<span class="literal">True</span>, return_state=<span class="literal">True</span>)</span><br></pre></td></tr></tbody></table></figure>
+<p>此时，我们既要输出全部时间步的 hidden state ，又要输出 cell state。lstm1 存放的就是全部时间步的 hidden state。state_h 存放的是最后一个时间步的 hidden state,state_c 存放的是最后一个时间步的 cell state<br>举一个输出例子，假设我们输入的时间步 time step=3：<br></p><figure class="highlight shell"><table><tbody><tr><td class="code"><pre><span class="line">[array([[[-0.02145359],</span><br><span class="line">        [-0.0540871 ],</span><br><span class="line">        [-0.09228823]]], dtype=float32),</span><br><span class="line"> array([[-0.09228823]], dtype=float32),</span><br><span class="line"> array([[-0.19803026]], dtype=float32)]</span><br></pre></td></tr></tbody></table></figure><br>可以看到state_h 的值和lstm1的最后一个时间步的值相同。<p></p>
+<h3 id="Reference" class="heading-control"><a href="#Reference" class="headerlink" title="Reference"></a>Reference<a class="heading-anchor" href="#Reference" aria-hidden="true"></a></h3><ol>
+<li><a href="https://blog.csdn.net/u011327333/article/details/78501054">https://blog.csdn.net/u011327333/article/details/78501054</a></li>
+<li><a href="https://machinelearningmastery.com/return-sequences-and-return-states-for-lstms-in-keras/">Understand the Difference Between Return Sequences and Return States for LSTMs in Keras</a></li>
+</ol>
+</body></html>]]></content>
       <categories>
-        <category>腾讯广告一面</category>
+        <category>笔记</category>
       </categories>
       <tags>
-        <tag>面试</tag>
+        <tag>Keras</tag>
       </tags>
   </entry>
   <entry>
@@ -3646,6 +3622,30 @@ p\left(t_{1}, t_{2}, \ldots, t_{N}\right)=\prod_{k=1}^{N} p\left(t_{k} | t_{k+1}
 </body></html>]]></content>
       <tags>
         <tag>bug</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>腾讯广告部门一面 - 自然语言处理方向</title>
+    <url>/post/6306.html</url>
+    <content><![CDATA[<html><head><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script></head><body><p>今天上午 10 点突然接到面试的电话，面完之后感觉不怎么好，还是总结一下吧。</p>
+<h2 id="Pool的作用" class="heading-control"><a href="#Pool的作用" class="headerlink" title="Pool的作用"></a>Pool 的作用<a class="heading-anchor" href="#Pool的作用" aria-hidden="true"></a></h2><p>池化层是一个采样的过程。<br><img src="https://s2.ax1x.com/2019/07/11/Z24iUU.png" alt="Z24iUU.png"><br><img src="https://s2.ax1x.com/2019/07/11/Z24QUO.png" alt="Z24QUO.png"></p>
+<h2 id="Word2Vec的损失函数" class="heading-control"><a href="#Word2Vec的损失函数" class="headerlink" title="Word2Vec的损失函数"></a>Word2Vec 的损失函数<a class="heading-anchor" href="#Word2Vec的损失函数" aria-hidden="true"></a></h2><h2 id="ElMo的损失函数" class="heading-control"><a href="#ElMo的损失函数" class="headerlink" title="ElMo的损失函数"></a>ElMo 的损失函数<a class="heading-anchor" href="#ElMo的损失函数" aria-hidden="true"></a></h2><h3 id="预训练部分" class="heading-control"><a href="#预训练部分" class="headerlink" title="预训练部分"></a>预训练部分<a class="heading-anchor" href="#预训练部分" aria-hidden="true"></a></h3><p>在 EMLo 中，他们使用的是一个双向的 LSTM 语言模型，由一个前向和一个后向语言<br>模型构成，目标函数就是取这两个方向语言模型的最大似然。<br>前向部分</p>
+<script type="math/tex; mode=display">
+p\left(t_{1}, t_{2}, \ldots, t_{N}\right)=\prod_{k=1}^{N} p\left(t_{k} | t_{1}, t_{2}, \ldots, t_{k-1}\right)</script><p>反向部分</p>
+<script type="math/tex; mode=display">
+p\left(t_{1}, t_{2}, \ldots, t_{N}\right)=\prod_{k=1}^{N} p\left(t_{k} | t_{k+1}, t_{k+2}, \ldots, t_{N}\right)</script><p>合起来部分如下，也就是损失函数</p>
+<script type="math/tex; mode=display">
+\begin{array}{l}{\sum_{k=1}^{N}\left(\log p\left(t_{k} | t_{1}, \ldots, t_{k-1} ; \Theta_{x}, \vec{\Theta}_{LSTM}, 
+\Theta_{s}\right)\right.} \\ {\quad+\log p\left(t_{k} | t_{k+1}, \ldots, t_{N} ; \Theta_{x}, \widetilde{\Theta}_{LSTM}, \Theta_{s}\right) )}\end{array}</script><h3 id="微调部分（用于下游任务）" class="heading-control"><a href="#微调部分（用于下游任务）" class="headerlink" title="微调部分（用于下游任务）"></a>微调部分（用于下游任务）<a class="heading-anchor" href="#微调部分（用于下游任务）" aria-hidden="true"></a></h3><p>在进行有监督的 NLP 任务时，可以将 ELMo 直接当做特征拼接到具体任务模型的<br>词向量输入，具体来说就是把这个双向语言模型的每一中间层进行一个求和得到动态的词向量表示。<br>提取词向量的过程如下：对于第 K 个 Token, 使用 L 层的双向 ELMo 可以得到的表示如下：</p>
+<script type="math/tex; mode=display">
+\begin{aligned} R_{k} &=\left\{\mathbf{x}_{k}^{L M}, \overrightarrow{\mathbf{h}}_{k, j}^{L M}, \widetilde{\mathbf{h}}_{k, j}^{L M} | j=1, \ldots, L\right\} \\ &=\left\{\mathbf{h}_{k, j}^{L M} | j=0, \ldots, L\right\} \end{aligned}</script><p>对于下游任务来说，得到表示就是各层双向 LSTM 的表示的加权和</p>
+<script type="math/tex; mode=display">
+\mathbf{E} \mathbf{L} \mathbf{M} \mathbf{o}_{k}^{\text {task}}=E\left(R_{k} ; \Theta^{\text {task}}\right)=\gamma^{\text {task}} \sum_{j=0}^{L} s_{j}^{\text {task}} \mathbf{h}_{k, j}^{L M}</script><h2 id="快速排序的复杂度计算" class="heading-control"><a href="#快速排序的复杂度计算" class="headerlink" title="快速排序的复杂度计算"></a>快速排序的复杂度计算<a class="heading-anchor" href="#快速排序的复杂度计算" aria-hidden="true"></a></h2></body></html>]]></content>
+      <categories>
+        <category>腾讯广告一面</category>
+      </categories>
+      <tags>
+        <tag>面试</tag>
       </tags>
   </entry>
   <entry>
@@ -3814,21 +3814,6 @@ p\left(t_{1}, t_{2}, \ldots, t_{N}\right)=\prod_{k=1}^{N} p\left(t_{k} | t_{k+1}
       </categories>
       <tags>
         <tag>词向量</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>轻量终端打印工具:wasabi</title>
-    <url>/post/23212.html</url>
-    <content><![CDATA[<html><head><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script></head><body><p><img src="https://i.loli.net/2018/11/29/5bffea4e6ae22.png" alt><br>可以用于终端打印一些信息<br><a id="more"></a></p>
-<h2 id="安装" class="heading-control"><a href="#安装" class="headerlink" title="安装"></a>安装<a class="heading-anchor" href="#安装" aria-hidden="true"></a></h2><figure class="highlight shell"><table><tbody><tr><td class="code"><pre><span class="line">pip install wasabi</span><br></pre></td></tr></tbody></table></figure>
-<h2 id="代码以及对应的执行效果" class="heading-control"><a href="#代码以及对应的执行效果" class="headerlink" title="代码以及对应的执行效果"></a>代码以及对应的执行效果<a class="heading-anchor" href="#代码以及对应的执行效果" aria-hidden="true"></a></h2><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> wasabi <span class="keyword">import</span> Printer</span><br><span class="line"></span><br><span class="line">msg = Printer()</span><br><span class="line">msg.text(<span class="string">"Hello world!"</span>)</span><br><span class="line"></span><br><span class="line">msg.good(<span class="string">"Success"</span>)</span><br><span class="line">msg.fail(<span class="string">"Error"</span>)</span><br><span class="line">msg.warn(<span class="string">"Warning"</span>)</span><br><span class="line">msg.info(<span class="string">"Info"</span>)</span><br><span class="line"></span><br><span class="line">msg.divider(<span class="string">"Heading"</span>,char=<span class="string">'-'</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"><span class="keyword">with</span> msg.loading(<span class="string">"Loading..."</span>):</span><br><span class="line">    <span class="comment"># Do something here that takes longer</span></span><br><span class="line">    time.sleep(<span class="number">3</span>)</span><br><span class="line">msg.good(<span class="string">"Successfully loaded something!"</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> wasabi <span class="keyword">import</span> color</span><br><span class="line"></span><br><span class="line">formatted = color(<span class="string">"This is a text"</span>, fg=<span class="string">"white"</span>, bg=<span class="string">"green"</span>, bold=<span class="literal">True</span>)</span><br><span class="line">print(formatted)</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> wasabi <span class="keyword">import</span> wrap</span><br><span class="line"></span><br><span class="line">wrapped = wrap(<span class="string">"Hello world, this is a text."</span>, indent=<span class="number">2</span>)</span><br><span class="line">print(wrapped)</span><br></pre></td></tr></tbody></table></figure>
-<p><img src="https://i.loli.net/2018/11/29/5bffea4e6ae22.png" alt></p>
-</body></html>]]></content>
-      <categories>
-        <category>工具</category>
-      </categories>
-      <tags>
-        <tag>wasabi</tag>
       </tags>
   </entry>
   <entry>
@@ -4004,6 +3989,39 @@ J(\theta)=-\left[\sum_{i=1}^{n} \sum_{k=1}^{K} \mathbf{1}\left\{y^{(i)}=k\right\
 <h4 id="模型导出和部署模块" class="heading-control"><a href="#模型导出和部署模块" class="headerlink" title="模型导出和部署模块"></a>模型导出和部署模块<a class="heading-anchor" href="#模型导出和部署模块" aria-hidden="true"></a></h4><h4 id="针对问题段落匹配的信息检索模块" class="heading-control"><a href="#针对问题段落匹配的信息检索模块" class="headerlink" title="针对问题段落匹配的信息检索模块"></a>针对问题段落匹配的信息检索模块<a class="heading-anchor" href="#针对问题段落匹配的信息检索模块" aria-hidden="true"></a></h4></body></html>]]></content>
   </entry>
   <entry>
+    <title>轻量终端打印工具:wasabi</title>
+    <url>/post/23212.html</url>
+    <content><![CDATA[<html><head><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script></head><body><p><img src="https://i.loli.net/2018/11/29/5bffea4e6ae22.png" alt><br>可以用于终端打印一些信息<br><a id="more"></a></p>
+<h2 id="安装" class="heading-control"><a href="#安装" class="headerlink" title="安装"></a>安装<a class="heading-anchor" href="#安装" aria-hidden="true"></a></h2><figure class="highlight shell"><table><tbody><tr><td class="code"><pre><span class="line">pip install wasabi</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="代码以及对应的执行效果" class="heading-control"><a href="#代码以及对应的执行效果" class="headerlink" title="代码以及对应的执行效果"></a>代码以及对应的执行效果<a class="heading-anchor" href="#代码以及对应的执行效果" aria-hidden="true"></a></h2><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> wasabi <span class="keyword">import</span> Printer</span><br><span class="line"></span><br><span class="line">msg = Printer()</span><br><span class="line">msg.text(<span class="string">"Hello world!"</span>)</span><br><span class="line"></span><br><span class="line">msg.good(<span class="string">"Success"</span>)</span><br><span class="line">msg.fail(<span class="string">"Error"</span>)</span><br><span class="line">msg.warn(<span class="string">"Warning"</span>)</span><br><span class="line">msg.info(<span class="string">"Info"</span>)</span><br><span class="line"></span><br><span class="line">msg.divider(<span class="string">"Heading"</span>,char=<span class="string">'-'</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"><span class="keyword">with</span> msg.loading(<span class="string">"Loading..."</span>):</span><br><span class="line">    <span class="comment"># Do something here that takes longer</span></span><br><span class="line">    time.sleep(<span class="number">3</span>)</span><br><span class="line">msg.good(<span class="string">"Successfully loaded something!"</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> wasabi <span class="keyword">import</span> color</span><br><span class="line"></span><br><span class="line">formatted = color(<span class="string">"This is a text"</span>, fg=<span class="string">"white"</span>, bg=<span class="string">"green"</span>, bold=<span class="literal">True</span>)</span><br><span class="line">print(formatted)</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> wasabi <span class="keyword">import</span> wrap</span><br><span class="line"></span><br><span class="line">wrapped = wrap(<span class="string">"Hello world, this is a text."</span>, indent=<span class="number">2</span>)</span><br><span class="line">print(wrapped)</span><br></pre></td></tr></tbody></table></figure>
+<p><img src="https://i.loli.net/2018/11/29/5bffea4e6ae22.png" alt></p>
+</body></html>]]></content>
+      <categories>
+        <category>工具</category>
+      </categories>
+      <tags>
+        <tag>wasabi</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>长文本分类</title>
+    <url>/post/35349.html</url>
+    <content><![CDATA[<html><head><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script></head><body><p>在 NLP 领域中，文本分类舆情分析等任务相较于文本抽取，和摘要等任务更容易获得大量标注数据。因此在文本分类领域中深度学习相较于传统方法更容易获得比较好的效果。<br>文本分类领域比较重要的的深度学习模型主要有 FastText，TextCNN，HAN，DPCNN。</p>
+<h2 id="FastText" class="heading-control"><a href="#FastText" class="headerlink" title="FastText"></a>FastText<a class="heading-anchor" href="#FastText" aria-hidden="true"></a></h2><p>FastText 是 Facebook 于 2016 年开源的一个词向量计算和文本分类工具，在学术上并没有太大创新。但是它的优点也非常明显，在文本分类任务中，fastText（浅层网络）往往能取得和深度网络相媲美的精度，却在训练时间上比深度网络快许多数量级。在标准的多核 CPU 上， 能够训练 10 亿词级别语料库的词向量在 10 分钟之内，能够分类有着 30 万多类别的 50 多万句子在 1 分钟之内。</p>
+<h2 id="Reference" class="heading-control"><a href="#Reference" class="headerlink" title="Reference"></a>Reference<a class="heading-anchor" href="#Reference" aria-hidden="true"></a></h2><ul>
+<li><a href="https://zhuanlan.zhihu.com/p/46331902">如何用深度学习做好长文本分类与法律文书智能化处理</a></li>
+<li><a href="https://www.kaggle.com/michaelsnell/conv1d-dpcnn-in-keras">Conv1D DPCNN in Keras 代码</a></li>
+</ul>
+</body></html>]]></content>
+      <categories>
+        <category>项目</category>
+      </categories>
+      <tags>
+        <tag>NLP</tag>
+        <tag>分类</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>最大似然估计和最大后验估计</title>
     <url>/post/46328.html</url>
     <content><![CDATA[<html><head><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script></head><body><p><img src="https://i.loli.net/2019/07/22/5d357cfaebdc553807.png" alt></p>
@@ -4051,24 +4069,6 @@ P\left(\theta\right)=\frac{1}{\sqrt{2 a}} e^{\frac{-\left|\theta\right|}{a}}</sc
 </body></html>]]></content>
       <tags>
         <tag>机器学习</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>长文本分类</title>
-    <url>/post/35349.html</url>
-    <content><![CDATA[<html><head><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script></head><body><p>在 NLP 领域中，文本分类舆情分析等任务相较于文本抽取，和摘要等任务更容易获得大量标注数据。因此在文本分类领域中深度学习相较于传统方法更容易获得比较好的效果。<br>文本分类领域比较重要的的深度学习模型主要有 FastText，TextCNN，HAN，DPCNN。</p>
-<h2 id="FastText" class="heading-control"><a href="#FastText" class="headerlink" title="FastText"></a>FastText<a class="heading-anchor" href="#FastText" aria-hidden="true"></a></h2><p>FastText 是 Facebook 于 2016 年开源的一个词向量计算和文本分类工具，在学术上并没有太大创新。但是它的优点也非常明显，在文本分类任务中，fastText（浅层网络）往往能取得和深度网络相媲美的精度，却在训练时间上比深度网络快许多数量级。在标准的多核 CPU 上， 能够训练 10 亿词级别语料库的词向量在 10 分钟之内，能够分类有着 30 万多类别的 50 多万句子在 1 分钟之内。</p>
-<h2 id="Reference" class="heading-control"><a href="#Reference" class="headerlink" title="Reference"></a>Reference<a class="heading-anchor" href="#Reference" aria-hidden="true"></a></h2><ul>
-<li><a href="https://zhuanlan.zhihu.com/p/46331902">如何用深度学习做好长文本分类与法律文书智能化处理</a></li>
-<li><a href="https://www.kaggle.com/michaelsnell/conv1d-dpcnn-in-keras">Conv1D DPCNN in Keras 代码</a></li>
-</ul>
-</body></html>]]></content>
-      <categories>
-        <category>项目</category>
-      </categories>
-      <tags>
-        <tag>NLP</tag>
-        <tag>分类</tag>
       </tags>
   </entry>
   <entry>
