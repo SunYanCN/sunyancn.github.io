@@ -350,6 +350,20 @@ DuReader 数据集的样本可用一个四维数组表示：{q, t, D, A}，其�
       </tags>
   </entry>
   <entry>
+    <title>HEXO 博客迁移的步骤</title>
+    <url>/post/27014.html</url>
+    <content><![CDATA[<html><head><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script></head><body><p>最近买了新电脑，但是博客是今天才迁移过来。本以为很麻烦，实际上操作非常简单，只需要三个步骤。</p>
+<h3 id="拷贝博客文件夹" class="heading-control"><a href="#拷贝博客文件夹" class="headerlink" title="拷贝博客文件夹"></a>拷贝博客文件夹<a class="heading-anchor" href="#拷贝博客文件夹" aria-hidden="true"></a></h3><p>大概 50 多 M 的样子，原封不动的拷贝到新电脑上。</p>
+<h3 id="安装hexo" class="heading-control"><a href="#安装hexo" class="headerlink" title="安装hexo"></a>安装 hexo<a class="heading-anchor" href="#安装hexo" aria-hidden="true"></a></h3><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">$ npm install -g hexo-cli</span><br></pre></td></tr></tbody></table></figure>
+<p>有时候会出现 <code>warning: LF will be replaced by CRLF in</code> 的警告，输入下面的命令解决：<br></p><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">git config --global core.autocrlf <span class="literal">false</span></span><br></pre></td></tr></tbody></table></figure><p></p>
+<h3 id="重新配置ssh密钥" class="heading-control"><a href="#重新配置ssh密钥" class="headerlink" title="重新配置ssh密钥"></a>重新配置 ssh 密钥<a class="heading-anchor" href="#重新配置ssh密钥" aria-hidden="true"></a></h3><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">ssh-keygen</span><br><span class="line">cat ~/.ssh/id_rsa.pub</span><br></pre></td></tr></tbody></table></figure>
+<p>复制到 github ssh 里面就行了。</p>
+</body></html>]]></content>
+      <tags>
+        <tag>HEXO</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Google Colab 免费 GPU 服务器使用教程</title>
     <url>/post/529.html</url>
     <content><![CDATA[<html><head><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script></head><body><p><img src="https://i.loli.net/2018/10/29/5bd707070a49e.png" alt></p>
@@ -370,20 +384,6 @@ DuReader 数据集的样本可用一个四维数组表示：{q, t, D, A}，其�
       </categories>
       <tags>
         <tag>GPU</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>HEXO 博客迁移的步骤</title>
-    <url>/post/27014.html</url>
-    <content><![CDATA[<html><head><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script></head><body><p>最近买了新电脑，但是博客是今天才迁移过来。本以为很麻烦，实际上操作非常简单，只需要三个步骤。</p>
-<h3 id="拷贝博客文件夹" class="heading-control"><a href="#拷贝博客文件夹" class="headerlink" title="拷贝博客文件夹"></a>拷贝博客文件夹<a class="heading-anchor" href="#拷贝博客文件夹" aria-hidden="true"></a></h3><p>大概 50 多 M 的样子，原封不动的拷贝到新电脑上。</p>
-<h3 id="安装hexo" class="heading-control"><a href="#安装hexo" class="headerlink" title="安装hexo"></a>安装 hexo<a class="heading-anchor" href="#安装hexo" aria-hidden="true"></a></h3><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">$ npm install -g hexo-cli</span><br></pre></td></tr></tbody></table></figure>
-<p>有时候会出现 <code>warning: LF will be replaced by CRLF in</code> 的警告，输入下面的命令解决：<br></p><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">git config --global core.autocrlf <span class="literal">false</span></span><br></pre></td></tr></tbody></table></figure><p></p>
-<h3 id="重新配置ssh密钥" class="heading-control"><a href="#重新配置ssh密钥" class="headerlink" title="重新配置ssh密钥"></a>重新配置 ssh 密钥<a class="heading-anchor" href="#重新配置ssh密钥" aria-hidden="true"></a></h3><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">ssh-keygen</span><br><span class="line">cat ~/.ssh/id_rsa.pub</span><br></pre></td></tr></tbody></table></figure>
-<p>复制到 github ssh 里面就行了。</p>
-</body></html>]]></content>
-      <tags>
-        <tag>HEXO</tag>
       </tags>
   </entry>
   <entry>
@@ -624,25 +624,6 @@ DuReader 数据集的样本可用一个四维数组表示：{q, t, D, A}，其�
       </tags>
   </entry>
   <entry>
-    <title>Hexo 解决公式渲染问题</title>
-    <url>/post/58604.html</url>
-    <content><![CDATA[<html><head><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script></head><body><h2 id="Next配置文件" class="heading-control"><a href="#Next配置文件" class="headerlink" title="Next配置文件"></a>Next 配置文件<a class="heading-anchor" href="#Next配置文件" aria-hidden="true"></a></h2><figure class="highlight shell"><table><tbody><tr><td class="code"><pre><span class="line">mathjax:</span><br><span class="line">  enable: True</span><br><span class="line">  per_page: false</span><br><span class="line">  cdn: //cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML</span><br></pre></td></tr></tbody></table></figure>
-<h2 id="更换渲染引擎" class="heading-control"><a href="#更换渲染引擎" class="headerlink" title="更换渲染引擎"></a>更换渲染引擎<a class="heading-anchor" href="#更换渲染引擎" aria-hidden="true"></a></h2><p>更换 Hexo 的 markdown 渲染引擎，hexo-renderer-kramed 引擎是在默认的渲染引擎 hexo-renderer-marked 的基础上修改了一些 bug ，两者比较接近，也比较轻量级。</p>
-<h2 id="更改渲染设置" class="heading-control"><a href="#更改渲染设置" class="headerlink" title="更改渲染设置"></a>更改渲染设置<a class="heading-anchor" href="#更改渲染设置" aria-hidden="true"></a></h2><p>到博客根目录下，找到 <code>node_modules\kramed\lib\rules\inline.js</code>，把第 11 行的 <code>escape</code> 变量的值做相应的修改：<br></p><figure class="highlight shell"><table><tbody><tr><td class="code"><pre><span class="line">//em: /^\b_((?:__|[\s\S])+?)_\b|^\*((?:\*\*|[\s\S])+?)\*(?!\*)/,</span><br><span class="line"> em: /^\*((?:\*\*|[\s\S])+?)\*(?!\*)/,</span><br></pre></td></tr></tbody></table></figure><br>同时把第20行的em变量也要做相应的修改。<br><figure class="highlight shell"><table><tbody><tr><td class="code"><pre><span class="line">//em: /^\b_((?:__|[\s\S])+?)_\b|^\*((?:\*\*|[\s\S])+?)\*(?!\*)/,</span><br><span class="line">  em: /^\*((?:\*\*|[\s\S])+?)\*(?!\*)/,</span><br></pre></td></tr></tbody></table></figure><br>重新启动hexo（先clean再generate）,问题完美解决。<p></p>
-<a id="more"></a>
-<h2 id="例子" class="heading-control"><a href="#例子" class="headerlink" title="例子"></a>例子<a class="heading-anchor" href="#例子" aria-hidden="true"></a></h2><h3 id="行内公式" class="heading-control"><a href="#行内公式" class="headerlink" title="行内公式"></a>行内公式<a class="heading-anchor" href="#行内公式" aria-hidden="true"></a></h3><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">$W_{b}$</span><br></pre></td></tr></tbody></table></figure>
-<p>$W_{b}$</p>
-<h3 id="行间公式" class="heading-control"><a href="#行间公式" class="headerlink" title="行间公式"></a>行间公式<a class="heading-anchor" href="#行间公式" aria-hidden="true"></a></h3><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">$$</span><br><span class="line">W_{b}</span><br><span class="line">$$</span><br></pre></td></tr></tbody></table></figure>
-<script type="math/tex; mode=display">
-W_{b}</script></body></html>]]></content>
-      <categories>
-        <category>工具</category>
-      </categories>
-      <tags>
-        <tag>Hexo</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Hexo 博客 + Next 主题深度优化与定制</title>
     <url>/post/16107.html</url>
     <content><![CDATA[<html><head><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script></head><body><p>本文基于的 Hexo 版本：5.1.1，Next 主题版本：7.8.0，较低版本可能不适用，操作系统为 Windows。本文参考了很多博主的文章，在每一节结尾都有注明。</p>
@@ -683,6 +664,25 @@ W_{b}</script></body></html>]]></content>
       </categories>
       <tags>
         <tag>博客</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hexo 解决公式渲染问题</title>
+    <url>/post/58604.html</url>
+    <content><![CDATA[<html><head><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script></head><body><h2 id="Next配置文件" class="heading-control"><a href="#Next配置文件" class="headerlink" title="Next配置文件"></a>Next 配置文件<a class="heading-anchor" href="#Next配置文件" aria-hidden="true"></a></h2><figure class="highlight shell"><table><tbody><tr><td class="code"><pre><span class="line">mathjax:</span><br><span class="line">  enable: True</span><br><span class="line">  per_page: false</span><br><span class="line">  cdn: //cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="更换渲染引擎" class="heading-control"><a href="#更换渲染引擎" class="headerlink" title="更换渲染引擎"></a>更换渲染引擎<a class="heading-anchor" href="#更换渲染引擎" aria-hidden="true"></a></h2><p>更换 Hexo 的 markdown 渲染引擎，hexo-renderer-kramed 引擎是在默认的渲染引擎 hexo-renderer-marked 的基础上修改了一些 bug ，两者比较接近，也比较轻量级。</p>
+<h2 id="更改渲染设置" class="heading-control"><a href="#更改渲染设置" class="headerlink" title="更改渲染设置"></a>更改渲染设置<a class="heading-anchor" href="#更改渲染设置" aria-hidden="true"></a></h2><p>到博客根目录下，找到 <code>node_modules\kramed\lib\rules\inline.js</code>，把第 11 行的 <code>escape</code> 变量的值做相应的修改：<br></p><figure class="highlight shell"><table><tbody><tr><td class="code"><pre><span class="line">//em: /^\b_((?:__|[\s\S])+?)_\b|^\*((?:\*\*|[\s\S])+?)\*(?!\*)/,</span><br><span class="line"> em: /^\*((?:\*\*|[\s\S])+?)\*(?!\*)/,</span><br></pre></td></tr></tbody></table></figure><br>同时把第20行的em变量也要做相应的修改。<br><figure class="highlight shell"><table><tbody><tr><td class="code"><pre><span class="line">//em: /^\b_((?:__|[\s\S])+?)_\b|^\*((?:\*\*|[\s\S])+?)\*(?!\*)/,</span><br><span class="line">  em: /^\*((?:\*\*|[\s\S])+?)\*(?!\*)/,</span><br></pre></td></tr></tbody></table></figure><br>重新启动hexo（先clean再generate）,问题完美解决。<p></p>
+<a id="more"></a>
+<h2 id="例子" class="heading-control"><a href="#例子" class="headerlink" title="例子"></a>例子<a class="heading-anchor" href="#例子" aria-hidden="true"></a></h2><h3 id="行内公式" class="heading-control"><a href="#行内公式" class="headerlink" title="行内公式"></a>行内公式<a class="heading-anchor" href="#行内公式" aria-hidden="true"></a></h3><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">$W_{b}$</span><br></pre></td></tr></tbody></table></figure>
+<p>$W_{b}$</p>
+<h3 id="行间公式" class="heading-control"><a href="#行间公式" class="headerlink" title="行间公式"></a>行间公式<a class="heading-anchor" href="#行间公式" aria-hidden="true"></a></h3><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">$$</span><br><span class="line">W_{b}</span><br><span class="line">$$</span><br></pre></td></tr></tbody></table></figure>
+<script type="math/tex; mode=display">
+W_{b}</script></body></html>]]></content>
+      <categories>
+        <category>工具</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
       </tags>
   </entry>
   <entry>
@@ -784,6 +784,17 @@ D(x, y)=\sqrt[\psi]{\left(\left|x_{1}-y_{1}\right|\right)^{p}+\left(\left|x_{2}-
       </tags>
   </entry>
   <entry>
+    <title>Leetcode 387— 字符串中的第一个唯一字符</title>
+    <url>/post/56348.html</url>
+    <content><![CDATA[<html><head><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script></head><body><p><img src="https://i.loli.net/2019/08/10/3RJKsiQIWL8qfUr.png" alt><br><a id="more"></a></p>
+<h2 id="方法一：Hash" class="heading-control"><a href="#方法一：Hash" class="headerlink" title="方法一：Hash"></a>方法一：Hash<a class="heading-anchor" href="#方法一：Hash" aria-hidden="true"></a></h2><p>和出现次数有关的，不要犹豫，hash<br><strong>具体思路</strong>：首先用字典统计每个字符出现的频率，然后顺序遍历字符串，并在字典中进行查找，出现频率为 1，返回。<br>时间复杂度 O (n), 空间复杂度 O (n)<br></p><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">firstUniqChar</span>(<span class="params">self, s: str</span>) -> int:</span></span><br><span class="line">        <span class="comment">#字典存储字符频率</span></span><br><span class="line">        dic = dict()</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> s:</span><br><span class="line">            <span class="keyword">if</span> i <span class="keyword">in</span> dic:</span><br><span class="line">                dic[i] = dic[i] + <span class="number">1</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                dic[i] = <span class="number">1</span></span><br><span class="line">        <span class="comment">#顺序查找</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(len(s)):</span><br><span class="line">            <span class="keyword">if</span> dic[s[i]] == <span class="number">1</span>:</span><br><span class="line">                <span class="keyword">return</span> i</span><br><span class="line">        <span class="keyword">return</span> <span class="number">-1</span></span><br></pre></td></tr></tbody></table></figure><p></p>
+<h2 id="方法二：空间换时间" class="heading-control"><a href="#方法二：空间换时间" class="headerlink" title="方法二：空间换时间"></a>方法二：空间换时间<a class="heading-anchor" href="#方法二：空间换时间" aria-hidden="true"></a></h2><p>因为只有 26 个字母，因此可以开一个 26 的数组记录每个字符出现的频率。然后顺序查找，频率为 1，返回。<strong>优点</strong>：对于很长的字符串节约空间复杂度。<br></p><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">firstUniqChar</span>(<span class="params">self, s: str</span>) -> int:</span></span><br><span class="line">    <span class="keyword">if</span> len(s)==<span class="number">0</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="number">-1</span></span><br><span class="line"></span><br><span class="line">    table = [<span class="number">0</span>]*<span class="number">26</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(len(s)):</span><br><span class="line">        table[ord(s[i])-ord(<span class="string">'a'</span>)]+=<span class="number">1</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(len(s)):</span><br><span class="line">        <span class="keyword">if</span> table[ord(s[i])-ord(<span class="string">'a'</span>)]==<span class="number">1</span>:</span><br><span class="line">            <span class="keyword">return</span> i</span><br><span class="line">    <span class="keyword">return</span> <span class="number">-1</span></span><br></pre></td></tr></tbody></table></figure><p></p>
+</body></html>]]></content>
+      <tags>
+        <tag>字符串</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>LSTM 参数计算与 TimeDistributed 层</title>
     <url>/post/27641.html</url>
     <content><![CDATA[<html><head><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script></head><body><p><img src="https://i.loli.net/2018/11/14/5bebe405d0716.png" alt></p>
@@ -820,17 +831,6 @@ Number=(Features+Output\_dim) x Output\_dim+Output\_dim
       </categories>
       <tags>
         <tag>Keras</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Leetcode 387— 字符串中的第一个唯一字符</title>
-    <url>/post/56348.html</url>
-    <content><![CDATA[<html><head><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script></head><body><p><img src="https://i.loli.net/2019/08/10/3RJKsiQIWL8qfUr.png" alt><br><a id="more"></a></p>
-<h2 id="方法一：Hash" class="heading-control"><a href="#方法一：Hash" class="headerlink" title="方法一：Hash"></a>方法一：Hash<a class="heading-anchor" href="#方法一：Hash" aria-hidden="true"></a></h2><p>和出现次数有关的，不要犹豫，hash<br><strong>具体思路</strong>：首先用字典统计每个字符出现的频率，然后顺序遍历字符串，并在字典中进行查找，出现频率为 1，返回。<br>时间复杂度 O (n), 空间复杂度 O (n)<br></p><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">firstUniqChar</span>(<span class="params">self, s: str</span>) -> int:</span></span><br><span class="line">        <span class="comment">#字典存储字符频率</span></span><br><span class="line">        dic = dict()</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> s:</span><br><span class="line">            <span class="keyword">if</span> i <span class="keyword">in</span> dic:</span><br><span class="line">                dic[i] = dic[i] + <span class="number">1</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                dic[i] = <span class="number">1</span></span><br><span class="line">        <span class="comment">#顺序查找</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(len(s)):</span><br><span class="line">            <span class="keyword">if</span> dic[s[i]] == <span class="number">1</span>:</span><br><span class="line">                <span class="keyword">return</span> i</span><br><span class="line">        <span class="keyword">return</span> <span class="number">-1</span></span><br></pre></td></tr></tbody></table></figure><p></p>
-<h2 id="方法二：空间换时间" class="heading-control"><a href="#方法二：空间换时间" class="headerlink" title="方法二：空间换时间"></a>方法二：空间换时间<a class="heading-anchor" href="#方法二：空间换时间" aria-hidden="true"></a></h2><p>因为只有 26 个字母，因此可以开一个 26 的数组记录每个字符出现的频率。然后顺序查找，频率为 1，返回。<strong>优点</strong>：对于很长的字符串节约空间复杂度。<br></p><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">firstUniqChar</span>(<span class="params">self, s: str</span>) -> int:</span></span><br><span class="line">    <span class="keyword">if</span> len(s)==<span class="number">0</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="number">-1</span></span><br><span class="line"></span><br><span class="line">    table = [<span class="number">0</span>]*<span class="number">26</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(len(s)):</span><br><span class="line">        table[ord(s[i])-ord(<span class="string">'a'</span>)]+=<span class="number">1</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(len(s)):</span><br><span class="line">        <span class="keyword">if</span> table[ord(s[i])-ord(<span class="string">'a'</span>)]==<span class="number">1</span>:</span><br><span class="line">            <span class="keyword">return</span> i</span><br><span class="line">    <span class="keyword">return</span> <span class="number">-1</span></span><br></pre></td></tr></tbody></table></figure><p></p>
-</body></html>]]></content>
-      <tags>
-        <tag>字符串</tag>
       </tags>
   </entry>
   <entry>
@@ -2160,15 +2160,6 @@ Reference：<a href="https://blog.csdn.net/why19940926/article/details/78580067"
       </tags>
   </entry>
   <entry>
-    <title>leetcode226— 翻转二叉树</title>
-    <url>/post/26095.html</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><p><img src="https://i.loli.net/2019/08/12/nb9EH4gKTdricY8.png" alt=""><br><a id="more"></a><br></p><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">TreeNode</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self, x</span>):</span></span><br><span class="line">        self.val = x</span><br><span class="line">        self.left = <span class="literal">None</span></span><br><span class="line">        self.right = <span class="literal">None</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">invertTree</span>(<span class="params">root: TreeNode</span>) -&gt; TreeNode:</span></span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> root:</span><br><span class="line">        <span class="keyword">return</span> </span><br><span class="line">    root.right, root.left = invertTree(root.left), invertTree(root.right)</span><br><span class="line">    <span class="keyword">return</span> root</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</span><br><span class="line">    root = TreeNode(<span class="number">1</span>)</span><br><span class="line">    root.left = TreeNode(<span class="number">2</span>)</span><br><span class="line">    root.right = TreeNode(<span class="number">3</span>)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">print_tree</span>(<span class="params">root</span>):</span></span><br><span class="line">        <span class="keyword">if</span> root:</span><br><span class="line">            print(root.val)</span><br><span class="line">            print(root.left.val)</span><br><span class="line">            print(root.right.val)</span><br><span class="line"></span><br><span class="line">    print_tree(root)</span><br><span class="line">    </span><br><span class="line">    print(<span class="string">"\n"</span>)</span><br><span class="line"></span><br><span class="line">    root = invertTree(root)</span><br><span class="line">    print_tree(root)</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure><p></p>
-]]></content>
-      <tags>
-        <tag>算法</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>leetcode top100 - 整数反转</title>
     <url>/post/51747.html</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><p>思路:</p>
@@ -2181,6 +2172,15 @@ Reference：<a href="https://blog.csdn.net/why19940926/article/details/78580067"
 </ol>
 <figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">reverse</span>(<span class="params">self, x: int</span>) -&gt; int:</span></span><br><span class="line">        <span class="keyword">if</span> x &lt;<span class="number">0</span>:</span><br><span class="line">            res = -int(<span class="string">""</span>.join(list(str(-x))[::<span class="number">-1</span>]))</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            res = int(<span class="string">""</span>.join(list(str(x))[::<span class="number">-1</span>]))</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span> <span class="number">-2</span>**<span class="number">31</span>&lt;=res&lt;<span class="number">2</span>**<span class="number">31</span><span class="number">-1</span>:</span><br><span class="line">            <span class="keyword">return</span> res</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span></span><br></pre></td></tr></tbody></table></figure>
 ]]></content>
+  </entry>
+  <entry>
+    <title>leetcode226— 翻转二叉树</title>
+    <url>/post/26095.html</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><p><img src="https://i.loli.net/2019/08/12/nb9EH4gKTdricY8.png" alt=""><br><a id="more"></a><br></p><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">TreeNode</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self, x</span>):</span></span><br><span class="line">        self.val = x</span><br><span class="line">        self.left = <span class="literal">None</span></span><br><span class="line">        self.right = <span class="literal">None</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">invertTree</span>(<span class="params">root: TreeNode</span>) -&gt; TreeNode:</span></span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> root:</span><br><span class="line">        <span class="keyword">return</span> </span><br><span class="line">    root.right, root.left = invertTree(root.left), invertTree(root.right)</span><br><span class="line">    <span class="keyword">return</span> root</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</span><br><span class="line">    root = TreeNode(<span class="number">1</span>)</span><br><span class="line">    root.left = TreeNode(<span class="number">2</span>)</span><br><span class="line">    root.right = TreeNode(<span class="number">3</span>)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">print_tree</span>(<span class="params">root</span>):</span></span><br><span class="line">        <span class="keyword">if</span> root:</span><br><span class="line">            print(root.val)</span><br><span class="line">            print(root.left.val)</span><br><span class="line">            print(root.right.val)</span><br><span class="line"></span><br><span class="line">    print_tree(root)</span><br><span class="line">    </span><br><span class="line">    print(<span class="string">"\n"</span>)</span><br><span class="line"></span><br><span class="line">    root = invertTree(root)</span><br><span class="line">    print_tree(root)</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure><p></p>
+]]></content>
+      <tags>
+        <tag>算法</tag>
+      </tags>
   </entry>
   <entry>
     <title>nohup 详解</title>
@@ -2944,6 +2944,52 @@ N 个人，互相交换礼物，每个人不能拿到自己的礼物。设计一
       </tags>
   </entry>
   <entry>
+    <title>工作</title>
+    <url>/post/60913.html</url>
+    <content><![CDATA[<html><head><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script></head><body><h2 id="招聘" class="heading-control"><a href="#招聘" class="headerlink" title="招聘"></a>招聘<a class="heading-anchor" href="#招聘" aria-hidden="true"></a></h2><p><a href="http://www.qhvss.com/about/2.html">陕西庆华汽车安全系统有限公司</a>是中国兵器工业集团所属特种能源集团直管单位，是集科研、生产、销售为一体的高新技术企业，是国内最大的汽车安全系统用火工品制造商，具有年产点火具 3000 万发，微型气体发生器 770 万发，产气药 500 吨的能力。</p>
+<a id="more"></a>
+<p>公司 2006 年 11 月成立，位于西安市灞桥区田洪正街 1 号。公司于 2009 年通过 ISO/16949 质量体系认证，达到美国 USCAR 标准；2014 年通过 ISO/14001 环境管理体系认证和 OHSMS 职业健康安全管理体系认证；2015 年通过 AK-LV16 认证；2016 年通过 IATF/16949 质量体系认证。</p>
+<p>公司依托原西安北方庆华机电集团有限公司 50 多年的火工品研发、生产及试验优势，在汽车安全气囊用点火具和微型气体发生器等技术方面填补了国内空白，公司取得国家专利 17 项，其中发明专利 2 项，实用新型专利 15 项。目前，公司拥有点火具、微型气体发生器、产气药三大系列 100 多个品种的产品。产品配套与国际主流车型，凭借安全、可靠的性能和价格优势远销欧洲、美国、日本等国际市场，深受国内外用户欢迎。</p>
+<p>为进一步加大公司国际化经营战略布局，公司成功引入华域汽车系统股份有限公司战略投资，在泾渭工业园兵器工业科技产业基地火工生产园建设经开分厂。2018 年投产后，公司生产能力在现有基础上增加一倍。</p>
+<p>我公司现有职工 700 余人，其中管理技术人员 150 余人，公司有特能级科技带头人 1 人，公司级科技带头人 1 人，公司级关键技能带头人 1 人，公司级科技骨干 4 人，公司级技能骨干 7 人，中级及中级以上职称 40 余人。公司坚持科技发展，人才先行的人才战略，为员工建立了职业生涯规划，将员工的发展与企业的发展结合在一起，以实现员工与企业的双赢。</p>
+<p>面对国内外市场的旺盛需求和对产品安全性能的严格要求，公司坚持技术一流、引领发展的科技理念，并秉承德才兼备、精业多能的人才理念。为给公司配备优秀的管理技术人员，特向社会各界广纳贤才，我们期望与您共同携手，将公司建设成为现代化管理、国际化经营的全球最具价值的点火具 MGG 独立供应商。</p>
+<p>一、  招聘专业</p>
+<p>化学工程与工艺：2 名</p>
+<p>二、招聘条件</p>
+<p>1、学历：本科及以上学历；</p>
+<p>2、须通过英语四级；</p>
+<p>3、2019 年应届毕业生；</p>
+<p>4、身心健康。</p>
+<p>三、福利待遇</p>
+<p>1、工作时间：8 小时工作制，一周双休。按规定可享受年休假、婚假、产假、探亲假等带薪假期。</p>
+<p>2、工资：见习期 1 年，见习期工资平均不低于 4000 元 / 月，见习期结束后，工资按照公司岗位绩效工资制度发放，年终根据公司经营情况发放年终奖励，转正定级后工资 6-10 万 / 年。新入司学生第 1 年享受安家费本科生 3000 元，研究生 5000 元。</p>
+<p>3、社保待遇：签订劳动合同当月起开始享受五险一金（养老、工伤、失业、医疗、生育保险和住房公积金）待遇，公积金按照西安市单位最高标准 12%、个人最低标准 5% 缴纳。</p>
+<p>4、公司提供单身公寓，单身公寓配有空调、电扇、暖气等设施。</p>
+<p>5、每年发放一套工服，每季度发放劳保用品（洗衣粉肥皂），享受降温费、取暖费等福利待遇。</p>
+<p>6、报名者经公司审查和面试合格后，新入司员工科享受免费体检及带薪培训。</p>
+<p>四、报名应聘者提供以下相关资料：</p>
+<p>1、本人简历。</p>
+<p>2、本人有效身份证原件及复印件。</p>
+<p>3、提供学校就业推荐证明，大学期间成绩单复印件。</p>
+<p>五、报名时间：2018 年 11 月 1 日 - 2018 年 11 月 15 日</p>
+<p>六、报名地点：西安市灞桥区田洪正街 1 号陕西庆华汽车安全系统有限公司人力资源部</p>
+<p>联系人：宋  成             </p>
+<p>电  话：029-62825341</p>
+<p>投简历邮箱：songcheng@qhvss.com</p>
+<p>网  址：www.qhvss.com</p>
+<h2 id="位置" class="heading-control"><a href="#位置" class="headerlink" title="位置"></a>位置<a class="heading-anchor" href="#位置" aria-hidden="true"></a></h2><p><img src="https://i.loli.net/2018/12/06/5c090839d4569.png" alt></p>
+<h2 id="其他" class="heading-control"><a href="#其他" class="headerlink" title="其他"></a>其他<a class="heading-anchor" href="#其他" aria-hidden="true"></a></h2><ul>
+<li>江西国泰民爆集团股份有限公司招聘</li>
+</ul>
+</body></html>]]></content>
+      <categories>
+        <category>工作</category>
+      </categories>
+      <tags>
+        <tag>工作</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>推荐系统召回算法</title>
     <url>/post/64078.html</url>
     <content><![CDATA[<html><head><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script></head><body><h2 id="推荐系统整体流程" class="heading-control"><a href="#推荐系统整体流程" class="headerlink" title="推荐系统整体流程"></a>推荐系统整体流程<a class="heading-anchor" href="#推荐系统整体流程" aria-hidden="true"></a></h2><p><img src="https://i.loli.net/2020/08/31/FqeHsBKXUCgu8fJ.jpg" alt="img"></p>
@@ -3010,56 +3056,30 @@ N 个人，互相交换礼物，每个人不能拿到自己的礼物。设计一
       </tags>
   </entry>
   <entry>
-    <title>工作</title>
-    <url>/post/60913.html</url>
-    <content><![CDATA[<html><head><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script></head><body><h2 id="招聘" class="heading-control"><a href="#招聘" class="headerlink" title="招聘"></a>招聘<a class="heading-anchor" href="#招聘" aria-hidden="true"></a></h2><p><a href="http://www.qhvss.com/about/2.html">陕西庆华汽车安全系统有限公司</a>是中国兵器工业集团所属特种能源集团直管单位，是集科研、生产、销售为一体的高新技术企业，是国内最大的汽车安全系统用火工品制造商，具有年产点火具 3000 万发，微型气体发生器 770 万发，产气药 500 吨的能力。</p>
-<a id="more"></a>
-<p>公司 2006 年 11 月成立，位于西安市灞桥区田洪正街 1 号。公司于 2009 年通过 ISO/16949 质量体系认证，达到美国 USCAR 标准；2014 年通过 ISO/14001 环境管理体系认证和 OHSMS 职业健康安全管理体系认证；2015 年通过 AK-LV16 认证；2016 年通过 IATF/16949 质量体系认证。</p>
-<p>公司依托原西安北方庆华机电集团有限公司 50 多年的火工品研发、生产及试验优势，在汽车安全气囊用点火具和微型气体发生器等技术方面填补了国内空白，公司取得国家专利 17 项，其中发明专利 2 项，实用新型专利 15 项。目前，公司拥有点火具、微型气体发生器、产气药三大系列 100 多个品种的产品。产品配套与国际主流车型，凭借安全、可靠的性能和价格优势远销欧洲、美国、日本等国际市场，深受国内外用户欢迎。</p>
-<p>为进一步加大公司国际化经营战略布局，公司成功引入华域汽车系统股份有限公司战略投资，在泾渭工业园兵器工业科技产业基地火工生产园建设经开分厂。2018 年投产后，公司生产能力在现有基础上增加一倍。</p>
-<p>我公司现有职工 700 余人，其中管理技术人员 150 余人，公司有特能级科技带头人 1 人，公司级科技带头人 1 人，公司级关键技能带头人 1 人，公司级科技骨干 4 人，公司级技能骨干 7 人，中级及中级以上职称 40 余人。公司坚持科技发展，人才先行的人才战略，为员工建立了职业生涯规划，将员工的发展与企业的发展结合在一起，以实现员工与企业的双赢。</p>
-<p>面对国内外市场的旺盛需求和对产品安全性能的严格要求，公司坚持技术一流、引领发展的科技理念，并秉承德才兼备、精业多能的人才理念。为给公司配备优秀的管理技术人员，特向社会各界广纳贤才，我们期望与您共同携手，将公司建设成为现代化管理、国际化经营的全球最具价值的点火具 MGG 独立供应商。</p>
-<p>一、  招聘专业</p>
-<p>化学工程与工艺：2 名</p>
-<p>二、招聘条件</p>
-<p>1、学历：本科及以上学历；</p>
-<p>2、须通过英语四级；</p>
-<p>3、2019 年应届毕业生；</p>
-<p>4、身心健康。</p>
-<p>三、福利待遇</p>
-<p>1、工作时间：8 小时工作制，一周双休。按规定可享受年休假、婚假、产假、探亲假等带薪假期。</p>
-<p>2、工资：见习期 1 年，见习期工资平均不低于 4000 元 / 月，见习期结束后，工资按照公司岗位绩效工资制度发放，年终根据公司经营情况发放年终奖励，转正定级后工资 6-10 万 / 年。新入司学生第 1 年享受安家费本科生 3000 元，研究生 5000 元。</p>
-<p>3、社保待遇：签订劳动合同当月起开始享受五险一金（养老、工伤、失业、医疗、生育保险和住房公积金）待遇，公积金按照西安市单位最高标准 12%、个人最低标准 5% 缴纳。</p>
-<p>4、公司提供单身公寓，单身公寓配有空调、电扇、暖气等设施。</p>
-<p>5、每年发放一套工服，每季度发放劳保用品（洗衣粉肥皂），享受降温费、取暖费等福利待遇。</p>
-<p>6、报名者经公司审查和面试合格后，新入司员工科享受免费体检及带薪培训。</p>
-<p>四、报名应聘者提供以下相关资料：</p>
-<p>1、本人简历。</p>
-<p>2、本人有效身份证原件及复印件。</p>
-<p>3、提供学校就业推荐证明，大学期间成绩单复印件。</p>
-<p>五、报名时间：2018 年 11 月 1 日 - 2018 年 11 月 15 日</p>
-<p>六、报名地点：西安市灞桥区田洪正街 1 号陕西庆华汽车安全系统有限公司人力资源部</p>
-<p>联系人：宋  成             </p>
-<p>电  话：029-62825341</p>
-<p>投简历邮箱：songcheng@qhvss.com</p>
-<p>网  址：www.qhvss.com</p>
-<h2 id="位置" class="heading-control"><a href="#位置" class="headerlink" title="位置"></a>位置<a class="heading-anchor" href="#位置" aria-hidden="true"></a></h2><p><img src="https://i.loli.net/2018/12/06/5c090839d4569.png" alt></p>
-<h2 id="其他" class="heading-control"><a href="#其他" class="headerlink" title="其他"></a>其他<a class="heading-anchor" href="#其他" aria-hidden="true"></a></h2><ul>
-<li>江西国泰民爆集团股份有限公司招聘</li>
-</ul>
-</body></html>]]></content>
-      <categories>
-        <category>工作</category>
-      </categories>
-      <tags>
-        <tag>工作</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>数值计算</title>
     <url>/post/58802.html</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><p>数值分析是研究科学计算中各种数学问题求解的数值计算方法。</p>
 ]]></content>
+  </entry>
+  <entry>
+    <title>文本分词和去停止词的一次优化</title>
+    <url>/post/314.html</url>
+    <content><![CDATA[<html><head><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script></head><body><p>之前在处理 QA 语料库的时候，在分词和去停止词的时候消耗时间很长，所以专门搜了一些资料针对这个问题进行了一次优化，总结如下。</p>
+<h2 id="文本分词" class="heading-control"><a href="#文本分词" class="headerlink" title="文本分词"></a>文本分词<a class="heading-anchor" href="#文本分词" aria-hidden="true"></a></h2><h3 id="使用jieba自带的并行分词" class="heading-control"><a href="#使用jieba自带的并行分词" class="headerlink" title="使用jieba自带的并行分词"></a>使用 jieba 自带的并行分词<a class="heading-anchor" href="#使用jieba自带的并行分词" aria-hidden="true"></a></h3><p>在分词前添加 <code>jieba.enable_parallel(4)</code> 就行了。但是我这里并没有这么做，主要是怕分词顺序出错了。</p>
+<h3 id="使用jieba-fast" class="heading-control"><a href="#使用jieba-fast" class="headerlink" title="使用jieba_fast"></a>使用 jieba_fast<a class="heading-anchor" href="#使用jieba-fast" aria-hidden="true"></a></h3><p>这是一个 cpython 的库，使用方法和 jieba 一致，<a href="https://github.com/deepcs233/jieba_fast">Github 官网</a>。官网的描述如下：</p>
+<blockquote>
+<p>使用 cpython 重写了 jieba 分词库中计算 DAG 和 HMM 中的 vitrebi 函数，速度得到大幅提升。</p>
+</blockquote>
+<p><img src="https://i.loli.net/2018/12/19/5c1a4826519eb.png" alt></p>
+<h2 id="去停止词" class="heading-control"><a href="#去停止词" class="headerlink" title="去停止词"></a>去停止词<a class="heading-anchor" href="#去停止词" aria-hidden="true"></a></h2><h3 id="构建字典加速" class="heading-control"><a href="#构建字典加速" class="headerlink" title="构建字典加速"></a>构建字典加速<a class="heading-anchor" href="#构建字典加速" aria-hidden="true"></a></h3><p>我最开始使用的是把停止词读成列表，然后去列表里面查找，速度很慢。原先的代码如下：<br></p><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_stopwords</span>(<span class="params">self,stopwords_path</span>):</span></span><br><span class="line">    stop_f = open(stopwords_path, <span class="string">"r"</span>, encoding=<span class="string">'utf-8'</span>)</span><br><span class="line">    stop_words = list()</span><br><span class="line">    <span class="keyword">for</span> line <span class="keyword">in</span> stop_f.readlines():</span><br><span class="line">        line = line.strip()</span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> len(line):</span><br><span class="line">            <span class="keyword">continue</span></span><br><span class="line">        stop_words.append(line)</span><br><span class="line">    stop_f.close()</span><br><span class="line">    <span class="comment"># print('哈工大停止词表长度为：' + str(len(stop_words)))</span></span><br><span class="line">    <span class="keyword">return</span> stop_words</span><br></pre></td></tr></tbody></table></figure><br>改进之后，构建了停止词字典，速度提高了一倍左右。代码如下：<br><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_stopwords</span>(<span class="params">self,stopwords_path</span>):</span></span><br><span class="line">    stop_f = open(stopwords_path, <span class="string">"r"</span>, encoding=<span class="string">'utf-8'</span>)</span><br><span class="line">    stop_words = {}</span><br><span class="line">    <span class="keyword">for</span> line <span class="keyword">in</span> stop_f.readlines():</span><br><span class="line">        line = line.strip()</span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> len(line):</span><br><span class="line">            <span class="keyword">continue</span></span><br><span class="line">        stop_words[line] = line</span><br><span class="line">    stop_f.close()</span><br><span class="line">    <span class="comment"># print('哈工大停止词表长度为：' + str(len(stop_words)))</span></span><br><span class="line">    <span class="keyword">return</span> stop_words</span><br></pre></td></tr></tbody></table></figure><p></p>
+<h2 id="总结" class="heading-control"><a href="#总结" class="headerlink" title="总结"></a>总结<a class="heading-anchor" href="#总结" aria-hidden="true"></a></h2><p>经过以上改进，代码加速了 4 倍左右，提升还是很明显的。</p>
+</body></html>]]></content>
+      <categories>
+        <category>NLP</category>
+      </categories>
+      <tags>
+        <tag>分词，优化，NLP</tag>
+      </tags>
   </entry>
   <entry>
     <title>资料备忘</title>
@@ -3087,26 +3107,6 @@ N 个人，互相交换礼物，每个人不能拿到自己的礼物。设计一
 </body></html>]]></content>
       <tags>
         <tag>收藏</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>文本分词和去停止词的一次优化</title>
-    <url>/post/314.html</url>
-    <content><![CDATA[<html><head><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script></head><body><p>之前在处理 QA 语料库的时候，在分词和去停止词的时候消耗时间很长，所以专门搜了一些资料针对这个问题进行了一次优化，总结如下。</p>
-<h2 id="文本分词" class="heading-control"><a href="#文本分词" class="headerlink" title="文本分词"></a>文本分词<a class="heading-anchor" href="#文本分词" aria-hidden="true"></a></h2><h3 id="使用jieba自带的并行分词" class="heading-control"><a href="#使用jieba自带的并行分词" class="headerlink" title="使用jieba自带的并行分词"></a>使用 jieba 自带的并行分词<a class="heading-anchor" href="#使用jieba自带的并行分词" aria-hidden="true"></a></h3><p>在分词前添加 <code>jieba.enable_parallel(4)</code> 就行了。但是我这里并没有这么做，主要是怕分词顺序出错了。</p>
-<h3 id="使用jieba-fast" class="heading-control"><a href="#使用jieba-fast" class="headerlink" title="使用jieba_fast"></a>使用 jieba_fast<a class="heading-anchor" href="#使用jieba-fast" aria-hidden="true"></a></h3><p>这是一个 cpython 的库，使用方法和 jieba 一致，<a href="https://github.com/deepcs233/jieba_fast">Github 官网</a>。官网的描述如下：</p>
-<blockquote>
-<p>使用 cpython 重写了 jieba 分词库中计算 DAG 和 HMM 中的 vitrebi 函数，速度得到大幅提升。</p>
-</blockquote>
-<p><img src="https://i.loli.net/2018/12/19/5c1a4826519eb.png" alt></p>
-<h2 id="去停止词" class="heading-control"><a href="#去停止词" class="headerlink" title="去停止词"></a>去停止词<a class="heading-anchor" href="#去停止词" aria-hidden="true"></a></h2><h3 id="构建字典加速" class="heading-control"><a href="#构建字典加速" class="headerlink" title="构建字典加速"></a>构建字典加速<a class="heading-anchor" href="#构建字典加速" aria-hidden="true"></a></h3><p>我最开始使用的是把停止词读成列表，然后去列表里面查找，速度很慢。原先的代码如下：<br></p><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_stopwords</span>(<span class="params">self,stopwords_path</span>):</span></span><br><span class="line">    stop_f = open(stopwords_path, <span class="string">"r"</span>, encoding=<span class="string">'utf-8'</span>)</span><br><span class="line">    stop_words = list()</span><br><span class="line">    <span class="keyword">for</span> line <span class="keyword">in</span> stop_f.readlines():</span><br><span class="line">        line = line.strip()</span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> len(line):</span><br><span class="line">            <span class="keyword">continue</span></span><br><span class="line">        stop_words.append(line)</span><br><span class="line">    stop_f.close()</span><br><span class="line">    <span class="comment"># print('哈工大停止词表长度为：' + str(len(stop_words)))</span></span><br><span class="line">    <span class="keyword">return</span> stop_words</span><br></pre></td></tr></tbody></table></figure><br>改进之后，构建了停止词字典，速度提高了一倍左右。代码如下：<br><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_stopwords</span>(<span class="params">self,stopwords_path</span>):</span></span><br><span class="line">    stop_f = open(stopwords_path, <span class="string">"r"</span>, encoding=<span class="string">'utf-8'</span>)</span><br><span class="line">    stop_words = {}</span><br><span class="line">    <span class="keyword">for</span> line <span class="keyword">in</span> stop_f.readlines():</span><br><span class="line">        line = line.strip()</span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> len(line):</span><br><span class="line">            <span class="keyword">continue</span></span><br><span class="line">        stop_words[line] = line</span><br><span class="line">    stop_f.close()</span><br><span class="line">    <span class="comment"># print('哈工大停止词表长度为：' + str(len(stop_words)))</span></span><br><span class="line">    <span class="keyword">return</span> stop_words</span><br></pre></td></tr></tbody></table></figure><p></p>
-<h2 id="总结" class="heading-control"><a href="#总结" class="headerlink" title="总结"></a>总结<a class="heading-anchor" href="#总结" aria-hidden="true"></a></h2><p>经过以上改进，代码加速了 4 倍左右，提升还是很明显的。</p>
-</body></html>]]></content>
-      <categories>
-        <category>NLP</category>
-      </categories>
-      <tags>
-        <tag>分词，优化，NLP</tag>
       </tags>
   </entry>
   <entry>
@@ -3157,39 +3157,6 @@ N 个人，互相交换礼物，每个人不能拿到自己的礼物。设计一
       </tags>
   </entry>
   <entry>
-    <title>有趣的网站</title>
-    <url>/post/35391.html</url>
-    <content><![CDATA[<html><head><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script></head><body><h2 id="📻音乐" class="heading-control"><a href="#📻音乐" class="headerlink" title="📻音乐"></a>📻音乐<a class="heading-anchor" href="#📻音乐" aria-hidden="true"></a></h2><ul>
-<li><a href="http://music.qkhhyiu.cn/">音乐搜索器</a>: 多站合一音乐搜索解决方案</li>
-<li><a href="http://guozhivip.com/yinyue/">果汁音乐</a></li>
-</ul>
-<h2 id="🔮搜索" class="heading-control"><a href="#🔮搜索" class="headerlink" title="🔮搜索"></a>🔮搜索<a class="heading-anchor" href="#🔮搜索" aria-hidden="true"></a></h2><ul>
-<li><a href="https://scholar.chongbuluo.com/">虫部落</a></li>
-<li><a href="http://guozhivip.com/so/">果汁搜索</a></li>
-<li><a href="https://jikipedia.com/">小鸡词典</a>：网络流行语 </li>
-<li><a href="https://zh.wikihow.com/%E9%A6%96%E9%A1%B5">wikihow</a>：生活维基百科</li>
-</ul>
-<a id="more"></a>
-<h2 id="📜排行榜" class="heading-control"><a href="#📜排行榜" class="headerlink" title="📜排行榜"></a>📜排行榜<a class="heading-anchor" href="#📜排行榜" aria-hidden="true"></a></h2><ul>
-<li><a href="http://guozhivip.com/rank/">果汁排行榜</a></li>
-<li><a href="https://tophub.today/">今日热榜</a></li>
-</ul>
-<h2 id="📚-其他" class="heading-control"><a href="#📚-其他" class="headerlink" title="📚 其他"></a>📚 其他<a class="heading-anchor" href="#📚-其他" aria-hidden="true"></a></h2><ul>
-<li><a href="http://guozhivip.com/eat/">今天吃啥呀</a></li>
-<li><a href="http://www.underseacat.com/fan">云风扇</a>：心静自然凉 </li>
-<li><a href="https://fonts.safe.360.cn/">360 查字体</a> ：你的字体能商用吗</li>
-<li><a href="https://www.gaoding.com/koutu">搞定抠图</a></li>
-<li><a href="http://www.nows.fun/">毒鸡汤</a></li>
-</ul>
-</body></html>]]></content>
-      <categories>
-        <category>网站</category>
-      </categories>
-      <tags>
-        <tag>网站</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>智慧海洋建设比赛</title>
     <url>/post/20868.html</url>
     <content><![CDATA[<html><head><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script></head><body><p>这个比赛算是我第一个做的数值类特征的比赛，主要以学习为主。学习的内容包括：</p>
@@ -3222,6 +3189,39 @@ N 个人，互相交换礼物，每个人不能拿到自己的礼物。设计一
 </body></html>]]></content>
       <tags>
         <tag>比赛</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>有趣的网站</title>
+    <url>/post/35391.html</url>
+    <content><![CDATA[<html><head><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script></head><body><h2 id="📻音乐" class="heading-control"><a href="#📻音乐" class="headerlink" title="📻音乐"></a>📻音乐<a class="heading-anchor" href="#📻音乐" aria-hidden="true"></a></h2><ul>
+<li><a href="http://music.qkhhyiu.cn/">音乐搜索器</a>: 多站合一音乐搜索解决方案</li>
+<li><a href="http://guozhivip.com/yinyue/">果汁音乐</a></li>
+</ul>
+<h2 id="🔮搜索" class="heading-control"><a href="#🔮搜索" class="headerlink" title="🔮搜索"></a>🔮搜索<a class="heading-anchor" href="#🔮搜索" aria-hidden="true"></a></h2><ul>
+<li><a href="https://scholar.chongbuluo.com/">虫部落</a></li>
+<li><a href="http://guozhivip.com/so/">果汁搜索</a></li>
+<li><a href="https://jikipedia.com/">小鸡词典</a>：网络流行语 </li>
+<li><a href="https://zh.wikihow.com/%E9%A6%96%E9%A1%B5">wikihow</a>：生活维基百科</li>
+</ul>
+<a id="more"></a>
+<h2 id="📜排行榜" class="heading-control"><a href="#📜排行榜" class="headerlink" title="📜排行榜"></a>📜排行榜<a class="heading-anchor" href="#📜排行榜" aria-hidden="true"></a></h2><ul>
+<li><a href="http://guozhivip.com/rank/">果汁排行榜</a></li>
+<li><a href="https://tophub.today/">今日热榜</a></li>
+</ul>
+<h2 id="📚-其他" class="heading-control"><a href="#📚-其他" class="headerlink" title="📚 其他"></a>📚 其他<a class="heading-anchor" href="#📚-其他" aria-hidden="true"></a></h2><ul>
+<li><a href="http://guozhivip.com/eat/">今天吃啥呀</a></li>
+<li><a href="http://www.underseacat.com/fan">云风扇</a>：心静自然凉 </li>
+<li><a href="https://fonts.safe.360.cn/">360 查字体</a> ：你的字体能商用吗</li>
+<li><a href="https://www.gaoding.com/koutu">搞定抠图</a></li>
+<li><a href="http://www.nows.fun/">毒鸡汤</a></li>
+</ul>
+</body></html>]]></content>
+      <categories>
+        <category>网站</category>
+      </categories>
+      <tags>
+        <tag>网站</tag>
       </tags>
   </entry>
   <entry>
@@ -3310,30 +3310,6 @@ c_{N B}=\underset{c \in C}{\operatorname{largmax}} \log P(c)+\sum_{i \in \text {
       </tags>
   </entry>
   <entry>
-    <title>校招笔试题目</title>
-    <url>/post/44950.html</url>
-    <content><![CDATA[<html><head><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script></head><body><h2 id="互娱模拟笔试" class="heading-control"><a href="#互娱模拟笔试" class="headerlink" title="互娱模拟笔试"></a>互娱模拟笔试<a class="heading-anchor" href="#互娱模拟笔试" aria-hidden="true"></a></h2><h4 id="个税征缴" class="heading-control"><a href="#个税征缴" class="headerlink" title="个税征缴"></a>个税征缴<a class="heading-anchor" href="#个税征缴" aria-hidden="true"></a></h4><p><img src="https://i.loli.net/2019/08/04/Rxiw6QHvKYTr8tB.png" alt><br><img src="https://i.loli.net/2019/08/04/7b45cCrzgojEaXD.png" alt><br><img src="https://i.loli.net/2019/08/04/iMvLtYcwTNOhR17.png" alt></p>
-<h4 id="字符串缩写" class="heading-control"><a href="#字符串缩写" class="headerlink" title="字符串缩写"></a>字符串缩写<a class="heading-anchor" href="#字符串缩写" aria-hidden="true"></a></h4><p><img src="https://i.loli.net/2019/08/04/orbd5SFXlKuyfqc.png" alt><br><img src="https://i.loli.net/2019/08/04/vB9uUo3OGENXsLf.png" alt></p>
-<h4 id="进制组合" class="heading-control"><a href="#进制组合" class="headerlink" title="进制组合"></a>进制组合<a class="heading-anchor" href="#进制组合" aria-hidden="true"></a></h4><p><img src="https://i.loli.net/2019/08/04/KTcl4Hmix5btUjX.png" alt><br><img src="https://i.loli.net/2019/08/04/XwqgncvWjMmVTEy.png" alt></p>
-<h2 id="Leetcode" class="heading-control"><a href="#Leetcode" class="headerlink" title="Leetcode"></a>Leetcode<a class="heading-anchor" href="#Leetcode" aria-hidden="true"></a></h2><h4 id="Leetcode125-验证回文串" class="heading-control"><a href="#Leetcode125-验证回文串" class="headerlink" title="Leetcode125:验证回文串"></a>Leetcode125: 验证回文串<a class="heading-anchor" href="#Leetcode125-验证回文串" aria-hidden="true"></a></h4><ul>
-<li>技巧 1：<code>str.isalnum()</code> 检测字符串是否由字母和数字组成。过滤非字母和数字的：<code>s = ''.join(filter(str.isalnum,s))</code></li>
-<li>技巧二：大写和小写字母的差是 32，所有 <code>ord('A')^32==ord('a')</code>。<code>ord</code> 返回值是字符对应的十进制整数。</li>
-</ul>
-</body></html>]]></content>
-      <tags>
-        <tag>笔试</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>概率图模型理论与应用</title>
-    <url>/post/14056.html</url>
-    <content><![CDATA[<html><head><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script></head><body><h2 id="概率图模型" class="heading-control"><a href="#概率图模型" class="headerlink" title="概率图模型"></a>概率图模型<a class="heading-anchor" href="#概率图模型" aria-hidden="true"></a></h2><p><img src="https://i.loli.net/2019/09/13/o1c8PFYmTK3JVXA.png" alt></p>
-</body></html>]]></content>
-      <tags>
-        <tag>概率图模型</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>机器学习 - 白板推导系列</title>
     <url>/post/19678.html</url>
     <content><![CDATA[<html><head><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script></head><body><h2 id="课程介绍" class="heading-control"><a href="#课程介绍" class="headerlink" title="课程介绍"></a>课程介绍<a class="heading-anchor" href="#课程介绍" aria-hidden="true"></a></h2><p><img src="https://i.loli.net/2019/09/24/ga1PjFQG3WLnk8O.png" alt><br>B 站视频：<a href="https://www.bilibili.com/video/av31950221">https://www.bilibili.com/video/av31950221</a><br>观看次序: <a href="https://github.com/shuhuai007/Machine-Learning-Session">https://github.com/shuhuai007/Machine-Learning-Session</a></p>
@@ -3368,6 +3344,51 @@ c_{N B}=\underset{c \in C}{\operatorname{largmax}} \log P(c)+\sum_{i \in \text {
       </tags>
   </entry>
   <entry>
+    <title>校招笔试题目</title>
+    <url>/post/44950.html</url>
+    <content><![CDATA[<html><head><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script></head><body><h2 id="互娱模拟笔试" class="heading-control"><a href="#互娱模拟笔试" class="headerlink" title="互娱模拟笔试"></a>互娱模拟笔试<a class="heading-anchor" href="#互娱模拟笔试" aria-hidden="true"></a></h2><h4 id="个税征缴" class="heading-control"><a href="#个税征缴" class="headerlink" title="个税征缴"></a>个税征缴<a class="heading-anchor" href="#个税征缴" aria-hidden="true"></a></h4><p><img src="https://i.loli.net/2019/08/04/Rxiw6QHvKYTr8tB.png" alt><br><img src="https://i.loli.net/2019/08/04/7b45cCrzgojEaXD.png" alt><br><img src="https://i.loli.net/2019/08/04/iMvLtYcwTNOhR17.png" alt></p>
+<h4 id="字符串缩写" class="heading-control"><a href="#字符串缩写" class="headerlink" title="字符串缩写"></a>字符串缩写<a class="heading-anchor" href="#字符串缩写" aria-hidden="true"></a></h4><p><img src="https://i.loli.net/2019/08/04/orbd5SFXlKuyfqc.png" alt><br><img src="https://i.loli.net/2019/08/04/vB9uUo3OGENXsLf.png" alt></p>
+<h4 id="进制组合" class="heading-control"><a href="#进制组合" class="headerlink" title="进制组合"></a>进制组合<a class="heading-anchor" href="#进制组合" aria-hidden="true"></a></h4><p><img src="https://i.loli.net/2019/08/04/KTcl4Hmix5btUjX.png" alt><br><img src="https://i.loli.net/2019/08/04/XwqgncvWjMmVTEy.png" alt></p>
+<h2 id="Leetcode" class="heading-control"><a href="#Leetcode" class="headerlink" title="Leetcode"></a>Leetcode<a class="heading-anchor" href="#Leetcode" aria-hidden="true"></a></h2><h4 id="Leetcode125-验证回文串" class="heading-control"><a href="#Leetcode125-验证回文串" class="headerlink" title="Leetcode125:验证回文串"></a>Leetcode125: 验证回文串<a class="heading-anchor" href="#Leetcode125-验证回文串" aria-hidden="true"></a></h4><ul>
+<li>技巧 1：<code>str.isalnum()</code> 检测字符串是否由字母和数字组成。过滤非字母和数字的：<code>s = ''.join(filter(str.isalnum,s))</code></li>
+<li>技巧二：大写和小写字母的差是 32，所有 <code>ord('A')^32==ord('a')</code>。<code>ord</code> 返回值是字符对应的十进制整数。</li>
+</ul>
+</body></html>]]></content>
+      <tags>
+        <tag>笔试</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>概率图模型理论与应用</title>
+    <url>/post/14056.html</url>
+    <content><![CDATA[<html><head><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script></head><body><h2 id="概率图模型" class="heading-control"><a href="#概率图模型" class="headerlink" title="概率图模型"></a>概率图模型<a class="heading-anchor" href="#概率图模型" aria-hidden="true"></a></h2><p><img src="https://i.loli.net/2019/09/13/o1c8PFYmTK3JVXA.png" alt></p>
+</body></html>]]></content>
+      <tags>
+        <tag>概率图模型</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>每周论文</title>
+    <url>/post/7053.html</url>
+    <content><![CDATA[<html><head><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script></head><body><p><img src="https://i.loli.net/2018/11/29/5bffec15c0d38.jpeg" alt="pexels-photo-933964.jpeg"><br><a id="more"></a></p>
+<h2 id="第一周" class="heading-control"><a href="#第一周" class="headerlink" title="第一周"></a>第一周<a class="heading-anchor" href="#第一周" aria-hidden="true"></a></h2><ol>
+<li><p><a href="https://www.paperweekly.site/papers/2520">An Introductory Survey on Attention Mechanisms in NLP Problems</a><br><strong>标签</strong>：Attention 综述<br>本文来自佐治亚理工学院，这是一篇 Attention 机制在自然语言处理方面的综述文章，包括基本概念和 Attention 在不同 NLP 任务上的模型变种。</p>
+</li>
+<li><p><a href="https://www.paperweekly.site/papers/2524">LiveBot: Generating Live Video Comments Based on Visual and Textual Contexts</a><br><strong>标签</strong>：弹幕生成<br>本文是北京大学孙栩老师组和微软亚洲研究院发表在 AAAI 2019 上的工作。文章介绍了 “弹幕生成” 任务，根据一定时间范围内的视频帧和评论文本进行弹幕评论的生成，并且构建了基于 B 站的数据集。<br>通过对数据集的分析发现：弹幕评论长度较短；相邻时间间隔的评论具有较高的关联度。基于此，文章先是利用传统的 Seq2Seq 架构，设计了 Video Encoder 和 Text Encoder 进行图像和文字信息的融合，再交由 Comment Decoder 进行生成；进一步地，利用 Transformer 替代 RNN Encoder，提出了一个 Unified Transformer Model。<br>并且，为了更好的评估模型的性能，文章提出了一个基于生成概率对候选评论进行排序的指标，对比之前的 Seq2Seq 模型，文章提出的两个模型能够取得更好的效果。</p>
+</li>
+<li><a href="https://www.paperweekly.site/papers/2519">Contextual String Embeddings for Sequence Labeling</a><br><strong>标签</strong>：Word Embeddings<br><strong>源码</strong>:<a href="https://github.com/zalandoresearch/flair">https://github.com/zalandoresearch/flair</a><br>本文是 Zalando Research 发表于 COLING 2018 的工作，论文提出了一种全新产生 embedding 的 BiLSTM 模型结构，模型特点：<br>模型以 character 为原子单位，在网络中，每个 character 都有一个对应的 hidden state。这个特点对需要多一步分词的中文来说可能有避免因为分词错误导致下游 function 继续错误的弊端；<br>输出以 word 为单位的 embedding，这个 embedding 由前向 LSTM 中，该词最后一个字母的 hidden state 和反向 LSTM 中该词第一个字母的 hidden state 拼接组成，这样就能够兼顾上下文信息。<br>这种动态 embedding 的方法在序列标注上取得了良好效果，特别值得一提的是，在 NER 上的表现甚至超越了 BERT，但训练成本只是一个 GPU 一周，训练数据在十亿个词量，与 BERT 相比对硬件的要求极大降低，训练成本的大幅减少却仍有性能上的提升，动态 embedding 的思路值得借鉴和尝试。</li>
+<li><a href="https://www.paperweekly.site/papers/2545">Discriminative Deep Dyna-Q: Robust Planning for Dialogue Policy Learning</a><br><strong>标签</strong>：Dialog Systems<br><strong>源码</strong>：<a href="https://github.com/MiuLab/DDQ">https://github.com/MiuLab/DDQ</a><br>本文是微软和台湾大学发表于 ACL 2018 的工作，论文提出了一种针对任务型对话系统的学习方式 ——Deep Dyna-Q，在仅使用少量真实用户交互数据的前提下，基于集成规划的方法进行对话策略学习。作者将 world model 引入对话 agent，模仿真实的用户响应并不断学习生成模拟的用户对话，利用真实和模拟的对话经验对 agent 进行优化。</li>
+<li><a href="https://www.paperweekly.site/papers/2522">Learning Personalized End-to-End Goal-Oriented Dialog</a><br><strong>标签</strong>：Goal-Oriented Dialog<br>本文是微软亚洲研究院和北京大学孙栩组共同完成即将发表在 AAAI 2019 的工作。为对话系统引入个性化是今年对话领域最为火热的研究方向之一。此前有一些工作研究在开放式对话（chitchat）中引入个性化，使得对话生成中可以包含一定的对话者身份的信息，使对话质量更高。而本文关注在鲜有人研究且更加困难的任务型对话领域，探索如何能针对用户的不同身份采取不同的对话策略，提高任务完成率和用户满意度。<br>本文提出了 Personalized MemN2N 模型，引入 profile embedding，并在对话模型和 KB 之间建立联系，有效地提升了对话系统质量，达到任务型对话个性化数据集上新的 state-of-the-art。在针对任务型研究较少的环境下，这一工作具有非常高的参考价值。</li>
+</ol>
+</body></html>]]></content>
+      <categories>
+        <category>论文</category>
+      </categories>
+      <tags>
+        <tag>论文</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>海量数据相似度 —— 局部敏感哈希 (LSH)</title>
     <url>/post/54839.html</url>
     <content><![CDATA[<html><head><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script></head><body><h2 id="场景" class="heading-control"><a href="#场景" class="headerlink" title="场景"></a>场景<a class="heading-anchor" href="#场景" aria-hidden="true"></a></h2><p><strong>海量高维数据查找与某个数据最相似的一个或者多个数据。</strong>与其它基于 Tree 的数据结构，诸如 KD-Tree、SR-Tree 相比，它较好地克服了 Curse of Dimension，能够将 KNN 的时间复杂度缩减到 sub-linear。LSH 多被用于文本、多媒体（图像、音频）的相似性判断。</p>
@@ -3395,27 +3416,6 @@ c_{N B}=\underset{c \in C}{\operatorname{largmax}} \log P(c)+\sum_{i \in \text {
       </tags>
   </entry>
   <entry>
-    <title>每周论文</title>
-    <url>/post/7053.html</url>
-    <content><![CDATA[<html><head><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script></head><body><p><img src="https://i.loli.net/2018/11/29/5bffec15c0d38.jpeg" alt="pexels-photo-933964.jpeg"><br><a id="more"></a></p>
-<h2 id="第一周" class="heading-control"><a href="#第一周" class="headerlink" title="第一周"></a>第一周<a class="heading-anchor" href="#第一周" aria-hidden="true"></a></h2><ol>
-<li><p><a href="https://www.paperweekly.site/papers/2520">An Introductory Survey on Attention Mechanisms in NLP Problems</a><br><strong>标签</strong>：Attention 综述<br>本文来自佐治亚理工学院，这是一篇 Attention 机制在自然语言处理方面的综述文章，包括基本概念和 Attention 在不同 NLP 任务上的模型变种。</p>
-</li>
-<li><p><a href="https://www.paperweekly.site/papers/2524">LiveBot: Generating Live Video Comments Based on Visual and Textual Contexts</a><br><strong>标签</strong>：弹幕生成<br>本文是北京大学孙栩老师组和微软亚洲研究院发表在 AAAI 2019 上的工作。文章介绍了 “弹幕生成” 任务，根据一定时间范围内的视频帧和评论文本进行弹幕评论的生成，并且构建了基于 B 站的数据集。<br>通过对数据集的分析发现：弹幕评论长度较短；相邻时间间隔的评论具有较高的关联度。基于此，文章先是利用传统的 Seq2Seq 架构，设计了 Video Encoder 和 Text Encoder 进行图像和文字信息的融合，再交由 Comment Decoder 进行生成；进一步地，利用 Transformer 替代 RNN Encoder，提出了一个 Unified Transformer Model。<br>并且，为了更好的评估模型的性能，文章提出了一个基于生成概率对候选评论进行排序的指标，对比之前的 Seq2Seq 模型，文章提出的两个模型能够取得更好的效果。</p>
-</li>
-<li><a href="https://www.paperweekly.site/papers/2519">Contextual String Embeddings for Sequence Labeling</a><br><strong>标签</strong>：Word Embeddings<br><strong>源码</strong>:<a href="https://github.com/zalandoresearch/flair">https://github.com/zalandoresearch/flair</a><br>本文是 Zalando Research 发表于 COLING 2018 的工作，论文提出了一种全新产生 embedding 的 BiLSTM 模型结构，模型特点：<br>模型以 character 为原子单位，在网络中，每个 character 都有一个对应的 hidden state。这个特点对需要多一步分词的中文来说可能有避免因为分词错误导致下游 function 继续错误的弊端；<br>输出以 word 为单位的 embedding，这个 embedding 由前向 LSTM 中，该词最后一个字母的 hidden state 和反向 LSTM 中该词第一个字母的 hidden state 拼接组成，这样就能够兼顾上下文信息。<br>这种动态 embedding 的方法在序列标注上取得了良好效果，特别值得一提的是，在 NER 上的表现甚至超越了 BERT，但训练成本只是一个 GPU 一周，训练数据在十亿个词量，与 BERT 相比对硬件的要求极大降低，训练成本的大幅减少却仍有性能上的提升，动态 embedding 的思路值得借鉴和尝试。</li>
-<li><a href="https://www.paperweekly.site/papers/2545">Discriminative Deep Dyna-Q: Robust Planning for Dialogue Policy Learning</a><br><strong>标签</strong>：Dialog Systems<br><strong>源码</strong>：<a href="https://github.com/MiuLab/DDQ">https://github.com/MiuLab/DDQ</a><br>本文是微软和台湾大学发表于 ACL 2018 的工作，论文提出了一种针对任务型对话系统的学习方式 ——Deep Dyna-Q，在仅使用少量真实用户交互数据的前提下，基于集成规划的方法进行对话策略学习。作者将 world model 引入对话 agent，模仿真实的用户响应并不断学习生成模拟的用户对话，利用真实和模拟的对话经验对 agent 进行优化。</li>
-<li><a href="https://www.paperweekly.site/papers/2522">Learning Personalized End-to-End Goal-Oriented Dialog</a><br><strong>标签</strong>：Goal-Oriented Dialog<br>本文是微软亚洲研究院和北京大学孙栩组共同完成即将发表在 AAAI 2019 的工作。为对话系统引入个性化是今年对话领域最为火热的研究方向之一。此前有一些工作研究在开放式对话（chitchat）中引入个性化，使得对话生成中可以包含一定的对话者身份的信息，使对话质量更高。而本文关注在鲜有人研究且更加困难的任务型对话领域，探索如何能针对用户的不同身份采取不同的对话策略，提高任务完成率和用户满意度。<br>本文提出了 Personalized MemN2N 模型，引入 profile embedding，并在对话模型和 KB 之间建立联系，有效地提升了对话系统质量，达到任务型对话个性化数据集上新的 state-of-the-art。在针对任务型研究较少的环境下，这一工作具有非常高的参考价值。</li>
-</ol>
-</body></html>]]></content>
-      <categories>
-        <category>论文</category>
-      </categories>
-      <tags>
-        <tag>论文</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>深度学习 NLP 的一些思考</title>
     <url>/post/48416.html</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><p><img src="https://i.loli.net/2018/10/30/5bd7b7b675daa.png" alt="NLP.png"></p>
@@ -3434,29 +3434,6 @@ c_{N B}=\underset{c \in C}{\operatorname{largmax}} \log P(c)+\sum_{i \in \text {
 </li>
 </ol>
 ]]></content>
-  </entry>
-  <entry>
-    <title>理解 Keras LSTM 中的参数 return_sequences 和 return_state</title>
-    <url>/post/24110.html</url>
-    <content><![CDATA[<html><head><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script></head><body><p><img src="https://i.loli.net/2018/11/14/5bebd5524bc47.png" alt><br>今天才注意到 LSTM 的 output 和 hidden_state 是同一个东西！下面分情况讨论参数的设置问题。<br><a id="more"></a></p>
-<h3 id="return-sequences-False-amp-amp-return-state-False" class="heading-control"><a href="#return-sequences-False-amp-amp-return-state-False" class="headerlink" title="return_sequences=False && return_state=False"></a>return_sequences=False && return_state=False<a class="heading-anchor" href="#return-sequences-False-amp-amp-return-state-False" aria-hidden="true"></a></h3><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">h = LSTM(X)</span><br></pre></td></tr></tbody></table></figure>
-<p>Keras API 中，return_sequences 和 return_state 默认就是 false。此时只会返回最后一个 LSTM 的 hidden state 值。</p>
-<h3 id="return-sequences-True-amp-amp-return-state-False" class="heading-control"><a href="#return-sequences-True-amp-amp-return-state-False" class="headerlink" title="return_sequences=True && return_state=False"></a>return_sequences=True && return_state=False<a class="heading-anchor" href="#return-sequences-True-amp-amp-return-state-False" aria-hidden="true"></a></h3><p>输出全部时间步 LSTM 的 hidden state 结果。</p>
-<h3 id="return-sequences-False-amp-amp-return-state-True" class="heading-control"><a href="#return-sequences-False-amp-amp-return-state-True" class="headerlink" title="return_sequences=False && return_state=True"></a>return_sequences=False && return_state=True<a class="heading-anchor" href="#return-sequences-False-amp-amp-return-state-True" aria-hidden="true"></a></h3><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">lstm1, state_h, state_c = LSTM(<span class="number">1</span>, return_state=<span class="literal">True</span>)</span><br></pre></td></tr></tbody></table></figure>
-<p>stm1 和 state_h 结果都是 hidden state。在这种参数设定下，它们俩的值相同。都是最后一个时间步的 hidden state。 state_c 是最后一个时间步 cell state 结果。</p>
-<h3 id="return-sequences-True-amp-amp-return-state-True" class="heading-control"><a href="#return-sequences-True-amp-amp-return-state-True" class="headerlink" title="return_sequences=True && return_state=True"></a>return_sequences=True && return_state=True<a class="heading-anchor" href="#return-sequences-True-amp-amp-return-state-True" aria-hidden="true"></a></h3><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">lstm1, state_h, state_c = LSTM(<span class="number">1</span>, return_sequences=<span class="literal">True</span>, return_state=<span class="literal">True</span>)</span><br></pre></td></tr></tbody></table></figure>
-<p>此时，我们既要输出全部时间步的 hidden state ，又要输出 cell state。lstm1 存放的就是全部时间步的 hidden state。state_h 存放的是最后一个时间步的 hidden state,state_c 存放的是最后一个时间步的 cell state<br>举一个输出例子，假设我们输入的时间步 time step=3：<br></p><figure class="highlight shell"><table><tbody><tr><td class="code"><pre><span class="line">[array([[[-0.02145359],</span><br><span class="line">        [-0.0540871 ],</span><br><span class="line">        [-0.09228823]]], dtype=float32),</span><br><span class="line"> array([[-0.09228823]], dtype=float32),</span><br><span class="line"> array([[-0.19803026]], dtype=float32)]</span><br></pre></td></tr></tbody></table></figure><br>可以看到state_h 的值和lstm1的最后一个时间步的值相同。<p></p>
-<h3 id="Reference" class="heading-control"><a href="#Reference" class="headerlink" title="Reference"></a>Reference<a class="heading-anchor" href="#Reference" aria-hidden="true"></a></h3><ol>
-<li><a href="https://blog.csdn.net/u011327333/article/details/78501054">https://blog.csdn.net/u011327333/article/details/78501054</a></li>
-<li><a href="https://machinelearningmastery.com/return-sequences-and-return-states-for-lstms-in-keras/">Understand the Difference Between Return Sequences and Return States for LSTMs in Keras</a></li>
-</ol>
-</body></html>]]></content>
-      <categories>
-        <category>笔记</category>
-      </categories>
-      <tags>
-        <tag>Keras</tag>
-      </tags>
   </entry>
   <entry>
     <title>生成模型和判别模型</title>
@@ -3493,6 +3470,29 @@ c_{N B}=\underset{c \in C}{\operatorname{largmax}} \log P(c)+\sum_{i \in \text {
 </body></html>]]></content>
       <tags>
         <tag>机器学习</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>理解 Keras LSTM 中的参数 return_sequences 和 return_state</title>
+    <url>/post/24110.html</url>
+    <content><![CDATA[<html><head><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script></head><body><p><img src="https://i.loli.net/2018/11/14/5bebd5524bc47.png" alt><br>今天才注意到 LSTM 的 output 和 hidden_state 是同一个东西！下面分情况讨论参数的设置问题。<br><a id="more"></a></p>
+<h3 id="return-sequences-False-amp-amp-return-state-False" class="heading-control"><a href="#return-sequences-False-amp-amp-return-state-False" class="headerlink" title="return_sequences=False && return_state=False"></a>return_sequences=False && return_state=False<a class="heading-anchor" href="#return-sequences-False-amp-amp-return-state-False" aria-hidden="true"></a></h3><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">h = LSTM(X)</span><br></pre></td></tr></tbody></table></figure>
+<p>Keras API 中，return_sequences 和 return_state 默认就是 false。此时只会返回最后一个 LSTM 的 hidden state 值。</p>
+<h3 id="return-sequences-True-amp-amp-return-state-False" class="heading-control"><a href="#return-sequences-True-amp-amp-return-state-False" class="headerlink" title="return_sequences=True && return_state=False"></a>return_sequences=True && return_state=False<a class="heading-anchor" href="#return-sequences-True-amp-amp-return-state-False" aria-hidden="true"></a></h3><p>输出全部时间步 LSTM 的 hidden state 结果。</p>
+<h3 id="return-sequences-False-amp-amp-return-state-True" class="heading-control"><a href="#return-sequences-False-amp-amp-return-state-True" class="headerlink" title="return_sequences=False && return_state=True"></a>return_sequences=False && return_state=True<a class="heading-anchor" href="#return-sequences-False-amp-amp-return-state-True" aria-hidden="true"></a></h3><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">lstm1, state_h, state_c = LSTM(<span class="number">1</span>, return_state=<span class="literal">True</span>)</span><br></pre></td></tr></tbody></table></figure>
+<p>stm1 和 state_h 结果都是 hidden state。在这种参数设定下，它们俩的值相同。都是最后一个时间步的 hidden state。 state_c 是最后一个时间步 cell state 结果。</p>
+<h3 id="return-sequences-True-amp-amp-return-state-True" class="heading-control"><a href="#return-sequences-True-amp-amp-return-state-True" class="headerlink" title="return_sequences=True && return_state=True"></a>return_sequences=True && return_state=True<a class="heading-anchor" href="#return-sequences-True-amp-amp-return-state-True" aria-hidden="true"></a></h3><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">lstm1, state_h, state_c = LSTM(<span class="number">1</span>, return_sequences=<span class="literal">True</span>, return_state=<span class="literal">True</span>)</span><br></pre></td></tr></tbody></table></figure>
+<p>此时，我们既要输出全部时间步的 hidden state ，又要输出 cell state。lstm1 存放的就是全部时间步的 hidden state。state_h 存放的是最后一个时间步的 hidden state,state_c 存放的是最后一个时间步的 cell state<br>举一个输出例子，假设我们输入的时间步 time step=3：<br></p><figure class="highlight shell"><table><tbody><tr><td class="code"><pre><span class="line">[array([[[-0.02145359],</span><br><span class="line">        [-0.0540871 ],</span><br><span class="line">        [-0.09228823]]], dtype=float32),</span><br><span class="line"> array([[-0.09228823]], dtype=float32),</span><br><span class="line"> array([[-0.19803026]], dtype=float32)]</span><br></pre></td></tr></tbody></table></figure><br>可以看到state_h 的值和lstm1的最后一个时间步的值相同。<p></p>
+<h3 id="Reference" class="heading-control"><a href="#Reference" class="headerlink" title="Reference"></a>Reference<a class="heading-anchor" href="#Reference" aria-hidden="true"></a></h3><ol>
+<li><a href="https://blog.csdn.net/u011327333/article/details/78501054">https://blog.csdn.net/u011327333/article/details/78501054</a></li>
+<li><a href="https://machinelearningmastery.com/return-sequences-and-return-states-for-lstms-in-keras/">Understand the Difference Between Return Sequences and Return States for LSTMs in Keras</a></li>
+</ol>
+</body></html>]]></content>
+      <categories>
+        <category>笔记</category>
+      </categories>
+      <tags>
+        <tag>Keras</tag>
       </tags>
   </entry>
   <entry>
@@ -3589,27 +3589,6 @@ c_{N B}=\underset{c \in C}{\operatorname{largmax}} \log P(c)+\sum_{i \in \text {
       </tags>
   </entry>
   <entry>
-    <title>聊天机器人总结</title>
-    <url>/post/25360.html</url>
-    <content><![CDATA[<html><head><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script></head><body><h2 id="技术分类" class="heading-control"><a href="#技术分类" class="headerlink" title="技术分类"></a>技术分类<a class="heading-anchor" href="#技术分类" aria-hidden="true"></a></h2><p>首先我们把聊天机器人分为两种：主动式和被动式。</p>
-<ul>
-<li><strong>主动式</strong> 这是每个做聊天机器人的厂家都希望做到的，核心是 chatbot 在合适的时间，合适的地点给用户提供合适的信息。举个反面的例子，如果在半夜两点聊天机器人突然给你说：” 我给你讲个笑话吧”，这显然是不合适的，会引起反感的。所以主动式既是最好的，也是最难控制的，难度最大的。</li>
-<li><strong>被动式</strong> 这个是现在最流行的，又可以分为闲聊型、问答系统和任务型。问答系统是单轮的，通常任务型对话是多轮的。<br><img src="https://i.loli.net/2018/11/03/5bdd8c61b3736.png" alt>上面这种回复是安全的，但是 chatbot 中最忌讳的。</li>
-</ul>
-<a id="more"></a>
-<h2 id="任务型对话" class="heading-control"><a href="#任务型对话" class="headerlink" title="任务型对话"></a>任务型对话<a class="heading-anchor" href="#任务型对话" aria-hidden="true"></a></h2><p><img src="https://i.loli.net/2018/11/03/5bdd8e1dcb541.png" alt><br>里面提到一个名词叫槽位。其实可以简单的理解为填表格。DPO 发起询问，NLG 生成回复，为了使得回复自然，这里采用推荐时的回复。</p>
-<h2 id="检索式机器人框架" class="heading-control"><a href="#检索式机器人框架" class="headerlink" title="检索式机器人框架"></a>检索式机器人框架<a class="heading-anchor" href="#检索式机器人框架" aria-hidden="true"></a></h2><p><img src="https://i.loli.net/2018/11/03/5bdd9095442c8.png" alt><br>上面这张图是一个典型的检索式 chatbot 框架，分为三个步骤，拿到问题，从问题数据库中进行匹配，如果有多条相关数据就进<br>行排序，选出得分最高的输出。<br>这个框架中最重要的是匹配操作。传统方法是基于规则的方法，包括下图的几种计算距离的方法。当然也可以用 ML 来提取特征后做匹配的。<br><img src="https://i.loli.net/2018/11/03/5bdd910210306.png" alt><br>基于深度学习的方法。<br><img src="https://i.loli.net/2018/11/03/5bdd92726cc44.png" alt><br><img src="https://i.loli.net/2018/11/03/5bdd94223ba3d.png" alt></p>
-</body></html>]]></content>
-      <categories>
-        <category>课程笔记</category>
-      </categories>
-      <tags>
-        <tag>NLP</tag>
-        <tag>AI研习社</tag>
-        <tag>chat</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>腾讯广告部门一面 - 自然语言处理方向</title>
     <url>/post/6306.html</url>
     <content><![CDATA[<html><head><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script></head><body><p>今天上午 10 点突然接到面试的电话，面完之后感觉不怎么好，还是总结一下吧。</p>
@@ -3634,6 +3613,42 @@ p\left(t_{1}, t_{2}, \ldots, t_{N}\right)=\prod_{k=1}^{N} p\left(t_{k} | t_{k+1}
       </tags>
   </entry>
   <entry>
+    <title>聊天机器人总结</title>
+    <url>/post/25360.html</url>
+    <content><![CDATA[<html><head><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script></head><body><h2 id="技术分类" class="heading-control"><a href="#技术分类" class="headerlink" title="技术分类"></a>技术分类<a class="heading-anchor" href="#技术分类" aria-hidden="true"></a></h2><p>首先我们把聊天机器人分为两种：主动式和被动式。</p>
+<ul>
+<li><strong>主动式</strong> 这是每个做聊天机器人的厂家都希望做到的，核心是 chatbot 在合适的时间，合适的地点给用户提供合适的信息。举个反面的例子，如果在半夜两点聊天机器人突然给你说：” 我给你讲个笑话吧”，这显然是不合适的，会引起反感的。所以主动式既是最好的，也是最难控制的，难度最大的。</li>
+<li><strong>被动式</strong> 这个是现在最流行的，又可以分为闲聊型、问答系统和任务型。问答系统是单轮的，通常任务型对话是多轮的。<br><img src="https://i.loli.net/2018/11/03/5bdd8c61b3736.png" alt>上面这种回复是安全的，但是 chatbot 中最忌讳的。</li>
+</ul>
+<a id="more"></a>
+<h2 id="任务型对话" class="heading-control"><a href="#任务型对话" class="headerlink" title="任务型对话"></a>任务型对话<a class="heading-anchor" href="#任务型对话" aria-hidden="true"></a></h2><p><img src="https://i.loli.net/2018/11/03/5bdd8e1dcb541.png" alt><br>里面提到一个名词叫槽位。其实可以简单的理解为填表格。DPO 发起询问，NLG 生成回复，为了使得回复自然，这里采用推荐时的回复。</p>
+<h2 id="检索式机器人框架" class="heading-control"><a href="#检索式机器人框架" class="headerlink" title="检索式机器人框架"></a>检索式机器人框架<a class="heading-anchor" href="#检索式机器人框架" aria-hidden="true"></a></h2><p><img src="https://i.loli.net/2018/11/03/5bdd9095442c8.png" alt><br>上面这张图是一个典型的检索式 chatbot 框架，分为三个步骤，拿到问题，从问题数据库中进行匹配，如果有多条相关数据就进<br>行排序，选出得分最高的输出。<br>这个框架中最重要的是匹配操作。传统方法是基于规则的方法，包括下图的几种计算距离的方法。当然也可以用 ML 来提取特征后做匹配的。<br><img src="https://i.loli.net/2018/11/03/5bdd910210306.png" alt><br>基于深度学习的方法。<br><img src="https://i.loli.net/2018/11/03/5bdd92726cc44.png" alt><br><img src="https://i.loli.net/2018/11/03/5bdd94223ba3d.png" alt></p>
+</body></html>]]></content>
+      <categories>
+        <category>课程笔记</category>
+      </categories>
+      <tags>
+        <tag>NLP</tag>
+        <tag>AI研习社</tag>
+        <tag>chat</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>最近调代码两个的 bug</title>
+    <url>/post/19186.html</url>
+    <content><![CDATA[<html><head><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script></head><body><h3 id="标签错误" class="heading-control"><a href="#标签错误" class="headerlink" title="标签错误"></a>标签错误<a class="heading-anchor" href="#标签错误" aria-hidden="true"></a></h3><p>错误 log:<br></p><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">RuntimeError: cuda runtime error (59) :device-side assert triggered</span><br></pre></td></tr></tbody></table></figure><br>一般是标签出错，检查两点：<p></p>
+<ul>
+<li>标签中是否有 - 1</li>
+<li> 标签个数和分类的个数是否匹配（检查模型最后的分类个数）</li>
+</ul>
+<h3 id="Shell脚本dos2unix" class="heading-control"><a href="#Shell脚本dos2unix" class="headerlink" title="Shell脚本dos2unix"></a>Shell 脚本 dos2unix<a class="heading-anchor" href="#Shell脚本dos2unix" aria-hidden="true"></a></h3><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">Shell脚本出现$<span class="string">'\r'</span>: <span class="built_in">command</span> not found</span><br></pre></td></tr></tbody></table></figure>
+<p>这是因为脚本文件可能在 window 弄过，有 window 下的空行，把他转换成 unix 格式的就行。<br></p><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">yum install dos2unix</span><br><span class="line">dos2unix run.sh</span><br></pre></td></tr></tbody></table></figure><p></p>
+</body></html>]]></content>
+      <tags>
+        <tag>bug</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>论文阅读 - 20190924</title>
     <url>/post/50252.html</url>
     <content><![CDATA[<html><head><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script></head><body><h2 id="论文1" class="heading-control"><a href="#论文1" class="headerlink" title="论文1"></a>论文 1<a class="heading-anchor" href="#论文1" aria-hidden="true"></a></h2><p><strong>《SANVis: Visual Analytics for Understanding Self-Attention Networks》</strong></p>
@@ -3654,21 +3669,6 @@ p\left(t_{1}, t_{2}, \ldots, t_{N}\right)=\prod_{k=1}^{N} p\left(t_{k} | t_{k+1}
 </body></html>]]></content>
       <tags>
         <tag>论文</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>最近调代码两个的 bug</title>
-    <url>/post/19186.html</url>
-    <content><![CDATA[<html><head><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script></head><body><h3 id="标签错误" class="heading-control"><a href="#标签错误" class="headerlink" title="标签错误"></a>标签错误<a class="heading-anchor" href="#标签错误" aria-hidden="true"></a></h3><p>错误 log:<br></p><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">RuntimeError: cuda runtime error (59) :device-side assert triggered</span><br></pre></td></tr></tbody></table></figure><br>一般是标签出错，检查两点：<p></p>
-<ul>
-<li>标签中是否有 - 1</li>
-<li> 标签个数和分类的个数是否匹配（检查模型最后的分类个数）</li>
-</ul>
-<h3 id="Shell脚本dos2unix" class="heading-control"><a href="#Shell脚本dos2unix" class="headerlink" title="Shell脚本dos2unix"></a>Shell 脚本 dos2unix<a class="heading-anchor" href="#Shell脚本dos2unix" aria-hidden="true"></a></h3><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">Shell脚本出现$<span class="string">'\r'</span>: <span class="built_in">command</span> not found</span><br></pre></td></tr></tbody></table></figure>
-<p>这是因为脚本文件可能在 window 弄过，有 window 下的空行，把他转换成 unix 格式的就行。<br></p><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">yum install dos2unix</span><br><span class="line">dos2unix run.sh</span><br></pre></td></tr></tbody></table></figure><p></p>
-</body></html>]]></content>
-      <tags>
-        <tag>bug</tag>
       </tags>
   </entry>
   <entry>
@@ -3872,47 +3872,6 @@ p\left(t_{1}, t_{2}, \ldots, t_{N}\right)=\prod_{k=1}^{N} p\left(t_{k} | t_{k+1}
 </body></html>]]></content>
   </entry>
   <entry>
-    <title>逻辑回归</title>
-    <url>/post/60504.html</url>
-    <content><![CDATA[<html><head><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script></head><body><h2 id="逻辑回归模型" class="heading-control"><a href="#逻辑回归模型" class="headerlink" title="逻辑回归模型"></a>逻辑回归模型<a class="heading-anchor" href="#逻辑回归模型" aria-hidden="true"></a></h2><p>模型的假设：数据服从伯努利分布。</p>
-<script type="math/tex; mode=display">
-y=\sigma(f(\boldsymbol{x}))=\sigma\left(\boldsymbol{w}^{T} \boldsymbol{x}\right)=\frac{1}{1+e^{-\boldsymbol{w}^{T} \boldsymbol{x}}}</script><a id="more"></a>
-<h2 id="损失函数" class="heading-control"><a href="#损失函数" class="headerlink" title="损失函数"></a>损失函数<a class="heading-anchor" href="#损失函数" aria-hidden="true"></a></h2><script type="math/tex; mode=display">
-P(y | \boldsymbol{x})=\left\{\begin{array}{c}{p, y=1} \\ {1-p, y=0}\end{array}\right.</script><p>等价于：</p>
-<script type="math/tex; mode=display">
-P\left(y_{i} | \boldsymbol{x}_{i}\right)=p^{y_{i}}(1-p)^{1-y_{i}}</script><p>如果我们采集到了一组数据一共 N 个，总概率为：</p>
-<script type="math/tex; mode=display">
-P =\prod_{n=1}^{N} p^{y_{n}}(1-p)^{1-y_{n}}</script><p>最大化这个概率即最小化负 Log 损失函数：</p>
-<script type="math/tex; mode=display">
-\begin{array}{l}{L=\sum_{n=1}^{N} \ln \left(p^{y_{n}}(1-p)^{1-y_{n}}\right)} \\ {=\sum_{n=1}^{N}\left(y_{n} \ln (p)+\left(1-y_{n}\right) \ln (1-p)\right)}\end{array}</script><h2 id="梯度计算" class="heading-control"><a href="#梯度计算" class="headerlink" title="梯度计算"></a>梯度计算<a class="heading-anchor" href="#梯度计算" aria-hidden="true"></a></h2><p>上面式子中的 p 的公式如下：</p>
-<script type="math/tex; mode=display">
-p=\frac{1}{1+e^{-\boldsymbol{w}^{T} \boldsymbol{x}}}</script><p>1-p 的公式：</p>
-<script type="math/tex; mode=display">
-1-p=\frac{e^{-\boldsymbol{w}^{T} \boldsymbol{x}}}{1+e^{-\boldsymbol{w}^{T} \boldsymbol{x}}}</script><p>p 的导数如下：</p>
-<script type="math/tex; mode=display">
-p^{\prime}=p(1-p) \boldsymbol{x}</script><p>1-p 的导数如下：</p>
-<script type="math/tex; mode=display">
-(1-p)^{\prime}=-p(1-p) \boldsymbol{x}</script><p>所以损失函数的梯度如下：</p>
-<script type="math/tex; mode=display">
-\begin{aligned} \nabla F(\boldsymbol{w}) &=\nabla\left(\sum_{n=1}^{N}\left(y_{n} \ln (p)+\left(1-y_{n}\right) \ln (1-p)\right)\right) \\ &=\sum\left(y_{n} \ln ^{\prime}(p)+\left(1-y_{n}\right) \ln ^{\prime}(1-p)\right) \\ &=\sum\left(\left(y_{n} \frac{1}{p} p^{\prime}\right)+\left(1-y_{n}\right) \frac{1}{1-p}(1-p)^{\prime}\right) \\ &=\sum_{N}\left(y_{n}(1-p) \boldsymbol{x}_{n}-\left(1-y_{n}\right) p \boldsymbol{x}_{n}\right) \\ &=\sum_{n=1}^{N}\left(y_{n}-p\right) \boldsymbol{x}_{n} \end{aligned}</script><h2 id="逻辑回归的决策边界" class="heading-control"><a href="#逻辑回归的决策边界" class="headerlink" title="逻辑回归的决策边界"></a>逻辑回归的决策边界<a class="heading-anchor" href="#逻辑回归的决策边界" aria-hidden="true"></a></h2><p>逻辑回归的决策边界如下：</p>
-<script type="math/tex; mode=display">
-\frac{1}{1+e^{-\boldsymbol{w}^{T} \boldsymbol{x}}}=0.5</script><p>简一下上面的曲线公式，得到：</p>
-<script type="math/tex; mode=display">
-e^{-\boldsymbol{w}^{T} \boldsymbol{x}}=1=e^{0}</script><p>如下图所示，所以决策边界是线性的。</p>
-<script type="math/tex; mode=display">
--\boldsymbol{w}^{T} \boldsymbol{x}=0</script><p><img src="https://s2.ax1x.com/2019/07/23/ekKRw4.md.png" alt></p>
-<h2 id="代码" class="heading-control"><a href="#代码" class="headerlink" title="代码"></a>代码<a class="heading-anchor" href="#代码" aria-hidden="true"></a></h2><p>逻辑回归 + L2 范数正则化代码<br></p><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">LogisticRegression</span>():</span></span><br><span class="line">    <span class="string">""" A simple logistic regression model with L2 regularization (zero-mean</span></span><br><span class="line"><span class="string">    Gaussian priors on parameters). """</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self, x_train=None, y_train=None, x_test=None, y_test=None,</span></span></span><br><span class="line"><span class="function"><span class="params">                 alpha=<span class="number">.1</span>, synthetic=False</span>):</span></span><br><span class="line">        <span class="comment"># Set L2 regularization strength</span></span><br><span class="line">        self.alpha = alpha</span><br><span class="line">        <span class="comment"># Set the data.</span></span><br><span class="line">        self.set_data(x_train, y_train, x_test, y_test)</span><br><span class="line">        <span class="comment"># Initialize parameters to zero, for lack of a better choice.</span></span><br><span class="line">        self.betas = np.zeros(self.x_train.shape[<span class="number">1</span>])</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">negative_lik</span>(<span class="params">self, betas</span>):</span></span><br><span class="line">        <span class="keyword">return</span> <span class="number">-1</span> * self.lik(betas)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">lik</span>(<span class="params">self, betas</span>):</span></span><br><span class="line">        <span class="string">""" Likelihood of the data under the current settings of parameters. """</span></span><br><span class="line">        <span class="comment"># Data likelihood</span></span><br><span class="line">        l = <span class="number">0</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(self.n):</span><br><span class="line">            l += log(sigmoid(self.y_train[i] * </span><br><span class="line">                             np.dot(betas, self.x_train[i,:])))</span><br><span class="line">        <span class="comment"># Prior likelihood</span></span><br><span class="line">        <span class="keyword">for</span> k <span class="keyword">in</span> range(<span class="number">1</span>, self.x_train.shape[<span class="number">1</span>]):</span><br><span class="line">            l -= (self.alpha / <span class="number">2.0</span>) * self.betas[k]**<span class="number">2</span></span><br><span class="line">        <span class="keyword">return</span> l</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">train</span>(<span class="params">self</span>):</span></span><br><span class="line">        <span class="string">""" Define the gradient and hand it off to a scipy gradient-based</span></span><br><span class="line"><span class="string">        optimizer. """</span></span><br><span class="line">        <span class="comment"># Define the derivative of the likelihood with respect to beta_k.</span></span><br><span class="line">        <span class="comment"># Need to multiply by -1 because we will be minimizing.</span></span><br><span class="line">        dB_k = <span class="keyword">lambda</span> B, k : (k > <span class="number">0</span>) * self.alpha * B[k] - np.sum([</span><br><span class="line">            self.y_train[i] * self.x_train[i, k] * </span><br><span class="line">            sigmoid(-self.y_train[i] * np.dot(B, self.x_train[i,:])) </span><br><span class="line">            <span class="keyword">for</span> i <span class="keyword">in</span> range(self.n)])</span><br><span class="line"></span><br><span class="line">        <span class="comment"># The full gradient is just an array of componentwise derivatives</span></span><br><span class="line">        dB = <span class="keyword">lambda</span> B : np.array([dB_k(B, k) </span><br><span class="line">                                  <span class="keyword">for</span> k <span class="keyword">in</span> range(self.x_train.shape[<span class="number">1</span>])])</span><br><span class="line">        <span class="comment"># Optimize</span></span><br><span class="line">        self.betas = fmin_bfgs(self.negative_lik, self.betas, fprime=dB)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">set_data</span>(<span class="params">self, x_train, y_train, x_test, y_test</span>):</span></span><br><span class="line">        <span class="string">""" Take data that's already been generated. """</span></span><br><span class="line">        self.x_train = x_train</span><br><span class="line">        self.y_train = y_train</span><br><span class="line">        self.x_test = x_test</span><br><span class="line">        self.y_test = y_test</span><br><span class="line">        self.n = y_train.shape[<span class="number">0</span>]</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">training_reconstruction</span>(<span class="params">self</span>):</span></span><br><span class="line">        p_y1 = np.zeros(self.n)</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(self.n):</span><br><span class="line">            p_y1[i] = sigmoid(np.dot(self.betas, self.x_train[i,:]))</span><br><span class="line">        <span class="keyword">return</span> p_y1</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">test_predictions</span>(<span class="params">self</span>):</span></span><br><span class="line">        p_y1 = np.zeros(self.n)</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(self.n):</span><br><span class="line">            p_y1[i] = sigmoid(np.dot(self.betas, self.x_test[i,:]))</span><br><span class="line">        <span class="keyword">return</span> p_y1</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">plot_training_reconstruction</span>(<span class="params">self</span>):</span></span><br><span class="line">        plot(np.arange(self.n), <span class="number">.5</span> + <span class="number">.5</span> * self.y_train, <span class="string">'bo'</span>)</span><br><span class="line">        plot(np.arange(self.n), self.training_reconstruction(), <span class="string">'rx'</span>)</span><br><span class="line">        ylim([<span class="number">-.1</span>, <span class="number">1.1</span>])</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">plot_test_predictions</span>(<span class="params">self</span>):</span></span><br><span class="line">        plot(np.arange(self.n), <span class="number">.5</span> + <span class="number">.5</span> * self.y_test, <span class="string">'yo'</span>)</span><br><span class="line">        plot(np.arange(self.n), self.test_predictions(), <span class="string">'rx'</span>)</span><br><span class="line">        ylim([<span class="number">-.1</span>, <span class="number">1.1</span>])</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</span><br><span class="line">    <span class="keyword">from</span> pylab <span class="keyword">import</span> *</span><br><span class="line">    <span class="comment"># Create 20 dimensional data set with 25 points -- this will be</span></span><br><span class="line">    <span class="comment"># susceptible to overfitting.</span></span><br><span class="line">    data = SyntheticClassifierData(<span class="number">25</span>, <span class="number">20</span>)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># Run for a variety of regularization strengths</span></span><br><span class="line">    alphas = [<span class="number">0</span>, <span class="number">.001</span>, <span class="number">.01</span>, <span class="number">.1</span>]</span><br><span class="line">    <span class="keyword">for</span> j, a <span class="keyword">in</span> enumerate(alphas):</span><br><span class="line">        <span class="comment"># Create a new learner, but use the same data for each run</span></span><br><span class="line">        lr = LogisticRegression(x_train=data.X_train, y_train=data.Y_train,</span><br><span class="line">                                x_test=data.X_test, y_test=data.Y_test, alpha=a)</span><br><span class="line"></span><br><span class="line">        <span class="keyword">print</span> <span class="string">"Initial likelihood:"</span></span><br><span class="line">        <span class="keyword">print</span> lr.lik(lr.betas)</span><br><span class="line">        </span><br><span class="line">        <span class="comment"># Train the model</span></span><br><span class="line">        lr.train()</span><br><span class="line"></span><br><span class="line">        <span class="comment"># Display execution info</span></span><br><span class="line">        <span class="keyword">print</span> <span class="string">"Final betas:"</span></span><br><span class="line">        <span class="keyword">print</span> lr.betas</span><br><span class="line">        <span class="keyword">print</span> <span class="string">"Final lik:"</span></span><br><span class="line">        <span class="keyword">print</span> lr.lik(lr.betas)</span><br><span class="line"></span><br><span class="line">        <span class="comment"># Plot the results</span></span><br><span class="line">        subplot(len(alphas), <span class="number">2</span>, <span class="number">2</span>*j + <span class="number">1</span>)</span><br><span class="line">        lr.plot_training_reconstruction()</span><br><span class="line">        ylabel(<span class="string">"Alpha=%s"</span> % a)</span><br><span class="line">        <span class="keyword">if</span> j == <span class="number">0</span>:</span><br><span class="line">            title(<span class="string">"Training set reconstructions"</span>)</span><br><span class="line"></span><br><span class="line">        subplot(len(alphas), <span class="number">2</span>, <span class="number">2</span>*j + <span class="number">2</span>)</span><br><span class="line">        lr.plot_test_predictions()</span><br><span class="line">        <span class="keyword">if</span> j == <span class="number">0</span>:</span><br><span class="line">            title(<span class="string">"Test set predictions"</span>)</span><br><span class="line">    show()</span><br></pre></td></tr></tbody></table></figure><p></p>
-<h3 id="逻辑回归中为什么使用对数损失而不用平方损失" class="heading-control"><a href="#逻辑回归中为什么使用对数损失而不用平方损失" class="headerlink" title="逻辑回归中为什么使用对数损失而不用平方损失"></a>逻辑回归中为什么使用对数损失而不用平方损失<a class="heading-anchor" href="#逻辑回归中为什么使用对数损失而不用平方损失" aria-hidden="true"></a></h3><p>对于逻辑回归，这里所说的对数损失和极大似然是相同的。 不使用平方损失的原因是，在使用 Sigmoid 函数作为正样本的概率时，同时将平方损失作为损失函数，这时所构造出来的损失函数是非凸的，不容易求解，容易得到其局部最优解。 而如果使用极大似然，其目标函数就是对数似然函数，该损失函数是关于未知参数的高阶连续可导的凸函数，便于求其全局最优解。</p>
-<h2 id="Softmax" class="heading-control"><a href="#Softmax" class="headerlink" title="Softmax"></a>Softmax<a class="heading-anchor" href="#Softmax" aria-hidden="true"></a></h2><script type="math/tex; mode=display">
-h_{\theta}(x)=\left[\begin{array}{c}{P(y=1 | x ; \theta)} \\ {P(y=2 | x ; \theta)} \\ {\vdots} \\ {P(y=K | x ; \theta)}\end{array}\right]=\frac{1}{\sum_{j=1}^{K} \exp \left(\theta_{j}^{T} x\right)}\left[\begin{array}{c}{\exp \left(\theta_{1}^{T} x\right)} \\ {\exp \left(\theta_{2}^{T} x\right)} \\ {\vdots} \\ {\exp \left(\theta_{K}^{T} x\right)}\end{array}\right]</script><p>代价函数：</p>
-<script type="math/tex; mode=display">
-J(\theta)=-\left[\sum_{i=1}^{n} \sum_{k=1}^{K} \mathbf{1}\left\{y^{(i)}=k\right\} \ln \frac{\exp \left(\theta_{k}^{T} x_{i}\right)}{\sum_{j=1}^{K} \exp \left(\theta_{j}^{T} x_{i}\right)}\right]</script><p>其中，1${x}$ 是指示函数，x 为真时取 1 否则取 0。</p>
-</body></html>]]></content>
-      <tags>
-        <tag>机器学习</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>配置 CentOS7 GPU 环境</title>
     <url>/post/47363.html</url>
     <content><![CDATA[<html><head><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script></head><body><p><img src="https://i.loli.net/2018/11/07/5be2c0ba79f37.png" alt></p>
@@ -3993,6 +3952,58 @@ J(\theta)=-\left[\sum_{i=1}^{n} \sum_{k=1}^{K} \mathbf{1}\left\{y^{(i)}=k\right\
       </tags>
   </entry>
   <entry>
+    <title>逻辑回归</title>
+    <url>/post/60504.html</url>
+    <content><![CDATA[<html><head><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script></head><body><h2 id="逻辑回归模型" class="heading-control"><a href="#逻辑回归模型" class="headerlink" title="逻辑回归模型"></a>逻辑回归模型<a class="heading-anchor" href="#逻辑回归模型" aria-hidden="true"></a></h2><p>模型的假设：数据服从伯努利分布。</p>
+<script type="math/tex; mode=display">
+y=\sigma(f(\boldsymbol{x}))=\sigma\left(\boldsymbol{w}^{T} \boldsymbol{x}\right)=\frac{1}{1+e^{-\boldsymbol{w}^{T} \boldsymbol{x}}}</script><a id="more"></a>
+<h2 id="损失函数" class="heading-control"><a href="#损失函数" class="headerlink" title="损失函数"></a>损失函数<a class="heading-anchor" href="#损失函数" aria-hidden="true"></a></h2><script type="math/tex; mode=display">
+P(y | \boldsymbol{x})=\left\{\begin{array}{c}{p, y=1} \\ {1-p, y=0}\end{array}\right.</script><p>等价于：</p>
+<script type="math/tex; mode=display">
+P\left(y_{i} | \boldsymbol{x}_{i}\right)=p^{y_{i}}(1-p)^{1-y_{i}}</script><p>如果我们采集到了一组数据一共 N 个，总概率为：</p>
+<script type="math/tex; mode=display">
+P =\prod_{n=1}^{N} p^{y_{n}}(1-p)^{1-y_{n}}</script><p>最大化这个概率即最小化负 Log 损失函数：</p>
+<script type="math/tex; mode=display">
+\begin{array}{l}{L=\sum_{n=1}^{N} \ln \left(p^{y_{n}}(1-p)^{1-y_{n}}\right)} \\ {=\sum_{n=1}^{N}\left(y_{n} \ln (p)+\left(1-y_{n}\right) \ln (1-p)\right)}\end{array}</script><h2 id="梯度计算" class="heading-control"><a href="#梯度计算" class="headerlink" title="梯度计算"></a>梯度计算<a class="heading-anchor" href="#梯度计算" aria-hidden="true"></a></h2><p>上面式子中的 p 的公式如下：</p>
+<script type="math/tex; mode=display">
+p=\frac{1}{1+e^{-\boldsymbol{w}^{T} \boldsymbol{x}}}</script><p>1-p 的公式：</p>
+<script type="math/tex; mode=display">
+1-p=\frac{e^{-\boldsymbol{w}^{T} \boldsymbol{x}}}{1+e^{-\boldsymbol{w}^{T} \boldsymbol{x}}}</script><p>p 的导数如下：</p>
+<script type="math/tex; mode=display">
+p^{\prime}=p(1-p) \boldsymbol{x}</script><p>1-p 的导数如下：</p>
+<script type="math/tex; mode=display">
+(1-p)^{\prime}=-p(1-p) \boldsymbol{x}</script><p>所以损失函数的梯度如下：</p>
+<script type="math/tex; mode=display">
+\begin{aligned} \nabla F(\boldsymbol{w}) &=\nabla\left(\sum_{n=1}^{N}\left(y_{n} \ln (p)+\left(1-y_{n}\right) \ln (1-p)\right)\right) \\ &=\sum\left(y_{n} \ln ^{\prime}(p)+\left(1-y_{n}\right) \ln ^{\prime}(1-p)\right) \\ &=\sum\left(\left(y_{n} \frac{1}{p} p^{\prime}\right)+\left(1-y_{n}\right) \frac{1}{1-p}(1-p)^{\prime}\right) \\ &=\sum_{N}\left(y_{n}(1-p) \boldsymbol{x}_{n}-\left(1-y_{n}\right) p \boldsymbol{x}_{n}\right) \\ &=\sum_{n=1}^{N}\left(y_{n}-p\right) \boldsymbol{x}_{n} \end{aligned}</script><h2 id="逻辑回归的决策边界" class="heading-control"><a href="#逻辑回归的决策边界" class="headerlink" title="逻辑回归的决策边界"></a>逻辑回归的决策边界<a class="heading-anchor" href="#逻辑回归的决策边界" aria-hidden="true"></a></h2><p>逻辑回归的决策边界如下：</p>
+<script type="math/tex; mode=display">
+\frac{1}{1+e^{-\boldsymbol{w}^{T} \boldsymbol{x}}}=0.5</script><p>简一下上面的曲线公式，得到：</p>
+<script type="math/tex; mode=display">
+e^{-\boldsymbol{w}^{T} \boldsymbol{x}}=1=e^{0}</script><p>如下图所示，所以决策边界是线性的。</p>
+<script type="math/tex; mode=display">
+-\boldsymbol{w}^{T} \boldsymbol{x}=0</script><p><img src="https://s2.ax1x.com/2019/07/23/ekKRw4.md.png" alt></p>
+<h2 id="代码" class="heading-control"><a href="#代码" class="headerlink" title="代码"></a>代码<a class="heading-anchor" href="#代码" aria-hidden="true"></a></h2><p>逻辑回归 + L2 范数正则化代码<br></p><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">LogisticRegression</span>():</span></span><br><span class="line">    <span class="string">""" A simple logistic regression model with L2 regularization (zero-mean</span></span><br><span class="line"><span class="string">    Gaussian priors on parameters). """</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self, x_train=None, y_train=None, x_test=None, y_test=None,</span></span></span><br><span class="line"><span class="function"><span class="params">                 alpha=<span class="number">.1</span>, synthetic=False</span>):</span></span><br><span class="line">        <span class="comment"># Set L2 regularization strength</span></span><br><span class="line">        self.alpha = alpha</span><br><span class="line">        <span class="comment"># Set the data.</span></span><br><span class="line">        self.set_data(x_train, y_train, x_test, y_test)</span><br><span class="line">        <span class="comment"># Initialize parameters to zero, for lack of a better choice.</span></span><br><span class="line">        self.betas = np.zeros(self.x_train.shape[<span class="number">1</span>])</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">negative_lik</span>(<span class="params">self, betas</span>):</span></span><br><span class="line">        <span class="keyword">return</span> <span class="number">-1</span> * self.lik(betas)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">lik</span>(<span class="params">self, betas</span>):</span></span><br><span class="line">        <span class="string">""" Likelihood of the data under the current settings of parameters. """</span></span><br><span class="line">        <span class="comment"># Data likelihood</span></span><br><span class="line">        l = <span class="number">0</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(self.n):</span><br><span class="line">            l += log(sigmoid(self.y_train[i] * </span><br><span class="line">                             np.dot(betas, self.x_train[i,:])))</span><br><span class="line">        <span class="comment"># Prior likelihood</span></span><br><span class="line">        <span class="keyword">for</span> k <span class="keyword">in</span> range(<span class="number">1</span>, self.x_train.shape[<span class="number">1</span>]):</span><br><span class="line">            l -= (self.alpha / <span class="number">2.0</span>) * self.betas[k]**<span class="number">2</span></span><br><span class="line">        <span class="keyword">return</span> l</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">train</span>(<span class="params">self</span>):</span></span><br><span class="line">        <span class="string">""" Define the gradient and hand it off to a scipy gradient-based</span></span><br><span class="line"><span class="string">        optimizer. """</span></span><br><span class="line">        <span class="comment"># Define the derivative of the likelihood with respect to beta_k.</span></span><br><span class="line">        <span class="comment"># Need to multiply by -1 because we will be minimizing.</span></span><br><span class="line">        dB_k = <span class="keyword">lambda</span> B, k : (k > <span class="number">0</span>) * self.alpha * B[k] - np.sum([</span><br><span class="line">            self.y_train[i] * self.x_train[i, k] * </span><br><span class="line">            sigmoid(-self.y_train[i] * np.dot(B, self.x_train[i,:])) </span><br><span class="line">            <span class="keyword">for</span> i <span class="keyword">in</span> range(self.n)])</span><br><span class="line"></span><br><span class="line">        <span class="comment"># The full gradient is just an array of componentwise derivatives</span></span><br><span class="line">        dB = <span class="keyword">lambda</span> B : np.array([dB_k(B, k) </span><br><span class="line">                                  <span class="keyword">for</span> k <span class="keyword">in</span> range(self.x_train.shape[<span class="number">1</span>])])</span><br><span class="line">        <span class="comment"># Optimize</span></span><br><span class="line">        self.betas = fmin_bfgs(self.negative_lik, self.betas, fprime=dB)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">set_data</span>(<span class="params">self, x_train, y_train, x_test, y_test</span>):</span></span><br><span class="line">        <span class="string">""" Take data that's already been generated. """</span></span><br><span class="line">        self.x_train = x_train</span><br><span class="line">        self.y_train = y_train</span><br><span class="line">        self.x_test = x_test</span><br><span class="line">        self.y_test = y_test</span><br><span class="line">        self.n = y_train.shape[<span class="number">0</span>]</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">training_reconstruction</span>(<span class="params">self</span>):</span></span><br><span class="line">        p_y1 = np.zeros(self.n)</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(self.n):</span><br><span class="line">            p_y1[i] = sigmoid(np.dot(self.betas, self.x_train[i,:]))</span><br><span class="line">        <span class="keyword">return</span> p_y1</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">test_predictions</span>(<span class="params">self</span>):</span></span><br><span class="line">        p_y1 = np.zeros(self.n)</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(self.n):</span><br><span class="line">            p_y1[i] = sigmoid(np.dot(self.betas, self.x_test[i,:]))</span><br><span class="line">        <span class="keyword">return</span> p_y1</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">plot_training_reconstruction</span>(<span class="params">self</span>):</span></span><br><span class="line">        plot(np.arange(self.n), <span class="number">.5</span> + <span class="number">.5</span> * self.y_train, <span class="string">'bo'</span>)</span><br><span class="line">        plot(np.arange(self.n), self.training_reconstruction(), <span class="string">'rx'</span>)</span><br><span class="line">        ylim([<span class="number">-.1</span>, <span class="number">1.1</span>])</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">plot_test_predictions</span>(<span class="params">self</span>):</span></span><br><span class="line">        plot(np.arange(self.n), <span class="number">.5</span> + <span class="number">.5</span> * self.y_test, <span class="string">'yo'</span>)</span><br><span class="line">        plot(np.arange(self.n), self.test_predictions(), <span class="string">'rx'</span>)</span><br><span class="line">        ylim([<span class="number">-.1</span>, <span class="number">1.1</span>])</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</span><br><span class="line">    <span class="keyword">from</span> pylab <span class="keyword">import</span> *</span><br><span class="line">    <span class="comment"># Create 20 dimensional data set with 25 points -- this will be</span></span><br><span class="line">    <span class="comment"># susceptible to overfitting.</span></span><br><span class="line">    data = SyntheticClassifierData(<span class="number">25</span>, <span class="number">20</span>)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># Run for a variety of regularization strengths</span></span><br><span class="line">    alphas = [<span class="number">0</span>, <span class="number">.001</span>, <span class="number">.01</span>, <span class="number">.1</span>]</span><br><span class="line">    <span class="keyword">for</span> j, a <span class="keyword">in</span> enumerate(alphas):</span><br><span class="line">        <span class="comment"># Create a new learner, but use the same data for each run</span></span><br><span class="line">        lr = LogisticRegression(x_train=data.X_train, y_train=data.Y_train,</span><br><span class="line">                                x_test=data.X_test, y_test=data.Y_test, alpha=a)</span><br><span class="line"></span><br><span class="line">        <span class="keyword">print</span> <span class="string">"Initial likelihood:"</span></span><br><span class="line">        <span class="keyword">print</span> lr.lik(lr.betas)</span><br><span class="line">        </span><br><span class="line">        <span class="comment"># Train the model</span></span><br><span class="line">        lr.train()</span><br><span class="line"></span><br><span class="line">        <span class="comment"># Display execution info</span></span><br><span class="line">        <span class="keyword">print</span> <span class="string">"Final betas:"</span></span><br><span class="line">        <span class="keyword">print</span> lr.betas</span><br><span class="line">        <span class="keyword">print</span> <span class="string">"Final lik:"</span></span><br><span class="line">        <span class="keyword">print</span> lr.lik(lr.betas)</span><br><span class="line"></span><br><span class="line">        <span class="comment"># Plot the results</span></span><br><span class="line">        subplot(len(alphas), <span class="number">2</span>, <span class="number">2</span>*j + <span class="number">1</span>)</span><br><span class="line">        lr.plot_training_reconstruction()</span><br><span class="line">        ylabel(<span class="string">"Alpha=%s"</span> % a)</span><br><span class="line">        <span class="keyword">if</span> j == <span class="number">0</span>:</span><br><span class="line">            title(<span class="string">"Training set reconstructions"</span>)</span><br><span class="line"></span><br><span class="line">        subplot(len(alphas), <span class="number">2</span>, <span class="number">2</span>*j + <span class="number">2</span>)</span><br><span class="line">        lr.plot_test_predictions()</span><br><span class="line">        <span class="keyword">if</span> j == <span class="number">0</span>:</span><br><span class="line">            title(<span class="string">"Test set predictions"</span>)</span><br><span class="line">    show()</span><br></pre></td></tr></tbody></table></figure><p></p>
+<h3 id="逻辑回归中为什么使用对数损失而不用平方损失" class="heading-control"><a href="#逻辑回归中为什么使用对数损失而不用平方损失" class="headerlink" title="逻辑回归中为什么使用对数损失而不用平方损失"></a>逻辑回归中为什么使用对数损失而不用平方损失<a class="heading-anchor" href="#逻辑回归中为什么使用对数损失而不用平方损失" aria-hidden="true"></a></h3><p>对于逻辑回归，这里所说的对数损失和极大似然是相同的。 不使用平方损失的原因是，在使用 Sigmoid 函数作为正样本的概率时，同时将平方损失作为损失函数，这时所构造出来的损失函数是非凸的，不容易求解，容易得到其局部最优解。 而如果使用极大似然，其目标函数就是对数似然函数，该损失函数是关于未知参数的高阶连续可导的凸函数，便于求其全局最优解。</p>
+<h2 id="Softmax" class="heading-control"><a href="#Softmax" class="headerlink" title="Softmax"></a>Softmax<a class="heading-anchor" href="#Softmax" aria-hidden="true"></a></h2><script type="math/tex; mode=display">
+h_{\theta}(x)=\left[\begin{array}{c}{P(y=1 | x ; \theta)} \\ {P(y=2 | x ; \theta)} \\ {\vdots} \\ {P(y=K | x ; \theta)}\end{array}\right]=\frac{1}{\sum_{j=1}^{K} \exp \left(\theta_{j}^{T} x\right)}\left[\begin{array}{c}{\exp \left(\theta_{1}^{T} x\right)} \\ {\exp \left(\theta_{2}^{T} x\right)} \\ {\vdots} \\ {\exp \left(\theta_{K}^{T} x\right)}\end{array}\right]</script><p>代价函数：</p>
+<script type="math/tex; mode=display">
+J(\theta)=-\left[\sum_{i=1}^{n} \sum_{k=1}^{K} \mathbf{1}\left\{y^{(i)}=k\right\} \ln \frac{\exp \left(\theta_{k}^{T} x_{i}\right)}{\sum_{j=1}^{K} \exp \left(\theta_{j}^{T} x_{i}\right)}\right]</script><p>其中，1${x}$ 是指示函数，x 为真时取 1 否则取 0。</p>
+</body></html>]]></content>
+      <tags>
+        <tag>机器学习</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>基于文档的限定领域对话式问答系统设计说明</title>
+    <url>/post/5681.html</url>
+    <content><![CDATA[<html><head><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script></head><body><h2 id="引言" class="heading-control"><a href="#引言" class="headerlink" title="引言"></a>引言<a class="heading-anchor" href="#引言" aria-hidden="true"></a></h2><h3 id="编写目的" class="heading-control"><a href="#编写目的" class="headerlink" title="编写目的"></a>编写目的<a class="heading-anchor" href="#编写目的" aria-hidden="true"></a></h3><p>为了从整体上描述基于文档的限定领域对话式问答系统要实现的功能，使用户能够对本系统有一个全面正确的认识，同时给程序开发者一个关于系统的使用，系统的功能模块，以及系统的各种技术解决方案一个详细的说明。</p>
+<h3 id="背景" class="heading-control"><a href="#背景" class="headerlink" title="背景"></a>背景<a class="heading-anchor" href="#背景" aria-hidden="true"></a></h3><p>问答系统 (Question Answering System, QA) 是信息检索系统的一种高级形式，它能用准确、简洁的自然语言回答用户用自然语言提出的问题。其研究兴起的主要原因是人们对快速、准确地获取信息的需求。问答系统是目前人工智能和自然语言处理领域中一个倍受关注并具有广泛发展前景的研究方向。<br>不同的应用需要不同形式的问答系统，其所采用的语料和技术也不尽相同。从涉及的应用领域进行分类，可将问答系统分为限定域问答系统和开放域问答系统。<br>限定域问答系统是指系统所能处理的问题只限定于某个领域或者某个内容范围，比如只限定于医学、化学或者某企业的业务领域等。由于系统要解决的问题限定于某个领域或者范围，因此如果把系统所需要的全部领域知识都按照统一的方式表示成内部的结构化格式，则回答问题时就能比较容易地产生答案。<br><img src="/针对文档的问答系统设计说明/20191017082302115.png" alt><br>开放域问答系统不同于限定域问答系统，这类系统可回答的问题不限定于某个特定领域。在回答开放领域的问题时，需要一定的常识知识或者世界知识并具有语义词典。<br>按支持问答系统产生答案的文档库、知识库，以及实现的技术分类，可分为自然语言的数据库问答系统、对话式问答系统、阅读理解系统、基于常用问题集的问答系统、基于知识库的问答系统，以及基于大规模文档集的问答系统。<br>目前国内的大多数问答系统都是针对开放领域的对话式问答系统，在限定领域特别是基于文档的对话式问答系统很少，且功能均不够完善。本文设计了一种使用最先进的深度学习自然语言技术的基于文档的限定领域对话式问答系统设计说明。基本步骤包括处理文档数据、构造训练数据集、模型训练和优化、模型部署等，使用时输入用户需要查询的问题，系统可以自动匹配与问题最相关的段落，并由模型给出问题的答案。此外模型有完整的日志系统以及在线训练和离线训练模块。</p>
+<h2 id="概要设计" class="heading-control"><a href="#概要设计" class="headerlink" title="概要设计"></a>概要设计<a class="heading-anchor" href="#概要设计" aria-hidden="true"></a></h2><h3 id="系统总体设计" class="heading-control"><a href="#系统总体设计" class="headerlink" title="系统总体设计"></a>系统总体设计<a class="heading-anchor" href="#系统总体设计" aria-hidden="true"></a></h3><p>系统的整体编程语言使用 Python 进行开发，使用的深度学习框架为 TensorFlow。基于机器阅读理解模型的问答流程如下图所示：<br><img src="/针对文档的问答系统设计说明/20191017084213733.png" alt></p>
+<h3 id="系统模块功能" class="heading-control"><a href="#系统模块功能" class="headerlink" title="系统模块功能"></a>系统模块功能<a class="heading-anchor" href="#系统模块功能" aria-hidden="true"></a></h3><h4 id="文档数据识别和处理模块" class="heading-control"><a href="#文档数据识别和处理模块" class="headerlink" title="文档数据识别和处理模块"></a>文档数据识别和处理模块<a class="heading-anchor" href="#文档数据识别和处理模块" aria-hidden="true"></a></h4><p>常见的办公文档多数为 txt 文档，word 文档，excel 表格或者 pdf 文档。针对不同的文档需要设计不同的数据读取方式并进行读取后数据的存储。</p>
+<h4 id="模型训练数据的构建模块" class="heading-control"><a href="#模型训练数据的构建模块" class="headerlink" title="模型训练数据的构建模块"></a>模型训练数据的构建模块<a class="heading-anchor" href="#模型训练数据的构建模块" aria-hidden="true"></a></h4><p>SQuAD 示例：<br>内容：阿波罗计划于 1962 至 1972 年间进行，期间得到了同期的双子座计划（1962 年 - 1966 年）的支持。双子座计划为阿波罗计划成功必需的一些太空旅行技术做了铺垫。阿波罗计划使用土星系列火箭作为运载工具来发射飞船。这些火箭还被用于阿波罗应用计划，包括 1973 年到 1974 年间支持了三个载人飞行任务的空间站 Skylab，以及 1975 年和前苏联合作的联合地球轨道任务阿波罗联盟测试计划。<br>问题：哪一个空间站于 1973 到 1974 年间承载了三项载人飞行任务？<br>答案：Skylab 空间站</p>
+<h4 id="基于深度学习的阅读理解模型" class="heading-control"><a href="#基于深度学习的阅读理解模型" class="headerlink" title="基于深度学习的阅读理解模型"></a>基于深度学习的阅读理解模型<a class="heading-anchor" href="#基于深度学习的阅读理解模型" aria-hidden="true"></a></h4><p>YESNO 问题类型的处理方式<br>在第一阶段使用的是分类的方法，我后来考虑同样的问题可能在不同原文中可能是不同的回答，所以我就把 YESNO 作为原文进行训练。具体做法就是在原文后边拼接 YESNO 字符串，然后将之前的答案索引修改为 YESNO 对应的索引。这样在训练过程中就可以学到答案跟原文之间的关系，而不像之前只关注问题直接得出答案，实验证明这种方法确实能提高成绩，大概提高了 3 个百分点。2. 不能回答的问题的处理方式在 BERT 的源码中，对于不能回答的问题有一套处理方式，就是根据预测结果得出的 nbest 和答案为空的概率进行对比，如果答案为空的概率最高就把空作为答案。我使用与处理 YESNO 问题的方式去试了一下，就是将 NULL 拼接到原文后，将对应的答案索引改为 NULL 的索引，实验效果证明能提升， 但是只能提升百分之零点几，anyway，有点提升就用起来吧。</p>
+<h4 id="模型导出和部署模块" class="heading-control"><a href="#模型导出和部署模块" class="headerlink" title="模型导出和部署模块"></a>模型导出和部署模块<a class="heading-anchor" href="#模型导出和部署模块" aria-hidden="true"></a></h4><h4 id="针对问题段落匹配的信息检索模块" class="heading-control"><a href="#针对问题段落匹配的信息检索模块" class="headerlink" title="针对问题段落匹配的信息检索模块"></a>针对问题段落匹配的信息检索模块<a class="heading-anchor" href="#针对问题段落匹配的信息检索模块" aria-hidden="true"></a></h4></body></html>]]></content>
+  </entry>
+  <entry>
     <title>长文本分类</title>
     <url>/post/35349.html</url>
     <content><![CDATA[<html><head><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script></head><body><p>在 NLP 领域中，文本分类舆情分析等任务相较于文本抽取，和摘要等任务更容易获得大量标注数据。因此在文本分类领域中深度学习相较于传统方法更容易获得比较好的效果。<br>文本分类领域比较重要的的深度学习模型主要有 FastText，TextCNN，HAN，DPCNN。</p>
@@ -4009,17 +4020,6 @@ J(\theta)=-\left[\sum_{i=1}^{n} \sum_{k=1}^{K} \mathbf{1}\left\{y^{(i)}=k\right\
         <tag>NLP</tag>
         <tag>分类</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>基于文档的限定领域对话式问答系统设计说明</title>
-    <url>/post/5681.html</url>
-    <content><![CDATA[<html><head><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script></head><body><h2 id="引言" class="heading-control"><a href="#引言" class="headerlink" title="引言"></a>引言<a class="heading-anchor" href="#引言" aria-hidden="true"></a></h2><h3 id="编写目的" class="heading-control"><a href="#编写目的" class="headerlink" title="编写目的"></a>编写目的<a class="heading-anchor" href="#编写目的" aria-hidden="true"></a></h3><p>为了从整体上描述基于文档的限定领域对话式问答系统要实现的功能，使用户能够对本系统有一个全面正确的认识，同时给程序开发者一个关于系统的使用，系统的功能模块，以及系统的各种技术解决方案一个详细的说明。</p>
-<h3 id="背景" class="heading-control"><a href="#背景" class="headerlink" title="背景"></a>背景<a class="heading-anchor" href="#背景" aria-hidden="true"></a></h3><p>问答系统 (Question Answering System, QA) 是信息检索系统的一种高级形式，它能用准确、简洁的自然语言回答用户用自然语言提出的问题。其研究兴起的主要原因是人们对快速、准确地获取信息的需求。问答系统是目前人工智能和自然语言处理领域中一个倍受关注并具有广泛发展前景的研究方向。<br>不同的应用需要不同形式的问答系统，其所采用的语料和技术也不尽相同。从涉及的应用领域进行分类，可将问答系统分为限定域问答系统和开放域问答系统。<br>限定域问答系统是指系统所能处理的问题只限定于某个领域或者某个内容范围，比如只限定于医学、化学或者某企业的业务领域等。由于系统要解决的问题限定于某个领域或者范围，因此如果把系统所需要的全部领域知识都按照统一的方式表示成内部的结构化格式，则回答问题时就能比较容易地产生答案。<br><img src="/针对文档的问答系统设计说明/20191017082302115.png" alt><br>开放域问答系统不同于限定域问答系统，这类系统可回答的问题不限定于某个特定领域。在回答开放领域的问题时，需要一定的常识知识或者世界知识并具有语义词典。<br>按支持问答系统产生答案的文档库、知识库，以及实现的技术分类，可分为自然语言的数据库问答系统、对话式问答系统、阅读理解系统、基于常用问题集的问答系统、基于知识库的问答系统，以及基于大规模文档集的问答系统。<br>目前国内的大多数问答系统都是针对开放领域的对话式问答系统，在限定领域特别是基于文档的对话式问答系统很少，且功能均不够完善。本文设计了一种使用最先进的深度学习自然语言技术的基于文档的限定领域对话式问答系统设计说明。基本步骤包括处理文档数据、构造训练数据集、模型训练和优化、模型部署等，使用时输入用户需要查询的问题，系统可以自动匹配与问题最相关的段落，并由模型给出问题的答案。此外模型有完整的日志系统以及在线训练和离线训练模块。</p>
-<h2 id="概要设计" class="heading-control"><a href="#概要设计" class="headerlink" title="概要设计"></a>概要设计<a class="heading-anchor" href="#概要设计" aria-hidden="true"></a></h2><h3 id="系统总体设计" class="heading-control"><a href="#系统总体设计" class="headerlink" title="系统总体设计"></a>系统总体设计<a class="heading-anchor" href="#系统总体设计" aria-hidden="true"></a></h3><p>系统的整体编程语言使用 Python 进行开发，使用的深度学习框架为 TensorFlow。基于机器阅读理解模型的问答流程如下图所示：<br><img src="/针对文档的问答系统设计说明/20191017084213733.png" alt></p>
-<h3 id="系统模块功能" class="heading-control"><a href="#系统模块功能" class="headerlink" title="系统模块功能"></a>系统模块功能<a class="heading-anchor" href="#系统模块功能" aria-hidden="true"></a></h3><h4 id="文档数据识别和处理模块" class="heading-control"><a href="#文档数据识别和处理模块" class="headerlink" title="文档数据识别和处理模块"></a>文档数据识别和处理模块<a class="heading-anchor" href="#文档数据识别和处理模块" aria-hidden="true"></a></h4><p>常见的办公文档多数为 txt 文档，word 文档，excel 表格或者 pdf 文档。针对不同的文档需要设计不同的数据读取方式并进行读取后数据的存储。</p>
-<h4 id="模型训练数据的构建模块" class="heading-control"><a href="#模型训练数据的构建模块" class="headerlink" title="模型训练数据的构建模块"></a>模型训练数据的构建模块<a class="heading-anchor" href="#模型训练数据的构建模块" aria-hidden="true"></a></h4><p>SQuAD 示例：<br>内容：阿波罗计划于 1962 至 1972 年间进行，期间得到了同期的双子座计划（1962 年 - 1966 年）的支持。双子座计划为阿波罗计划成功必需的一些太空旅行技术做了铺垫。阿波罗计划使用土星系列火箭作为运载工具来发射飞船。这些火箭还被用于阿波罗应用计划，包括 1973 年到 1974 年间支持了三个载人飞行任务的空间站 Skylab，以及 1975 年和前苏联合作的联合地球轨道任务阿波罗联盟测试计划。<br>问题：哪一个空间站于 1973 到 1974 年间承载了三项载人飞行任务？<br>答案：Skylab 空间站</p>
-<h4 id="基于深度学习的阅读理解模型" class="heading-control"><a href="#基于深度学习的阅读理解模型" class="headerlink" title="基于深度学习的阅读理解模型"></a>基于深度学习的阅读理解模型<a class="heading-anchor" href="#基于深度学习的阅读理解模型" aria-hidden="true"></a></h4><p>YESNO 问题类型的处理方式<br>在第一阶段使用的是分类的方法，我后来考虑同样的问题可能在不同原文中可能是不同的回答，所以我就把 YESNO 作为原文进行训练。具体做法就是在原文后边拼接 YESNO 字符串，然后将之前的答案索引修改为 YESNO 对应的索引。这样在训练过程中就可以学到答案跟原文之间的关系，而不像之前只关注问题直接得出答案，实验证明这种方法确实能提高成绩，大概提高了 3 个百分点。2. 不能回答的问题的处理方式在 BERT 的源码中，对于不能回答的问题有一套处理方式，就是根据预测结果得出的 nbest 和答案为空的概率进行对比，如果答案为空的概率最高就把空作为答案。我使用与处理 YESNO 问题的方式去试了一下，就是将 NULL 拼接到原文后，将对应的答案索引改为 NULL 的索引，实验效果证明能提升， 但是只能提升百分之零点几，anyway，有点提升就用起来吧。</p>
-<h4 id="模型导出和部署模块" class="heading-control"><a href="#模型导出和部署模块" class="headerlink" title="模型导出和部署模块"></a>模型导出和部署模块<a class="heading-anchor" href="#模型导出和部署模块" aria-hidden="true"></a></h4><h4 id="针对问题段落匹配的信息检索模块" class="heading-control"><a href="#针对问题段落匹配的信息检索模块" class="headerlink" title="针对问题段落匹配的信息检索模块"></a>针对问题段落匹配的信息检索模块<a class="heading-anchor" href="#针对问题段落匹配的信息检索模块" aria-hidden="true"></a></h4></body></html>]]></content>
   </entry>
   <entry>
     <title>最大似然估计和最大后验估计</title>
