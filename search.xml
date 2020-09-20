@@ -142,6 +142,25 @@
       </tags>
   </entry>
   <entry>
+    <title>CNN+BLSTM+CTC 的验证码识别从训练到部署</title>
+    <url>/post/45705.html</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><p>这个项目很偏实战，有非常多的细节值得学习。我主要关注作者的项目部署过程。</p>
+<ul>
+<li><a href="https://github.com/kerlomz/captcha_trainer">项目地址</a></li>
+<li><a href="https://www.jianshu.com/p/80ef04b16efc">简书项目介绍</a></li>
+</ul>
+<p>在简书的项目介绍中，作者介绍了 CUDA 和 cuDNN 版本的问题，目前我都是通过 conda 安装 Tensorflow-GPU 版本，没有出现什么问题，但是还是在这里列一下，以防万一。</p>
+<a id="more"></a>
+<p><img src="https://i.loli.net/2018/12/06/5c0919fd3275c.png" alt=""><br><img src="https://i.loli.net/2018/12/06/5c0919fd6faef.png" alt=""></p>
+]]></content>
+      <categories>
+        <category>项目</category>
+      </categories>
+      <tags>
+        <tag>验证码</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>CS231N 学习笔记</title>
     <url>/post/24704.html</url>
     <content><![CDATA[<html><head><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script></head><body><h2 id="CS231N课程描述和资源" class="heading-control"><a href="#CS231N课程描述和资源" class="headerlink" title="CS231N课程描述和资源"></a>CS231N 课程描述和资源<a class="heading-anchor" href="#CS231N课程描述和资源" aria-hidden="true"></a></h2><p>CS231n 的全称是 CS231n: Convolutional Neural Networks for Visual Recognition，即面向视觉识别的卷积神经网络。该课程是斯坦福大学计算机视觉实验室推出的课程。<br>课程官网：<a href="http://cs231n.stanford.edu/">http://cs231n.stanford.edu/</a><br>官方笔记：<a href="http://cs231n.github.io/">http://cs231n.github.io/</a><br>B 站视频：<a href="https://www.bilibili.com/video/av58778425">https://www.bilibili.com/video/av58778425</a><br>课程作业：<a href="https://github.com/Burton2000/CS231n-2017">https://github.com/Burton2000/CS231n-2017</a></p>
@@ -199,25 +218,6 @@
       </categories>
       <tags>
         <tag>GPU</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>CNN+BLSTM+CTC 的验证码识别从训练到部署</title>
-    <url>/post/45705.html</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><p>这个项目很偏实战，有非常多的细节值得学习。我主要关注作者的项目部署过程。</p>
-<ul>
-<li><a href="https://github.com/kerlomz/captcha_trainer">项目地址</a></li>
-<li><a href="https://www.jianshu.com/p/80ef04b16efc">简书项目介绍</a></li>
-</ul>
-<p>在简书的项目介绍中，作者介绍了 CUDA 和 cuDNN 版本的问题，目前我都是通过 conda 安装 Tensorflow-GPU 版本，没有出现什么问题，但是还是在这里列一下，以防万一。</p>
-<a id="more"></a>
-<p><img src="https://i.loli.net/2018/12/06/5c0919fd3275c.png" alt=""><br><img src="https://i.loli.net/2018/12/06/5c0919fd6faef.png" alt=""></p>
-]]></content>
-      <categories>
-        <category>项目</category>
-      </categories>
-      <tags>
-        <tag>验证码</tag>
       </tags>
   </entry>
   <entry>
@@ -384,6 +384,47 @@ DuReader 数据集的样本可用一个四维数组表示：{q, t, D, A}，其�
 </body></html>]]></content>
       <tags>
         <tag>HEXO</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>HMM,MEMM 和 CRF</title>
+    <url>/post/38864.html</url>
+    <content><![CDATA[<html><head><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script></head><body><h2 id="概率图模型" class="heading-control"><a href="#概率图模型" class="headerlink" title="概率图模型"></a>概率图模型<a class="heading-anchor" href="#概率图模型" aria-hidden="true"></a></h2><p>概率图模型（probabilistic graphical model, PGM）指用图表示变量相关（依赖）关系的概率模型，主要分为两类：</p>
+<ul>
+<li>有向图模型或贝叶斯网（Bayesian network），使用有向图表示变量间的依赖关系；</li>
+<li>无向图模型或马尔可夫网（Markov network），使用无向图表示变量间相关关系。</li>
+</ul>
+<a id="more"></a>
+<p>PGM 对应的图有两种表示形式：independency graph, factor graph. independency graph 直接描述了变量的条件独立，而 factor graph 则是通过因子分解（ factorization）的方式暗含变量的条件独立。比如，NB 与 HMM 所对应的两种图表示如下：<br><img src="https://i.loli.net/2019/07/23/5d36cab00296c27882.png" alt><br><img src="https://i.loli.net/2019/07/23/5d36caaeecafa44027.png" alt><br>可以看出，NB 与 HMM 所对应的 independency graph 为有向图。</p>
+<p>从生成随机模型和判别式模型的角度可以得到：<br><img src="https://i.loli.net/2019/07/23/5d36caac95d1e65928.png" alt></p>
+<h2 id="HMM" class="heading-control"><a href="#HMM" class="headerlink" title="HMM"></a>HMM<a class="heading-anchor" href="#HMM" aria-hidden="true"></a></h2><p><img src="https://i.loli.net/2019/07/23/5d36caab70d8931864.png" alt><br>HMM 模型将标注看作马尔可夫链，一阶马尔可夫链式针对相邻标注的关系进行建模，其中每个标记对应一个概率函数。HMM 是一种生成式模型，定义了联合概率分布 ，其中 x 和 y 分别表示观察序列和相对应的标注序列的随机变量。为了能够定义这种联合概率分布，生成式模型需要枚举出所有可能的观察序列，这在实际运算过程中很困难，因为我们需要将观察序列的元素看做是彼此孤立的个体即假设每个元素彼此独立，任何时刻的观察结果只依赖于该时刻的状态。</p>
+<p>HMM 模型的这个假设前提在比较小的数据集上是合适的，但实际上在大量真实语料中观察序列更多的是以一种多重的交互特征形式表现，观察元素之间广泛存在长程相关性。在命名实体识别的任务中，由于实体本身结构所具有的复杂性，利用简单的特征函数往往无法涵盖所有的特性，这时 HMM 的假设前提使得它无法使用复杂特征 (它无法使用多于一个标记的特征）。</p>
+<h2 id="MEMM" class="heading-control"><a href="#MEMM" class="headerlink" title="MEMM"></a>MEMM<a class="heading-anchor" href="#MEMM" aria-hidden="true"></a></h2><p>HMM 与 MEMM 的图模型如下：<br><img src="https://i.loli.net/2019/07/23/5d36caaaa381829440.png" alt><br>最大熵模型可以使用任意的复杂相关特征，在性能上最大熵分类器超过了 Byaes 分类器。但是，作为一种分类器模型，这两种方法有一个共同的缺点：每个词都是单独进行分类的，标记之间的关系无法得到充分利用，具有马尔可夫链的 HMM 模型可以建立标记之间的马尔可夫关联性，这是最大熵模型所没有的。</p>
+<p><strong>最大熵模型的优点</strong>：首先，最大熵统计模型获得的是所有满足约束条件的模型中信息熵极大的模型；其次，最大熵统计模型可以灵活地设置约束条件，通过约束条件的多少可以调节模型对未知数据的适应度和对已知数据的拟合程度；再次，它还能自然地解决了统计模型中参数平滑的问题。</p>
+<p><strong>最大熵模型的不足</strong>：首先，最大熵统计模型中二值化特征只是记录特征的出现是否，而文本分类需要知道特征的强度，因此，它在分类方法中不是最优的；其次，由于算法收敛的速度较慢，所以导致最大熵统计模型它的计算代价较大，时空开销大；再次，数据稀疏问题比较严重。</p>
+<p>最大熵马尔科夫模型把 HMM 模型和 maximum-entropy 模型的优点集合成一个判别式模型，这个模型允许状态转移概率依赖于序列中彼此之间非独立的特征上，从而将上下文信息引入到模型的学习和识别过程中，提高了识别的精确度，召回率也大大的提高，有实验证明，这个新的模型在序列标注任务上表现的比 HMM 和无状态的最大熵模型要好得多。</p>
+<h2 id="CRF" class="heading-control"><a href="#CRF" class="headerlink" title="CRF"></a>CRF<a class="heading-anchor" href="#CRF" aria-hidden="true"></a></h2><p><img src="https://i.loli.net/2019/07/23/5d36caafaa04252797.png" alt><br>首先，CRF 在给定了观察序列的情况下，对整个的序列的联合概率有一个统一的指数模型。一个比较吸引人的特性是其损失函数 的凸面性。</p>
+<p>其次，条件随机域模型相比较改进的隐马尔可夫模型可以更好更多的利用待识别文本中所提供的上下文信息以得更好的实验结果。条件随机域在中文组块识别方面有效，并避免了严格的独立性假设和数据归纳偏置问题。条件随机域 (CRF) 模型应用到了中文名实体识别中，并且根据中文的特点，定义了多种特征模板。并且有测试结果表明：在采用相同特征集合的条件下，条件随机域模型较其他概率模型有更好的性能表现。</p>
+<p>再次，词性标注主要面临兼类词消歧以及未知词标注的难题，传统隐马尔科夫方法不易融合新特征，而最大熵马尔科夫模型存在标注偏置等问题。论文引入条件随机域建立词性标注模型，易于融合新的特征，并能解决标注偏置的问题。CRFs 具有很强的推理能力，并且能够使用复杂、有重叠性和非独立的特征进行训练和推理，能够充分地利用上下文信息作为特征，还可以任意地添加其他外部特征，使得模型能够获取的信息非常丰富。同时，CRFs 解决了最大熵模型中的 “label bias” 问题。CRFs 与最大熵模型的本质区别是：最大熵模型在每个状态都有一个概率模型，在每个状态转移时都要进行归一化。如果某个状态只有一个后续状态，那么该状态到后续状态的跳转概率即为 1。这样，不管输入为任何内容，它都向该后续状态跳转。而 CRFs 是在所有的状态上建立一个统一的概率模型，这样在进行归一化时，即使某个状态只有一个后续状态，它到该后续状态的跳转概率也不会为 1，从而解决了 “labelbias” 问题。因此，从理论上讲，CRFs 非常适用于中文的词性标注。</p>
+<p><strong>CRF 模型的优点</strong>：首先，CRF 模型由于其自身在结合多种特征方面的优势和避免了标记偏置问题。其次，CRF 的性能更好，CRF 对特征的融合能力比较强，对于实例较小的时间类 ME 来说，CRF 的识别效果明显高于 ME 的识别结果。</p>
+<p><strong>CRF 模型的不足</strong>：首先，通过对基于 CRF 的结合多种特征的方法识别英语命名实体的分析，发现在使用 CRF 方法的过程中，特征的选择和优化是影响结果的关键因素，特征选择问题的好与坏，直接决定了系统性能的高低。其次，训练模型的时间比 ME 更长，且获得的模型很大，在一般的 PC 机上无法运行。</p>
+<h2 id="总结" class="heading-control"><a href="#总结" class="headerlink" title="总结"></a>总结<a class="heading-anchor" href="#总结" aria-hidden="true"></a></h2><p><strong>HMM 模型</strong>中存在两个假设：一是输出<strong>观察值之间严格独立</strong>，二是状态的转移过程中当前状态只与前一状态有关 (<strong>一阶马尔可夫模型</strong>)。HMM 是有向图模型，是生成模型；</p>
+<p><strong>MEMM 模型</strong>克服了观察值之间严格独立产生的问题，但是由于状态之间的假设理论，使得该模型存在<strong>标注偏置问题</strong>。MEMM（最大熵马尔科夫模型）是有向图模型，是判别模型；</p>
+<p><strong>CRF 模型</strong>解决了标注偏置问题，去除了 HMM 中两个不合理的假设，当然，模型相应得也变复杂了。</p>
+<p>这三个模型都可以用来做序列标注模型。但是其各自有自身的特点。</p>
+<ul>
+<li>HMM 模型是对转移概率和表现概率直接建模，统计共现概率。</li>
+<li>MEMM 模型是对转移概率和表现概率建立联合概率，统计时统计的是条件概率。MEMM 容易陷入局部最优，是因为 MEMM 只在局部做归一化。</li>
+<li>CRF 模型中，统计了全局概率，在做归一化时，考虑了数据在全局的分布，而不是仅仅在局部归一化，这样就解决了 MEMM 中的标记偏置的问题。</li>
+</ul>
+<h2 id="视觉问题的应用" class="heading-control"><a href="#视觉问题的应用" class="headerlink" title="视觉问题的应用"></a>视觉问题的应用<a class="heading-anchor" href="#视觉问题的应用" aria-hidden="true"></a></h2><ul>
+<li>HMMs: 图像去噪、图像纹理分割、模糊图像复原、纹理图像检索、自动目标识别等</li>
+<li> MRF: 图像恢复、图像分割、边缘检测、纹理分析、目标匹配和识别等</li>
+<li> CRF: 目标检测、识别、序列图像中的目标分割</li>
+</ul>
+<h2 id class="heading-control"><a href="#" class="headerlink" title=" "></a> <a class="heading-anchor" href="#" aria-hidden="true"></a></h2></body></html>]]></content>
+      <tags>
+        <tag>NLP</tag>
       </tags>
   </entry>
   <entry>
@@ -583,44 +624,22 @@ DuReader 数据集的样本可用一个四维数组表示：{q, t, D, A}，其�
       </tags>
   </entry>
   <entry>
-    <title>HMM,MEMM 和 CRF</title>
-    <url>/post/38864.html</url>
-    <content><![CDATA[<html><head><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script></head><body><h2 id="概率图模型" class="heading-control"><a href="#概率图模型" class="headerlink" title="概率图模型"></a>概率图模型<a class="heading-anchor" href="#概率图模型" aria-hidden="true"></a></h2><p>概率图模型（probabilistic graphical model, PGM）指用图表示变量相关（依赖）关系的概率模型，主要分为两类：</p>
-<ul>
-<li>有向图模型或贝叶斯网（Bayesian network），使用有向图表示变量间的依赖关系；</li>
-<li>无向图模型或马尔可夫网（Markov network），使用无向图表示变量间相关关系。</li>
-</ul>
+    <title>Hexo 解决公式渲染问题</title>
+    <url>/post/58604.html</url>
+    <content><![CDATA[<html><head><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script></head><body><h2 id="Next配置文件" class="heading-control"><a href="#Next配置文件" class="headerlink" title="Next配置文件"></a>Next 配置文件<a class="heading-anchor" href="#Next配置文件" aria-hidden="true"></a></h2><figure class="highlight shell"><table><tbody><tr><td class="code"><pre><span class="line">mathjax:</span><br><span class="line">  enable: True</span><br><span class="line">  per_page: false</span><br><span class="line">  cdn: //cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="更换渲染引擎" class="heading-control"><a href="#更换渲染引擎" class="headerlink" title="更换渲染引擎"></a>更换渲染引擎<a class="heading-anchor" href="#更换渲染引擎" aria-hidden="true"></a></h2><p>更换 Hexo 的 markdown 渲染引擎，hexo-renderer-kramed 引擎是在默认的渲染引擎 hexo-renderer-marked 的基础上修改了一些 bug ，两者比较接近，也比较轻量级。</p>
+<h2 id="更改渲染设置" class="heading-control"><a href="#更改渲染设置" class="headerlink" title="更改渲染设置"></a>更改渲染设置<a class="heading-anchor" href="#更改渲染设置" aria-hidden="true"></a></h2><p>到博客根目录下，找到 <code>node_modules\kramed\lib\rules\inline.js</code>，把第 11 行的 <code>escape</code> 变量的值做相应的修改：<br></p><figure class="highlight shell"><table><tbody><tr><td class="code"><pre><span class="line">//em: /^\b_((?:__|[\s\S])+?)_\b|^\*((?:\*\*|[\s\S])+?)\*(?!\*)/,</span><br><span class="line"> em: /^\*((?:\*\*|[\s\S])+?)\*(?!\*)/,</span><br></pre></td></tr></tbody></table></figure><br>同时把第20行的em变量也要做相应的修改。<br><figure class="highlight shell"><table><tbody><tr><td class="code"><pre><span class="line">//em: /^\b_((?:__|[\s\S])+?)_\b|^\*((?:\*\*|[\s\S])+?)\*(?!\*)/,</span><br><span class="line">  em: /^\*((?:\*\*|[\s\S])+?)\*(?!\*)/,</span><br></pre></td></tr></tbody></table></figure><br>重新启动hexo（先clean再generate）,问题完美解决。<p></p>
 <a id="more"></a>
-<p>PGM 对应的图有两种表示形式：independency graph, factor graph. independency graph 直接描述了变量的条件独立，而 factor graph 则是通过因子分解（ factorization）的方式暗含变量的条件独立。比如，NB 与 HMM 所对应的两种图表示如下：<br><img src="https://i.loli.net/2019/07/23/5d36cab00296c27882.png" alt><br><img src="https://i.loli.net/2019/07/23/5d36caaeecafa44027.png" alt><br>可以看出，NB 与 HMM 所对应的 independency graph 为有向图。</p>
-<p>从生成随机模型和判别式模型的角度可以得到：<br><img src="https://i.loli.net/2019/07/23/5d36caac95d1e65928.png" alt></p>
-<h2 id="HMM" class="heading-control"><a href="#HMM" class="headerlink" title="HMM"></a>HMM<a class="heading-anchor" href="#HMM" aria-hidden="true"></a></h2><p><img src="https://i.loli.net/2019/07/23/5d36caab70d8931864.png" alt><br>HMM 模型将标注看作马尔可夫链，一阶马尔可夫链式针对相邻标注的关系进行建模，其中每个标记对应一个概率函数。HMM 是一种生成式模型，定义了联合概率分布 ，其中 x 和 y 分别表示观察序列和相对应的标注序列的随机变量。为了能够定义这种联合概率分布，生成式模型需要枚举出所有可能的观察序列，这在实际运算过程中很困难，因为我们需要将观察序列的元素看做是彼此孤立的个体即假设每个元素彼此独立，任何时刻的观察结果只依赖于该时刻的状态。</p>
-<p>HMM 模型的这个假设前提在比较小的数据集上是合适的，但实际上在大量真实语料中观察序列更多的是以一种多重的交互特征形式表现，观察元素之间广泛存在长程相关性。在命名实体识别的任务中，由于实体本身结构所具有的复杂性，利用简单的特征函数往往无法涵盖所有的特性，这时 HMM 的假设前提使得它无法使用复杂特征 (它无法使用多于一个标记的特征）。</p>
-<h2 id="MEMM" class="heading-control"><a href="#MEMM" class="headerlink" title="MEMM"></a>MEMM<a class="heading-anchor" href="#MEMM" aria-hidden="true"></a></h2><p>HMM 与 MEMM 的图模型如下：<br><img src="https://i.loli.net/2019/07/23/5d36caaaa381829440.png" alt><br>最大熵模型可以使用任意的复杂相关特征，在性能上最大熵分类器超过了 Byaes 分类器。但是，作为一种分类器模型，这两种方法有一个共同的缺点：每个词都是单独进行分类的，标记之间的关系无法得到充分利用，具有马尔可夫链的 HMM 模型可以建立标记之间的马尔可夫关联性，这是最大熵模型所没有的。</p>
-<p><strong>最大熵模型的优点</strong>：首先，最大熵统计模型获得的是所有满足约束条件的模型中信息熵极大的模型；其次，最大熵统计模型可以灵活地设置约束条件，通过约束条件的多少可以调节模型对未知数据的适应度和对已知数据的拟合程度；再次，它还能自然地解决了统计模型中参数平滑的问题。</p>
-<p><strong>最大熵模型的不足</strong>：首先，最大熵统计模型中二值化特征只是记录特征的出现是否，而文本分类需要知道特征的强度，因此，它在分类方法中不是最优的；其次，由于算法收敛的速度较慢，所以导致最大熵统计模型它的计算代价较大，时空开销大；再次，数据稀疏问题比较严重。</p>
-<p>最大熵马尔科夫模型把 HMM 模型和 maximum-entropy 模型的优点集合成一个判别式模型，这个模型允许状态转移概率依赖于序列中彼此之间非独立的特征上，从而将上下文信息引入到模型的学习和识别过程中，提高了识别的精确度，召回率也大大的提高，有实验证明，这个新的模型在序列标注任务上表现的比 HMM 和无状态的最大熵模型要好得多。</p>
-<h2 id="CRF" class="heading-control"><a href="#CRF" class="headerlink" title="CRF"></a>CRF<a class="heading-anchor" href="#CRF" aria-hidden="true"></a></h2><p><img src="https://i.loli.net/2019/07/23/5d36caafaa04252797.png" alt><br>首先，CRF 在给定了观察序列的情况下，对整个的序列的联合概率有一个统一的指数模型。一个比较吸引人的特性是其损失函数 的凸面性。</p>
-<p>其次，条件随机域模型相比较改进的隐马尔可夫模型可以更好更多的利用待识别文本中所提供的上下文信息以得更好的实验结果。条件随机域在中文组块识别方面有效，并避免了严格的独立性假设和数据归纳偏置问题。条件随机域 (CRF) 模型应用到了中文名实体识别中，并且根据中文的特点，定义了多种特征模板。并且有测试结果表明：在采用相同特征集合的条件下，条件随机域模型较其他概率模型有更好的性能表现。</p>
-<p>再次，词性标注主要面临兼类词消歧以及未知词标注的难题，传统隐马尔科夫方法不易融合新特征，而最大熵马尔科夫模型存在标注偏置等问题。论文引入条件随机域建立词性标注模型，易于融合新的特征，并能解决标注偏置的问题。CRFs 具有很强的推理能力，并且能够使用复杂、有重叠性和非独立的特征进行训练和推理，能够充分地利用上下文信息作为特征，还可以任意地添加其他外部特征，使得模型能够获取的信息非常丰富。同时，CRFs 解决了最大熵模型中的 “label bias” 问题。CRFs 与最大熵模型的本质区别是：最大熵模型在每个状态都有一个概率模型，在每个状态转移时都要进行归一化。如果某个状态只有一个后续状态，那么该状态到后续状态的跳转概率即为 1。这样，不管输入为任何内容，它都向该后续状态跳转。而 CRFs 是在所有的状态上建立一个统一的概率模型，这样在进行归一化时，即使某个状态只有一个后续状态，它到该后续状态的跳转概率也不会为 1，从而解决了 “labelbias” 问题。因此，从理论上讲，CRFs 非常适用于中文的词性标注。</p>
-<p><strong>CRF 模型的优点</strong>：首先，CRF 模型由于其自身在结合多种特征方面的优势和避免了标记偏置问题。其次，CRF 的性能更好，CRF 对特征的融合能力比较强，对于实例较小的时间类 ME 来说，CRF 的识别效果明显高于 ME 的识别结果。</p>
-<p><strong>CRF 模型的不足</strong>：首先，通过对基于 CRF 的结合多种特征的方法识别英语命名实体的分析，发现在使用 CRF 方法的过程中，特征的选择和优化是影响结果的关键因素，特征选择问题的好与坏，直接决定了系统性能的高低。其次，训练模型的时间比 ME 更长，且获得的模型很大，在一般的 PC 机上无法运行。</p>
-<h2 id="总结" class="heading-control"><a href="#总结" class="headerlink" title="总结"></a>总结<a class="heading-anchor" href="#总结" aria-hidden="true"></a></h2><p><strong>HMM 模型</strong>中存在两个假设：一是输出<strong>观察值之间严格独立</strong>，二是状态的转移过程中当前状态只与前一状态有关 (<strong>一阶马尔可夫模型</strong>)。HMM 是有向图模型，是生成模型；</p>
-<p><strong>MEMM 模型</strong>克服了观察值之间严格独立产生的问题，但是由于状态之间的假设理论，使得该模型存在<strong>标注偏置问题</strong>。MEMM（最大熵马尔科夫模型）是有向图模型，是判别模型；</p>
-<p><strong>CRF 模型</strong>解决了标注偏置问题，去除了 HMM 中两个不合理的假设，当然，模型相应得也变复杂了。</p>
-<p>这三个模型都可以用来做序列标注模型。但是其各自有自身的特点。</p>
-<ul>
-<li>HMM 模型是对转移概率和表现概率直接建模，统计共现概率。</li>
-<li>MEMM 模型是对转移概率和表现概率建立联合概率，统计时统计的是条件概率。MEMM 容易陷入局部最优，是因为 MEMM 只在局部做归一化。</li>
-<li>CRF 模型中，统计了全局概率，在做归一化时，考虑了数据在全局的分布，而不是仅仅在局部归一化，这样就解决了 MEMM 中的标记偏置的问题。</li>
-</ul>
-<h2 id="视觉问题的应用" class="heading-control"><a href="#视觉问题的应用" class="headerlink" title="视觉问题的应用"></a>视觉问题的应用<a class="heading-anchor" href="#视觉问题的应用" aria-hidden="true"></a></h2><ul>
-<li>HMMs: 图像去噪、图像纹理分割、模糊图像复原、纹理图像检索、自动目标识别等</li>
-<li> MRF: 图像恢复、图像分割、边缘检测、纹理分析、目标匹配和识别等</li>
-<li> CRF: 目标检测、识别、序列图像中的目标分割</li>
-</ul>
-<h2 id class="heading-control"><a href="#" class="headerlink" title=" "></a> <a class="heading-anchor" href="#" aria-hidden="true"></a></h2></body></html>]]></content>
+<h2 id="例子" class="heading-control"><a href="#例子" class="headerlink" title="例子"></a>例子<a class="heading-anchor" href="#例子" aria-hidden="true"></a></h2><h3 id="行内公式" class="heading-control"><a href="#行内公式" class="headerlink" title="行内公式"></a>行内公式<a class="heading-anchor" href="#行内公式" aria-hidden="true"></a></h3><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">$W_{b}$</span><br></pre></td></tr></tbody></table></figure>
+<p>$W_{b}$</p>
+<h3 id="行间公式" class="heading-control"><a href="#行间公式" class="headerlink" title="行间公式"></a>行间公式<a class="heading-anchor" href="#行间公式" aria-hidden="true"></a></h3><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">$$</span><br><span class="line">W_{b}</span><br><span class="line">$$</span><br></pre></td></tr></tbody></table></figure>
+<script type="math/tex; mode=display">
+W_{b}</script></body></html>]]></content>
+      <categories>
+        <category>工具</category>
+      </categories>
       <tags>
-        <tag>NLP</tag>
+        <tag>Hexo</tag>
       </tags>
   </entry>
   <entry>
@@ -702,41 +721,6 @@ D(x, y)=\sqrt[\psi]{\left(\left|x_{1}-y_{1}\right|\right)^{p}+\left(\left|x_{2}-
       </tags>
   </entry>
   <entry>
-    <title>Hexo 解决公式渲染问题</title>
-    <url>/post/58604.html</url>
-    <content><![CDATA[<html><head><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script></head><body><h2 id="Next配置文件" class="heading-control"><a href="#Next配置文件" class="headerlink" title="Next配置文件"></a>Next 配置文件<a class="heading-anchor" href="#Next配置文件" aria-hidden="true"></a></h2><figure class="highlight shell"><table><tbody><tr><td class="code"><pre><span class="line">mathjax:</span><br><span class="line">  enable: True</span><br><span class="line">  per_page: false</span><br><span class="line">  cdn: //cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML</span><br></pre></td></tr></tbody></table></figure>
-<h2 id="更换渲染引擎" class="heading-control"><a href="#更换渲染引擎" class="headerlink" title="更换渲染引擎"></a>更换渲染引擎<a class="heading-anchor" href="#更换渲染引擎" aria-hidden="true"></a></h2><p>更换 Hexo 的 markdown 渲染引擎，hexo-renderer-kramed 引擎是在默认的渲染引擎 hexo-renderer-marked 的基础上修改了一些 bug ，两者比较接近，也比较轻量级。</p>
-<h2 id="更改渲染设置" class="heading-control"><a href="#更改渲染设置" class="headerlink" title="更改渲染设置"></a>更改渲染设置<a class="heading-anchor" href="#更改渲染设置" aria-hidden="true"></a></h2><p>到博客根目录下，找到 <code>node_modules\kramed\lib\rules\inline.js</code>，把第 11 行的 <code>escape</code> 变量的值做相应的修改：<br></p><figure class="highlight shell"><table><tbody><tr><td class="code"><pre><span class="line">//em: /^\b_((?:__|[\s\S])+?)_\b|^\*((?:\*\*|[\s\S])+?)\*(?!\*)/,</span><br><span class="line"> em: /^\*((?:\*\*|[\s\S])+?)\*(?!\*)/,</span><br></pre></td></tr></tbody></table></figure><br>同时把第20行的em变量也要做相应的修改。<br><figure class="highlight shell"><table><tbody><tr><td class="code"><pre><span class="line">//em: /^\b_((?:__|[\s\S])+?)_\b|^\*((?:\*\*|[\s\S])+?)\*(?!\*)/,</span><br><span class="line">  em: /^\*((?:\*\*|[\s\S])+?)\*(?!\*)/,</span><br></pre></td></tr></tbody></table></figure><br>重新启动hexo（先clean再generate）,问题完美解决。<p></p>
-<a id="more"></a>
-<h2 id="例子" class="heading-control"><a href="#例子" class="headerlink" title="例子"></a>例子<a class="heading-anchor" href="#例子" aria-hidden="true"></a></h2><h3 id="行内公式" class="heading-control"><a href="#行内公式" class="headerlink" title="行内公式"></a>行内公式<a class="heading-anchor" href="#行内公式" aria-hidden="true"></a></h3><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">$W_{b}$</span><br></pre></td></tr></tbody></table></figure>
-<p>$W_{b}$</p>
-<h3 id="行间公式" class="heading-control"><a href="#行间公式" class="headerlink" title="行间公式"></a>行间公式<a class="heading-anchor" href="#行间公式" aria-hidden="true"></a></h3><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">$$</span><br><span class="line">W_{b}</span><br><span class="line">$$</span><br></pre></td></tr></tbody></table></figure>
-<script type="math/tex; mode=display">
-W_{b}</script></body></html>]]></content>
-      <categories>
-        <category>工具</category>
-      </categories>
-      <tags>
-        <tag>Hexo</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Kmeans 聚类算法</title>
-    <url>/post/42756.html</url>
-    <content><![CDATA[<html><head><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script></head><body><h2 id="kmeans算法步骤" class="heading-control"><a href="#kmeans算法步骤" class="headerlink" title="kmeans算法步骤"></a>kmeans 算法步骤<a class="heading-anchor" href="#kmeans算法步骤" aria-hidden="true"></a></h2><ul>
-<li>第一步 - 随机选择 K 个点作为点的聚类中心，这表示我们要将数据分为 K 类。</li>
-<li>第二步 - 遍历所有的点 P, 算出 P 到每个聚类中心的距离，将 P 放到最近的聚类中心的点集中。遍历结束后我们将得到 K 个点集。</li>
-<li>第三步 - 遍历每一个点集，算出每一个点集的中心位置，将其作为新的聚类中心。</li>
-<li>第四步 - 重复步骤 2 和步骤 3，直到聚类中心位置不再移动。</li>
-</ul>
-<p><img src="https://s2.ax1x.com/2019/07/23/ekGzVK.gif" alt="ekGzVK.gif"></p>
-<h2 id="如何确定K值" class="heading-control"><a href="#如何确定K值" class="headerlink" title="如何确定K值"></a>如何确定 K 值<a class="heading-anchor" href="#如何确定K值" aria-hidden="true"></a></h2><p>在确定 K 的时候，可以测试 10 个不同的聚类中心，然后绘制 K 与误差平方和的曲线图，找到曲线的拐点，即是合适的 K 值。<br><img src="https://i.loli.net/2019/07/23/5d36b6b39df1e49840.png" alt></p>
-</body></html>]]></content>
-      <tags>
-        <tag>机器学习</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Keras 迁移学习</title>
     <url>/post/60371.html</url>
     <content><![CDATA[<html><head><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script></head><body><h2 id="迁移学习" class="heading-control"><a href="#迁移学习" class="headerlink" title="迁移学习"></a>迁移学习<a class="heading-anchor" href="#迁移学习" aria-hidden="true"></a></h2><p>简单来说迁移学习是把在 ImageNet 等大型数据集上训练好的 CNN 模型拿过来，经过简单的调整应用到自己的项目上去。<br><img src="https://i.loli.net/2018/11/03/5bdd5f94a2ad6.png" alt><br><a id="more"></a></p>
@@ -781,6 +765,22 @@ W_{b}</script></body></html>]]></content>
       <tags>
         <tag>迁移学习</tag>
         <tag>cnn</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Kmeans 聚类算法</title>
+    <url>/post/42756.html</url>
+    <content><![CDATA[<html><head><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script></head><body><h2 id="kmeans算法步骤" class="heading-control"><a href="#kmeans算法步骤" class="headerlink" title="kmeans算法步骤"></a>kmeans 算法步骤<a class="heading-anchor" href="#kmeans算法步骤" aria-hidden="true"></a></h2><ul>
+<li>第一步 - 随机选择 K 个点作为点的聚类中心，这表示我们要将数据分为 K 类。</li>
+<li>第二步 - 遍历所有的点 P, 算出 P 到每个聚类中心的距离，将 P 放到最近的聚类中心的点集中。遍历结束后我们将得到 K 个点集。</li>
+<li>第三步 - 遍历每一个点集，算出每一个点集的中心位置，将其作为新的聚类中心。</li>
+<li>第四步 - 重复步骤 2 和步骤 3，直到聚类中心位置不再移动。</li>
+</ul>
+<p><img src="https://s2.ax1x.com/2019/07/23/ekGzVK.gif" alt="ekGzVK.gif"></p>
+<h2 id="如何确定K值" class="heading-control"><a href="#如何确定K值" class="headerlink" title="如何确定K值"></a>如何确定 K 值<a class="heading-anchor" href="#如何确定K值" aria-hidden="true"></a></h2><p>在确定 K 的时候，可以测试 10 个不同的聚类中心，然后绘制 K 与误差平方和的曲线图，找到曲线的拐点，即是合适的 K 值。<br><img src="https://i.loli.net/2019/07/23/5d36b6b39df1e49840.png" alt></p>
+</body></html>]]></content>
+      <tags>
+        <tag>机器学习</tag>
       </tags>
   </entry>
   <entry>
@@ -863,6 +863,73 @@ Number=(Features+Output\_dim) x Output\_dim+Output\_dim
       </tags>
   </entry>
   <entry>
+    <title>BiliBili 蒙版弹幕</title>
+    <url>/post/34384.html</url>
+    <content><![CDATA[<html><head><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script></head><body><h2 id="What-is-Mask-RCNN" class="heading-control"><a href="#What-is-Mask-RCNN" class="headerlink" title="What is Mask RCNN"></a>What is Mask RCNN<a class="heading-anchor" href="#What-is-Mask-RCNN" aria-hidden="true"></a></h2><ul>
+<li>Faster RCNN + Masks</li>
+<li><p>Developed by Facebook AI Research(FAIR)</p>
+<p><img src="https://i.loli.net/2018/10/26/5bd2bd96503da.png" alt></p>
+<a id="more"></a>
+</li>
+</ul>
+<h2 id="Setup-and-Installation" class="heading-control"><a href="#Setup-and-Installation" class="headerlink" title="Setup and Installation"></a>Setup and Installation<a class="heading-anchor" href="#Setup-and-Installation" aria-hidden="true"></a></h2><ul>
+<li>Step1: Python3.6</li>
+<li><p>Step2: Clone the Mask_RCNN repo</p>
+  <figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">git clone https://github.com/matterport/Mask_RCNN.git</span><br></pre></td></tr></tbody></table></figure>
+</li>
+<li><p>Step3: Install the dependencies<br>下载下来的 Mask RCNN 中有一个 requirements.txt 文件。</p>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">pip install -r requirements</span><br></pre></td></tr></tbody></table></figure>
+</li>
+<li><p>Step4: Install cocoapi</p>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">pip install git+https://github.com/philferriere/cocoapi.git<span class="comment">#subdirectory=PythonAPI</span></span><br></pre></td></tr></tbody></table></figure>
+</li>
+<li><p>Step5: Dowload the Pre-trained Weights<br><a href="https://github.com/matterport/Mask_RCNN/releases/download/v2.0/mask_rcnn_coco.h5">https://github.com/matterport/Mask_RCNN/releases/download/v2.0/mask_rcnn_coco.h5</a><br>把下载的 h5 文件放入 Mask-RCNN 的文件夹里面</p>
+</li>
+</ul>
+<h2 id="Run" class="heading-control"><a href="#Run" class="headerlink" title="Run"></a>Run<a class="heading-anchor" href="#Run" aria-hidden="true"></a></h2><p>首先打开 Mask_RCNN/samples notebook，运行。<br>出现两个错误：</p>
+<ul>
+<li><p>No module named ‘imgaug’</p>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">pip install imgaug</span><br><span class="line">pip install opencv-python</span><br></pre></td></tr></tbody></table></figure>
+</li>
+</ul>
+<ul>
+<li>TypeError: softmax() got an unexpected keyword argument ‘axis’<br>keras 2.1.6 的 softmax 没有 axis 这个参数了，回退 keras 版本：<code>pip install keras==2.1</code></li>
+</ul>
+<h2 id="结果" class="heading-control"><a href="#结果" class="headerlink" title="结果"></a>结果<a class="heading-anchor" href="#结果" aria-hidden="true"></a></h2><p><img src="https://i.loli.net/2018/10/26/5bd2bd104eeac.png" alt></p>
+<h2 id="BiliBili蒙版弹幕" class="heading-control"><a href="#BiliBili蒙版弹幕" class="headerlink" title="BiliBili蒙版弹幕"></a>BiliBili 蒙版弹幕<a class="heading-anchor" href="#BiliBili蒙版弹幕" aria-hidden="true"></a></h2><p>原版视频地址：<a href="https://www.bilibili.com/video/av16789504">新垣结衣日清鸡肉拉面广告</a></p>
+<h3 id="视频弹幕压缩" class="heading-control"><a href="#视频弹幕压缩" class="headerlink" title="视频弹幕压缩"></a>视频弹幕压缩<a class="heading-anchor" href="#视频弹幕压缩" aria-hidden="true"></a></h3><p>给视频加硬字幕是把字幕加到视频流中，不是单独的字幕流。</p>
+<figure class="highlight shell"><table><tbody><tr><td class="code"><pre><span class="line">ffmpeg -i demo.mp4 -vf ass=subtitle.ass output.mp4</span><br></pre></td></tr></tbody></table></figure>
+<p>参考链接：<a href="https://blog.csdn.net/fallfollowernolisten/article/details/68489499">https://blog.csdn.net/fallfollowernolisten/article/details/68489499</a></p>
+<h3 id="准备工作" class="heading-control"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作<a class="heading-anchor" href="#准备工作" aria-hidden="true"></a></h3><ol>
+<li>准备带弹幕的视频文件和不带弹幕的视频文件。</li>
+<li>配置视频文件路径。</li>
+<li>在 coco 文件下的<code>__init__.py</code> 中加入代码：<code>from .coco import *</code> 。</li>
+<li>执行代码，等待完成。</li>
+</ol>
+<h3 id="执行程序" class="heading-control"><a href="#执行程序" class="headerlink" title="执行程序"></a>执行程序<a class="heading-anchor" href="#执行程序" aria-hidden="true"></a></h3><p>内存占用情况：<br><img src="https://i.loli.net/2018/10/26/5bd304c51f8f6.png" alt><br>显卡使用情况：<br><img src="https://i.loli.net/2018/10/26/5bd305046a62e.png" alt><br>可以看到还是很耗费显存的，我的电脑差一点就不够了，而且实际训练起来速度也很慢。</p>
+<h2 id="视频音频压缩" class="heading-control"><a href="#视频音频压缩" class="headerlink" title="视频音频压缩"></a>视频音频压缩<a class="heading-anchor" href="#视频音频压缩" aria-hidden="true"></a></h2><p>生成的蒙版弹幕视频文件没有声音，所以需要手动添加声音，还是用 ffmpeg。</p>
+<ul>
+<li>首先在把视频上传到 <a href>123app</a>，使用 Audio Convert 来转换为 MP3 格式，就是音频文件了，文件大小大概有几 M。</li>
+<li><p>下一步是合并音视频。假设现有视频文件 video.avi (包含声音) 和音频文件 audio.mp3，要把 video.avi 中的视频和 audio.mp3 合并，步骤如下：</p>
+<figure class="highlight shell"><table><tbody><tr><td class="code"><pre><span class="line">//将video.avi 中的视频提取到临时文件video2.avi中</span><br><span class="line">ffmpeg -i video.avi -vcodec copy -an video2.avi </span><br><span class="line">//合并 video2.avi 和  audio.mp3 到output.avi</span><br><span class="line">ffmpeg -i video2.avi -i audio.mp3 -vcodec copy -acodec copy output.avi </span><br><span class="line">//video2是临时文件，最后可以删除。</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="完成效果" class="heading-control"><a href="#完成效果" class="headerlink" title="完成效果"></a>完成效果<a class="heading-anchor" href="#完成效果" aria-hidden="true"></a></h2><p><img src="https://i.loli.net/2018/10/27/5bd40075b2092.png" alt></p>
+<h2 id="Reference" class="heading-control"><a href="#Reference" class="headerlink" title="Reference"></a>Reference<a class="heading-anchor" href="#Reference" aria-hidden="true"></a></h2></li>
+<li><p><a href="https://github.com/matterport/Mask_RCNN">Mask-RCNN</a></p>
+</li>
+<li><a href="https://github.com/markjay4k/Mask-RCNN-series?1540532721233">Mask-RCNN-series</a></li>
+<li><a href="https://github.com/philferriere/cocoapi">cocoapi</a></li>
+<li><a href="https://www.bilibili.com/video/av23064129/?p=1">Mask RCNN with Keras and Tensorflow</a></li>
+<li><a href="https://github.com/youyuge34/Mask_Danmu">Mask_Danmu</a></li>
+</ul>
+</body></html>]]></content>
+      <categories>
+        <category>项目</category>
+      </categories>
+      <tags>
+        <tag>CNN</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Machine Reading Comprehension 文章阅读</title>
     <url>/post/21734.html</url>
     <content><![CDATA[<html><head><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script></head><body><h3 id="《Relation-Module-for-Non-Answerable-Predictions-on-Reading-Comprehension》" class="heading-control"><a href="#《Relation-Module-for-Non-Answerable-Predictions-on-Reading-Comprehension》" class="headerlink" title="《Relation Module for Non-Answerable Predictions on Reading Comprehension》"></a>《Relation Module for Non-Answerable Predictions on Reading Comprehension》<a class="heading-anchor" href="#《Relation-Module-for-Non-Answerable-Predictions-on-Reading-Comprehension》" aria-hidden="true"></a></h3><blockquote>
@@ -872,6 +939,27 @@ Number=(Features+Output\_dim) x Output\_dim+Output\_dim
 <h3 id class="heading-control"><a href="#" class="headerlink" title=" "></a> <a class="heading-anchor" href="#" aria-hidden="true"></a></h3></body></html>]]></content>
       <tags>
         <tag>论文</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Mathpix:Image to Latex</title>
+    <url>/post/31913.html</url>
+    <content><![CDATA[<html><head><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script></head><body><p><img src="https://i.loli.net/2018/10/31/5bd9905467947.png" alt><br>使用 Mathpix，你可以截取数学方程式的截图，它会立即为你提供 LaTeX 代码。然后，你可以在 LaTeX 编辑器中使用代码写公式啦。<br><a id="more"></a></p>
+<h2 id="Mac和Win安装方法" class="heading-control"><a href="#Mac和Win安装方法" class="headerlink" title="Mac和Win安装方法"></a>Mac 和 Win 安装方法<a class="heading-anchor" href="#Mac和Win安装方法" aria-hidden="true"></a></h2><p><a href="https://mathpix.com/">官网在这里</a>，可以直接下载安装。</p>
+<h2 id="Linux安装" class="heading-control"><a href="#Linux安装" class="headerlink" title="Linux安装"></a>Linux 安装<a class="heading-anchor" href="#Linux安装" aria-hidden="true"></a></h2><ol>
+<li>需要先安装 snapd<br><a href="https://docs.snapcraft.io/installing-snapd/6735">安装方法</a> , 我的是深度系统，所以是：<figure class="highlight shell"><table><tbody><tr><td class="code"><pre><span class="line">sudo apt install snapd</span><br></pre></td></tr></tbody></table></figure></li>
+<li>安装软件 <figure class="highlight shell"><table><tbody><tr><td class="code"><pre><span class="line">sudo snap install mathpix-snipping-tool</span><br></pre></td></tr></tbody></table></figure></li>
+<li><p>快捷方式<br>这个比较麻烦，我找了一下我的是在这个目录里面 <code>/snap/mathpix-snipping-tool/23/usr/bin</code>，有一个 <code>mathpix-snipping-tool</code>，右键发送到桌面即可。</p>
+</li>
+<li><p>截屏快捷键<br><code>Ctrl+Alt+M</code></p>
+</li>
+</ol>
+</body></html>]]></content>
+      <categories>
+        <category>工具</category>
+      </categories>
+      <tags>
+        <tag>Latex</tag>
       </tags>
   </entry>
   <entry>
@@ -1083,94 +1171,6 @@ Number=(Features+Output\_dim) x Output\_dim+Output\_dim
       </tags>
   </entry>
   <entry>
-    <title>Mathpix:Image to Latex</title>
-    <url>/post/31913.html</url>
-    <content><![CDATA[<html><head><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script></head><body><p><img src="https://i.loli.net/2018/10/31/5bd9905467947.png" alt><br>使用 Mathpix，你可以截取数学方程式的截图，它会立即为你提供 LaTeX 代码。然后，你可以在 LaTeX 编辑器中使用代码写公式啦。<br><a id="more"></a></p>
-<h2 id="Mac和Win安装方法" class="heading-control"><a href="#Mac和Win安装方法" class="headerlink" title="Mac和Win安装方法"></a>Mac 和 Win 安装方法<a class="heading-anchor" href="#Mac和Win安装方法" aria-hidden="true"></a></h2><p><a href="https://mathpix.com/">官网在这里</a>，可以直接下载安装。</p>
-<h2 id="Linux安装" class="heading-control"><a href="#Linux安装" class="headerlink" title="Linux安装"></a>Linux 安装<a class="heading-anchor" href="#Linux安装" aria-hidden="true"></a></h2><ol>
-<li>需要先安装 snapd<br><a href="https://docs.snapcraft.io/installing-snapd/6735">安装方法</a> , 我的是深度系统，所以是：<figure class="highlight shell"><table><tbody><tr><td class="code"><pre><span class="line">sudo apt install snapd</span><br></pre></td></tr></tbody></table></figure></li>
-<li>安装软件 <figure class="highlight shell"><table><tbody><tr><td class="code"><pre><span class="line">sudo snap install mathpix-snipping-tool</span><br></pre></td></tr></tbody></table></figure></li>
-<li><p>快捷方式<br>这个比较麻烦，我找了一下我的是在这个目录里面 <code>/snap/mathpix-snipping-tool/23/usr/bin</code>，有一个 <code>mathpix-snipping-tool</code>，右键发送到桌面即可。</p>
-</li>
-<li><p>截屏快捷键<br><code>Ctrl+Alt+M</code></p>
-</li>
-</ol>
-</body></html>]]></content>
-      <categories>
-        <category>工具</category>
-      </categories>
-      <tags>
-        <tag>Latex</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>BiliBili 蒙版弹幕</title>
-    <url>/post/34384.html</url>
-    <content><![CDATA[<html><head><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script></head><body><h2 id="What-is-Mask-RCNN" class="heading-control"><a href="#What-is-Mask-RCNN" class="headerlink" title="What is Mask RCNN"></a>What is Mask RCNN<a class="heading-anchor" href="#What-is-Mask-RCNN" aria-hidden="true"></a></h2><ul>
-<li>Faster RCNN + Masks</li>
-<li><p>Developed by Facebook AI Research(FAIR)</p>
-<p><img src="https://i.loli.net/2018/10/26/5bd2bd96503da.png" alt></p>
-<a id="more"></a>
-</li>
-</ul>
-<h2 id="Setup-and-Installation" class="heading-control"><a href="#Setup-and-Installation" class="headerlink" title="Setup and Installation"></a>Setup and Installation<a class="heading-anchor" href="#Setup-and-Installation" aria-hidden="true"></a></h2><ul>
-<li>Step1: Python3.6</li>
-<li><p>Step2: Clone the Mask_RCNN repo</p>
-  <figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">git clone https://github.com/matterport/Mask_RCNN.git</span><br></pre></td></tr></tbody></table></figure>
-</li>
-<li><p>Step3: Install the dependencies<br>下载下来的 Mask RCNN 中有一个 requirements.txt 文件。</p>
-<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">pip install -r requirements</span><br></pre></td></tr></tbody></table></figure>
-</li>
-<li><p>Step4: Install cocoapi</p>
-<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">pip install git+https://github.com/philferriere/cocoapi.git<span class="comment">#subdirectory=PythonAPI</span></span><br></pre></td></tr></tbody></table></figure>
-</li>
-<li><p>Step5: Dowload the Pre-trained Weights<br><a href="https://github.com/matterport/Mask_RCNN/releases/download/v2.0/mask_rcnn_coco.h5">https://github.com/matterport/Mask_RCNN/releases/download/v2.0/mask_rcnn_coco.h5</a><br>把下载的 h5 文件放入 Mask-RCNN 的文件夹里面</p>
-</li>
-</ul>
-<h2 id="Run" class="heading-control"><a href="#Run" class="headerlink" title="Run"></a>Run<a class="heading-anchor" href="#Run" aria-hidden="true"></a></h2><p>首先打开 Mask_RCNN/samples notebook，运行。<br>出现两个错误：</p>
-<ul>
-<li><p>No module named ‘imgaug’</p>
-<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">pip install imgaug</span><br><span class="line">pip install opencv-python</span><br></pre></td></tr></tbody></table></figure>
-</li>
-</ul>
-<ul>
-<li>TypeError: softmax() got an unexpected keyword argument ‘axis’<br>keras 2.1.6 的 softmax 没有 axis 这个参数了，回退 keras 版本：<code>pip install keras==2.1</code></li>
-</ul>
-<h2 id="结果" class="heading-control"><a href="#结果" class="headerlink" title="结果"></a>结果<a class="heading-anchor" href="#结果" aria-hidden="true"></a></h2><p><img src="https://i.loli.net/2018/10/26/5bd2bd104eeac.png" alt></p>
-<h2 id="BiliBili蒙版弹幕" class="heading-control"><a href="#BiliBili蒙版弹幕" class="headerlink" title="BiliBili蒙版弹幕"></a>BiliBili 蒙版弹幕<a class="heading-anchor" href="#BiliBili蒙版弹幕" aria-hidden="true"></a></h2><p>原版视频地址：<a href="https://www.bilibili.com/video/av16789504">新垣结衣日清鸡肉拉面广告</a></p>
-<h3 id="视频弹幕压缩" class="heading-control"><a href="#视频弹幕压缩" class="headerlink" title="视频弹幕压缩"></a>视频弹幕压缩<a class="heading-anchor" href="#视频弹幕压缩" aria-hidden="true"></a></h3><p>给视频加硬字幕是把字幕加到视频流中，不是单独的字幕流。</p>
-<figure class="highlight shell"><table><tbody><tr><td class="code"><pre><span class="line">ffmpeg -i demo.mp4 -vf ass=subtitle.ass output.mp4</span><br></pre></td></tr></tbody></table></figure>
-<p>参考链接：<a href="https://blog.csdn.net/fallfollowernolisten/article/details/68489499">https://blog.csdn.net/fallfollowernolisten/article/details/68489499</a></p>
-<h3 id="准备工作" class="heading-control"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作<a class="heading-anchor" href="#准备工作" aria-hidden="true"></a></h3><ol>
-<li>准备带弹幕的视频文件和不带弹幕的视频文件。</li>
-<li>配置视频文件路径。</li>
-<li>在 coco 文件下的<code>__init__.py</code> 中加入代码：<code>from .coco import *</code> 。</li>
-<li>执行代码，等待完成。</li>
-</ol>
-<h3 id="执行程序" class="heading-control"><a href="#执行程序" class="headerlink" title="执行程序"></a>执行程序<a class="heading-anchor" href="#执行程序" aria-hidden="true"></a></h3><p>内存占用情况：<br><img src="https://i.loli.net/2018/10/26/5bd304c51f8f6.png" alt><br>显卡使用情况：<br><img src="https://i.loli.net/2018/10/26/5bd305046a62e.png" alt><br>可以看到还是很耗费显存的，我的电脑差一点就不够了，而且实际训练起来速度也很慢。</p>
-<h2 id="视频音频压缩" class="heading-control"><a href="#视频音频压缩" class="headerlink" title="视频音频压缩"></a>视频音频压缩<a class="heading-anchor" href="#视频音频压缩" aria-hidden="true"></a></h2><p>生成的蒙版弹幕视频文件没有声音，所以需要手动添加声音，还是用 ffmpeg。</p>
-<ul>
-<li>首先在把视频上传到 <a href>123app</a>，使用 Audio Convert 来转换为 MP3 格式，就是音频文件了，文件大小大概有几 M。</li>
-<li><p>下一步是合并音视频。假设现有视频文件 video.avi (包含声音) 和音频文件 audio.mp3，要把 video.avi 中的视频和 audio.mp3 合并，步骤如下：</p>
-<figure class="highlight shell"><table><tbody><tr><td class="code"><pre><span class="line">//将video.avi 中的视频提取到临时文件video2.avi中</span><br><span class="line">ffmpeg -i video.avi -vcodec copy -an video2.avi </span><br><span class="line">//合并 video2.avi 和  audio.mp3 到output.avi</span><br><span class="line">ffmpeg -i video2.avi -i audio.mp3 -vcodec copy -acodec copy output.avi </span><br><span class="line">//video2是临时文件，最后可以删除。</span><br></pre></td></tr></tbody></table></figure>
-<h2 id="完成效果" class="heading-control"><a href="#完成效果" class="headerlink" title="完成效果"></a>完成效果<a class="heading-anchor" href="#完成效果" aria-hidden="true"></a></h2><p><img src="https://i.loli.net/2018/10/27/5bd40075b2092.png" alt></p>
-<h2 id="Reference" class="heading-control"><a href="#Reference" class="headerlink" title="Reference"></a>Reference<a class="heading-anchor" href="#Reference" aria-hidden="true"></a></h2></li>
-<li><p><a href="https://github.com/matterport/Mask_RCNN">Mask-RCNN</a></p>
-</li>
-<li><a href="https://github.com/markjay4k/Mask-RCNN-series?1540532721233">Mask-RCNN-series</a></li>
-<li><a href="https://github.com/philferriere/cocoapi">cocoapi</a></li>
-<li><a href="https://www.bilibili.com/video/av23064129/?p=1">Mask RCNN with Keras and Tensorflow</a></li>
-<li><a href="https://github.com/youyuge34/Mask_Danmu">Mask_Danmu</a></li>
-</ul>
-</body></html>]]></content>
-      <categories>
-        <category>项目</category>
-      </categories>
-      <tags>
-        <tag>CNN</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>NLP 面试</title>
     <url>/post/62924.html</url>
     <content><![CDATA[<html><head><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script></head><body><p><img src="https://i.loli.net/2020/09/02/jY67e5ovS8ApkD2.jpg" alt="v2-4ce31ce804e18089a463534fb58657de_r.jpg"><br><a id="more"></a></p>
@@ -1352,6 +1352,67 @@ Number=(Features+Output\_dim) x Output\_dim+Output\_dim
       </tags>
   </entry>
   <entry>
+    <title>NLP 面试比较重要的知识点</title>
+    <url>/post/21849.html</url>
+    <content><![CDATA[<html><head><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script></head><body><p><img src="https://s2.ax1x.com/2019/07/22/ei2rqS.png" alt="ei2rqS.png"><br><a id="more"></a></p>
+<h2 id="基础" class="heading-control"><a href="#基础" class="headerlink" title="基础"></a>基础<a class="heading-anchor" href="#基础" aria-hidden="true"></a></h2><p>Python 内存管理的方式  <a href="http://kkpattern.github.io/2015/06/20/python-memory-optimization-zh.html">参考答案</a></p>
+<h2 id="机器学习" class="heading-control"><a href="#机器学习" class="headerlink" title="机器学习"></a>机器学习<a class="heading-anchor" href="#机器学习" aria-hidden="true"></a></h2><ol>
+<li>逻辑回归完整推导过程</li>
+<li>逻辑回归属于线性分类器还是非线性分类器？(同属于广义线性模型)</li>
+<li> 朴素贝叶斯为什么朴素？（假设特征之间相互独立）</li>
+<li>介绍一下 SVM 核函数</li>
+<li> MLP 和 MAP 的区别（MAP 加入了先验信息）</li>
+<li>svm 如何处理多分类（一对多法设计 k 个分类器，一对一法设计 k (k-1)/2 个分类器）</li>
+<li>svm 对缺失数据敏感吗，为什么，决策树呢。（svm 没有处理缺失数据的方法，决策树有）</li>
+<li>为什么 svm 采用最大间隔（最大间隔得到决策边界是唯一的，具有鲁棒性）</li>
+<li>聚类了解哪些？基于密度的聚类了解哪些？（<strong>原型聚类</strong>：KMeans, 高斯混合聚类，<strong>密度聚类</strong>：DBSCAN、Mean-Shift，<strong>层次聚类</strong>：AGNES、BIRCH，<strong>谱聚类</strong>）</li>
+</ol>
+<h2 id="深度学习基础" class="heading-control"><a href="#深度学习基础" class="headerlink" title="深度学习基础"></a>深度学习基础<a class="heading-anchor" href="#深度学习基础" aria-hidden="true"></a></h2><ol>
+<li>L1、L2 正则（贝叶斯角度分析，加入了先验信息）</li>
+<li>怎样判断过拟合？过拟合怎么解决？（1. <strong>交叉验证</strong>的结果比单次的结果下，2. 通过<strong>学习曲线</strong> Learning Curves 判断，3. 实际的话也可以通过<strong>观察</strong>训练误差很小，而预测误差很大的模型通常过拟合）</li>
+<li>梯度消失和梯度爆炸的原因，为什么 rnn 比 cnn 和全连接层神经网络更容易发生梯度消失或爆炸（RNN 在梯度的反向传播中只有连乘，LSTM 和 GRU 加入了门机制，梯度的计算中同时还有 $h_t$ 的加法）</li>
+<li>说一下 dropout 的训练和测试过程（在训练过程中以一定的概率 p 的使神经元失活，测试过程不需要 dropout，对层的输出乘以 p）</li>
+<li>说一下 BN 和 LN，有什么区别，BN 为什么可以提升效果 ()</li>
+<li>CNN 的旋转不变性怎么理解 (CNN 具有平移不变性)</li>
+</ol>
+<h2 id="自然语言处理基础" class="heading-control"><a href="#自然语言处理基础" class="headerlink" title="自然语言处理基础"></a>自然语言处理基础<a class="heading-anchor" href="#自然语言处理基础" aria-hidden="true"></a></h2><p>输入补全可以用哪个数据结构来做？（字典树）<br>假如有 10 亿条搜索请求，怎么找出最热的前 10 条？<br>讲一下 LDA，讲一下隐狄利克雷分布，里面有个辛普森采样了解吗<br>pointwise、pairwise 、listwise 的区别<br>word2vec 是有监督的还是无监督的<br>word2vec 的损失函数形式<br>分层 softmax 和负采样原理<br>Glove 的思想以及和 word2vec 的区别<br>Fasttext 和 word2vec 的区别<br>Fasttext 哈希规则，怎么把语义相近的词哈希到一个桶里<br>RNN、LSTM、GRU 公式。<br>RNN、LSTM、GRU 参数大小<br>Attention 机制的原理，有哪些变种<br>sigmoid 用作激活函数时，分类为什么要用交叉熵损失，而不用均方损失？</p>
+<h2 id="文本分类" class="heading-control"><a href="#文本分类" class="headerlink" title="文本分类"></a>文本分类<a class="heading-anchor" href="#文本分类" aria-hidden="true"></a></h2><p>精确率，召回率，F1 值<br><img src="https://i.loli.net/2019/07/22/5d35bda25c13e20464.png" alt><br>AUC 和 ROC<br><img src="https://i.loli.net/2019/07/22/5d35beceefac074363.png" alt></p>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">Precision：P=TP/(TP+FP)</span><br><span class="line">Recall：R=TP/(TP+FN)</span><br><span class="line">F1-score：2/(1/P+1/R)</span><br><span class="line">ROC/AUC：TPR=TP/(TP+FN), FPR=FP/(FP+TN)</span><br></pre></td></tr></tbody></table></figure>
+<p>讲一下 Textcnn 的过程<br>Fasttext 怎么做分类的<br>CNN 和 LSTM 都可以用于分类，两者用于分类有什么区别？<br>样本不均衡的处理方法</p>
+<h3 id="Sequence-Label" class="heading-control"><a href="#Sequence-Label" class="headerlink" title="Sequence Label"></a>Sequence Label<a class="heading-anchor" href="#Sequence-Label" aria-hidden="true"></a></h3><p>有了 BILSTM 为什么还要用 CRF？<br>BILSTM+CRF 的训练目标？状态转移矩阵是 joint learn 的吗？维度是多少？<br>维特比算法的时间复杂度<br>HMM 和 CRF 的区别<br>CRF、HMM 原理 公式、维特比算法的公式<br>HMM 做了哪些独立性假设<br>CRF 的训练目标是什么？<br>CRF 和深度学习的结合还知道哪些？<br>为什么 Transformer self-attention 可以替代 seq2seq</p>
+<h3 id="文本生成" class="heading-control"><a href="#文本生成" class="headerlink" title="文本生成"></a>文本生成<a class="heading-anchor" href="#文本生成" aria-hidden="true"></a></h3><p>生成式问答解决生成句子多样性的方法<br>怎么评价生成效果的好坏<br>讲一下 BLEU</p>
+<h3 id="思考题" class="heading-control"><a href="#思考题" class="headerlink" title="思考题"></a>思考题<a class="heading-anchor" href="#思考题" aria-hidden="true"></a></h3><ol>
+<li>一个村子里重男轻女，生了女孩就继续生，直到生出男孩为止，试想在 N 年之后该村子的男女比例。答案：1:1</li>
+<li> 有 A（红）B（蓝）两瓶墨水，从 A 中取一勺倒到 B 中，混匀后，再从 B 中取等量墨水，倒到 A 中。问，是 A 中蓝墨水多还是 B 中红墨水多？</li>
+<li>一枚硬币，正反分布均匀，掷硬币，问至少多少次可以把这枚硬币的正面和反面都掷出来？</li>
+<li>一根绳子，允许你剪两刀，试问，剪完之后的绳子能构成三角形的概率是多少</li>
+</ol>
+<h3 id="算法" class="heading-control"><a href="#算法" class="headerlink" title="算法"></a>算法<a class="heading-anchor" href="#算法" aria-hidden="true"></a></h3><ol>
+<li>稳定和非稳定的排序算法有哪些</li>
+<li>快速排序的最好，最坏，平均以及空间复杂度</li>
+<li>二分查找递归和非递归的时间和空间复杂度</li>
+<li>用两个栈实现一个队列操作，实现 push、pop、len 操作</li>
+<li>给定字符串 s ，求与 s 编辑距离为 2 的字符串集合。</li>
+<li>一个圆被分成 M 个扇形，一共有 N 种颜色，相邻扇形不同色，一共有几种涂法？</li>
+<li>有 n 枚硬币，每次从左边或右边拿一枚，一共拿 m 次，求能拿到的最高价值</li>
+<li>二叉搜索树转有序双向链表，要求不能创建新的节点</li>
+<li>统计一个十进制数字的二进制表示中有多少个一，用位运算写</li>
+<li>滑动窗口里的最大数</li>
+<li>给定一个乱序不重复数组，找到所有的三个数的集合，每个集合中 a + b + c == 0</li>
+<li> 排序数组中绝对值不相等的元素个数，算法复杂度（M+N）</li>
+<li>搜索有序二维矩阵，复杂度</li>
+<li>层次遍历二叉树</li>
+<li>字符串的最长公共子串</li>
+<li>写一个函数判断一个字符串是否为回文串</li>
+<li>求一个字符串中的最长回文子串<h4 id="归并排序" class="heading-control"><a href="#归并排序" class="headerlink" title="归并排序"></a>归并排序<a class="heading-anchor" href="#归并排序" aria-hidden="true"></a></h4><img src="https://s2.ax1x.com/2019/07/22/eiNXFS.md.png" alt><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">merge</span>(<span class="params">a, b</span>):</span></span><br><span class="line">    c = []</span><br><span class="line">    h = j = <span class="number">0</span></span><br><span class="line">    <span class="keyword">while</span> j < len(a) <span class="keyword">and</span> h < len(b):</span><br><span class="line">        <span class="keyword">if</span> a[j] < b[h]:</span><br><span class="line">            c.append(a[j])</span><br><span class="line">            j += <span class="number">1</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            c.append(b[h])</span><br><span class="line">            h += <span class="number">1</span></span><br><span class="line">    <span class="keyword">if</span> j == len(a):</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> b[h:]:</span><br><span class="line">            c.append(i)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> a[j:]:</span><br><span class="line">            c.append(i)</span><br><span class="line">    <span class="keyword">return</span> c</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">merge_sort</span>(<span class="params">lists</span>):</span></span><br><span class="line">    <span class="keyword">if</span> len(lists) <= <span class="number">1</span>:</span><br><span class="line">        <span class="keyword">return</span> lists</span><br><span class="line">    middle = len(lists)//<span class="number">2</span></span><br><span class="line">    left = merge_sort(lists[:middle])</span><br><span class="line">    right = merge_sort(lists[middle:])</span><br><span class="line">    <span class="keyword">return</span> merge(left, right)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    a = [<span class="number">14</span>, <span class="number">2</span>, <span class="number">34</span>, <span class="number">43</span>, <span class="number">21</span>, <span class="number">19</span>]</span><br><span class="line">    <span class="keyword">print</span> (merge_sort(a))</span><br></pre></td></tr></tbody></table></figure>
+</li>
+</ol>
+</body></html>]]></content>
+      <tags>
+        <tag>面试</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Network In Network</title>
     <url>/post/27176.html</url>
     <content><![CDATA[<html><head><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script></head><body><p>论文 <a href="https://arxiv.org/abs/1312.4400">Network In Network</a>(Min Lin, ICLR2014).</p>
@@ -1415,67 +1476,6 @@ Number=(Features+Output\_dim) x Output\_dim+Output\_dim
       </tags>
   </entry>
   <entry>
-    <title>NLP 面试比较重要的知识点</title>
-    <url>/post/21849.html</url>
-    <content><![CDATA[<html><head><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script></head><body><p><img src="https://s2.ax1x.com/2019/07/22/ei2rqS.png" alt="ei2rqS.png"><br><a id="more"></a></p>
-<h2 id="基础" class="heading-control"><a href="#基础" class="headerlink" title="基础"></a>基础<a class="heading-anchor" href="#基础" aria-hidden="true"></a></h2><p>Python 内存管理的方式  <a href="http://kkpattern.github.io/2015/06/20/python-memory-optimization-zh.html">参考答案</a></p>
-<h2 id="机器学习" class="heading-control"><a href="#机器学习" class="headerlink" title="机器学习"></a>机器学习<a class="heading-anchor" href="#机器学习" aria-hidden="true"></a></h2><ol>
-<li>逻辑回归完整推导过程</li>
-<li>逻辑回归属于线性分类器还是非线性分类器？(同属于广义线性模型)</li>
-<li> 朴素贝叶斯为什么朴素？（假设特征之间相互独立）</li>
-<li>介绍一下 SVM 核函数</li>
-<li> MLP 和 MAP 的区别（MAP 加入了先验信息）</li>
-<li>svm 如何处理多分类（一对多法设计 k 个分类器，一对一法设计 k (k-1)/2 个分类器）</li>
-<li>svm 对缺失数据敏感吗，为什么，决策树呢。（svm 没有处理缺失数据的方法，决策树有）</li>
-<li>为什么 svm 采用最大间隔（最大间隔得到决策边界是唯一的，具有鲁棒性）</li>
-<li>聚类了解哪些？基于密度的聚类了解哪些？（<strong>原型聚类</strong>：KMeans, 高斯混合聚类，<strong>密度聚类</strong>：DBSCAN、Mean-Shift，<strong>层次聚类</strong>：AGNES、BIRCH，<strong>谱聚类</strong>）</li>
-</ol>
-<h2 id="深度学习基础" class="heading-control"><a href="#深度学习基础" class="headerlink" title="深度学习基础"></a>深度学习基础<a class="heading-anchor" href="#深度学习基础" aria-hidden="true"></a></h2><ol>
-<li>L1、L2 正则（贝叶斯角度分析，加入了先验信息）</li>
-<li>怎样判断过拟合？过拟合怎么解决？（1. <strong>交叉验证</strong>的结果比单次的结果下，2. 通过<strong>学习曲线</strong> Learning Curves 判断，3. 实际的话也可以通过<strong>观察</strong>训练误差很小，而预测误差很大的模型通常过拟合）</li>
-<li>梯度消失和梯度爆炸的原因，为什么 rnn 比 cnn 和全连接层神经网络更容易发生梯度消失或爆炸（RNN 在梯度的反向传播中只有连乘，LSTM 和 GRU 加入了门机制，梯度的计算中同时还有 $h_t$ 的加法）</li>
-<li>说一下 dropout 的训练和测试过程（在训练过程中以一定的概率 p 的使神经元失活，测试过程不需要 dropout，对层的输出乘以 p）</li>
-<li>说一下 BN 和 LN，有什么区别，BN 为什么可以提升效果 ()</li>
-<li>CNN 的旋转不变性怎么理解 (CNN 具有平移不变性)</li>
-</ol>
-<h2 id="自然语言处理基础" class="heading-control"><a href="#自然语言处理基础" class="headerlink" title="自然语言处理基础"></a>自然语言处理基础<a class="heading-anchor" href="#自然语言处理基础" aria-hidden="true"></a></h2><p>输入补全可以用哪个数据结构来做？（字典树）<br>假如有 10 亿条搜索请求，怎么找出最热的前 10 条？<br>讲一下 LDA，讲一下隐狄利克雷分布，里面有个辛普森采样了解吗<br>pointwise、pairwise 、listwise 的区别<br>word2vec 是有监督的还是无监督的<br>word2vec 的损失函数形式<br>分层 softmax 和负采样原理<br>Glove 的思想以及和 word2vec 的区别<br>Fasttext 和 word2vec 的区别<br>Fasttext 哈希规则，怎么把语义相近的词哈希到一个桶里<br>RNN、LSTM、GRU 公式。<br>RNN、LSTM、GRU 参数大小<br>Attention 机制的原理，有哪些变种<br>sigmoid 用作激活函数时，分类为什么要用交叉熵损失，而不用均方损失？</p>
-<h2 id="文本分类" class="heading-control"><a href="#文本分类" class="headerlink" title="文本分类"></a>文本分类<a class="heading-anchor" href="#文本分类" aria-hidden="true"></a></h2><p>精确率，召回率，F1 值<br><img src="https://i.loli.net/2019/07/22/5d35bda25c13e20464.png" alt><br>AUC 和 ROC<br><img src="https://i.loli.net/2019/07/22/5d35beceefac074363.png" alt></p>
-<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">Precision：P=TP/(TP+FP)</span><br><span class="line">Recall：R=TP/(TP+FN)</span><br><span class="line">F1-score：2/(1/P+1/R)</span><br><span class="line">ROC/AUC：TPR=TP/(TP+FN), FPR=FP/(FP+TN)</span><br></pre></td></tr></tbody></table></figure>
-<p>讲一下 Textcnn 的过程<br>Fasttext 怎么做分类的<br>CNN 和 LSTM 都可以用于分类，两者用于分类有什么区别？<br>样本不均衡的处理方法</p>
-<h3 id="Sequence-Label" class="heading-control"><a href="#Sequence-Label" class="headerlink" title="Sequence Label"></a>Sequence Label<a class="heading-anchor" href="#Sequence-Label" aria-hidden="true"></a></h3><p>有了 BILSTM 为什么还要用 CRF？<br>BILSTM+CRF 的训练目标？状态转移矩阵是 joint learn 的吗？维度是多少？<br>维特比算法的时间复杂度<br>HMM 和 CRF 的区别<br>CRF、HMM 原理 公式、维特比算法的公式<br>HMM 做了哪些独立性假设<br>CRF 的训练目标是什么？<br>CRF 和深度学习的结合还知道哪些？<br>为什么 Transformer self-attention 可以替代 seq2seq</p>
-<h3 id="文本生成" class="heading-control"><a href="#文本生成" class="headerlink" title="文本生成"></a>文本生成<a class="heading-anchor" href="#文本生成" aria-hidden="true"></a></h3><p>生成式问答解决生成句子多样性的方法<br>怎么评价生成效果的好坏<br>讲一下 BLEU</p>
-<h3 id="思考题" class="heading-control"><a href="#思考题" class="headerlink" title="思考题"></a>思考题<a class="heading-anchor" href="#思考题" aria-hidden="true"></a></h3><ol>
-<li>一个村子里重男轻女，生了女孩就继续生，直到生出男孩为止，试想在 N 年之后该村子的男女比例。答案：1:1</li>
-<li> 有 A（红）B（蓝）两瓶墨水，从 A 中取一勺倒到 B 中，混匀后，再从 B 中取等量墨水，倒到 A 中。问，是 A 中蓝墨水多还是 B 中红墨水多？</li>
-<li>一枚硬币，正反分布均匀，掷硬币，问至少多少次可以把这枚硬币的正面和反面都掷出来？</li>
-<li>一根绳子，允许你剪两刀，试问，剪完之后的绳子能构成三角形的概率是多少</li>
-</ol>
-<h3 id="算法" class="heading-control"><a href="#算法" class="headerlink" title="算法"></a>算法<a class="heading-anchor" href="#算法" aria-hidden="true"></a></h3><ol>
-<li>稳定和非稳定的排序算法有哪些</li>
-<li>快速排序的最好，最坏，平均以及空间复杂度</li>
-<li>二分查找递归和非递归的时间和空间复杂度</li>
-<li>用两个栈实现一个队列操作，实现 push、pop、len 操作</li>
-<li>给定字符串 s ，求与 s 编辑距离为 2 的字符串集合。</li>
-<li>一个圆被分成 M 个扇形，一共有 N 种颜色，相邻扇形不同色，一共有几种涂法？</li>
-<li>有 n 枚硬币，每次从左边或右边拿一枚，一共拿 m 次，求能拿到的最高价值</li>
-<li>二叉搜索树转有序双向链表，要求不能创建新的节点</li>
-<li>统计一个十进制数字的二进制表示中有多少个一，用位运算写</li>
-<li>滑动窗口里的最大数</li>
-<li>给定一个乱序不重复数组，找到所有的三个数的集合，每个集合中 a + b + c == 0</li>
-<li> 排序数组中绝对值不相等的元素个数，算法复杂度（M+N）</li>
-<li>搜索有序二维矩阵，复杂度</li>
-<li>层次遍历二叉树</li>
-<li>字符串的最长公共子串</li>
-<li>写一个函数判断一个字符串是否为回文串</li>
-<li>求一个字符串中的最长回文子串<h4 id="归并排序" class="heading-control"><a href="#归并排序" class="headerlink" title="归并排序"></a>归并排序<a class="heading-anchor" href="#归并排序" aria-hidden="true"></a></h4><img src="https://s2.ax1x.com/2019/07/22/eiNXFS.md.png" alt><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">merge</span>(<span class="params">a, b</span>):</span></span><br><span class="line">    c = []</span><br><span class="line">    h = j = <span class="number">0</span></span><br><span class="line">    <span class="keyword">while</span> j < len(a) <span class="keyword">and</span> h < len(b):</span><br><span class="line">        <span class="keyword">if</span> a[j] < b[h]:</span><br><span class="line">            c.append(a[j])</span><br><span class="line">            j += <span class="number">1</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            c.append(b[h])</span><br><span class="line">            h += <span class="number">1</span></span><br><span class="line">    <span class="keyword">if</span> j == len(a):</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> b[h:]:</span><br><span class="line">            c.append(i)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> a[j:]:</span><br><span class="line">            c.append(i)</span><br><span class="line">    <span class="keyword">return</span> c</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">merge_sort</span>(<span class="params">lists</span>):</span></span><br><span class="line">    <span class="keyword">if</span> len(lists) <= <span class="number">1</span>:</span><br><span class="line">        <span class="keyword">return</span> lists</span><br><span class="line">    middle = len(lists)//<span class="number">2</span></span><br><span class="line">    left = merge_sort(lists[:middle])</span><br><span class="line">    right = merge_sort(lists[middle:])</span><br><span class="line">    <span class="keyword">return</span> merge(left, right)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    a = [<span class="number">14</span>, <span class="number">2</span>, <span class="number">34</span>, <span class="number">43</span>, <span class="number">21</span>, <span class="number">19</span>]</span><br><span class="line">    <span class="keyword">print</span> (merge_sort(a))</span><br></pre></td></tr></tbody></table></figure>
-</li>
-</ol>
-</body></html>]]></content>
-      <tags>
-        <tag>面试</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>PaddleHub 使用示例</title>
     <url>/post/945.html</url>
     <content><![CDATA[<html><head><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script></head><body><p>最近用了一下 PaddleHub，感觉还挺好用的。这里两个使用 PaddleHub 的示例。<br><a id="more"></a></p>
@@ -1499,6 +1499,58 @@ Number=(Features+Output\_dim) x Output\_dim+Output\_dim
       </categories>
       <tags>
         <tag>NLP</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Python 音频信号处理</title>
+    <url>/post/20005.html</url>
+    <content><![CDATA[<html><head><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script></head><body><blockquote>
+<p>本文主要是对网上的一些文章的总结，参考的文章在文末已经列出</p>
+</blockquote>
+<p>音频信号是模拟信号，我们需要将其保存为数字信号，才能对语音进行算法操作，WAV 是 Microsoft 开发的一种声音文件格式，通常被用来保存未压缩的声音数据。</p>
+<p>语音信号有三个重要的参数：<strong>声道数</strong>、<strong>取样频率</strong>和<strong>量化位数</strong>。</p>
+<ul>
+<li><strong>声道数</strong>：可以是单声道或者是双声道</li>
+<li><strong>采样频率</strong>：一秒内对声音信号的采集次数，44100Hz 采样频率意味着每秒钟信号被分解成 44100 份，如果采样率高，那么媒体播放音频时会感觉信号是连续的。</li>
+<li><strong>量化位数</strong>：用多少 bit 表达一次采样所采集的数据，通常有 8bit、16bit、24bit 和 32bit 等几种</li>
+</ul>
+<p>如果你需要自己录制和编辑声音文件，推荐使用 Audacity (<a href="http://audacity.sourceforge.net)，">http://audacity.sourceforge.net)，</a> 它是一款开源的、跨平台、多声道的录音编辑软件。</p>
+<a id="more"></a>
+<h2 id="音频信号读取" class="heading-control"><a href="#音频信号读取" class="headerlink" title="音频信号读取"></a>音频信号读取<a class="heading-anchor" href="#音频信号读取" aria-hidden="true"></a></h2><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> scipy.io <span class="keyword">import</span> wavfile</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> matplotlib.pylab <span class="keyword">as</span> plt</span><br><span class="line">samplimg_freq, audio = wavfile.read(<span class="string">"data/input_freq.wav"</span>)</span><br><span class="line">plt.plot(np.arange(audio.shape[<span class="number">0</span>]),audio)</span><br><span class="line">plt.show()</span><br></pre></td></tr></tbody></table></figure>
+<p>音频的时域信号波形：<br><img src="https://i.loli.net/2019/09/10/taJsWjAQe21xb6g.png" alt></p>
+<p>语音信号是一个非平稳的时变信号，但语音信号是由声门的激励脉冲通过声道形成的，而声道 (人的口腔、鼻腔) 的肌肉运动是缓慢的，所以 “短时间”(10-30ms) 内可以认为语音信号是平稳时不变的。由此构成了语音信号的 “短时分析技术”。<br>在短时分析中，将语音信号分为一段一段的语音帧，每一帧一般取 10-30ms，我们的研究就建立在每一帧的语音特征分析上。<br>提取的不同的语音特征参数对应着不同的语音信号分析方法：时域分析、频域分析、倒谱域分析… 由于语音信号最重要的感知特性反映在功率谱上，而相位变化只起到很小的作用，所有语音频域分析更加重要。</p>
+<h2 id="预加重" class="heading-control"><a href="#预加重" class="headerlink" title="预加重"></a>预加重<a class="heading-anchor" href="#预加重" aria-hidden="true"></a></h2><p>预增强以帧为单位进行，目的在于加强高频。去除口唇辐射的影响，增加语音的高频分辨率。因为高频端大约在 800Hz 以上按 6dB/oct (倍频程) 衰减，频率越高相应的成分越小，为此要在对语音信号进行分析之前对其高频部分加以提升，也可以改善高频信噪比。k 是预增强系数，常用 0.97。</p>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">pre_emphasis = <span class="number">0.97</span></span><br><span class="line">emphasized_signal = np.append(audio[<span class="number">0</span>], audio[<span class="number">1</span>:] - pre_emphasis * audio[:<span class="number">-1</span>])</span><br><span class="line">plt.plot(np.arange(emphasized_signal.shape[<span class="number">0</span>]),emphasized_signal)</span><br><span class="line">plt.show()</span><br></pre></td></tr></tbody></table></figure>
+<p><img src="https://i.loli.net/2019/09/10/hycELdZWD5qo2AH.png" alt></p>
+<h2 id="分帧" class="heading-control"><a href="#分帧" class="headerlink" title="分帧"></a>分帧<a class="heading-anchor" href="#分帧" aria-hidden="true"></a></h2><p>分帧是将不定长的音频切分成固定长度的小段。为了避免窗边界对信号的遗漏，因此对帧做偏移时候，帧间要有帧移 (帧与帧之间需要重叠一部分)，帧长 (wlen) = 重叠 (overlap)+ 帧移 (inc)。inc 为帧移，表示后一帧第前一帧的偏移量，fs 表示采样率，fn 表示一段语音信号的分帧数。</p>
+<script type="math/tex; mode=display">\frac{N-overlap}{inc}=\frac{N-wlen+inc}{inc}</script><p>通常的选择是帧长 25ms（下图绿色），帧移为 10ms（下图黄色）。接下来的操作是对单帧进行的。要分帧是因为语音信号是快速变化的，而傅里叶变换适用于分析平稳的信号。帧和帧之间的时间差常常取为 10ms，这样帧与帧之间会有重叠（下图红色），否则，由于帧与帧连接处的信号会因为加窗而被弱化，这部分的信息就丢失了。<br><img src="https://i.loli.net/2019/09/10/QA89CdDfL3qibS6.png" alt></p>
+<h2 id="语音信号的短时频域处理" class="heading-control"><a href="#语音信号的短时频域处理" class="headerlink" title="语音信号的短时频域处理"></a>语音信号的短时频域处理<a class="heading-anchor" href="#语音信号的短时频域处理" aria-hidden="true"></a></h2><p>在语音信号处理中，在语音信号处理中，信号在频域或其他变换域上的分析处理占重要的位置，在频域上研究语音可以使信号在时域上无法表现出来的某些特征变得十分明显，一个音频信号的本质是由其频率内容决定的，将时域信号转换为频域信号一般对语音进行<strong>短时傅里叶变换</strong>。</p>
+<h2 id="python-speech-features" class="heading-control"><a href="#python-speech-features" class="headerlink" title="python_speech_features"></a>python_speech_features<a class="heading-anchor" href="#python-speech-features" aria-hidden="true"></a></h2><p>python_speech_features 的比较好用的地方就是自带预加重参数，只需要设定 preemph 的值，就可以对语音信号进行预加重，增强高频信号。<br>python_speech_features 模块提供的函数主要包括两个：MFCC 和 FBank。API 定义如下：</p>
+<blockquote>
+<p>python_speech_features.base.fbank(signal, samplerate=16000, winlen=0.025, winstep=0.01, nfilt=26, nfft=512, lowfreq=0, highfreq=None, preemph=0.97, winfunc=<function <lambda>>)</function></p>
+</blockquote>
+<p>从一个音频信号中计算梅尔滤波器能量特征，返回：2 个值。第一个是一个包含着特征的大小为 nfilt 的 numpy 数组，每一行都有一个特征向量。第二个返回值是每一帧的能量。</p>
+<blockquote>
+<p>python_speech_features.base.logfbank(signal, samplerate=16000, winlen=0.025, winstep=0.01, nfilt=26, nfft=512, lowfreq=0, highfreq=None, preemph=0.97)</p>
+</blockquote>
+<p>从一个音频信号中计算梅尔滤波器能量特征的对数，返回： 一个包含特征的大小为 nfilt 的 numpy 数组，每一行都有一个特征向量</p>
+<p>参数<br></p><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">参数：</span><br><span class="line"></span><br><span class="line">signal - 需要用来计算特征的音频信号，应该是一个N*<span class="number">1</span>的数组</span><br><span class="line"></span><br><span class="line">samplerate - 我们用来工作的信号的采样率</span><br><span class="line"></span><br><span class="line">winlen - 分析窗口的长度，按秒计，默认<span class="number">0.025</span>s(<span class="number">25</span>ms)</span><br><span class="line"></span><br><span class="line">winstep - 连续窗口之间的步长，按秒计，默认<span class="number">0.01</span>s（<span class="number">10</span>ms）</span><br><span class="line"></span><br><span class="line">numcep - 倒频谱返回的数量，默认<span class="number">13</span></span><br><span class="line"></span><br><span class="line">nfilt - 滤波器组的滤波器数量，默认<span class="number">26</span></span><br><span class="line"></span><br><span class="line">nfft - FFT的大小，默认<span class="number">512</span></span><br><span class="line"></span><br><span class="line">lowfreq - 梅尔滤波器的最低边缘，单位赫兹，默认为<span class="number">0</span></span><br><span class="line"></span><br><span class="line">highfreq - 梅尔滤波器的最高边缘，单位赫兹，默认为采样率/<span class="number">2</span></span><br><span class="line"></span><br><span class="line">preemph - 应用预加重过滤器和预加重过滤器的系数，<span class="number">0</span>表示没有过滤器，默认<span class="number">0.97</span></span><br><span class="line"></span><br><span class="line">ceplifter - 将升降器应用于最终的倒谱系数。 <span class="number">0</span>没有升降机。默认值为<span class="number">22</span>。</span><br><span class="line"></span><br><span class="line">appendEnergy - 如果是true，则将第<span class="number">0</span>个倒谱系数替换为总帧能量的对数。</span><br><span class="line"></span><br><span class="line">winfunc - 分析窗口应用于每个框架。 默认情况下不应用任何窗口。 你可以在这里使用numpy窗口函数 例如：winfunc=numpy.hamming</span><br></pre></td></tr></tbody></table></figure><p></p>
+<h2 id="MFCC特征和过滤器特征" class="heading-control"><a href="#MFCC特征和过滤器特征" class="headerlink" title="MFCC特征和过滤器特征"></a>MFCC 特征和过滤器特征<a class="heading-anchor" href="#MFCC特征和过滤器特征" aria-hidden="true"></a></h2><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> python_speech_features <span class="keyword">import</span> mfcc, logfbank</span><br><span class="line"></span><br><span class="line"><span class="comment">#提取MFCC特征和过滤器特征</span></span><br><span class="line">mfcc_features = mfcc(audio, samplimg_freq)</span><br><span class="line">filterbank_features = logfbank(audio, samplimg_freq)</span><br><span class="line"></span><br><span class="line"><span class="comment">#打印参数，查看可生成多少个窗体：</span></span><br><span class="line">print(<span class="string">'\nMFCC:\nNumber of windows ='</span>, mfcc_features.shape[<span class="number">0</span>])</span><br><span class="line">print(<span class="string">'Length of each feature ='</span>, mfcc_features.shape[<span class="number">1</span>])</span><br><span class="line">print(<span class="string">'\nFilter bank:\nNumber of windows='</span>, filterbank_features.shape[<span class="number">0</span>])</span><br><span class="line">print(<span class="string">'Length of each feature ='</span>, filterbank_features.shape[<span class="number">1</span>])</span><br><span class="line"></span><br><span class="line"><span class="comment">#将MFCC特征可视化。转置矩阵，使得时域是水平的。</span></span><br><span class="line">mfcc_features = mfcc_features.T</span><br><span class="line">plt.matshow(mfcc_features)</span><br><span class="line">plt.title(<span class="string">'MFCC'</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">#将滤波器组特征可视化。转置矩阵，使得时域是水平的。</span></span><br><span class="line">filterbank_features = filterbank_features.T</span><br><span class="line">plt.matshow(filterbank_features)</span><br><span class="line">plt.title(<span class="string">'Filter bank'</span>)</span><br><span class="line">plt.show()</span><br></pre></td></tr></tbody></table></figure>
+<p>输出如下：<br></p><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">MFCC:</span><br><span class="line">Number of windows = <span class="number">42</span></span><br><span class="line">Length of each feature = <span class="number">13</span></span><br><span class="line"></span><br><span class="line">Filter bank:</span><br><span class="line">Number of windows= <span class="number">42</span></span><br><span class="line">Length of each feature = <span class="number">26</span></span><br></pre></td></tr></tbody></table></figure><br><img src="https://i.loli.net/2019/09/10/9PzrY5gIXxTiM7U.png" alt><br><img src="https://i.loli.net/2019/09/10/rEyK4ZjAeOLDmC6.png" alt><p></p>
+<h2 id="触发词检测" class="heading-control"><a href="#触发词检测" class="headerlink" title="触发词检测"></a>触发词检测<a class="heading-anchor" href="#触发词检测" aria-hidden="true"></a></h2><p><img src="https://s2.ax1x.com/2019/09/26/unhpCt.png" alt="unhpCt.png"></p>
+<h2 id="Reference" class="heading-control"><a href="#Reference" class="headerlink" title="Reference"></a>Reference<a class="heading-anchor" href="#Reference" aria-hidden="true"></a></h2><ul>
+<li><a href="https://jingyan.baidu.com/article/1709ad804e575b4634c4f0b1.html">https://jingyan.baidu.com/article/1709ad804e575b4634c4f0b1.html</a></li>
+<li><a href="https://zhuanlan.zhihu.com/p/57004884">https://zhuanlan.zhihu.com/p/57004884</a></li>
+<li><a href="https://python-speech-features.readthedocs.io/en/latest/">https://python-speech-features.readthedocs.io/en/latest/</a></li>
+<li><a href="https://www.meiwen.com.cn/subject/ahyxuqtx.html">https://www.meiwen.com.cn/subject/ahyxuqtx.html</a></li>
+<li><a href="https://haythamfayek.com/2016/04/21/speech-processing-for-machine-learning.html">https://haythamfayek.com/2016/04/21/speech-processing-for-machine-learning.html</a></li>
+<li><a href="https://www.cnblogs.com/LXP-Never/p/10078200.html#%E9%9F%B3%E9%A2%91%E4%BF%A1%E5%8F%B7%E7%9A%84%E8%AF%BB%E5%86%99%E3%80%81%E6%92%AD%E6%94%BE%E5%8F%8A%E5%BD%95%E9%9F%B3">https://www.cnblogs.com/LXP-Never/p/10078200.html#%E9%9F%B3%E9%A2%91%E4%BF%A1%E5%8F%B7%E7%9A%84%E8%AF%BB%E5%86%99%E3%80%81%E6%92%AD%E6%94%BE%E5%8F%8A%E5%BD%95%E9%9F%B3</a></li>
+<li><a href="https://github.com/majianjia/nnom/tree/master/examples/keyword_spotting">https://github.com/majianjia/nnom/tree/master/examples/keyword_spotting</a></li>
+</ul>
+</body></html>]]></content>
+      <tags>
+        <tag>Python</tag>
+        <tag>音频信号处理</tag>
       </tags>
   </entry>
   <entry>
@@ -1586,58 +1638,6 @@ Number=(Features+Output\_dim) x Output\_dim+Output\_dim
       <tags>
         <tag>Python</tag>
         <tag>语法</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Python 音频信号处理</title>
-    <url>/post/20005.html</url>
-    <content><![CDATA[<html><head><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script></head><body><blockquote>
-<p>本文主要是对网上的一些文章的总结，参考的文章在文末已经列出</p>
-</blockquote>
-<p>音频信号是模拟信号，我们需要将其保存为数字信号，才能对语音进行算法操作，WAV 是 Microsoft 开发的一种声音文件格式，通常被用来保存未压缩的声音数据。</p>
-<p>语音信号有三个重要的参数：<strong>声道数</strong>、<strong>取样频率</strong>和<strong>量化位数</strong>。</p>
-<ul>
-<li><strong>声道数</strong>：可以是单声道或者是双声道</li>
-<li><strong>采样频率</strong>：一秒内对声音信号的采集次数，44100Hz 采样频率意味着每秒钟信号被分解成 44100 份，如果采样率高，那么媒体播放音频时会感觉信号是连续的。</li>
-<li><strong>量化位数</strong>：用多少 bit 表达一次采样所采集的数据，通常有 8bit、16bit、24bit 和 32bit 等几种</li>
-</ul>
-<p>如果你需要自己录制和编辑声音文件，推荐使用 Audacity (<a href="http://audacity.sourceforge.net)，">http://audacity.sourceforge.net)，</a> 它是一款开源的、跨平台、多声道的录音编辑软件。</p>
-<a id="more"></a>
-<h2 id="音频信号读取" class="heading-control"><a href="#音频信号读取" class="headerlink" title="音频信号读取"></a>音频信号读取<a class="heading-anchor" href="#音频信号读取" aria-hidden="true"></a></h2><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> scipy.io <span class="keyword">import</span> wavfile</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> matplotlib.pylab <span class="keyword">as</span> plt</span><br><span class="line">samplimg_freq, audio = wavfile.read(<span class="string">"data/input_freq.wav"</span>)</span><br><span class="line">plt.plot(np.arange(audio.shape[<span class="number">0</span>]),audio)</span><br><span class="line">plt.show()</span><br></pre></td></tr></tbody></table></figure>
-<p>音频的时域信号波形：<br><img src="https://i.loli.net/2019/09/10/taJsWjAQe21xb6g.png" alt></p>
-<p>语音信号是一个非平稳的时变信号，但语音信号是由声门的激励脉冲通过声道形成的，而声道 (人的口腔、鼻腔) 的肌肉运动是缓慢的，所以 “短时间”(10-30ms) 内可以认为语音信号是平稳时不变的。由此构成了语音信号的 “短时分析技术”。<br>在短时分析中，将语音信号分为一段一段的语音帧，每一帧一般取 10-30ms，我们的研究就建立在每一帧的语音特征分析上。<br>提取的不同的语音特征参数对应着不同的语音信号分析方法：时域分析、频域分析、倒谱域分析… 由于语音信号最重要的感知特性反映在功率谱上，而相位变化只起到很小的作用，所有语音频域分析更加重要。</p>
-<h2 id="预加重" class="heading-control"><a href="#预加重" class="headerlink" title="预加重"></a>预加重<a class="heading-anchor" href="#预加重" aria-hidden="true"></a></h2><p>预增强以帧为单位进行，目的在于加强高频。去除口唇辐射的影响，增加语音的高频分辨率。因为高频端大约在 800Hz 以上按 6dB/oct (倍频程) 衰减，频率越高相应的成分越小，为此要在对语音信号进行分析之前对其高频部分加以提升，也可以改善高频信噪比。k 是预增强系数，常用 0.97。</p>
-<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">pre_emphasis = <span class="number">0.97</span></span><br><span class="line">emphasized_signal = np.append(audio[<span class="number">0</span>], audio[<span class="number">1</span>:] - pre_emphasis * audio[:<span class="number">-1</span>])</span><br><span class="line">plt.plot(np.arange(emphasized_signal.shape[<span class="number">0</span>]),emphasized_signal)</span><br><span class="line">plt.show()</span><br></pre></td></tr></tbody></table></figure>
-<p><img src="https://i.loli.net/2019/09/10/hycELdZWD5qo2AH.png" alt></p>
-<h2 id="分帧" class="heading-control"><a href="#分帧" class="headerlink" title="分帧"></a>分帧<a class="heading-anchor" href="#分帧" aria-hidden="true"></a></h2><p>分帧是将不定长的音频切分成固定长度的小段。为了避免窗边界对信号的遗漏，因此对帧做偏移时候，帧间要有帧移 (帧与帧之间需要重叠一部分)，帧长 (wlen) = 重叠 (overlap)+ 帧移 (inc)。inc 为帧移，表示后一帧第前一帧的偏移量，fs 表示采样率，fn 表示一段语音信号的分帧数。</p>
-<script type="math/tex; mode=display">\frac{N-overlap}{inc}=\frac{N-wlen+inc}{inc}</script><p>通常的选择是帧长 25ms（下图绿色），帧移为 10ms（下图黄色）。接下来的操作是对单帧进行的。要分帧是因为语音信号是快速变化的，而傅里叶变换适用于分析平稳的信号。帧和帧之间的时间差常常取为 10ms，这样帧与帧之间会有重叠（下图红色），否则，由于帧与帧连接处的信号会因为加窗而被弱化，这部分的信息就丢失了。<br><img src="https://i.loli.net/2019/09/10/QA89CdDfL3qibS6.png" alt></p>
-<h2 id="语音信号的短时频域处理" class="heading-control"><a href="#语音信号的短时频域处理" class="headerlink" title="语音信号的短时频域处理"></a>语音信号的短时频域处理<a class="heading-anchor" href="#语音信号的短时频域处理" aria-hidden="true"></a></h2><p>在语音信号处理中，在语音信号处理中，信号在频域或其他变换域上的分析处理占重要的位置，在频域上研究语音可以使信号在时域上无法表现出来的某些特征变得十分明显，一个音频信号的本质是由其频率内容决定的，将时域信号转换为频域信号一般对语音进行<strong>短时傅里叶变换</strong>。</p>
-<h2 id="python-speech-features" class="heading-control"><a href="#python-speech-features" class="headerlink" title="python_speech_features"></a>python_speech_features<a class="heading-anchor" href="#python-speech-features" aria-hidden="true"></a></h2><p>python_speech_features 的比较好用的地方就是自带预加重参数，只需要设定 preemph 的值，就可以对语音信号进行预加重，增强高频信号。<br>python_speech_features 模块提供的函数主要包括两个：MFCC 和 FBank。API 定义如下：</p>
-<blockquote>
-<p>python_speech_features.base.fbank(signal, samplerate=16000, winlen=0.025, winstep=0.01, nfilt=26, nfft=512, lowfreq=0, highfreq=None, preemph=0.97, winfunc=<function <lambda>>)</function></p>
-</blockquote>
-<p>从一个音频信号中计算梅尔滤波器能量特征，返回：2 个值。第一个是一个包含着特征的大小为 nfilt 的 numpy 数组，每一行都有一个特征向量。第二个返回值是每一帧的能量。</p>
-<blockquote>
-<p>python_speech_features.base.logfbank(signal, samplerate=16000, winlen=0.025, winstep=0.01, nfilt=26, nfft=512, lowfreq=0, highfreq=None, preemph=0.97)</p>
-</blockquote>
-<p>从一个音频信号中计算梅尔滤波器能量特征的对数，返回： 一个包含特征的大小为 nfilt 的 numpy 数组，每一行都有一个特征向量</p>
-<p>参数<br></p><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">参数：</span><br><span class="line"></span><br><span class="line">signal - 需要用来计算特征的音频信号，应该是一个N*<span class="number">1</span>的数组</span><br><span class="line"></span><br><span class="line">samplerate - 我们用来工作的信号的采样率</span><br><span class="line"></span><br><span class="line">winlen - 分析窗口的长度，按秒计，默认<span class="number">0.025</span>s(<span class="number">25</span>ms)</span><br><span class="line"></span><br><span class="line">winstep - 连续窗口之间的步长，按秒计，默认<span class="number">0.01</span>s（<span class="number">10</span>ms）</span><br><span class="line"></span><br><span class="line">numcep - 倒频谱返回的数量，默认<span class="number">13</span></span><br><span class="line"></span><br><span class="line">nfilt - 滤波器组的滤波器数量，默认<span class="number">26</span></span><br><span class="line"></span><br><span class="line">nfft - FFT的大小，默认<span class="number">512</span></span><br><span class="line"></span><br><span class="line">lowfreq - 梅尔滤波器的最低边缘，单位赫兹，默认为<span class="number">0</span></span><br><span class="line"></span><br><span class="line">highfreq - 梅尔滤波器的最高边缘，单位赫兹，默认为采样率/<span class="number">2</span></span><br><span class="line"></span><br><span class="line">preemph - 应用预加重过滤器和预加重过滤器的系数，<span class="number">0</span>表示没有过滤器，默认<span class="number">0.97</span></span><br><span class="line"></span><br><span class="line">ceplifter - 将升降器应用于最终的倒谱系数。 <span class="number">0</span>没有升降机。默认值为<span class="number">22</span>。</span><br><span class="line"></span><br><span class="line">appendEnergy - 如果是true，则将第<span class="number">0</span>个倒谱系数替换为总帧能量的对数。</span><br><span class="line"></span><br><span class="line">winfunc - 分析窗口应用于每个框架。 默认情况下不应用任何窗口。 你可以在这里使用numpy窗口函数 例如：winfunc=numpy.hamming</span><br></pre></td></tr></tbody></table></figure><p></p>
-<h2 id="MFCC特征和过滤器特征" class="heading-control"><a href="#MFCC特征和过滤器特征" class="headerlink" title="MFCC特征和过滤器特征"></a>MFCC 特征和过滤器特征<a class="heading-anchor" href="#MFCC特征和过滤器特征" aria-hidden="true"></a></h2><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> python_speech_features <span class="keyword">import</span> mfcc, logfbank</span><br><span class="line"></span><br><span class="line"><span class="comment">#提取MFCC特征和过滤器特征</span></span><br><span class="line">mfcc_features = mfcc(audio, samplimg_freq)</span><br><span class="line">filterbank_features = logfbank(audio, samplimg_freq)</span><br><span class="line"></span><br><span class="line"><span class="comment">#打印参数，查看可生成多少个窗体：</span></span><br><span class="line">print(<span class="string">'\nMFCC:\nNumber of windows ='</span>, mfcc_features.shape[<span class="number">0</span>])</span><br><span class="line">print(<span class="string">'Length of each feature ='</span>, mfcc_features.shape[<span class="number">1</span>])</span><br><span class="line">print(<span class="string">'\nFilter bank:\nNumber of windows='</span>, filterbank_features.shape[<span class="number">0</span>])</span><br><span class="line">print(<span class="string">'Length of each feature ='</span>, filterbank_features.shape[<span class="number">1</span>])</span><br><span class="line"></span><br><span class="line"><span class="comment">#将MFCC特征可视化。转置矩阵，使得时域是水平的。</span></span><br><span class="line">mfcc_features = mfcc_features.T</span><br><span class="line">plt.matshow(mfcc_features)</span><br><span class="line">plt.title(<span class="string">'MFCC'</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">#将滤波器组特征可视化。转置矩阵，使得时域是水平的。</span></span><br><span class="line">filterbank_features = filterbank_features.T</span><br><span class="line">plt.matshow(filterbank_features)</span><br><span class="line">plt.title(<span class="string">'Filter bank'</span>)</span><br><span class="line">plt.show()</span><br></pre></td></tr></tbody></table></figure>
-<p>输出如下：<br></p><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">MFCC:</span><br><span class="line">Number of windows = <span class="number">42</span></span><br><span class="line">Length of each feature = <span class="number">13</span></span><br><span class="line"></span><br><span class="line">Filter bank:</span><br><span class="line">Number of windows= <span class="number">42</span></span><br><span class="line">Length of each feature = <span class="number">26</span></span><br></pre></td></tr></tbody></table></figure><br><img src="https://i.loli.net/2019/09/10/9PzrY5gIXxTiM7U.png" alt><br><img src="https://i.loli.net/2019/09/10/rEyK4ZjAeOLDmC6.png" alt><p></p>
-<h2 id="触发词检测" class="heading-control"><a href="#触发词检测" class="headerlink" title="触发词检测"></a>触发词检测<a class="heading-anchor" href="#触发词检测" aria-hidden="true"></a></h2><p><img src="https://s2.ax1x.com/2019/09/26/unhpCt.png" alt="unhpCt.png"></p>
-<h2 id="Reference" class="heading-control"><a href="#Reference" class="headerlink" title="Reference"></a>Reference<a class="heading-anchor" href="#Reference" aria-hidden="true"></a></h2><ul>
-<li><a href="https://jingyan.baidu.com/article/1709ad804e575b4634c4f0b1.html">https://jingyan.baidu.com/article/1709ad804e575b4634c4f0b1.html</a></li>
-<li><a href="https://zhuanlan.zhihu.com/p/57004884">https://zhuanlan.zhihu.com/p/57004884</a></li>
-<li><a href="https://python-speech-features.readthedocs.io/en/latest/">https://python-speech-features.readthedocs.io/en/latest/</a></li>
-<li><a href="https://www.meiwen.com.cn/subject/ahyxuqtx.html">https://www.meiwen.com.cn/subject/ahyxuqtx.html</a></li>
-<li><a href="https://haythamfayek.com/2016/04/21/speech-processing-for-machine-learning.html">https://haythamfayek.com/2016/04/21/speech-processing-for-machine-learning.html</a></li>
-<li><a href="https://www.cnblogs.com/LXP-Never/p/10078200.html#%E9%9F%B3%E9%A2%91%E4%BF%A1%E5%8F%B7%E7%9A%84%E8%AF%BB%E5%86%99%E3%80%81%E6%92%AD%E6%94%BE%E5%8F%8A%E5%BD%95%E9%9F%B3">https://www.cnblogs.com/LXP-Never/p/10078200.html#%E9%9F%B3%E9%A2%91%E4%BF%A1%E5%8F%B7%E7%9A%84%E8%AF%BB%E5%86%99%E3%80%81%E6%92%AD%E6%94%BE%E5%8F%8A%E5%BD%95%E9%9F%B3</a></li>
-<li><a href="https://github.com/majianjia/nnom/tree/master/examples/keyword_spotting">https://github.com/majianjia/nnom/tree/master/examples/keyword_spotting</a></li>
-</ul>
-</body></html>]]></content>
-      <tags>
-        <tag>Python</tag>
-        <tag>音频信号处理</tag>
       </tags>
   </entry>
   <entry>
@@ -1939,19 +1939,6 @@ F 1=\frac{2 \times \text {Precision} \times \text {Recall}}{\text {Precision}+\t
       </tags>
   </entry>
   <entry>
-    <title>TensorFlow 2.0 Question Answering</title>
-    <url>/post/24791.html</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><ol>
-<li><strong>GPT-2 and BERT Pretrained Weights (pytorch)</strong><br>You can find weights for BERT and GPT-2 models (pytorch), ready to be used with HuggingFace’s Transformers or your own models：<br> <a href="https://www.kaggle.com/abhishek/bert-pytorch">https://www.kaggle.com/abhishek/bert-pytorch</a><br> <a href="https://www.kaggle.com/abhishek/gpt2-pytorch">https://www.kaggle.com/abhishek/gpt2-pytorch</a></li>
-<li><strong> 一个 NLP 数据增广的库</strong>：<a href="https://github.com/makcedward/nlpaug">nlpaug</a></li>
-<li><strong>One of the best collection of papers about BERT</strong><br><a href="https://github.com/thunlp/PLMpapers">https://github.com/thunlp/PLMpapers</a></li>
-</ol>
-]]></content>
-      <tags>
-        <tag>学习</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>THU 深圳研究院：大数据机器学习</title>
     <url>/post/64988.html</url>
     <content><![CDATA[<html><head><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script></head><body><h2 id="课程介绍" class="heading-control"><a href="#课程介绍" class="headerlink" title="课程介绍"></a>课程介绍<a class="heading-anchor" href="#课程介绍" aria-hidden="true"></a></h2><p><img src="https://i.loli.net/2019/09/24/RAgXiHG8ZdlDSek.png" alt><br>B 站视频：<a href="https://www.bilibili.com/video/av67224054">https://www.bilibili.com/video/av67224054</a><br><a id="more"></a></p>
@@ -1994,6 +1981,19 @@ F 1=\frac{2 \times \text {Precision} \times \text {Recall}}{\text {Precision}+\t
 </body></html>]]></content>
       <tags>
         <tag>大数据机器学习</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>TensorFlow 2.0 Question Answering</title>
+    <url>/post/24791.html</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><ol>
+<li><strong>GPT-2 and BERT Pretrained Weights (pytorch)</strong><br>You can find weights for BERT and GPT-2 models (pytorch), ready to be used with HuggingFace’s Transformers or your own models：<br> <a href="https://www.kaggle.com/abhishek/bert-pytorch">https://www.kaggle.com/abhishek/bert-pytorch</a><br> <a href="https://www.kaggle.com/abhishek/gpt2-pytorch">https://www.kaggle.com/abhishek/gpt2-pytorch</a></li>
+<li><strong> 一个 NLP 数据增广的库</strong>：<a href="https://github.com/makcedward/nlpaug">nlpaug</a></li>
+<li><strong>One of the best collection of papers about BERT</strong><br><a href="https://github.com/thunlp/PLMpapers">https://github.com/thunlp/PLMpapers</a></li>
+</ol>
+]]></content>
+      <tags>
+        <tag>学习</tag>
       </tags>
   </entry>
   <entry>
@@ -2160,6 +2160,15 @@ Reference：<a href="https://blog.csdn.net/why19940926/article/details/78580067"
       </tags>
   </entry>
   <entry>
+    <title>leetcode226— 翻转二叉树</title>
+    <url>/post/26095.html</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><p><img src="https://i.loli.net/2019/08/12/nb9EH4gKTdricY8.png" alt=""><br><a id="more"></a><br></p><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">TreeNode</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self, x</span>):</span></span><br><span class="line">        self.val = x</span><br><span class="line">        self.left = <span class="literal">None</span></span><br><span class="line">        self.right = <span class="literal">None</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">invertTree</span>(<span class="params">root: TreeNode</span>) -&gt; TreeNode:</span></span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> root:</span><br><span class="line">        <span class="keyword">return</span> </span><br><span class="line">    root.right, root.left = invertTree(root.left), invertTree(root.right)</span><br><span class="line">    <span class="keyword">return</span> root</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</span><br><span class="line">    root = TreeNode(<span class="number">1</span>)</span><br><span class="line">    root.left = TreeNode(<span class="number">2</span>)</span><br><span class="line">    root.right = TreeNode(<span class="number">3</span>)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">print_tree</span>(<span class="params">root</span>):</span></span><br><span class="line">        <span class="keyword">if</span> root:</span><br><span class="line">            print(root.val)</span><br><span class="line">            print(root.left.val)</span><br><span class="line">            print(root.right.val)</span><br><span class="line"></span><br><span class="line">    print_tree(root)</span><br><span class="line">    </span><br><span class="line">    print(<span class="string">"\n"</span>)</span><br><span class="line"></span><br><span class="line">    root = invertTree(root)</span><br><span class="line">    print_tree(root)</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure><p></p>
+]]></content>
+      <tags>
+        <tag>算法</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>leetcode top100 - 整数反转</title>
     <url>/post/51747.html</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><p>思路:</p>
@@ -2172,15 +2181,6 @@ Reference：<a href="https://blog.csdn.net/why19940926/article/details/78580067"
 </ol>
 <figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">reverse</span>(<span class="params">self, x: int</span>) -&gt; int:</span></span><br><span class="line">        <span class="keyword">if</span> x &lt;<span class="number">0</span>:</span><br><span class="line">            res = -int(<span class="string">""</span>.join(list(str(-x))[::<span class="number">-1</span>]))</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            res = int(<span class="string">""</span>.join(list(str(x))[::<span class="number">-1</span>]))</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span> <span class="number">-2</span>**<span class="number">31</span>&lt;=res&lt;<span class="number">2</span>**<span class="number">31</span><span class="number">-1</span>:</span><br><span class="line">            <span class="keyword">return</span> res</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span></span><br></pre></td></tr></tbody></table></figure>
 ]]></content>
-  </entry>
-  <entry>
-    <title>leetcode226— 翻转二叉树</title>
-    <url>/post/26095.html</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><p><img src="https://i.loli.net/2019/08/12/nb9EH4gKTdricY8.png" alt=""><br><a id="more"></a><br></p><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">TreeNode</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self, x</span>):</span></span><br><span class="line">        self.val = x</span><br><span class="line">        self.left = <span class="literal">None</span></span><br><span class="line">        self.right = <span class="literal">None</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">invertTree</span>(<span class="params">root: TreeNode</span>) -&gt; TreeNode:</span></span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> root:</span><br><span class="line">        <span class="keyword">return</span> </span><br><span class="line">    root.right, root.left = invertTree(root.left), invertTree(root.right)</span><br><span class="line">    <span class="keyword">return</span> root</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</span><br><span class="line">    root = TreeNode(<span class="number">1</span>)</span><br><span class="line">    root.left = TreeNode(<span class="number">2</span>)</span><br><span class="line">    root.right = TreeNode(<span class="number">3</span>)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">print_tree</span>(<span class="params">root</span>):</span></span><br><span class="line">        <span class="keyword">if</span> root:</span><br><span class="line">            print(root.val)</span><br><span class="line">            print(root.left.val)</span><br><span class="line">            print(root.right.val)</span><br><span class="line"></span><br><span class="line">    print_tree(root)</span><br><span class="line">    </span><br><span class="line">    print(<span class="string">"\n"</span>)</span><br><span class="line"></span><br><span class="line">    root = invertTree(root)</span><br><span class="line">    print_tree(root)</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure><p></p>
-]]></content>
-      <tags>
-        <tag>算法</tag>
-      </tags>
   </entry>
   <entry>
     <title>nohup 详解</title>
@@ -2921,6 +2921,15 @@ N 个人，互相交换礼物，每个人不能拿到自己的礼物。设计一
       </tags>
   </entry>
   <entry>
+    <title>关于 AI 创业</title>
+    <url>/post/54127.html</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><p>今天看到一个网站，<a href="http://www.yige.ai/">一个 AI</a>，看了一下是世纪佳缘做的。说实话，做的相当没有水平，完全是照抄 RASA 的，我甚至觉得我也可以做一个更好的出来，甚至由此萌发了想创业的想法。<br><a id="more"></a><br>也只是简单的想了一下，一来没什么本钱，二来觉得自己技术还不过硬。正好今天上午在知乎上看到<a href="https://www.zhihu.com/question/335394948/answer/752256254">互联网的十年</a>，感慨颇多。总体的感觉是 2009 到 2019 年互联网确实诞生了很多新兴行业和互联网公司，但是目前情况下的弱人工智能我暂时看不到什么很大的发展，觉得其中泡沫很多。<br>突然闪过的一个想法，按下不表吧。</p>
+]]></content>
+      <tags>
+        <tag>创业</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>寻找最大的 K 个数</title>
     <url>/post/18004.html</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><ul>
@@ -2932,61 +2941,6 @@ N 个人，互相交换礼物，每个人不能拿到自己的礼物。设计一
 ]]></content>
       <tags>
         <tag>Topk</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>关于 AI 创业</title>
-    <url>/post/54127.html</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><p>今天看到一个网站，<a href="http://www.yige.ai/">一个 AI</a>，看了一下是世纪佳缘做的。说实话，做的相当没有水平，完全是照抄 RASA 的，我甚至觉得我也可以做一个更好的出来，甚至由此萌发了想创业的想法。<br><a id="more"></a><br>也只是简单的想了一下，一来没什么本钱，二来觉得自己技术还不过硬。正好今天上午在知乎上看到<a href="https://www.zhihu.com/question/335394948/answer/752256254">互联网的十年</a>，感慨颇多。总体的感觉是 2009 到 2019 年互联网确实诞生了很多新兴行业和互联网公司，但是目前情况下的弱人工智能我暂时看不到什么很大的发展，觉得其中泡沫很多。<br>突然闪过的一个想法，按下不表吧。</p>
-]]></content>
-      <tags>
-        <tag>创业</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>工作</title>
-    <url>/post/60913.html</url>
-    <content><![CDATA[<html><head><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script></head><body><h2 id="招聘" class="heading-control"><a href="#招聘" class="headerlink" title="招聘"></a>招聘<a class="heading-anchor" href="#招聘" aria-hidden="true"></a></h2><p><a href="http://www.qhvss.com/about/2.html">陕西庆华汽车安全系统有限公司</a>是中国兵器工业集团所属特种能源集团直管单位，是集科研、生产、销售为一体的高新技术企业，是国内最大的汽车安全系统用火工品制造商，具有年产点火具 3000 万发，微型气体发生器 770 万发，产气药 500 吨的能力。</p>
-<a id="more"></a>
-<p>公司 2006 年 11 月成立，位于西安市灞桥区田洪正街 1 号。公司于 2009 年通过 ISO/16949 质量体系认证，达到美国 USCAR 标准；2014 年通过 ISO/14001 环境管理体系认证和 OHSMS 职业健康安全管理体系认证；2015 年通过 AK-LV16 认证；2016 年通过 IATF/16949 质量体系认证。</p>
-<p>公司依托原西安北方庆华机电集团有限公司 50 多年的火工品研发、生产及试验优势，在汽车安全气囊用点火具和微型气体发生器等技术方面填补了国内空白，公司取得国家专利 17 项，其中发明专利 2 项，实用新型专利 15 项。目前，公司拥有点火具、微型气体发生器、产气药三大系列 100 多个品种的产品。产品配套与国际主流车型，凭借安全、可靠的性能和价格优势远销欧洲、美国、日本等国际市场，深受国内外用户欢迎。</p>
-<p>为进一步加大公司国际化经营战略布局，公司成功引入华域汽车系统股份有限公司战略投资，在泾渭工业园兵器工业科技产业基地火工生产园建设经开分厂。2018 年投产后，公司生产能力在现有基础上增加一倍。</p>
-<p>我公司现有职工 700 余人，其中管理技术人员 150 余人，公司有特能级科技带头人 1 人，公司级科技带头人 1 人，公司级关键技能带头人 1 人，公司级科技骨干 4 人，公司级技能骨干 7 人，中级及中级以上职称 40 余人。公司坚持科技发展，人才先行的人才战略，为员工建立了职业生涯规划，将员工的发展与企业的发展结合在一起，以实现员工与企业的双赢。</p>
-<p>面对国内外市场的旺盛需求和对产品安全性能的严格要求，公司坚持技术一流、引领发展的科技理念，并秉承德才兼备、精业多能的人才理念。为给公司配备优秀的管理技术人员，特向社会各界广纳贤才，我们期望与您共同携手，将公司建设成为现代化管理、国际化经营的全球最具价值的点火具 MGG 独立供应商。</p>
-<p>一、  招聘专业</p>
-<p>化学工程与工艺：2 名</p>
-<p>二、招聘条件</p>
-<p>1、学历：本科及以上学历；</p>
-<p>2、须通过英语四级；</p>
-<p>3、2019 年应届毕业生；</p>
-<p>4、身心健康。</p>
-<p>三、福利待遇</p>
-<p>1、工作时间：8 小时工作制，一周双休。按规定可享受年休假、婚假、产假、探亲假等带薪假期。</p>
-<p>2、工资：见习期 1 年，见习期工资平均不低于 4000 元 / 月，见习期结束后，工资按照公司岗位绩效工资制度发放，年终根据公司经营情况发放年终奖励，转正定级后工资 6-10 万 / 年。新入司学生第 1 年享受安家费本科生 3000 元，研究生 5000 元。</p>
-<p>3、社保待遇：签订劳动合同当月起开始享受五险一金（养老、工伤、失业、医疗、生育保险和住房公积金）待遇，公积金按照西安市单位最高标准 12%、个人最低标准 5% 缴纳。</p>
-<p>4、公司提供单身公寓，单身公寓配有空调、电扇、暖气等设施。</p>
-<p>5、每年发放一套工服，每季度发放劳保用品（洗衣粉肥皂），享受降温费、取暖费等福利待遇。</p>
-<p>6、报名者经公司审查和面试合格后，新入司员工科享受免费体检及带薪培训。</p>
-<p>四、报名应聘者提供以下相关资料：</p>
-<p>1、本人简历。</p>
-<p>2、本人有效身份证原件及复印件。</p>
-<p>3、提供学校就业推荐证明，大学期间成绩单复印件。</p>
-<p>五、报名时间：2018 年 11 月 1 日 - 2018 年 11 月 15 日</p>
-<p>六、报名地点：西安市灞桥区田洪正街 1 号陕西庆华汽车安全系统有限公司人力资源部</p>
-<p>联系人：宋  成             </p>
-<p>电  话：029-62825341</p>
-<p>投简历邮箱：songcheng@qhvss.com</p>
-<p>网  址：www.qhvss.com</p>
-<h2 id="位置" class="heading-control"><a href="#位置" class="headerlink" title="位置"></a>位置<a class="heading-anchor" href="#位置" aria-hidden="true"></a></h2><p><img src="https://i.loli.net/2018/12/06/5c090839d4569.png" alt></p>
-<h2 id="其他" class="heading-control"><a href="#其他" class="headerlink" title="其他"></a>其他<a class="heading-anchor" href="#其他" aria-hidden="true"></a></h2><ul>
-<li>江西国泰民爆集团股份有限公司招聘</li>
-</ul>
-</body></html>]]></content>
-      <categories>
-        <category>工作</category>
-      </categories>
-      <tags>
-        <tag>工作</tag>
       </tags>
   </entry>
   <entry>
@@ -3056,6 +3010,52 @@ N 个人，互相交换礼物，每个人不能拿到自己的礼物。设计一
       </tags>
   </entry>
   <entry>
+    <title>工作</title>
+    <url>/post/60913.html</url>
+    <content><![CDATA[<html><head><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script></head><body><h2 id="招聘" class="heading-control"><a href="#招聘" class="headerlink" title="招聘"></a>招聘<a class="heading-anchor" href="#招聘" aria-hidden="true"></a></h2><p><a href="http://www.qhvss.com/about/2.html">陕西庆华汽车安全系统有限公司</a>是中国兵器工业集团所属特种能源集团直管单位，是集科研、生产、销售为一体的高新技术企业，是国内最大的汽车安全系统用火工品制造商，具有年产点火具 3000 万发，微型气体发生器 770 万发，产气药 500 吨的能力。</p>
+<a id="more"></a>
+<p>公司 2006 年 11 月成立，位于西安市灞桥区田洪正街 1 号。公司于 2009 年通过 ISO/16949 质量体系认证，达到美国 USCAR 标准；2014 年通过 ISO/14001 环境管理体系认证和 OHSMS 职业健康安全管理体系认证；2015 年通过 AK-LV16 认证；2016 年通过 IATF/16949 质量体系认证。</p>
+<p>公司依托原西安北方庆华机电集团有限公司 50 多年的火工品研发、生产及试验优势，在汽车安全气囊用点火具和微型气体发生器等技术方面填补了国内空白，公司取得国家专利 17 项，其中发明专利 2 项，实用新型专利 15 项。目前，公司拥有点火具、微型气体发生器、产气药三大系列 100 多个品种的产品。产品配套与国际主流车型，凭借安全、可靠的性能和价格优势远销欧洲、美国、日本等国际市场，深受国内外用户欢迎。</p>
+<p>为进一步加大公司国际化经营战略布局，公司成功引入华域汽车系统股份有限公司战略投资，在泾渭工业园兵器工业科技产业基地火工生产园建设经开分厂。2018 年投产后，公司生产能力在现有基础上增加一倍。</p>
+<p>我公司现有职工 700 余人，其中管理技术人员 150 余人，公司有特能级科技带头人 1 人，公司级科技带头人 1 人，公司级关键技能带头人 1 人，公司级科技骨干 4 人，公司级技能骨干 7 人，中级及中级以上职称 40 余人。公司坚持科技发展，人才先行的人才战略，为员工建立了职业生涯规划，将员工的发展与企业的发展结合在一起，以实现员工与企业的双赢。</p>
+<p>面对国内外市场的旺盛需求和对产品安全性能的严格要求，公司坚持技术一流、引领发展的科技理念，并秉承德才兼备、精业多能的人才理念。为给公司配备优秀的管理技术人员，特向社会各界广纳贤才，我们期望与您共同携手，将公司建设成为现代化管理、国际化经营的全球最具价值的点火具 MGG 独立供应商。</p>
+<p>一、  招聘专业</p>
+<p>化学工程与工艺：2 名</p>
+<p>二、招聘条件</p>
+<p>1、学历：本科及以上学历；</p>
+<p>2、须通过英语四级；</p>
+<p>3、2019 年应届毕业生；</p>
+<p>4、身心健康。</p>
+<p>三、福利待遇</p>
+<p>1、工作时间：8 小时工作制，一周双休。按规定可享受年休假、婚假、产假、探亲假等带薪假期。</p>
+<p>2、工资：见习期 1 年，见习期工资平均不低于 4000 元 / 月，见习期结束后，工资按照公司岗位绩效工资制度发放，年终根据公司经营情况发放年终奖励，转正定级后工资 6-10 万 / 年。新入司学生第 1 年享受安家费本科生 3000 元，研究生 5000 元。</p>
+<p>3、社保待遇：签订劳动合同当月起开始享受五险一金（养老、工伤、失业、医疗、生育保险和住房公积金）待遇，公积金按照西安市单位最高标准 12%、个人最低标准 5% 缴纳。</p>
+<p>4、公司提供单身公寓，单身公寓配有空调、电扇、暖气等设施。</p>
+<p>5、每年发放一套工服，每季度发放劳保用品（洗衣粉肥皂），享受降温费、取暖费等福利待遇。</p>
+<p>6、报名者经公司审查和面试合格后，新入司员工科享受免费体检及带薪培训。</p>
+<p>四、报名应聘者提供以下相关资料：</p>
+<p>1、本人简历。</p>
+<p>2、本人有效身份证原件及复印件。</p>
+<p>3、提供学校就业推荐证明，大学期间成绩单复印件。</p>
+<p>五、报名时间：2018 年 11 月 1 日 - 2018 年 11 月 15 日</p>
+<p>六、报名地点：西安市灞桥区田洪正街 1 号陕西庆华汽车安全系统有限公司人力资源部</p>
+<p>联系人：宋  成             </p>
+<p>电  话：029-62825341</p>
+<p>投简历邮箱：songcheng@qhvss.com</p>
+<p>网  址：www.qhvss.com</p>
+<h2 id="位置" class="heading-control"><a href="#位置" class="headerlink" title="位置"></a>位置<a class="heading-anchor" href="#位置" aria-hidden="true"></a></h2><p><img src="https://i.loli.net/2018/12/06/5c090839d4569.png" alt></p>
+<h2 id="其他" class="heading-control"><a href="#其他" class="headerlink" title="其他"></a>其他<a class="heading-anchor" href="#其他" aria-hidden="true"></a></h2><ul>
+<li>江西国泰民爆集团股份有限公司招聘</li>
+</ul>
+</body></html>]]></content>
+      <categories>
+        <category>工作</category>
+      </categories>
+      <tags>
+        <tag>工作</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>数值计算</title>
     <url>/post/58802.html</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><p>数值分析是研究科学计算中各种数学问题求解的数值计算方法。</p>
@@ -3110,28 +3110,6 @@ N 个人，互相交换礼物，每个人不能拿到自己的礼物。设计一
       </tags>
   </entry>
   <entry>
-    <title>日常 bug</title>
-    <url>/post/52747.html</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><ol>
-<li><code>TensorFlow报错FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated</code>, 解决方案：<code>pip install numpy==1.16.0</code></li>
-<li>国内镜像 ustc 稳定性大于 tuna, 配置<code>.bashrc</code> 如下:<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">channels:</span><br><span class="line">  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main/</span><br><span class="line">  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/</span><br><span class="line">  - https://mirrors.ustc.edu.cn/anaconda/cloud/menpo/</span><br><span class="line">  - https://mirrors.ustc.edu.cn/anaconda/cloud/bioconda/</span><br><span class="line">  - https://mirrors.ustc.edu.cn/anaconda/cloud/msys2/</span><br><span class="line">  - https://mirrors.ustc.edu.cn/anaconda/cloud/conda-forge/</span><br><span class="line">  - https://mirrors.ustc.edu.cn/anaconda/pkgs/free/</span><br><span class="line">  - https://mirrors.ustc.edu.cn/anaconda/pkgs/main/</span><br><span class="line">  - defaults</span><br><span class="line">show_channel_urls: <span class="literal">true</span></span><br></pre></td></tr></tbody></table></figure></li>
-<li>删除虚拟环境：<code>conda remove -n your_env_name --all</code></li>
-<li>nohup 查看运行的后台进程 <code>jobs -l</code></li>
-<li>Anaconda 导出环境 / 从外部安装环境，导出已有环境：<code>conda env export &gt; environment.yaml</code>, 当我们想再次创建该环境，或根据别人提供的.yaml 文件复现环境时，可以：<code>conda env create -f environment.yaml</code></li>
-<li>.tar.bz2 文件解压命令，从网络上下载到的源码包，最常见的是.tar.gz 包，还有一部分是.tar.bz2 包<br>.tar.gz 格式解压为 <code>tar   -zxvf   xx.tar.gz</code><br>.tar.bz2 格式解压为 <code>tar   -jxvf    xx.tar.bz2</code></li>
-<li>Python 忽略警告信息:<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> warnings</span><br><span class="line">warnings.filterwarnings(<span class="string">"ignore"</span>)</span><br></pre></td></tr></tbody></table></figure></li>
-<li><p>python 命令生成 requestment.txt 文件，<code>pip freeze &gt; requirements.txt</code>, 安装：<code>pip install -r requirements.txt</code></p>
-</li>
-<li><p>run <code>nvidia-smi</code> ，遇见 <code>Failed to initialize NVML: Driver/library version mismatch</code> 的错误。参考下面的解决方案：</p>
-<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">I had reinstalled nvidia driver: run these commands <span class="keyword">in</span> root mode:</span><br><span class="line">1. systemctl isolate multi-user.target</span><br><span class="line">2. modprobe -r nvidia-drm</span><br><span class="line">3. Reinstall Nvidia driver: chmod +x NVIDIA-Linux-x86_64–410.57.run</span><br><span class="line">4. systemctl start graphical.target</span><br><span class="line">and finally check nvidia-smi</span><br></pre></td></tr></tbody></table></figure>
-</li>
-</ol>
-]]></content>
-      <tags>
-        <tag>bug</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>新看的一些文章</title>
     <url>/post/15245.html</url>
     <content><![CDATA[<html><head><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script></head><body><h2 id="📚融合BN加速推理" class="heading-control"><a href="#📚融合BN加速推理" class="headerlink" title="📚融合BN加速推理"></a>📚融合 BN 加速推理<a class="heading-anchor" href="#📚融合BN加速推理" aria-hidden="true"></a></h2><p>批归一化（Batch Normalization）因其可以加速神经网络训练、使网络训练更稳定，而且还有一定的正则化效果，所以得到了非常广泛的应用。但是，在推理阶段，BN 层一般是可以完全融合到前面的卷积层的，而且丝毫不影响性能。<br><strong>参考文章</strong>：<a href="https://zhuanlan.zhihu.com/p/120265831">深度学习推理时融合 BN, 轻松获得约 5% 的提速</a><br><strong>代码</strong>：keras 的暂时没有找到，有空可以写写<br><a id="more"></a></p>
@@ -3154,6 +3132,61 @@ N 个人，互相交换礼物，每个人不能拿到自己的礼物。设计一
       </categories>
       <tags>
         <tag>笔记</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>日常 bug</title>
+    <url>/post/52747.html</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><ol>
+<li><code>TensorFlow报错FutureWarning: Passing (type, 1) or '1type' as a synonym of type is deprecated</code>, 解决方案：<code>pip install numpy==1.16.0</code></li>
+<li>国内镜像 ustc 稳定性大于 tuna, 配置<code>.bashrc</code> 如下:<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">channels:</span><br><span class="line">  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main/</span><br><span class="line">  - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/</span><br><span class="line">  - https://mirrors.ustc.edu.cn/anaconda/cloud/menpo/</span><br><span class="line">  - https://mirrors.ustc.edu.cn/anaconda/cloud/bioconda/</span><br><span class="line">  - https://mirrors.ustc.edu.cn/anaconda/cloud/msys2/</span><br><span class="line">  - https://mirrors.ustc.edu.cn/anaconda/cloud/conda-forge/</span><br><span class="line">  - https://mirrors.ustc.edu.cn/anaconda/pkgs/free/</span><br><span class="line">  - https://mirrors.ustc.edu.cn/anaconda/pkgs/main/</span><br><span class="line">  - defaults</span><br><span class="line">show_channel_urls: <span class="literal">true</span></span><br></pre></td></tr></tbody></table></figure></li>
+<li>删除虚拟环境：<code>conda remove -n your_env_name --all</code></li>
+<li>nohup 查看运行的后台进程 <code>jobs -l</code></li>
+<li>Anaconda 导出环境 / 从外部安装环境，导出已有环境：<code>conda env export &gt; environment.yaml</code>, 当我们想再次创建该环境，或根据别人提供的.yaml 文件复现环境时，可以：<code>conda env create -f environment.yaml</code></li>
+<li>.tar.bz2 文件解压命令，从网络上下载到的源码包，最常见的是.tar.gz 包，还有一部分是.tar.bz2 包<br>.tar.gz 格式解压为 <code>tar   -zxvf   xx.tar.gz</code><br>.tar.bz2 格式解压为 <code>tar   -jxvf    xx.tar.bz2</code></li>
+<li>Python 忽略警告信息:<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> warnings</span><br><span class="line">warnings.filterwarnings(<span class="string">"ignore"</span>)</span><br></pre></td></tr></tbody></table></figure></li>
+<li><p>python 命令生成 requestment.txt 文件，<code>pip freeze &gt; requirements.txt</code>, 安装：<code>pip install -r requirements.txt</code></p>
+</li>
+<li><p>run <code>nvidia-smi</code> ，遇见 <code>Failed to initialize NVML: Driver/library version mismatch</code> 的错误。参考下面的解决方案：</p>
+<figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">I had reinstalled nvidia driver: run these commands <span class="keyword">in</span> root mode:</span><br><span class="line">1. systemctl isolate multi-user.target</span><br><span class="line">2. modprobe -r nvidia-drm</span><br><span class="line">3. Reinstall Nvidia driver: chmod +x NVIDIA-Linux-x86_64–410.57.run</span><br><span class="line">4. systemctl start graphical.target</span><br><span class="line">and finally check nvidia-smi</span><br></pre></td></tr></tbody></table></figure>
+</li>
+</ol>
+]]></content>
+      <tags>
+        <tag>bug</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>有趣的网站</title>
+    <url>/post/35391.html</url>
+    <content><![CDATA[<html><head><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script></head><body><h2 id="📻音乐" class="heading-control"><a href="#📻音乐" class="headerlink" title="📻音乐"></a>📻音乐<a class="heading-anchor" href="#📻音乐" aria-hidden="true"></a></h2><ul>
+<li><a href="http://music.qkhhyiu.cn/">音乐搜索器</a>: 多站合一音乐搜索解决方案</li>
+<li><a href="http://guozhivip.com/yinyue/">果汁音乐</a></li>
+</ul>
+<h2 id="🔮搜索" class="heading-control"><a href="#🔮搜索" class="headerlink" title="🔮搜索"></a>🔮搜索<a class="heading-anchor" href="#🔮搜索" aria-hidden="true"></a></h2><ul>
+<li><a href="https://scholar.chongbuluo.com/">虫部落</a></li>
+<li><a href="http://guozhivip.com/so/">果汁搜索</a></li>
+<li><a href="https://jikipedia.com/">小鸡词典</a>：网络流行语 </li>
+<li><a href="https://zh.wikihow.com/%E9%A6%96%E9%A1%B5">wikihow</a>：生活维基百科</li>
+</ul>
+<a id="more"></a>
+<h2 id="📜排行榜" class="heading-control"><a href="#📜排行榜" class="headerlink" title="📜排行榜"></a>📜排行榜<a class="heading-anchor" href="#📜排行榜" aria-hidden="true"></a></h2><ul>
+<li><a href="http://guozhivip.com/rank/">果汁排行榜</a></li>
+<li><a href="https://tophub.today/">今日热榜</a></li>
+</ul>
+<h2 id="📚-其他" class="heading-control"><a href="#📚-其他" class="headerlink" title="📚 其他"></a>📚 其他<a class="heading-anchor" href="#📚-其他" aria-hidden="true"></a></h2><ul>
+<li><a href="http://guozhivip.com/eat/">今天吃啥呀</a></li>
+<li><a href="http://www.underseacat.com/fan">云风扇</a>：心静自然凉 </li>
+<li><a href="https://fonts.safe.360.cn/">360 查字体</a> ：你的字体能商用吗</li>
+<li><a href="https://www.gaoding.com/koutu">搞定抠图</a></li>
+<li><a href="http://www.nows.fun/">毒鸡汤</a></li>
+</ul>
+</body></html>]]></content>
+      <categories>
+        <category>网站</category>
+      </categories>
+      <tags>
+        <tag>网站</tag>
       </tags>
   </entry>
   <entry>
@@ -3192,36 +3225,21 @@ N 个人，互相交换礼物，每个人不能拿到自己的礼物。设计一
       </tags>
   </entry>
   <entry>
-    <title>有趣的网站</title>
-    <url>/post/35391.html</url>
-    <content><![CDATA[<html><head><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script></head><body><h2 id="📻音乐" class="heading-control"><a href="#📻音乐" class="headerlink" title="📻音乐"></a>📻音乐<a class="heading-anchor" href="#📻音乐" aria-hidden="true"></a></h2><ul>
-<li><a href="http://music.qkhhyiu.cn/">音乐搜索器</a>: 多站合一音乐搜索解决方案</li>
-<li><a href="http://guozhivip.com/yinyue/">果汁音乐</a></li>
+    <title>服务器守护进程</title>
+    <url>/post/46515.html</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><ul>
+<li>首先把进程放到后台 <figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">nohup python main.py &amp;</span><br></pre></td></tr></tbody></table></figure></li>
+<li>然后保持退出终端继续运行 <figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">ctrl-z</span><br><span class="line"><span class="built_in">bg</span></span><br></pre></td></tr></tbody></table></figure></li>
+<li>输出在 <code>nohup.out</code> 里面</li>
+<li>输入 fg，可以把任务调到前台并取消</li>
+<li>输入 <code>jobs</code> 显示后台进程</li>
 </ul>
-<h2 id="🔮搜索" class="heading-control"><a href="#🔮搜索" class="headerlink" title="🔮搜索"></a>🔮搜索<a class="heading-anchor" href="#🔮搜索" aria-hidden="true"></a></h2><ul>
-<li><a href="https://scholar.chongbuluo.com/">虫部落</a></li>
-<li><a href="http://guozhivip.com/so/">果汁搜索</a></li>
-<li><a href="https://jikipedia.com/">小鸡词典</a>：网络流行语 </li>
-<li><a href="https://zh.wikihow.com/%E9%A6%96%E9%A1%B5">wikihow</a>：生活维基百科</li>
-</ul>
-<a id="more"></a>
-<h2 id="📜排行榜" class="heading-control"><a href="#📜排行榜" class="headerlink" title="📜排行榜"></a>📜排行榜<a class="heading-anchor" href="#📜排行榜" aria-hidden="true"></a></h2><ul>
-<li><a href="http://guozhivip.com/rank/">果汁排行榜</a></li>
-<li><a href="https://tophub.today/">今日热榜</a></li>
-</ul>
-<h2 id="📚-其他" class="heading-control"><a href="#📚-其他" class="headerlink" title="📚 其他"></a>📚 其他<a class="heading-anchor" href="#📚-其他" aria-hidden="true"></a></h2><ul>
-<li><a href="http://guozhivip.com/eat/">今天吃啥呀</a></li>
-<li><a href="http://www.underseacat.com/fan">云风扇</a>：心静自然凉 </li>
-<li><a href="https://fonts.safe.360.cn/">360 查字体</a> ：你的字体能商用吗</li>
-<li><a href="https://www.gaoding.com/koutu">搞定抠图</a></li>
-<li><a href="http://www.nows.fun/">毒鸡汤</a></li>
-</ul>
-</body></html>]]></content>
+]]></content>
       <categories>
-        <category>网站</category>
+        <category>项目</category>
       </categories>
       <tags>
-        <tag>网站</tag>
+        <tag>服务器</tag>
       </tags>
   </entry>
   <entry>
@@ -3240,24 +3258,6 @@ N 个人，互相交换礼物，每个人不能拿到自己的礼物。设计一
 <figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">pip install tensorflow-gpu</span><br><span class="line">pip install torch torchvision</span><br></pre></td></tr></tbody></table></figure></li>
 </ol>
 ]]></content>
-      <tags>
-        <tag>服务器</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>服务器守护进程</title>
-    <url>/post/46515.html</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><ul>
-<li>首先把进程放到后台 <figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">nohup python main.py &amp;</span><br></pre></td></tr></tbody></table></figure></li>
-<li>然后保持退出终端继续运行 <figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">ctrl-z</span><br><span class="line"><span class="built_in">bg</span></span><br></pre></td></tr></tbody></table></figure></li>
-<li>输出在 <code>nohup.out</code> 里面</li>
-<li>输入 fg，可以把任务调到前台并取消</li>
-<li>输入 <code>jobs</code> 显示后台进程</li>
-</ul>
-]]></content>
-      <categories>
-        <category>项目</category>
-      </categories>
       <tags>
         <tag>服务器</tag>
       </tags>
@@ -3310,6 +3310,30 @@ c_{N B}=\underset{c \in C}{\operatorname{largmax}} \log P(c)+\sum_{i \in \text {
       </tags>
   </entry>
   <entry>
+    <title>校招笔试题目</title>
+    <url>/post/44950.html</url>
+    <content><![CDATA[<html><head><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script></head><body><h2 id="互娱模拟笔试" class="heading-control"><a href="#互娱模拟笔试" class="headerlink" title="互娱模拟笔试"></a>互娱模拟笔试<a class="heading-anchor" href="#互娱模拟笔试" aria-hidden="true"></a></h2><h4 id="个税征缴" class="heading-control"><a href="#个税征缴" class="headerlink" title="个税征缴"></a>个税征缴<a class="heading-anchor" href="#个税征缴" aria-hidden="true"></a></h4><p><img src="https://i.loli.net/2019/08/04/Rxiw6QHvKYTr8tB.png" alt><br><img src="https://i.loli.net/2019/08/04/7b45cCrzgojEaXD.png" alt><br><img src="https://i.loli.net/2019/08/04/iMvLtYcwTNOhR17.png" alt></p>
+<h4 id="字符串缩写" class="heading-control"><a href="#字符串缩写" class="headerlink" title="字符串缩写"></a>字符串缩写<a class="heading-anchor" href="#字符串缩写" aria-hidden="true"></a></h4><p><img src="https://i.loli.net/2019/08/04/orbd5SFXlKuyfqc.png" alt><br><img src="https://i.loli.net/2019/08/04/vB9uUo3OGENXsLf.png" alt></p>
+<h4 id="进制组合" class="heading-control"><a href="#进制组合" class="headerlink" title="进制组合"></a>进制组合<a class="heading-anchor" href="#进制组合" aria-hidden="true"></a></h4><p><img src="https://i.loli.net/2019/08/04/KTcl4Hmix5btUjX.png" alt><br><img src="https://i.loli.net/2019/08/04/XwqgncvWjMmVTEy.png" alt></p>
+<h2 id="Leetcode" class="heading-control"><a href="#Leetcode" class="headerlink" title="Leetcode"></a>Leetcode<a class="heading-anchor" href="#Leetcode" aria-hidden="true"></a></h2><h4 id="Leetcode125-验证回文串" class="heading-control"><a href="#Leetcode125-验证回文串" class="headerlink" title="Leetcode125:验证回文串"></a>Leetcode125: 验证回文串<a class="heading-anchor" href="#Leetcode125-验证回文串" aria-hidden="true"></a></h4><ul>
+<li>技巧 1：<code>str.isalnum()</code> 检测字符串是否由字母和数字组成。过滤非字母和数字的：<code>s = ''.join(filter(str.isalnum,s))</code></li>
+<li>技巧二：大写和小写字母的差是 32，所有 <code>ord('A')^32==ord('a')</code>。<code>ord</code> 返回值是字符对应的十进制整数。</li>
+</ul>
+</body></html>]]></content>
+      <tags>
+        <tag>笔试</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>概率图模型理论与应用</title>
+    <url>/post/14056.html</url>
+    <content><![CDATA[<html><head><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script></head><body><h2 id="概率图模型" class="heading-control"><a href="#概率图模型" class="headerlink" title="概率图模型"></a>概率图模型<a class="heading-anchor" href="#概率图模型" aria-hidden="true"></a></h2><p><img src="https://i.loli.net/2019/09/13/o1c8PFYmTK3JVXA.png" alt></p>
+</body></html>]]></content>
+      <tags>
+        <tag>概率图模型</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>机器学习 - 白板推导系列</title>
     <url>/post/19678.html</url>
     <content><![CDATA[<html><head><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script></head><body><h2 id="课程介绍" class="heading-control"><a href="#课程介绍" class="headerlink" title="课程介绍"></a>课程介绍<a class="heading-anchor" href="#课程介绍" aria-hidden="true"></a></h2><p><img src="https://i.loli.net/2019/09/24/ga1PjFQG3WLnk8O.png" alt><br>B 站视频：<a href="https://www.bilibili.com/video/av31950221">https://www.bilibili.com/video/av31950221</a><br>观看次序: <a href="https://github.com/shuhuai007/Machine-Learning-Session">https://github.com/shuhuai007/Machine-Learning-Session</a></p>
@@ -3344,51 +3368,6 @@ c_{N B}=\underset{c \in C}{\operatorname{largmax}} \log P(c)+\sum_{i \in \text {
       </tags>
   </entry>
   <entry>
-    <title>校招笔试题目</title>
-    <url>/post/44950.html</url>
-    <content><![CDATA[<html><head><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script></head><body><h2 id="互娱模拟笔试" class="heading-control"><a href="#互娱模拟笔试" class="headerlink" title="互娱模拟笔试"></a>互娱模拟笔试<a class="heading-anchor" href="#互娱模拟笔试" aria-hidden="true"></a></h2><h4 id="个税征缴" class="heading-control"><a href="#个税征缴" class="headerlink" title="个税征缴"></a>个税征缴<a class="heading-anchor" href="#个税征缴" aria-hidden="true"></a></h4><p><img src="https://i.loli.net/2019/08/04/Rxiw6QHvKYTr8tB.png" alt><br><img src="https://i.loli.net/2019/08/04/7b45cCrzgojEaXD.png" alt><br><img src="https://i.loli.net/2019/08/04/iMvLtYcwTNOhR17.png" alt></p>
-<h4 id="字符串缩写" class="heading-control"><a href="#字符串缩写" class="headerlink" title="字符串缩写"></a>字符串缩写<a class="heading-anchor" href="#字符串缩写" aria-hidden="true"></a></h4><p><img src="https://i.loli.net/2019/08/04/orbd5SFXlKuyfqc.png" alt><br><img src="https://i.loli.net/2019/08/04/vB9uUo3OGENXsLf.png" alt></p>
-<h4 id="进制组合" class="heading-control"><a href="#进制组合" class="headerlink" title="进制组合"></a>进制组合<a class="heading-anchor" href="#进制组合" aria-hidden="true"></a></h4><p><img src="https://i.loli.net/2019/08/04/KTcl4Hmix5btUjX.png" alt><br><img src="https://i.loli.net/2019/08/04/XwqgncvWjMmVTEy.png" alt></p>
-<h2 id="Leetcode" class="heading-control"><a href="#Leetcode" class="headerlink" title="Leetcode"></a>Leetcode<a class="heading-anchor" href="#Leetcode" aria-hidden="true"></a></h2><h4 id="Leetcode125-验证回文串" class="heading-control"><a href="#Leetcode125-验证回文串" class="headerlink" title="Leetcode125:验证回文串"></a>Leetcode125: 验证回文串<a class="heading-anchor" href="#Leetcode125-验证回文串" aria-hidden="true"></a></h4><ul>
-<li>技巧 1：<code>str.isalnum()</code> 检测字符串是否由字母和数字组成。过滤非字母和数字的：<code>s = ''.join(filter(str.isalnum,s))</code></li>
-<li>技巧二：大写和小写字母的差是 32，所有 <code>ord('A')^32==ord('a')</code>。<code>ord</code> 返回值是字符对应的十进制整数。</li>
-</ul>
-</body></html>]]></content>
-      <tags>
-        <tag>笔试</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>概率图模型理论与应用</title>
-    <url>/post/14056.html</url>
-    <content><![CDATA[<html><head><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script></head><body><h2 id="概率图模型" class="heading-control"><a href="#概率图模型" class="headerlink" title="概率图模型"></a>概率图模型<a class="heading-anchor" href="#概率图模型" aria-hidden="true"></a></h2><p><img src="https://i.loli.net/2019/09/13/o1c8PFYmTK3JVXA.png" alt></p>
-</body></html>]]></content>
-      <tags>
-        <tag>概率图模型</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>每周论文</title>
-    <url>/post/7053.html</url>
-    <content><![CDATA[<html><head><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script></head><body><p><img src="https://i.loli.net/2018/11/29/5bffec15c0d38.jpeg" alt="pexels-photo-933964.jpeg"><br><a id="more"></a></p>
-<h2 id="第一周" class="heading-control"><a href="#第一周" class="headerlink" title="第一周"></a>第一周<a class="heading-anchor" href="#第一周" aria-hidden="true"></a></h2><ol>
-<li><p><a href="https://www.paperweekly.site/papers/2520">An Introductory Survey on Attention Mechanisms in NLP Problems</a><br><strong>标签</strong>：Attention 综述<br>本文来自佐治亚理工学院，这是一篇 Attention 机制在自然语言处理方面的综述文章，包括基本概念和 Attention 在不同 NLP 任务上的模型变种。</p>
-</li>
-<li><p><a href="https://www.paperweekly.site/papers/2524">LiveBot: Generating Live Video Comments Based on Visual and Textual Contexts</a><br><strong>标签</strong>：弹幕生成<br>本文是北京大学孙栩老师组和微软亚洲研究院发表在 AAAI 2019 上的工作。文章介绍了 “弹幕生成” 任务，根据一定时间范围内的视频帧和评论文本进行弹幕评论的生成，并且构建了基于 B 站的数据集。<br>通过对数据集的分析发现：弹幕评论长度较短；相邻时间间隔的评论具有较高的关联度。基于此，文章先是利用传统的 Seq2Seq 架构，设计了 Video Encoder 和 Text Encoder 进行图像和文字信息的融合，再交由 Comment Decoder 进行生成；进一步地，利用 Transformer 替代 RNN Encoder，提出了一个 Unified Transformer Model。<br>并且，为了更好的评估模型的性能，文章提出了一个基于生成概率对候选评论进行排序的指标，对比之前的 Seq2Seq 模型，文章提出的两个模型能够取得更好的效果。</p>
-</li>
-<li><a href="https://www.paperweekly.site/papers/2519">Contextual String Embeddings for Sequence Labeling</a><br><strong>标签</strong>：Word Embeddings<br><strong>源码</strong>:<a href="https://github.com/zalandoresearch/flair">https://github.com/zalandoresearch/flair</a><br>本文是 Zalando Research 发表于 COLING 2018 的工作，论文提出了一种全新产生 embedding 的 BiLSTM 模型结构，模型特点：<br>模型以 character 为原子单位，在网络中，每个 character 都有一个对应的 hidden state。这个特点对需要多一步分词的中文来说可能有避免因为分词错误导致下游 function 继续错误的弊端；<br>输出以 word 为单位的 embedding，这个 embedding 由前向 LSTM 中，该词最后一个字母的 hidden state 和反向 LSTM 中该词第一个字母的 hidden state 拼接组成，这样就能够兼顾上下文信息。<br>这种动态 embedding 的方法在序列标注上取得了良好效果，特别值得一提的是，在 NER 上的表现甚至超越了 BERT，但训练成本只是一个 GPU 一周，训练数据在十亿个词量，与 BERT 相比对硬件的要求极大降低，训练成本的大幅减少却仍有性能上的提升，动态 embedding 的思路值得借鉴和尝试。</li>
-<li><a href="https://www.paperweekly.site/papers/2545">Discriminative Deep Dyna-Q: Robust Planning for Dialogue Policy Learning</a><br><strong>标签</strong>：Dialog Systems<br><strong>源码</strong>：<a href="https://github.com/MiuLab/DDQ">https://github.com/MiuLab/DDQ</a><br>本文是微软和台湾大学发表于 ACL 2018 的工作，论文提出了一种针对任务型对话系统的学习方式 ——Deep Dyna-Q，在仅使用少量真实用户交互数据的前提下，基于集成规划的方法进行对话策略学习。作者将 world model 引入对话 agent，模仿真实的用户响应并不断学习生成模拟的用户对话，利用真实和模拟的对话经验对 agent 进行优化。</li>
-<li><a href="https://www.paperweekly.site/papers/2522">Learning Personalized End-to-End Goal-Oriented Dialog</a><br><strong>标签</strong>：Goal-Oriented Dialog<br>本文是微软亚洲研究院和北京大学孙栩组共同完成即将发表在 AAAI 2019 的工作。为对话系统引入个性化是今年对话领域最为火热的研究方向之一。此前有一些工作研究在开放式对话（chitchat）中引入个性化，使得对话生成中可以包含一定的对话者身份的信息，使对话质量更高。而本文关注在鲜有人研究且更加困难的任务型对话领域，探索如何能针对用户的不同身份采取不同的对话策略，提高任务完成率和用户满意度。<br>本文提出了 Personalized MemN2N 模型，引入 profile embedding，并在对话模型和 KB 之间建立联系，有效地提升了对话系统质量，达到任务型对话个性化数据集上新的 state-of-the-art。在针对任务型研究较少的环境下，这一工作具有非常高的参考价值。</li>
-</ol>
-</body></html>]]></content>
-      <categories>
-        <category>论文</category>
-      </categories>
-      <tags>
-        <tag>论文</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>海量数据相似度 —— 局部敏感哈希 (LSH)</title>
     <url>/post/54839.html</url>
     <content><![CDATA[<html><head><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script></head><body><h2 id="场景" class="heading-control"><a href="#场景" class="headerlink" title="场景"></a>场景<a class="heading-anchor" href="#场景" aria-hidden="true"></a></h2><p><strong>海量高维数据查找与某个数据最相似的一个或者多个数据。</strong>与其它基于 Tree 的数据结构，诸如 KD-Tree、SR-Tree 相比，它较好地克服了 Curse of Dimension，能够将 KNN 的时间复杂度缩减到 sub-linear。LSH 多被用于文本、多媒体（图像、音频）的相似性判断。</p>
@@ -3416,40 +3395,24 @@ c_{N B}=\underset{c \in C}{\operatorname{largmax}} \log P(c)+\sum_{i \in \text {
       </tags>
   </entry>
   <entry>
-    <title>生成模型和判别模型</title>
-    <url>/post/6742.html</url>
-    <content><![CDATA[<html><head><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script></head><body><p><img src="https://s2.ax1x.com/2019/07/22/ePCNdg.png" alt="ePCNdg.png"></p>
-<ul>
-<li>生成模型可以产生数据，判别模型只能根据数据做判断。</li>
-<li>生成模型的指导思想是贝叶斯，判别模型的指导思想是频率学派<a id="more"></a>
+    <title>每周论文</title>
+    <url>/post/7053.html</url>
+    <content><![CDATA[<html><head><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script></head><body><p><img src="https://i.loli.net/2018/11/29/5bffec15c0d38.jpeg" alt="pexels-photo-933964.jpeg"><br><a id="more"></a></p>
+<h2 id="第一周" class="heading-control"><a href="#第一周" class="headerlink" title="第一周"></a>第一周<a class="heading-anchor" href="#第一周" aria-hidden="true"></a></h2><ol>
+<li><p><a href="https://www.paperweekly.site/papers/2520">An Introductory Survey on Attention Mechanisms in NLP Problems</a><br><strong>标签</strong>：Attention 综述<br>本文来自佐治亚理工学院，这是一篇 Attention 机制在自然语言处理方面的综述文章，包括基本概念和 Attention 在不同 NLP 任务上的模型变种。</p>
 </li>
-</ul>
-<h2 id="生成模型" class="heading-control"><a href="#生成模型" class="headerlink" title="生成模型"></a>生成模型<a class="heading-anchor" href="#生成模型" aria-hidden="true"></a></h2><p><strong>生成模型</strong>（Generaive Model）一般以概率的方式描述了数据的产生方式，通过对模型采样就可以产生数据。<br>一个简单例子：给定平面上一系列点，我可以认为这些点是根据一个二维高斯分布产生的，这就是一个生成模型，它可以产生数据。我可以用最大似然方法，根据已有的样本估计出模型的参数，再对这个模型进行采样，就可以得到更多的样本，这些样本和之前的样本在空间分布上可能差不多。</p>
-<p>对于分类来说：生成模型观察 x 与 c 的整体分布，通过对每一个 c 建模，最终选择能使结果最优的 c 作为最终分布 P (x,c)。训练完模型后，每新来一个数据，就根据所得到的 P (x,c) 与 x 的特征，来判断 c。</p>
-<h2 id="判别模型" class="heading-control"><a href="#判别模型" class="headerlink" title="判别模型"></a>判别模型<a class="heading-anchor" href="#判别模型" aria-hidden="true"></a></h2><p><strong>判别模型</strong>（Discriminative Model）对数据之间的映射关系建模，而不考虑数据本身是如何生成的。判别模型可以根据给定的数据 预测对应的 （回归），或根据不同的映射结果来区分（discriminate）给定的数据 （分类）。但模型自身并不能产生数据 。</p>
-<p>对于分类来说：判别模型直接根据 x 的特征，来对 c 建模，划定一个整体判别边界。训练完模型后，每新来一个数据，就根据这个边界来判断它应该属于哪一类。</p>
-<h2 id="常见模型的分类" class="heading-control"><a href="#常见模型的分类" class="headerlink" title="常见模型的分类"></a>常见模型的分类<a class="heading-anchor" href="#常见模型的分类" aria-hidden="true"></a></h2><p><strong>生成模型</strong></p>
-<ul>
-<li>高斯混合模型（和其他类型的混合模型）</li>
-<li>隐马尔可夫模型</li>
-<li>贝叶斯网络（例如 Naive bayes，Autoregressive 模型）</li>
-<li>LDA</li>
-<li> 玻尔兹曼机器（例如受限玻尔兹曼机器，深信念网络）</li>
-<li>变分自动编码器</li>
-<li>生成对抗性网络</li>
-</ul>
-<p><strong>判别模型</strong></p>
-<ul>
-<li>k - 最近邻算法</li>
-<li>逻辑回归</li>
-<li>支持向量机</li>
-<li>最大熵马尔可夫模型</li>
-<li>条件随机场</li>
-<li>神经网络</li>
-</ul>
+<li><p><a href="https://www.paperweekly.site/papers/2524">LiveBot: Generating Live Video Comments Based on Visual and Textual Contexts</a><br><strong>标签</strong>：弹幕生成<br>本文是北京大学孙栩老师组和微软亚洲研究院发表在 AAAI 2019 上的工作。文章介绍了 “弹幕生成” 任务，根据一定时间范围内的视频帧和评论文本进行弹幕评论的生成，并且构建了基于 B 站的数据集。<br>通过对数据集的分析发现：弹幕评论长度较短；相邻时间间隔的评论具有较高的关联度。基于此，文章先是利用传统的 Seq2Seq 架构，设计了 Video Encoder 和 Text Encoder 进行图像和文字信息的融合，再交由 Comment Decoder 进行生成；进一步地，利用 Transformer 替代 RNN Encoder，提出了一个 Unified Transformer Model。<br>并且，为了更好的评估模型的性能，文章提出了一个基于生成概率对候选评论进行排序的指标，对比之前的 Seq2Seq 模型，文章提出的两个模型能够取得更好的效果。</p>
+</li>
+<li><a href="https://www.paperweekly.site/papers/2519">Contextual String Embeddings for Sequence Labeling</a><br><strong>标签</strong>：Word Embeddings<br><strong>源码</strong>:<a href="https://github.com/zalandoresearch/flair">https://github.com/zalandoresearch/flair</a><br>本文是 Zalando Research 发表于 COLING 2018 的工作，论文提出了一种全新产生 embedding 的 BiLSTM 模型结构，模型特点：<br>模型以 character 为原子单位，在网络中，每个 character 都有一个对应的 hidden state。这个特点对需要多一步分词的中文来说可能有避免因为分词错误导致下游 function 继续错误的弊端；<br>输出以 word 为单位的 embedding，这个 embedding 由前向 LSTM 中，该词最后一个字母的 hidden state 和反向 LSTM 中该词第一个字母的 hidden state 拼接组成，这样就能够兼顾上下文信息。<br>这种动态 embedding 的方法在序列标注上取得了良好效果，特别值得一提的是，在 NER 上的表现甚至超越了 BERT，但训练成本只是一个 GPU 一周，训练数据在十亿个词量，与 BERT 相比对硬件的要求极大降低，训练成本的大幅减少却仍有性能上的提升，动态 embedding 的思路值得借鉴和尝试。</li>
+<li><a href="https://www.paperweekly.site/papers/2545">Discriminative Deep Dyna-Q: Robust Planning for Dialogue Policy Learning</a><br><strong>标签</strong>：Dialog Systems<br><strong>源码</strong>：<a href="https://github.com/MiuLab/DDQ">https://github.com/MiuLab/DDQ</a><br>本文是微软和台湾大学发表于 ACL 2018 的工作，论文提出了一种针对任务型对话系统的学习方式 ——Deep Dyna-Q，在仅使用少量真实用户交互数据的前提下，基于集成规划的方法进行对话策略学习。作者将 world model 引入对话 agent，模仿真实的用户响应并不断学习生成模拟的用户对话，利用真实和模拟的对话经验对 agent 进行优化。</li>
+<li><a href="https://www.paperweekly.site/papers/2522">Learning Personalized End-to-End Goal-Oriented Dialog</a><br><strong>标签</strong>：Goal-Oriented Dialog<br>本文是微软亚洲研究院和北京大学孙栩组共同完成即将发表在 AAAI 2019 的工作。为对话系统引入个性化是今年对话领域最为火热的研究方向之一。此前有一些工作研究在开放式对话（chitchat）中引入个性化，使得对话生成中可以包含一定的对话者身份的信息，使对话质量更高。而本文关注在鲜有人研究且更加困难的任务型对话领域，探索如何能针对用户的不同身份采取不同的对话策略，提高任务完成率和用户满意度。<br>本文提出了 Personalized MemN2N 模型，引入 profile embedding，并在对话模型和 KB 之间建立联系，有效地提升了对话系统质量，达到任务型对话个性化数据集上新的 state-of-the-art。在针对任务型研究较少的环境下，这一工作具有非常高的参考价值。</li>
+</ol>
 </body></html>]]></content>
+      <categories>
+        <category>论文</category>
+      </categories>
       <tags>
-        <tag>机器学习</tag>
+        <tag>论文</tag>
       </tags>
   </entry>
   <entry>
@@ -3493,6 +3456,43 @@ c_{N B}=\underset{c \in C}{\operatorname{largmax}} \log P(c)+\sum_{i \in \text {
       </categories>
       <tags>
         <tag>Keras</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>生成模型和判别模型</title>
+    <url>/post/6742.html</url>
+    <content><![CDATA[<html><head><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script></head><body><p><img src="https://s2.ax1x.com/2019/07/22/ePCNdg.png" alt="ePCNdg.png"></p>
+<ul>
+<li>生成模型可以产生数据，判别模型只能根据数据做判断。</li>
+<li>生成模型的指导思想是贝叶斯，判别模型的指导思想是频率学派<a id="more"></a>
+</li>
+</ul>
+<h2 id="生成模型" class="heading-control"><a href="#生成模型" class="headerlink" title="生成模型"></a>生成模型<a class="heading-anchor" href="#生成模型" aria-hidden="true"></a></h2><p><strong>生成模型</strong>（Generaive Model）一般以概率的方式描述了数据的产生方式，通过对模型采样就可以产生数据。<br>一个简单例子：给定平面上一系列点，我可以认为这些点是根据一个二维高斯分布产生的，这就是一个生成模型，它可以产生数据。我可以用最大似然方法，根据已有的样本估计出模型的参数，再对这个模型进行采样，就可以得到更多的样本，这些样本和之前的样本在空间分布上可能差不多。</p>
+<p>对于分类来说：生成模型观察 x 与 c 的整体分布，通过对每一个 c 建模，最终选择能使结果最优的 c 作为最终分布 P (x,c)。训练完模型后，每新来一个数据，就根据所得到的 P (x,c) 与 x 的特征，来判断 c。</p>
+<h2 id="判别模型" class="heading-control"><a href="#判别模型" class="headerlink" title="判别模型"></a>判别模型<a class="heading-anchor" href="#判别模型" aria-hidden="true"></a></h2><p><strong>判别模型</strong>（Discriminative Model）对数据之间的映射关系建模，而不考虑数据本身是如何生成的。判别模型可以根据给定的数据 预测对应的 （回归），或根据不同的映射结果来区分（discriminate）给定的数据 （分类）。但模型自身并不能产生数据 。</p>
+<p>对于分类来说：判别模型直接根据 x 的特征，来对 c 建模，划定一个整体判别边界。训练完模型后，每新来一个数据，就根据这个边界来判断它应该属于哪一类。</p>
+<h2 id="常见模型的分类" class="heading-control"><a href="#常见模型的分类" class="headerlink" title="常见模型的分类"></a>常见模型的分类<a class="heading-anchor" href="#常见模型的分类" aria-hidden="true"></a></h2><p><strong>生成模型</strong></p>
+<ul>
+<li>高斯混合模型（和其他类型的混合模型）</li>
+<li>隐马尔可夫模型</li>
+<li>贝叶斯网络（例如 Naive bayes，Autoregressive 模型）</li>
+<li>LDA</li>
+<li> 玻尔兹曼机器（例如受限玻尔兹曼机器，深信念网络）</li>
+<li>变分自动编码器</li>
+<li>生成对抗性网络</li>
+</ul>
+<p><strong>判别模型</strong></p>
+<ul>
+<li>k - 最近邻算法</li>
+<li>逻辑回归</li>
+<li>支持向量机</li>
+<li>最大熵马尔可夫模型</li>
+<li>条件随机场</li>
+<li>神经网络</li>
+</ul>
+</body></html>]]></content>
+      <tags>
+        <tag>机器学习</tag>
       </tags>
   </entry>
   <entry>
@@ -3634,21 +3634,6 @@ p\left(t_{1}, t_{2}, \ldots, t_{N}\right)=\prod_{k=1}^{N} p\left(t_{k} | t_{k+1}
       </tags>
   </entry>
   <entry>
-    <title>最近调代码两个的 bug</title>
-    <url>/post/19186.html</url>
-    <content><![CDATA[<html><head><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script></head><body><h3 id="标签错误" class="heading-control"><a href="#标签错误" class="headerlink" title="标签错误"></a>标签错误<a class="heading-anchor" href="#标签错误" aria-hidden="true"></a></h3><p>错误 log:<br></p><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">RuntimeError: cuda runtime error (59) :device-side assert triggered</span><br></pre></td></tr></tbody></table></figure><br>一般是标签出错，检查两点：<p></p>
-<ul>
-<li>标签中是否有 - 1</li>
-<li> 标签个数和分类的个数是否匹配（检查模型最后的分类个数）</li>
-</ul>
-<h3 id="Shell脚本dos2unix" class="heading-control"><a href="#Shell脚本dos2unix" class="headerlink" title="Shell脚本dos2unix"></a>Shell 脚本 dos2unix<a class="heading-anchor" href="#Shell脚本dos2unix" aria-hidden="true"></a></h3><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">Shell脚本出现$<span class="string">'\r'</span>: <span class="built_in">command</span> not found</span><br></pre></td></tr></tbody></table></figure>
-<p>这是因为脚本文件可能在 window 弄过，有 window 下的空行，把他转换成 unix 格式的就行。<br></p><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">yum install dos2unix</span><br><span class="line">dos2unix run.sh</span><br></pre></td></tr></tbody></table></figure><p></p>
-</body></html>]]></content>
-      <tags>
-        <tag>bug</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>论文阅读 - 20190924</title>
     <url>/post/50252.html</url>
     <content><![CDATA[<html><head><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script></head><body><h2 id="论文1" class="heading-control"><a href="#论文1" class="headerlink" title="论文1"></a>论文 1<a class="heading-anchor" href="#论文1" aria-hidden="true"></a></h2><p><strong>《SANVis: Visual Analytics for Understanding Self-Attention Networks》</strong></p>
@@ -3669,6 +3654,21 @@ p\left(t_{1}, t_{2}, \ldots, t_{N}\right)=\prod_{k=1}^{N} p\left(t_{k} | t_{k+1}
 </body></html>]]></content>
       <tags>
         <tag>论文</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>最近调代码两个的 bug</title>
+    <url>/post/19186.html</url>
+    <content><![CDATA[<html><head><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script></head><body><h3 id="标签错误" class="heading-control"><a href="#标签错误" class="headerlink" title="标签错误"></a>标签错误<a class="heading-anchor" href="#标签错误" aria-hidden="true"></a></h3><p>错误 log:<br></p><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">RuntimeError: cuda runtime error (59) :device-side assert triggered</span><br></pre></td></tr></tbody></table></figure><br>一般是标签出错，检查两点：<p></p>
+<ul>
+<li>标签中是否有 - 1</li>
+<li> 标签个数和分类的个数是否匹配（检查模型最后的分类个数）</li>
+</ul>
+<h3 id="Shell脚本dos2unix" class="heading-control"><a href="#Shell脚本dos2unix" class="headerlink" title="Shell脚本dos2unix"></a>Shell 脚本 dos2unix<a class="heading-anchor" href="#Shell脚本dos2unix" aria-hidden="true"></a></h3><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">Shell脚本出现$<span class="string">'\r'</span>: <span class="built_in">command</span> not found</span><br></pre></td></tr></tbody></table></figure>
+<p>这是因为脚本文件可能在 window 弄过，有 window 下的空行，把他转换成 unix 格式的就行。<br></p><figure class="highlight bash"><table><tbody><tr><td class="code"><pre><span class="line">yum install dos2unix</span><br><span class="line">dos2unix run.sh</span><br></pre></td></tr></tbody></table></figure><p></p>
+</body></html>]]></content>
+      <tags>
+        <tag>bug</tag>
       </tags>
   </entry>
   <entry>
@@ -3993,17 +3993,6 @@ J(\theta)=-\left[\sum_{i=1}^{n} \sum_{k=1}^{K} \mathbf{1}\left\{y^{(i)}=k\right\
       </tags>
   </entry>
   <entry>
-    <title>基于文档的限定领域对话式问答系统设计说明</title>
-    <url>/post/5681.html</url>
-    <content><![CDATA[<html><head><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script></head><body><h2 id="引言" class="heading-control"><a href="#引言" class="headerlink" title="引言"></a>引言<a class="heading-anchor" href="#引言" aria-hidden="true"></a></h2><h3 id="编写目的" class="heading-control"><a href="#编写目的" class="headerlink" title="编写目的"></a>编写目的<a class="heading-anchor" href="#编写目的" aria-hidden="true"></a></h3><p>为了从整体上描述基于文档的限定领域对话式问答系统要实现的功能，使用户能够对本系统有一个全面正确的认识，同时给程序开发者一个关于系统的使用，系统的功能模块，以及系统的各种技术解决方案一个详细的说明。</p>
-<h3 id="背景" class="heading-control"><a href="#背景" class="headerlink" title="背景"></a>背景<a class="heading-anchor" href="#背景" aria-hidden="true"></a></h3><p>问答系统 (Question Answering System, QA) 是信息检索系统的一种高级形式，它能用准确、简洁的自然语言回答用户用自然语言提出的问题。其研究兴起的主要原因是人们对快速、准确地获取信息的需求。问答系统是目前人工智能和自然语言处理领域中一个倍受关注并具有广泛发展前景的研究方向。<br>不同的应用需要不同形式的问答系统，其所采用的语料和技术也不尽相同。从涉及的应用领域进行分类，可将问答系统分为限定域问答系统和开放域问答系统。<br>限定域问答系统是指系统所能处理的问题只限定于某个领域或者某个内容范围，比如只限定于医学、化学或者某企业的业务领域等。由于系统要解决的问题限定于某个领域或者范围，因此如果把系统所需要的全部领域知识都按照统一的方式表示成内部的结构化格式，则回答问题时就能比较容易地产生答案。<br><img src="/针对文档的问答系统设计说明/20191017082302115.png" alt><br>开放域问答系统不同于限定域问答系统，这类系统可回答的问题不限定于某个特定领域。在回答开放领域的问题时，需要一定的常识知识或者世界知识并具有语义词典。<br>按支持问答系统产生答案的文档库、知识库，以及实现的技术分类，可分为自然语言的数据库问答系统、对话式问答系统、阅读理解系统、基于常用问题集的问答系统、基于知识库的问答系统，以及基于大规模文档集的问答系统。<br>目前国内的大多数问答系统都是针对开放领域的对话式问答系统，在限定领域特别是基于文档的对话式问答系统很少，且功能均不够完善。本文设计了一种使用最先进的深度学习自然语言技术的基于文档的限定领域对话式问答系统设计说明。基本步骤包括处理文档数据、构造训练数据集、模型训练和优化、模型部署等，使用时输入用户需要查询的问题，系统可以自动匹配与问题最相关的段落，并由模型给出问题的答案。此外模型有完整的日志系统以及在线训练和离线训练模块。</p>
-<h2 id="概要设计" class="heading-control"><a href="#概要设计" class="headerlink" title="概要设计"></a>概要设计<a class="heading-anchor" href="#概要设计" aria-hidden="true"></a></h2><h3 id="系统总体设计" class="heading-control"><a href="#系统总体设计" class="headerlink" title="系统总体设计"></a>系统总体设计<a class="heading-anchor" href="#系统总体设计" aria-hidden="true"></a></h3><p>系统的整体编程语言使用 Python 进行开发，使用的深度学习框架为 TensorFlow。基于机器阅读理解模型的问答流程如下图所示：<br><img src="/针对文档的问答系统设计说明/20191017084213733.png" alt></p>
-<h3 id="系统模块功能" class="heading-control"><a href="#系统模块功能" class="headerlink" title="系统模块功能"></a>系统模块功能<a class="heading-anchor" href="#系统模块功能" aria-hidden="true"></a></h3><h4 id="文档数据识别和处理模块" class="heading-control"><a href="#文档数据识别和处理模块" class="headerlink" title="文档数据识别和处理模块"></a>文档数据识别和处理模块<a class="heading-anchor" href="#文档数据识别和处理模块" aria-hidden="true"></a></h4><p>常见的办公文档多数为 txt 文档，word 文档，excel 表格或者 pdf 文档。针对不同的文档需要设计不同的数据读取方式并进行读取后数据的存储。</p>
-<h4 id="模型训练数据的构建模块" class="heading-control"><a href="#模型训练数据的构建模块" class="headerlink" title="模型训练数据的构建模块"></a>模型训练数据的构建模块<a class="heading-anchor" href="#模型训练数据的构建模块" aria-hidden="true"></a></h4><p>SQuAD 示例：<br>内容：阿波罗计划于 1962 至 1972 年间进行，期间得到了同期的双子座计划（1962 年 - 1966 年）的支持。双子座计划为阿波罗计划成功必需的一些太空旅行技术做了铺垫。阿波罗计划使用土星系列火箭作为运载工具来发射飞船。这些火箭还被用于阿波罗应用计划，包括 1973 年到 1974 年间支持了三个载人飞行任务的空间站 Skylab，以及 1975 年和前苏联合作的联合地球轨道任务阿波罗联盟测试计划。<br>问题：哪一个空间站于 1973 到 1974 年间承载了三项载人飞行任务？<br>答案：Skylab 空间站</p>
-<h4 id="基于深度学习的阅读理解模型" class="heading-control"><a href="#基于深度学习的阅读理解模型" class="headerlink" title="基于深度学习的阅读理解模型"></a>基于深度学习的阅读理解模型<a class="heading-anchor" href="#基于深度学习的阅读理解模型" aria-hidden="true"></a></h4><p>YESNO 问题类型的处理方式<br>在第一阶段使用的是分类的方法，我后来考虑同样的问题可能在不同原文中可能是不同的回答，所以我就把 YESNO 作为原文进行训练。具体做法就是在原文后边拼接 YESNO 字符串，然后将之前的答案索引修改为 YESNO 对应的索引。这样在训练过程中就可以学到答案跟原文之间的关系，而不像之前只关注问题直接得出答案，实验证明这种方法确实能提高成绩，大概提高了 3 个百分点。2. 不能回答的问题的处理方式在 BERT 的源码中，对于不能回答的问题有一套处理方式，就是根据预测结果得出的 nbest 和答案为空的概率进行对比，如果答案为空的概率最高就把空作为答案。我使用与处理 YESNO 问题的方式去试了一下，就是将 NULL 拼接到原文后，将对应的答案索引改为 NULL 的索引，实验效果证明能提升， 但是只能提升百分之零点几，anyway，有点提升就用起来吧。</p>
-<h4 id="模型导出和部署模块" class="heading-control"><a href="#模型导出和部署模块" class="headerlink" title="模型导出和部署模块"></a>模型导出和部署模块<a class="heading-anchor" href="#模型导出和部署模块" aria-hidden="true"></a></h4><h4 id="针对问题段落匹配的信息检索模块" class="heading-control"><a href="#针对问题段落匹配的信息检索模块" class="headerlink" title="针对问题段落匹配的信息检索模块"></a>针对问题段落匹配的信息检索模块<a class="heading-anchor" href="#针对问题段落匹配的信息检索模块" aria-hidden="true"></a></h4></body></html>]]></content>
-  </entry>
-  <entry>
     <title>长文本分类</title>
     <url>/post/35349.html</url>
     <content><![CDATA[<html><head><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script></head><body><p>在 NLP 领域中，文本分类舆情分析等任务相较于文本抽取，和摘要等任务更容易获得大量标注数据。因此在文本分类领域中深度学习相较于传统方法更容易获得比较好的效果。<br>文本分类领域比较重要的的深度学习模型主要有 FastText，TextCNN，HAN，DPCNN。</p>
@@ -4020,6 +4009,17 @@ J(\theta)=-\left[\sum_{i=1}^{n} \sum_{k=1}^{K} \mathbf{1}\left\{y^{(i)}=k\right\
         <tag>NLP</tag>
         <tag>分类</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>基于文档的限定领域对话式问答系统设计说明</title>
+    <url>/post/5681.html</url>
+    <content><![CDATA[<html><head><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script></head><body><h2 id="引言" class="heading-control"><a href="#引言" class="headerlink" title="引言"></a>引言<a class="heading-anchor" href="#引言" aria-hidden="true"></a></h2><h3 id="编写目的" class="heading-control"><a href="#编写目的" class="headerlink" title="编写目的"></a>编写目的<a class="heading-anchor" href="#编写目的" aria-hidden="true"></a></h3><p>为了从整体上描述基于文档的限定领域对话式问答系统要实现的功能，使用户能够对本系统有一个全面正确的认识，同时给程序开发者一个关于系统的使用，系统的功能模块，以及系统的各种技术解决方案一个详细的说明。</p>
+<h3 id="背景" class="heading-control"><a href="#背景" class="headerlink" title="背景"></a>背景<a class="heading-anchor" href="#背景" aria-hidden="true"></a></h3><p>问答系统 (Question Answering System, QA) 是信息检索系统的一种高级形式，它能用准确、简洁的自然语言回答用户用自然语言提出的问题。其研究兴起的主要原因是人们对快速、准确地获取信息的需求。问答系统是目前人工智能和自然语言处理领域中一个倍受关注并具有广泛发展前景的研究方向。<br>不同的应用需要不同形式的问答系统，其所采用的语料和技术也不尽相同。从涉及的应用领域进行分类，可将问答系统分为限定域问答系统和开放域问答系统。<br>限定域问答系统是指系统所能处理的问题只限定于某个领域或者某个内容范围，比如只限定于医学、化学或者某企业的业务领域等。由于系统要解决的问题限定于某个领域或者范围，因此如果把系统所需要的全部领域知识都按照统一的方式表示成内部的结构化格式，则回答问题时就能比较容易地产生答案。<br><img src="/针对文档的问答系统设计说明/20191017082302115.png" alt><br>开放域问答系统不同于限定域问答系统，这类系统可回答的问题不限定于某个特定领域。在回答开放领域的问题时，需要一定的常识知识或者世界知识并具有语义词典。<br>按支持问答系统产生答案的文档库、知识库，以及实现的技术分类，可分为自然语言的数据库问答系统、对话式问答系统、阅读理解系统、基于常用问题集的问答系统、基于知识库的问答系统，以及基于大规模文档集的问答系统。<br>目前国内的大多数问答系统都是针对开放领域的对话式问答系统，在限定领域特别是基于文档的对话式问答系统很少，且功能均不够完善。本文设计了一种使用最先进的深度学习自然语言技术的基于文档的限定领域对话式问答系统设计说明。基本步骤包括处理文档数据、构造训练数据集、模型训练和优化、模型部署等，使用时输入用户需要查询的问题，系统可以自动匹配与问题最相关的段落，并由模型给出问题的答案。此外模型有完整的日志系统以及在线训练和离线训练模块。</p>
+<h2 id="概要设计" class="heading-control"><a href="#概要设计" class="headerlink" title="概要设计"></a>概要设计<a class="heading-anchor" href="#概要设计" aria-hidden="true"></a></h2><h3 id="系统总体设计" class="heading-control"><a href="#系统总体设计" class="headerlink" title="系统总体设计"></a>系统总体设计<a class="heading-anchor" href="#系统总体设计" aria-hidden="true"></a></h3><p>系统的整体编程语言使用 Python 进行开发，使用的深度学习框架为 TensorFlow。基于机器阅读理解模型的问答流程如下图所示：<br><img src="/针对文档的问答系统设计说明/20191017084213733.png" alt></p>
+<h3 id="系统模块功能" class="heading-control"><a href="#系统模块功能" class="headerlink" title="系统模块功能"></a>系统模块功能<a class="heading-anchor" href="#系统模块功能" aria-hidden="true"></a></h3><h4 id="文档数据识别和处理模块" class="heading-control"><a href="#文档数据识别和处理模块" class="headerlink" title="文档数据识别和处理模块"></a>文档数据识别和处理模块<a class="heading-anchor" href="#文档数据识别和处理模块" aria-hidden="true"></a></h4><p>常见的办公文档多数为 txt 文档，word 文档，excel 表格或者 pdf 文档。针对不同的文档需要设计不同的数据读取方式并进行读取后数据的存储。</p>
+<h4 id="模型训练数据的构建模块" class="heading-control"><a href="#模型训练数据的构建模块" class="headerlink" title="模型训练数据的构建模块"></a>模型训练数据的构建模块<a class="heading-anchor" href="#模型训练数据的构建模块" aria-hidden="true"></a></h4><p>SQuAD 示例：<br>内容：阿波罗计划于 1962 至 1972 年间进行，期间得到了同期的双子座计划（1962 年 - 1966 年）的支持。双子座计划为阿波罗计划成功必需的一些太空旅行技术做了铺垫。阿波罗计划使用土星系列火箭作为运载工具来发射飞船。这些火箭还被用于阿波罗应用计划，包括 1973 年到 1974 年间支持了三个载人飞行任务的空间站 Skylab，以及 1975 年和前苏联合作的联合地球轨道任务阿波罗联盟测试计划。<br>问题：哪一个空间站于 1973 到 1974 年间承载了三项载人飞行任务？<br>答案：Skylab 空间站</p>
+<h4 id="基于深度学习的阅读理解模型" class="heading-control"><a href="#基于深度学习的阅读理解模型" class="headerlink" title="基于深度学习的阅读理解模型"></a>基于深度学习的阅读理解模型<a class="heading-anchor" href="#基于深度学习的阅读理解模型" aria-hidden="true"></a></h4><p>YESNO 问题类型的处理方式<br>在第一阶段使用的是分类的方法，我后来考虑同样的问题可能在不同原文中可能是不同的回答，所以我就把 YESNO 作为原文进行训练。具体做法就是在原文后边拼接 YESNO 字符串，然后将之前的答案索引修改为 YESNO 对应的索引。这样在训练过程中就可以学到答案跟原文之间的关系，而不像之前只关注问题直接得出答案，实验证明这种方法确实能提高成绩，大概提高了 3 个百分点。2. 不能回答的问题的处理方式在 BERT 的源码中，对于不能回答的问题有一套处理方式，就是根据预测结果得出的 nbest 和答案为空的概率进行对比，如果答案为空的概率最高就把空作为答案。我使用与处理 YESNO 问题的方式去试了一下，就是将 NULL 拼接到原文后，将对应的答案索引改为 NULL 的索引，实验效果证明能提升， 但是只能提升百分之零点几，anyway，有点提升就用起来吧。</p>
+<h4 id="模型导出和部署模块" class="heading-control"><a href="#模型导出和部署模块" class="headerlink" title="模型导出和部署模块"></a>模型导出和部署模块<a class="heading-anchor" href="#模型导出和部署模块" aria-hidden="true"></a></h4><h4 id="针对问题段落匹配的信息检索模块" class="heading-control"><a href="#针对问题段落匹配的信息检索模块" class="headerlink" title="针对问题段落匹配的信息检索模块"></a>针对问题段落匹配的信息检索模块<a class="heading-anchor" href="#针对问题段落匹配的信息检索模块" aria-hidden="true"></a></h4></body></html>]]></content>
   </entry>
   <entry>
     <title>最大似然估计和最大后验估计</title>
