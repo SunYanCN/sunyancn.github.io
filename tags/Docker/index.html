@@ -41,7 +41,7 @@
     lang   : 'zh-CN'
   };
 </script>
-<script src="/lib/fireworks.js"></script><link rel="stylesheet" href="//cdn.jsdelivr.net/gh/theme-next/theme-next-needmoreshare2@1/needsharebutton.min.css"><style>
+<link rel="stylesheet" href="//cdn.jsdelivr.net/gh/theme-next/theme-next-needmoreshare2@1/needsharebutton.min.css"><style>
 #needsharebutton-float {
   bottom: 88px;
   cursor: pointer;
@@ -54,7 +54,7 @@
   border-radius: 4px;
   padding: 0 10px 0 14px;
 }
-</style>
+</style><script src="/lib/fireworks.js"></script>
   <title>标签: docker | 故事尾音</title>
   
 
@@ -580,7 +580,7 @@ window.addEventListener('pjax:success', () => {
         renderActions: {
           findScript: [10, doc => {
             document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
-              const displaytch(/; *mode=display/);
+              const display = !!node.type.match(/; *mode=display/);
               const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
               const text = document.createTextNode('');
               node.parentNode.replaceChild(text, node);
@@ -665,6 +665,4 @@ NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
   
   
 </body>
-</html>
-/body>
 </html>
