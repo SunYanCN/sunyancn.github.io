@@ -6,7 +6,7 @@
   <link href="http://sunyancn.github.io/atom.xml" rel="self"/>
   
   <link href="http://sunyancn.github.io/"/>
-  <updated>2020-09-28T09:58:34.877Z</updated>
+  <updated>2020-09-28T10:06:18.362Z</updated>
   <id>http://sunyancn.github.io/</id>
   
   <author>
@@ -21,11 +21,11 @@
     <link href="http://sunyancn.github.io/post/8a7396e.html"/>
     <id>http://sunyancn.github.io/post/8a7396e.html</id>
     <published>2020-09-28T08:47:08.000Z</published>
-    <updated>2020-09-28T09:58:34.877Z</updated>
+    <updated>2020-09-28T10:06:18.362Z</updated>
     
     
     <summary type="html">&lt;ol&gt;
-&lt;li&gt;家里有两个孩子，一个是女孩，另一个也是女孩的概率是多少？&lt;br&gt;已经有两个孩子说明孩子已经出生了，可能情况为（男，男）（男，女）（女，男）（女，女），又已知其中一个是女的，故排除（男，男）的可能，剩下三种情况一个是符合的，故 1/3。（不是问你已经生了一个女孩，下次再生是男是女的概率）。</summary>
+&lt;li&gt;&lt;strong&gt;家里有两个孩子，一个是女孩，另一个也是女孩的概率是多少？&lt;/strong&gt;&lt;br&gt;已经有两个孩子说明孩子已经出生了，可能情况为（男，男）（男，女）（女，男）（女，女），又已知其中一个是女的，故排除（男，男）的可能，剩下三种情况一个是符合的，故 1/3。（不是问你已经生了一个女孩，下次再生是男是女的概率）。</summary>
     
     
     
