@@ -230,6 +230,75 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://sunyancn.github.io/post/f07c7ecf.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://i.loli.net/2020/08/25/NrIpckD9qPLY38C.jpg">
+      <meta itemprop="name" content="故事尾音">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="故事尾音">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/post/f07c7ecf.html" class="post-title-link" itemprop="url">2020 苹果发布会</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-10-16 13:05:49 / 修改时间：14:31:49" itemprop="dateCreated datePublished" datetime="2020-10-16T13:05:49+08:00">2020-10-16</time>
+            </span>
+
+          
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p><img src="https://i.loli.net/2020/10/16/NehVWL9DGaYbBny.png" alt="20201016010552186"><br>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/post/f07c7ecf.html#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+    <script type="text/javascript" src="/js/linkcard.js"></script>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://sunyancn.github.io/post/8a7396e.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -945,76 +1014,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://sunyancn.github.io/post/22891.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://i.loli.net/2020/08/25/NrIpckD9qPLY38C.jpg">
-      <meta itemprop="name" content="故事尾音">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="故事尾音">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/post/22891.html" class="post-title-link" itemprop="url">VSCode 配置远程开发</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2020-08-29 16:15:19 / 修改时间：17:59:22" itemprop="dateCreated datePublished" datetime="2020-08-29T16:15:19+08:00">2020-08-29</time>
-            </span>
-
-          
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="通过-PowerShell-安装-OpenSSH"><a href="#通过-PowerShell-安装-OpenSSH" class="headerlink" title="通过 PowerShell 安装 OpenSSH"></a>通过 PowerShell 安装 OpenSSH</h2><p><a target="_blank" rel="noopener" href="https://docs.microsoft.com/zh-cn/windows-server/administration/openssh/openssh_install_firstuse">来自微软官方文档</a>。 若要使用 PowerShell 安装 OpenSSH，请首先以管理员身份启动 PowerShell。 若要确保 OpenSSH 功能可以安装，请执行以下操作：</p>
-<figure class="highlight powershell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 输入这句话</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">Get-WindowsCapability</span> <span class="literal">-Online</span> | ? Name <span class="operator">-like</span> <span class="string">'OpenSSH*'</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># This should return the following output:</span></span><br><span class="line"></span><br><span class="line">Name  : OpenSSH.Client~~~~<span class="number">0.0</span>.<span class="number">1.0</span></span><br><span class="line">State : NotPresent</span><br><span class="line">Name  : OpenSSH.Server~~~~<span class="number">0.0</span>.<span class="number">1.0</span></span><br><span class="line">State : NotPresent</span><br></pre></td></tr></tbody></table></figure>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/post/22891.html#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-    <script type="text/javascript" src="/js/linkcard.js"></script>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1086,7 +1085,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">116</span>
+          <span class="site-state-item-count">117</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -1099,7 +1098,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">79</span>
+        <span class="site-state-item-count">80</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
