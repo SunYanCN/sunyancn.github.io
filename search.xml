@@ -66,12 +66,6 @@
 ]]></content>
   </entry>
   <entry>
-    <title>20200203123847</title>
-    <url>/post/30365.html</url>
-    <content><![CDATA[<html><head><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script></head><body><h2 id="0x01-Python好用的格式化" class="heading-control"><a href="#0x01-Python好用的格式化" class="headerlink" title="0x01 Python好用的格式化"></a>0x01 Python 好用的格式化<a class="heading-anchor" href="#0x01-Python好用的格式化" aria-hidden="true"></a></h2><p>来自文章<a href>《Write Better Python Code Today》</a>，从 Python 3.6 开始，f-string 是格式化字符串的一种很好的新方法。与其他格式化方式相比，它们不仅更易读，更简洁，不易出错，而且速度更快。<br>下面是一个简单例子 (注意大写的 F 也是有效的)：<br></p><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">name = <span class="string">"Eric"</span></span><br><span class="line">age = <span class="number">74</span></span><br><span class="line"><span class="string">f"Hello, <span class="subst">{name}</span>. You are <span class="subst">{age}</span>."</span></span><br><span class="line"><span class="comment">#or F"Hello, {name}. You are {age}."</span></span><br><span class="line"><span class="comment"># 输出</span></span><br><span class="line"><span class="string">'Hello, Eric. You are 74.'</span></span><br></pre></td></tr></tbody></table></figure><p></p>
-</body></html>]]></content>
-  </entry>
-  <entry>
     <title>20200224210643</title>
     <url>/post/6222.html</url>
     <content><![CDATA[<html><head><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script></head><body><h3 id="nodejs更新" class="heading-control"><a href="#nodejs更新" class="headerlink" title="nodejs更新"></a>nodejs 更新<a class="heading-anchor" href="#nodejs更新" aria-hidden="true"></a></h3><ol>
@@ -93,6 +87,21 @@
 <li><a href="https://mlwhiz.com/blog/2019/12/05/od/">https://mlwhiz.com/blog/2019/12/05/od/</a><br>-<a href="https://mlwhiz.com/blog/2019/11/08/interpret_models/">https://mlwhiz.com/blog/2019/11/08/interpret_models/</a></li>
 </ul>
 </body></html>]]></content>
+  </entry>
+  <entry>
+    <title>20200203123847</title>
+    <url>/post/30365.html</url>
+    <content><![CDATA[<html><head><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script></head><body><h2 id="0x01-Python好用的格式化" class="heading-control"><a href="#0x01-Python好用的格式化" class="headerlink" title="0x01 Python好用的格式化"></a>0x01 Python 好用的格式化<a class="heading-anchor" href="#0x01-Python好用的格式化" aria-hidden="true"></a></h2><p>来自文章<a href>《Write Better Python Code Today》</a>，从 Python 3.6 开始，f-string 是格式化字符串的一种很好的新方法。与其他格式化方式相比，它们不仅更易读，更简洁，不易出错，而且速度更快。<br>下面是一个简单例子 (注意大写的 F 也是有效的)：<br></p><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">name = <span class="string">"Eric"</span></span><br><span class="line">age = <span class="number">74</span></span><br><span class="line"><span class="string">f"Hello, <span class="subst">{name}</span>. You are <span class="subst">{age}</span>."</span></span><br><span class="line"><span class="comment">#or F"Hello, {name}. You are {age}."</span></span><br><span class="line"><span class="comment"># 输出</span></span><br><span class="line"><span class="string">'Hello, Eric. You are 74.'</span></span><br></pre></td></tr></tbody></table></figure><p></p>
+</body></html>]]></content>
+  </entry>
+  <entry>
+    <title>2020 苹果发布会</title>
+    <url>/post/f07c7ecf.html</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><p><img src="https://i.loli.net/2020/10/16/NehVWL9DGaYbBny.png" alt="20201016010552186"><br><a id="more"></a><br><img src="https://i.loli.net/2020/10/16/l1H6wBTS7Jctmo8.png" alt="20201016010623017"><br><img src="https://i.loli.net/2020/10/16/ANiRnkdbZoTK98B.png" alt="20201016010710900"></p>
+]]></content>
+      <tags>
+        <tag>苹果</tag>
+      </tags>
   </entry>
   <entry>
     <title>ACL2020 paper 相关论文</title>
@@ -942,6 +951,27 @@ Number=(Features+Output\_dim) x Output\_dim+Output\_dim
       </tags>
   </entry>
   <entry>
+    <title>Mathpix:Image to Latex</title>
+    <url>/post/31913.html</url>
+    <content><![CDATA[<html><head><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script></head><body><p><img src="https://i.loli.net/2018/10/31/5bd9905467947.png" alt><br>使用 Mathpix，你可以截取数学方程式的截图，它会立即为你提供 LaTeX 代码。然后，你可以在 LaTeX 编辑器中使用代码写公式啦。<br><a id="more"></a></p>
+<h2 id="Mac和Win安装方法" class="heading-control"><a href="#Mac和Win安装方法" class="headerlink" title="Mac和Win安装方法"></a>Mac 和 Win 安装方法<a class="heading-anchor" href="#Mac和Win安装方法" aria-hidden="true"></a></h2><p><a href="https://mathpix.com/">官网在这里</a>，可以直接下载安装。</p>
+<h2 id="Linux安装" class="heading-control"><a href="#Linux安装" class="headerlink" title="Linux安装"></a>Linux 安装<a class="heading-anchor" href="#Linux安装" aria-hidden="true"></a></h2><ol>
+<li>需要先安装 snapd<br><a href="https://docs.snapcraft.io/installing-snapd/6735">安装方法</a> , 我的是深度系统，所以是：<figure class="highlight shell"><table><tbody><tr><td class="code"><pre><span class="line">sudo apt install snapd</span><br></pre></td></tr></tbody></table></figure></li>
+<li>安装软件 <figure class="highlight shell"><table><tbody><tr><td class="code"><pre><span class="line">sudo snap install mathpix-snipping-tool</span><br></pre></td></tr></tbody></table></figure></li>
+<li><p>快捷方式<br>这个比较麻烦，我找了一下我的是在这个目录里面 <code>/snap/mathpix-snipping-tool/23/usr/bin</code>，有一个 <code>mathpix-snipping-tool</code>，右键发送到桌面即可。</p>
+</li>
+<li><p>截屏快捷键<br><code>Ctrl+Alt+M</code></p>
+</li>
+</ol>
+</body></html>]]></content>
+      <categories>
+        <category>工具</category>
+      </categories>
+      <tags>
+        <tag>Latex</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>NLP 常用模型和数据集高速下载</title>
     <url>/post/28052.html</url>
     <content><![CDATA[<html><head><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script></head><body><h2 id="楔子" class="heading-control"><a href="#楔子" class="headerlink" title="楔子"></a>楔子<a class="heading-anchor" href="#楔子" aria-hidden="true"></a></h2><p>由于大部分 NLP 的模型和数据集都在国外，导致国内下载速度实在感人😭。好在有很多 NLP 的框架内置了很多数据集，都是国内链接，亲测下载速度很快，本文汇总一下一些我见到的国内链接，文末感谢这些平台提供的存储和下载服务。<br><a id="more"></a></p>
@@ -1147,27 +1177,6 @@ Number=(Features+Output\_dim) x Output\_dim+Output\_dim
       </categories>
       <tags>
         <tag>数据集</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Mathpix:Image to Latex</title>
-    <url>/post/31913.html</url>
-    <content><![CDATA[<html><head><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script></head><body><p><img src="https://i.loli.net/2018/10/31/5bd9905467947.png" alt><br>使用 Mathpix，你可以截取数学方程式的截图，它会立即为你提供 LaTeX 代码。然后，你可以在 LaTeX 编辑器中使用代码写公式啦。<br><a id="more"></a></p>
-<h2 id="Mac和Win安装方法" class="heading-control"><a href="#Mac和Win安装方法" class="headerlink" title="Mac和Win安装方法"></a>Mac 和 Win 安装方法<a class="heading-anchor" href="#Mac和Win安装方法" aria-hidden="true"></a></h2><p><a href="https://mathpix.com/">官网在这里</a>，可以直接下载安装。</p>
-<h2 id="Linux安装" class="heading-control"><a href="#Linux安装" class="headerlink" title="Linux安装"></a>Linux 安装<a class="heading-anchor" href="#Linux安装" aria-hidden="true"></a></h2><ol>
-<li>需要先安装 snapd<br><a href="https://docs.snapcraft.io/installing-snapd/6735">安装方法</a> , 我的是深度系统，所以是：<figure class="highlight shell"><table><tbody><tr><td class="code"><pre><span class="line">sudo apt install snapd</span><br></pre></td></tr></tbody></table></figure></li>
-<li>安装软件 <figure class="highlight shell"><table><tbody><tr><td class="code"><pre><span class="line">sudo snap install mathpix-snipping-tool</span><br></pre></td></tr></tbody></table></figure></li>
-<li><p>快捷方式<br>这个比较麻烦，我找了一下我的是在这个目录里面 <code>/snap/mathpix-snipping-tool/23/usr/bin</code>，有一个 <code>mathpix-snipping-tool</code>，右键发送到桌面即可。</p>
-</li>
-<li><p>截屏快捷键<br><code>Ctrl+Alt+M</code></p>
-</li>
-</ol>
-</body></html>]]></content>
-      <categories>
-        <category>工具</category>
-      </categories>
-      <tags>
-        <tag>Latex</tag>
       </tags>
   </entry>
   <entry>
@@ -2216,6 +2225,20 @@ Reference：<a href="https://blog.csdn.net/why19940926/article/details/78580067"
       </tags>
   </entry>
   <entry>
+    <title>leetcode top 100 1—two sum</title>
+    <url>/post/47969.html</url>
+    <content><![CDATA[<html><head><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script></head><body><p>这道题本身如果通过暴力遍历的话也是很容易解决的，时间复杂度在 O (n2)，由于哈希查找的时间复杂度为 O (1)，所以可以利用哈希容器 map 降低时间复杂度 (这里使用 python 的字典)。</p>
+<h3 id="方法1：两重循环" class="heading-control"><a href="#方法1：两重循环" class="headerlink" title="方法1：两重循环"></a>方法 1：两重循环<a class="heading-anchor" href="#方法1：两重循环" aria-hidden="true"></a></h3><p>会报超时错误<br></p><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">two_sum</span>(<span class="params">nums, target</span>):</span></span><br><span class="line">    <span class="keyword">for</span> i, n <span class="keyword">in</span> enumerate(nums):</span><br><span class="line">        <span class="keyword">for</span> j, m <span class="keyword">in</span> enumerate(nums):</span><br><span class="line">            <span class="keyword">if</span> target - n == m <span class="keyword">and</span> i!=j:</span><br><span class="line">                <span class="keyword">return</span> [i,j]</span><br></pre></td></tr></tbody></table></figure><br>时间复杂度：O(n2)<br>空间复杂度：O(n)<p></p>
+<h3 id="方法2：两遍Hash" class="heading-control"><a href="#方法2：两遍Hash" class="headerlink" title="方法2：两遍Hash"></a>方法 2：两遍 Hash<a class="heading-anchor" href="#方法2：两遍Hash" aria-hidden="true"></a></h3><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">two_sum</span>(<span class="params">nums, target</span>):</span></span><br><span class="line">    dct = dict(zip(nums, range(len(nums))))</span><br><span class="line">    <span class="keyword">for</span> i, n <span class="keyword">in</span> enumerate(nums) <span class="keyword">and</span> i!=dct[target - n]:</span><br><span class="line">        <span class="keyword">if</span> target - n <span class="keyword">in</span> dct:</span><br><span class="line">            <span class="keyword">return</span> [dct[target - n], i]</span><br></pre></td></tr></tbody></table></figure>
+<p>时间复杂度：O (n2)<br>空间复杂度：O (n)</p>
+<h3 id="方法2：一遍Hash-边循环边查字典" class="heading-control"><a href="#方法2：一遍Hash-边循环边查字典" class="headerlink" title="方法2：一遍Hash(边循环边查字典)"></a>方法 2：一遍 Hash (边循环边查字典)<a class="heading-anchor" href="#方法2：一遍Hash-边循环边查字典" aria-hidden="true"></a></h3><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">two_sum</span>(<span class="params">nums, target</span>):</span></span><br><span class="line">    dct = {}</span><br><span class="line">    <span class="keyword">for</span> i, n <span class="keyword">in</span> enumerate(nums):</span><br><span class="line">        <span class="keyword">if</span> target - n <span class="keyword">in</span> dct:</span><br><span class="line">            <span class="keyword">return</span> [dct[target - n], i]</span><br><span class="line">        dct[n] = i</span><br></pre></td></tr></tbody></table></figure>
+<p>时间复杂度：O (n2)<br>空间复杂度：O (n)</p>
+</body></html>]]></content>
+      <tags>
+        <tag>leetcode</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>一些 NLP 的会议</title>
     <url>/post/29015.html</url>
     <content><![CDATA[<html><head><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script></head><body><p><img src="https://s2.ax1x.com/2019/07/23/ekiH9e.png" alt="ekiH9e.png"><br><a id="more"></a></p>
@@ -2281,20 +2304,6 @@ Reference：<a href="https://blog.csdn.net/why19940926/article/details/78580067"
       </tags>
   </entry>
   <entry>
-    <title>leetcode top 100 1—two sum</title>
-    <url>/post/47969.html</url>
-    <content><![CDATA[<html><head><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script></head><body><p>这道题本身如果通过暴力遍历的话也是很容易解决的，时间复杂度在 O (n2)，由于哈希查找的时间复杂度为 O (1)，所以可以利用哈希容器 map 降低时间复杂度 (这里使用 python 的字典)。</p>
-<h3 id="方法1：两重循环" class="heading-control"><a href="#方法1：两重循环" class="headerlink" title="方法1：两重循环"></a>方法 1：两重循环<a class="heading-anchor" href="#方法1：两重循环" aria-hidden="true"></a></h3><p>会报超时错误<br></p><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">two_sum</span>(<span class="params">nums, target</span>):</span></span><br><span class="line">    <span class="keyword">for</span> i, n <span class="keyword">in</span> enumerate(nums):</span><br><span class="line">        <span class="keyword">for</span> j, m <span class="keyword">in</span> enumerate(nums):</span><br><span class="line">            <span class="keyword">if</span> target - n == m <span class="keyword">and</span> i!=j:</span><br><span class="line">                <span class="keyword">return</span> [i,j]</span><br></pre></td></tr></tbody></table></figure><br>时间复杂度：O(n2)<br>空间复杂度：O(n)<p></p>
-<h3 id="方法2：两遍Hash" class="heading-control"><a href="#方法2：两遍Hash" class="headerlink" title="方法2：两遍Hash"></a>方法 2：两遍 Hash<a class="heading-anchor" href="#方法2：两遍Hash" aria-hidden="true"></a></h3><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">two_sum</span>(<span class="params">nums, target</span>):</span></span><br><span class="line">    dct = dict(zip(nums, range(len(nums))))</span><br><span class="line">    <span class="keyword">for</span> i, n <span class="keyword">in</span> enumerate(nums) <span class="keyword">and</span> i!=dct[target - n]:</span><br><span class="line">        <span class="keyword">if</span> target - n <span class="keyword">in</span> dct:</span><br><span class="line">            <span class="keyword">return</span> [dct[target - n], i]</span><br></pre></td></tr></tbody></table></figure>
-<p>时间复杂度：O (n2)<br>空间复杂度：O (n)</p>
-<h3 id="方法2：一遍Hash-边循环边查字典" class="heading-control"><a href="#方法2：一遍Hash-边循环边查字典" class="headerlink" title="方法2：一遍Hash(边循环边查字典)"></a>方法 2：一遍 Hash (边循环边查字典)<a class="heading-anchor" href="#方法2：一遍Hash-边循环边查字典" aria-hidden="true"></a></h3><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">two_sum</span>(<span class="params">nums, target</span>):</span></span><br><span class="line">    dct = {}</span><br><span class="line">    <span class="keyword">for</span> i, n <span class="keyword">in</span> enumerate(nums):</span><br><span class="line">        <span class="keyword">if</span> target - n <span class="keyword">in</span> dct:</span><br><span class="line">            <span class="keyword">return</span> [dct[target - n], i]</span><br><span class="line">        dct[n] = i</span><br></pre></td></tr></tbody></table></figure>
-<p>时间复杂度：O (n2)<br>空间复杂度：O (n)</p>
-</body></html>]]></content>
-      <tags>
-        <tag>leetcode</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>一些面试的经验帖子</title>
     <url>/post/38161.html</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><p><img src="https://i.loli.net/2020/09/01/c7XbUfRHptE3ZyG.png" alt="bg.png"><br><a id="more"></a></p>
@@ -2327,6 +2336,16 @@ Reference：<a href="https://blog.csdn.net/why19940926/article/details/78580067"
       </tags>
   </entry>
   <entry>
+    <title>中秋</title>
+    <url>/post/13085.html</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><p>2019 年的夏天很快的过去了。今天是中秋，在古代诗歌中中秋都是思念的代名词，虽然逢人便道中秋快乐，但是自己却快乐不起来呢。<br>从 6 月底到现在陆陆续续找了快 3 个月的工作，属实有点累了。每逢一个休息日都想要静静的躺着。这段时间焦虑，等待，兴奋以及各种失败，其实蛮痛苦的。希望自己能挺过这段时间，有个好的结尾吧。<br>晚上没吃月饼，心里好怀念小时候的五仁月饼，但是也不想故意去买个吃了，就让这段时间安静的溜走吧，仿佛从来没有来过一样。</p>
+<p><img src="https://i.loli.net/2019/09/13/L6RsEIFqrgcVknB.png" alt=""></p>
+]]></content>
+      <tags>
+        <tag>中秋</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>从香农说起</title>
     <url>/post/16530.html</url>
     <content><![CDATA[<html><head><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script></head><body><div class="tip">
@@ -2353,16 +2372,6 @@ Reference：<a href="https://blog.csdn.net/why19940926/article/details/78580067"
 \frac{\partial L}{\partial y_{j}}=-\sum_{j} \frac{\hat{y}_{j}}{y_{j}}</script></body></html>]]></content>
       <tags>
         <tag>AI历史</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>中秋</title>
-    <url>/post/13085.html</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><p>2019 年的夏天很快的过去了。今天是中秋，在古代诗歌中中秋都是思念的代名词，虽然逢人便道中秋快乐，但是自己却快乐不起来呢。<br>从 6 月底到现在陆陆续续找了快 3 个月的工作，属实有点累了。每逢一个休息日都想要静静的躺着。这段时间焦虑，等待，兴奋以及各种失败，其实蛮痛苦的。希望自己能挺过这段时间，有个好的结尾吧。<br>晚上没吃月饼，心里好怀念小时候的五仁月饼，但是也不想故意去买个吃了，就让这段时间安静的溜走吧，仿佛从来没有来过一样。</p>
-<p><img src="https://i.loli.net/2019/09/13/L6RsEIFqrgcVknB.png" alt=""></p>
-]]></content>
-      <tags>
-        <tag>中秋</tag>
       </tags>
   </entry>
   <entry>
@@ -2530,6 +2539,27 @@ N 个人，互相交换礼物，每个人不能拿到自己的礼物。设计一
       </categories>
       <tags>
         <tag>CNN</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>向上捅破天，向下扎到根</title>
+    <url>/post/fdb68096.html</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><blockquote>
+<p>10 月 27 日，华为 “心声社区” 刊发创始人任正非 9 月 14-18 日访问北京大学、清华大学、中国科学院等学校与部分科学家、学生代表座谈时的发言，题为《向上捅破天，向下扎到根》。</p>
+</blockquote>
+<p>习主席在与科学家座谈会讲了，基础教育、基础研究、基础理论、基础工业，也讲了科学家的好奇心驱动。国家不仅要重视科学理论、工程技术的研究，也要重视一些不以应用为目的的纯研究。不然我们怎么能向上捅破天呢？我们这么大的经济总量，允许一部分人是 “梵高” 应该是可以的。科学史上，有一种生存了八千万年的蛭虫，多少科学家研究了数十年，有些科学家因找不到雄的蛭虫而发大火，实际上他已经走到诺贝尔奖的边上了，最后由比利时科学家发现它是单性繁殖。两性繁殖，两条基因链的结合会产生突变，会有优秀的一代产生，当然，不健康的就流产了，自然淘汰。那么单亲繁殖的基因链若有病变、有问题，遗传下去不就灭绝了吗？她发现蛭虫的基因链会断裂，又会重新整合，这不就是优选吗？所以它们经历八千万年，经历多少灾难，还存活下来了。</p>
+<a id="more"></a>
+<p>我国的经济总量这么大，这么大的一棵树，根不强是不行的，不扎到根，树是不稳的，万一刮台风呢？我们拧开水龙头就出水的短、平、快的经济发展模式是不可持续的。我国的基础工业还是不强的，小小一滴胶，就制约一个国家的故事，我们已经看到了，这是分子工程，是高科技中的高科技。而这几千种胶、研磨剂、特种气体……，都是高科技中的高科技，我国现在还基本达不到，很多种技术一年的需求量只有几千万美元、几百万美元甚至更少，试看泡沫经济下有几个公司肯干这种事。缺一种就会卡了一个国家的脖子。</p>
+<p>过河需要船和桥，我们有了很好的科学目标，过河的船夫就是人才，人才来自教育，因此，国家的发展根本在教育。我们振兴中华，不是靠口号，而是要靠 “船” 和 “桥”。</p>
+<p>我国每年有七、八百万大学生毕业，加上中专生大约有一千万，聪明人很多，如果允许差别化的教育，就是姹紫嫣红。一二一，齐步走，同质化就缺少活力，就不易产生天才。世界有一个乔布斯就改变了移动互联网。差异化就容易产生尖子，政策要支持少数人因材施教。同时，也要重视农村教育，现在有些种田能手、养猪状元，如果他们过去有机会受到系统教育，也许就能成为精英、天才。早期中共的领袖大多来自农村，毛主席、粟裕……。我们今天的农村孩子中，怎么知道不会有明天的爱因斯坦呢？深圳很重视中小学教育，全国达到深圳的水平可能有一些困难。但如果国家每年给边远地区一些经费，让穷孩子每天能吃上二两肉，也许比修些大房子强，房子总会旧的，孩子总会成为博士的，而且他们会更忠于祖国。那么二、三十年后，我们的创新能力就大幅度增强，与美国的差距会适当缩小。没有创新是支撑不了我们这么大的经济总量持续发展的。</p>
+<p>在科学、技术、工程领域，不同人才选择不同的方向，充分发挥每个人的才智。多学科交叉突破会更有可能，横向融合创新才能形成颠覆性的效果；科学、技术、工程垂直打通才会形成能力，真正落实创新驱动发展的理念。因此合作交流越来越重要，当然，大学还是应偏科学理论，偏重发现；企业偏重技术、工程，偏重发明，结合起来，力量才会更强大。</p>
+<p>美国是世界上最强大的科技国家，特别是在吸引全球优秀人才上，有特别独到的优势。我们今天的科研状况很像二战前的美国，二战前 50 年时间，尽管美国产业已经领先全球，但在科研上充满功利主义，不重视基础研究、基础教育，大量依赖欧洲的灯塔照耀，利用欧洲的基础研究成果，发展短、平、快的产业。二战即将结束时，罗斯福总统的科技顾问范内瓦・布什在 “科学：无尽的前沿” 中提出要重视不以应用为目的的基础研究，面向长远，逐步摆脱了对欧洲基础科学研究的依赖，从此，美国基础科学研究远远领跑全球，形成若干重大突破。美国经过几十年的实践，上世纪九十年代，美国普林斯顿大学的唐纳德・斯托克斯 1997 年在 “基础科学与技术创新：巴斯德象限” 中，强调美国不仅需要纯技术研究，即波尔象限，也要纯应用开发的爱迪生象限，更强调应用驱动的基础科学研究。理论上遥遥领先，又与应用结合，这样既拓展了科学认知，又能创造价值。例如，北大张平文副校长说，据说波音 777 飞机的风洞吹风是使用全新的空气动力学软件模拟仿真的，使过去需要 80 次风洞试验减少到现在的 7 次左右，那么说明美国已把空气动力学的漩涡都变成了经典力学方程。而我们不吹风还不敢造飞机。俄罗斯将核发动机小型化，形成了战略威慑；美国把核弹小型化、战术化、无污染化。和平需要实力相当才可获取，祥林嫂式的和平是不存在的。美国的科技发展史就是一面镜子，我们以此来反思我国的科技发展战略的系统性、科学性。学人之长，长自己之力。</p>
+<p>现在美国主张中美科技脱钩，美国是因为开放才走到今天的强大，封闭会重返落后的。清华张钹教授讲，美国越讲脱钩，我们越要高举科学无国界，坚持开放和国际化。科学是对客观规律的认识，真理只有一个，不存在东方科学、西方科学。论文都会公开发表，可以查询的，我们要站在前人的肩膀上，摸到上帝的脚。我们要坚持向一切先进学习，封闭是不会成功的。华为今天遇到的困难，不是依托全球化平台，在战略方向上压上重兵产生突破，而有什么错误。而是我们设计的先进芯片，国内的基础工业还造不出来，我们不可能又做产品，又去制造芯片。就如我们缺粮，不能自己种稻子一样。技术创新它是可以依据理论，独立设计、发明出来的。就如汽车，都是四个轮子，车都不一样。理论是可以在网上看到的，是大江、大洋、大山阻隔不了的。</p>
+<p>科学发现、技术创新中最主要的是宽容。领导经常会问，最新进展怎么样了，你们研究成果有什么价值，能创造多少 GDP。科学家要么说不出话，要么只好说违心的话。当科学家过多关心应用、关心价值，他的锚就锚在地上了，怎么飞得高？科学的道路是漫长的孤寂的道路，多少代人孜孜不倦的努力，才发现一点点真理。急功近利只有戏剧作家，才会写出科学家既会弹钢琴又会魔术般地出成果。我们要耐得住科学家的寂寞与无奈。就如我司 5G Massive MIMO，起初没有人认同，搞了八年终于成功上市，成为核心竞争力。又如，2G 与 3G 之间的算法打通，没有公司莫斯科研究所的小伙子安德烈默默无闻的几年，没有宽容，就没有华为的无线成功。我们如何追溯对这些过程中默默无闻贡献的人，并给予鼓励，包括中途已离职的有功员工，是我们干部部门应该改进的地方。过去几年由于评价不清楚、不准确，给人家打 C 了，可不可以追溯把他们重新评定为 A、B+，他们本来就是 A 的。我们只有尊重历史，才会英雄辈出。只有承认科学的历史观，才会有科学的发展观。我们今天受到百年未闻的打压及围剿，20 万员工的忘我奋斗，正在挽救公司的存亡，如果我们还有可能胜利的一天，我们不要忘了千万奋斗的英雄，各级干部部门要作好记录工作，追溯英雄，是为了产生更多的英雄。英雄是平凡人，不要忘记他们。忘记就意味着背叛。</p>
+<p>我们处在一个最好的时代，我们的年青人又如此活跃，我们的国家一定充满希望。同学们快快起来，担负起天下的兴亡。你们今天桃李芬芳，明天是社会的栋梁。你们是早上八、九点钟的太阳，希望寄托在你们身上。</p>
+]]></content>
+      <tags>
+        <tag>社会</tag>
       </tags>
   </entry>
   <entry>
@@ -3605,6 +3635,34 @@ c_{N B}=\underset{c \in C}{\operatorname{largmax}} \log P(c)+\sum_{i \in \text {
       </tags>
   </entry>
   <entry>
+    <title>给印度年轻人的一封公开信</title>
+    <url>/post/ffd64b18.html</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><blockquote>
+<p>印度年轻人的失业率极高，约 30％。与此同时，这些年轻人在 Facebook 和 Instagram 上花费了大量时间，印度人在 Facebook 和 Instagram 花费的时间在所有国家 / 地区排名第一。印度互联网广告业的收入却极低，广告主根本找不到对这些人有价值的广告，他们没有购买力。</p>
+<p>最近，印度最著名的作家之一的切坦・巴加特（Chetan Bhagat）在《印度时报》上发表了这封公开信，呼吁印度年轻人不要沉溺于手机。</p>
+</blockquote>
+<p>亲爱的年轻朋友们，</p>
+<p>这封公开信尽管在大报纸上发表，但是我不知道你是否会看到它。你们中的许多人都忙于使用手机，观看视频，玩视频游戏，与朋友聊天，在社交媒体上发表评论，或者只是滚动浏览名人新闻。你们顾不上阅读文章。</p>
+<p>但是，如果你碰巧遇到了这篇文章，请完整读完它。这很重要，这关系到你的生活。你正在手机上浪费生命。</p>
+<a id="more"></a>
+<p>你们是印度历史上第一代可以使用智能手机和廉价数据流量的人。你们每天在手机上花费大量时间，对于年轻人来说，每天平均达到 5 到 7 个小时。</p>
+<p>五小时是你每天清醒时间的三分之一。就像香烟或其他毒品一样，这种手机成瘾正在吞噬你生命的一部分，损害你的职业前景，并弄乱你的大脑。如果这样下去，整个一代印度年轻人将成为被 4G 毁掉的一代人，这一代人全都沉迷于 4G，他们的生活毫无目标，对国家一无所知。</p>
+<p>首先，手机成瘾绝对浪费时间，这些时间本可以用于生活中更具生产力的事物。想象一下，每天从手机上节省三个小时，花在任何其他事情上，比如健身，学习技能，找工作，开办企业。如果你始终如一地这样做，它将带你到何处。</p>
+<p>第二，手机成瘾会使大脑变钝。当你观看垃圾时，大脑会放松并且运转较少，你很快将变得缺乏逻辑思考、推理或争论的能力。你将不再看到不同的观点，不再能处理不同的问题、评估利弊或做出正确的决定。</p>
+<p>由于大脑麻木，你会变得被情绪主导，出现两极分化的情绪，对名人或政客强烈狂热或强烈仇恨。一代人都变得情绪化，失去理性。</p>
+<p>最后，连续三个小时以上玩手机，消磨你的动力和精力。生活中的成功来自于设定目标，保持动力并为实现目标而努力。但是，看着手机屏幕会让你失去动力，每天划着屏幕消磨时间。</p>
+<p>年轻人将决定印度的未来。想象一下，让印度独立的那一代年轻人，他们关心国家问题，为解放印度而战。今天，年轻人真的在乎影响国家命运的事情吗？还是更在乎轰动的新闻，忙于对娱乐性事件或疯狂性事情做出情绪性反应？</p>
+<p>当务之急是使印度的经济再次增长。中国比我们富裕五倍。请在互联网上搜一下中国城市的照片。为了让印度也这样发展，我们必须做很多事情。我们应该集中精力发展经济，还是继续对那些宗教广告表达愤怒？你应该专注于自己的职业，还是应该将时间浪费在永无止境的印度教－穆斯林的历史问题上？你想过上幸福的生活，还是希望搞清楚宝莱坞明星的各种混乱新闻？</p>
+<p>你，今天的年轻人，将决定这些问题的答案。没有其他人会为你做这件事，你必须对自己和这个国家的命运负责。印度的贫穷和强烈的民族情绪并不值得自豪，你们的目标应该是让印度和你自己变得富有而谦虚。放下你的手机，将你的思想投入到那些富有成效和创造力的事情中，为自己的生活和国家做出改变。</p>
+<p>你们应该使用 4G 成为印度领先的一代人，而不要最终成为被 4G 毁掉的一代人。</p>
+<p>爱你们的，</p>
+<p>切坦・巴加特</p>
+]]></content>
+      <tags>
+        <tag>社会</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>聊天机器人总结</title>
     <url>/post/25360.html</url>
     <content><![CDATA[<html><head><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script></head><body><h2 id="技术分类" class="heading-control"><a href="#技术分类" class="headerlink" title="技术分类"></a>技术分类<a class="heading-anchor" href="#技术分类" aria-hidden="true"></a></h2><p>首先我们把聊天机器人分为两种：主动式和被动式。</p>
@@ -4417,64 +4475,6 @@ P=N*C*3*3
       </categories>
       <tags>
         <tag>新冠疫情</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>2020 苹果发布会</title>
-    <url>/post/f07c7ecf.html</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><p><img src="https://i.loli.net/2020/10/16/NehVWL9DGaYbBny.png" alt="20201016010552186"><br><a id="more"></a><br><img src="https://i.loli.net/2020/10/16/l1H6wBTS7Jctmo8.png" alt="20201016010623017"><br><img src="https://i.loli.net/2020/10/16/ANiRnkdbZoTK98B.png" alt="20201016010710900"></p>
-]]></content>
-      <tags>
-        <tag>苹果</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>向上捅破天，向下扎到根</title>
-    <url>/post/fdb68096.html</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><blockquote>
-<p>10 月 27 日，华为 “心声社区” 刊发创始人任正非 9 月 14-18 日访问北京大学、清华大学、中国科学院等学校与部分科学家、学生代表座谈时的发言，题为《向上捅破天，向下扎到根》。</p>
-</blockquote>
-<p>习主席在与科学家座谈会讲了，基础教育、基础研究、基础理论、基础工业，也讲了科学家的好奇心驱动。国家不仅要重视科学理论、工程技术的研究，也要重视一些不以应用为目的的纯研究。不然我们怎么能向上捅破天呢？我们这么大的经济总量，允许一部分人是 “梵高” 应该是可以的。科学史上，有一种生存了八千万年的蛭虫，多少科学家研究了数十年，有些科学家因找不到雄的蛭虫而发大火，实际上他已经走到诺贝尔奖的边上了，最后由比利时科学家发现它是单性繁殖。两性繁殖，两条基因链的结合会产生突变，会有优秀的一代产生，当然，不健康的就流产了，自然淘汰。那么单亲繁殖的基因链若有病变、有问题，遗传下去不就灭绝了吗？她发现蛭虫的基因链会断裂，又会重新整合，这不就是优选吗？所以它们经历八千万年，经历多少灾难，还存活下来了。</p>
-<a id="more"></a>
-<p>我国的经济总量这么大，这么大的一棵树，根不强是不行的，不扎到根，树是不稳的，万一刮台风呢？我们拧开水龙头就出水的短、平、快的经济发展模式是不可持续的。我国的基础工业还是不强的，小小一滴胶，就制约一个国家的故事，我们已经看到了，这是分子工程，是高科技中的高科技。而这几千种胶、研磨剂、特种气体……，都是高科技中的高科技，我国现在还基本达不到，很多种技术一年的需求量只有几千万美元、几百万美元甚至更少，试看泡沫经济下有几个公司肯干这种事。缺一种就会卡了一个国家的脖子。</p>
-<p>过河需要船和桥，我们有了很好的科学目标，过河的船夫就是人才，人才来自教育，因此，国家的发展根本在教育。我们振兴中华，不是靠口号，而是要靠 “船” 和 “桥”。</p>
-<p>我国每年有七、八百万大学生毕业，加上中专生大约有一千万，聪明人很多，如果允许差别化的教育，就是姹紫嫣红。一二一，齐步走，同质化就缺少活力，就不易产生天才。世界有一个乔布斯就改变了移动互联网。差异化就容易产生尖子，政策要支持少数人因材施教。同时，也要重视农村教育，现在有些种田能手、养猪状元，如果他们过去有机会受到系统教育，也许就能成为精英、天才。早期中共的领袖大多来自农村，毛主席、粟裕……。我们今天的农村孩子中，怎么知道不会有明天的爱因斯坦呢？深圳很重视中小学教育，全国达到深圳的水平可能有一些困难。但如果国家每年给边远地区一些经费，让穷孩子每天能吃上二两肉，也许比修些大房子强，房子总会旧的，孩子总会成为博士的，而且他们会更忠于祖国。那么二、三十年后，我们的创新能力就大幅度增强，与美国的差距会适当缩小。没有创新是支撑不了我们这么大的经济总量持续发展的。</p>
-<p>在科学、技术、工程领域，不同人才选择不同的方向，充分发挥每个人的才智。多学科交叉突破会更有可能，横向融合创新才能形成颠覆性的效果；科学、技术、工程垂直打通才会形成能力，真正落实创新驱动发展的理念。因此合作交流越来越重要，当然，大学还是应偏科学理论，偏重发现；企业偏重技术、工程，偏重发明，结合起来，力量才会更强大。</p>
-<p>美国是世界上最强大的科技国家，特别是在吸引全球优秀人才上，有特别独到的优势。我们今天的科研状况很像二战前的美国，二战前 50 年时间，尽管美国产业已经领先全球，但在科研上充满功利主义，不重视基础研究、基础教育，大量依赖欧洲的灯塔照耀，利用欧洲的基础研究成果，发展短、平、快的产业。二战即将结束时，罗斯福总统的科技顾问范内瓦・布什在 “科学：无尽的前沿” 中提出要重视不以应用为目的的基础研究，面向长远，逐步摆脱了对欧洲基础科学研究的依赖，从此，美国基础科学研究远远领跑全球，形成若干重大突破。美国经过几十年的实践，上世纪九十年代，美国普林斯顿大学的唐纳德・斯托克斯 1997 年在 “基础科学与技术创新：巴斯德象限” 中，强调美国不仅需要纯技术研究，即波尔象限，也要纯应用开发的爱迪生象限，更强调应用驱动的基础科学研究。理论上遥遥领先，又与应用结合，这样既拓展了科学认知，又能创造价值。例如，北大张平文副校长说，据说波音 777 飞机的风洞吹风是使用全新的空气动力学软件模拟仿真的，使过去需要 80 次风洞试验减少到现在的 7 次左右，那么说明美国已把空气动力学的漩涡都变成了经典力学方程。而我们不吹风还不敢造飞机。俄罗斯将核发动机小型化，形成了战略威慑；美国把核弹小型化、战术化、无污染化。和平需要实力相当才可获取，祥林嫂式的和平是不存在的。美国的科技发展史就是一面镜子，我们以此来反思我国的科技发展战略的系统性、科学性。学人之长，长自己之力。</p>
-<p>现在美国主张中美科技脱钩，美国是因为开放才走到今天的强大，封闭会重返落后的。清华张钹教授讲，美国越讲脱钩，我们越要高举科学无国界，坚持开放和国际化。科学是对客观规律的认识，真理只有一个，不存在东方科学、西方科学。论文都会公开发表，可以查询的，我们要站在前人的肩膀上，摸到上帝的脚。我们要坚持向一切先进学习，封闭是不会成功的。华为今天遇到的困难，不是依托全球化平台，在战略方向上压上重兵产生突破，而有什么错误。而是我们设计的先进芯片，国内的基础工业还造不出来，我们不可能又做产品，又去制造芯片。就如我们缺粮，不能自己种稻子一样。技术创新它是可以依据理论，独立设计、发明出来的。就如汽车，都是四个轮子，车都不一样。理论是可以在网上看到的，是大江、大洋、大山阻隔不了的。</p>
-<p>科学发现、技术创新中最主要的是宽容。领导经常会问，最新进展怎么样了，你们研究成果有什么价值，能创造多少 GDP。科学家要么说不出话，要么只好说违心的话。当科学家过多关心应用、关心价值，他的锚就锚在地上了，怎么飞得高？科学的道路是漫长的孤寂的道路，多少代人孜孜不倦的努力，才发现一点点真理。急功近利只有戏剧作家，才会写出科学家既会弹钢琴又会魔术般地出成果。我们要耐得住科学家的寂寞与无奈。就如我司 5G Massive MIMO，起初没有人认同，搞了八年终于成功上市，成为核心竞争力。又如，2G 与 3G 之间的算法打通，没有公司莫斯科研究所的小伙子安德烈默默无闻的几年，没有宽容，就没有华为的无线成功。我们如何追溯对这些过程中默默无闻贡献的人，并给予鼓励，包括中途已离职的有功员工，是我们干部部门应该改进的地方。过去几年由于评价不清楚、不准确，给人家打 C 了，可不可以追溯把他们重新评定为 A、B+，他们本来就是 A 的。我们只有尊重历史，才会英雄辈出。只有承认科学的历史观，才会有科学的发展观。我们今天受到百年未闻的打压及围剿，20 万员工的忘我奋斗，正在挽救公司的存亡，如果我们还有可能胜利的一天，我们不要忘了千万奋斗的英雄，各级干部部门要作好记录工作，追溯英雄，是为了产生更多的英雄。英雄是平凡人，不要忘记他们。忘记就意味着背叛。</p>
-<p>我们处在一个最好的时代，我们的年青人又如此活跃，我们的国家一定充满希望。同学们快快起来，担负起天下的兴亡。你们今天桃李芬芳，明天是社会的栋梁。你们是早上八、九点钟的太阳，希望寄托在你们身上。</p>
-]]></content>
-      <tags>
-        <tag>社会</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>给印度年轻人的一封公开信</title>
-    <url>/post/ffd64b18.html</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><blockquote>
-<p>印度年轻人的失业率极高，约 30％。与此同时，这些年轻人在 Facebook 和 Instagram 上花费了大量时间，印度人在 Facebook 和 Instagram 花费的时间在所有国家 / 地区排名第一。印度互联网广告业的收入却极低，广告主根本找不到对这些人有价值的广告，他们没有购买力。</p>
-<p>最近，印度最著名的作家之一的切坦・巴加特（Chetan Bhagat）在《印度时报》上发表了这封公开信，呼吁印度年轻人不要沉溺于手机。</p>
-</blockquote>
-<p>亲爱的年轻朋友们，</p>
-<p>这封公开信尽管在大报纸上发表，但是我不知道你是否会看到它。你们中的许多人都忙于使用手机，观看视频，玩视频游戏，与朋友聊天，在社交媒体上发表评论，或者只是滚动浏览名人新闻。你们顾不上阅读文章。</p>
-<p>但是，如果你碰巧遇到了这篇文章，请完整读完它。这很重要，这关系到你的生活。你正在手机上浪费生命。</p>
-<a id="more"></a>
-<p>你们是印度历史上第一代可以使用智能手机和廉价数据流量的人。你们每天在手机上花费大量时间，对于年轻人来说，每天平均达到 5 到 7 个小时。</p>
-<p>五小时是你每天清醒时间的三分之一。就像香烟或其他毒品一样，这种手机成瘾正在吞噬你生命的一部分，损害你的职业前景，并弄乱你的大脑。如果这样下去，整个一代印度年轻人将成为被 4G 毁掉的一代人，这一代人全都沉迷于 4G，他们的生活毫无目标，对国家一无所知。</p>
-<p>首先，手机成瘾绝对浪费时间，这些时间本可以用于生活中更具生产力的事物。想象一下，每天从手机上节省三个小时，花在任何其他事情上，比如健身，学习技能，找工作，开办企业。如果你始终如一地这样做，它将带你到何处。</p>
-<p>第二，手机成瘾会使大脑变钝。当你观看垃圾时，大脑会放松并且运转较少，你很快将变得缺乏逻辑思考、推理或争论的能力。你将不再看到不同的观点，不再能处理不同的问题、评估利弊或做出正确的决定。</p>
-<p>由于大脑麻木，你会变得被情绪主导，出现两极分化的情绪，对名人或政客强烈狂热或强烈仇恨。一代人都变得情绪化，失去理性。</p>
-<p>最后，连续三个小时以上玩手机，消磨你的动力和精力。生活中的成功来自于设定目标，保持动力并为实现目标而努力。但是，看着手机屏幕会让你失去动力，每天划着屏幕消磨时间。</p>
-<p>年轻人将决定印度的未来。想象一下，让印度独立的那一代年轻人，他们关心国家问题，为解放印度而战。今天，年轻人真的在乎影响国家命运的事情吗？还是更在乎轰动的新闻，忙于对娱乐性事件或疯狂性事情做出情绪性反应？</p>
-<p>当务之急是使印度的经济再次增长。中国比我们富裕五倍。请在互联网上搜一下中国城市的照片。为了让印度也这样发展，我们必须做很多事情。我们应该集中精力发展经济，还是继续对那些宗教广告表达愤怒？你应该专注于自己的职业，还是应该将时间浪费在永无止境的印度教－穆斯林的历史问题上？你想过上幸福的生活，还是希望搞清楚宝莱坞明星的各种混乱新闻？</p>
-<p>你，今天的年轻人，将决定这些问题的答案。没有其他人会为你做这件事，你必须对自己和这个国家的命运负责。印度的贫穷和强烈的民族情绪并不值得自豪，你们的目标应该是让印度和你自己变得富有而谦虚。放下你的手机，将你的思想投入到那些富有成效和创造力的事情中，为自己的生活和国家做出改变。</p>
-<p>你们应该使用 4G 成为印度领先的一代人，而不要最终成为被 4G 毁掉的一代人。</p>
-<p>爱你们的，</p>
-<p>切坦・巴加特</p>
-]]></content>
-      <tags>
-        <tag>社会</tag>
       </tags>
   </entry>
 </search>
