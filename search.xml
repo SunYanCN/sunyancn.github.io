@@ -4526,4 +4526,22 @@ P=N*C*3*3
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><p>安装 nvidia 驱动，出现了一个错误：<br></p><figure class="highlight shell"><table><tbody><tr><td class="code"><pre><span class="line">ERROR: An NVIDIA kernel module 'nvidia' appears to already be loaded in your kernel.  This may be because it is in use (for</span><br><span class="line">       example, by an X server, a CUDA program, or the NVIDIA Persistence Daemon), but this may also happen if your kernel was</span><br><span class="line">       configured without support for module unloading.  Please be sure to exit any programs that may be using the GPU(s) before</span><br><span class="line">       attempting to upgrade your driver.  If no GPU-based programs are running, you know that your kernel supports module</span><br><span class="line">       unloading, and you still receive this message, then an error may have occured that has corrupted an NVIDIA kernel module's</span><br><span class="line">       usage count, for which the simplest remedy is to reboot your computer.</span><br></pre></td></tr></tbody></table></figure><br>这是因为系统中已经有 nvidia 驱动在运行着了。所以在安装新的驱动之前，要先解决就旧的驱动。<br><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">echo 'blacklist nvidia' &gt; /etc/modprobe.d/blacklist.conf</span><br><span class="line">bash NVIDIA-Linux-x86_64-xxx.xx.run --uninstall  # uninstall 这一步根据具体情况不同</span><br><span class="line">reboot</span><br></pre></td></tr></tbody></table></figure><br>重启后再安装一次，显示 driver is installed successfully。运行 nvidia-smi 检查 nvidia 驱动版本：<br><img src="https://i.loli.net/2020/12/17/2ijgPYEfH7Lvy9k.png" alt="pic01"><p></p>
 ]]></content>
   </entry>
+  <entry>
+    <title>基于用户的协同过滤算法 (UserCF)</title>
+    <url>/post/7437a8cf.html</url>
+    <content><![CDATA[<html><head><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script></head><body><p>在推荐系统众多方法中，基于用户的协同过滤推荐算法是最早诞生的，原理也较为简单。该算法 1992 年提出并用于邮件过滤系统，两年后 1994 年被 GroupLens 用于新闻过滤。一直到 2000 年，该算法都是推荐系统领域最著名的算法。</p>
+<h2 id="基本思想" class="heading-control"><a href="#基本思想" class="headerlink" title="基本思想"></a>基本思想<a class="heading-anchor" href="#基本思想" aria-hidden="true"></a></h2><p><strong>核心思想：相似的用户可能喜欢相同物品。</strong>当一个用户 A 需要个性化推荐时，可以先找到和他兴趣相似的用户群体 B，然后把 B 喜欢的、并且 A 没有听说过的物品推荐给 A，这就是基于用户的协同过滤算法。</p>
+<h2 id="实现步骤" class="heading-control"><a href="#实现步骤" class="headerlink" title="实现步骤"></a>实现步骤<a class="heading-anchor" href="#实现步骤" aria-hidden="true"></a></h2><ol>
+<li>找到与目标用户兴趣相似的用户集合</li>
+<li>找到这个集合中用户喜欢的、并且目标用户没有听说过的物品推荐给目标用户</li>
+</ol>
+<h3 id="发现兴趣相似的用户" class="heading-control"><a href="#发现兴趣相似的用户" class="headerlink" title="发现兴趣相似的用户"></a>发现兴趣相似的用户<a class="heading-anchor" href="#发现兴趣相似的用户" aria-hidden="true"></a></h3><p>协同过滤算法主要利用行为的相似度计算兴趣的相似度。</p>
+<ol>
+<li>假设目前共有 4 个用户： A、B、C、D；共有 5 个物品：a、b、c、d、e。用户与物品的关系（用户喜欢物品）如下图所示：</li>
+</ol>
+</body></html>]]></content>
+      <tags>
+        <tag>推荐系统</tag>
+      </tags>
+  </entry>
 </search>

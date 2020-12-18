@@ -6,7 +6,7 @@
   <link href="http://sunyancn.github.io/atom.xml" rel="self"/>
   
   <link href="http://sunyancn.github.io/"/>
-  <updated>2020-12-17T08:25:59.660Z</updated>
+  <updated>2020-12-18T08:03:23.827Z</updated>
   <id>http://sunyancn.github.io/</id>
   
   <author>
@@ -17,11 +17,34 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>基于用户的协同过滤算法 (UserCF)</title>
+    <link href="http://sunyancn.github.io/post/7437a8cf.html"/>
+    <id>http://sunyancn.github.io/post/7437a8cf.html</id>
+    <published>2020-12-18T02:07:10.000Z</published>
+    <updated>2020-12-18T08:03:23.827Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;html&gt;&lt;head&gt;&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script</summary>
+        
+      
+    
+    
+    
+    
+    <category term="推荐系统" scheme="http://sunyancn.github.io/tags/%E6%8E%A8%E8%8D%90%E7%B3%BB%E7%BB%9F/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Linux Nvidia 驱动更新</title>
     <link href="http://sunyancn.github.io/post/abdb670.html"/>
     <id>http://sunyancn.github.io/post/abdb670.html</id>
     <published>2020-12-17T08:22:16.000Z</published>
-    <updated>2020-12-17T08:25:59.660Z</updated>
+    <updated>2020-12-17T08:26:16.306Z</updated>
     
     
       
@@ -422,25 +445,6 @@
     
     
     <category term="网站" scheme="http://sunyancn.github.io/tags/%E7%BD%91%E7%AB%99/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>新看的一些文章</title>
-    <link href="http://sunyancn.github.io/post/15245.html"/>
-    <id>http://sunyancn.github.io/post/15245.html</id>
-    <published>2020-04-04T14:48:05.000Z</published>
-    <updated>2020-09-02T13:44:33.421Z</updated>
-    
-    
-    <summary type="html">&lt;h2 id=&quot;📚融合BN加速推理&quot;&gt;&lt;a href=&quot;#📚融合BN加速推理&quot; class=&quot;headerlink&quot; title=&quot;📚融合BN加速推理&quot;&gt;&lt;/a&gt;📚融合 BN 加速推理&lt;/h2&gt;&lt;p&gt;批归一化（Batch Normalization）因其可以加速神经网络训练、使网络训练更稳定，而且还有一定的正则化效果，所以得到了非常广泛的应用。但是，在推理阶段，BN 层一般是可以完全融合到前面的卷积层的，而且丝毫不影响性能。&lt;br&gt;&lt;strong&gt;参考文章&lt;/strong&gt;：&lt;a href=&quot;https://zhuanlan.zhihu.com/p/120265831&quot;&gt;深度学习推理时融合 BN, 轻松获得约 5% 的提速&lt;/a&gt;&lt;br&gt;&lt;strong&gt;代码&lt;/strong&gt;：keras 的暂时没有找到，有空可以写写&lt;br&gt;</summary>
-    
-    
-    
-    <category term="笔记" scheme="http://sunyancn.github.io/categories/%E7%AC%94%E8%AE%B0/"/>
-    
-    
-    <category term="笔记" scheme="http://sunyancn.github.io/tags/%E7%AC%94%E8%AE%B0/"/>
     
   </entry>
   
