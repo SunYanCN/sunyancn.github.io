@@ -4536,9 +4536,16 @@ P=N*C*3*3
 <li>找到这个集合中用户喜欢的、并且目标用户没有听说过的物品推荐给目标用户</li>
 </ol>
 <h3 id="发现兴趣相似的用户" class="heading-control"><a href="#发现兴趣相似的用户" class="headerlink" title="发现兴趣相似的用户"></a>发现兴趣相似的用户<a class="heading-anchor" href="#发现兴趣相似的用户" aria-hidden="true"></a></h3><p>协同过滤算法主要利用行为的相似度计算兴趣的相似度。</p>
-<ol>
-<li>假设目前共有 4 个用户： A、B、C、D；共有 5 个物品：a、b、c、d、e。用户与物品的关系（用户喜欢物品）如下图所示：</li>
-</ol>
+<h4 id="获得数据" class="heading-control"><a href="#获得数据" class="headerlink" title="获得数据"></a>获得数据<a class="heading-anchor" href="#获得数据" aria-hidden="true"></a></h4><p>假设目前共有 4 个用户： A、B、C、D；共有 5 个物品：a、b、c、d、e。用户与物品的关系（用户喜欢物品）如下图所示：</p>
+<p><img src="https://i.loli.net/2020/12/18/GH8FDuI2MitAC3P.png" alt="img"></p>
+<h4 id="构建倒排表" class="heading-control"><a href="#构建倒排表" class="headerlink" title="构建倒排表"></a>构建倒排表<a class="heading-anchor" href="#构建倒排表" aria-hidden="true"></a></h4><p>建立 “物品 — 用户” 的倒排表</p>
+<p><img src="https://i.loli.net/2020/12/18/Pg94wx5MTOJbh12.png" alt="img"></p>
+<h4 id="构建用户相似度矩阵" class="heading-control"><a href="#构建用户相似度矩阵" class="headerlink" title="构建用户相似度矩阵"></a>构建用户相似度矩阵<a class="heading-anchor" href="#构建用户相似度矩阵" aria-hidden="true"></a></h4><p>构建用户相似度矩阵 matrix，其中 matrix [A][B] 表示用户 A 和用户 B 共同喜欢的电影的数量。</p>
+<p><img src="https://i.loli.net/2020/12/18/OHa8ZNIuL4rkBof.png" alt="img"></p>
+<h4 id="计算用户相似度" class="heading-control"><a href="#计算用户相似度" class="headerlink" title="计算用户相似度"></a>计算用户相似度<a class="heading-anchor" href="#计算用户相似度" aria-hidden="true"></a></h4><p><img src="https://i.loli.net/2020/12/18/9YbIVvjtdZfwyTK.png" alt="img"></p>
+<h4 id="基于热度惩罚的用户相似度改进" class="heading-control"><a href="#基于热度惩罚的用户相似度改进" class="headerlink" title="基于热度惩罚的用户相似度改进"></a>基于热度惩罚的用户相似度改进<a class="heading-anchor" href="#基于热度惩罚的用户相似度改进" aria-hidden="true"></a></h4><h3 id="生成推荐" class="heading-control"><a href="#生成推荐" class="headerlink" title="生成推荐"></a>生成推荐<a class="heading-anchor" href="#生成推荐" aria-hidden="true"></a></h3><h2 id="评测指标" class="heading-control"><a href="#评测指标" class="headerlink" title="评测指标"></a>评测指标<a class="heading-anchor" href="#评测指标" aria-hidden="true"></a></h2><p>对用户 $u$ 推荐 $N$ 个物品 (记为 $R (u)$ )，令用户 $u$ 在测试集上喜欢的物品集合为 $T (u)$ ，然后可以通过准确率、召回率、覆盖率评测推荐算法的精度:</p>
+<h3 id="召回率" class="heading-control"><a href="#召回率" class="headerlink" title="召回率"></a>召回率<a class="heading-anchor" href="#召回率" aria-hidden="true"></a></h3><h3 id="准确率" class="heading-control"><a href="#准确率" class="headerlink" title="准确率"></a>准确率<a class="heading-anchor" href="#准确率" aria-hidden="true"></a></h3><h3 id="覆盖率" class="heading-control"><a href="#覆盖率" class="headerlink" title="覆盖率"></a>覆盖率<a class="heading-anchor" href="#覆盖率" aria-hidden="true"></a></h3><p>覆盖率反映了推荐算法发掘长尾的能力，覆盖率越高，说明推荐算法越能够将长尾中的物品推荐给用户。</p>
+<p>分子部分表示实验中所有被推荐给用户的物品数目 (集合去重)，分母表示数据集中所有物品的数目。</p>
 </body></html>]]></content>
       <tags>
         <tag>推荐系统</tag>

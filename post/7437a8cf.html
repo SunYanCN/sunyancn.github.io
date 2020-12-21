@@ -27,11 +27,16 @@
 <meta property="og:site_name" content="故事尾音">
 <meta property="og:description" content="在推荐系统众多方法中，基于用户的协同过滤推荐算法是最早诞生的，原理也较为简单。该算法 1992 年提出并用于邮件过滤系统，两年后 1994 年被 GroupLens 用于新闻过滤。一直到 2000 年，该算法都是推荐系统领域最著名的算法。 基本思想核心思想：相似的用户可能喜欢相同物品。当一个用户 A 需要个性化推荐时，可以先找到和他兴趣相似的用户群体 B，然后把 B 喜欢的、并且 A 没有听说过的">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://i.loli.net/2020/12/18/GH8FDuI2MitAC3P.png">
+<meta property="og:image" content="https://i.loli.net/2020/12/18/Pg94wx5MTOJbh12.png">
+<meta property="og:image" content="https://i.loli.net/2020/12/18/OHa8ZNIuL4rkBof.png">
+<meta property="og:image" content="https://i.loli.net/2020/12/18/9YbIVvjtdZfwyTK.png">
 <meta property="article:published_time" content="2020-12-18T02:07:10.000Z">
-<meta property="article:modified_time" content="2020-12-18T08:03:23.827Z">
+<meta property="article:modified_time" content="2020-12-21T05:05:31.147Z">
 <meta property="article:author" content="故事尾音">
 <meta property="article:tag" content="推荐系统">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.loli.net/2020/12/18/GH8FDuI2MitAC3P.png">
 
 <link rel="canonical" href="http://sunyancn.github.io/post/7437a8cf.html">
 
@@ -257,10 +262,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2020-12-18 10:07:10 / 修改时间：16:03:23" itemprop="dateCreated datePublished" datetime="2020-12-18T10:07:10+08:00">2020-12-18</time>
+              <time title="创建时间：2020-12-18 10:07:10" itemprop="dateCreated datePublished" datetime="2020-12-18T10:07:10+08:00">2020-12-18</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-12-21 13:05:31" itemprop="dateModified" datetime="2020-12-21T13:05:31+08:00">2020-12-21</time>
+              </span>
 
           
   
@@ -294,9 +305,16 @@
 <li>找到这个集合中用户喜欢的、并且目标用户没有听说过的物品推荐给目标用户</li>
 </ol>
 <h3 id="发现兴趣相似的用户" class="heading-control"><a href="#发现兴趣相似的用户" class="headerlink" title="发现兴趣相似的用户"></a>发现兴趣相似的用户<a class="heading-anchor" href="#发现兴趣相似的用户" aria-hidden="true"></a></h3><p>协同过滤算法主要利用行为的相似度计算兴趣的相似度。</p>
-<ol>
-<li>假设目前共有 4 个用户： A、B、C、D；共有 5 个物品：a、b、c、d、e。用户与物品的关系（用户喜欢物品）如下图所示：</li>
-</ol>
+<h4 id="获得数据" class="heading-control"><a href="#获得数据" class="headerlink" title="获得数据"></a>获得数据<a class="heading-anchor" href="#获得数据" aria-hidden="true"></a></h4><p>假设目前共有 4 个用户： A、B、C、D；共有 5 个物品：a、b、c、d、e。用户与物品的关系（用户喜欢物品）如下图所示：</p>
+<p><img src="https://i.loli.net/2020/12/18/GH8FDuI2MitAC3P.png" alt="img"></p>
+<h4 id="构建倒排表" class="heading-control"><a href="#构建倒排表" class="headerlink" title="构建倒排表"></a>构建倒排表<a class="heading-anchor" href="#构建倒排表" aria-hidden="true"></a></h4><p>建立 “物品 — 用户” 的倒排表</p>
+<p><img src="https://i.loli.net/2020/12/18/Pg94wx5MTOJbh12.png" alt="img"></p>
+<h4 id="构建用户相似度矩阵" class="heading-control"><a href="#构建用户相似度矩阵" class="headerlink" title="构建用户相似度矩阵"></a>构建用户相似度矩阵<a class="heading-anchor" href="#构建用户相似度矩阵" aria-hidden="true"></a></h4><p>构建用户相似度矩阵 matrix，其中 matrix [A][B] 表示用户 A 和用户 B 共同喜欢的电影的数量。</p>
+<p><img src="https://i.loli.net/2020/12/18/OHa8ZNIuL4rkBof.png" alt="img"></p>
+<h4 id="计算用户相似度" class="heading-control"><a href="#计算用户相似度" class="headerlink" title="计算用户相似度"></a>计算用户相似度<a class="heading-anchor" href="#计算用户相似度" aria-hidden="true"></a></h4><p><img src="https://i.loli.net/2020/12/18/9YbIVvjtdZfwyTK.png" alt="img"></p>
+<h4 id="基于热度惩罚的用户相似度改进" class="heading-control"><a href="#基于热度惩罚的用户相似度改进" class="headerlink" title="基于热度惩罚的用户相似度改进"></a>基于热度惩罚的用户相似度改进<a class="heading-anchor" href="#基于热度惩罚的用户相似度改进" aria-hidden="true"></a></h4><h3 id="生成推荐" class="heading-control"><a href="#生成推荐" class="headerlink" title="生成推荐"></a>生成推荐<a class="heading-anchor" href="#生成推荐" aria-hidden="true"></a></h3><h2 id="评测指标" class="heading-control"><a href="#评测指标" class="headerlink" title="评测指标"></a>评测指标<a class="heading-anchor" href="#评测指标" aria-hidden="true"></a></h2><p>对用户 $u$ 推荐 $N$ 个物品 (记为 $R (u)$ )，令用户 $u$ 在测试集上喜欢的物品集合为 $T (u)$ ，然后可以通过准确率、召回率、覆盖率评测推荐算法的精度:</p>
+<h3 id="召回率" class="heading-control"><a href="#召回率" class="headerlink" title="召回率"></a>召回率<a class="heading-anchor" href="#召回率" aria-hidden="true"></a></h3><h3 id="准确率" class="heading-control"><a href="#准确率" class="headerlink" title="准确率"></a>准确率<a class="heading-anchor" href="#准确率" aria-hidden="true"></a></h3><h3 id="覆盖率" class="heading-control"><a href="#覆盖率" class="headerlink" title="覆盖率"></a>覆盖率<a class="heading-anchor" href="#覆盖率" aria-hidden="true"></a></h3><p>覆盖率反映了推荐算法发掘长尾的能力，覆盖率越高，说明推荐算法越能够将长尾中的物品推荐给用户。</p>
+<p>分子部分表示实验中所有被推荐给用户的物品数目 (集合去重)，分母表示数据集中所有物品的数目。</p>
 </body></html>
     </div>
 
@@ -419,7 +437,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E6%80%9D%E6%83%B3"><span class="nav-number">1.</span> <span class="nav-text">基本思想</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%9E%E7%8E%B0%E6%AD%A5%E9%AA%A4"><span class="nav-number">2.</span> <span class="nav-text">实现步骤</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%91%E7%8E%B0%E5%85%B4%E8%B6%A3%E7%9B%B8%E4%BC%BC%E7%9A%84%E7%94%A8%E6%88%B7"><span class="nav-number">2.1.</span> <span class="nav-text">发现兴趣相似的用户</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E6%80%9D%E6%83%B3"><span class="nav-number">1.</span> <span class="nav-text">基本思想</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%9E%E7%8E%B0%E6%AD%A5%E9%AA%A4"><span class="nav-number">2.</span> <span class="nav-text">实现步骤</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%91%E7%8E%B0%E5%85%B4%E8%B6%A3%E7%9B%B8%E4%BC%BC%E7%9A%84%E7%94%A8%E6%88%B7"><span class="nav-number">2.1.</span> <span class="nav-text">发现兴趣相似的用户</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%8E%B7%E5%BE%97%E6%95%B0%E6%8D%AE"><span class="nav-number">2.1.1.</span> <span class="nav-text">获得数据</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%9E%84%E5%BB%BA%E5%80%92%E6%8E%92%E8%A1%A8"><span class="nav-number">2.1.2.</span> <span class="nav-text">构建倒排表</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%9E%84%E5%BB%BA%E7%94%A8%E6%88%B7%E7%9B%B8%E4%BC%BC%E5%BA%A6%E7%9F%A9%E9%98%B5"><span class="nav-number">2.1.3.</span> <span class="nav-text">构建用户相似度矩阵</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%AE%A1%E7%AE%97%E7%94%A8%E6%88%B7%E7%9B%B8%E4%BC%BC%E5%BA%A6"><span class="nav-number">2.1.4.</span> <span class="nav-text">计算用户相似度</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%9F%BA%E4%BA%8E%E7%83%AD%E5%BA%A6%E6%83%A9%E7%BD%9A%E7%9A%84%E7%94%A8%E6%88%B7%E7%9B%B8%E4%BC%BC%E5%BA%A6%E6%94%B9%E8%BF%9B"><span class="nav-number">2.1.5.</span> <span class="nav-text">基于热度惩罚的用户相似度改进</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%94%9F%E6%88%90%E6%8E%A8%E8%8D%90"><span class="nav-number">2.2.</span> <span class="nav-text">生成推荐</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AF%84%E6%B5%8B%E6%8C%87%E6%A0%87"><span class="nav-number">3.</span> <span class="nav-text">评测指标</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%AC%E5%9B%9E%E7%8E%87"><span class="nav-number">3.1.</span> <span class="nav-text">召回率</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%87%86%E7%A1%AE%E7%8E%87"><span class="nav-number">3.2.</span> <span class="nav-text">准确率</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A6%86%E7%9B%96%E7%8E%87"><span class="nav-number">3.3.</span> <span class="nav-text">覆盖率</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
