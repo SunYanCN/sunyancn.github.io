@@ -6,7 +6,7 @@
   <link href="http://sunyancn.github.io/atom.xml" rel="self"/>
   
   <link href="http://sunyancn.github.io/"/>
-  <updated>2020-12-31T03:42:00.653Z</updated>
+  <updated>2020-12-31T07:58:30.886Z</updated>
   <id>http://sunyancn.github.io/</id>
   
   <author>
@@ -17,11 +17,32 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>光是什么？</title>
+    <link href="http://sunyancn.github.io/post/22ce43c.html"/>
+    <id>http://sunyancn.github.io/post/22ce43c.html</id>
+    <published>2020-12-31T07:56:42.000Z</published>
+    <updated>2020-12-31T07:58:30.886Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
     <title>简历模板</title>
     <link href="http://sunyancn.github.io/post/98c39c33.html"/>
     <id>http://sunyancn.github.io/post/98c39c33.html</id>
     <published>2020-12-31T03:38:00.000Z</published>
-    <updated>2020-12-31T03:42:00.653Z</updated>
+    <updated>2020-12-31T04:06:43.833Z</updated>
     
     
       
@@ -417,29 +438,6 @@
     
     
     <category term="远程开发" scheme="http://sunyancn.github.io/tags/%E8%BF%9C%E7%A8%8B%E5%BC%80%E5%8F%91/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>如何入门深度学习</title>
-    <link href="http://sunyancn.github.io/post/48955.html"/>
-    <id>http://sunyancn.github.io/post/48955.html</id>
-    <published>2020-05-22T10:20:45.000Z</published>
-    <updated>2020-09-02T13:44:33.414Z</updated>
-    
-    
-    <summary type="html">&lt;h2 id=&quot;Step0：搭建深度学习环境&quot;&gt;&lt;a href=&quot;#Step0：搭建深度学习环境&quot; class=&quot;headerlink&quot; title=&quot;Step0：搭建深度学习环境&quot;&gt;&lt;/a&gt;Step0：搭建深度学习环境&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;Doker 搭建深度学习环境：&lt;a href=&quot;https://www.cnblogs.com/bingmang/p/9813686.html&quot;&gt;https://www.cnblogs.com/bingmang/p/9813686.html&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;Pycharm 远程连接服务器：&lt;a href=&quot;https://www.cnblogs.com/zhuminghui/p/10947930.html&quot;&gt;https://www.cnblogs.com/zhuminghui/p/10947930.html&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt; 服务器使用 screen 后台运行程序：&lt;a href=&quot;https://sunyanhust.github.io/post/fu-wu-qi-shi-yong-screen-hou-tai-yun-xing-cheng-xu/&quot;&gt;https://sunyanhust.github.io/post/fu-wu-qi-shi-yong-screen-hou-tai-yun-xing-cheng-xu/&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</summary>
-    
-    
-    
-    <category term="笔记" scheme="http://sunyancn.github.io/categories/%E7%AC%94%E8%AE%B0/"/>
-    
-    
-    <category term="深度学习" scheme="http://sunyancn.github.io/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
     
   </entry>
   
