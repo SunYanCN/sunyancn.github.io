@@ -6,7 +6,7 @@
   <link href="http://sunyancn.github.io/atom.xml" rel="self"/>
   
   <link href="http://sunyancn.github.io/"/>
-  <updated>2020-12-31T07:58:48.561Z</updated>
+  <updated>2021-01-11T02:25:37.348Z</updated>
   <id>http://sunyancn.github.io/</id>
   
   <author>
@@ -15,6 +15,50 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Latex 安装和使用</title>
+    <link href="http://sunyancn.github.io/post/1440dbb0.html"/>
+    <id>http://sunyancn.github.io/post/1440dbb0.html</id>
+    <published>2021-01-11T02:12:01.000Z</published>
+    <updated>2021-01-11T02:25:37.348Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    
+    <category term="Latex" scheme="http://sunyancn.github.io/tags/Latex/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>20210107144640</title>
+    <link href="http://sunyancn.github.io/post/6de7497f.html"/>
+    <id>http://sunyancn.github.io/post/6de7497f.html</id>
+    <published>2021-01-07T06:46:40.000Z</published>
+    <updated>2021-01-08T08:29:38.902Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>光是什么？</title>
@@ -398,46 +442,6 @@
     
     
     <category term="召回" scheme="http://sunyancn.github.io/tags/%E5%8F%AC%E5%9B%9E/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>TFIDF 做文档检索</title>
-    <link href="http://sunyancn.github.io/post/50690.html"/>
-    <id>http://sunyancn.github.io/post/50690.html</id>
-    <published>2020-08-29T08:28:36.000Z</published>
-    <updated>2020-08-29T08:36:01.676Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;一个简单的 TFIDF 做文档检索，还可以继续加一些功能：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;[ ] 增加评估指标&lt;/li&gt;
-&lt;li&gt; [ ] 增加新的模型，例如 BM25&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;实现效果：&lt;br&gt;&lt;img src=&quot;https://i.loli.net/2020/08/29/6QkVe9hKGjo8Hx5.png&quot; alt=&quot;image-20200829163450810&quot;&gt;&lt;br&gt;</summary>
-    
-    
-    
-    
-    <category term="TFIDF" scheme="http://sunyancn.github.io/tags/TFIDF/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>VSCode 配置远程开发</title>
-    <link href="http://sunyancn.github.io/post/22891.html"/>
-    <id>http://sunyancn.github.io/post/22891.html</id>
-    <published>2020-08-29T08:15:19.000Z</published>
-    <updated>2020-08-29T09:59:22.787Z</updated>
-    
-    
-    <summary type="html">&lt;h2 id=&quot;通过-PowerShell-安装-OpenSSH&quot;&gt;&lt;a href=&quot;#通过-PowerShell-安装-OpenSSH&quot; class=&quot;headerlink&quot; title=&quot;通过 PowerShell 安装 OpenSSH&quot;&gt;&lt;/a&gt;通过 PowerShell 安装 OpenSSH&lt;/h2&gt;&lt;p&gt;&lt;a href=&quot;https://docs.microsoft.com/zh-cn/windows-server/administration/openssh/openssh_install_firstuse&quot;&gt;来自微软官方文档&lt;/a&gt;。 若要使用 PowerShell 安装 OpenSSH，请首先以管理员身份启动 PowerShell。 若要确保 OpenSSH 功能可以安装，请执行以下操作：&lt;/p&gt;
-&lt;figure class=&quot;highlight powershell&quot;&gt;&lt;table&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# 输入这句话&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;built_in&quot;&gt;Get-WindowsCapability&lt;/span&gt; &lt;span class=&quot;literal&quot;&gt;-Online&lt;/span&gt; | ? Name &lt;span class=&quot;operator&quot;&gt;-like&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;&#39;OpenSSH*&#39;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;comment&quot;&gt;# This should return the following output:&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;Name  : OpenSSH.Client~~~~&lt;span class=&quot;number&quot;&gt;0.0&lt;/span&gt;.&lt;span class=&quot;number&quot;&gt;1.0&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;State : NotPresent&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;Name  : OpenSSH.Server~~~~&lt;span class=&quot;number&quot;&gt;0.0&lt;/span&gt;.&lt;span class=&quot;number&quot;&gt;1.0&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;State : NotPresent&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/figure&gt;</summary>
-    
-    
-    
-    
-    <category term="远程开发" scheme="http://sunyancn.github.io/tags/%E8%BF%9C%E7%A8%8B%E5%BC%80%E5%8F%91/"/>
     
   </entry>
   
