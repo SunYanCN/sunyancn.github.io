@@ -6,7 +6,7 @@
   <link href="http://sunyancn.github.io/atom.xml" rel="self"/>
   
   <link href="http://sunyancn.github.io/"/>
-  <updated>2021-01-11T02:29:05.830Z</updated>
+  <updated>2021-01-12T07:39:16.172Z</updated>
   <id>http://sunyancn.github.io/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>基金投资笔记 (2021 年)</title>
+    <link href="http://sunyancn.github.io/post/f0b54271.html"/>
+    <id>http://sunyancn.github.io/post/f0b54271.html</id>
+    <published>2021-01-12T06:51:16.000Z</published>
+    <updated>2021-01-12T07:39:16.172Z</updated>
+    
+    
+    <summary type="html">&lt;h2 id=&quot;优秀基金&quot;&gt;&lt;a href=&quot;#优秀基金&quot; class=&quot;headerlink&quot; title=&quot;优秀基金&quot;&gt;&lt;/a&gt;优秀基金&lt;/h2&gt;&lt;h3 id=&quot;芯片半导体基金&quot;&gt;&lt;a href=&quot;#芯片半导体基金&quot; class=&quot;headerlink&quot; title=&quot;芯片半导体基金&quot;&gt;&lt;/a&gt;芯片半导体基金&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;诺安成长混合 (320007)&lt;/li&gt;
+&lt;li&gt; 银河创新成长混合 (519674)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;电子板块基金&quot;&gt;&lt;a href=&quot;#电子板块基金&quot; class=&quot;headerlink&quot; title=&quot;电子板块基金&quot;&gt;&lt;/a&gt;电子板块基金&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;天弘中证电子 ETF 联接 A (001617) 跟踪标的：中证电子指数 | 跟踪误差：0.22%  纯电子板块，偏消费电子&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&quot;通信5G&quot;&gt;&lt;a href=&quot;#通信5G&quot; class=&quot;headerlink&quot; title=&quot;通信5G&quot;&gt;&lt;/a&gt;通信 5G&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;华夏中证 5G（008087）—5G 板块</summary>
+    
+    
+    
+    
+    <category term="基金" scheme="http://sunyancn.github.io/tags/%E5%9F%BA%E9%87%91/"/>
+    
+  </entry>
   
   <entry>
     <title>Latex 安装和使用</title>
@@ -40,23 +65,28 @@
   </entry>
   
   <entry>
-    <title>20210107144640</title>
+    <title>推荐系统杂谈</title>
     <link href="http://sunyancn.github.io/post/6de7497f.html"/>
     <id>http://sunyancn.github.io/post/6de7497f.html</id>
     <published>2021-01-07T06:46:40.000Z</published>
-    <updated>2021-01-11T02:29:05.832Z</updated>
+    <updated>2021-01-12T07:40:36.552Z</updated>
     
     
-      
-      
-        
-        
-    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
-        
-      
+    <summary type="html">&lt;h2 id=&quot;召回策略分类&quot;&gt;&lt;a href=&quot;#召回策略分类&quot; class=&quot;headerlink&quot; title=&quot;召回策略分类&quot;&gt;&lt;/a&gt;召回策略分类&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;实时行为召回：在线实时捕捉用户对商品的点击，收藏，加购，购买等反馈行为，并召回相似商品，迅速抓住用户的短期购物需求。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;历史行为召回：离线分析用户对商品的历史点击，收藏，加购，购买等反馈行为，并召回相似商品，兼顾用户的长期购物需求。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;profile 召回：从性别，年龄段，设备等多个维度，在线和离线同时对用户进行画像，并召回相对应的热门商品。不要小看这个召回，非常关键，往往新用户需要用这些静态信息和标签来做召回，往往可以快速圈定其圈层进行精准的探索和数据反馈，比如 5-6 线城市和北京西二旗的用户往往大概率兴趣差异较大。这层召回是全局热门召回的更精细化拆解。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;热销 &amp;amp; 趋势召回：分析商品的长期和短期销量变化，召回爆款和近期热点商品。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;</summary>
     
     
     
+    
+    <category term="推荐系统" scheme="http://sunyancn.github.io/tags/%E6%8E%A8%E8%8D%90%E7%B3%BB%E7%BB%9F/"/>
     
   </entry>
   
@@ -407,41 +437,6 @@
     
     
     <category term="面试" scheme="http://sunyancn.github.io/tags/%E9%9D%A2%E8%AF%95/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>推荐系统召回算法</title>
-    <link href="http://sunyancn.github.io/post/64078.html"/>
-    <id>http://sunyancn.github.io/post/64078.html</id>
-    <published>2020-08-31T12:24:52.000Z</published>
-    <updated>2020-09-01T03:49:16.739Z</updated>
-    
-    
-    <summary type="html">&lt;h2 id=&quot;推荐系统整体流程&quot;&gt;&lt;a href=&quot;#推荐系统整体流程&quot; class=&quot;headerlink&quot; title=&quot;推荐系统整体流程&quot;&gt;&lt;/a&gt;推荐系统整体流程&lt;/h2&gt;&lt;p&gt;&lt;img src=&quot;https://i.loli.net/2020/08/31/FqeHsBKXUCgu8fJ.jpg&quot; alt=&quot;img&quot;&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;多路召回：首先召回阶段是会配置召回的请求个数，通常会根据每路召回的后验表现设置动态配比，或者是根据业务的需求进行设置。所有的召回并发请求并设置 timeout，防止系统雪崩。&lt;/li&gt;
-&lt;li&gt;所有的召回结果 merge。&lt;/li&gt;
-&lt;li&gt;过滤：系统整体的黑名单，以及 by user 的黑名单过滤都可以在此处实现。&lt;/li&gt;
-&lt;li&gt;去重：此处通常都是简单的指纹去重，不做特别精细的多样性去重（比如相似新闻通常在排序后做）。(过滤和去重都是为了减少后续系统的压力，防止浪费算力进行后续步骤。)&lt;/li&gt;
-&lt;li&gt; 粗排后截断。当然粗排也可以放在每个召回队列中做，也是根据业务而定。&lt;/li&gt;
-&lt;li&gt;进行精排。&lt;/li&gt;
-&lt;li&gt;排序后的 rerank 处理，包括多样性去重，产品的特殊 boost 逻辑等。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&quot;什么是召回&quot;&gt;&lt;a href=&quot;#什么是召回&quot; class=&quot;headerlink&quot; title=&quot;什么是召回&quot;&gt;&lt;/a&gt;什么是召回&lt;/h2&gt;&lt;p&gt;召回系统，本质上是个&lt;strong&gt;信息漏斗&lt;/strong&gt;，负责快速从海量信息中筛选出有价值的信息，缩小排序算法的搜素范围；也负责将多路召回的数据，进行&lt;strong&gt;信息融合&lt;/strong&gt;，最后得到一个精简的候选集。&lt;/p&gt;
-&lt;h3 id=&quot;召回的特性&quot;&gt;&lt;a href=&quot;#召回的特性&quot; class=&quot;headerlink&quot; title=&quot;召回的特性&quot;&gt;&lt;/a&gt;召回的特性&lt;/h3&gt;&lt;p&gt;处理的数据量非常大，速度要求快，所有使用的模型和特征都不能太复杂。&lt;/p&gt;
-&lt;h3 id=&quot;召回的重要性&quot;&gt;&lt;a href=&quot;#召回的重要性&quot; class=&quot;headerlink&quot; title=&quot;召回的重要性&quot;&gt;&lt;/a&gt;召回的重要性&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;奠基性：后续流程，基于召回数据展开&lt;/li&gt;
-&lt;li&gt;桥接性：建立用户和内容的桥梁&lt;/li&gt;
-&lt;li&gt;决定性：召回质量决定推荐质量&lt;/li&gt;
-&lt;/ul&gt;</summary>
-    
-    
-    
-    <category term="算法" scheme="http://sunyancn.github.io/categories/%E7%AE%97%E6%B3%95/"/>
-    
-    
-    <category term="召回" scheme="http://sunyancn.github.io/tags/%E5%8F%AC%E5%9B%9E/"/>
     
   </entry>
   

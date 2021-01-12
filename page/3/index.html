@@ -230,6 +230,106 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://sunyancn.github.io/post/64078.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://i.loli.net/2020/08/25/NrIpckD9qPLY38C.jpg">
+      <meta itemprop="name" content="故事尾音">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="故事尾音">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/post/64078.html" class="post-title-link" itemprop="url">推荐系统召回算法</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-08-31 20:24:52" itemprop="dateCreated datePublished" datetime="2020-08-31T20:24:52+08:00">2020-08-31</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-09-01 11:49:16" itemprop="dateModified" datetime="2020-09-01T11:49:16+08:00">2020-09-01</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%AE%97%E6%B3%95/" itemprop="url" rel="index"><span itemprop="name">算法</span></a>
+                </span>
+            </span>
+
+          
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="推荐系统整体流程"><a href="#推荐系统整体流程" class="headerlink" title="推荐系统整体流程"></a>推荐系统整体流程</h2><p><img src="https://i.loli.net/2020/08/31/FqeHsBKXUCgu8fJ.jpg" alt="img"></p>
+<ul>
+<li>多路召回：首先召回阶段是会配置召回的请求个数，通常会根据每路召回的后验表现设置动态配比，或者是根据业务的需求进行设置。所有的召回并发请求并设置 timeout，防止系统雪崩。</li>
+<li>所有的召回结果 merge。</li>
+<li>过滤：系统整体的黑名单，以及 by user 的黑名单过滤都可以在此处实现。</li>
+<li>去重：此处通常都是简单的指纹去重，不做特别精细的多样性去重（比如相似新闻通常在排序后做）。(过滤和去重都是为了减少后续系统的压力，防止浪费算力进行后续步骤。)</li>
+<li> 粗排后截断。当然粗排也可以放在每个召回队列中做，也是根据业务而定。</li>
+<li>进行精排。</li>
+<li>排序后的 rerank 处理，包括多样性去重，产品的特殊 boost 逻辑等。</li>
+</ul>
+<h2 id="什么是召回"><a href="#什么是召回" class="headerlink" title="什么是召回"></a>什么是召回</h2><p>召回系统，本质上是个<strong>信息漏斗</strong>，负责快速从海量信息中筛选出有价值的信息，缩小排序算法的搜素范围；也负责将多路召回的数据，进行<strong>信息融合</strong>，最后得到一个精简的候选集。</p>
+<h3 id="召回的特性"><a href="#召回的特性" class="headerlink" title="召回的特性"></a>召回的特性</h3><p>处理的数据量非常大，速度要求快，所有使用的模型和特征都不能太复杂。</p>
+<h3 id="召回的重要性"><a href="#召回的重要性" class="headerlink" title="召回的重要性"></a>召回的重要性</h3><ul>
+<li>奠基性：后续流程，基于召回数据展开</li>
+<li>桥接性：建立用户和内容的桥梁</li>
+<li>决定性：召回质量决定推荐质量</li>
+</ul>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/post/64078.html#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+    <script type="text/javascript" src="/js/linkcard.js"></script>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://sunyancn.github.io/post/50690.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -952,91 +1052,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://sunyancn.github.io/post/6222.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://i.loli.net/2020/08/25/NrIpckD9qPLY38C.jpg">
-      <meta itemprop="name" content="故事尾音">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="故事尾音">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/post/6222.html" class="post-title-link" itemprop="url">20200224210643</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-02-24 21:06:43" itemprop="dateCreated datePublished" datetime="2020-02-24T21:06:43+08:00">2020-02-24</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-27 01:27:01" itemprop="dateModified" datetime="2020-08-27T01:27:01+08:00">2020-08-27</time>
-              </span>
-
-          
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <html><head></head><body><h3 id="nodejs更新" class="heading-control"><a href="#nodejs更新" class="headerlink" title="nodejs更新"></a>nodejs 更新<a class="heading-anchor" href="#nodejs更新" aria-hidden="true"></a></h3><ol>
-<li><p>`npm install -g n 对 n 模块进行全局安装</p>
-</li>
-<li><p>使用 n 命令进行更新<br>n stable // 更新到稳定版<br>n latest // 更新到最新版</p>
-</li>
-<li><p>使用 node -v 看是否已经更新完成了</p>
-</li>
-</ol>
-<h3 id="查看文件的状态" class="heading-control"><a href="#查看文件的状态" class="headerlink" title="查看文件的状态"></a>查看文件的状态<a class="heading-anchor" href="#查看文件的状态" aria-hidden="true"></a></h3><p>在 Linux 下，一个文件有三种时间，分别是访问时间（Access）、修改时间（Modify）、状态改变时间（Change）。可以通过 stat 命令查看文件的状态<br>stat file<br>example: stat A.py</p>
-<h3 id="模型性能通常会随着时间而下降" class="heading-control"><a href="#模型性能通常会随着时间而下降" class="headerlink" title="模型性能通常会随着时间而下降"></a>模型性能通常会随着时间而下降<a class="heading-anchor" href="#模型性能通常会随着时间而下降" aria-hidden="true"></a></h3><p>观点：模型性能通常会随着时间而下降<br>因为新的数据在不断产生，俗话说学如逆水行舟，不进则退</p>
-<h3 id="两个github库" class="heading-control"><a href="#两个github库" class="headerlink" title="两个github库"></a>两个 github 库<a class="heading-anchor" href="#两个github库" aria-hidden="true"></a></h3><ul>
-<li>streamlit：可视化构建应用<br><a target="_blank" rel="noopener" href="https://mlwhiz.com/blog/2019/12/07/streamlit/">https://mlwhiz.com/blog/2019/12/07/streamlit/</a></li>
-<li>ELI5：模型解释性</li>
-</ul>
-<h3 id="对象检测和实例分割" class="heading-control"><a href="#对象检测和实例分割" class="headerlink" title="对象检测和实例分割"></a>对象检测和实例分割<a class="heading-anchor" href="#对象检测和实例分割" aria-hidden="true"></a></h3><ul>
-<li><a target="_blank" rel="noopener" href="https://mlwhiz.com/blog/2019/12/06/weapons/">https://mlwhiz.com/blog/2019/12/06/weapons/</a></li>
-<li><a target="_blank" rel="noopener" href="https://mlwhiz.com/blog/2019/12/05/od/">https://mlwhiz.com/blog/2019/12/05/od/</a><br>-<a target="_blank" rel="noopener" href="https://mlwhiz.com/blog/2019/11/08/interpret_models/">https://mlwhiz.com/blog/2019/11/08/interpret_models/</a></li>
-</ul>
-</body></html>
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-    <script type="text/javascript" src="/js/linkcard.js"></script>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1108,7 +1123,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">128</span>
+          <span class="site-state-item-count">129</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -1121,7 +1136,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">85</span>
+        <span class="site-state-item-count">86</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>

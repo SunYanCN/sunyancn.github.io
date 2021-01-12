@@ -230,6 +230,83 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://sunyancn.github.io/post/f0b54271.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://i.loli.net/2020/08/25/NrIpckD9qPLY38C.jpg">
+      <meta itemprop="name" content="故事尾音">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="故事尾音">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/post/f0b54271.html" class="post-title-link" itemprop="url">基金投资笔记 (2021 年)</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2021-01-12 14:51:16 / 修改时间：15:39:16" itemprop="dateCreated datePublished" datetime="2021-01-12T14:51:16+08:00">2021-01-12</time>
+            </span>
+
+          
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="优秀基金"><a href="#优秀基金" class="headerlink" title="优秀基金"></a>优秀基金</h2><h3 id="芯片半导体基金"><a href="#芯片半导体基金" class="headerlink" title="芯片半导体基金"></a>芯片半导体基金</h3><ul>
+<li>诺安成长混合 (320007)</li>
+<li> 银河创新成长混合 (519674)</li>
+</ul>
+<h3 id="电子板块基金"><a href="#电子板块基金" class="headerlink" title="电子板块基金"></a>电子板块基金</h3><ul>
+<li>天弘中证电子 ETF 联接 A (001617) 跟踪标的：中证电子指数 | 跟踪误差：0.22%  纯电子板块，偏消费电子</li>
+</ul>
+<h3 id="通信5G"><a href="#通信5G" class="headerlink" title="通信5G"></a>通信 5G</h3><ul>
+<li>华夏中证 5G（008087）—5G 板块
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/post/f0b54271.html#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+    <script type="text/javascript" src="/js/linkcard.js"></script>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://sunyancn.github.io/post/1440dbb0.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -310,7 +387,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/post/6de7497f.html" class="post-title-link" itemprop="url">20210107144640</a>
+            <a href="/post/6de7497f.html" class="post-title-link" itemprop="url">推荐系统杂谈</a>
         </h2>
 
         <div class="post-meta">
@@ -327,7 +404,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-01-11 10:29:05" itemprop="dateModified" datetime="2021-01-11T10:29:05+08:00">2021-01-11</time>
+                <time title="修改时间：2021-01-12 15:40:36" itemprop="dateModified" datetime="2021-01-12T15:40:36+08:00">2021-01-12</time>
               </span>
 
           
@@ -343,98 +420,24 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>时间衰减，数据去燥和平滑</p>
-<ul>
-<li>点击后停留 1 秒的为误点，移除</li>
-<li>过度活跃的用户为无效用户，进行移除</li>
-<li><p>频繁修改商品内容的进行移除</p>
-<p>推荐系统的多样性   帖子标签推荐和用户标签画像构建  一级和二级标签也可用于画像的构建以及推荐中的召回和排序</p>
-<p>用户兴趣标签 基于统计的标签：</p>
+          <h2 id="召回策略分类"><a href="#召回策略分类" class="headerlink" title="召回策略分类"></a>召回策略分类</h2><ol>
+<li><p>实时行为召回：在线实时捕捉用户对商品的点击，收藏，加购，购买等反馈行为，并召回相似商品，迅速抓住用户的短期购物需求。</p>
 </li>
-</ul>
-<p>❶ 标签可以分成三种类型，分别为长期、短期和即时。分别进行统计，就有了不同类型的标签，可用于做召回或者排序模型的特征。</p>
-<p>❷ 关键词用户兴趣标签的特征有以下两个方面：一是，关键词在特定的用户行为中的曝光率、互动率、转评赞率和平均停留时长；二是，关键词在全量用户行为中的曝光率、互动率、转评赞率和平均停留时长，用来表示在大众整体的偏好，可用于排序的输入特征。</p>
-<p>多样性算法落地的几个难点：<br>① 模型的优化目标模糊<br>众所周知，各种用户行为（点击、转化、停留、分享等等）都可以作为优化准确度的目标，我们可以明确的收集用户的行为作为模型的目标标签，从而设计模型并优化。因为多样性本身是一个集合统计量，很难找到直接的用户行为来作为模型优化的目标。<br>② 业务指标和多样性指标的冲突<br>业务关注的指标（转化率、停留时长等）和多样性指标并不是简单的正向或者负向的关系。如果单纯为了提高多样性指标而做多样性，反而会导致最终结果与业务目标偏离，使推荐的质量下降。</p>
-<p>在多样性算法的研究中，通常把多样性分成两种：<br>基于个体用户的多样性，旨在避免给单一用户推荐相似的物品，从而提高用户体验和增加用户满意度</p>
-<p>基于全部用户的多样性，旨在优化长尾的物品分发效果</p>
-<p>做用户兴趣模型，需考虑：</p>
-<ul>
-<li>相关行为：关注、点赞、评论、分享等</li>
-<li>兴趣衰减：用户的兴趣是周期性的，会存在兴趣衰减的情况</li>
-<li>内容热度：需考虑热门内容，大家都在看的内容</li>
-</ul>
-<p>标签推荐的问题</p>
-<ol>
-<li>非常依赖标签</li>
-<li>推荐粒度较粗，（1）如果用户兴趣单一的话，召回会不足。（2）不能很好的刻画用户兴趣。比如，有的用户只对英语感兴趣，如果把大量的教育相关的帖子推荐给他，用户体验会比较差。</li>
-<li>缺乏新颖性</li>
+<li><p>历史行为召回：离线分析用户对商品的历史点击，收藏，加购，购买等反馈行为，并召回相似商品，兼顾用户的长期购物需求。</p>
+</li>
+<li><p>profile 召回：从性别，年龄段，设备等多个维度，在线和离线同时对用户进行画像，并召回相对应的热门商品。不要小看这个召回，非常关键，往往新用户需要用这些静态信息和标签来做召回，往往可以快速圈定其圈层进行精准的探索和数据反馈，比如 5-6 线城市和北京西二旗的用户往往大概率兴趣差异较大。这层召回是全局热门召回的更精细化拆解。</p>
+</li>
+<li><p>热销 &amp; 趋势召回：分析商品的长期和短期销量变化，召回爆款和近期热点商品。</p>
+</li>
 </ol>
-<p>男生对于陌生匹配的反感程度更低，耐受度更高，男生天然更开放，只要这里异性多，对男生而言就是最好的服务了。维持这种生态系统运作的基本机制，通常是对女性提供更加开放友好的环境，吸引她们入驻，再以此辐射男性群体。这中间需要以女性视角关注产品 (男生希望快速触达，女生希望更有安全感)，所以相互匹配才能交流，从这个角度来看是一个偏向于女性的功能。</p>
-<p>供小于需的那部分群体就是需要重要考虑和保护的，差体验用户 (卖货、不法交易) 需要被限制，这部分人的存在和留存高反而会严重拉低其它用户体验和留存；不同用户价值不同，留存的高低对系统影响也就应该区别对待。</p>
-<p>用户的交际带宽也是有限的，无法做到人人有反馈。优质用户也只能提供有限的供给，这和书籍或者商品很不一样，并不是只要有库存就可以同时推荐给很多用户。美女帅哥在平台上从来不缺被喜欢，很容易成为产品的头部用户，他们也可以为产品吸引更多的用户进来；如果我们过度推荐这些用户可能会让这些用户收到到上万个喜欢的轰炸，但他们无法提供高的反馈率，比如下图中的头部用户拿到了几倍于普通用户的喜欢，但是回复率和匹配率却是颜值一般的人的五分之一水平。</p>
-<p>头部效应不受控的话，海量匹配会被沉没，带来了双向匹配成功率的快速下降，而且占用了大量的曝光机会。不能大部分人没人喜欢，没有曝光，需要平衡</p>
-<p>首先你得对内容生产者进行分层，将平台内的内容生产者进行区分，并根据对平台最终的贡献将他们分层，如下图。<br><a target="_blank" rel="noopener" href="https://imgchr.com/i/se5Oit"><img src="https://s3.ax1x.com/2021/01/07/se5Oit.png" alt="se5Oit.png"></a></p>
-<p>对平台内容生产者分层后，可以根据其流量配比进行调整，金字塔的底层需要被快速地识别，并将流量减少到可控范围内的最低；前 2 层需要被鼓励，特别是特色生产者需要流量倾斜，以保证其积极性，对于价值生产者所需流量不够的情况下，可以在非价值生产者内容流量中倾斜一部分。特色内容生产者可以类比第一个主题分享爆款种子内容筛选流程类似，可以通过部分种子特色内容生产者找到更多的特色内容生产者。</p>
-<p><a target="_blank" rel="noopener" href="https://imgchr.com/i/seIion"><img src="https://s3.ax1x.com/2021/01/07/seIion.png" alt="seIion.png"></a></p>
-<p>流量如何控制呢，我们可以看下分配流程，当然这个是借鉴淘宝的商品流量分配模式，如上图所示。通过数据化和算法的方式先对整个流量体系进行拆解，将流量拆分成若干主要模块，并通过流量控制系统进行干预，可以实现用户时长、完播率、浏览深度不变的情况下，内容流量分布的调整 (至少电商中可以做到 gmv 不变的情况下，流量实现分配目标的 80%-90%)。</p>
-<p>用户偏好通过用户在不同属性的维度上行为次数的带衰减的线性加权求和，再进行归一化得到。<br>这里有两个关键点：</p>
-<ul>
-<li><p>第一个关键点是：不同行为的权重如何衡量。用户有着多种不同的行为，例如，在购物网站，用户可能发生浏览、收藏、加购物车、下单等行为，显然，下单的成本要比普通的浏览成本要高，即在不同行为上花费的成本是存在差异的，在数据上的反映是不同行为的权重差异很大，如何定义、衡量并验证不同行为的权重是一件并不容易的事情。我们采用的权重计算方法有：</p>
-<ul>
-<li>后验转化率的方法，转化率的倒数作为权重；</li>
-<li>有监督的方法，bagging+LR 模型，可以将成交或者下单作为 label，模型得到的特征重要性作为权重；</li>
-<li>通过贝叶斯模型计算权重。</li>
-</ul>
-</li>
-<li><p>第二个关键点是：衰减系数的定义。用户的需求并不是持续稳定的，会随时间会发生变化和转移，这种需求的变化需要被偏好捕捉到，因此，距离当前越近的行为越能反映现在的需求。对于衰减形式，我们采取了指数衰减以及阶跃形式衰减。</p>
-<ul>
-<li>指数形式。用户行为对未来偏好的影响程度，随着时间的拉长呈指数型下降，对于 t 天前的行为，衰减因子为 λ 的 t 次方；</li>
-<li>阶跃形式。将时间人为划分成若干不同的时间区间，同一个时间区间内的行为的衰减因子是相同的。</li>
-<li>挑战： </li>
-<li>很难证明什么样的行为权重是最优的，且很难找到优化方向；</li>
-<li>人为选定的衰减方式以及衰减因子的选取具有主观因素，并不适用于所有的偏好；</li>
-<li>基于统计的偏好挖掘难以优化。</li>
-</ul>
-</li>
-</ul>
-<p>① 实时行为召回：在线实时捕捉用户对商品的点击，收藏，加购，购买等反馈行 为，并召回相似商品，迅速抓住用户的短期购物需求。</p>
-<p>② 历史行为召回：离线分析用户对商品的历史点击，收藏，加购，购买等反馈行为，并召回相似商品，兼顾用户的长期购物需求。</p>
-<p>③ profile 召回：从性别，年龄段，设备等多个维度，在线和离线同时对用户进行</p>
-<p>画像，并召回相对应的热门商品。不要小看这个召回，非常关键，往往新用户需要用这些静态信息和标签来做召回，往往可以快速圈定其圈层进行精准的探索和数据反馈，比如 5-6 线城市和北京西二旗的用户往往大概率兴趣差异较大。这层召回是全局热门召回的更精细化拆解。</p>
-<p>④ 热销 &amp; 趋势召回：分析商品的长期和短期销量变化，召回爆款和近期热点商品。</p>
-<p>各行各业龙头如下：</p>
-<ul>
-<li>酒茅，贵州茅台</li>
-<li>药茅，恒瑞医药、迈瑞医疗</li>
-<li>奶茅，伊利股份</li>
-<li>水茅，农夫山泉</li>
-<li>酱茅，海天味业</li>
-<li>锂茅，宁德时代</li>
-<li>光茅，隆基股份</li>
-<li>车茅，比亚迪</li>
-<li>军茅，航发动力、中航沈飞</li>
-<li>套茅，英科医疗</li>
-<li>眼茅，爱尔眼科</li>
-<li>牙茅，通策医疗</li>
-<li>机茅，三一重工</li>
-<li>空茅，美的集团</li>
-<li>猪茅，牧原股份</li>
-<li>泥茅，海螺水泥</li>
-<li>建茅，东方雨虹</li>
-<li>旅茅，中国中免</li>
-<li>银茅，招商银行</li>
-<li>芯茅，卓胜微</li>
-<li> 5G 茅，立讯精密</li>
-<li>化茅，万华化学</li>
-<li>油茅，金龙鱼</li>
-<li>软茅，深信服</li>
-<li>纸茅，中顺洁柔</li>
-<li>券茅，东方财富</li>
-<li>快茅，顺丰控股</li>
-<li>金属茅，紫金矿业</li>
-<li>安防茅，海康威视</li>
-</ul>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/post/6de7497f.html#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -935,78 +938,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://sunyancn.github.io/post/fdb68096.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://i.loli.net/2020/08/25/NrIpckD9qPLY38C.jpg">
-      <meta itemprop="name" content="故事尾音">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="故事尾音">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/post/fdb68096.html" class="post-title-link" itemprop="url">向上捅破天，向下扎到根</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2020-10-30 16:47:26 / 修改时间：16:49:34" itemprop="dateCreated datePublished" datetime="2020-10-30T16:47:26+08:00">2020-10-30</time>
-            </span>
-
-          
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <blockquote>
-<p>10 月 27 日，华为 “心声社区” 刊发创始人任正非 9 月 14-18 日访问北京大学、清华大学、中国科学院等学校与部分科学家、学生代表座谈时的发言，题为《向上捅破天，向下扎到根》。</p>
-</blockquote>
-<p>习主席在与科学家座谈会讲了，基础教育、基础研究、基础理论、基础工业，也讲了科学家的好奇心驱动。国家不仅要重视科学理论、工程技术的研究，也要重视一些不以应用为目的的纯研究。不然我们怎么能向上捅破天呢？我们这么大的经济总量，允许一部分人是 “梵高” 应该是可以的。科学史上，有一种生存了八千万年的蛭虫，多少科学家研究了数十年，有些科学家因找不到雄的蛭虫而发大火，实际上他已经走到诺贝尔奖的边上了，最后由比利时科学家发现它是单性繁殖。两性繁殖，两条基因链的结合会产生突变，会有优秀的一代产生，当然，不健康的就流产了，自然淘汰。那么单亲繁殖的基因链若有病变、有问题，遗传下去不就灭绝了吗？她发现蛭虫的基因链会断裂，又会重新整合，这不就是优选吗？所以它们经历八千万年，经历多少灾难，还存活下来了。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/post/fdb68096.html#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-    <script type="text/javascript" src="/js/linkcard.js"></script>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1078,7 +1009,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">128</span>
+          <span class="site-state-item-count">129</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -1091,7 +1022,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">85</span>
+        <span class="site-state-item-count">86</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>

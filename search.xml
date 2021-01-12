@@ -4584,42 +4584,109 @@ P=N*C*3*3
 ]]></content>
   </entry>
   <entry>
-    <title>20210107144640</title>
-    <url>/post/6de7497f.html</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><p>时间衰减，数据去燥和平滑</p>
-<ul>
-<li>点击后停留 1 秒的为误点，移除</li>
-<li>过度活跃的用户为无效用户，进行移除</li>
-<li><p>频繁修改商品内容的进行移除</p>
-<p>推荐系统的多样性   帖子标签推荐和用户标签画像构建  一级和二级标签也可用于画像的构建以及推荐中的召回和排序</p>
-<p>用户兴趣标签 基于统计的标签：</p>
+    <title>Latex 安装和使用</title>
+    <url>/post/1440dbb0.html</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><ol>
+<li>下载安装 TexLive<br><a href="http://mirror.ctan.org/systems/texlive/tlnet/install-tl-windows.exe">texlive windows 下载器 下载</a><br><a href="https://mirrors.tuna.tsinghua.edu.cn/CTAN/systems/texlive/Images/texlive.iso">texlive 镜像下载</a><br>建议使用第二个，速度较快。<br>另外 TexLive 体积较大，建议安装到 C 盘之外的其他盘。<br>相关参考教程：<a href="https://zhuanlan.zhihu.com/p/108258567">https://zhuanlan.zhihu.com/p/108258567</a></li>
+<li> 下载安装 TexStudio<br><a href="https://github.com/texstudio-org/texstudio/releases/download/3.0.4/texstudio-3.0.4-win-qt5.exe">TexStudio 下载</a><br>相关参考教程：<a href="https://zhuanlan.zhihu.com/p/108258567">https://zhuanlan.zhihu.com/p/108258567</a></li>
+<li> 打开美赛模板<br>进入文件夹，修改.tex 文件的打开方式为 texstudio, 然后双击打开 tex 文件。<br><a href="https://imgchr.com/i/s3EhBn"><img src="https://s3.ax1x.com/2021/01/11/s3EhBn.png" alt="s3EhBn.png"></a><br>点击工具栏的两个绿色三角组成的图标即可编译和预览。<br><a href="https://imgchr.com/i/s3V3uj"><img src="https://s3.ax1x.com/2021/01/11/s3V3uj.png" alt="s3V3uj.png"></a></li>
+</ol>
+]]></content>
+      <tags>
+        <tag>Latex</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>基金投资笔记 (2021 年)</title>
+    <url>/post/f0b54271.html</url>
+    <content><![CDATA[<html><head><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script></head><body><h2 id="优秀基金" class="heading-control"><a href="#优秀基金" class="headerlink" title="优秀基金"></a>优秀基金<a class="heading-anchor" href="#优秀基金" aria-hidden="true"></a></h2><h3 id="芯片半导体基金" class="heading-control"><a href="#芯片半导体基金" class="headerlink" title="芯片半导体基金"></a>芯片半导体基金<a class="heading-anchor" href="#芯片半导体基金" aria-hidden="true"></a></h3><ul>
+<li>诺安成长混合 (320007)</li>
+<li> 银河创新成长混合 (519674)</li>
+</ul>
+<h3 id="电子板块基金" class="heading-control"><a href="#电子板块基金" class="headerlink" title="电子板块基金"></a>电子板块基金<a class="heading-anchor" href="#电子板块基金" aria-hidden="true"></a></h3><ul>
+<li>天弘中证电子 ETF 联接 A (001617) 跟踪标的：中证电子指数 | 跟踪误差：0.22%  纯电子板块，偏消费电子</li>
+</ul>
+<h3 id="通信5G" class="heading-control"><a href="#通信5G" class="headerlink" title="通信5G"></a>通信 5G<a class="heading-anchor" href="#通信5G" aria-hidden="true"></a></h3><ul>
+<li>华夏中证 5G（008087）—5G 板块<a id="more"></a>
 </li>
 </ul>
-<p>❶ 标签可以分成三种类型，分别为长期、短期和即时。分别进行统计，就有了不同类型的标签，可用于做召回或者排序模型的特征。</p>
-<p>❷ 关键词用户兴趣标签的特征有以下两个方面：一是，关键词在特定的用户行为中的曝光率、互动率、转评赞率和平均停留时长；二是，关键词在全量用户行为中的曝光率、互动率、转评赞率和平均停留时长，用来表示在大众整体的偏好，可用于排序的输入特征。</p>
-<p>多样性算法落地的几个难点：<br>① 模型的优化目标模糊<br>众所周知，各种用户行为（点击、转化、停留、分享等等）都可以作为优化准确度的目标，我们可以明确的收集用户的行为作为模型的目标标签，从而设计模型并优化。因为多样性本身是一个集合统计量，很难找到直接的用户行为来作为模型优化的目标。<br>② 业务指标和多样性指标的冲突<br>业务关注的指标（转化率、停留时长等）和多样性指标并不是简单的正向或者负向的关系。如果单纯为了提高多样性指标而做多样性，反而会导致最终结果与业务目标偏离，使推荐的质量下降。</p>
-<p>在多样性算法的研究中，通常把多样性分成两种：<br>基于个体用户的多样性，旨在避免给单一用户推荐相似的物品，从而提高用户体验和增加用户满意度</p>
-<p>基于全部用户的多样性，旨在优化长尾的物品分发效果</p>
-<p>做用户兴趣模型，需考虑：</p>
+<h3 id="光伏" class="heading-control"><a href="#光伏" class="headerlink" title="光伏"></a>光伏<a class="heading-anchor" href="#光伏" aria-hidden="true"></a></h3><ul>
+<li>广发高端（004997）</li>
+<li>创金合信（005969）</li>
+</ul>
+<h3 id="医药行业板块基金" class="heading-control"><a href="#医药行业板块基金" class="headerlink" title="医药行业板块基金"></a>医药行业板块基金<a class="heading-anchor" href="#医药行业板块基金" aria-hidden="true"></a></h3><ul>
+<li>中欧医疗健康混合 A (003095)</li>
+</ul>
+<h3 id="消费行业板块基金" class="heading-control"><a href="#消费行业板块基金" class="headerlink" title="消费行业板块基金"></a>消费行业板块基金<a class="heading-anchor" href="#消费行业板块基金" aria-hidden="true"></a></h3><ul>
+<li>招商中证白酒指数分级 (161725) 跟踪标的：中证白酒指数 | 跟踪误差：0.15%</li>
+<li> 鹏华酒分级 (160632) 跟踪标的：中证酒指数 | 跟踪误差：0.15%</li>
+<li> 天弘中证食品饮料指数 A (001631) 跟踪标的：中证食品饮料指数 | 跟踪误差：0.14% 白酒 + 食品饮料</li>
+<li>国泰国证食品饮料行业指数分级 (160222) 跟踪标的：国证食品饮料行业指数 | 跟踪误差：0.15%  白酒 + 食品饮料</li>
+<li>易方达中小盘（110011）—- 白酒 + 医疗</li>
+<li>易方达蓝筹（005827）— 白酒 + 港股（腾讯美团等）</li>
+<li>易方达消费行业混合 — 白酒 + 可选消费</li>
+</ul>
+<h3 id="消费医药混合基金" class="heading-control"><a href="#消费医药混合基金" class="headerlink" title="消费医药混合基金"></a>消费医药混合基金<a class="heading-anchor" href="#消费医药混合基金" aria-hidden="true"></a></h3><ul>
+<li>易方达中小盘混合 (110011)</li>
+<li> 景顺长城新兴成长混合 (260108)</li>
+</ul>
+<h2 id="各行各业龙头" class="heading-control"><a href="#各行各业龙头" class="headerlink" title="各行各业龙头"></a>各行各业龙头<a class="heading-anchor" href="#各行各业龙头" aria-hidden="true"></a></h2><ul>
+<li>白酒，贵州茅台</li>
+<li>医药，恒瑞医药、迈瑞医疗</li>
+<li>奶制品，伊利股份</li>
+<li>矿泉水，农夫山泉</li>
+<li>酱油，海天味业</li>
+<li>锂电池，宁德时代</li>
+<li>光伏，隆基股份</li>
+<li>新能源汽车，比亚迪</li>
+<li>军工，航发动力、中航沈飞</li>
+<li>套茅，英科医疗</li>
+<li>眼科，爱尔眼科</li>
+<li>牙齿健康，通策医疗</li>
+<li>机械，三一重工</li>
+<li>空调，美的集团</li>
+<li>养猪，牧原股份</li>
+<li>水泥，海螺水泥</li>
+<li>建筑，东方雨虹</li>
+<li>旅游，中国中免</li>
+<li>银行，招商银行</li>
+<li>芯片，卓胜微</li>
+<li> 5G，立讯精密</li>
+<li>化学，万华化学</li>
+<li>食用油，金龙鱼</li>
+<li>软件，深信服</li>
+<li>书写纸，中顺洁柔</li>
+<li>券商，东方财富</li>
+<li>快递，顺丰控股</li>
+<li>金属，紫金矿业</li>
+<li>安防，海康威视</li>
+</ul>
+</body></html>]]></content>
+      <tags>
+        <tag>基金</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>推荐系统杂谈</title>
+    <url>/post/6de7497f.html</url>
+    <content><![CDATA[<html><head><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script></head><body><h2 id="召回策略分类" class="heading-control"><a href="#召回策略分类" class="headerlink" title="召回策略分类"></a>召回策略分类<a class="heading-anchor" href="#召回策略分类" aria-hidden="true"></a></h2><ol>
+<li><p>实时行为召回：在线实时捕捉用户对商品的点击，收藏，加购，购买等反馈行为，并召回相似商品，迅速抓住用户的短期购物需求。</p>
+</li>
+<li><p>历史行为召回：离线分析用户对商品的历史点击，收藏，加购，购买等反馈行为，并召回相似商品，兼顾用户的长期购物需求。</p>
+</li>
+<li><p>profile 召回：从性别，年龄段，设备等多个维度，在线和离线同时对用户进行画像，并召回相对应的热门商品。不要小看这个召回，非常关键，往往新用户需要用这些静态信息和标签来做召回，往往可以快速圈定其圈层进行精准的探索和数据反馈，比如 5-6 线城市和北京西二旗的用户往往大概率兴趣差异较大。这层召回是全局热门召回的更精细化拆解。</p>
+</li>
+<li><p>热销 & 趋势召回：分析商品的长期和短期销量变化，召回爆款和近期热点商品。</p>
+</li>
+</ol>
+<a id="more"></a>
+<h2 id="用户兴趣标签" class="heading-control"><a href="#用户兴趣标签" class="headerlink" title="用户兴趣标签"></a>用户兴趣标签<a class="heading-anchor" href="#用户兴趣标签" aria-hidden="true"></a></h2><h3 id="基于统计的标签" class="heading-control"><a href="#基于统计的标签" class="headerlink" title="基于统计的标签"></a>基于统计的标签<a class="heading-anchor" href="#基于统计的标签" aria-hidden="true"></a></h3><p>基于统计的用户兴趣表现需考虑：</p>
 <ul>
 <li>相关行为：关注、点赞、评论、分享等</li>
 <li>兴趣衰减：用户的兴趣是周期性的，会存在兴趣衰减的情况</li>
 <li>内容热度：需考虑热门内容，大家都在看的内容</li>
+<li>时间维度：分别为长期、短期和即时。</li>
 </ul>
-<p>标签推荐的问题</p>
-<ol>
-<li>非常依赖标签</li>
-<li>推荐粒度较粗，（1）如果用户兴趣单一的话，召回会不足。（2）不能很好的刻画用户兴趣。比如，有的用户只对英语感兴趣，如果把大量的教育相关的帖子推荐给他，用户体验会比较差。</li>
-<li>缺乏新颖性</li>
-</ol>
-<p>男生对于陌生匹配的反感程度更低，耐受度更高，男生天然更开放，只要这里异性多，对男生而言就是最好的服务了。维持这种生态系统运作的基本机制，通常是对女性提供更加开放友好的环境，吸引她们入驻，再以此辐射男性群体。这中间需要以女性视角关注产品 (男生希望快速触达，女生希望更有安全感)，所以相互匹配才能交流，从这个角度来看是一个偏向于女性的功能。</p>
-<p>供小于需的那部分群体就是需要重要考虑和保护的，差体验用户 (卖货、不法交易) 需要被限制，这部分人的存在和留存高反而会严重拉低其它用户体验和留存；不同用户价值不同，留存的高低对系统影响也就应该区别对待。</p>
-<p>用户的交际带宽也是有限的，无法做到人人有反馈。优质用户也只能提供有限的供给，这和书籍或者商品很不一样，并不是只要有库存就可以同时推荐给很多用户。美女帅哥在平台上从来不缺被喜欢，很容易成为产品的头部用户，他们也可以为产品吸引更多的用户进来；如果我们过度推荐这些用户可能会让这些用户收到到上万个喜欢的轰炸，但他们无法提供高的反馈率，比如下图中的头部用户拿到了几倍于普通用户的喜欢，但是回复率和匹配率却是颜值一般的人的五分之一水平。</p>
-<p>头部效应不受控的话，海量匹配会被沉没，带来了双向匹配成功率的快速下降，而且占用了大量的曝光机会。不能大部分人没人喜欢，没有曝光，需要平衡</p>
-<p>首先你得对内容生产者进行分层，将平台内的内容生产者进行区分，并根据对平台最终的贡献将他们分层，如下图。<br><a href="https://imgchr.com/i/se5Oit"><img src="https://s3.ax1x.com/2021/01/07/se5Oit.png" alt="se5Oit.png"></a></p>
-<p>对平台内容生产者分层后，可以根据其流量配比进行调整，金字塔的底层需要被快速地识别，并将流量减少到可控范围内的最低；前 2 层需要被鼓励，特别是特色生产者需要流量倾斜，以保证其积极性，对于价值生产者所需流量不够的情况下，可以在非价值生产者内容流量中倾斜一部分。特色内容生产者可以类比第一个主题分享爆款种子内容筛选流程类似，可以通过部分种子特色内容生产者找到更多的特色内容生产者。</p>
-<p><a href="https://imgchr.com/i/seIion"><img src="https://s3.ax1x.com/2021/01/07/seIion.png" alt="seIion.png"></a></p>
-<p>流量如何控制呢，我们可以看下分配流程，当然这个是借鉴淘宝的商品流量分配模式，如上图所示。通过数据化和算法的方式先对整个流量体系进行拆解，将流量拆分成若干主要模块，并通过流量控制系统进行干预，可以实现用户时长、完播率、浏览深度不变的情况下，内容流量分布的调整 (至少电商中可以做到 gmv 不变的情况下，流量实现分配目标的 80%-90%)。</p>
 <p>用户偏好通过用户在不同属性的维度上行为次数的带衰减的线性加权求和，再进行归一化得到。<br>这里有两个关键点：</p>
 <ul>
 <li><p>第一个关键点是：不同行为的权重如何衡量。用户有着多种不同的行为，例如，在购物网站，用户可能发生浏览、收藏、加购物车、下单等行为，显然，下单的成本要比普通的浏览成本要高，即在不同行为上花费的成本是存在差异的，在数据上的反映是不同行为的权重差异很大，如何定义、衡量并验证不同行为的权重是一件并不容易的事情。我们采用的权重计算方法有：</p>
@@ -4633,63 +4700,56 @@ P=N*C*3*3
 <ul>
 <li>指数形式。用户行为对未来偏好的影响程度，随着时间的拉长呈指数型下降，对于 t 天前的行为，衰减因子为 λ 的 t 次方；</li>
 <li>阶跃形式。将时间人为划分成若干不同的时间区间，同一个时间区间内的行为的衰减因子是相同的。</li>
-<li>挑战： </li>
-<li>很难证明什么样的行为权重是最优的，且很难找到优化方向；</li>
-<li>人为选定的衰减方式以及衰减因子的选取具有主观因素，并不适用于所有的偏好；</li>
-<li>基于统计的偏好挖掘难以优化。</li>
 </ul>
 </li>
 </ul>
-<p>① 实时行为召回：在线实时捕捉用户对商品的点击，收藏，加购，购买等反馈行 为，并召回相似商品，迅速抓住用户的短期购物需求。</p>
-<p>② 历史行为召回：离线分析用户对商品的历史点击，收藏，加购，购买等反馈行为，并召回相似商品，兼顾用户的长期购物需求。</p>
-<p>③ profile 召回：从性别，年龄段，设备等多个维度，在线和离线同时对用户进行</p>
-<p>画像，并召回相对应的热门商品。不要小看这个召回，非常关键，往往新用户需要用这些静态信息和标签来做召回，往往可以快速圈定其圈层进行精准的探索和数据反馈，比如 5-6 线城市和北京西二旗的用户往往大概率兴趣差异较大。这层召回是全局热门召回的更精细化拆解。</p>
-<p>④ 热销 &amp; 趋势召回：分析商品的长期和短期销量变化，召回爆款和近期热点商品。</p>
-<p>各行各业龙头如下：</p>
-<ul>
-<li>酒茅，贵州茅台</li>
-<li>药茅，恒瑞医药、迈瑞医疗</li>
-<li>奶茅，伊利股份</li>
-<li>水茅，农夫山泉</li>
-<li>酱茅，海天味业</li>
-<li>锂茅，宁德时代</li>
-<li>光茅，隆基股份</li>
-<li>车茅，比亚迪</li>
-<li>军茅，航发动力、中航沈飞</li>
-<li>套茅，英科医疗</li>
-<li>眼茅，爱尔眼科</li>
-<li>牙茅，通策医疗</li>
-<li>机茅，三一重工</li>
-<li>空茅，美的集团</li>
-<li>猪茅，牧原股份</li>
-<li>泥茅，海螺水泥</li>
-<li>建茅，东方雨虹</li>
-<li>旅茅，中国中免</li>
-<li>银茅，招商银行</li>
-<li>芯茅，卓胜微</li>
-<li> 5G 茅，立讯精密</li>
-<li>化茅，万华化学</li>
-<li>油茅，金龙鱼</li>
-<li>软茅，深信服</li>
-<li>纸茅，中顺洁柔</li>
-<li>券茅，东方财富</li>
-<li>快茅，顺丰控股</li>
-<li>金属茅，紫金矿业</li>
-<li>安防茅，海康威视</li>
+<h3 id="标签推荐的问题" class="heading-control"><a href="#标签推荐的问题" class="headerlink" title="标签推荐的问题"></a>标签推荐的问题<a class="heading-anchor" href="#标签推荐的问题" aria-hidden="true"></a></h3><ol>
+<li>非常依赖标签</li>
+<li>推荐粒度较粗 <ul>
+<li>如果用户兴趣单一的话，召回会不足。</li>
+<li>不能很好的刻画用户兴趣。比如，有的用户只对英语感兴趣，如果把大量的教育相关的帖子推荐给他，用户体验会比较差。</li>
 </ul>
-]]></content>
-  </entry>
-  <entry>
-    <title>Latex 安装和使用</title>
-    <url>/post/1440dbb0.html</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><ol>
-<li>下载安装 TexLive<br><a href="http://mirror.ctan.org/systems/texlive/tlnet/install-tl-windows.exe">texlive windows 下载器 下载</a><br><a href="https://mirrors.tuna.tsinghua.edu.cn/CTAN/systems/texlive/Images/texlive.iso">texlive 镜像下载</a><br>建议使用第二个，速度较快。<br>另外 TexLive 体积较大，建议安装到 C 盘之外的其他盘。<br>相关参考教程：<a href="https://zhuanlan.zhihu.com/p/108258567">https://zhuanlan.zhihu.com/p/108258567</a></li>
-<li> 下载安装 TexStudio<br><a href="https://github.com/texstudio-org/texstudio/releases/download/3.0.4/texstudio-3.0.4-win-qt5.exe">TexStudio 下载</a><br>相关参考教程：<a href="https://zhuanlan.zhihu.com/p/108258567">https://zhuanlan.zhihu.com/p/108258567</a></li>
-<li> 打开美赛模板<br>进入文件夹，修改.tex 文件的打开方式为 texstudio, 然后双击打开 tex 文件。<br><a href="https://imgchr.com/i/s3EhBn"><img src="https://s3.ax1x.com/2021/01/11/s3EhBn.png" alt="s3EhBn.png"></a><br>点击工具栏的两个绿色三角组成的图标即可编译和预览。<br><a href="https://imgchr.com/i/s3V3uj"><img src="https://s3.ax1x.com/2021/01/11/s3V3uj.png" alt="s3V3uj.png"></a></li>
+</li>
+<li>缺乏新颖性</li>
 </ol>
-]]></content>
+<h2 id="推荐系统的多样性" class="heading-control"><a href="#推荐系统的多样性" class="headerlink" title="推荐系统的多样性"></a>推荐系统的多样性<a class="heading-anchor" href="#推荐系统的多样性" aria-hidden="true"></a></h2><h3 id="多样性分类" class="heading-control"><a href="#多样性分类" class="headerlink" title="多样性分类"></a>多样性分类<a class="heading-anchor" href="#多样性分类" aria-hidden="true"></a></h3><p>在多样性算法的研究中，通常把多样性分成两种：</p>
+<ul>
+<li><p>基于个体用户的多样性，旨在避免给单一用户推荐相似的物品，从而提高用户体验和增加用户满意度</p>
+</li>
+<li><p>基于全部用户的多样性，旨在优化长尾的物品分发效果</p>
+</li>
+</ul>
+<h3 id="多样性算法落地的几个难点" class="heading-control"><a href="#多样性算法落地的几个难点" class="headerlink" title="多样性算法落地的几个难点"></a>多样性算法落地的几个难点<a class="heading-anchor" href="#多样性算法落地的几个难点" aria-hidden="true"></a></h3><ol>
+<li>模型的优化目标模糊<br>众所周知，各种用户行为（点击、转化、停留、分享等等）都可以作为优化准确度的目标，我们可以明确的收集用户的行为作为模型的目标标签，从而设计模型并优化。因为多样性本身是一个集合统计量，很难找到直接的用户行为来作为模型优化的目标。</li>
+<li>业务指标和多样性指标的冲突<br>业务关注的指标（转化率、停留时长等）和多样性指标并不是简单的正向或者负向的关系。如果单纯为了提高多样性指标而做多样性，反而会导致最终结果与业务目标偏离，使推荐的质量下降。</li>
+</ol>
+<h2 id="流量控制" class="heading-control"><a href="#流量控制" class="headerlink" title="流量控制"></a>流量控制<a class="heading-anchor" href="#流量控制" aria-hidden="true"></a></h2><p>头部效应不受控的话，海量匹配会被沉没，带来了双向匹配成功率的快速下降，而且占用了大量的曝光机会。不能大部分人没人喜欢，没有曝光，需要平衡。</p>
+<ol>
+<li><p>首先你得对内容生产者进行分层，将平台内的内容生产者进行区分，并根据对平台最终的贡献将他们分层，如下图。<br><a href="https://imgchr.com/i/se5Oit"><img src="https://s3.ax1x.com/2021/01/07/se5Oit.png" alt="se5Oit.png"></a></p>
+</li>
+<li><p>对平台内容生产者分层后，可以根据其流量配比进行调整，金字塔的底层需要被快速地识别，并将流量减少到可控范围内的最低；前 2 层需要被鼓励，特别是特色生产者需要流量倾斜，以保证其积极性，对于价值生产者所需流量不够的情况下，可以在非价值生产者内容流量中倾斜一部分。特色内容生产者可以类比第一个主题分享爆款种子内容筛选流程类似，可以通过部分种子特色内容生产者找到更多的特色内容生产者。</p>
+</li>
+</ol>
+<p><a href="https://imgchr.com/i/seIion"><img src="https://s3.ax1x.com/2021/01/07/seIion.png" alt="seIion.png"></a></p>
+<ol>
+<li>流量如何控制呢，我们可以看下分配流程，当然这个是借鉴淘宝的商品流量分配模式，如上图所示。通过数据化和算法的方式先对整个流量体系进行拆解，将流量拆分成若干主要模块，并通过流量控制系统进行干预，可以实现用户时长、完播率、浏览深度不变的情况下，内容流量分布的调整 (至少电商中可以做到 gmv 不变的情况下，流量实现分配目标的 80%-90%)。</li>
+</ol>
+<h2 id="用户留存" class="heading-control"><a href="#用户留存" class="headerlink" title="用户留存"></a>用户留存<a class="heading-anchor" href="#用户留存" aria-hidden="true"></a></h2><h3 id="性别重要性平衡" class="heading-control"><a href="#性别重要性平衡" class="headerlink" title="性别重要性平衡"></a>性别重要性平衡<a class="heading-anchor" href="#性别重要性平衡" aria-hidden="true"></a></h3><p>男生对于陌生匹配的反感程度更低，耐受度更高，男生天然更开放，只要这里异性多，对男生而言就是最好的服务了。<strong>维持这种生态系统运作的基本机制，通常是对女性提供更加开放友好的环境，吸引她们入驻，再以此辐射男性群体。这中间需要以女性视角关注产品 (男生希望快速触达，女生希望更有安全感)，</strong>所以相互匹配才能交流，从这个角度来看是一个偏向于女性的功能。</p>
+<h3 id="不同用户对于留存的价值不同" class="heading-control"><a href="#不同用户对于留存的价值不同" class="headerlink" title="不同用户对于留存的价值不同"></a>不同用户对于留存的价值不同<a class="heading-anchor" href="#不同用户对于留存的价值不同" aria-hidden="true"></a></h3><p>不同用户价值不同，留存的高低对系统影响也就应该区别对待：</p>
+<ul>
+<li>供小于需的那部分群体就是需要重要考虑和保护的</li>
+<li>差体验用户 (卖货、不法交易) 需要被限制，这部分人的存在和留存高反而会严重拉低其它用户体验和留存；</li>
+</ul>
+<h3 id="交际带宽有限" class="heading-control"><a href="#交际带宽有限" class="headerlink" title="交际带宽有限"></a>交际带宽有限<a class="heading-anchor" href="#交际带宽有限" aria-hidden="true"></a></h3><p>用户的交际带宽也是有限的，无法做到人人有反馈。优质用户也只能提供有限的供给，这和书籍或者商品很不一样，并不是只要有库存就可以同时推荐给很多用户。美女帅哥在平台上从来不缺被喜欢，很容易成为产品的头部用户，他们也可以为产品吸引更多的用户进来；如果我们过度推荐这些用户可能会让这些用户收到到上万个喜欢的轰炸，但他们无法提供高的反馈率，比如下图中的头部用户拿到了几倍于普通用户的喜欢，但是回复率和匹配率却是颜值一般的人的五分之一水平。</p>
+<h2 id="数据去噪" class="heading-control"><a href="#数据去噪" class="headerlink" title="数据去噪"></a>数据去噪<a class="heading-anchor" href="#数据去噪" aria-hidden="true"></a></h2><p>数据去燥和平滑：</p>
+<ul>
+<li>点击后停留 1 秒的为误点，移除</li>
+<li>过度活跃的用户为无效用户，进行移除</li>
+<li>频繁修改商品内容的进行移除</li>
+</ul>
+</body></html>]]></content>
       <tags>
-        <tag>Latex</tag>
+        <tag>推荐系统</tag>
       </tags>
   </entry>
 </search>
