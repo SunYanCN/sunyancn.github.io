@@ -6,7 +6,7 @@
   <link href="http://sunyancn.github.io/atom.xml" rel="self"/>
   
   <link href="http://sunyancn.github.io/"/>
-  <updated>2021-01-12T07:41:17.245Z</updated>
+  <updated>2021-01-15T12:09:39.319Z</updated>
   <id>http://sunyancn.github.io/</id>
   
   <author>
@@ -15,6 +15,38 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>20210115200659</title>
+    <link href="http://sunyancn.github.io/post/aa639214.html"/>
+    <id>http://sunyancn.github.io/post/aa639214.html</id>
+    <published>2021-01-15T12:06:59.000Z</published>
+    <updated>2021-01-15T12:09:39.319Z</updated>
+    
+    
+    <summary type="html">&lt;h2 id=&quot;论文&quot;&gt;&lt;a href=&quot;#论文&quot; class=&quot;headerlink&quot; title=&quot;论文&quot;&gt;&lt;/a&gt;论文&lt;/h2&gt;&lt;p&gt;&lt;a href=&quot;https://arxiv.org/pdf/1706.06978.pdf&quot;&gt;《Deep Interest Network for Click-Through Rate Prediction》&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&quot;背景&quot;&gt;&lt;a href=&quot;#背景&quot; class=&quot;headerlink&quot; title=&quot;背景&quot;&gt;&lt;/a&gt;背景&lt;/h2&gt;&lt;p&gt;Deep Interest Network (DIN) 是盖坤大神领导的阿里妈妈的精准定向检索及基础算法团队，在 2017 年 6 月提出的。 它针对&lt;strong&gt;电子商务领域 (e-commerce industry)&lt;/strong&gt; 的 CTR 预估，重点在于&lt;strong&gt;充分利用 / 挖掘用户历史行为数据中的信息&lt;/strong&gt;。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;数据特征：&lt;/strong&gt; 针对互联网电子商务领域，数据特点：Diversity、Local Activation。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;针对问题：&lt;/strong&gt;用户有多个兴趣爱好，访问了多个 good_id，shop_id。为了降低纬度并使得商品店铺间的算术运算有意义，我们先对其进行 Embedding 嵌入。那么我们如何对用户多种多样的兴趣建模那？使用 &lt;strong&gt;Pooling 对 Embedding Vector 求和或者求平均&lt;/strong&gt;。同时这也解决了不同用户输入长度不同的问题，得到了一个固定长度的向量。这个向量就是用户表示，是用户兴趣的代表。但是，直接求 sum 或 average 损失了很多信息。所以稍加改进，针对不同的 behavior id 赋予不同的权重，这个权重是由当前 behavior id 和候选广告共同决定的。这就是 Attention 机制，实现了 Local Activation。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;DIN 的解决方案：&lt;/strong&gt;&lt;ol&gt;
+&lt;li&gt;使用 &lt;strong&gt;用户兴趣分布 (Diversity)&lt;/strong&gt; 来表示用户多种多样的兴趣爱好&lt;/li&gt;
+&lt;li&gt;使用 &lt;strong&gt;Attention 机制&lt;/strong&gt; 来实现 Local Activation&lt;/li&gt;
+&lt;li&gt; 针对模型训练，提出了 &lt;strong&gt;Dice 激活函数，自适应正则 (Adaptive Regulation)&lt;/strong&gt;，显著提升了模型性能与收敛速度&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;strong&gt;Diversity：&lt;/strong&gt; 用户在访问电商网站时会对多种商品都感兴趣。也就是用户的兴趣非常的广泛。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Local Activation：&lt;/strong&gt; 由于用户兴趣的多样性，只有部分历史数据会影响到当次推荐的物品是否被点击，而不是所有的历史记录。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Diversity&lt;/strong&gt; 体现在年轻的母亲的历史记录中体现的兴趣十分广泛，涵盖羊毛衫、手提袋、耳环、童装、运动装等等。而爱好游泳的人同样兴趣广泛，历史记录涉及浴装、旅游手册、踏水板、马铃薯、冰激凌、坚果等等。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Local activation&lt;/strong&gt; 体现在，当我们给爱好游泳的人推荐 goggle (护目镜) 时，跟他之前是否购买过薯片、书籍、冰激凌的关系就不大了，而跟他游泳相关的历史记录如游泳帽的关系就比较密切。&lt;/p&gt;</summary>
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>基金投资笔记 (2021 年)</title>
@@ -418,25 +450,6 @@
     
     
     <category term="PaddleHub" scheme="http://sunyancn.github.io/tags/PaddleHub/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>一些面试的经验帖子</title>
-    <link href="http://sunyancn.github.io/post/38161.html"/>
-    <id>http://sunyancn.github.io/post/38161.html</id>
-    <published>2020-09-01T01:57:00.000Z</published>
-    <updated>2020-09-01T02:01:41.338Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;&lt;img src=&quot;https://i.loli.net/2020/09/01/c7XbUfRHptE3ZyG.png&quot; alt=&quot;bg.png&quot;&gt;&lt;br&gt;</summary>
-    
-    
-    
-    <category term="面试" scheme="http://sunyancn.github.io/categories/%E9%9D%A2%E8%AF%95/"/>
-    
-    
-    <category term="面试" scheme="http://sunyancn.github.io/tags/%E9%9D%A2%E8%AF%95/"/>
     
   </entry>
   

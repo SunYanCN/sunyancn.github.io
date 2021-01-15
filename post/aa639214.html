@@ -1,0 +1,753 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.1.1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Noto Serif SC:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"sunyancn.github.io","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"valine","storage":true,"lazyload":false,"nav":null,"activeClass":"valine"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="论文《Deep Interest Network for Click-Through Rate Prediction》 背景Deep Interest Network (DIN) 是盖坤大神领导的阿里妈妈的精准定向检索及基础算法团队，在 2017 年 6 月提出的。 它针对电子商务领域 (e-commerce industry) 的 CTR 预估，重点在于充分利用 &#x2F; 挖掘用户历史行为数据中的信息">
+<meta property="og:type" content="article">
+<meta property="og:title" content="20210115200659">
+<meta property="og:url" content="http://sunyancn.github.io/post/aa639214.html">
+<meta property="og:site_name" content="故事尾音">
+<meta property="og:description" content="论文《Deep Interest Network for Click-Through Rate Prediction》 背景Deep Interest Network (DIN) 是盖坤大神领导的阿里妈妈的精准定向检索及基础算法团队，在 2017 年 6 月提出的。 它针对电子商务领域 (e-commerce industry) 的 CTR 预估，重点在于充分利用 &#x2F; 挖掘用户历史行为数据中的信息">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://i.loli.net/2021/01/14/49yX1N2t8KdibPk.png">
+<meta property="og:image" content="https://i.loli.net/2021/01/14/EikCGSrjz1qDJ2u.png">
+<meta property="og:image" content="https://i.loli.net/2021/01/14/5YSyF4XvEUVBfwa.png">
+<meta property="og:image" content="https://i.loli.net/2021/01/15/5KCpLxXFI1HefYy.png">
+<meta property="og:image" content="https://i.loli.net/2021/01/15/kfqs59vXI8pNdHT.png">
+<meta property="article:published_time" content="2021-01-15T12:06:59.000Z">
+<meta property="article:modified_time" content="2021-01-15T12:09:39.319Z">
+<meta property="article:author" content="故事尾音">
+<meta property="article:tag" content="故事尾音">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.loli.net/2021/01/14/49yX1N2t8KdibPk.png">
+
+<link rel="canonical" href="http://sunyancn.github.io/post/aa639214.html">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+<script src="/lib/fireworks.js"></script><link rel="stylesheet" href="//cdn.jsdelivr.net/gh/theme-next/theme-next-needmoreshare2@1/needsharebutton.min.css"><style>
+#needsharebutton-float {
+  bottom: 88px;
+  cursor: pointer;
+  left: -8px;
+  position: fixed;
+  z-index: 9999;
+}
+#needsharebutton-float .btn {
+  border: 1px solid $btn-default-border-color;
+  border-radius: 4px;
+  padding: 0 10px 0 14px;
+}
+</style>
+  <title>20210115200659 | 故事尾音</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+  
+<link rel="alternate" href="/atom.xml" title="故事尾音" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">故事尾音</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">喜欢推导也喜欢被推倒</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>站点首页</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>文章标签<span class="badge">86</span></a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>文章分类<span class="badge">17</span></a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>文章总览<span class="badge">130</span></a>
+
+  </li>
+        <li class="menu-item menu-item-image">
+
+    <a href="/image/" rel="section"><i class="fa fa-image fa-fw"></i>光影留痕</a>
+
+  </li>
+        <li class="menu-item menu-item-music">
+
+    <a href="/music/" rel="section"><i class="fa fa-music fa-fw"></i>音乐视频</a>
+
+  </li>
+        <li class="menu-item menu-item-movie">
+
+    <a href="/movie/" rel="section"><i class="fa fa-play fa-fw"></i>观影历史</a>
+
+  </li>
+        <li class="menu-item menu-item-reading">
+
+    <a href="/reading/" rel="section"><i class="fa fa-book fa-fw"></i>书海泛舟</a>
+
+  </li>
+        <li class="menu-item menu-item-shuoshuo">
+
+    <a href="/shuoshuo/" rel="section"><i class="fa fa-heartbeat fa-fw"></i>时光拾忆</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于更多</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>全站搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://sunyancn.github.io/post/aa639214.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://i.loli.net/2020/08/25/NrIpckD9qPLY38C.jpg">
+      <meta itemprop="name" content="故事尾音">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="故事尾音">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          20210115200659
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2021-01-15 20:06:59 / 修改时间：20:09:39" itemprop="dateCreated datePublished" datetime="2021-01-15T20:06:59+08:00">2021-01-15</time>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/post/aa639214.html#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/post/aa639214.html" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <html><head></head><body><h2 id="论文" class="heading-control"><a href="#论文" class="headerlink" title="论文"></a>论文<a class="heading-anchor" href="#论文" aria-hidden="true"></a></h2><p><a target="_blank" rel="noopener" href="https://arxiv.org/pdf/1706.06978.pdf">《Deep Interest Network for Click-Through Rate Prediction》</a></p>
+<h2 id="背景" class="heading-control"><a href="#背景" class="headerlink" title="背景"></a>背景<a class="heading-anchor" href="#背景" aria-hidden="true"></a></h2><p>Deep Interest Network (DIN) 是盖坤大神领导的阿里妈妈的精准定向检索及基础算法团队，在 2017 年 6 月提出的。 它针对<strong>电子商务领域 (e-commerce industry)</strong> 的 CTR 预估，重点在于<strong>充分利用 / 挖掘用户历史行为数据中的信息</strong>。</p>
+<ol>
+<li><p><strong>数据特征：</strong> 针对互联网电子商务领域，数据特点：Diversity、Local Activation。</p>
+</li>
+<li><p><strong>针对问题：</strong>用户有多个兴趣爱好，访问了多个 good_id，shop_id。为了降低纬度并使得商品店铺间的算术运算有意义，我们先对其进行 Embedding 嵌入。那么我们如何对用户多种多样的兴趣建模那？使用 <strong>Pooling 对 Embedding Vector 求和或者求平均</strong>。同时这也解决了不同用户输入长度不同的问题，得到了一个固定长度的向量。这个向量就是用户表示，是用户兴趣的代表。但是，直接求 sum 或 average 损失了很多信息。所以稍加改进，针对不同的 behavior id 赋予不同的权重，这个权重是由当前 behavior id 和候选广告共同决定的。这就是 Attention 机制，实现了 Local Activation。</p>
+</li>
+<li><strong>DIN 的解决方案：</strong><ol>
+<li>使用 <strong>用户兴趣分布 (Diversity)</strong> 来表示用户多种多样的兴趣爱好</li>
+<li>使用 <strong>Attention 机制</strong> 来实现 Local Activation</li>
+<li> 针对模型训练，提出了 <strong>Dice 激活函数，自适应正则 (Adaptive Regulation)</strong>，显著提升了模型性能与收敛速度</li>
+</ol>
+</li>
+</ol>
+<p><strong>Diversity：</strong> 用户在访问电商网站时会对多种商品都感兴趣。也就是用户的兴趣非常的广泛。</p>
+<p><strong>Local Activation：</strong> 由于用户兴趣的多样性，只有部分历史数据会影响到当次推荐的物品是否被点击，而不是所有的历史记录。</p>
+<p><strong>Diversity</strong> 体现在年轻的母亲的历史记录中体现的兴趣十分广泛，涵盖羊毛衫、手提袋、耳环、童装、运动装等等。而爱好游泳的人同样兴趣广泛，历史记录涉及浴装、旅游手册、踏水板、马铃薯、冰激凌、坚果等等。</p>
+<p><strong>Local activation</strong> 体现在，当我们给爱好游泳的人推荐 goggle (护目镜) 时，跟他之前是否购买过薯片、书籍、冰激凌的关系就不大了，而跟他游泳相关的历史记录如游泳帽的关系就比较密切。</p>
+<a id="more"></a>
+<h2 id="模型结构" class="heading-control"><a href="#模型结构" class="headerlink" title="模型结构"></a>模型结构<a class="heading-anchor" href="#模型结构" aria-hidden="true"></a></h2><h3 id="Base模型" class="heading-control"><a href="#Base模型" class="headerlink" title="Base模型"></a>Base 模型<a class="heading-anchor" href="#Base模型" aria-hidden="true"></a></h3><p>Base Model 首先把 one-hot 或 multi-hot 特征转换为特定长度的 embedding，作为模型的输入，然后经过一个 DNN 得到最终的预估值。</p>
+<p>特别地，针对 multi-hot 的特征，做了一次 element-wise + 的操作，这里其实就是 sum-pooling，这样，不管特征中有多少个非 0 值，经过转换之后的长度都是一样的。multi-hot 特征也称为多值离散特征，比如：用户在 YouTube 上看的视频和搜索过的视频。无论是看过的还是搜索过的，都不止一个，但是相对于所有的视频来说，看过和搜索过的数量都太小了 (非常稀疏)。 在电子商务上的例子就是：用户购买过的 good_id 有多个，购买过的 shop_id 也有多个，而这也直接导致了每个用户的历史行为 id 长度是不同的。</p>
+<p>模型的基本过程如下：</p>
+<ol>
+<li>在输入上面加一层 embeding 层，把最原始高维度、稀疏的数据转换为低维度的实值表示上 (dense vector)。</li>
+<li>增加多个全连接层，学习特征之间的非线性关系。 Sparse Features -> Embedding Vector -> MLPs -> Output</li>
+</ol>
+<p>从基准模型的结构图中可以看出，无论候选商品是什么，用户的 Embedding 值均不会发生改变。用户的历史行为中的商品 Embedding 数据对用户的 Embedding 的贡献力度是一样的，然而这与实际情况并不符合，因为每个用户的兴趣是多样性的。</p>
+<p>举个例子：某用户购买过 “外套”、“手机”、“洗面奶”、“小说” 等，当用户计划购买 “耳机” 的时候，历史行为中的 “手机” 自然比其他商品对本次决策的贡献更大一些；当计划购买裤子的时候，历史行为中的 “外套” 自然比其他商品对本次决策的贡献更大一些。</p>
+<p>在实际情况下，基准模型的效果存在待改进的空间，由此阿里提出了基于用户兴趣的深层网络（DIN 模型）。</p>
+<p><img src="https://i.loli.net/2021/01/14/49yX1N2t8KdibPk.png" alt></p>
+<p>DIN 的模型结构中增加了 Activation Unit 模块，该模块主要提取当前候选商品与历史行为中的商品的权重值。输入包括两个部分：</p>
+<ol>
+<li>一个是原始的用户行为 Embedding 向量、商品 Embedding 向量；</li>
+<li>另外一个是两者 Embedding 向量经过外积计算后得到的向量，和两者 Embedding 向量差值得到的向量。</li>
+</ol>
+<p><img src="https://i.loli.net/2021/01/14/EikCGSrjz1qDJ2u.png" alt></p>
+<script type="math/tex; mode=display">
+g(V_i, V_a)=PReLU([V_i, V_a, V_i \otimes V_a]) * W</script><p>其中，</p>
+<p>DIN 模型在基准模型的基础上，增加了注意力机制，就是模型在对候选商品预测的时候，对用户不同行为的注意力是不一样的。“相关” 的行为历史看重一些，“不相关” 的历史甚至可以忽略。在 DIN 场景中，针对不同的候选广告需要自适应地调整 <code>User Representation</code>。也就是说：在 <code>Embedding Layer -> Pooling Layer</code> 得到用户兴趣表示的时候，依据给定 Ad，通过计算用户历史行为与该给定 Ad 的相关性，赋予不同的历史行为不同的权重，实现局部激活。从最终反向训练的角度来看，就是根据当前的候选广告，来反向的激活用户历史的兴趣爱好，赋予不同历史行为不同的权重。</p>
+<p><img src="https://i.loli.net/2021/01/14/5YSyF4XvEUVBfwa.png" alt></p>
+<h2 id="训练技术" class="heading-control"><a href="#训练技术" class="headerlink" title="训练技术"></a>训练技术<a class="heading-anchor" href="#训练技术" aria-hidden="true"></a></h2><h3 id="Mini-batch-Aware-Regularization" class="heading-control"><a href="#Mini-batch-Aware-Regularization" class="headerlink" title="Mini-batch Aware Regularization"></a>Mini-batch Aware Regularization<a class="heading-anchor" href="#Mini-batch-Aware-Regularization" aria-hidden="true"></a></h3><h3 id="Dice-Data-Dependent-Activation-Function" class="heading-control"><a href="#Dice-Data-Dependent-Activation-Function" class="headerlink" title="Dice: Data Dependent Activation Function"></a>Dice: Data Dependent Activation Function<a class="heading-anchor" href="#Dice-Data-Dependent-Activation-Function" aria-hidden="true"></a></h3><h2 id="评价指标GAUC" class="heading-control"><a href="#评价指标GAUC" class="headerlink" title="评价指标GAUC"></a>评价指标 GAUC<a class="heading-anchor" href="#评价指标GAUC" aria-hidden="true"></a></h2><p>因为推荐系统的排序是个性化的，不同用户的排序结果不太好比较，这可能导致全局 auc 并不能反映真实情况。论文采用的 GAUC 实现了用户级别的 AUC 计算，<strong>在单个用户 AUC 的基础上，按照点击次数或展示次数进行加权平均，消除了用户偏差对模型的影响</strong>，更准确的描述了模型的表现效果（论文里面叫 An variation of user weighted AUC， 用户加权 AUC）。</p>
+<p><img src="https://i.loli.net/2021/01/15/5KCpLxXFI1HefYy.png" alt></p>
+<p>其中 n 是用户数， $impression$ 和 $AUC_{i}$ 是第 $i$ 个用户的 impression 数和对应 AUC。<strong>一般计算时，会过滤掉单个用户全是正样本或负样本的情况。</strong></p>
+<blockquote>
+<p>impression：就是曝光数</p>
+</blockquote>
+<p>AUC 是要分用户看的，我们的模型的预测结果，只要能够保证对每个用户来说，他想要的结果排在前面就好了。假设有两个用户 A 和 B，每个用户都有 10 个商品，10 个商品中有 5 个是正样本，我们分别用 TA，TB，FA，FB 来表示两个用户的正样本和负样本。也就是说，20 个商品中有 10 个是正样本。假设模型预测的结果大小排序依次为 TA，FA，TB，FB。如果把两个用户的结果混起来看，AUC 并不是很高，因为有 5 个正样本排在了后面，但是分开看的话，每个用户的正样本都排在了负样本之前，AUC 应该是 1。显然，分开看更容易体现模型的效果，这样消除了用户本身的差异。</p>
+<p>但是上文中所说的差异是在用户点击数即样本数相同的情况下说的。还有一种差异是用户的展示次数或者点击数，如果一个用户有 1 个正样本，10 个负样本，另一个用户有 5 个正样本，50 个负样本，这种差异同样需要消除。GAUC 的计算，不仅将每个用户的 AUC 分开计算，同时根据用户的展示数或者点击数来对每个用户的 AUC 进行加权处理，进一步消除了用户偏差对模型的影响。通过实验证明，GAUC 确实是一个更加合理的评价指标。</p>
+<p><img src="https://i.loli.net/2021/01/15/kfqs59vXI8pNdHT.png" alt></p>
+<div class="note warning">
+            <p>复习一下 AUC 的计算：正例排在负例之前的概率。假设总共有（m+n）个样本，其中正样本 m 个，负样本 n 个，总共有 m <em> n 个样本对，计数，正样本预测为正样本的概率值大于负样本预测为正样本的概率值记为 1，累加计数，然后除以 m </em> n 就是 AUC 的值。</p>
+          </div>
+<p>AUC 的计算：</p>
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">naive_auc</span>(<span class="params">labels,preds</span>):</span></span><br><span class="line">    <span class="string">"""</span></span><br><span class="line"><span class="string">　　　先排序，然后统计有多少正负样本对满足：正样本预测值>负样本预测值, 再除以总的正负样本对个数</span></span><br><span class="line"><span class="string">     复杂度 O(NlogN), N为样本数</span></span><br><span class="line"><span class="string">    """</span></span><br><span class="line">    n_pos = sum(labels)</span><br><span class="line">    n_neg = len(labels) - n_pos</span><br><span class="line">    total_pair = n_pos * n_neg</span><br><span class="line"> </span><br><span class="line">    labels_preds = zip(labels,preds)</span><br><span class="line">    labels_preds = sorted(labels_preds,key=<span class="keyword">lambda</span> x:x[<span class="number">1</span>])</span><br><span class="line">    accumulated_neg = <span class="number">0</span></span><br><span class="line">    satisfied_pair = <span class="number">0</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(len(labels_preds)):</span><br><span class="line">        <span class="keyword">if</span> labels_preds[i][<span class="number">0</span>] == <span class="number">1</span>:</span><br><span class="line">            satisfied_pair += accumulated_neg</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            accumulated_neg += <span class="number">1</span></span><br><span class="line"> </span><br><span class="line">    <span class="keyword">return</span> satisfied_pair / float(total_pair)</span><br></pre></td></tr></tbody></table></figure>
+<p>GAUC 的计算：</p>
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> collections <span class="keyword">import</span> defaultdict</span><br><span class="line"><span class="keyword">from</span> sklearn.metrics <span class="keyword">import</span> roc_auc_score</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">cal_group_auc</span>(<span class="params">labels, preds, user_id_list</span>):</span></span><br><span class="line">    <span class="string">"""Calculate group auc"""</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> len(user_id_list) != len(labels):</span><br><span class="line">        <span class="keyword">raise</span> ValueError(</span><br><span class="line">            <span class="string">"impression id num should equal to the sample num,"</span> \</span><br><span class="line">            <span class="string">"impression id num is {0}"</span>.format(len(user_id_list)))</span><br><span class="line">    group_score = defaultdict(<span class="keyword">lambda</span>: [])</span><br><span class="line">    group_truth = defaultdict(<span class="keyword">lambda</span>: [])</span><br><span class="line">    <span class="keyword">for</span> idx, truth <span class="keyword">in</span> enumerate(labels):</span><br><span class="line">        user_id = user_id_list[idx]</span><br><span class="line">        score = preds[idx]</span><br><span class="line">        truth = labels[idx]</span><br><span class="line">        group_score[user_id].append(score)</span><br><span class="line">        group_truth[user_id].append(truth)</span><br><span class="line"></span><br><span class="line">    group_flag = defaultdict(<span class="keyword">lambda</span>: <span class="literal">False</span>)</span><br><span class="line">    <span class="keyword">for</span> user_id <span class="keyword">in</span> set(user_id_list):</span><br><span class="line">        truths = group_truth[user_id]</span><br><span class="line">        flag = <span class="literal">False</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(len(truths) - <span class="number">1</span>):</span><br><span class="line">            <span class="keyword">if</span> truths[i] != truths[i + <span class="number">1</span>]:</span><br><span class="line">                flag = <span class="literal">True</span></span><br><span class="line">                <span class="keyword">break</span></span><br><span class="line">        group_flag[user_id] = flag</span><br><span class="line"></span><br><span class="line">    impression_total = <span class="number">0</span></span><br><span class="line">    total_auc = <span class="number">0</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> user_id <span class="keyword">in</span> group_flag:</span><br><span class="line">        <span class="keyword">if</span> group_flag[user_id]:</span><br><span class="line">            auc = roc_auc_score(np.asarray(group_truth[user_id]), np.asarray(group_score[user_id]))</span><br><span class="line">            total_auc += auc * len(group_truth[user_id])</span><br><span class="line">            impression_total += len(group_truth[user_id])</span><br><span class="line">    group_auc = float(total_auc) / impression_total</span><br><span class="line">    group_auc = round(group_auc, <span class="number">4</span>)</span><br><span class="line">    <span class="keyword">return</span> group_auc</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__==<span class="string">'__main__'</span>:</span><br><span class="line">     a=[<span class="number">1</span>,<span class="number">2</span>,<span class="number">1</span>,<span class="number">2</span>]</span><br><span class="line">     b=[<span class="number">0.6</span>,<span class="number">0.7</span>,<span class="number">0</span>,<span class="number">0</span>]</span><br><span class="line">     c=[<span class="number">1</span>,<span class="number">1</span>,<span class="number">0</span>,<span class="number">0</span>]</span><br><span class="line">     d=np.array([[<span class="number">1</span>],[<span class="number">1</span>],[<span class="number">0</span>],[<span class="number">0</span>]])</span><br><span class="line">     print(d)</span><br><span class="line">     print(list(_flatten(d.tolist())))</span><br><span class="line">     print(cal_group_auc(list(_flatten(d.tolist())),b,a))</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="参考" class="heading-control"><a href="#参考" class="headerlink" title="参考"></a>参考<a class="heading-anchor" href="#参考" aria-hidden="true"></a></h2><ol>
+<li><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/73b6f5d00f46">推荐系统遇上深度学习 (十八)— 探秘阿里之深度兴趣网络 (DIN) 浅析及实现</a></li>
+<li><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/42934748">CTR 论文精读 (八)—DIN for Click-Through Rate Prediction</a></li>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/zhongqiqianga/article/details/103718603">AUC 和 GAUC</a></li>
+</ol>
+</body></html>
+    </div>
+
+    
+    
+    
+      
+
+        <div class="reward-container">
+  <div>支持一根棒棒糖！</div>
+  <button onclick="var qr = document.getElementById('qr'); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+    打赏
+  </button>
+  <div id="qr" style="display: none;">
+      
+      <div style="display: inline-block;">
+        <img src="https://i.loli.net/2020/08/27/Z63uzPfeimEYrD2.png" alt="故事尾音 微信支付">
+        <p>微信支付</p>
+      </div>
+      
+      <div style="display: inline-block;">
+        <img src="https://i.loli.net/2020/08/27/Zz62YJyVH1SRgGj.jpg" alt="故事尾音 支付宝">
+        <p>支付宝</p>
+      </div>
+
+  </div>
+</div>
+
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>故事尾音
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://sunyancn.github.io/post/aa639214.html" title="20210115200659">http://sunyancn.github.io/post/aa639214.html</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/post/f0b54271.html" rel="prev" title="基金投资笔记 (2021 年)">
+      <i class="fa fa-chevron-left"></i> 基金投资笔记 (2021 年)
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+    <script type="text/javascript" src="/js/linkcard.js"></script>
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    <div class="comments" id="valine-comments"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%BA%E6%96%87"><span class="nav-number">1.</span> <span class="nav-text">论文</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%83%8C%E6%99%AF"><span class="nav-number">2.</span> <span class="nav-text">背景</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A8%A1%E5%9E%8B%E7%BB%93%E6%9E%84"><span class="nav-number">3.</span> <span class="nav-text">模型结构</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Base%E6%A8%A1%E5%9E%8B"><span class="nav-number">3.1.</span> <span class="nav-text">Base 模型</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%AD%E7%BB%83%E6%8A%80%E6%9C%AF"><span class="nav-number">4.</span> <span class="nav-text">训练技术</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Mini-batch-Aware-Regularization"><span class="nav-number">4.1.</span> <span class="nav-text">Mini-batch Aware Regularization</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Dice-Data-Dependent-Activation-Function"><span class="nav-number">4.2.</span> <span class="nav-text">Dice: Data Dependent Activation Function</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AF%84%E4%BB%B7%E6%8C%87%E6%A0%87GAUC"><span class="nav-number">5.</span> <span class="nav-text">评价指标 GAUC</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83"><span class="nav-number">6.</span> <span class="nav-text">参考</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="故事尾音"
+      src="https://i.loli.net/2020/08/25/NrIpckD9qPLY38C.jpg">
+  <p class="site-author-name" itemprop="name">故事尾音</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">130</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">17</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">86</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/sunyancn" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;sunyancn" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:sunyanhust@163.com" title="E-Mail → mailto:sunyanhust@163.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/atom.xml" title="RSS → &#x2F;atom.xml"><i class="fas fa-rss fa-fw"></i>RSS</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://weibo.com/u/5270232660" title="Weibo → https:&#x2F;&#x2F;weibo.com&#x2F;u&#x2F;5270232660" rel="noopener" target="_blank"><i class="fab fa-weibo fa-fw"></i>Weibo</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 2020 – 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">故事尾音</span>
+</div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script size="300" alpha="0.6" zIndex="-1" src="//cdn.jsdelivr.net/gh/theme-next/theme-next-canvas-ribbon@1/canvas-ribbon.js"></script>
+
+
+  
+  <style>
+  
+  button.darkmode-toggle {
+  z-index: 9999;
+  }
+  
+  img, .darkmode-ignore {
+    isolation: isolate;
+    display: block;
+  }
+  </style>
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+  <script src="/lib/darkmode-js/lib/darkmode-js.min.js"></script>
+
+
+
+<script>
+var options = {
+  bottom: '64px', // default: '32px'
+  right: '32px', // default: '32px'
+  left: 'unset', // default: 'unset'
+  time: '0.3s', // default: '0.3s'
+  mixColor: '#fff', // default: '#fff'
+  backgroundColor: '#fff',  // default: '#fff'
+  buttonColorDark: '#100f2c',  // default: '#100f2c'
+  buttonColorLight: '#fff', // default: '#fff'
+  saveInCookies: false, // default: true,
+  label: '🌓', // default: ''
+  autoMatchOsTheme: true // default: true
+}
+const darkmode = new Darkmode(options);
+darkmode.showWidget();
+// window.onload = function(){
+//   setTimeout(
+//     function() {
+//       document.getElementsByClassName('darkmode-toggle')[0].click();
+//     },
+//     550,
+//   );
+//   document.getElementsByClassName('darkmode-toggle')[0].click();
+// }
+</script>
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
+
+  
+<div id="needsharebutton-float">
+      <span class="btn">
+        <i class="fa fa-share-alt" aria-hidden="true"></i>
+      </span>
+    </div>
+  <script src="//cdn.jsdelivr.net/gh/theme-next/theme-next-needmoreshare2@1/needsharebutton.min.js"></script>
+  <script>
+      flOptions = {};
+        flOptions.iconStyle = "box";
+        flOptions.boxForm = "horizontal";
+        flOptions.position = "middleRight";
+        flOptions.networks = "Weibo,Wechat,Douban,QQZone,Twitter,Facebook";
+      new needShareButton('#needsharebutton-float', flOptions);
+  </script>
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('https://cdn.jsdelivr.net/gh//AshinWang/SimpleValine/SimpleValine.min.js', () => {
+    var GUEST = ['nick', 'mail', 'link'];
+    var guest = 'nick,mail';
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
+    });
+    new Valine({
+      el         : '#valine-comments',
+      verify     : false,
+      notify     : false,
+      appId      : 'IAIsNxUL4BLqJ2c4nTn8HlLv-gzGzoHsz',
+      appKey     : '73p5IVTPonVrJhOylbVtJffi',
+      placeholder: "(๑•́ ₃ •̀๑) 留言时填写您的邮箱可以邮件收到博主的回复噢~",
+      avatar     : 'wavatar',
+      meta       : guest,
+      pageSize   : '10' || 10,
+      visitor    : false,
+      lang       : '' || 'zh-cn',
+      path       : location.pathname,
+      recordIP   : false,
+      serverURLs : ''
+    });
+  }, window.Valine);
+});
+</script>
+
+
+    <!-- leafacePlayer -->
+  
+  
+</body>
+</html>

@@ -41,7 +41,7 @@
     lang   : 'zh-CN'
   };
 </script>
-<link rel="stylesheet" href="//cdn.jsdelivr.net/gh/theme-next/theme-next-needmoreshare2@1/needsharebutton.min.css"><style>
+<script src="/lib/fireworks.js"></script><link rel="stylesheet" href="//cdn.jsdelivr.net/gh/theme-next/theme-next-needmoreshare2@1/needsharebutton.min.css"><style>
 #needsharebutton-float {
   bottom: 88px;
   cursor: pointer;
@@ -54,7 +54,7 @@
   border-radius: 4px;
   padding: 0 10px 0 14px;
 }
-</style><script src="/lib/fireworks.js"></script>
+</style>
   <title>故事尾音</title>
   
 
@@ -133,17 +133,17 @@
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>文章标签</a>
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>文章标签<span class="badge">86</span></a>
 
   </li>
         <li class="menu-item menu-item-categories">
 
-    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>文章分类</a>
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>文章分类<span class="badge">17</span></a>
 
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>文章总览</a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>文章总览<span class="badge">130</span></a>
 
   </li>
         <li class="menu-item menu-item-image">
@@ -226,6 +226,94 @@
 
           <div class="content index posts-expand">
             
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://sunyancn.github.io/post/17514.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://i.loli.net/2020/08/25/NrIpckD9qPLY38C.jpg">
+      <meta itemprop="name" content="故事尾音">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="故事尾音">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/post/17514.html" class="post-title-link" itemprop="url">Linux 使用百度云下载</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2019-11-06 18:46:35" itemprop="dateCreated datePublished" datetime="2019-11-06T18:46:35+08:00">2019-11-06</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-08-27 01:27:02" itemprop="dateModified" datetime="2020-08-27T01:27:02+08:00">2020-08-27</time>
+              </span>
+
+          
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <html><head></head><body><h3 id="前言" class="heading-control"><a href="#前言" class="headerlink" title="前言"></a>前言<a class="heading-anchor" href="#前言" aria-hidden="true"></a></h3><p>项目 github 地址：<a target="_blank" rel="noopener" href="https://github.com/iikira/BaiduPCS-Go">https://github.com/iikira/BaiduPCS-Go</a></p>
+<h3 id="安装" class="heading-control"><a href="#安装" class="headerlink" title="安装"></a>安装<a class="heading-anchor" href="#安装" aria-hidden="true"></a></h3><ul>
+<li>下载到本地：<a target="_blank" rel="noopener" href="https://github.com/iikira/BaiduPCS-Go/releases/download/v3.6/BaiduPCS-Go-v3.6-linux-386.zip">3.6 版本</a></li>
+<li> scp 传输到服务器：<code>scp -P 2222 C:\Users\lenovo\Pictures\BaiduPCS-Go-v3.6-linux-386.zip root@127.0.0.1:/home</code></li>
+<li>解压：<code>unzip BaiduPCS-Go-v3.6-linux-386.zip</code><br>询问是否覆盖：y<br>进入目录：<code>cd BaiduPCS-Go-v3.6-linux-386</code><br>启动：<code>./BaiduPCS-Go</code></li>
+</ul>
+<h3 id="登录" class="heading-control"><a href="#登录" class="headerlink" title="登录"></a>登录<a class="heading-anchor" href="#登录" aria-hidden="true"></a></h3><ul>
+<li>登录：<code>login</code></li>
+<li>然后按照提示输入用户名，密码。回车后，会让输入验证码。会提示打开浏览器查看验证码，可能试验登录多次，才正确。</li>
+</ul>
+<p>然后让你输入验证手机号，会给你发短信，输入短信的验证码后，就能登录了。</p>
+<h3 id="操作" class="heading-control"><a href="#操作" class="headerlink" title="操作"></a>操作<a class="heading-anchor" href="#操作" aria-hidden="true"></a></h3><ul>
+<li>登录进去后，查看有哪些百度网盘命令：<code>help</code></li>
+<li>列出百度网盘的目录：<code>ls</code></li>
+<li>下载百度网盘的文件： <code>d 文件名</code></li>
+<li>下载完成后，会提示你，把文件下载到哪个目录了。 一般在 根目录下，点进去 <code>root</code> 文件夹，即 <code>/root/Downloads/</code></li>
+<li>修改默认储存路径：<code>BaiduPCS-Go config set -savedir download</code></li>
+<li>退出程序：运行命令 <code>quit</code> 或 <code>exit</code> 或 组合键 <code>Ctrl+C</code> 或 组合键 <code>Ctrl+D</code></li>
+<li>下载大文件：<code>./BaiduPCS-Go config set -user_agent=""</code></li>
+</ul>
+<h3 id="退出" class="heading-control"><a href="#退出" class="headerlink" title="退出"></a>退出<a class="heading-anchor" href="#退出" aria-hidden="true"></a></h3><p>退出当前登录的百度帐号：<code>logout</code></p>
+</body></html>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+    <script type="text/javascript" src="/js/linkcard.js"></script>
+  </article>
+  
+  
+  
+
       
   
   
@@ -884,81 +972,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://sunyancn.github.io/post/10170.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://i.loli.net/2020/08/25/NrIpckD9qPLY38C.jpg">
-      <meta itemprop="name" content="故事尾音">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="故事尾音">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/post/10170.html" class="post-title-link" itemprop="url">kashgari 学习</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2019-10-08 20:05:23" itemprop="dateCreated datePublished" datetime="2019-10-08T20:05:23+08:00">2019-10-08</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-27 01:27:02" itemprop="dateModified" datetime="2020-08-27T01:27:02+08:00">2020-08-27</time>
-              </span>
-
-          
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="文本分类"><a href="#文本分类" class="headerlink" title="文本分类"></a>文本分类</h2><h3 id="训练和保存模型代码"><a href="#训练和保存模型代码" class="headerlink" title="训练和保存模型代码"></a>训练和保存模型代码</h3><figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> kashgari</span><br><span class="line"><span class="keyword">from</span> kashgari.corpus <span class="keyword">import</span> SMP2018ECDTCorpus</span><br><span class="line"><span class="keyword">from</span> kashgari.tasks.classification <span class="keyword">import</span> BiLSTM_Model</span><br><span class="line"><span class="keyword">from</span> kashgari.embeddings <span class="keyword">import</span> BERTEmbedding</span><br><span class="line"><span class="keyword">from</span> kashgari.callbacks <span class="keyword">import</span> EvalCallBack</span><br><span class="line"><span class="keyword">from</span> tensorflow.python <span class="keyword">import</span> keras</span><br><span class="line"><span class="keyword">from</span> kashgari <span class="keyword">import</span> utils</span><br><span class="line"></span><br><span class="line"><span class="comment"># 有GPU的话</span></span><br><span class="line">kashgari.config.use_cudnn_cell = <span class="literal">True</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 数据集</span></span><br><span class="line">train_x, train_y = SMP2018ECDTCorpus.load_data(<span class="string">'train'</span>)</span><br><span class="line">valid_x, valid_y = SMP2018ECDTCorpus.load_data(<span class="string">'valid'</span>)</span><br><span class="line">test_x, test_y = SMP2018ECDTCorpus.load_data(<span class="string">'test'</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># '&lt;PRE_TRAINED_BERT_MODEL_FOLDER&gt;'：BERT模型路径</span></span><br><span class="line">bert_embed = BERTEmbedding(<span class="string">'/home/new/Toxicity/bert_model/models/chinese_L-12_H-768_A-12'</span>,</span><br><span class="line">                           task=kashgari.CLASSIFICATION,</span><br><span class="line">                           sequence_length=<span class="number">100</span>)</span><br><span class="line"></span><br><span class="line">model = BiLSTM_Model(bert_embed)</span><br><span class="line">tf_board_callback = keras.callbacks.TensorBoard(log_dir=<span class="string">'./logs'</span>, update_freq=<span class="number">1000</span>)</span><br><span class="line"></span><br><span class="line">eval_callback = EvalCallBack(kash_model=model,</span><br><span class="line">                             valid_x=valid_x,</span><br><span class="line">                             valid_y=valid_y,</span><br><span class="line">                             step=<span class="number">5</span>)</span><br><span class="line"></span><br><span class="line">model.fit(train_x,</span><br><span class="line">          train_y,</span><br><span class="line">          valid_x,</span><br><span class="line">          valid_y,</span><br><span class="line">          batch_size=<span class="number">100</span>,</span><br><span class="line">          callbacks=[eval_callback, tf_board_callback])</span><br><span class="line"></span><br><span class="line">model.evaluate(test_x, test_y)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 保存模型到 `saved_classification_model` 目录下</span></span><br><span class="line">model.save(<span class="string">'saved_classification_model'</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 加载保存模型</span></span><br><span class="line">loaded_model = kashgari.utils.load_model(<span class="string">'saved_classification_model'</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 使用模型进行预测</span></span><br><span class="line">loaded_model.predict(test_x[:<span class="number">10</span>])</span><br><span class="line"></span><br><span class="line"><span class="comment"># Save model</span></span><br><span class="line">utils.convert_to_saved_model(model, </span><br><span class="line">                             model_path=<span class="string">'saved_model/blstm'</span>, </span><br><span class="line">                             version=<span class="number">1</span>)</span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/post/10170.html#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-    <script type="text/javascript" src="/js/linkcard.js"></script>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1030,7 +1043,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">129</span>
+          <span class="site-state-item-count">130</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
