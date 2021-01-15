@@ -4753,7 +4753,7 @@ P=N*C*3*3
       </tags>
   </entry>
   <entry>
-    <title>20210115200659</title>
+    <title>DIN 排序模型</title>
     <url>/post/aa639214.html</url>
     <content><![CDATA[<html><head><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script></head><body><h2 id="论文" class="heading-control"><a href="#论文" class="headerlink" title="论文"></a>论文<a class="heading-anchor" href="#论文" aria-hidden="true"></a></h2><p><a href="https://arxiv.org/pdf/1706.06978.pdf">《Deep Interest Network for Click-Through Rate Prediction》</a></p>
 <h2 id="背景" class="heading-control"><a href="#背景" class="headerlink" title="背景"></a>背景<a class="heading-anchor" href="#背景" aria-hidden="true"></a></h2><p>Deep Interest Network (DIN) 是盖坤大神领导的阿里妈妈的精准定向检索及基础算法团队，在 2017 年 6 月提出的。 它针对<strong>电子商务领域 (e-commerce industry)</strong> 的 CTR 预估，重点在于<strong>充分利用 / 挖掘用户历史行为数据中的信息</strong>。</p>

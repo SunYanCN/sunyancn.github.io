@@ -6,7 +6,7 @@
   <link href="http://sunyancn.github.io/atom.xml" rel="self"/>
   
   <link href="http://sunyancn.github.io/"/>
-  <updated>2021-01-15T12:09:39.319Z</updated>
+  <updated>2021-01-15T12:13:48.994Z</updated>
   <id>http://sunyancn.github.io/</id>
   
   <author>
@@ -17,11 +17,11 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>20210115200659</title>
+    <title>DIN 排序模型</title>
     <link href="http://sunyancn.github.io/post/aa639214.html"/>
     <id>http://sunyancn.github.io/post/aa639214.html</id>
     <published>2021-01-15T12:06:59.000Z</published>
-    <updated>2021-01-15T12:09:39.319Z</updated>
+    <updated>2021-01-15T12:13:48.994Z</updated>
     
     
     <summary type="html">&lt;h2 id=&quot;论文&quot;&gt;&lt;a href=&quot;#论文&quot; class=&quot;headerlink&quot; title=&quot;论文&quot;&gt;&lt;/a&gt;论文&lt;/h2&gt;&lt;p&gt;&lt;a href=&quot;https://arxiv.org/pdf/1706.06978.pdf&quot;&gt;《Deep Interest Network for Click-Through Rate Prediction》&lt;/a&gt;&lt;/p&gt;
