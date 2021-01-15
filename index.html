@@ -133,7 +133,7 @@
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>文章标签<span class="badge">86</span></a>
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>文章标签<span class="badge">87</span></a>
 
   </li>
         <li class="menu-item menu-item-categories">
@@ -255,7 +255,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2021-01-15 20:06:59 / 修改时间：20:13:48" itemprop="dateCreated datePublished" datetime="2021-01-15T20:06:59+08:00">2021-01-15</time>
+              <time title="创建时间：2021-01-15 20:06:59 / 修改时间：20:55:03" itemprop="dateCreated datePublished" datetime="2021-01-15T20:06:59+08:00">2021-01-15</time>
             </span>
 
           
@@ -272,6 +272,12 @@
 
       
           <h2 id="论文"><a href="#论文" class="headerlink" title="论文"></a>论文</h2><p><a target="_blank" rel="noopener" href="https://arxiv.org/pdf/1706.06978.pdf">《Deep Interest Network for Click-Through Rate Prediction》</a></p>
+<p>本文收录于 KDD18，来自于阿里妈妈的精准定向检索及基础算法团队。文章的创新点主要有三个：</p>
+<ol>
+<li>Deep Interest Network（DIN）—— 通过一个局部激活单元（local activation unit）来自适应地从用户历史行为中学习他对于某个广告的兴趣。</li>
+<li>Mini-batch Aware Regularization —— 即一个针对 mini-batch SGD 进行优化的 L2 norm 正则项，通过近似减少了计算量。</li>
+<li>一个数据自适应的激活函数，对 PReLU 的 indicator function 进行修改，并取名为 Dice。</li>
+</ol>
 <h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>Deep Interest Network (DIN) 是盖坤大神领导的阿里妈妈的精准定向检索及基础算法团队，在 2017 年 6 月提出的。 它针对<strong>电子商务领域 (e-commerce industry)</strong> 的 CTR 预估，重点在于<strong>充分利用 / 挖掘用户历史行为数据中的信息</strong>。</p>
 <ol>
 <li><p><strong>数据特征：</strong> 针对互联网电子商务领域，数据特点：Diversity、Local Activation。</p>
@@ -288,7 +294,7 @@
 <p><strong>Diversity：</strong> 用户在访问电商网站时会对多种商品都感兴趣。也就是用户的兴趣非常的广泛。</p>
 <p><strong>Local Activation：</strong> 由于用户兴趣的多样性，只有部分历史数据会影响到当次推荐的物品是否被点击，而不是所有的历史记录。</p>
 <p><strong>Diversity</strong> 体现在年轻的母亲的历史记录中体现的兴趣十分广泛，涵盖羊毛衫、手提袋、耳环、童装、运动装等等。而爱好游泳的人同样兴趣广泛，历史记录涉及浴装、旅游手册、踏水板、马铃薯、冰激凌、坚果等等。</p>
-<p><strong>Local activation</strong> 体现在，当我们给爱好游泳的人推荐 goggle (护目镜) 时，跟他之前是否购买过薯片、书籍、冰激凌的关系就不大了，而跟他游泳相关的历史记录如游泳帽的关系就比较密切。</p>
+<p><strong>Local activation</strong> 体现在，当我们给爱好游泳的人推荐 google (护目镜) 时，跟他之前是否购买过薯片、书籍、冰激凌的关系就不大了，而跟他游泳相关的历史记录如游泳帽的关系就比较密切。</p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/post/aa639214.html#more" rel="contents">
@@ -1036,7 +1042,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">86</span>
+        <span class="site-state-item-count">87</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>

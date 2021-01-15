@@ -6,7 +6,7 @@
   <link href="http://sunyancn.github.io/atom.xml" rel="self"/>
   
   <link href="http://sunyancn.github.io/"/>
-  <updated>2021-01-15T12:13:48.994Z</updated>
+  <updated>2021-01-15T12:55:03.790Z</updated>
   <id>http://sunyancn.github.io/</id>
   
   <author>
@@ -21,10 +21,16 @@
     <link href="http://sunyancn.github.io/post/aa639214.html"/>
     <id>http://sunyancn.github.io/post/aa639214.html</id>
     <published>2021-01-15T12:06:59.000Z</published>
-    <updated>2021-01-15T12:13:48.994Z</updated>
+    <updated>2021-01-15T12:55:03.790Z</updated>
     
     
     <summary type="html">&lt;h2 id=&quot;论文&quot;&gt;&lt;a href=&quot;#论文&quot; class=&quot;headerlink&quot; title=&quot;论文&quot;&gt;&lt;/a&gt;论文&lt;/h2&gt;&lt;p&gt;&lt;a href=&quot;https://arxiv.org/pdf/1706.06978.pdf&quot;&gt;《Deep Interest Network for Click-Through Rate Prediction》&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;本文收录于 KDD18，来自于阿里妈妈的精准定向检索及基础算法团队。文章的创新点主要有三个：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Deep Interest Network（DIN）—— 通过一个局部激活单元（local activation unit）来自适应地从用户历史行为中学习他对于某个广告的兴趣。&lt;/li&gt;
+&lt;li&gt;Mini-batch Aware Regularization —— 即一个针对 mini-batch SGD 进行优化的 L2 norm 正则项，通过近似减少了计算量。&lt;/li&gt;
+&lt;li&gt;一个数据自适应的激活函数，对 PReLU 的 indicator function 进行修改，并取名为 Dice。&lt;/li&gt;
+&lt;/ol&gt;
 &lt;h2 id=&quot;背景&quot;&gt;&lt;a href=&quot;#背景&quot; class=&quot;headerlink&quot; title=&quot;背景&quot;&gt;&lt;/a&gt;背景&lt;/h2&gt;&lt;p&gt;Deep Interest Network (DIN) 是盖坤大神领导的阿里妈妈的精准定向检索及基础算法团队，在 2017 年 6 月提出的。 它针对&lt;strong&gt;电子商务领域 (e-commerce industry)&lt;/strong&gt; 的 CTR 预估，重点在于&lt;strong&gt;充分利用 / 挖掘用户历史行为数据中的信息&lt;/strong&gt;。&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;&lt;p&gt;&lt;strong&gt;数据特征：&lt;/strong&gt; 针对互联网电子商务领域，数据特点：Diversity、Local Activation。&lt;/p&gt;
@@ -41,10 +47,12 @@
 &lt;p&gt;&lt;strong&gt;Diversity：&lt;/strong&gt; 用户在访问电商网站时会对多种商品都感兴趣。也就是用户的兴趣非常的广泛。&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Local Activation：&lt;/strong&gt; 由于用户兴趣的多样性，只有部分历史数据会影响到当次推荐的物品是否被点击，而不是所有的历史记录。&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Diversity&lt;/strong&gt; 体现在年轻的母亲的历史记录中体现的兴趣十分广泛，涵盖羊毛衫、手提袋、耳环、童装、运动装等等。而爱好游泳的人同样兴趣广泛，历史记录涉及浴装、旅游手册、踏水板、马铃薯、冰激凌、坚果等等。&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Local activation&lt;/strong&gt; 体现在，当我们给爱好游泳的人推荐 goggle (护目镜) 时，跟他之前是否购买过薯片、书籍、冰激凌的关系就不大了，而跟他游泳相关的历史记录如游泳帽的关系就比较密切。&lt;/p&gt;</summary>
+&lt;p&gt;&lt;strong&gt;Local activation&lt;/strong&gt; 体现在，当我们给爱好游泳的人推荐 google (护目镜) 时，跟他之前是否购买过薯片、书籍、冰激凌的关系就不大了，而跟他游泳相关的历史记录如游泳帽的关系就比较密切。&lt;/p&gt;</summary>
     
     
     
+    
+    <category term="排序模型" scheme="http://sunyancn.github.io/tags/%E6%8E%92%E5%BA%8F%E6%A8%A1%E5%9E%8B/"/>
     
   </entry>
   
