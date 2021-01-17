@@ -4586,12 +4586,12 @@ P=N*C*3*3
   <entry>
     <title>Latex 安装和使用</title>
     <url>/post/1440dbb0.html</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script><ol>
+    <content><![CDATA[<html><head><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script></head><body><h2 id="Latex环境设置" class="heading-control"><a href="#Latex环境设置" class="headerlink" title="Latex环境设置"></a>Latex 环境设置<a class="heading-anchor" href="#Latex环境设置" aria-hidden="true"></a></h2><ol>
 <li>下载安装 TexLive<br><a href="http://mirror.ctan.org/systems/texlive/tlnet/install-tl-windows.exe">texlive windows 下载器 下载</a><br><a href="https://mirrors.tuna.tsinghua.edu.cn/CTAN/systems/texlive/Images/texlive.iso">texlive 镜像下载</a><br>建议使用第二个，速度较快。<br>另外 TexLive 体积较大，建议安装到 C 盘之外的其他盘。<br>相关参考教程：<a href="https://zhuanlan.zhihu.com/p/108258567">https://zhuanlan.zhihu.com/p/108258567</a></li>
 <li> 下载安装 TexStudio<br><a href="https://github.com/texstudio-org/texstudio/releases/download/3.0.4/texstudio-3.0.4-win-qt5.exe">TexStudio 下载</a><br>相关参考教程：<a href="https://zhuanlan.zhihu.com/p/108258567">https://zhuanlan.zhihu.com/p/108258567</a></li>
 <li> 打开美赛模板<br>进入文件夹，修改.tex 文件的打开方式为 texstudio, 然后双击打开 tex 文件。<br><a href="https://imgchr.com/i/s3EhBn"><img src="https://s3.ax1x.com/2021/01/11/s3EhBn.png" alt="s3EhBn.png"></a><br>点击工具栏的两个绿色三角组成的图标即可编译和预览。<br><a href="https://imgchr.com/i/s3V3uj"><img src="https://s3.ax1x.com/2021/01/11/s3V3uj.png" alt="s3V3uj.png"></a></li>
 </ol>
-]]></content>
+<h2 id="Latex基本语法" class="heading-control"><a href="#Latex基本语法" class="headerlink" title="Latex基本语法"></a>Latex 基本语法<a class="heading-anchor" href="#Latex基本语法" aria-hidden="true"></a></h2></body></html>]]></content>
       <tags>
         <tag>Latex</tag>
       </tags>
