@@ -6,7 +6,7 @@
   <link href="http://sunyancn.github.io/atom.xml" rel="self"/>
   
   <link href="http://sunyancn.github.io/"/>
-  <updated>2021-01-15T12:55:03.790Z</updated>
+  <updated>2021-01-20T06:24:59.193Z</updated>
   <id>http://sunyancn.github.io/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>我对美国第 45 任总统唐纳德・特朗普的一些看法</title>
+    <link href="http://sunyancn.github.io/post/b25618e1.html"/>
+    <id>http://sunyancn.github.io/post/b25618e1.html</id>
+    <published>2021-01-20T06:14:59.000Z</published>
+    <updated>2021-01-20T06:24:59.193Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;html&gt;&lt;head&gt;&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script</summary>
+        
+      
+    
+    
+    
+    
+    <category term="时事" scheme="http://sunyancn.github.io/tags/%E6%97%B6%E4%BA%8B/"/>
+    
+  </entry>
   
   <entry>
     <title>DIN 排序模型</title>
@@ -439,25 +462,6 @@
     
     
     <category term="bug" scheme="http://sunyancn.github.io/tags/bug/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>PaddleHub 使用示例</title>
-    <link href="http://sunyancn.github.io/post/945.html"/>
-    <id>http://sunyancn.github.io/post/945.html</id>
-    <published>2020-09-02T13:35:31.000Z</published>
-    <updated>2020-09-02T13:44:33.417Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;最近用了一下 PaddleHub，感觉还挺好用的。这里两个使用 PaddleHub 的示例。&lt;br&gt;</summary>
-    
-    
-    
-    <category term="笔记" scheme="http://sunyancn.github.io/categories/%E7%AC%94%E8%AE%B0/"/>
-    
-    
-    <category term="PaddleHub" scheme="http://sunyancn.github.io/tags/PaddleHub/"/>
     
   </entry>
   
