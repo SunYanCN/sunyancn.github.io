@@ -6,7 +6,7 @@
   <link href="http://sunyancn.github.io/atom.xml" rel="self"/>
   
   <link href="http://sunyancn.github.io/"/>
-  <updated>2021-01-20T08:15:48.414Z</updated>
+  <updated>2021-01-26T02:18:46.908Z</updated>
   <id>http://sunyancn.github.io/</id>
   
   <author>
@@ -17,11 +17,57 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>婚礼准备</title>
+    <link href="http://sunyancn.github.io/post/fb3c7c8b.html"/>
+    <id>http://sunyancn.github.io/post/fb3c7c8b.html</id>
+    <published>2021-01-26T02:18:23.000Z</published>
+    <updated>2021-01-26T02:18:46.908Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    
+    <category term="婚礼" scheme="http://sunyancn.github.io/tags/%E5%A9%9A%E7%A4%BC/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Matlab 相关</title>
+    <link href="http://sunyancn.github.io/post/cf3a540f.html"/>
+    <id>http://sunyancn.github.io/post/cf3a540f.html</id>
+    <published>2021-01-26T02:13:34.000Z</published>
+    <updated>2021-01-26T02:17:43.398Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;html&gt;&lt;head&gt;&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script</summary>
+        
+      
+    
+    
+    
+    
+    <category term="Matlab" scheme="http://sunyancn.github.io/tags/Matlab/"/>
+    
+  </entry>
+  
+  <entry>
     <title>张小龙：微信十年的产品思考</title>
     <link href="http://sunyancn.github.io/post/3c85efb8.html"/>
     <id>http://sunyancn.github.io/post/3c85efb8.html</id>
     <published>2021-01-20T07:47:04.000Z</published>
-    <updated>2021-01-20T08:15:48.414Z</updated>
+    <updated>2021-01-20T08:15:59.172Z</updated>
     
     
     <summary type="html">&lt;h3 id=&quot;开场&quot;&gt;&lt;a href=&quot;#开场&quot; class=&quot;headerlink&quot; title=&quot;开场&quot;&gt;&lt;/a&gt;开场&lt;/h3&gt;&lt;p&gt;各位朋友，晚上好！&lt;/p&gt;
@@ -30,13 +76,13 @@
 &lt;p&gt;去年这个时候我们也没有想到，这次我们已经通过视频号来进行直播了。&lt;/p&gt;
 &lt;p&gt;因为疫情，很多公司的年会都改线上了，所以这个时候，我的同事们正在努力给视频号直播加一个能力，就是只有白名单的人才能进入直播间的企业内直播，希望能给需要线上开年会的企业一些帮助吧。&lt;/p&gt;
 &lt;p&gt;回头看十年前，当时的想法只是，希望有一个适合自己的通讯工具来用。于是就开始了微信的第一版。但当时绝对没有想到，十年后的微信会是现在这个样子。对此，我自己感觉特别幸运，我想我一定是那个被上帝选中的人，因为光靠个人努力是做不到这一点的。&lt;/p&gt;
-&lt;p&gt;我分享一组数据吧，到今天，每天——&lt;/p&gt;
+&lt;p&gt;我分享一组数据吧，到今天，每天 ——&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;有10.9亿用户打开微信，3.3亿用户进行了视频通话；&lt;/li&gt;
-&lt;li&gt;有7.8亿用户进入朋友圈，1.2亿用户发表朋友圈；&lt;/li&gt;
-&lt;li&gt;有3.6亿用户读公众号文章，4亿用户使用小程序；&lt;/li&gt;
+&lt;li&gt;有 10.9 亿用户打开微信，3.3 亿用户进行了视频通话；&lt;/li&gt;
+&lt;li&gt;有 7.8 亿用户进入朋友圈，1.2 亿用户发表朋友圈；&lt;/li&gt;
+&lt;li&gt;有 3.6 亿用户读公众号文章，4 亿用户使用小程序；&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;还有很多，包括微信支付，企业微信，微信读书，搜索等，就不一一说了。如微信支付，它就像你以前的钱包一样，已经变成了生活常用品。而微信，也真的成为了“一个生活方式”。&lt;/p&gt;
+&lt;p&gt;还有很多，包括微信支付，企业微信，微信读书，搜索等，就不一一说了。如微信支付，它就像你以前的钱包一样，已经变成了生活常用品。而微信，也真的成为了 “一个生活方式”。&lt;/p&gt;
 &lt;p&gt;今天是公开课，应该有很多的创作者参与，所以，也在这里感谢微信平台的每一个创作者，公众号的，小程序的，视频号的创作者。因为你们的创作，让微信的生态充满活力。&lt;/p&gt;
 &lt;p&gt;大家知道视频号今年的变化特别大。这里也想分享一下视频号的一些想法。&lt;/p&gt;</summary>
     
@@ -426,44 +472,6 @@
     
     
     <category term="博客" scheme="http://sunyancn.github.io/tags/%E5%8D%9A%E5%AE%A2/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>NLP 常用模型和数据集高速下载</title>
-    <link href="http://sunyancn.github.io/post/28052.html"/>
-    <id>http://sunyancn.github.io/post/28052.html</id>
-    <published>2020-09-02T13:46:44.000Z</published>
-    <updated>2020-09-13T08:48:12.370Z</updated>
-    
-    
-    <summary type="html">&lt;h2 id=&quot;楔子&quot;&gt;&lt;a href=&quot;#楔子&quot; class=&quot;headerlink&quot; title=&quot;楔子&quot;&gt;&lt;/a&gt;楔子&lt;/h2&gt;&lt;p&gt;由于大部分 NLP 的模型和数据集都在国外，导致国内下载速度实在感人😭。好在有很多 NLP 的框架内置了很多数据集，都是国内链接，亲测下载速度很快，本文汇总一下一些我见到的国内链接，文末感谢这些平台提供的存储和下载服务。&lt;br&gt;</summary>
-    
-    
-    
-    <category term="笔记" scheme="http://sunyancn.github.io/categories/%E7%AC%94%E8%AE%B0/"/>
-    
-    
-    <category term="数据集" scheme="http://sunyancn.github.io/tags/%E6%95%B0%E6%8D%AE%E9%9B%86/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>NLP 面试</title>
-    <link href="http://sunyancn.github.io/post/62924.html"/>
-    <id>http://sunyancn.github.io/post/62924.html</id>
-    <published>2020-09-02T13:40:37.000Z</published>
-    <updated>2020-09-02T13:44:33.403Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;&lt;img src=&quot;https://i.loli.net/2020/09/02/jY67e5ovS8ApkD2.jpg&quot; alt=&quot;v2-4ce31ce804e18089a463534fb58657de_r.jpg&quot;&gt;&lt;br&gt;</summary>
-    
-    
-    
-    <category term="面试" scheme="http://sunyancn.github.io/categories/%E9%9D%A2%E8%AF%95/"/>
-    
-    
-    <category term="面试" scheme="http://sunyancn.github.io/tags/%E9%9D%A2%E8%AF%95/"/>
     
   </entry>
   
