@@ -6,7 +6,7 @@
   <link href="http://sunyancn.github.io/atom.xml" rel="self"/>
   
   <link href="http://sunyancn.github.io/"/>
-  <updated>2021-01-26T02:18:46.908Z</updated>
+  <updated>2021-01-26T02:43:52.645Z</updated>
   <id>http://sunyancn.github.io/</id>
   
   <author>
@@ -17,11 +17,32 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>20210126104352</title>
+    <link href="http://sunyancn.github.io/post/8deb71f0.html"/>
+    <id>http://sunyancn.github.io/post/8deb71f0.html</id>
+    <published>2021-01-26T02:43:52.000Z</published>
+    <updated>2021-01-26T02:43:52.645Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script src=&quot;\assets\js\APlayer.min.js&quot;</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
     <title>婚礼准备</title>
     <link href="http://sunyancn.github.io/post/fb3c7c8b.html"/>
     <id>http://sunyancn.github.io/post/fb3c7c8b.html</id>
     <published>2021-01-26T02:18:23.000Z</published>
-    <updated>2021-01-26T02:18:46.908Z</updated>
+    <updated>2021-01-26T02:19:35.349Z</updated>
     
     
       
@@ -44,16 +65,10 @@
     <link href="http://sunyancn.github.io/post/cf3a540f.html"/>
     <id>http://sunyancn.github.io/post/cf3a540f.html</id>
     <published>2021-01-26T02:13:34.000Z</published>
-    <updated>2021-01-26T02:17:43.398Z</updated>
+    <updated>2021-01-26T02:59:55.964Z</updated>
     
     
-      
-      
-        
-        
-    <summary type="html">&lt;html&gt;&lt;head&gt;&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;\assets\css\APlayer.min.css&quot;&gt;&lt;script</summary>
-        
-      
+    <summary type="html">&lt;h2 id=&quot;Plot-Cheatsheet&quot;&gt;&lt;a href=&quot;#Plot-Cheatsheet&quot; class=&quot;headerlink&quot; title=&quot;Plot Cheatsheet&quot;&gt;&lt;/a&gt;Plot Cheatsheet&lt;/h2&gt;&lt;p&gt;&lt;img src=&quot;https://i.loli.net/2021/01/26/YBAivw8ShenR1kq.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;</summary>
     
     
     
@@ -451,27 +466,6 @@
     
     
     <category term="面试" scheme="http://sunyancn.github.io/tags/%E9%9D%A2%E8%AF%95/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Hexo 博客 + Next 主题深度优化与定制</title>
-    <link href="http://sunyancn.github.io/post/16107.html"/>
-    <id>http://sunyancn.github.io/post/16107.html</id>
-    <published>2020-09-15T06:13:35.315Z</published>
-    <updated>2020-09-15T13:33:03.737Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;本文基于的 Hexo 版本：5.1.1，Next 主题版本：7.8.0，较低版本可能不适用，操作系统为 Windows。本文参考了很多博主的文章，在每一节结尾都有注明。&lt;/p&gt;
-&lt;h2 id=&quot;环境准备&quot;&gt;&lt;a href=&quot;#环境准备&quot; class=&quot;headerlink&quot; title=&quot;环境准备&quot;&gt;&lt;/a&gt;环境准备&lt;/h2&gt;&lt;h3 id=&quot;Git安装&quot;&gt;&lt;a href=&quot;#Git安装&quot; class=&quot;headerlink&quot; title=&quot;Git安装&quot;&gt;&lt;/a&gt;Git 安装&lt;/h3&gt;&lt;p&gt;我这里是直接下载的 cmder full 版本，已经包含 git 了。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://i.loli.net/2020/09/13/R2Sg5ImVv87TLEK.png&quot; alt=&quot;Mmmm Monokai.&quot; style=&quot;zoom:50%;&quot;&gt;&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="Hexo" scheme="http://sunyancn.github.io/categories/Hexo/"/>
-    
-    
-    <category term="博客" scheme="http://sunyancn.github.io/tags/%E5%8D%9A%E5%AE%A2/"/>
     
   </entry>
   

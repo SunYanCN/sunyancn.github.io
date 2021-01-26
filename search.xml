@@ -5104,6 +5104,32 @@ p(s) = sigmoid(BN(s))</script><p>Dice 的代码实现如下：</p>
     <title>Matlab 相关</title>
     <url>/post/cf3a540f.html</url>
     <content><![CDATA[<html><head><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script></head><body><h2 id="Plot-Cheatsheet" class="heading-control"><a href="#Plot-Cheatsheet" class="headerlink" title="Plot Cheatsheet"></a>Plot Cheatsheet<a class="heading-anchor" href="#Plot-Cheatsheet" aria-hidden="true"></a></h2><p><img src="https://i.loli.net/2021/01/26/YBAivw8ShenR1kq.png" alt></p>
+<a id="more"></a>
+<h2 id="VScode-运行-Matlab" class="heading-control"><a href="#VScode-运行-Matlab" class="headerlink" title="VScode 运行 Matlab"></a>VScode 运行 Matlab<a class="heading-anchor" href="#VScode-运行-Matlab" aria-hidden="true"></a></h2><ol>
+<li><p>电脑需要安装 VScode、Matlab 和 python</p>
+</li>
+<li><p>VScode 安装插件：MATLAB、Matlab Extension Pack、Matlab Interactive Terminal 以及 Matlab Snippets。</p>
+</li>
+<li><p>管理员权限打开命令行，进入 matlab (14b 以上版本) 目录：<code>matlab安装目录\extern\engines\python</code>，<code>python setup.py install</code></p>
+</li>
+<li><p>vscode 下，<code>ctrl+shift+p</code>：</p>
+</li>
+</ol>
+<ul>
+<li><code>Open a Matlab Terminal</code> which opens an interactive Matlab terminal in the VS Code integrated terminal, similar to the Matlab command line</li>
+<li><code>Run current Matlab Script</code> which runs the currently opened Matlab script and then allows the user to interact with it through the opened terminal</li>
+<li><code>Run current selection in Matlab</code> which runs the currently selected text in a Matlab terminal. If no text is selected, the current line is run instead</li>
+</ul>
+<h2 id="Matlab导出高DPI图像" class="heading-control"><a href="#Matlab导出高DPI图像" class="headerlink" title="Matlab导出高DPI图像"></a>Matlab 导出高 DPI 图像<a class="heading-anchor" href="#Matlab导出高DPI图像" aria-hidden="true"></a></h2><p>可参考文章：<a href="https://zhuanlan.zhihu.com/p/65116358">https://zhuanlan.zhihu.com/p/65116358</a></p>
+<h3 id="文件-gt-导出设置" class="heading-control"><a href="#文件-gt-导出设置" class="headerlink" title="文件->导出设置"></a>文件 -> 导出设置<a class="heading-anchor" href="#文件-gt-导出设置" aria-hidden="true"></a></h3><p>点击文件》导出设置》就能打开导出设置窗口</p>
+<p>我们需要设置:</p>
+<ul>
+<li>大小的单位（有时候需要自行设置宽和高），由于 dpi 是以 inch 为单位，这里将单位设置为英寸。</li>
+<li>渲染的分辨率，设置为要求的大小。对于线图来说一般需要 600dpi：</li>
+<li>最后点击导出，保存为需要的格式即可（包括 eps/tiff/jpeg 等）</li>
+</ul>
+<h3 id="matlab-的-print-函数" class="heading-control"><a href="#matlab-的-print-函数" class="headerlink" title="matlab 的 print 函数"></a>matlab 的 <a href="http://ww2.mathworks.cn/help/matlab/ref/print.html"><code>print</code></a> 函数<a class="heading-anchor" href="#matlab-的-print-函数" aria-hidden="true"></a></h3><p>可参考：<a href="http://ww2.mathworks.cn/help/matlab/ref/print.html">http://ww2.mathworks.cn/help/matlab/ref/print.html</a></p>
+<figure class="highlight matlab"><table><tbody><tr><td class="code"><pre><span class="line">img =gcf;  <span class="comment">%获取当前画图的句柄</span></span><br><span class="line">print(img, <span class="string">'-dpng'</span>, <span class="string">'-r600'</span>, <span class="string">'./img.png'</span>)         <span class="comment">%即可得到对应格式和期望dpi的图像</span></span><br><span class="line">print(<span class="string">'-r600'</span>,<span class="string">'-dpdf'</span>, <span class="string">'-fillpage'</span>, <span class="string">'sphere1.pdf'</span>); <span class="comment">% 格式、分辨率</span></span><br><span class="line"><span class="comment">%第一个参数为fig的句柄，第二个-r后加对应的分辨率dpi，第二个为-d加对应的图像格式, 最后加上文件路径及名称字符串。</span></span><br></pre></td></tr></tbody></table></figure>
 </body></html>]]></content>
       <tags>
         <tag>Matlab</tag>
@@ -5117,5 +5143,10 @@ p(s) = sigmoid(BN(s))</script><p>Dice 的代码实现如下：</p>
       <tags>
         <tag>婚礼</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>20210126104352</title>
+    <url>/post/8deb71f0.html</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script>]]></content>
   </entry>
 </search>
