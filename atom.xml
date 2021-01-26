@@ -6,7 +6,7 @@
   <link href="http://sunyancn.github.io/atom.xml" rel="self"/>
   
   <link href="http://sunyancn.github.io/"/>
-  <updated>2021-01-26T03:06:54.733Z</updated>
+  <updated>2021-01-26T04:15:48.599Z</updated>
   <id>http://sunyancn.github.io/</id>
   
   <author>
@@ -15,6 +15,24 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Shell 使用</title>
+    <link href="http://sunyancn.github.io/post/d45370df.html"/>
+    <id>http://sunyancn.github.io/post/d45370df.html</id>
+    <published>2021-01-26T03:46:59.000Z</published>
+    <updated>2021-01-26T04:15:48.599Z</updated>
+    
+    
+    <summary type="html">&lt;h2 id=&quot;初识shell&quot;&gt;&lt;a href=&quot;#初识shell&quot; class=&quot;headerlink&quot; title=&quot;初识shell&quot;&gt;&lt;/a&gt;初识 shell&lt;/h2&gt;&lt;p&gt;脚本其实就是短小的、用来让计算机自动化完成一系列工作的程序，这类程序可以用文本编辑器修改，不需要编译，通常是解释运行的。&lt;/p&gt;
+&lt;h3 id=&quot;第一个shell脚本&quot;&gt;&lt;a href=&quot;#第一个shell脚本&quot; class=&quot;headerlink&quot; title=&quot;第一个shell脚本&quot;&gt;&lt;/a&gt;第一个 shell 脚本&lt;/h3&gt;&lt;p&gt;打开文本编辑器 (可以使用 vi/vim 命令来创建文件)，新建一个文件 test.sh，扩展名为 sh（sh 代表 shell）。&lt;br&gt;&lt;/p&gt;&lt;figure class=&quot;highlight shell&quot;&gt;&lt;table&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;meta&quot;&gt;#&lt;/span&gt;&lt;span class=&quot;bash&quot;&gt;!/bin/bash&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;echo &quot;Hello World !&quot;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/figure&gt;&lt;br&gt;1、&lt;code&gt;chmod +x file&lt;/code&gt; 加上执行权限，否则会提示无执行权限。&lt;br&gt;2、注意执行脚本时候或者全目录，或者 &lt;code&gt;./file.sh&lt;/code&gt; ，如果不加的话，linux 默认会从PATH 里去找该 file.sh。&lt;br&gt;3、脚本后缀名可以任意修改，仍然可以正常运行。&lt;br&gt;</summary>
+    
+    
+    
+    
+    <category term="shell" scheme="http://sunyancn.github.io/tags/shell/"/>
+    
+  </entry>
   
   <entry>
     <title>火影情结</title>
@@ -450,24 +468,6 @@
     
     
     <category term="苹果" scheme="http://sunyancn.github.io/tags/%E8%8B%B9%E6%9E%9C/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>智力题</title>
-    <link href="http://sunyancn.github.io/post/8a7396e.html"/>
-    <id>http://sunyancn.github.io/post/8a7396e.html</id>
-    <published>2020-09-28T08:47:08.000Z</published>
-    <updated>2020-10-13T09:58:34.807Z</updated>
-    
-    
-    <summary type="html">&lt;ol&gt;
-&lt;li&gt;&lt;strong&gt;家里有两个孩子，一个是女孩，另一个也是女孩的概率是多少？&lt;/strong&gt;&lt;br&gt;已经有两个孩子说明孩子已经出生了，可能情况为（男，男）（男，女）（女，男）（女，女），又已知其中一个是女的，故排除（男，男）的可能，剩下三种情况一个是符合的，故 1/3。（不是问你已经生了一个女孩，下次再生是男是女的概率）。</summary>
-    
-    
-    
-    
-    <category term="面试" scheme="http://sunyancn.github.io/tags/%E9%9D%A2%E8%AF%95/"/>
     
   </entry>
   
