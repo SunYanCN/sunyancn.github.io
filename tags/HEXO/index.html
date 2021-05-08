@@ -41,7 +41,7 @@
     lang   : 'zh-CN'
   };
 </script>
-<script src="/lib/fireworks.js"></script><link rel="stylesheet" href="//cdn.jsdelivr.net/gh/theme-next/theme-next-needmoreshare2@1/needsharebutton.min.css"><style>
+<link rel="stylesheet" href="//cdn.jsdelivr.net/gh/theme-next/theme-next-needmoreshare2@1/needsharebutton.min.css"><style>
 #needsharebutton-float {
   bottom: 88px;
   cursor: pointer;
@@ -54,7 +54,7 @@
   border-radius: 4px;
   padding: 0 10px 0 14px;
 }
-</style>
+</style><script src="/lib/fireworks.js"></script>
   <title>标签: Hexo | 故事尾音</title>
   
 
@@ -568,44 +568,43 @@ darkmode.showWidget();
               const text = document.createTextNode('');
               node.parentNode.replaceChild(text, node);
               math.start = {node: text, delim: '', n: 0};
-     n('#needsharebutton-float', flOptions);
-  </script>
-
-<script>
-NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
-  NexT.utils.getScript('https://cdn.jsdelivr.net/gh//AshinWang/SimpleValine/SimpleValine.min.js', () => {
-    var GUEST = ['nick', 'mail', 'link'];
-    var guest = 'nick,mail';
-    guest = guest.split(',').filter(item => {
-      return GUEST.includes(item);
-    });
-    new Valine({
-      el         : '#valine-comments',
-      verify     : false,
-      notify     : false,
-      appId      : 'IAIsNxUL4BLqJ2c4nTn8HlLv-gzGzoHsz',
-      appKey     : '73p5IVTPonVrJhOylbVtJffi',
-      placeholder: "(๑•́ ₃ •̀๑) 留言时填写您的邮箱可以邮件收到博主的回复噢~",
-      avatar     : 'wavatar',
-      meta       : guest,
-      pageSize   : '10' || 10,
-      visitor    : false,
-      lang       : '' || 'zh-cn',
-      path       : location.pathname,
-      recordIP   : false,
-      serverURLs : ''
-    });
-  }, window.Valine);
-});
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
 </script>
 
+    
 
-    <!-- leafacePlayer -->
   
-  
-</body>
-</html>
-ebutton.min.js"></script>
+<div id="needsharebutton-float">
+      <span class="btn">
+        <i class="fa fa-share-alt" aria-hidden="true"></i>
+      </span>
+    </div>
+  <script src="//cdn.jsdelivr.net/gh/theme-next/theme-next-needmoreshare2@1/needsharebutton.min.js"></script>
   <script>
       flOptions = {};
         flOptions.iconStyle = "box";
