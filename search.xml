@@ -5439,13 +5439,35 @@ p(s) = sigmoid(BN(s))</script><p>Dice 的代码实现如下：</p>
 </ul>
 <h3 id="工作项目-1" class="heading-control"><a href="#工作项目-1" class="headerlink" title="工作项目"></a>工作项目<a class="heading-anchor" href="#工作项目-1" aria-hidden="true"></a></h3><p>问的比较多的：</p>
 <ol>
-<li><h3 id="基本知识" class="heading-control"><a href="#基本知识" class="headerlink" title="基本知识"></a>基本知识<a class="heading-anchor" href="#基本知识" aria-hidden="true"></a></h3></li>
+<li>召回怎么做离线评估和在线？</li>
+<li>Faiss 的原理</li>
+</ol>
+<h3 id="基本知识" class="heading-control"><a href="#基本知识" class="headerlink" title="基本知识"></a>基本知识<a class="heading-anchor" href="#基本知识" aria-hidden="true"></a></h3><ol>
+<li>C++ STL 容器的底层数据结构？</li>
+<li>Python 的 GIL 锁？多进程和多线程？</li>
 <li></li>
 </ol>
 <p>写于二零二一年五月八日，BIGO 公司</p>
 </body></html>]]></content>
       <tags>
         <tag>总结</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>拓扑排序</title>
+    <url>/post/fb40efc5.html</url>
+    <content><![CDATA[<html><head><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script></head><body><h2 id="AOV-网" class="heading-control"><a href="#AOV-网" class="headerlink" title="AOV-网"></a>AOV - 网<a class="heading-anchor" href="#AOV-网" aria-hidden="true"></a></h2><p>以顶点表示活动，有向边表示活动之间的先后关系的图称为 AOV 网 (Activity On Vertex Network，顶点表示活动的网)。AOV 网是一种有向无环图 (Directed Acyclic Graph, DAG)。</p>
+<h2 id="拓扑排序" class="heading-control"><a href="#拓扑排序" class="headerlink" title="拓扑排序"></a>拓扑排序<a class="heading-anchor" href="#拓扑排序" aria-hidden="true"></a></h2><p>拓扑排序就是将 AOV 网中的所有顶点排列成一个线性序列，并且序列满足以下条件：在 AOV 网中，如果从顶点 A 到 B 存在一条路径，则在该线性序列中，顶点 A 一定出现在顶点 B 之前。因此拓扑排序的过程就是将 AOV 网中的各个活动组成一个可行的实施方案。此外拓扑排序也可以判断图中是否有环。拓扑排序并不唯一，有向无环图一定存在拓扑排序。<br><a id="more"></a><br>拓扑排序具体的算法步骤如下：</p>
+<ul>
+<li>选择一个入度为 0 的顶点并输出。</li>
+<li>从 AOV 网中删除此顶点及以此顶点为起点的所有关联边。</li>
+<li>重复上述两步，直到不存在入度为 0 的顶点为止。</li>
+<li>AOV 网中还有剩余的顶点，则说明 AOV 网中存在回路，不是一个标准的 AOV 网。</li>
+</ul>
+<h2 id="代码实现" class="heading-control"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现<a class="heading-anchor" href="#代码实现" aria-hidden="true"></a></h2><p>需要维护一个入度为 0 的顶点的集合，每次从该集合中取出 (没有特殊的取出规则，随机取出也行，使用队列 / 栈也行，下同) 一个顶点，将该顶点放入保存结果中。<br>紧接着循环遍历由该顶点引出的所有边，从图中移除这条边，同时获取该边的另外一个顶点，如果该顶点的入度在减去本条边之后为 0，那么也将这个顶点放到入度为 0 的集合中。然后继续从集合中取出一个顶点。<br>当集合为空之后，检查图中是否还存在任何边，如果存在的话，说明图中至少存在一条环路。不存在的话则返回结果 List，此 List 中的顺序就是对图进行拓扑排序的结果。<br></p><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">topoSort</span>(<span class="params">graph</span>):</span>     </span><br><span class="line">    in_degrees = dict((u,<span class="number">0</span>) <span class="keyword">for</span> u <span class="keyword">in</span> graph)   <span class="comment">#初始化所有顶点入度为0     </span></span><br><span class="line">    num = len(in_degrees)     </span><br><span class="line">    <span class="keyword">for</span> u <span class="keyword">in</span> graph:         </span><br><span class="line">        <span class="keyword">for</span> v <span class="keyword">in</span> graph[u]:             </span><br><span class="line">            in_degrees[v] += <span class="number">1</span>    <span class="comment">#计算每个顶点的入度     </span></span><br><span class="line">    Q = [u <span class="keyword">for</span> u <span class="keyword">in</span> in_degrees <span class="keyword">if</span> in_degrees[u] == <span class="number">0</span>]   <span class="comment"># 筛选入度为0的顶点     </span></span><br><span class="line">    Seq = []     </span><br><span class="line">    <span class="keyword">while</span> Q:         </span><br><span class="line">        u = Q.pop()       <span class="comment">#默认从最后一个删除         </span></span><br><span class="line">        Seq.append(u)         </span><br><span class="line">        <span class="keyword">for</span> v <span class="keyword">in</span> graph[u]:             </span><br><span class="line">            in_degrees[v] -= <span class="number">1</span>    <span class="comment">#移除其所有出边</span></span><br><span class="line">            <span class="keyword">if</span> in_degrees[v] == <span class="number">0</span>:        </span><br><span class="line">                Q.append(v)          <span class="comment">#再次筛选入度为0的顶点</span></span><br><span class="line">    <span class="keyword">if</span> len(Seq) == num:       <span class="comment">#输出的顶点数是否与图中的顶点数相等</span></span><br><span class="line">        <span class="keyword">return</span> Seq     </span><br><span class="line">    <span class="keyword">else</span>:         </span><br><span class="line">        <span class="keyword">return</span> <span class="literal">None</span></span><br><span class="line"></span><br><span class="line">G = {</span><br><span class="line">    <span class="string">'a'</span>:<span class="string">'bf'</span>,</span><br><span class="line">    <span class="string">'b'</span>:<span class="string">'cdf'</span>,</span><br><span class="line">    <span class="string">'c'</span>:<span class="string">'d'</span>,</span><br><span class="line">    <span class="string">'d'</span>:<span class="string">'ef'</span>,</span><br><span class="line">    <span class="string">'e'</span>:<span class="string">'f'</span>,</span><br><span class="line">    <span class="string">'f'</span>:<span class="string">''</span></span><br><span class="line">}</span><br><span class="line">print(topoSort(G))</span><br></pre></td></tr></tbody></table></figure><p></p>
+</body></html>]]></content>
+      <tags>
+        <tag>算法</tag>
       </tags>
   </entry>
 </search>

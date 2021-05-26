@@ -6,7 +6,7 @@
   <link href="http://sunyancn.github.io/atom.xml" rel="self"/>
   
   <link href="http://sunyancn.github.io/"/>
-  <updated>2021-05-08T09:34:40.309Z</updated>
+  <updated>2021-05-26T03:58:09.566Z</updated>
   <id>http://sunyancn.github.io/</id>
   
   <author>
@@ -17,11 +17,29 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>拓扑排序</title>
+    <link href="http://sunyancn.github.io/post/fb40efc5.html"/>
+    <id>http://sunyancn.github.io/post/fb40efc5.html</id>
+    <published>2021-05-26T03:38:15.000Z</published>
+    <updated>2021-05-26T03:58:09.566Z</updated>
+    
+    
+    <summary type="html">&lt;h2 id=&quot;AOV-网&quot;&gt;&lt;a href=&quot;#AOV-网&quot; class=&quot;headerlink&quot; title=&quot;AOV-网&quot;&gt;&lt;/a&gt;AOV - 网&lt;/h2&gt;&lt;p&gt;以顶点表示活动，有向边表示活动之间的先后关系的图称为 AOV 网 (Activity On Vertex Network，顶点表示活动的网)。AOV 网是一种有向无环图 (Directed Acyclic Graph, DAG)。&lt;/p&gt;
+&lt;h2 id=&quot;拓扑排序&quot;&gt;&lt;a href=&quot;#拓扑排序&quot; class=&quot;headerlink&quot; title=&quot;拓扑排序&quot;&gt;&lt;/a&gt;拓扑排序&lt;/h2&gt;&lt;p&gt;拓扑排序就是将 AOV 网中的所有顶点排列成一个线性序列，并且序列满足以下条件：在 AOV 网中，如果从顶点 A 到 B 存在一条路径，则在该线性序列中，顶点 A 一定出现在顶点 B 之前。因此拓扑排序的过程就是将 AOV 网中的各个活动组成一个可行的实施方案。此外拓扑排序也可以判断图中是否有环。拓扑排序并不唯一，有向无环图一定存在拓扑排序。&lt;br&gt;</summary>
+    
+    
+    
+    
+    <category term="算法" scheme="http://sunyancn.github.io/tags/%E7%AE%97%E6%B3%95/"/>
+    
+  </entry>
+  
+  <entry>
     <title>我在 BIGO 的这一年</title>
     <link href="http://sunyancn.github.io/post/e231005e.html"/>
     <id>http://sunyancn.github.io/post/e231005e.html</id>
     <published>2021-05-08T07:26:31.000Z</published>
-    <updated>2021-05-08T09:34:40.309Z</updated>
+    <updated>2021-05-08T13:09:04.324Z</updated>
     
     
     <summary type="html">&lt;h2 id=&quot;从2020到2021&quot;&gt;&lt;a href=&quot;#从2020到2021&quot; class=&quot;headerlink&quot; title=&quot;从2020到2021&quot;&gt;&lt;/a&gt;从 2020 到 2021&lt;/h2&gt;&lt;p&gt;2020 年 1 月 1 日，我正式和在知乎上相识几天的女朋友表白，并迅速在一起了。彼时我在武汉华科读研二，她在河北师范大学读大三。缘分这东西就是这样的奇妙，茫茫人海中一眼就能认出自己的有缘人。等到 1 月 15 日 放寒假的时候，我绕去石家庄回家，我们正式第一次见了面。19 号回到家中，23 日武汉爆发疫情。好在我平时出校门交际不多，并没有感染，回家也略早，没有滞留在武汉。接下来的几个月每天都很紧张，早上醒来第一件事就是看看武汉的疫情状况。回想起来，疫情那段时间主要做了几件事情：&lt;/p&gt;
@@ -655,29 +673,6 @@
 &lt;p&gt;10 月 27 日，华为 “心声社区” 刊发创始人任正非 9 月 14-18 日访问北京大学、清华大学、中国科学院等学校与部分科学家、学生代表座谈时的发言，题为《向上捅破天，向下扎到根》。&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;习主席在与科学家座谈会讲了，基础教育、基础研究、基础理论、基础工业，也讲了科学家的好奇心驱动。国家不仅要重视科学理论、工程技术的研究，也要重视一些不以应用为目的的纯研究。不然我们怎么能向上捅破天呢？我们这么大的经济总量，允许一部分人是 “梵高” 应该是可以的。科学史上，有一种生存了八千万年的蛭虫，多少科学家研究了数十年，有些科学家因找不到雄的蛭虫而发大火，实际上他已经走到诺贝尔奖的边上了，最后由比利时科学家发现它是单性繁殖。两性繁殖，两条基因链的结合会产生突变，会有优秀的一代产生，当然，不健康的就流产了，自然淘汰。那么单亲繁殖的基因链若有病变、有问题，遗传下去不就灭绝了吗？她发现蛭虫的基因链会断裂，又会重新整合，这不就是优选吗？所以它们经历八千万年，经历多少灾难，还存活下来了。&lt;/p&gt;</summary>
-    
-    
-    
-    
-    <category term="社会" scheme="http://sunyancn.github.io/tags/%E7%A4%BE%E4%BC%9A/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>给印度年轻人的一封公开信</title>
-    <link href="http://sunyancn.github.io/post/ffd64b18.html"/>
-    <id>http://sunyancn.github.io/post/ffd64b18.html</id>
-    <published>2020-10-30T08:44:25.000Z</published>
-    <updated>2020-10-30T08:49:34.463Z</updated>
-    
-    
-    <summary type="html">&lt;blockquote&gt;
-&lt;p&gt;印度年轻人的失业率极高，约 30％。与此同时，这些年轻人在 Facebook 和 Instagram 上花费了大量时间，印度人在 Facebook 和 Instagram 花费的时间在所有国家 / 地区排名第一。印度互联网广告业的收入却极低，广告主根本找不到对这些人有价值的广告，他们没有购买力。&lt;/p&gt;
-&lt;p&gt;最近，印度最著名的作家之一的切坦・巴加特（Chetan Bhagat）在《印度时报》上发表了这封公开信，呼吁印度年轻人不要沉溺于手机。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;亲爱的年轻朋友们，&lt;/p&gt;
-&lt;p&gt;这封公开信尽管在大报纸上发表，但是我不知道你是否会看到它。你们中的许多人都忙于使用手机，观看视频，玩视频游戏，与朋友聊天，在社交媒体上发表评论，或者只是滚动浏览名人新闻。你们顾不上阅读文章。&lt;/p&gt;
-&lt;p&gt;但是，如果你碰巧遇到了这篇文章，请完整读完它。这很重要，这关系到你的生活。你正在手机上浪费生命。&lt;/p&gt;</summary>
     
     
     
