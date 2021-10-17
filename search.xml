@@ -5473,4 +5473,14 @@ p(s) = sigmoid(BN(s))</script><p>Dice 的代码实现如下：</p>
         <tag>算法</tag>
       </tags>
   </entry>
+  <entry>
+    <title>微软面试题</title>
+    <url>/post/d4f879a5.html</url>
+    <content><![CDATA[<html><head><link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="\assets\js\Meting.min.js"></script></head><body><p>面试的是微软 edge 浏览器的信息流推荐算法。</p>
+<h2 id="完全二叉树的层次遍历反转" class="heading-control"><a href="#完全二叉树的层次遍历反转" class="headerlink" title="完全二叉树的层次遍历反转"></a>完全二叉树的层次遍历反转<a class="heading-anchor" href="#完全二叉树的层次遍历反转" aria-hidden="true"></a></h2><p>一面的算法题是给定一个数组，是一个完全二叉树的层次遍历结果，然后输出一个数组，是每层的逆序结果。<br><strong>思路：</strong> 首先，完全二叉树是可以计算每层节点的数量的，也就是可以在原数组中进行层的划分。之后需要处理的就是反转一个 list, 这个可以用双指针，左指针指向第一个位置，右指针指向最后一个位置，然后交换元素，直到左指针大于右指针。考虑特殊情况是，完全二叉树不满的情况，这种只出现在最后一层，需要计算右指针的位置。</p>
+</body></html>]]></content>
+      <tags>
+        <tag>算法</tag>
+      </tags>
+  </entry>
 </search>
